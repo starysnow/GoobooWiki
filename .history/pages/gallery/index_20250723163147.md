@@ -1,0 +1,3 @@
+---
+pageClass: full-width-page
+---

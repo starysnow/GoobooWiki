@@ -40,7 +40,6 @@ export default {
   enhanceApp({ app }) {
     // 2. 在应用启动时，调用 inject() 函数
     inject();
-
     app.component('HomeLayout', HomeLayout)
     app.component('FeatureCard', FeatureCard)
     app.component('DynamicTable', DynamicTable)

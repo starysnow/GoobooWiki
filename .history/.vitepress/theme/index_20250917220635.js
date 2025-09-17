@@ -34,13 +34,13 @@ export default {
   //     'nav-bar-content-before': () => h(NavbarNotice),
   //   });
   // },
+   enhanceApp({ app, router, siteData }) {
+    // 2. 在应用启动时，调用 inject() 函数
+    inject();
 
   // 5. 注册你的全局组件
   // 这样就不需要在每个 .md 文件里都导入一次了
   enhanceApp({ app }) {
-    // 2. 在应用启动时，调用 inject() 函数
-    inject();
-
     app.component('HomeLayout', HomeLayout)
     app.component('FeatureCard', FeatureCard)
     app.component('DynamicTable', DynamicTable)

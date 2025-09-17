@@ -124,9 +124,11 @@ onMounted(loadData);
 }
 h2 { text-align: center; margin-top: 0; font-weight: 600; }
 table{
-   border-collapse: collapse;
-   width: 100%;
-   margin-top: 20px;
+    border-collapse: collapse;
+    /* width: 100%;  */
+    width: auto;
+    /* min-width: 800px; */
+    margin: 20px auto;
   }
 th, td { border: 1px solid var(--vp-c-divider); padding: 10px 12px; text-align: center; vertical-align: middle; }
 th { background-color: var(--vp-c-bg-soft); font-weight: 600; }
@@ -147,9 +149,15 @@ select { width: 65px; }
     border-radius: 8px;
     margin-bottom: 20px;
 }
-.controls label { font-weight: bold; }
-.result-cell { font-weight: bold; color: #e74c3c; min-width: 140px; font-size: 1.1em; }
+.controls label {
+  font-weight: bold;
+}
+.result-cell {
+  font-weight: bold; color: #e74c3c; min-width: 140px; font-size: 1.1em;
+}
 .result_table{
-  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

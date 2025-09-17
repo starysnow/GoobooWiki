@@ -1,0 +1,212 @@
+/* .vitepress/theme/custom.css */
+/**
+ * 全局布局宽度优化，我们只在桌面端（屏幕宽度 > 960px）应用这些更改，
+ */
+@media (min-width: 960px) {
+   /* 背景设置 */
+   body{
+      /* background-image: url("https://images.weserv.nl/?url=img.moegirl.org.cn/common/b/b0/%E6%96%B0%E6%B5%B7%E5%A4%A9-title.png"); */
+      background-image: url("../../public/img/background.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-attachment: fixed;
+      background-position: 50%;
+      /*opacity: 0.5;*/
+      /*background-size:cover*/
+   }
+
+   :root {
+   /* 1. 压缩左侧边栏 (Sidebar) 的宽度 */
+      --vp-sidebar-width: 200px;
+      /* 2. 压缩右侧“本页大纲” (Aside/Outline) 的宽度*/
+      --vp-aside-width: 108px;
+      /** * 3. (可选) 稍微增加内容区域的最大宽度
+   * 减小两侧边栏后，内容区会自动变宽， */
+      --vp-layout-max-width: 1400px;
+   }
+   /* 移除VitePress默认的页面背景色，让body的背景图可以透出来 */
+   /* :root {
+      --vp-c-bg: transparent;
+      /* 主背景色 */
+      --vp-c-bg-alt: transparent;
+      /* 次要背景色 */
+      --vp-c-bg-soft: rgba(246, 248, 250, 0.85);
+      /* 柔和背景色，带85%不透明度 */
+      --vp-c-bg-mute: rgba(240, 242, 245, 0.85);
+   }
+
+   :root.dark {
+      --vp-c-bg-soft: rgba(36, 41, 46, 0.85);
+      --vp-c-bg-mute: rgba(40, 45, 50, 0.85);
+   } */
+
+    /* 释放辅助工具页空间 */
+   .full-width-page.tools .VPDoc>.container>.aside {
+      display: none;
+   }
+
+   .full-width-page.VPDoc.has-sidebar:not(.has-aside) .VPContent {
+      /**
+   * VitePress在没有右侧栏时，会给内容区一个默认的右边距(padding-right)。
+   * 我们需要把它覆盖掉，让内容区可以一直延展到屏幕右侧。
+   */
+      padding-right: 0;
+   }
+
+   .full-width-page .content-container {
+      /**
+   * 同时，确保内容容器本身没有最大宽度限制。
+   * 并且移除我们之前可能为普通页面设置的右内边距。
+   */
+      max-width: none !important;
+      padding-right: 0 !important;
+   }
+
+   .VPDoc.has-aside .VPContent .content-container {
+      padding-left: 24px;
+      /* 将左侧内边距从默认值（如64px）减小 */
+      padding-right: 24px;
+      /* 将右侧内边距从默认值（如64px）减小 */
+      max-width: none;
+      /* 同时确保没有最大宽度限制 */
+   }
+
+   /* 子页面样式 */
+      .page-container {
+         display: flex;
+         flex-direction: row-reverse;
+         gap: 2rem;
+         align-items: flex-start;
+      }
+
+      .content-main {
+         /*
+         * 使用 flex-grow: 1 来告诉它尽可能地“生长”以填充可用空间。
+         * 使用 flex-shrink: 1 允许它在空间不足时收缩。
+         * 使用 flex-basis: 0% 或 auto 是一个好的实践，让其从0或自身内容大小开始计算。
+         */
+         flex: 1 1 0%;
+         width: 100%;
+         /* ◀︎ 关键！明确告诉它宽度为父容器的100% */
+         min-width: 0;
+         /* 防止内容溢出时破坏布局 */
+      }
+
+      .content-aside {
+         width: 220px;
+         position: sticky;
+         top: 80px;
+      }
+
+      @media (max-width: 960px) {
+         .page-container {
+            flex-direction: column;
+         }
+
+         .content-aside {
+            width: 100%;
+            position: static;
+            margin-bottom: 2rem;
+         }
+      }
+
+      .page-nav-card {
+         background-color: var(--vp-c-bg-soft);
+         border-radius: 12px;
+         padding: 1rem 1.5rem;
+         border: 1px solid var(--vp-c-divider);
+      }
+
+      .page-nav-card h3 {
+         margin: 0 0 1rem 0;
+         padding-bottom: 0.5rem;
+         border-bottom: 1px solid var(--vp-c-divider);
+         font-size: 1.1em;
+      }
+
+      .page-nav-card ul {
+         list-style: none;
+         padding: 0;
+         margin: 0;
+      }
+
+      .page-nav-card li a {
+         display: block;
+         padding: 0.5rem 0;
+         color: var(--vp-c-text-2);
+         text-decoration: none;
+         border-left: 2px solid transparent;
+         padding-left: 1rem;
+         transition: all 0.2s ease;
+      }
+
+      .page-nav-card li a:hover {
+         color: var(--vp-c-brand);
+         background-color: var(--vp-c-brand-soft);
+         border-left-color: var(--vp-c-brand);
+      }
+
+      .section-title {
+         font-size: 1.8em;
+         padding-top: 2rem;
+         margin-top: -2rem;
+         border-bottom: 2px solid var(--vp-c-brand);
+         padding-bottom: 0.5rem;
+         margin-bottom: 2rem;
+      }
+
+      /* =================================================================
+      3. “本页大纲”目录美化 (Doc Outline)
+      ================================================================= */
+      .VPDocOutlineItem {
+         background-color: var(--vp-c-bg-soft);
+         border-radius: var(--vp-border-radius-large);
+         padding: 1rem;
+         border: 1px solid var(--vp-c-divider);
+      }
+
+      .VPDocOutlineItem .outline-title {
+         font-weight: 600;
+      }
+
+      .VPDocOutlineItem .root>.outline-item {
+         margin-top: 0.75rem;
+      }
+
+      .VPDocOutlineItem .root>.outline-item>.outline-link {
+         font-weight: 500;
+         font-size: 14px;
+         color: var(--vp-c-text-1);
+         transform: translateX(-4px);
+         /* 视觉对齐 */
+      }
+
+      .VPDocOutlineItem .root>.outline-item>.outline-link::before {
+         content: '';
+         display: inline-block;
+         width: 6px;
+         height: 6px;
+         background-color: var(--vp-c-brand-light);
+         border-radius: 50%;
+         margin-right: 10px;
+         transition: all 0.2s ease;
+      }
+
+      .VPDocOutlineItem .outline-item .outline-item .outline-link {
+         font-size: 13px;
+         color: var(--vp-c-text-2);
+         padding-left: 16px !important;
+         /* 增加缩进 */
+      }
+
+      .VPDocOutlineItem .outline-link.active {
+         color: var(--vp-c-brand-dark);
+         background-color: transparent;
+      }
+
+      .VPDocOutlineItem .root>.outline-item>.outline-link.active::before {
+         transform: scale(1.5);
+         background-color: var(--vp-c-brand);
+      }
+}
+

@@ -1,0 +1,326 @@
+/* .vitepress/theme/custom.css */
+/**
+ * 全局布局宽度优化，我们只在桌面端（屏幕宽度 > 960px）应用这些更改，
+ */
+@media (min-width: 960px) {
+   /* 背景设置 */
+   body{
+      /* background-image: url("https://images.weserv.nl/?url=img.moegirl.org.cn/common/b/b0/%E6%96%B0%E6%B5%B7%E5%A4%A9-title.png"); */
+      /* background-image: url("../../public/img/background.png"); */
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-attachment: fixed;
+      background-position: 50%;
+      /*opacity: 0.5;*/
+      /*background-size:cover*/
+   }
+
+   :root {
+   /* 1. 压缩左侧边栏 (Sidebar) 的宽度 */
+      --vp-sidebar-width: 200px;
+      /* 2. 压缩右侧“本页大纲” (Aside/Outline) 的宽度*/
+      --vp-aside-width: 108px;
+      /** * 3. (可选) 稍微增加内容区域的最大宽度
+   * 减小两侧边栏后，内容区会自动变宽， */
+      --vp-layout-max-width: 1400px;
+   }
+   /* 移除VitePress默认的页面背景色，让body的背景图可以透出来 */
+   :root {
+    /*   --vp-c-bg: transparent;
+      --vp-c-bg-alt: transparent;
+      --vp-c-bg-soft: rgba(246, 248, 250, 0.85);
+      --vp-c-bg-mute: rgba(240, 242, 245, 0.85);*/
+   }
+
+   :root.dark {
+      /* --vp-c-bg-soft: rgba(36, 41, 46, 0.85);
+      --vp-c-bg-mute: rgba(40, 45, 50, 0.85); */
+   }
+
+
+   /* 2. 左侧边栏美化 (VPSidebar) */
+   /* #region */
+   /* a) 侧边栏容器整体样式 */
+   .VPSidebar {
+      /*
+   * 我们把背景设为半透明，这样背景图才能透过来
+   */
+      -webkit-backdrop-filter: saturate(120%) blur(8px);
+      backdrop-filter: saturate(120%) blur(8px);
+      background-color: var(--vp-c-bg-soft) !important;
+      /* var(--vp-c-bg-soft) 本身就是半透明的 */
+
+      /* 在桌面端，给一个细微的边框增加质感 */
+      border-right: 1px solid var(--vp-c-divider);
+
+      /* 增加内边距，让内容不贴边 */
+      padding: 1rem;
+   }
+
+
+   /* b) 分组标题 (例如 "主要玩法", "其他系统") */
+   .VPSidebar .group .text {
+      font-size: 1em;
+      /* 调整字体大小 */
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      /* 增加字间距 */
+      color: var(--vp-c-text-1);
+      /* margin-bottom: 0.5rem; */
+      /* padding: 0.5rem 0.75rem; */
+      /* 增加内边距 */
+   }
+
+
+   /* c) 普通链接项 */
+   .VPSidebar .group .link {
+      border-radius: 6px;
+      /* 添加圆角 */
+      transition: all 0.2s ease;
+      margin-bottom: 2px;
+      padding-left: 14px;
+      /* 增加项之间的垂直间距 */
+      border-left: 3px solid transparent;
+      /* 预留一个透明的左边框位置 */
+   }
+
+   /* d) 链接悬浮 (Hover) 效果 */
+   .VPSidebar .group .link:hover {
+      background-color: var(--vp-c-brand-soft);
+      color: var(--vp-c-brand-dark);
+      border-left-color: var(--vp-c-brand-light);
+      /* 悬浮时显示一个淡淡的边框 */
+   }
+
+   /* e) 当前激活 (Active) 链接的样式 */
+   .VPSidebar .group .is-active .link{
+      background-color: var(--vp-c-brand-soft);
+      /* border-left-color: var(--vp-c-brand); */
+      /* 激活时边框颜色更深 */
+      color: var(--vp-c-brand-dark) !important;
+      font-weight: 500;
+   }
+
+   /* g) 适配手机端的小屏样式 */
+   @media (max-width: 768px) {
+      .VPSidebar {
+         padding: 1rem;
+         border-right: none;
+      }
+   }
+   /* #endregion */
+
+   /* .full-width-page：用于非工具页面 */
+   /* #region */
+    /* 释放辅助工具页空间 */
+   .full-width-page.tools .VPDoc>.container>.aside {
+      display: none;
+   }
+
+   .full-width-page.VPDoc.has-sidebar:not(.has-aside) .VPContent {
+      /**
+   * VitePress在没有右侧栏时，会给内容区一个默认的右边距(padding-right)。
+   * 我们需要把它覆盖掉，让内容区可以一直延展到屏幕右侧。
+   */
+      padding-right: 0;
+   }
+
+   .full-width-page .content-container {
+      /**
+   * 同时，确保内容容器本身没有最大宽度限制。
+   * 并且移除我们之前可能为普通页面设置的右内边距。
+   */
+      max-width: none !important;
+      padding-right: 0 !important;
+   }
+    /* #region */
+   .VPDoc.has-aside .VPContent .content-container {
+      padding-left: 24px;
+      /* 将左侧内边距从默认值（如64px）减小 */
+      padding-right: 24px;
+      /* 将右侧内边距从默认值（如64px）减小 */
+      max-width: none;
+      /* 同时确保没有最大宽度限制 */
+   }
+
+   /* 子页面样式 */
+      .page-container {
+         display: flex;
+         flex-direction: row-reverse;
+         gap: 2rem;
+         align-items: flex-start;
+      }
+
+      .content-main {
+         /*
+         * 使用 flex-grow: 1 来告诉它尽可能地“生长”以填充可用空间。
+         * 使用 flex-shrink: 1 允许它在空间不足时收缩。
+         * 使用 flex-basis: 0% 或 auto 是一个好的实践，让其从0或自身内容大小开始计算。
+         */
+         flex: 1 1 0%;
+         width: 100%;
+         /* ◀︎ 关键！明确告诉它宽度为父容器的100% */
+         min-width: 0;
+         /* 防止内容溢出时破坏布局 */
+      }
+
+      .content-aside {
+         width: 220px;
+         position: sticky;
+         top: 80px;
+      }
+
+      @media (max-width: 960px) {
+         .page-container {
+            flex-direction: column;
+         }
+
+         .content-aside {
+            width: 100%;
+            position: static;
+            margin-bottom: 2rem;
+         }
+      }
+
+      .page-nav-card {
+         background-color: var(--vp-c-bg-soft);
+         border-radius: 12px;
+         padding: 1rem 1.5rem;
+         border: 1px solid var(--vp-c-divider);
+      }
+
+      .page-nav-card h3 {
+         margin: 0 0 1rem 0;
+         padding-bottom: 0.5rem;
+         border-bottom: 1px solid var(--vp-c-divider);
+         font-size: 1.1em;
+      }
+
+      .page-nav-card ul {
+         list-style: none;
+         padding: 0;
+         margin: 0;
+      }
+
+      .page-nav-card li a {
+         display: block;
+         padding: 0.5rem 0;
+         color: var(--vp-c-text-2);
+         text-decoration: none;
+         border-left: 2px solid transparent;
+         padding-left: 1rem;
+         transition: all 0.2s ease;
+      }
+
+      .page-nav-card li a:hover {
+         color: var(--vp-c-brand);
+         background-color: var(--vp-c-brand-soft);
+         border-left-color: var(--vp-c-brand);
+      }
+
+      .section-title {
+         font-size: 1.8em;
+         padding-top: 2rem;
+         margin-top: -2rem;
+         border-bottom: 2px solid var(--vp-c-brand);
+         padding-bottom: 0.5rem;
+         margin-bottom: 2rem;
+      }
+
+      /* =================================================================
+      3. “本页大纲”目录美化 (Doc Outline)
+      ================================================================= */
+      /* a) 初始化CSS计数器 */
+      .VPDocOutlineItem .root {
+         counter-reset: h2-counter;
+         /* 为h2级别创建一个计数器 */
+      }
+
+      /* b) 顶层目录项 (h2) */
+      .VPDocOutlineItem .root>.VPDocOutlineItemItem {
+         counter-increment: h2-counter;
+         /* 每次遇到h2项，计数器+1 */
+         counter-reset: h3-counter;
+         /* 同时重置下一级的h3计数器 */
+      }
+
+      .VPDocOutlineItem .root>.VPDocOutlineItemItem>.outline-link::before {
+         /* 显示 h2 计数器的值 */
+         content: counter(h2-counter);
+         font-weight: 600;
+         color: var(--vp-c-text-2);
+         margin-right: 10px;
+         font-size: 1.1em;
+      }
+
+      /* c) 子目录项 (h3) */
+      .VPDocOutlineItem .outline-child>.VPDocOutlineItemItem {
+         counter-increment: h3-counter;
+         /* 每次遇到h3项，计数器+1 */
+         counter-reset: h4-counter;
+         /* 重置h4计数器 */
+      }
+
+      .VPDocOutlineItem .outline-child>.VPDocOutlineItemItem>.outline-link::before {
+         /* 显示 "h2计数.h3计数" */
+         content: counter(h2-counter) "." counter(h3-counter);
+         font-weight: 400;
+         color: var(--vp-c-text-3);
+         margin-right: 8px;
+      }
+
+      /* d) 更深层级的目录项 (h4) */
+      .VPDocOutlineItem .outline-child .outline-child>.VPDocOutlineItemItem {
+         counter-increment: h4-counter;
+      }
+
+      .VPDocOutlineItem .outline-child .outline-child>.VPDocOutlineItemItem>.outline-link::before {
+         content: counter(h2-counter) "." counter(h3-counter) "." counter(h4-counter);
+      }
+
+      /* ... 你可以继续为h5, h6添加规则 ... */
+
+
+      /* e) 通用链接样式 */
+      .VPDocOutlineItem .outline-link {
+         transition: all 0.2s ease;
+         border-left: 2px solid transparent;
+         padding-left: 10px !important;
+      }
+
+      .VPDocOutlineItem .outline-link:hover {
+         color: var(--vp-c-brand-dark);
+      }
+
+      /* f) 激活项的样式 */
+      .VPDocOutlineItem .outline-link.active {
+         color: var(--vp-c-brand-dark) !important;
+         background-color: var(--vp-c-brand-soft);
+         border-left-color: var(--vp-c-brand);
+      }
+
+      /* g) 整体容器样式 */
+      .VPDocAside {
+         /* 应用毛玻璃效果 */
+         -webkit-backdrop-filter: blur(8px);
+         backdrop-filter: blur(8px);
+         background-color: var(--vp-c-bg-soft) !important;
+         border-radius: var(--vp-border-radius-large);
+         /* border-radius: 12px; */
+         border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .dark .VPDocAside {
+         border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .VPDocOutlineItem {
+         padding: 1rem;
+      }
+
+      .VPDocOutlineItem .outline-title {
+         border-left: 2px solid var(--vp-c-brand);
+         padding-left: 10px;
+      }
+}
+

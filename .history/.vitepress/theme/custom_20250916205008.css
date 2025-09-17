@@ -1,0 +1,167 @@
+/* .vitepress/theme/custom.css */
+
+/**
+ * 全局布局宽度优化，我们只在桌面端（屏幕宽度 > 960px）应用这些更改，
+ */
+@media (min-width: 960px) {
+    :root {
+     /* 1. 压缩左侧边栏 (Sidebar) 的宽度 */
+        --vp-sidebar-width: 200px;
+        /* 2. 压缩右侧“本页大纲” (Aside/Outline) 的宽度*/
+        --vp-aside-width: 108px;
+        /** * 3. (可选) 稍微增加内容区域的最大宽度
+     * 减小两侧边栏后，内容区会自动变宽， */
+        --vp-layout-max-width: 1400px;
+    }
+
+    /* 释放辅助工具页空间 */
+   .full-width-page.tools .VPDoc>.container>.aside {
+      display: none;
+   }
+
+   .full-width-page.VPDoc.has-sidebar:not(.has-aside) .VPContent {
+      /**
+   * VitePress在没有右侧栏时，会给内容区一个默认的右边距(padding-right)。
+   * 我们需要把它覆盖掉，让内容区可以一直延展到屏幕右侧。
+   */
+      padding-right: 0;
+   }
+
+   .full-width-page .content-container {
+      /**
+   * 同时，确保内容容器本身没有最大宽度限制。
+   * 并且移除我们之前可能为普通页面设置的右内边距。
+   */
+      max-width: none !important;
+      padding-right: 0 !important;
+   }
+
+   .VPDoc.has-aside .VPContent .content-container {
+      padding-left: 24px;
+      /* 将左侧内边距从默认值（如64px）减小 */
+      padding-right: 24px;
+      /* 将右侧内边距从默认值（如64px）减小 */
+      max-width: none;
+      /* 同时确保没有最大宽度限制 */
+   }
+
+   /* 子页面样式 */
+      .page-container {
+         display: flex;
+         flex-direction: row-reverse;
+         gap: 2rem;
+         align-items: flex-start;
+      }
+
+      .content-main {
+         /*
+         * 使用 flex-grow: 1 来告诉它尽可能地“生长”以填充可用空间。
+         * 使用 flex-shrink: 1 允许它在空间不足时收缩。
+         * 使用 flex-basis: 0% 或 auto 是一个好的实践，让其从0或自身内容大小开始计算。
+         * **最关键的是 width: 100%**
+         */
+         flex: 1 1 0%;
+         width: 100%;
+         /* ◀︎ 关键！明确告诉它宽度为父容器的100% */
+         min-width: 0;
+         /* 防止内容溢出时破坏布局 */
+      }
+
+      .content-aside {
+         width: 220px;
+         position: sticky;
+         top: 80px;
+      }
+
+      @media (max-width: 960px) {
+         .page-container {
+            flex-direction: column;
+         }
+
+         .content-aside {
+            width: 100%;
+            position: static;
+            margin-bottom: 2rem;
+         }
+      }
+
+      .page-nav-card {
+         background-color: var(--vp-c-bg-soft);
+         border-radius: 12px;
+         padding: 1rem 1.5rem;
+         border: 1px solid var(--vp-c-divider);
+      }
+
+      .page-nav-card h3 {
+         margin: 0 0 1rem 0;
+         padding-bottom: 0.5rem;
+         border-bottom: 1px solid var(--vp-c-divider);
+         font-size: 1.1em;
+      }
+
+      .page-nav-card ul {
+         list-style: none;
+         padding: 0;
+         margin: 0;
+      }
+
+      .page-nav-card li a {
+         display: block;
+         padding: 0.5rem 0;
+         color: var(--vp-c-text-2);
+         text-decoration: none;
+         border-left: 2px solid transparent;
+         padding-left: 1rem;
+         transition: all 0.2s ease;
+      }
+
+      .page-nav-card li a:hover {
+         color: var(--vp-c-brand);
+         background-color: var(--vp-c-brand-soft);
+         border-left-color: var(--vp-c-brand);
+      }
+
+      .section-title {
+         font-size: 1.8em;
+         padding-top: 2rem;
+         margin-top: -2rem;
+         border-bottom: 2px solid var(--vp-c-brand);
+         padding-bottom: 0.5rem;
+         margin-bottom: 2rem;
+      }
+}
+
+/*
+ * 美化右侧“本页大纲”
+ * 让顶层目录（h2）看起来像分组标题
+ */
+/* .VPDocOutline .outline-link {
+   /* 这是所有目录项的默认样式 */
+} */
+
+.VPDocOutline .root>.outline-link {
+   /*
+   * .root > .outline-link 选择了最顶层的目录项，
+   * 也就是我们的“数据一览”和“常见疑问回答”。
+   */
+   font-weight: 600;
+   /* 加粗 */
+   font-size: 1.05em;
+   /* 稍微放大 */
+   color: var(--vp-c-text-1);
+   /* 使用主要文本颜色 */
+   margin-top: 1rem;
+   /* 增加与上一个分组的间距 */
+   padding-left: 0 !important;
+   /* 取消默认的左内边距 */
+}
+
+.VPDocOutline .root>.outline-link:first-child {
+   margin-top: 0;
+   /* 第一个分组不需要上边距 */
+}
+
+/* 子目录项（h3）保持默认样式或微调 */
+.VPDocOutline .outline-child .outline-link {
+   /* 可以在这里调整子目录项的样式 */
+}

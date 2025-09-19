@@ -1,0 +1,4330 @@
+```json
+{
+  "js/autoplay.js": {},
+  "js/constants.js": {},
+  "js/init.js": {},
+  "js/savefile.js": {},
+  "js/tick.js": {},
+  "js/utils/file.js": {},
+  "js/utils/random.js": {},
+  "js/utils/array.js": {},
+  "js/utils/color.js": {},
+  "js/utils/math.js": {},
+  "js/utils/format.js": {},
+  "js/utils/date.js": {},
+  "js/utils/words.js": {},
+  "js/theme/cyan.js": {
+    "price": 1000,
+    "light": {
+      "primary": "#19D2D2",
+      "secondary": "#424242",
+      "accent": "#82FFFF"
+    },
+    "dark": {
+      "primary": "#19D2D2",
+      "secondary": "#424242",
+      "accent": "#82FFFF"
+    }
+  },
+  "js/theme/polar.js": {
+    "price": 8000,
+    "hasCustomBackground": true,
+    "light": {
+      "primary": "#267373",
+      "secondary": "#424242",
+      "accent": "#66CC66"
+    },
+    "dark": {
+      "primary": "#66CCCC",
+      "secondary": "#424242",
+      "accent": "#267326"
+    }
+  },
+  "js/theme/cherry.js": {
+    "price": 6000,
+    "hasCustomBackground": true,
+    "light": {
+      "primary": "#E963D2",
+      "secondary": "#424242",
+      "accent": "#4D331A"
+    },
+    "dark": {
+      "primary": "#EF8FDF",
+      "secondary": "#424242",
+      "accent": "#604020"
+    }
+  },
+  "js/theme/prismatic.js": {
+    "price": {
+      "_type": "expression",
+      "code": "buildNum(50, 'K')"
+    },
+    "hasCustomNavbar": true,
+    "hasCustomBackground": true,
+    "hasAnimations": true
+  },
+  "js/theme/default.js": {
+    "owned": true,
+    "light": {
+      "primary": "#1976D2",
+      "secondary": "#424242",
+      "accent": "#82B1FF",
+      "error": "#FF5252",
+      "info": "#2196F3",
+      "success": "#4CAF50",
+      "warning": "#FFC107",
+      "contrast": "#000000",
+      "_spread_0": {
+        "_type": "spread",
+        "from": "shades"
+      },
+      "_spread_1": {
+        "_type": "spread",
+        "from": "colors"
+      }
+    },
+    "dark": {
+      "primary": "#1976D2",
+      "secondary": "#424242",
+      "accent": "#82B1FF",
+      "error": "#FF5252",
+      "info": "#2196F3",
+      "success": "#4CAF50",
+      "warning": "#FFC107",
+      "contrast": "#FFFFFF",
+      "_spread_2": {
+        "_type": "spread",
+        "from": "shades"
+      },
+      "_spread_3": {
+        "_type": "spread",
+        "from": "colors"
+      }
+    }
+  },
+  "js/theme/purple.js": {
+    "price": 1000,
+    "light": {
+      "primary": "#7619D2",
+      "secondary": "#424242",
+      "accent": "#C182FF"
+    },
+    "dark": {
+      "primary": "#7619D2",
+      "secondary": "#424242",
+      "accent": "#C182FF"
+    }
+  },
+  "js/theme/factory.js": {
+    "price": 4000,
+    "hasCustomBackground": true,
+    "light": {
+      "primary": "#5F6264",
+      "secondary": "#A85817",
+      "accent": "#82B1FF"
+    },
+    "dark": {
+      "primary": "#8D9296",
+      "secondary": "#A85817",
+      "accent": "#82B1FF"
+    }
+  },
+  "js/theme/sky.js": {
+    "price": {
+      "_type": "expression",
+      "code": "buildNum(10, 'K')"
+    },
+    "hasCustomNavbar": true,
+    "hasCustomBackground": true,
+    "light": {
+      "primary": "#E89820",
+      "secondary": "#A0A0A0",
+      "accent": "#D18147"
+    },
+    "dark": {
+      "primary": "#E89820",
+      "secondary": "#A0A0A0",
+      "accent": "#D18147"
+    }
+  },
+  "js/theme/forest.js": {
+    "price": 5000,
+    "hasCustomBackground": true,
+    "light": {
+      "primary": "#29C229",
+      "secondary": "#B76715",
+      "accent": "#92EF92"
+    },
+    "dark": {
+      "primary": "#1C831C",
+      "secondary": "#72400D",
+      "accent": "#92EF92"
+    }
+  },
+  "js/theme/frozen.js": {
+    "hasCustomColors": true,
+    "hasParticles": true,
+    "particles": {
+      "icons": [
+        "mdi-snowflake",
+        "mdi-snowflake-variant"
+      ],
+      "colors": [
+        "white"
+      ],
+      "opacity": [
+        10,
+        40
+      ],
+      "size": [
+        10,
+        50
+      ],
+      "time": [
+        5,
+        30
+      ],
+      "amount": 3,
+      "rotate": true
+    },
+    "light": {
+      "primary": {
+        "_type": "expression",
+        "code": "filterColor(frozenBase, color => color.desaturate(0.6))"
+      },
+      "secondary": "#424242",
+      "accent": {
+        "_type": "expression",
+        "code": "filterColor(frozenBase, color => color.desaturate(0.7).lighten(0.3))"
+      },
+      "error": {
+        "_type": "expression",
+        "code": "filterColor(_default.light.error, frozenFilter)"
+      },
+      "info": {
+        "_type": "expression",
+        "code": "filterColor(_default.light.info, frozenFilter)"
+      },
+      "success": {
+        "_type": "expression",
+        "code": "filterColor(_default.light.success, frozenFilter)"
+      },
+      "warning": {
+        "_type": "expression",
+        "code": "filterColor(_default.light.warning, frozenFilter)"
+      },
+      "_spread_0": {
+        "_type": "spread",
+        "from": "filterColorObject(colors, frozenFilter)"
+      }
+    },
+    "dark": {
+      "primary": {
+        "_type": "expression",
+        "code": "filterColor(frozenBase, color => color.desaturate(0.6))"
+      },
+      "secondary": "#424242",
+      "accent": {
+        "_type": "expression",
+        "code": "filterColor(frozenBase, color => color.desaturate(0.7).lighten(0.3))"
+      },
+      "error": {
+        "_type": "expression",
+        "code": "filterColor(_default.dark.error, frozenFilter)"
+      },
+      "info": {
+        "_type": "expression",
+        "code": "filterColor(_default.dark.info, frozenFilter)"
+      },
+      "success": {
+        "_type": "expression",
+        "code": "filterColor(_default.dark.success, frozenFilter)"
+      },
+      "warning": {
+        "_type": "expression",
+        "code": "filterColor(_default.dark.warning, frozenFilter)"
+      },
+      "_spread_1": {
+        "_type": "spread",
+        "from": "filterColorObject(colors, frozenFilter)"
+      }
+    }
+  },
+  "js/theme/rain.js": {
+    "hasCustomNavbar": true,
+    "hasAnimations": true,
+    "hasParticles": true,
+    "particles": {
+      "icons": [
+        "mdi-water"
+      ],
+      "colors": [
+        "light-blue",
+        "blue",
+        "dark-blue",
+        "indigo"
+      ],
+      "opacity": [
+        10,
+        30
+      ],
+      "size": [
+        15,
+        25
+      ],
+      "time": [
+        2,
+        4
+      ],
+      "amount": 6,
+      "rotate": false
+    },
+    "light": {
+      "primary": "#2A53B3",
+      "secondary": "#424242",
+      "accent": "#275A39"
+    },
+    "dark": {
+      "primary": "#2A53B3",
+      "secondary": "#424242",
+      "accent": "#275A39"
+    }
+  },
+  "js/theme/shades.js": {
+    "black": "#000000",
+    "darkest-grey": "#202020",
+    "darker-grey": "#404040",
+    "dark-grey": "#606060",
+    "grey": {
+      "base": "#9e9e9e",
+      "lighten5": "#fafafa",
+      "lighten4": "#f5f5f5",
+      "lighten3": "#eeeeee",
+      "lighten2": "#e0e0e0",
+      "lighten1": "#bdbdbd",
+      "darken1": "#757575",
+      "darken2": "#616161",
+      "darken3": "#424242",
+      "darken4": "#212121"
+    },
+    "lightest-grey": "#E0E0E0",
+    "lighter-grey": "#C0C0C0",
+    "light-grey": "#A0A0A0",
+    "white": "#FFFFFF"
+  },
+  "js/theme/colors.js": {
+    "red": {
+      "base": "#F44336",
+      "lighten5": "#FFEBEE",
+      "lighten4": "#FFCDD2",
+      "lighten3": "#EF9A9A",
+      "lighten2": "#E57373",
+      "lighten1": "#EF5350",
+      "darken1": "#E53935",
+      "darken2": "#D32F2F",
+      "darken3": "#C62828",
+      "darken4": "#B71C1C"
+    },
+    "pink": {
+      "base": "#e91e63",
+      "lighten5": "#fce4ec",
+      "lighten4": "#f8bbd0",
+      "lighten3": "#f48fb1",
+      "lighten2": "#f06292",
+      "lighten1": "#ec407a",
+      "darken1": "#d81b60",
+      "darken2": "#c2185b",
+      "darken3": "#ad1457",
+      "darken4": "#880e4f"
+    },
+    "purple": {
+      "base": "#9c27b0",
+      "lighten5": "#f3e5f5",
+      "lighten4": "#e1bee7",
+      "lighten3": "#ce93d8",
+      "lighten2": "#ba68c8",
+      "lighten1": "#ab47bc",
+      "darken1": "#8e24aa",
+      "darken2": "#7b1fa2",
+      "darken3": "#6a1b9a",
+      "darken4": "#4a148c"
+    },
+    "deep-purple": {
+      "base": "#673ab7",
+      "lighten5": "#ede7f6",
+      "lighten4": "#d1c4e9",
+      "lighten3": "#b39ddb",
+      "lighten2": "#9575cd",
+      "lighten1": "#7e57c2",
+      "darken1": "#5e35b1",
+      "darken2": "#512da8",
+      "darken3": "#4527a0",
+      "darken4": "#311b92"
+    },
+    "indigo": {
+      "base": "#3f51b5",
+      "lighten5": "#e8eaf6",
+      "lighten4": "#c5cae9",
+      "lighten3": "#9fa8da",
+      "lighten2": "#7986cb",
+      "lighten1": "#5c6bc0",
+      "darken1": "#3949ab",
+      "darken2": "#303f9f",
+      "darken3": "#283593",
+      "darken4": "#1a237e"
+    },
+    "blue": {
+      "base": "#2196F3",
+      "lighten5": "#E3F2FD",
+      "lighten4": "#BBDEFB",
+      "lighten3": "#90CAF9",
+      "lighten2": "#64B5F6",
+      "lighten1": "#42A5F5",
+      "darken1": "#1E88E5",
+      "darken2": "#1976D2",
+      "darken3": "#1565C0",
+      "darken4": "#0D47A1"
+    },
+    "light-blue": {
+      "base": "#03a9f4",
+      "lighten5": "#e1f5fe",
+      "lighten4": "#b3e5fc",
+      "lighten3": "#81d4fa",
+      "lighten2": "#4fc3f7",
+      "lighten1": "#29b6f6",
+      "darken1": "#039be5",
+      "darken2": "#0288d1",
+      "darken3": "#0277bd",
+      "darken4": "#01579b"
+    },
+    "cyan": {
+      "base": "#00bcd4",
+      "lighten5": "#e0f7fa",
+      "lighten4": "#b2ebf2",
+      "lighten3": "#80deea",
+      "lighten2": "#4dd0e1",
+      "lighten1": "#26c6da",
+      "darken1": "#00acc1",
+      "darken2": "#0097a7",
+      "darken3": "#00838f",
+      "darken4": "#006064"
+    },
+    "teal": {
+      "base": "#009688",
+      "lighten5": "#e0f2f1",
+      "lighten4": "#b2dfdb",
+      "lighten3": "#80cbc4",
+      "lighten2": "#4db6ac",
+      "lighten1": "#26a69a",
+      "darken1": "#00897b",
+      "darken2": "#00796b",
+      "darken3": "#00695c",
+      "darken4": "#004d40"
+    },
+    "green": {
+      "base": "#4CAF50",
+      "lighten5": "#E8F5E9",
+      "lighten4": "#C8E6C9",
+      "lighten3": "#A5D6A7",
+      "lighten2": "#81C784",
+      "lighten1": "#66BB6A",
+      "darken1": "#43A047",
+      "darken2": "#388E3C",
+      "darken3": "#2E7D32",
+      "darken4": "#1B5E20"
+    },
+    "light-green": {
+      "base": "#8bc34a",
+      "lighten5": "#f1f8e9",
+      "lighten4": "#dcedc8",
+      "lighten3": "#c5e1a5",
+      "lighten2": "#aed581",
+      "lighten1": "#9ccc65",
+      "darken1": "#7cb342",
+      "darken2": "#689f38",
+      "darken3": "#558b2f",
+      "darken4": "#33691e"
+    },
+    "lime": {
+      "base": "#cddc39",
+      "lighten5": "#f9fbe7",
+      "lighten4": "#f0f4c3",
+      "lighten3": "#e6ee9c",
+      "lighten2": "#dce775",
+      "lighten1": "#d4e157",
+      "darken1": "#c0ca33",
+      "darken2": "#afb42b",
+      "darken3": "#9e9d24",
+      "darken4": "#827717"
+    },
+    "yellow": {
+      "base": "#ffeb3b",
+      "lighten5": "#fffde7",
+      "lighten4": "#fff9c4",
+      "lighten3": "#fff59d",
+      "lighten2": "#fff176",
+      "lighten1": "#ffee58",
+      "darken1": "#fdd835",
+      "darken2": "#fbc02d",
+      "darken3": "#f9a825",
+      "darken4": "#f57f17"
+    },
+    "amber": {
+      "base": "#ffc107",
+      "lighten5": "#fff8e1",
+      "lighten4": "#ffecb3",
+      "lighten3": "#ffe082",
+      "lighten2": "#ffd54f",
+      "lighten1": "#ffca28",
+      "darken1": "#ffb300",
+      "darken2": "#ffa000",
+      "darken3": "#ff8f00",
+      "darken4": "#ff6f00"
+    },
+    "orange": {
+      "base": "#ff9800",
+      "lighten5": "#fff3e0",
+      "lighten4": "#ffe0b2",
+      "lighten3": "#ffcc80",
+      "lighten2": "#ffb74d",
+      "lighten1": "#ffa726",
+      "darken1": "#fb8c00",
+      "darken2": "#f57c00",
+      "darken3": "#ef6c00",
+      "darken4": "#e65100"
+    },
+    "deep-orange": {
+      "base": "#ff5722",
+      "lighten5": "#fbe9e7",
+      "lighten4": "#ffccbc",
+      "lighten3": "#ffab91",
+      "lighten2": "#ff8a65",
+      "lighten1": "#ff7043",
+      "darken1": "#f4511e",
+      "darken2": "#e64a19",
+      "darken3": "#d84315",
+      "darken4": "#bf360c"
+    },
+    "brown": {
+      "base": "#795548",
+      "lighten5": "#efebe9",
+      "lighten4": "#d7ccc8",
+      "lighten3": "#bcaaa4",
+      "lighten2": "#a1887f",
+      "lighten1": "#8d6e63",
+      "darken1": "#6d4c41",
+      "darken2": "#5d4037",
+      "darken3": "#4e342e",
+      "darken4": "#3e2723"
+    },
+    "blue-grey": {
+      "base": "#607d8b",
+      "lighten5": "#eceff1",
+      "lighten4": "#cfd8dc",
+      "lighten3": "#b0bec5",
+      "lighten2": "#90a4ae",
+      "lighten1": "#78909c",
+      "darken1": "#546e7a",
+      "darken2": "#455a64",
+      "darken3": "#37474f",
+      "darken4": "#263238"
+    },
+    "babypink": {
+      "base": "#E325B5",
+      "lighten5": "#FDE8F8",
+      "lighten4": "#F8C4EB",
+      "lighten3": "#F49FDF",
+      "lighten2": "#EF71D0",
+      "lighten1": "#EB4CC5",
+      "darken1": "#D219A5",
+      "darken2": "#B3148D",
+      "darken3": "#8E106F",
+      "darken4": "#650B4F"
+    },
+    "pale-red": {
+      "_type": "expression",
+      "code": "filterColorObject(obj[c], color => color.desaturate(0.5))"
+    },
+    "pale-pink": {
+      "_type": "expression",
+      "code": "filterColorObject(obj[c], color => color.desaturate(0.5))"
+    },
+    "pale-purple": {
+      "_type": "expression",
+      "code": "filterColorObject(obj[c], color => color.desaturate(0.5))"
+    },
+    "pale-blue": {
+      "_type": "expression",
+      "code": "filterColorObject(obj[c], color => color.desaturate(0.5))"
+    },
+    "pale-light-blue": {
+      "_type": "expression",
+      "code": "filterColorObject(obj[c], color => color.desaturate(0.5))"
+    },
+    "pale-cyan": {
+      "_type": "expression",
+      "code": "filterColorObject(obj[c], color => color.desaturate(0.5))"
+    },
+    "pale-green": {
+      "_type": "expression",
+      "code": "filterColorObject(obj[c], color => color.desaturate(0.5))"
+    },
+    "pale-light-green": {
+      "_type": "expression",
+      "code": "filterColorObject(obj[c], color => color.desaturate(0.5))"
+    },
+    "pale-yellow": {
+      "_type": "expression",
+      "code": "filterColorObject(obj[c], color => color.desaturate(0.5))"
+    },
+    "pale-orange": {
+      "_type": "expression",
+      "code": "filterColorObject(obj[c], color => color.desaturate(0.5))"
+    },
+    "orange-red": {
+      "_type": "expression",
+      "code": "mergeColorObject(obj.orange, obj.red)"
+    },
+    "red-pink": {
+      "_type": "expression",
+      "code": "mergeColorObject(obj.red, obj.pink)"
+    },
+    "pink-purple": {
+      "_type": "expression",
+      "code": "mergeColorObject(obj.pink, obj.purple)"
+    },
+    "dark-blue": {
+      "_type": "expression",
+      "code": "mergeColorObject(obj.blue, obj.indigo)"
+    },
+    "aqua": {
+      "_type": "expression",
+      "code": "mergeColorObject(obj.green, obj.teal, 0.75)"
+    },
+    "wooden": {
+      "_type": "expression",
+      "code": "filterColorObject(mergeColorObject(obj.brown, obj['orange-red']), color => color.blacken(0.8))"
+    },
+    "cherry": {
+      "_type": "expression",
+      "code": "filterColorObject(mergeColorObject(obj.wooden, obj.red), color => color.saturate(0.25).blacken(0.25))"
+    },
+    "skyblue": {
+      "_type": "expression",
+      "code": "filterColorObject(obj['blue-grey'], color => color.saturate(0.8))"
+    },
+    "beige": {
+      "_type": "expression",
+      "code": "filterColorObject(obj['pale-orange'], color => color.desaturate(0.2))"
+    }
+  },
+  "js/theme/red.js": {
+    "price": 1000,
+    "light": {
+      "primary": "#D21919",
+      "secondary": "#424242",
+      "accent": "#FF8282"
+    },
+    "dark": {
+      "primary": "#D21919",
+      "secondary": "#424242",
+      "accent": "#FF8282"
+    }
+  },
+  "js/theme/candlelight.js": {
+    "hasCustomBackground": true
+  },
+  "js/theme/brown.js": {
+    "price": 1000,
+    "light": {
+      "primary": "#72400D",
+      "secondary": "#424242",
+      "accent": "#D2802D"
+    },
+    "dark": {
+      "primary": "#72400D",
+      "secondary": "#424242",
+      "accent": "#D2802D"
+    }
+  },
+  "js/theme/pink.js": {
+    "price": 1000,
+    "light": {
+      "primary": "#D219D2",
+      "secondary": "#424242",
+      "accent": "#FF82FF"
+    },
+    "dark": {
+      "primary": "#D219D2",
+      "secondary": "#424242",
+      "accent": "#FF82FF"
+    }
+  },
+  "js/theme/autumnForest.js": {
+    "hasParticles": true,
+    "particles": {
+      "icons": [
+        "mdi-leaf",
+        "mdi-leaf-maple"
+      ],
+      "colors": [
+        "light-green",
+        "yellow",
+        "amber",
+        "orange",
+        "orange-red",
+        "brown",
+        "cherry"
+      ],
+      "opacity": [
+        20,
+        70
+      ],
+      "size": [
+        20,
+        80
+      ],
+      "time": [
+        4,
+        12
+      ],
+      "amount": 4,
+      "rotate": true
+    },
+    "light": {
+      "primary": "#74401B",
+      "secondary": "#424242",
+      "accent": "#503D30"
+    },
+    "dark": {
+      "primary": "#74401B",
+      "secondary": "#424242",
+      "accent": "#503D30"
+    }
+  },
+  "js/theme/colorful.js": {
+    "hasCustomColors": true,
+    "light": {
+      "primary": "#D94712",
+      "secondary": "#424242",
+      "accent": "#FFA182",
+      "error": {
+        "_type": "expression",
+        "code": "filterColor(_default.light.error, colorFilter)"
+      },
+      "info": {
+        "_type": "expression",
+        "code": "filterColor(_default.light.info, colorFilter)"
+      },
+      "success": {
+        "_type": "expression",
+        "code": "filterColor(_default.light.success, colorFilter)"
+      },
+      "warning": {
+        "_type": "expression",
+        "code": "filterColor(_default.light.warning, colorFilter)"
+      },
+      "_spread_0": {
+        "_type": "spread",
+        "from": "filterColorObject(colors, colorFilter)"
+      }
+    },
+    "dark": {
+      "primary": "#D94712",
+      "secondary": "#424242",
+      "accent": "#FFA182",
+      "error": {
+        "_type": "expression",
+        "code": "filterColor(_default.dark.error, colorFilter)"
+      },
+      "info": {
+        "_type": "expression",
+        "code": "filterColor(_default.dark.info, colorFilter)"
+      },
+      "success": {
+        "_type": "expression",
+        "code": "filterColor(_default.dark.success, colorFilter)"
+      },
+      "warning": {
+        "_type": "expression",
+        "code": "filterColor(_default.dark.warning, colorFilter)"
+      },
+      "_spread_1": {
+        "_type": "spread",
+        "from": "filterColorObject(colors, colorFilter)"
+      }
+    }
+  },
+  "js/theme/themes.js": {
+    "default": {
+      "_type": "expression",
+      "code": "defaultTheme"
+    },
+    "cyan": {
+      "_type": "expression",
+      "code": "cyan"
+    },
+    "green": {
+      "_type": "expression",
+      "code": "green"
+    },
+    "yellow": {
+      "_type": "expression",
+      "code": "yellow"
+    },
+    "orange": {
+      "_type": "expression",
+      "code": "orange"
+    },
+    "brown": {
+      "_type": "expression",
+      "code": "brown"
+    },
+    "red": {
+      "_type": "expression",
+      "code": "red"
+    },
+    "pink": {
+      "_type": "expression",
+      "code": "pink"
+    },
+    "purple": {
+      "_type": "expression",
+      "code": "purple"
+    },
+    "grey": {
+      "_type": "expression",
+      "code": "grey"
+    },
+    "sepia": {
+      "_type": "expression",
+      "code": "sepia"
+    },
+    "factory": {
+      "_type": "expression",
+      "code": "factory"
+    },
+    "forest": {
+      "_type": "expression",
+      "code": "forest"
+    },
+    "cherry": {
+      "_type": "expression",
+      "code": "cherry"
+    },
+    "polar": {
+      "_type": "expression",
+      "code": "polar"
+    },
+    "sky": {
+      "_type": "expression",
+      "code": "sky"
+    },
+    "prismatic": {
+      "_type": "expression",
+      "code": "prismatic"
+    },
+    "candlelight": {
+      "_type": "expression",
+      "code": "candlelight"
+    },
+    "colorful": {
+      "_type": "expression",
+      "code": "colorful"
+    },
+    "rain": {
+      "_type": "expression",
+      "code": "rain"
+    },
+    "waves": {
+      "_type": "expression",
+      "code": "waves"
+    },
+    "autumnForest": {
+      "_type": "expression",
+      "code": "autumnForest"
+    },
+    "frozen": {
+      "_type": "expression",
+      "code": "frozen"
+    }
+  },
+  "js/theme/sepia.js": {
+    "price": 3000,
+    "hasCustomColors": true,
+    "light": {
+      "primary": {
+        "_type": "expression",
+        "code": "filterColor(sepiaBase, color => color.desaturate(0.4))"
+      },
+      "secondary": "#424242",
+      "accent": {
+        "_type": "expression",
+        "code": "filterColor(sepiaBase, color => color.desaturate(0.7).lighten(0.5))"
+      },
+      "error": {
+        "_type": "expression",
+        "code": "filterColor(_default.light.error, sepiaFilter)"
+      },
+      "info": {
+        "_type": "expression",
+        "code": "filterColor(_default.light.info, sepiaFilter)"
+      },
+      "success": {
+        "_type": "expression",
+        "code": "filterColor(_default.light.success, sepiaFilter)"
+      },
+      "warning": {
+        "_type": "expression",
+        "code": "filterColor(_default.light.warning, sepiaFilter)"
+      },
+      "_spread_0": {
+        "_type": "spread",
+        "from": "filterColorObject(colors, sepiaFilter)"
+      }
+    },
+    "dark": {
+      "primary": {
+        "_type": "expression",
+        "code": "filterColor(sepiaBase, color => color.desaturate(0.4))"
+      },
+      "secondary": "#424242",
+      "accent": {
+        "_type": "expression",
+        "code": "filterColor(sepiaBase, color => color.desaturate(0.7).lighten(0.5))"
+      },
+      "error": {
+        "_type": "expression",
+        "code": "filterColor(_default.dark.error, sepiaFilter)"
+      },
+      "info": {
+        "_type": "expression",
+        "code": "filterColor(_default.dark.info, sepiaFilter)"
+      },
+      "success": {
+        "_type": "expression",
+        "code": "filterColor(_default.dark.success, sepiaFilter)"
+      },
+      "warning": {
+        "_type": "expression",
+        "code": "filterColor(_default.dark.warning, sepiaFilter)"
+      },
+      "_spread_1": {
+        "_type": "spread",
+        "from": "filterColorObject(colors, sepiaFilter)"
+      }
+    }
+  },
+  "js/theme/yellow.js": {
+    "price": 1000,
+    "light": {
+      "primary": "#D2D219",
+      "secondary": "#424242",
+      "accent": "#FFFF82"
+    },
+    "dark": {
+      "primary": "#D2D219",
+      "secondary": "#424242",
+      "accent": "#FFFF82"
+    }
+  },
+  "js/theme/grey.js": {
+    "price": 1000,
+    "light": {
+      "primary": "#787878",
+      "secondary": "#424242",
+      "accent": "#C0C0C0"
+    },
+    "dark": {
+      "primary": "#787878",
+      "secondary": "#424242",
+      "accent": "#C0C0C0"
+    }
+  },
+  "js/theme/green.js": {
+    "price": 1000,
+    "light": {
+      "primary": "#29C229",
+      "secondary": "#424242",
+      "accent": "#92EF92"
+    },
+    "dark": {
+      "primary": "#29C229",
+      "secondary": "#424242",
+      "accent": "#92EF92"
+    }
+  },
+  "js/theme/orange.js": {
+    "price": 1000,
+    "light": {
+      "primary": "#DF760C",
+      "secondary": "#424242",
+      "accent": "#FFC182"
+    },
+    "dark": {
+      "primary": "#DF760C",
+      "secondary": "#424242",
+      "accent": "#FFC182"
+    }
+  },
+  "js/theme/waves.js": {
+    "hasCustomBackground": true
+  },
+  "js/modules/meta.js": {
+    "name": "meta",
+    "tickspeed": 5,
+    "unlockNeeded": null,
+    "tick": {
+      "_type": "formula",
+      "code": "tick() {\n        for (const [key, elem] of Object.entries(store.state.system.tutorial)) {\n            if (!elem.active && !elem.completed && (elem.screen === null || elem.screen === store.state.system.screen) && elem.enableCondition()) {\n                if (elem.currentDelay >= elem.delay) {\n                    store.commit('system/updateTutorialKey', {name: key, key: 'active', value: true});\n                } else {\n                    store.commit('system/updateTutorialKey', {name: key, key: 'currentDelay', value: elem.currentDelay + 1});\n                }\n            }\n        }\n    }"
+    },
+    "unlock": [
+      "debugFeature"
+    ],
+    "stat": {
+      "longestOfflineTime": {
+        "display": "time"
+      }
+    },
+    "achievement": {
+      "totalLevel": {
+        "value": {
+          "_type": "formula",
+          "code": "() => store.getters['achievement/totalLevel'] - store.state.achievement.meta_totalLevel.level"
+        },
+        "milestones": {
+          "_type": "formula",
+          "code": "lvl => getSequence(5, lvl + 1) * 10"
+        },
+        "relic": {
+          "0": "excavator",
+          "1": "redCard",
+          "2": "briefcase",
+          "3": "strangePlant",
+          "4": "beneficialVirus"
+        }
+      },
+      "highestGrade": {
+        "value": {
+          "_type": "formula",
+          "code": "() => store.state.stat.school_highestGrade.total"
+        },
+        "secret": true,
+        "display": "grade",
+        "cap": 5,
+        "milestones": {
+          "_type": "formula",
+          "code": "lvl => (lvl + 1) * 3 - 2"
+        }
+      },
+      "longestOfflineTime": {
+        "value": {
+          "_type": "formula",
+          "code": "() => store.state.stat.meta_longestOfflineTime.total"
+        },
+        "secret": true,
+        "display": "time",
+        "cap": 3,
+        "milestones": {
+          "_type": "formula",
+          "code": "lvl => [SECONDS_PER_DAY * 7, SECONDS_PER_DAY * 30, SECONDS_PER_DAY * 365][lvl]"
+        }
+      }
+    },
+    "note": {
+      "_type": "expression",
+      "code": "[...buildArray(6).map(() => 'g'), ...buildArray(2).map(() => 'system')]"
+    },
+    "init": {
+      "_type": "formula",
+      "code": "init() {\n        for (const [key, elem] of Object.entries(themes)) {\n            store.commit('system/initTheme', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries({\n            '1.5.8': v1_5_8,\n            '1.5.7': v1_5_7,\n            '1.5.6': v1_5_6,\n            '1.5.5': v1_5_5,\n            '1.5.4': v1_5_4,\n            '1.5.3': v1_5_3,\n            '1.5.2': v1_5_2,\n            '1.5.1': v1_5_1,\n            '1.5.0': v1_5_0,\n            '1.4.2': v1_4_2,\n            '1.4.1': v1_4_1,\n            '1.4.0': v1_4_0,\n            '1.3.6': v1_3_6,\n            '1.3.5': v1_3_5,\n            '1.3.4': v1_3_4,\n            '1.3.3': v1_3_3,\n            '1.3.2': v1_3_2,\n            '1.3.1': v1_3_1,\n            '1.3.0': v1_3_0,\n            '1.2.0': v1_2_0,\n            '1.1.2': v1_1_2,\n            '1.1.1': v1_1_1,\n            '1.1.0': v1_1_0,\n            '1.0.1': v1_0_1,\n            '1.0.0': v1_0_0,\n        })) {\n            store.commit('system/initPatchnote', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries({\n            miningDepth: {\n                screen: 'mining',\n                delay: 3,\n                cssDesktop: 'top: 135px; left: calc(12.5% - 2px);',\n                cssTablet: 'top: 135px; left: calc(50% - 2px);',\n                cssMobile: 'top: 127px; left: calc(50% - 2px);'\n            },\n            miningUpgrade: {\n                screen: 'mining',\n                enableCondition: () => store.state.stat.mining_maxDepth0.total >= 5,\n                delay: 0,\n                cssDesktop: 'top: 296px; right: 12px;',\n                cssTablet: 'top: 92px; left: calc(75% - 36px);',\n                cssMobile: 'top: 84px; left: calc(83.3333% - 36px);'\n            },\n            viewFeature: {\n                enableCondition: () => store.state.unlock.gemFeature.see,\n                delay: 5,\n                cssDesktop: 'top: 30px; left: 100px; rotate: -30deg;',\n                cssTablet: 'top: 30px; left: 100px; rotate: -30deg;',\n                cssMobile: 'top: 26px; left: 12px; rotate: -30deg;'\n            },\n            villageJob: {\n                screen: 'village',\n                delay: 3,\n                cssDesktop: 'top: 208px; left: calc(50% - 107px);',\n                cssTablet: 'top: 208px; right: 107px;',\n                cssMobile: 'top: 84px; left: calc(37.5% - 36px);'\n            }\n        })) {\n            store.commit('system/initTutorial', {name: key, ...elem});\n        }\n    }"
+    }
+  },
+  "js/modules/card.js": {
+    "name": "card",
+    "unlockNeeded": "cardFeature",
+    "unlock": [
+      "cardFeature",
+      "cardShiny"
+    ],
+    "mult": {
+      "cardShinyChance": {
+        "display": "percent",
+        "baseValue": 0.1
+      }
+    },
+    "currency": {
+      "shinyDust": {
+        "color": "pale-light-blue",
+        "icon": "mdi-shimmer"
+      }
+    },
+    "note": {
+      "_type": "expression",
+      "code": "buildArray(2).map(() => 'g')"
+    },
+    "init": {
+      "_type": "formula",
+      "code": "init() {\n        for (const [name, feature] of Object.entries({\n            mining: miningCard,\n            village: villageCard,\n            horde: hordeCard,\n            farm: farmCard,\n            gallery: galleryCard,\n            gem: gemCard,\n            event: eventCard,\n        })) {\n            if (feature.feature) {\n                store.dispatch('card/initFeature', {name, ...feature.feature});\n            }\n\n            for (const [key, elem] of Object.entries(feature.collection)) {\n                store.commit('card/initCollection', {name: key, ...elem});\n            }\n\n            for (const [key, elem] of Object.entries(feature.pack)) {\n                store.commit('card/initPack', {name: key, feature: name, ...elem});\n            }\n\n            if (feature.card) {\n                feature.card.forEach(elem => {\n                    store.commit('card/initCard', {feature: name, ...elem});\n                });\n            }\n        }\n    }"
+    },
+    "saveGame": {
+      "_type": "formula",
+      "code": "saveGame() {\n        let obj = {\n            card: {},\n            feature: {}\n        };\n\n        for (const [key, elem] of Object.entries(store.state.card.card)) {\n            if (elem.amount > 0) {\n                obj.card[key] = elem.amount;\n            }\n            if (elem.foundShiny) {\n                if (obj.shiny === undefined) {\n                    obj.shiny = [];\n                }\n                obj.shiny.push(key);\n            }\n        }\n        for (const [key, elem] of Object.entries(store.state.card.feature)) {\n            if (elem.cardSelected.length > 0 || elem.cardEquipped.length > 0) {\n                obj.feature[key] = {cardSelected: elem.cardSelected, cardEquipped: elem.cardEquipped};\n            }\n        }\n\n        return obj;\n    }"
+    },
+    "loadGame": {
+      "_type": "formula",
+      "code": "loadGame(data) {\n        if (data.card) {\n            for (const [key, elem] of Object.entries(data.card)) {\n                if (store.state.card.card[key]) {\n                    store.commit('card/updateKey', {type: 'card', name: key, key: 'amount', value: elem});\n                }\n            }\n        }\n        if (data.feature) {\n            for (const [key, elem] of Object.entries(data.feature)) {\n                if (store.state.card.feature[key]) {\n                    store.commit('card/updateKey', {type: 'feature', name: key, key: 'cardSelected', value: elem.cardSelected});\n                    store.commit('card/updateKey', {type: 'feature', name: key, key: 'cardEquipped', value: elem.cardEquipped});\n                }\n            }\n        }\n        if (data.shiny) {\n            data.shiny.forEach(elem => {\n                store.commit('card/updateKey', {type: 'card', name: elem, key: 'foundShiny', value: true});\n            });\n        }\n        store.dispatch('card/calculateCaches');\n    }"
+    }
+  },
+  "js/modules/treasure.js": {
+    "name": "treasure",
+    "unlockNeeded": "treasureFeature",
+    "unlock": [
+      "treasureFeature",
+      "treasureSpecialEffect",
+      "treasureDual"
+    ],
+    "mult": {
+      "treasureSlots": {
+        "round": true,
+        "baseValue": 10
+      }
+    },
+    "currency": {
+      "fragment": {
+        "color": "amber",
+        "icon": "mdi-shimmer",
+        "gainMult": {}
+      }
+    },
+    "upgrade": {
+      "_type": "expression",
+      "code": "upgradePremium"
+    },
+    "rng": {
+      "_type": "expression",
+      "code": "treasureRng"
+    },
+    "note": {
+      "_type": "expression",
+      "code": "buildArray(3).map(() => 'g')"
+    },
+    "init": {
+      "_type": "formula",
+      "code": "init() {\n        for (const [key, elem] of Object.entries(effect)) {\n            store.commit('treasure/initEffect', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(treasureTypes)) {\n            store.commit('treasure/initType', {name: key, ...elem});\n        }\n    }"
+    },
+    "saveGame": {
+      "_type": "formula",
+      "code": "saveGame() {\n        return {\n            items: store.state.treasure.items.map(elem => elem ? filterItem(elem) : null),\n            newItem: store.state.treasure.newItem ? filterItem(store.state.treasure.newItem) : null\n        };\n    }"
+    },
+    "loadGame": {
+      "_type": "formula",
+      "code": "loadGame(data) {\n        if (data.items) {\n            store.commit('treasure/updateKey', {key: 'items', value: data.items.map(elem => elem ? {\n                ...filterItem(elem),\n                valueCache: elem.effect.map(el => store.state.treasure.effectToFeature[el] ? el : fallbackEffect).map((el, i) => store.getters['treasure/effectValue'](\n                    store.state.treasure.effect[store.state.treasure.effectToFeature[el]][el].value * store.state.treasure.type[elem.type].slots[i].power,\n                    elem.tier,\n                    elem.level,\n                    elem.type\n                ))\n            } : null)});\n        }\n        if (data.newItem) {\n            store.commit('treasure/updateKey', {key: 'newItem', value: {\n                ...filterItem(data.newItem),\n                valueCache: data.newItem.effect.map(el => store.state.treasure.effectToFeature[el] ? el : fallbackEffect).map((el, i) => store.getters['treasure/effectValue'](\n                    store.state.treasure.effect[store.state.treasure.effectToFeature[el]][el].value * store.state.treasure.type[data.newItem.type].slots[i].power,\n                    data.newItem.tier,\n                    data.newItem.level,\n                    data.newItem.type\n                ))\n            }});\n        }\n        store.dispatch('treasure/updateEffectCache');\n    }"
+    }
+  },
+  "js/modules/general.js": {
+    "name": "general",
+    "tickspeed": 1,
+    "unlockNeeded": "generalFeature",
+    "tick": {
+      "_type": "formula",
+      "code": "tick() {\n        for (const [gkey, general] of Object.entries(store.state.general)) {\n            if (general.unlock === null || store.state.unlock[general.unlock].see) {\n                for (const [qkey, quest] of Object.entries(general.quests)) {\n                    if (quest.unlock === null || store.state.unlock[quest.unlock].see) {\n                        let complete = true;\n                        while (quest.stage < quest.stages.length && complete) {\n                            const tasks = quest.stages[quest.stage].tasks;\n                            tasks.forEach(task => {\n                                let current = 0;\n                                switch (task.type) {\n                                    case 'stat': {\n                                        current = store.state.stat[task.name][task.subtype === 'current' ? 'value' : 'total'];\n                                        break;\n                                    }\n                                    case 'unlock': {\n                                        current = store.state.unlock[task.name].see;\n                                        break;\n                                    }\n                                    case 'upgrade': {\n                                        current = store.state.upgrade.item[task.name][task.subtype === 'current' ? 'level' : 'highestLevel'];\n                                        break;\n                                    }\n                                    case 'cropLevel': {\n                                        current = store.state.farm.crop[task.name][task.subtype === 'current' ? 'level' : 'levelMax'];\n                                        break;\n                                    }\n                                    case 'equipmentMastery': {\n                                        current = store.state.horde.items[task.name].masteryLevel;\n                                        break;\n                                    }\n                                }\n\n                                if (\n                                    task.operator === undefined && !current ||\n                                    task.operator === '>=' && current < task.value ||\n                                    task.operator === '>' && current <= task.value ||\n                                    task.operator === '<=' && current > task.value ||\n                                    task.operator === '<' && current >= task.value ||\n                                    task.operator === '==' && current !== task.value\n                                ) {\n                                    complete = false;\n                                }\n                            });\n                            if (complete) {\n                                store.dispatch('general/completeQuest', {general: gkey, quest: qkey});\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    }"
+    },
+    "unlock": [
+      "generalFeature",
+      "generalOrladeeSubfeature",
+      "generalOppenschroeSubfeature",
+      "generalBelluxSubfeature",
+      "generalOnocluaSubfeature",
+      "generalOmnisolixSubfeature"
+    ],
+    "note": [
+      "g",
+      {
+        "_type": "spread",
+        "from": "buildArray(31).map(() => 'grobodal')"
+      },
+      {
+        "_type": "spread",
+        "from": "buildArray(9).map(() => 'orladee')"
+      }
+    ],
+    "relic": {
+      "torch": {
+        "icon": "mdi-torch",
+        "feature": [
+          "general",
+          "mining",
+          "village"
+        ],
+        "color": "orange",
+        "effect": [
+          {
+            "name": "miningCardCap",
+            "type": "base",
+            "value": 1
+          },
+          {
+            "name": "villageCardCap",
+            "type": "base",
+            "value": 1
+          }
+        ]
+      },
+      "purpleHeart": {
+        "icon": "mdi-heart",
+        "feature": [
+          "general",
+          "horde"
+        ],
+        "color": "purple",
+        "effect": [
+          {
+            "name": "hordeHealth",
+            "type": "mult",
+            "value": 1.5
+          },
+          {
+            "name": "currencyHordeSoulCorruptedGain",
+            "type": "mult",
+            "value": 1.2
+          }
+        ]
+      },
+      "rottenLeaf": {
+        "icon": "mdi-leaf",
+        "feature": [
+          "general",
+          "farm"
+        ],
+        "color": "brown",
+        "effect": [
+          {
+            "name": "farmCropGain",
+            "type": "mult",
+            "value": 1.75
+          },
+          {
+            "name": "farmExperience",
+            "type": "mult",
+            "value": 1.2
+          },
+          {
+            "name": "farmOvergrow",
+            "type": "base",
+            "value": 0.1
+          }
+        ]
+      },
+      "stonepiercer": {
+        "icon": "mdi-screwdriver",
+        "feature": [
+          "general",
+          "mining"
+        ],
+        "color": "cherry",
+        "effect": [
+          {
+            "name": "miningDamage",
+            "type": "mult",
+            "value": 2.25
+          }
+        ]
+      },
+      "consolationPrize": {
+        "icon": "mdi-seal-variant",
+        "feature": [
+          "general",
+          "village",
+          "horde",
+          "farm"
+        ],
+        "color": "lighter-grey",
+        "effect": [
+          {
+            "name": "villageResourceGain",
+            "type": "mult",
+            "value": 1.4
+          },
+          {
+            "name": "hordeItemMasteryGain",
+            "type": "mult",
+            "value": 1.4
+          },
+          {
+            "name": "farmExperience",
+            "type": "mult",
+            "value": 1.4
+          }
+        ]
+      },
+      "prettyLamp": {
+        "icon": "mdi-vanity-light",
+        "feature": [
+          "general",
+          "gallery"
+        ],
+        "color": "light-blue",
+        "effect": [
+          {
+            "name": "galleryInspirationStart",
+            "type": "base",
+            "value": 3
+          },
+          {
+            "name": "thinkHarder",
+            "type": "galleryIdea",
+            "value": true
+          }
+        ]
+      },
+      "chessboard": {
+        "icon": "mdi-checkerboard",
+        "feature": [
+          "general",
+          "horde"
+        ],
+        "color": "grey",
+        "effect": [
+          {
+            "name": "hordeChessItems",
+            "type": "unlock",
+            "value": true
+          }
+        ]
+      },
+      "iridiscentFlower": {
+        "icon": "mdi-flower-pollen",
+        "feature": [
+          "general",
+          "cryolab"
+        ],
+        "color": "pink",
+        "effect": [
+          {
+            "name": "cryolabMaxFeatures",
+            "type": "base",
+            "value": 1
+          }
+        ]
+      }
+    },
+    "init": {
+      "_type": "formula",
+      "code": "init() {\n        for (const [key, elem] of Object.entries({\n            grobodal,\n            orladee,\n            oppenschroe: {unlock: 'generalOppenschroeSubfeature', quests: {}},\n            bellux: {unlock: 'generalBelluxSubfeature', quests: {}},\n            onoclua: {unlock: 'generalOnocluaSubfeature', quests: {}},\n            omnisolix: {unlock: 'generalOmnisolixSubfeature', quests: {}}\n        })) {\n            store.commit('general/init', {name: key, ...elem});\n        }\n    }"
+    },
+    "saveGame": {
+      "_type": "formula",
+      "code": "saveGame() {\n        let obj = {};\n        for (const [gkey, general] of Object.entries(store.state.general)) {\n            if (general.unlock === null || store.state.unlock[general.unlock].see) {\n                obj[gkey] = {};\n                for (const [qkey, quest] of Object.entries(general.quests)) {\n                    if (quest.stage > 0) {\n                        obj[gkey][qkey] = quest.stage;\n                    }\n                }\n            }\n        }\n        return obj;\n    }"
+    },
+    "loadGame": {
+      "_type": "formula",
+      "code": "loadGame(data) {\n        if (data !== undefined) {\n            for (const [gkey, general] of Object.entries(data)) {\n                for (const [qkey, questStage] of Object.entries(general)) {\n                    store.commit('general/updateQuestKey', {general: gkey, quest: qkey, key: 'stage', value: questStage});\n                    store.dispatch('general/giveReward', {general: gkey, quest: qkey});\n                }\n            }\n        }\n    }"
+    }
+  },
+  "js/modules/mining.js": {
+    "name": "mining",
+    "tickspeed": 1,
+    "unlockNeeded": null,
+    "tick": {
+      "_type": "formula",
+      "code": "function(seconds) {\n        const subfeature = store.state.system.features.mining.currentSubfeature;\n\n        store.commit('stat/add', {feature: 'mining', name: 'timeSpent', value: seconds});\n\n        if (store.state.mining.beaconCooldown > 0) {\n            store.commit('mining/updateKey', {key: 'beaconCooldown', value: Math.max(store.state.mining.beaconCooldown - seconds, 0)});\n        }\n\n        // Smeltery\n        for (const [key, elem] of Object.entries(store.state.mining.smeltery)) {\n            if (elem.stored > 0) {\n                let newProgress = elem.progress + seconds / store.getters['mining/smelteryTimeNeeded'](key);\n                const bars = Math.min(elem.stored, Math.floor(newProgress));\n                if (bars > 0) {\n                    store.commit('mining/updateSmelteryKey', {name: key, key: 'stored', value: elem.stored - bars});\n                    const barSplit = elem.output.split('_');\n                    store.dispatch('currency/gain', {feature: barSplit[0], name: barSplit[1], amount: bars});\n                    if ((elem.stored - bars) <= 0) {\n                        newProgress = 0;\n                    } else {\n                        newProgress -= bars;\n                    }\n                }\n                store.commit('mining/updateSmelteryKey', {name: key, key: 'progress', value: newProgress});\n            }\n        }\n\n        // Resin\n        if (store.state.unlock.miningResin.use && subfeature === 0) {\n            store.dispatch('currency/gain', {feature: 'mining', name: 'resin', amount: seconds * store.getters['mult/get']('currencyMiningResinGain')});\n        }\n\n        // Mining\n        if (store.getters['mining/currentDamage'] > 0) {\n            let secondsLeft = seconds;\n            while (secondsLeft > 0) {\n                const maxDepth = store.state.stat[`mining_maxDepth${subfeature}`].value;\n\n                let breaks = 0;\n                let loots = 0;\n                let preHits = Math.min(secondsLeft, store.getters['mining/currentHitsNeeded']);\n\n                if (store.state.mining.depth < maxDepth) {\n                    loots += preHits;\n                }\n                secondsLeft -= preHits;\n\n                store.commit('stat/increaseTo', {feature: 'mining', name: 'maxDamage', value: store.getters['mining/currentDamage']});\n                store.commit('stat/add', {feature: 'mining', name: 'totalDamage', value: preHits * store.getters['mining/currentDamage']});\n\n                let newDurability = store.state.mining.durability - preHits * store.getters['mining/currentDamage'];\n\n                if (newDurability <= 0) {\n                    breaks++;\n                    let isLatest = maxDepth === store.state.mining.depth;\n                    if (isLatest) {\n                        // Get gasses for the first time\n                        for (const [key, elem] of Object.entries(store.getters['mining/currentGas'])) {\n                            store.dispatch('currency/gain', {feature: 'mining', name: key, amount: elem});\n                        }\n\n                        // also count the first break as loot\n                        loots++;\n                        store.commit('stat/increaseTo', {feature: 'mining', name: 'maxDepth' + subfeature, value: store.state.mining.depth + 1});\n                        store.dispatch('meta/globalLevelPart', {key: 'mining_' + subfeature, amount: store.state.stat[`mining_maxDepth${subfeature}`].total - 1});\n\n                        // Find notes based on depth\n                        if (subfeature === 0) {\n                            const note = notes[store.state.stat.mining_maxDepth0.total - 1];\n                            if (note !== undefined) {\n                                store.dispatch('note/find', note);\n                            }\n                        }\n\n                        // Speedrun stat\n                        if (store.state.stat.mining_timeSpent.value <= 900 && subfeature === 0) {\n                            store.commit('stat/increaseTo', {feature: 'mining', name: 'maxDepthSpeedrun', value: store.state.mining.depth + 1});\n                        }\n\n                        // Update dweller stat\n                        store.dispatch('mining/updateDwellerStat');\n                    }\n                    if (\n                        isLatest &&\n                        store.getters['mining/depthHitsNeeded'](store.state.mining.depth + 1) <= (store.state.system.settings.automation.items.progressMining.value ?? 0)\n                    ) {\n                        awardLoot(breaks, loots, preHits);\n                        store.commit('mining/updateKey', {key: 'depth', value: store.state.mining.depth + 1});\n                        newDurability = store.getters['mining/currentDurability'];\n                        store.dispatch('mining/applyBeaconEffects');\n                    } else {\n                        store.commit('stat/add', {feature: 'mining', name: 'totalDamage', value: secondsLeft * store.getters['mining/currentDamage']});\n                        breaks += Math.floor(secondsLeft / store.getters['mining/hitsNeeded']);\n                        loots += secondsLeft;\n                        newDurability = store.getters['mining/currentDurability'] - store.getters['mining/currentDamage'] * (secondsLeft % store.getters['mining/hitsNeeded']);\n                        awardLoot(breaks, loots, preHits + secondsLeft);\n                        secondsLeft = 0;\n                    }\n                } else {\n                    awardLoot(breaks, loots, preHits);\n                }\n\n                store.commit('mining/updateKey', {key: 'durability', value: newDurability});\n            }\n        } else {\n            // Sulfur gain\n            if (store.state.mining.depth >= MINING_SULFUR_DEPTH && store.getters['mining/currentBreaks'] === 0) {\n                store.dispatch('currency/gain', {feature: 'mining', name: 'sulfur', amount: store.getters['mining/rareDropFinal']('sulfur') * seconds});\n            }\n        }\n\n        // Depth dweller\n        if (store.state.unlock.miningDepthDweller.use) {\n            const dwellerLimit = store.getters['mining/dwellerLimit'];\n            const dwellerSpeed = store.getters['mult/get']('miningDepthDwellerSpeed') / dwellerLimit;\n            let timeLeft = seconds;\n            if (store.state.stat[`mining_depthDweller${subfeature}`].value < dwellerLimit) {\n                // Regular dweller calculation\n                const newDweller = Math.min(\n                    MINING_DWELLER_OVERFLOW + dwellerLimit -\n                    (MINING_DWELLER_OVERFLOW + dwellerLimit - store.state.stat[`mining_depthDweller${subfeature}`].value) *\n                    Math.pow(1 - dwellerSpeed, seconds), dwellerLimit\n                );\n                if (newDweller >= dwellerLimit) {\n                    store.commit('stat/increaseTo', {feature: 'mining', name: 'dwellerCapHit', value: 1});\n                    timeLeft -= Math.ceil(store.getters['mining/timeUntilNext'](dwellerLimit));\n                } else {\n                    timeLeft = 0;\n                }\n                store.commit('stat/increaseTo', {feature: 'mining', name: 'depthDweller' + subfeature, value: newDweller});\n                store.commit('stat/increaseTo', {feature: 'mining', name: 'depthDwellerCap' + subfeature, value: newDweller});\n            }\n            if (timeLeft > 0 && dwellerLimit > 0) {\n                // Dweller overcap\n                let newDweller = store.state.stat[`mining_depthDweller${subfeature}`].value;\n                let dwellerProgress = dwellerSpeed * MINING_DWELLER_OVERFLOW * timeLeft;\n                while (dwellerProgress > 0) {\n                    const breakpointCount = Math.floor(10 * (newDweller + 0.000000000001) / dwellerLimit) - 10;\n                    const targetAmount = ((breakpointCount + 1) / 10) * dwellerLimit;\n                    const progressMade = Math.min(dwellerProgress * Math.pow(MINING_DWELLER_OVERCAP_MULT, breakpointCount + 1), targetAmount);\n                    newDweller += progressMade;\n                    dwellerProgress -= progressMade * Math.pow(1 / MINING_DWELLER_OVERCAP_MULT, breakpointCount + 1);\n                }\n                store.commit('stat/increaseTo', {feature: 'mining', name: 'depthDweller' + subfeature, value: newDweller});\n            }\n        }\n    }"
+    },
+    "unlock": [
+      "miningPickaxeCrafting",
+      "miningDepthDweller",
+      "miningSmeltery",
+      "miningEnhancement",
+      "miningResin",
+      "miningGasSubfeature",
+      "miningSmoke"
+    ],
+    "stat": {
+      "maxDepth0": {
+        "value": 1,
+        "showInStatistics": true
+      },
+      "maxDepth1": {
+        "value": 1,
+        "showInStatistics": true
+      },
+      "depthDweller0": {},
+      "depthDwellerCap0": {
+        "showInStatistics": true
+      },
+      "depthDweller1": {},
+      "depthDwellerCap1": {
+        "showInStatistics": true
+      },
+      "totalDamage": {
+        "showInStatistics": true
+      },
+      "maxDamage": {
+        "showInStatistics": true
+      },
+      "craftingCount": {
+        "showInStatistics": true
+      },
+      "craftingLuck": {
+        "value": 1
+      },
+      "craftingWasted": {},
+      "dwellerCapHit": {},
+      "timeSpent": {
+        "display": "time"
+      },
+      "bestPrestige0": {
+        "showInStatistics": true
+      },
+      "bestPrestige1": {
+        "showInStatistics": true
+      },
+      "prestigeCount": {
+        "showInStatistics": true
+      },
+      "maxDepthSpeedrun": {
+        "value": 1
+      }
+    },
+    "mult": {
+      "miningDamage": {},
+      "miningToughness": {},
+      "miningOreGain": {},
+      "miningOreCap": {},
+      "miningRareEarthGain": {},
+      "miningPickaxeCraftingSlots": {
+        "round": true,
+        "baseValue": 1
+      },
+      "miningPickaxePremiumCraftingSlots": {
+        "round": true
+      },
+      "miningPickaxeCraftingPower": {},
+      "miningPickaxeCraftingQuality": {},
+      "miningOreQuality": {
+        "baseValue": 1
+      },
+      "miningDepthDwellerSpeed": {
+        "baseValue": 0.000065
+      },
+      "miningDepthDwellerMax": {
+        "display": "percent",
+        "baseValue": 0.1
+      },
+      "miningResinMax": {
+        "round": true,
+        "baseValue": 1
+      },
+      "currencyMiningHeliumIncrement": {
+        "display": "percent"
+      },
+      "currencyMiningNeonIncrement": {
+        "display": "percent"
+      },
+      "currencyMiningArgonIncrement": {
+        "display": "percent"
+      },
+      "currencyMiningKryptonIncrement": {
+        "display": "percent"
+      },
+      "currencyMiningXenonIncrement": {
+        "display": "percent"
+      },
+      "currencyMiningRadonIncrement": {
+        "display": "percent"
+      },
+      "miningSmelterySpeed": {
+        "baseValue": 1
+      },
+      "miningSmelteryTemperature": {
+        "display": "temperature",
+        "baseValue": 100
+      },
+      "miningEnhancementBarsIncrement": {
+        "display": "percent",
+        "baseValue": 0.75,
+        "min": 0
+      },
+      "miningEnhancementFinalIncrement": {
+        "display": "percent",
+        "baseValue": 3,
+        "min": 0
+      },
+      "miningPrestigeIncome": {
+        "group": [
+          "currencyMiningCrystalGreenGain",
+          "currencyMiningCrystalYellowGain"
+        ]
+      }
+    },
+    "multGroup": [
+      {
+        "mult": "miningOreGain",
+        "name": "currencyGain",
+        "subtype": "ore"
+      },
+      {
+        "mult": "miningOreCap",
+        "name": "currencyCap",
+        "subtype": "ore"
+      },
+      {
+        "mult": "miningRareEarthGain",
+        "name": "currencyGain",
+        "subtype": "rareEarth"
+      }
+    ],
+    "currency": {
+      "scrap": {
+        "color": "brown",
+        "icon": "mdi-dots-triangle",
+        "gainMult": {},
+        "capMult": {
+          "baseValue": {
+            "_type": "expression",
+            "code": "buildNum(10, 'K')"
+          }
+        },
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            return hitsNeeded === Infinity ? null : (((hitsNeeded + MINING_SCRAP_BREAK) * store.getters['mining/currentScrap']) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "oreAluminium": {
+        "subtype": "ore",
+        "color": "blue-grey",
+        "icon": "mdi-chart-bubble",
+        "gainMult": {},
+        "capMult": {
+          "baseValue": 12,
+          "round": true
+        },
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            const oreGain = store.getters['mining/currentOre'];\n            return (hitsNeeded === Infinity || !oreGain.oreAluminium) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.oreAluminium.amount) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "oreCopper": {
+        "subtype": "ore",
+        "color": "orange",
+        "icon": "mdi-chart-bubble",
+        "gainMult": {},
+        "capMult": {
+          "baseValue": 4,
+          "round": true
+        },
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            const oreGain = store.getters['mining/currentOre'];\n            return (hitsNeeded === Infinity || !oreGain.oreCopper) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.oreCopper.amount) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "oreTin": {
+        "subtype": "ore",
+        "color": "grey",
+        "icon": "mdi-chart-bubble",
+        "gainMult": {},
+        "capMult": {
+          "baseValue": 2,
+          "round": true
+        },
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            const oreGain = store.getters['mining/currentOre'];\n            return (hitsNeeded === Infinity || !oreGain.oreTin) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.oreTin.amount) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "oreIron": {
+        "subtype": "ore",
+        "color": "deep-orange",
+        "icon": "mdi-chart-bubble",
+        "gainMult": {},
+        "capMult": {
+          "baseValue": 1,
+          "round": true
+        },
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            const oreGain = store.getters['mining/currentOre'];\n            return (hitsNeeded === Infinity || !oreGain.oreIron) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.oreIron.amount) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "oreTitanium": {
+        "subtype": "ore",
+        "color": "pale-light-green",
+        "icon": "mdi-chart-bubble",
+        "gainMult": {},
+        "capMult": {
+          "baseValue": 1,
+          "round": true
+        },
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            const oreGain = store.getters['mining/currentOre'];\n            return (hitsNeeded === Infinity || !oreGain.oreTitanium) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.oreTitanium.amount) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "orePlatinum": {
+        "subtype": "ore",
+        "color": "skyblue",
+        "icon": "mdi-chart-bubble",
+        "gainMult": {},
+        "capMult": {
+          "baseValue": 1,
+          "round": true
+        },
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            const oreGain = store.getters['mining/currentOre'];\n            return (hitsNeeded === Infinity || !oreGain.orePlatinum) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.orePlatinum.amount) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "oreIridium": {
+        "subtype": "ore",
+        "color": "pale-purple",
+        "icon": "mdi-chart-bubble",
+        "gainMult": {},
+        "capMult": {
+          "baseValue": 1,
+          "round": true
+        },
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            const oreGain = store.getters['mining/currentOre'];\n            return (hitsNeeded === Infinity || !oreGain.oreIridium) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.oreIridium.amount) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "oreOsmium": {
+        "subtype": "ore",
+        "color": "pale-green",
+        "icon": "mdi-chart-bubble",
+        "gainMult": {},
+        "capMult": {
+          "baseValue": 1,
+          "round": true
+        },
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            const oreGain = store.getters['mining/currentOre'];\n            return (hitsNeeded === Infinity || !oreGain.oreOsmium) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.oreOsmium.amount) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "oreLead": {
+        "subtype": "ore",
+        "color": "pale-blue",
+        "icon": "mdi-chart-bubble",
+        "gainMult": {},
+        "capMult": {
+          "baseValue": 1,
+          "round": true
+        },
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            const oreGain = store.getters['mining/currentOre'];\n            return (hitsNeeded === Infinity || !oreGain.oreLead) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.oreLead.amount) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "barAluminium": {
+        "subtype": "bar",
+        "color": "blue-grey",
+        "icon": "mdi-gold"
+      },
+      "barBronze": {
+        "subtype": "bar",
+        "color": "pale-orange",
+        "icon": "mdi-gold"
+      },
+      "barSteel": {
+        "subtype": "bar",
+        "color": "grey",
+        "icon": "mdi-gold"
+      },
+      "barTitanium": {
+        "subtype": "bar",
+        "color": "pale-green",
+        "icon": "mdi-gold"
+      },
+      "barShiny": {
+        "subtype": "bar",
+        "color": "pale-blue",
+        "icon": "mdi-gold"
+      },
+      "barIridium": {
+        "subtype": "bar",
+        "color": "pale-pink",
+        "icon": "mdi-gold"
+      },
+      "barDarkIron": {
+        "subtype": "bar",
+        "color": "darker-grey",
+        "icon": "mdi-gold"
+      },
+      "granite": {
+        "subtype": "rareEarth",
+        "color": "skyblue",
+        "icon": "mdi-cube",
+        "gainMult": {},
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            const rareDropGain = store.getters['mining/rareDrops'];\n            return (hitsNeeded === Infinity || !rareDropGain.granite) ? null : (((hitsNeeded + MINING_RARE_DROP_BREAK) * rareDropGain.granite) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "salt": {
+        "subtype": "rareEarth",
+        "color": "lighter-grey",
+        "icon": "mdi-shaker",
+        "gainMult": {},
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            const rareDropGain = store.getters['mining/rareDrops'];\n            return (hitsNeeded === Infinity || !rareDropGain.salt) ? null : (((hitsNeeded + MINING_RARE_DROP_BREAK) * rareDropGain.salt) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "coal": {
+        "color": "dark-grey",
+        "icon": "mdi-chart-bubble",
+        "gainMult": {
+          "round": true
+        }
+      },
+      "sulfur": {
+        "subtype": "rareEarth",
+        "color": "pale-yellow",
+        "icon": "mdi-fire-circle",
+        "gainMult": {},
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            return store.getters['mining/rareDrops'].sulfur ?? null;\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "niter": {
+        "color": "pale-light-green",
+        "icon": "mdi-water-circle",
+        "gainMult": {}
+      },
+      "obsidian": {
+        "subtype": "rareEarth",
+        "color": "deep-purple",
+        "icon": "mdi-cone",
+        "gainMult": {},
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            const rareDropGain = store.getters['mining/rareDrops'];\n            return (hitsNeeded === Infinity || !rareDropGain.obsidian) ? null : (((hitsNeeded + MINING_RARE_DROP_BREAK) * rareDropGain.obsidian) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "deeprock": {
+        "subtype": "rareEarth",
+        "color": "darker-grey",
+        "icon": "mdi-gamepad-circle",
+        "gainMult": {},
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            const rareDropGain = store.getters['mining/rareDrops'];\n            return (hitsNeeded === Infinity || !rareDropGain.deeprock) ? null : (((hitsNeeded + MINING_RARE_DROP_BREAK) * rareDropGain.deeprock) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "glowshard": {
+        "color": "cyan",
+        "icon": "mdi-lightbulb-fluorescent-tube",
+        "gainMult": {},
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            const rareDropGain = store.getters['mining/rareDrops'];\n            return (hitsNeeded === Infinity || !rareDropGain.glowshard) ? null : (((hitsNeeded + MINING_RARE_DROP_BREAK) * rareDropGain.glowshard) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "smoke": {
+        "color": "grey",
+        "icon": "mdi-smoke",
+        "gainMult": {},
+        "capMult": {
+          "baseValue": 10
+        },
+        "overcapScaling": 0.25,
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            const hitsNeeded = store.getters['mining/hitsNeeded'];\n            return hitsNeeded === Infinity ? null : (((hitsNeeded + MINING_SMOKE_BREAK) * store.getters['mining/currentSmoke']) / hitsNeeded);\n        }"
+        },
+        "timerIsEstimate": true
+      },
+      "ember": {
+        "type": "prestige",
+        "color": "orange-red",
+        "icon": "mdi-fire",
+        "overcapMult": 0,
+        "gainMult": {
+          "display": "percent"
+        },
+        "capMult": {
+          "baseValue": 100
+        },
+        "currencyMult": {
+          "miningSmelterySpeed": {
+            "type": "mult",
+            "value": {
+              "_type": "formula",
+              "code": "val => val * 0.02 + 1"
+            }
+          }
+        }
+      },
+      "resin": {
+        "type": "prestige",
+        "color": "orange",
+        "icon": "mdi-water",
+        "gainMult": {
+          "baseValue": 0.0001,
+          "display": "perSecond"
+        },
+        "showGainMult": true,
+        "showGainTimer": true,
+        "capMult": {
+          "baseValue": 5
+        }
+      },
+      "crystalGreen": {
+        "type": "prestige",
+        "alwaysVisible": true,
+        "color": "light-green",
+        "icon": "mdi-star-three-points",
+        "gainMult": {}
+      },
+      "helium": {
+        "type": "prestige",
+        "color": "pale-blue",
+        "icon": "mdi-gas-cylinder",
+        "gainMult": {
+          "display": "percent",
+          "baseValue": 0.01
+        },
+        "currencyMult": {
+          "currencyMiningScrapCap": {
+            "type": "mult",
+            "value": {
+              "_type": "formula",
+              "code": "val => val * 0.01 + 1"
+            }
+          }
+        }
+      },
+      "neon": {
+        "type": "prestige",
+        "color": "orange-red",
+        "icon": "mdi-gas-cylinder",
+        "gainMult": {
+          "display": "percent",
+          "baseValue": 0.01
+        },
+        "currencyMult": {
+          "miningPickaxeCraftingPower": {
+            "type": "mult",
+            "value": {
+              "_type": "formula",
+              "code": "val => val * 0.01 + 1"
+            }
+          }
+        }
+      },
+      "argon": {
+        "type": "prestige",
+        "color": "pink-purple",
+        "icon": "mdi-gas-cylinder",
+        "gainMult": {
+          "display": "percent",
+          "baseValue": 0.01
+        },
+        "currencyMult": {
+          "currencyMiningScrapGain": {
+            "type": "mult",
+            "value": {
+              "_type": "formula",
+              "code": "val => val * 0.01 + 1"
+            }
+          }
+        }
+      },
+      "krypton": {
+        "type": "prestige",
+        "color": "light-blue",
+        "icon": "mdi-gas-cylinder",
+        "gainMult": {
+          "display": "percent",
+          "baseValue": 0.01
+        }
+      },
+      "xenon": {
+        "type": "prestige",
+        "color": "blue",
+        "icon": "mdi-gas-cylinder",
+        "gainMult": {
+          "display": "percent",
+          "baseValue": 0.01
+        }
+      },
+      "radon": {
+        "type": "prestige",
+        "color": "light-green",
+        "icon": "mdi-gas-cylinder",
+        "gainMult": {
+          "display": "percent",
+          "baseValue": 0.01
+        }
+      },
+      "crystalYellow": {
+        "type": "prestige",
+        "alwaysVisible": true,
+        "color": "yellow",
+        "icon": "mdi-star-four-points",
+        "gainMult": {}
+      }
+    },
+    "upgrade": {
+      "_spread_0": {
+        "_type": "spread",
+        "from": "upgrade"
+      },
+      "_spread_1": {
+        "_type": "spread",
+        "from": "upgrade2"
+      },
+      "_spread_2": {
+        "_type": "spread",
+        "from": "upgradePrestige"
+      },
+      "_spread_3": {
+        "_type": "spread",
+        "from": "upgradePremium"
+      },
+      "_spread_4": {
+        "_type": "spread",
+        "from": "bookMining"
+      }
+    },
+    "relic": {
+      "_type": "expression",
+      "code": "relic"
+    },
+    "achievement": {
+      "_type": "expression",
+      "code": "achievement"
+    },
+    "note": {
+      "_type": "expression",
+      "code": "buildArray(34).map(() => 'g')"
+    },
+    "consumable": {
+      "goldenHammer": {
+        "icon": "mdi-hammer",
+        "color": "amber",
+        "price": {
+          "gem_sapphire": 20
+        }
+      }
+    },
+    "init": {
+      "_type": "formula",
+      "code": "init() {\n        for (const [key, elem] of Object.entries(ore)) {\n            store.commit('unlock/init', 'miningCompress' + key.slice(3));\n            store.commit('mining/initOre', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(smeltery)) {\n            store.commit('mining/initSmeltery', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(enhancement)) {\n            store.commit('mining/initEnhancement', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(beacon)) {\n            store.commit('mining/initBeacon', {name: key, ...elem});\n            store.commit('mult/init', {feature: 'mining', name: elem.ownedMult, round: true});\n        }\n\n        store.commit('mining/updateKey', {key: 'durability', value: store.getters['mining/currentDurability']});\n    }"
+    },
+    "saveGame": {
+      "_type": "formula",
+      "code": "saveGame() {\n        let obj = {\n            depth: store.state.mining.depth,\n            durability: store.state.mining.durability,\n            pickaxePower: store.state.mining.pickaxePower,\n        };\n\n        if (store.state.mining.breaks.length > 0) {\n            obj.breaks = store.state.mining.breaks;\n        }\n        if (store.state.unlock.miningPickaxeCrafting.see) {\n            obj.ingredientList = store.state.mining.ingredientList;\n        }\n        if (store.state.mining.enhancementBars > 0) {\n            obj.enhancementBars = store.state.mining.enhancementBars;\n        }\n        if (store.state.mining.enhancementIngredient !== null) {\n            obj.enhancementIngredient = store.state.mining.enhancementIngredient;\n        }\n        if (store.state.mining.resin > 0) {\n            obj.resin = store.state.mining.resin;\n        }\n\n        let smelteryData = {};\n        for (const [key, elem] of Object.entries(store.state.mining.smeltery)) {\n            if (elem.total > 0) {\n                smelteryData[key] = [elem.progress, elem.stored, elem.total];\n            }\n        }\n        if (Object.keys(smelteryData).length > 0) {\n            obj.smeltery = smelteryData;\n        }\n\n        let enhancementData = {};\n        for (const [key, elem] of Object.entries(store.state.mining.enhancement)) {\n            if (elem.level > 0) {\n                enhancementData[key] = elem.level;\n            }\n        }\n        if (Object.keys(enhancementData).length > 0) {\n            obj.enhancement = enhancementData;\n        }\n\n        if (Object.keys(store.state.mining.beaconPlaced).length > 0) {\n            obj.beaconPlaced = store.state.mining.beaconPlaced;\n        }\n        if (store.state.mining.beaconCooldown > 0) {\n            obj.beaconCooldown = store.state.mining.beaconCooldown;\n        }\n\n        return obj;\n    }"
+    },
+    "loadGame": {
+      "_type": "formula",
+      "code": "loadGame(data) {\n        ['depth', 'durability', 'pickaxePower', 'breaks', 'ingredientList', 'enhancementBars', 'enhancementIngredient', 'resin', 'beaconPlaced', 'beaconCooldown'].forEach(elem => {\n            if (data[elem] !== undefined) {\n                store.commit('mining/updateKey', {key: elem, value: data[elem]});\n            }\n        });\n        if (data.smeltery !== undefined) {\n            for (const [key, elem] of Object.entries(data.smeltery)) {\n                if (store.state.mining.smeltery[key] !== undefined) {\n                    store.commit('mining/updateSmelteryKey', {name: key, key: 'progress', value: elem[0]});\n                    store.commit('mining/updateSmelteryKey', {name: key, key: 'stored', value: elem[1]});\n                    store.commit('mining/updateSmelteryKey', {name: key, key: 'total', value: elem[2]});\n                }\n            }\n        }\n        if (data.enhancement !== undefined) {\n            for (const [key, elem] of Object.entries(data.enhancement)) {\n                if (store.state.mining.enhancement[key] !== undefined) {\n                    store.commit('mining/updateEnhancementKey', {name: key, key: 'level', value: elem});\n                    store.dispatch('mining/applyEnhancement', {trigger: false, name: key});\n                }\n            }\n        }\n        store.dispatch('mining/applyBeaconEffects');\n    }"
+    }
+  },
+  "js/modules/cryolab.js": {
+    "name": "cryolab",
+    "tickspeed": 1,
+    "unlockNeeded": "cryolabFeature",
+    "tick": {
+      "_type": "formula",
+      "code": "tick(seconds) {\n        for (const [key, elem] of Object.entries(store.state.cryolab)) {\n            if (elem.active) {\n                const expGain = store.getters['cryolab/expGain'](key);\n                if (expGain > 0) {\n                    store.dispatch('cryolab/gainExp', {feature: key, amount: expGain * seconds / SECONDS_PER_DAY});\n                }\n            }\n            const prestigeGain = store.getters['cryolab/prestigeGain'](key);\n            for (const [currency, amount] of Object.entries(prestigeGain)) {\n                if (currency === 'farm_exp') {\n                    // Special handler for farm experience\n                    for (const [key, elem] of Object.entries(store.state.farm.crop)) {\n                        if (elem.found) {\n                            let amountLeft = amount * elem.baseExpMult * seconds / SECONDS_PER_DAY;\n                            while (amountLeft > 0) {\n                                const levelDiff = elem.levelMax - elem.level;\n                                if (levelDiff <= 0) {\n                                    amountLeft = 0;\n                                    break;\n                                }\n                                const expToNext = store.getters['farm/expNeeded'](key) - elem.exp;\n                                const amountGiven = Math.min(expToNext, amountLeft * levelDiff);\n                                store.dispatch('farm/getCropExp', {crop: key, value: amountGiven});\n                                amountLeft -= amountGiven / levelDiff;\n                            }\n                        }\n                    }\n                } else {\n                    const split = currency.split('_');\n                    store.dispatch('currency/gain', {feature: split[0], name: split[1], amount: amount * seconds / SECONDS_PER_DAY});\n                }\n            }\n        }\n    }"
+    },
+    "unlock": [
+      "cryolabFeature"
+    ],
+    "mult": {
+      "cryolabMaxFeatures": {
+        "round": true,
+        "baseValue": 1
+      }
+    },
+    "note": {
+      "_type": "expression",
+      "code": "buildArray(2).map(() => 'g')"
+    },
+    "init": {
+      "_type": "formula",
+      "code": "init() {\n        for (const [key, elem] of Object.entries(store.state.system.features)) {\n            let obj = {name: key, unlock: elem.unlock};\n            if (data[key] !== undefined) {\n                obj.data = data[key];\n            }\n            if (effect[key] !== undefined) {\n                obj.effect = effect[key];\n            }\n            if (elem.main) {\n                store.dispatch('cryolab/init', obj);\n            }\n        }\n    }"
+    },
+    "saveGame": {
+      "_type": "formula",
+      "code": "saveGame() {\n        let obj = {};\n        for (const [key, elem] of Object.entries(store.state.cryolab)) {\n            if (elem.active || elem.exp.find(elem => elem > 0) || elem.level.find(elem => elem > 0)) {\n                obj[key] = {active: elem.active, exp: elem.exp, level: elem.level};\n            }\n        }\n        return obj;\n    }"
+    },
+    "loadGame": {
+      "_type": "formula",
+      "code": "loadGame(data) {\n        for (const [key, elem] of Object.entries(data)) {\n            if (store.state.cryolab[key] !== undefined) {\n                store.commit('cryolab/updateKey', {name: key, key: 'active', value: elem.active});\n                elem.exp.forEach((value, index) => {\n                    store.commit('cryolab/updateSubfeatureKey', {name: key, subfeature: index, key: 'exp', value});\n                });\n                elem.level.forEach((value, index) => {\n                    store.commit('cryolab/updateSubfeatureKey', {name: key, subfeature: index, key: 'level', value});\n                    store.dispatch('cryolab/applyLevelEffects', {feature: key, subfeature: index});\n                });\n            }\n        }\n    }"
+    }
+  },
+  "js/modules/relic.js": {
+    "name": "relic",
+    "unlockNeeded": "relicFeature",
+    "unlock": [
+      "relicFeature",
+      "relicMuseum"
+    ],
+    "note": {
+      "_type": "expression",
+      "code": "buildArray(1).map(() => 'g')"
+    },
+    "init": {
+      "_type": "formula",
+      "code": "init() {\n        for (const [key, elem] of Object.entries(glyph)) {\n            store.commit('relic/initGlyph', {name: key, ...elem});\n        }\n    }"
+    }
+  },
+  "js/modules/gallery.js": {
+    "name": "gallery",
+    "tickspeed": 1,
+    "unlockNeeded": "galleryFeature",
+    "tick": {
+      "_type": "formula",
+      "code": "tick(seconds) {\n        store.commit('stat/add', {feature: 'gallery', name: 'timeSpent', value: seconds});\n\n        const segments = Math.ceil(Math.pow(seconds, 0.5) / 8);\n        let secondsSpent = 0;\n        for (let i = 0; i < segments; i++) {\n            const secondsSegment = Math.round(seconds * (i + 1) / segments) - secondsSpent;\n            secondsSpent += secondsSegment;\n\n            const colors = ['beauty', ...store.state.gallery.color].reverse();\n            const baseGain = colors.map(color => store.getters['mult/get'](`currencyGallery${ capitalize(color) }Gain`));\n\n            colors.forEach((color, index) => {\n                const gain = (baseGain[index] + store.getters['mult/get'](`currencyGallery${ capitalize(color) }Gain`)) / 2;\n                if (gain > 0) {\n                    store.dispatch('currency/gain', {feature: 'gallery', name: color, amount: secondsSegment * gain});\n                }\n            });\n        }\n\n        const globalLevelGallery = Math.floor(logBase(store.state.stat.gallery_beauty.total, 4));\n        if (globalLevelGallery > 0) {\n            store.dispatch('meta/globalLevelPart', {key: 'gallery_0', amount: globalLevelGallery});\n        }\n\n        store.dispatch('gallery/packageAndConverterTick', seconds);\n        if (store.state.unlock.galleryShape.use) {\n            store.dispatch('currency/gain', {feature: 'gallery', name: 'motivation', amount: seconds * store.getters['mult/get']('currencyGalleryMotivationGain')});\n        }\n\n        if (store.state.unlock.galleryInspiration.use) {\n            let newTime = store.state.gallery.inspirationTime + seconds;\n            let newAmount = store.state.gallery.inspirationAmount;\n\n            while (newTime >= store.getters['gallery/inspirationTimeNeeded'](newAmount)) {\n                newTime -= store.getters['gallery/inspirationTimeNeeded'](newAmount);\n                newAmount++;\n            }\n\n            store.commit('gallery/updateKey', {key: 'inspirationTime', value: newTime});\n            if (newAmount > store.state.gallery.inspirationAmount) {\n                store.dispatch('currency/gain', {feature: 'gallery', name: 'inspiration', amount: newAmount - store.state.gallery.inspirationAmount});\n                store.commit('gallery/updateKey', {key: 'inspirationAmount', value: newAmount});\n            }\n        }\n        if (store.state.unlock.galleryCanvas.use) {\n            let totalLevel = 0;\n            for (const [key, elem] of Object.entries(store.state.gallery.colorData)) {\n                if (elem.cacheSpace > 0) {\n                    const speed = store.getters['mult/get']('galleryCanvasSpeed', getSequence(10, elem.cacheSpace) * 0.1, 1 + store.getters['currency/value'](`gallery_${ key }Drum`) * 0.1);\n                    const oldProgress = elem.progress;\n                    let progress = elem.progress;\n                    let secondsLeft = seconds;\n                    while (secondsLeft > 0) {\n                        const difficulty = store.getters['gallery/canvasDifficulty'](key, Math.floor(progress));\n                        const timeUsed = Math.min((Math.floor(progress + 1) - progress) * difficulty / speed, secondsLeft);\n                        progress += timeUsed * speed / difficulty;\n                        secondsLeft -= timeUsed;\n                    }\n                    store.commit('gallery/updateColorDataKey', {name: key, key: 'progress', value: progress});\n                    if (Math.floor(progress) > Math.floor(oldProgress)) {\n                        store.dispatch('gallery/applyCanvasLevel', {name: key, onLevel: true});\n                    }\n                }\n                totalLevel += elem.progress;\n            }\n            store.commit('stat/increaseTo', {feature: 'gallery', name: 'canvasLevelTotal', value: totalLevel});\n        }\n    }"
+    },
+    "unlock": [
+      "galleryFeature",
+      "galleryConversion",
+      "galleryInspiration",
+      "galleryAuction",
+      "galleryDrums",
+      "galleryShape",
+      "galleryCanvas"
+    ],
+    "stat": {
+      "timeSpent": {
+        "display": "time"
+      },
+      "bestPrestige": {
+        "showInStatistics": true
+      },
+      "highestTierIdea": {},
+      "shapeComboHighest": {},
+      "shapeComboTotal": {
+        "showInStatistics": true
+      },
+      "canvasLevelTotal": {
+        "showInStatistics": true
+      },
+      "hourglassHighest": {},
+      "prestigeCount": {
+        "showInStatistics": true
+      }
+    },
+    "mult": {
+      "galleryInspirationBase": {
+        "unlock": "galleryInspiration",
+        "baseValue": 300,
+        "display": "timeMs"
+      },
+      "galleryInspirationIncrement": {
+        "unlock": "galleryInspiration",
+        "baseValue": 1,
+        "min": 0,
+        "display": "percent"
+      },
+      "galleryInspirationStart": {
+        "unlock": "galleryInspiration"
+      },
+      "galleryShapeGain": {
+        "unlock": "galleryShape"
+      },
+      "gallerySpecialShapeChance": {
+        "unlock": "galleryShape",
+        "baseValue": 0.005,
+        "display": "percent"
+      },
+      "gallerySpecialShapeMult": {
+        "unlock": "galleryShape",
+        "baseValue": 15,
+        "display": "mult"
+      },
+      "galleryCanvasSize": {
+        "unlock": "galleryCanvas",
+        "baseValue": 1,
+        "round": true
+      },
+      "galleryCanvasSpeed": {
+        "unlock": "galleryCanvas",
+        "display": "perSecond"
+      }
+    },
+    "currency": {
+      "beauty": {
+        "color": "deep-purple",
+        "icon": "mdi-image-filter-vintage",
+        "gainMult": {
+          "baseValue": 1,
+          "display": "perSecond"
+        },
+        "showGainMult": true,
+        "showGainTimer": true,
+        "timerIsEstimate": true
+      },
+      "converter": {
+        "multUnlock": "galleryConversion",
+        "color": "pale-green",
+        "icon": "mdi-recycle",
+        "overcapMult": 0.75,
+        "overcapScaling": 0.95,
+        "gainMult": {
+          "baseValue": 0.2,
+          "display": "perSecond"
+        },
+        "showGainMult": true,
+        "capMult": {
+          "baseValue": 1000
+        }
+      },
+      "inspiration": {
+        "multUnlock": "galleryInspiration",
+        "color": "yellow",
+        "icon": "mdi-lightbulb-on"
+      },
+      "package": {
+        "multUnlock": "galleryDrums",
+        "color": "beige",
+        "icon": "mdi-package-variant",
+        "overcapMult": 0.8,
+        "overcapScaling": 0.8,
+        "gainMult": {
+          "baseValue": 0.0125,
+          "display": "perSecond"
+        },
+        "showGainMult": true,
+        "showGainTimer": true,
+        "capMult": {
+          "baseValue": 10
+        }
+      },
+      "motivation": {
+        "multUnlock": "galleryShape",
+        "type": "shape",
+        "color": "pink-purple",
+        "icon": "mdi-emoticon-excited",
+        "overcapMult": 0.5,
+        "gainMult": {
+          "baseValue": 0.2,
+          "display": "perSecond"
+        },
+        "showGainMult": true,
+        "showGainTimer": true,
+        "capMult": {
+          "baseValue": 100
+        }
+      },
+      "mysteryShape": {
+        "multUnlock": "galleryShape",
+        "type": "shape",
+        "color": "pale-purple",
+        "icon": "mdi-octahedron",
+        "overcapMult": 0,
+        "gainMult": {
+          "baseValue": 1
+        },
+        "capMult": {
+          "baseValue": 1337
+        }
+      },
+      "cash": {
+        "multUnlock": "galleryAuction",
+        "type": "prestige",
+        "alwaysVisible": true,
+        "color": "green",
+        "icon": "mdi-cash",
+        "gainMult": {}
+      }
+    },
+    "note": {
+      "_type": "expression",
+      "code": "buildArray(10).map(() => 'g')"
+    },
+    "upgrade": {
+      "_spread_0": {
+        "_type": "spread",
+        "from": "upgrade"
+      },
+      "_spread_1": {
+        "_type": "spread",
+        "from": "upgradeShape"
+      },
+      "_spread_2": {
+        "_type": "spread",
+        "from": "upgradePrestige"
+      },
+      "_spread_3": {
+        "_type": "spread",
+        "from": "upgradePremium"
+      },
+      "_spread_4": {
+        "_type": "spread",
+        "from": "bookGallery"
+      }
+    },
+    "multGroup": [
+      {
+        "mult": "galleryShapeGain",
+        "name": "currencyGain",
+        "type": "shape",
+        "blacklist": [
+          "gallery_motivation",
+          "gallery_mysteryShape"
+        ]
+      }
+    ],
+    "relic": {
+      "_type": "expression",
+      "code": "relic"
+    },
+    "achievement": {
+      "_type": "expression",
+      "code": "achievement"
+    },
+    "init": {
+      "_type": "formula",
+      "code": "init() {\n        // Add each color as a mult and currency\n        store.state.gallery.color.forEach((elem, index) => {\n            const colorMult = ['beauty', ...store.state.gallery.color][index];\n\n            store.dispatch('currency/init', {feature: 'gallery', multUnlock: 'galleryFeature', name: elem, color: elem, icon: 'mdi-liquid-spot', currencyMult: {\n                [`currencyGallery${ capitalize(colorMult) }Gain`]: {type: 'base', value: val => val > 100 ? Math.pow(val * 100, 0.5) : val}\n            }, gainMult: {display: 'perSecond'}, showGainMult: true, showGainTimer: true, timerIsEstimate: true});\n            store.dispatch('currency/init', {feature: 'gallery', multUnlock: 'galleryDrums', name: elem + 'Drum', color: elem, icon: 'mdi-barrel', currencyMult: elem === 'red' ? {\n                currencyGalleryBeautyGain: {type: 'mult', value: val => Math.pow(val * 0.1 + 1, 2)}\n            } : {\n                currencyGalleryBeautyGain: {type: 'mult', value: val => val * 0.1 + 1},\n                [`currencyGallery${ capitalize(colorMult) }Gain`]: {type: 'mult', value: val => val * 0.1 + 1},\n                [`currencyGallery${ capitalize(colorMult) }DrumCap`]: {type: 'bonus', value: val => val}\n            }, overcapMult: 0, capMult: {baseValue: 10, round: true}});\n\n            store.commit('gallery/initColorData', {name: elem});\n            store.commit('mult/init', {feature: 'gallery', name: `gallery${ capitalize(elem) }Conversion`, unlock: 'galleryFeature', baseValue: 1}, {root: true});\n            store.commit('mult/init', {feature: 'gallery', name: `gallery${ capitalize(elem) }DrumChance`, unlock: 'galleryDrums', display: 'percent', min: 0, max: 1}, {root: true});\n        });\n\n        store.commit('mult/init', {feature: 'gallery', name: 'galleryColorGain', unlock: 'galleryFeature', group: store.state.gallery.color.map(elem => `currencyGallery${ capitalize(elem) }Gain`)}, {root: true});\n        store.commit('mult/init', {feature: 'gallery', name: 'galleryColorDrumChance', unlock: 'galleryDrums', group: store.state.gallery.color.map(elem => `gallery${ capitalize(elem) }DrumChance`)}, {root: true});\n        store.commit('mult/init', {feature: 'gallery', name: 'galleryColorDrumCap', unlock: 'galleryDrums', group: store.state.gallery.color.map(elem => `currencyGallery${ capitalize(elem) }DrumCap`)}, {root: true});\n\n        for (const [key, elem] of Object.entries(idea)) {\n            store.commit('gallery/initIdea', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(shape)) {\n            store.commit('gallery/initShape', {name: key, ...elem});\n            if (!elem.isSpecial) {\n                store.dispatch('currency/init', {feature: 'gallery', type: 'shape', multUnlock: 'galleryFeature', name: key, color: elem.color, icon: elem.icon, gainMult: {}, showGainMult: true});\n            }\n        }\n\n        store.commit('gallery/initShapeGrid');\n    }"
+    },
+    "saveGame": {
+      "_type": "formula",
+      "code": "saveGame() {\n        let obj = {\n            shapeGrid: store.state.gallery.shapeGrid\n        };\n\n        if (store.state.gallery.inspirationTime > 0) {\n            obj.inspirationTime = store.state.gallery.inspirationTime;\n        }\n        if (store.state.gallery.inspirationAmount > 0) {\n            obj.inspirationAmount = store.state.gallery.inspirationAmount;\n        }\n        if (store.state.gallery.hourglassCombo > 0) {\n            obj.hourglassCombo = store.state.gallery.hourglassCombo;\n        }\n        if (store.state.gallery.canvasSpace.length > 0) {\n            obj.canvasSpace = store.state.gallery.canvasSpace;\n        }\n        if (store.state.unlock.galleryInspiration.see) {\n            let ideas = {};\n            for (const [key, elem] of Object.entries(store.state.gallery.idea)) {\n                if (elem.owned) {\n                    ideas[key] = elem.level;\n                }\n            }\n            obj.idea = ideas;\n        }\n        if (store.state.unlock.galleryCanvas.see) {\n            let colorData = {};\n            for (const [key, elem] of Object.entries(store.state.gallery.colorData)) {\n                if (elem.progress > 0) {\n                    colorData[key] = elem.progress;\n                }\n            }\n            obj.colorData = colorData;\n        }\n\n        return obj;\n    }"
+    },
+    "loadGame": {
+      "_type": "formula",
+      "code": "loadGame(data) {\n        if (data.shapeGrid) {\n            store.commit('gallery/updateKey', {key: 'shapeGrid', value: data.shapeGrid});\n        }\n        if (data.inspirationTime) {\n            store.commit('gallery/updateKey', {key: 'inspirationTime', value: data.inspirationTime});\n        }\n        if (data.inspirationAmount) {\n            store.commit('gallery/updateKey', {key: 'inspirationAmount', value: data.inspirationAmount});\n        }\n        if (data.hourglassCombo) {\n            store.commit('gallery/updateKey', {key: 'hourglassCombo', value: data.hourglassCombo});\n        }\n        if (data.canvasSpace) {\n            store.commit('gallery/updateKey', {key: 'canvasSpace', value: data.canvasSpace});\n            let colors = {};\n            data.canvasSpace.forEach(elem => {\n                if (colors[elem] === undefined) {\n                    colors[elem] = 0;\n                }\n                colors[elem]++;\n            });\n            for (const [key, elem] of Object.entries(colors)) {\n                if (store.state.gallery.colorData[key] !== undefined) {\n                    store.commit('gallery/updateColorDataKey', {name: key, key: 'cacheSpace', value: elem});\n                }\n            }\n        }\n        if (data.idea !== undefined) {\n            for (const [key, elem] of Object.entries(data.idea)) {\n                if (store.state.gallery.idea[key] !== undefined) {\n                    store.commit('gallery/updateIdeaKey', {name: key, key: 'owned', value: true});\n                    if (elem > 0) {\n                        store.commit('gallery/updateIdeaKey', {name: key, key: 'level', value: elem});\n                        store.dispatch('gallery/applyIdea', {name: key});\n                    }\n                }\n            }\n        }\n        if (data.colorData !== undefined) {\n            for (const [key, elem] of Object.entries(data.colorData)) {\n                if (store.state.gallery.colorData[key] !== undefined) {\n                    if (elem > 0) {\n                        store.commit('gallery/updateColorDataKey', {name: key, key: 'progress', value: elem});\n                        if (elem >= 1) {\n                            store.dispatch('gallery/applyCanvasLevel', {name: key});\n                        }\n                    }\n                }\n            }\n        }\n    }"
+    }
+  },
+  "js/modules/farm.js": {
+    "name": "farm",
+    "tickspeed": 5,
+    "unlockNeeded": "farmFeature",
+    "forceTick": {
+      "_type": "formula",
+      "code": "forceTick(ticks, oldTime, newTime) {\n        const dayDiff = Math.floor(newTime / SECONDS_PER_DAY) - Math.floor(oldTime / SECONDS_PER_DAY);\n        if (dayDiff > 0) {\n            for (const [key, elem] of Object.entries(store.state.farm.crop)) {\n                if (elem.genes.includes('patient') && elem.patientStacks < 60) {\n                    store.commit('farm/updateCropKey', {name: key, key: 'patientStacks', value: Math.min(elem.patientStacks + dayDiff, 60)});\n                }\n            }\n        }\n    }"
+    },
+    "tick": {
+      "_type": "formula",
+      "code": "tick(ticks) {\n        const decoration = store.state.farm.building.gardenGnome.cacheAmount + store.state.farm.building.gardenGnome.cachePremium;\n        let highestGrow = 0;\n        store.state.farm.field.forEach((row, y) => {\n            row.forEach((cell, x) => {\n                if (cell !== null && cell.type === 'crop') {\n                    if (cell.cache.overgrow === null) {\n                        store.commit('farm/updateFieldKey', {x, y, key: 'grow', value: Math.min(cell.grow + cell.cache.grow * ticks / 12, 1)});\n                    } else {\n                        let grow = cell.grow;\n                        let stage = Math.floor(cell.grow);\n                        let amt = cell.cache.grow * ticks / 12;\n                        while (amt > 0) {\n                            const left = (stage + 1) - grow;\n                            const stageMult = stage > 0 ? Math.pow(cell.cache.overgrow, stage) : 1;\n                            const given = Math.min(left, amt / stageMult);\n\n                            grow += given;\n                            amt -= given * stageMult;\n                            stage++;\n                        }\n                        if (grow > highestGrow) {\n                            highestGrow = grow;\n                        }\n                        store.commit('farm/updateFieldKey', {x, y, key: 'grow', value: grow});\n                    }\n                    store.commit('farm/updateFieldKey', {x, y, key: 'time', value: cell.time + ticks});\n                    if (decoration > 0) {\n                        store.commit('farm/addFieldBuildingEffect', {x, y, key: 'gardenGnome', value: decoration * ticks});\n                    }\n                    if (cell.cache.lectern > 0) {\n                        store.commit('farm/addFieldBuildingEffect', {x, y, key: 'lectern', value: cell.cache.lectern * ticks});\n                    }\n                    if (cell.cache.pinwheel > 0) {\n                        store.commit('farm/addFieldBuildingEffect', {x, y, key: 'pinwheel', value: cell.cache.pinwheel * ticks});\n                    }\n                    if (cell.cache.flag > 0) {\n                        store.commit('farm/addFieldBuildingEffect', {x, y, key: 'flag', value: cell.cache.flag * ticks});\n                    }\n                    if (cell.cache.gnome > 0) {\n                        store.commit('farm/addFieldBuildingEffect', {x, y, key: 'gnomeBoost', value: cell.cache.gnome * ticks});\n                    }\n                }\n            });\n        });\n        if (highestGrow > 1) {\n            store.commit('stat/increaseTo', {feature: 'farm', name: 'maxOvergrow', value: highestGrow});\n        }\n        store.dispatch('farm/updateGrownHint');\n    }"
+    },
+    "unlock": [
+      "farmFeature",
+      "farmDisableEarlyGame",
+      "farmCropExp",
+      "farmFertilizer",
+      "farmAdvancedCardPack",
+      "farmLuxuryCardPack"
+    ],
+    "stat": {
+      "harvests": {
+        "showInStatistics": true
+      },
+      "maxOvergrow": {
+        "showInStatistics": true
+      },
+      "bestPrestige": {
+        "showInStatistics": true
+      },
+      "totalMystery": {
+        "showInStatistics": true
+      }
+    },
+    "mult": {
+      "farmExperience": {
+        "baseValue": 1
+      },
+      "farmGoldChance": {
+        "display": "percent"
+      },
+      "farmGrow": {
+        "display": "time"
+      },
+      "farmOvergrow": {
+        "display": "percent"
+      },
+      "farmHuntChance": {
+        "display": "percent"
+      },
+      "farmRareDropChance": {
+        "display": "percent",
+        "group": [
+          "farmHuntChance"
+        ]
+      },
+      "farmMystery": {},
+      "farmCropGain": {
+        "group": [
+          "currencyFarmVegetableGain",
+          "currencyFarmBerryGain",
+          "currencyFarmGrainGain",
+          "currencyFarmFlowerGain"
+        ]
+      },
+      "farmAllGain": {
+        "group": [
+          "farmCropGain",
+          "farmExperience",
+          "farmGoldChance",
+          "farmRareDropChance"
+        ]
+      },
+      "farmCropCost": {},
+      "farmFertilizerCost": {},
+      "farmLuckyHarvestMult": {
+        "display": "mult",
+        "baseValue": 8
+      }
+    },
+    "currency": {
+      "vegetable": {
+        "color": "orange",
+        "icon": "mdi-carrot",
+        "gainMult": {}
+      },
+      "berry": {
+        "color": "purple",
+        "icon": "mdi-fruit-grapes",
+        "gainMult": {}
+      },
+      "grain": {
+        "color": "yellow",
+        "icon": "mdi-barley",
+        "gainMult": {}
+      },
+      "flower": {
+        "color": "pink",
+        "icon": "mdi-flower",
+        "gainMult": {}
+      },
+      "gold": {
+        "color": "amber",
+        "icon": "mdi-gold"
+      },
+      "seedHull": {
+        "color": "beige",
+        "icon": "mdi-seed",
+        "overcapMult": 0,
+        "capMult": {
+          "baseValue": 50
+        }
+      },
+      "grass": {
+        "color": "green",
+        "icon": "mdi-grass",
+        "overcapMult": 0,
+        "capMult": {
+          "baseValue": 200
+        }
+      },
+      "petal": {
+        "color": "light-blue",
+        "icon": "mdi-leaf",
+        "overcapMult": 0,
+        "currencyMult": {
+          "currencyFarmFlowerGain": {
+            "type": "mult",
+            "value": {
+              "_type": "formula",
+              "code": "val => val * 0.03 + 1"
+            }
+          }
+        },
+        "capMult": {
+          "baseValue": 50
+        }
+      },
+      "bug": {
+        "color": "brown",
+        "icon": "mdi-bug",
+        "overcapMult": 0,
+        "capMult": {
+          "baseValue": 50
+        }
+      },
+      "butterfly": {
+        "color": "babypink",
+        "icon": "mdi-butterfly",
+        "overcapMult": 0,
+        "capMult": {
+          "baseValue": 30
+        }
+      },
+      "ladybug": {
+        "color": "pale-red",
+        "icon": "mdi-ladybug",
+        "overcapMult": 0,
+        "currencyMult": {
+          "farmRareDropChance": {
+            "type": "base",
+            "value": {
+              "_type": "formula",
+              "code": "val => val * 0.0001"
+            }
+          }
+        },
+        "capMult": {
+          "baseValue": 150
+        }
+      },
+      "spider": {
+        "color": "dark-grey",
+        "icon": "mdi-spider",
+        "overcapMult": 0,
+        "currencyMult": {
+          "currencyFarmBugCap": {
+            "type": "base",
+            "value": {
+              "_type": "formula",
+              "code": "val => val * 20"
+            }
+          },
+          "currencyFarmButterflyCap": {
+            "type": "base",
+            "value": {
+              "_type": "formula",
+              "code": "val => val"
+            }
+          },
+          "currencyFarmLadybugCap": {
+            "type": "base",
+            "value": {
+              "_type": "formula",
+              "code": "val => val * 5"
+            }
+          }
+        },
+        "capMult": {
+          "baseValue": 20
+        }
+      },
+      "bee": {
+        "color": "yellow",
+        "icon": "mdi-bee",
+        "overcapMult": 0,
+        "currencyMult": {
+          "currencyFarmBerryGain": {
+            "type": "mult",
+            "value": {
+              "_type": "formula",
+              "code": "val => val * 0.001 + 1"
+            }
+          }
+        },
+        "capMult": {
+          "baseValue": 1000
+        }
+      },
+      "mysteryStone": {
+        "color": "pale-purple",
+        "icon": "mdi-eye-circle-outline",
+        "overcapMult": 0,
+        "capMult": {
+          "baseValue": 1337
+        }
+      },
+      "goldenPetal": {
+        "color": "amber",
+        "icon": "mdi-leaf",
+        "overcapMult": 0,
+        "currencyMult": {
+          "currencyFarmPetalCap": {
+            "type": "base",
+            "value": {
+              "_type": "formula",
+              "code": "val => val * 25"
+            }
+          }
+        },
+        "capMult": {
+          "baseValue": 10
+        }
+      },
+      "smallSeed": {
+        "color": "brown",
+        "icon": "mdi-grain",
+        "overcapMult": 0,
+        "capMult": {
+          "baseValue": 800
+        }
+      }
+    },
+    "note": {
+      "_type": "expression",
+      "code": "buildArray(22).map(() => 'g')"
+    },
+    "upgrade": {
+      "_spread_0": {
+        "_type": "spread",
+        "from": "upgrade"
+      },
+      "_spread_1": {
+        "_type": "spread",
+        "from": "upgradePremium"
+      },
+      "_spread_2": {
+        "_type": "spread",
+        "from": "bookFarm"
+      }
+    },
+    "relic": {
+      "_type": "expression",
+      "code": "relic"
+    },
+    "achievement": {
+      "_type": "expression",
+      "code": "achievement"
+    },
+    "consumable": {
+      "_type": "expression",
+      "code": "fertilizer"
+    },
+    "init": {
+      "_type": "formula",
+      "code": "init() {\n        for (const [key, elem] of Object.entries(crop)) {\n            store.commit('farm/initCrop', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(building)) {\n            store.commit('farm/initBuilding', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(gene)) {\n            store.commit('farm/initGene', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(fertilizer)) {\n            store.commit('farm/initFertilizer', {name: key, ...elem});\n        }\n\n        store.commit('farm/initField');\n\n        store.dispatch('mult/setMult', {name: 'farmHuntChance', key: 'farmGene_hunter', value: 0.01});\n    }"
+    },
+    "saveGame": {
+      "_type": "formula",
+      "code": "saveGame() {\n        let obj = {\n            field: {},\n            crop: {}\n        };\n\n        if (store.state.farm.showColors) {\n            obj.showColors = true;\n        }\n        if (store.state.farm.selectedColor) {\n            obj.selectedColor = store.state.farm.selectedColor;\n        }\n\n        store.state.farm.field.forEach((row, y) => {\n            row.forEach((cell, x) => {\n                if (cell !== null && (cell.type !== null || cell.color !== null)) {\n                    // eslint-disable-next-line no-unused-vars\n                    const {cache: _, ...newObj} = cell;\n                    obj.field[y * 7 + x] = newObj;\n                }\n            });\n        });\n        for (const [key, elem] of Object.entries(store.state.farm.crop)) {\n            if (elem.found) {\n                let rareDrops = {};\n                elem.rareDrop.forEach((drop, index) => {\n                    if (drop.found) {\n                        rareDrops[index] = drop.hunter;\n                    }\n                });\n                obj.crop[key] = {\n                    exp: elem.exp,\n                    level: elem.level,\n                    levelMax: elem.levelMax,\n                    dna: elem.dna,\n                    genes: elem.genes,\n                    genesBlocked: elem.genesBlocked,\n                    cardSelected: elem.cardSelected,\n                    cardEquipped: elem.cardEquipped,\n                    upgrades: elem.upgrades\n                };\n                if (Object.keys(rareDrops).length > 0) {\n                    obj.crop[key].rareDrop = rareDrops;\n                }\n                if (elem.patientStacks > 0) {\n                    obj.patientStacks = elem.patientStacks;\n                }\n            }\n        }\n\n        return obj;\n    }"
+    },
+    "loadGame": {
+      "_type": "formula",
+      "code": "loadGame(data) {\n        if (data.field) {\n            for (const [key, elem] of Object.entries(data.field)) {\n                const fieldId = parseInt(key);\n                let cell = elem;\n                if (cell.type === 'crop') {\n                    cell.cache = {};\n                }\n                store.commit('farm/updateField', {x: fieldId % 7, y: Math.floor(fieldId / 7), value: elem});\n            }\n        }\n        if (data.crop) {\n            for (const [key, elem] of Object.entries(data.crop)) {\n                store.commit('farm/updateCropKey', {name: key, key: 'exp', value: elem.exp});\n                store.commit('farm/updateCropKey', {name: key, key: 'level', value: elem.level});\n                store.commit('farm/updateCropKey', {name: key, key: 'levelMax', value: elem.levelMax});\n                if (elem.rareDrop) {\n                    for (const [index, value] of Object.entries(elem.rareDrop)) {\n                        if (store.state.farm.crop[key].rareDrop[index] !== undefined) {\n                            store.commit('farm/findCropRareDrop', {name: key, index});\n                            store.commit('farm/huntCropRareDrop', {name: key, index, value});\n                        }\n                    }\n                }\n                store.commit('farm/updateCropKey', {name: key, key: 'dna', value: elem.dna});\n                store.commit('farm/updateCropKey', {name: key, key: 'genes', value: elem.genes});\n                store.commit('farm/updateCropKey', {name: key, key: 'genesBlocked', value: elem.genesBlocked});\n                store.commit('farm/updateCropKey', {name: key, key: 'cardSelected', value: elem.cardSelected});\n                store.commit('farm/updateCropKey', {name: key, key: 'cardEquipped', value: elem.cardEquipped});\n                store.commit('farm/updateCropKey', {name: key, key: 'upgrades', value: elem.upgrades});\n\n                if (elem.patientStacks !== undefined) {\n                    store.commit('farm/updateCropKey', {name: key, key: 'patientStacks', value: elem.patientStacks});\n                }\n\n                // Apply level ups\n                store.dispatch('farm/getCropExp', {crop: key, value: 0});\n            }\n        }\n        if (data.showColors) {\n            store.commit('farm/updateKey', {key: 'showColors', value: true});\n        }\n        if (data.selectedColor) {\n            store.commit('farm/updateKey', {key: 'selectedColor', value: data.selectedColor});\n        }\n        store.commit('farm/calculateCropBuildingCaches');\n        store.dispatch('farm/applyGeneEffects');\n        store.dispatch('farm/applyCropPrestige');\n        store.dispatch('farm/updateGrownHint');\n    }"
+    }
+  },
+  "js/modules/event.js": {
+    "name": "event",
+    "tickspeed": 1,
+    "unlockNeeded": "eventFeature",
+    "tick": {
+      "_type": "formula",
+      "code": "tick(seconds, oldTime, newTime) {\n        const currentEvent = store.getters['event/currentEvent'];\n        if (oldTime === 0 || store.state.event.force_event !== null) {\n            if (currentEvent && store.getters['event/eventIsBig'](currentEvent)) {\n                eventTicks[currentEvent](seconds, oldTime, newTime);\n            }\n        } else {\n            const oldDate = new Date(oldTime * 1000);\n            const newDate = new Date(newTime * 1000);\n            const oldDay = getDay(oldDate);\n            const newDay = getDay(newDate);\n            const stats = store.getters['event/dayStats'](oldDay, newDay);\n\n            // Tick old event\n            if (!stats.isSameEvent && !stats.startedBigEvent && stats.startEvent !== null && store.getters['event/eventIsBig'](stats.startEvent)) {\n                const newTicks = Math.floor(Math.min(\n                    new Date(`${oldDate.getFullYear()}-${store.state.event.big[stats.startEvent].end}T23:59:59`).getTime(),\n                    newDate.getTime()\n                ) / 1000);\n                eventTicks[stats.startEvent](newTicks - oldTime, oldTime, newTicks);\n            }\n\n            if (oldDay !== newDay) {\n                store.dispatch('event/dayChange', {start: oldDay, end: newDay});\n            }\n\n            // Tick new event\n            if (stats.isBigEvent) {\n                const oldTicks = Math.floor(Math.max(\n                    new Date(`${newDate.getFullYear()}-${store.state.event.big[currentEvent].start}T00:00:00`).getTime(),\n                    oldDate.getTime()\n                ) / 1000);\n                eventTicks[currentEvent](newTime - oldTicks, oldTicks, newTime);\n            }\n        }\n    }"
+    },
+    "unlock": [
+      "eventFeature",
+      "bloomPoppyFlower",
+      "bloomIrisFlower",
+      "bloomLilyFlower",
+      "bloomOrchidFlower",
+      "bloomCornflowerFlower",
+      "summerFestivalTerraform",
+      "cindersEvent",
+      "bloomEvent",
+      "weatherChaosEvent",
+      "summerFestivalEvent",
+      "nightHuntEvent",
+      "snowdownEvent",
+      "merchantEvent",
+      "bingoCasinoEvent",
+      "wheelOfFortuneCasinoEvent",
+      "bankEvent"
+    ],
+    "stat": {
+      "bloomMaxDaisy": {
+        "type": "bloom"
+      },
+      "bloomMaxPoppy": {
+        "type": "bloom"
+      },
+      "bloomMaxIris": {
+        "type": "bloom"
+      },
+      "bloomMaxLily": {
+        "type": "bloom"
+      },
+      "summerFestivalMaxStage": {
+        "type": "summerFestival"
+      },
+      "cindersHighscore": {
+        "type": "cinders"
+      },
+      "bloomHighscore": {
+        "type": "bloom"
+      },
+      "weatherChaosHighscore": {
+        "type": "weatherChaos"
+      },
+      "summerFestivalHighscore": {
+        "type": "summerFestival"
+      },
+      "nightHuntHighscore": {
+        "type": "nightHunt"
+      },
+      "snowdownHighscore": {
+        "type": "snowdown"
+      }
+    },
+    "mult": {
+      "merchantOffers": {
+        "baseValue": 6,
+        "round": true
+      },
+      "bankInvestmentSize": {
+        "baseValue": 500,
+        "round": true
+      },
+      "bankLoanSize": {
+        "baseValue": 500,
+        "round": true
+      },
+      "bankCardPackChance": {
+        "display": "percent"
+      },
+      "cindersProductionFirefly": {
+        "baseValue": 1
+      },
+      "cindersProductionGlowshroom": {
+        "baseValue": 75
+      },
+      "cindersProductionGlowfish": {
+        "baseValue": 4000
+      },
+      "cindersProductionLantern": {
+        "baseValue": {
+          "_type": "expression",
+          "code": "buildNum(200, 'K')"
+        }
+      },
+      "cindersProductionCampfire": {
+        "baseValue": {
+          "_type": "expression",
+          "code": "buildNum(12, 'M')"
+        }
+      },
+      "cindersProductionCoral": {
+        "baseValue": {
+          "_type": "expression",
+          "code": "buildNum(800, 'M')"
+        }
+      },
+      "cindersProductionJellyfish": {
+        "baseValue": {
+          "_type": "expression",
+          "code": "buildNum(35, 'B')"
+        }
+      },
+      "cindersProductionNightbloom": {
+        "baseValue": {
+          "_type": "expression",
+          "code": "buildNum(1.5, 'T')"
+        }
+      },
+      "cindersProductionNeonlight": {
+        "baseValue": {
+          "_type": "expression",
+          "code": "buildNum(40, 'T')"
+        }
+      },
+      "cindersProductionSun": {
+        "baseValue": {
+          "_type": "expression",
+          "code": "buildNum(1, 'Qa')"
+        }
+      },
+      "cindersFirstProducerCost": {},
+      "cindersNonFirstProducerCost": {},
+      "cindersUpgradeLightCost": {},
+      "cindersUpgradeProducerRequirement": {},
+      "cindersCandlePower": {},
+      "bloomInventorySize": {
+        "baseValue": 5,
+        "round": true
+      },
+      "bloomBreederSize": {
+        "baseValue": 1,
+        "round": true
+      },
+      "bloomDaisyChance": {
+        "baseValue": 0.3,
+        "display": "percent"
+      },
+      "bloomPoppyChance": {
+        "baseValue": 0.25,
+        "display": "percent"
+      },
+      "bloomIrisChance": {
+        "baseValue": 0.2,
+        "display": "percent"
+      },
+      "bloomLilyChance": {
+        "baseValue": 0.15,
+        "display": "percent"
+      },
+      "bloomOrchidChance": {
+        "baseValue": 0.1,
+        "display": "percent"
+      },
+      "bloomCornflowerChance": {
+        "baseValue": 0.05,
+        "display": "percent"
+      },
+      "bloomDaisyBreedTime": {
+        "baseValue": 300,
+        "display": "time",
+        "min": 1,
+        "round": true
+      },
+      "bloomPoppyBreedTime": {
+        "baseValue": 900,
+        "display": "time",
+        "min": 1,
+        "round": true
+      },
+      "bloomIrisBreedTime": {
+        "baseValue": 2400,
+        "display": "time",
+        "min": 1,
+        "round": true
+      },
+      "bloomLilyBreedTime": {
+        "baseValue": 6000,
+        "display": "time",
+        "min": 1,
+        "round": true
+      },
+      "bloomOrchidBreedTime": {
+        "baseValue": 14400,
+        "display": "time",
+        "min": 1,
+        "round": true
+      },
+      "bloomCornflowerBreedTime": {
+        "baseValue": 28800,
+        "display": "time",
+        "min": 1,
+        "round": true
+      },
+      "weatherChaosFishingPower": {},
+      "weatherChaosFishSizeMax": {
+        "min": 1
+      },
+      "weatherChaosFishSizeAverage": {
+        "baseValue": 1
+      },
+      "weatherChaosFishingTime": {
+        "baseValue": 300,
+        "display": "time",
+        "min": 1,
+        "round": true
+      },
+      "weatherChaosFishDoubleChance": {
+        "display": "percent",
+        "min": 0,
+        "max": 1
+      },
+      "weatherChaosIgnoreWeather": {
+        "display": "percent",
+        "min": 0,
+        "max": 1
+      },
+      "weatherChaosFishChance": {
+        "baseValue": 0.25,
+        "display": "percent",
+        "min": 0,
+        "max": 1
+      },
+      "weatherChaosTreasureChance": {
+        "baseValue": 0.05,
+        "display": "percent",
+        "min": 0,
+        "max": 1
+      },
+      "weatherChaosAlgaeWeight": {
+        "baseValue": 1
+      },
+      "weatherChaosDriftwoodWeight": {
+        "baseValue": 1
+      },
+      "weatherChaosPlasticWeight": {
+        "baseValue": 1
+      },
+      "weatherChaosTrashGain": {
+        "group": [
+          "currencyEventAlgaeGain",
+          "currencyEventDriftwoodGain",
+          "currencyEventPlasticGain"
+        ]
+      },
+      "summerFestivalBuildQueueSlots": {
+        "baseValue": 3,
+        "round": true
+      },
+      "summerFestivalBuildQueueSpeed": {
+        "baseValue": 1
+      },
+      "summerFestivalMaterialGain": {
+        "baseValue": 100
+      },
+      "summerFestivalMaterialStackCap": {
+        "baseValue": 10
+      },
+      "nightHuntFindableIngredients": {
+        "baseValue": 4,
+        "round": true
+      },
+      "nightHuntIngredientSize": {
+        "baseValue": 8,
+        "round": true
+      },
+      "nightHuntFavouriteIngredientSize": {
+        "round": true
+      },
+      "nightHuntMaxIngredients": {
+        "baseValue": 1,
+        "round": true
+      },
+      "nightHuntBonusIngredientCount": {
+        "round": true
+      },
+      "nightHuntBonusIngredientAmount": {
+        "baseValue": 1,
+        "round": true
+      },
+      "nightHuntRitualStability": {
+        "display": "percent",
+        "min": -1,
+        "max": 2
+      },
+      "nightHuntRitualSuccessChance": {
+        "display": "percent",
+        "min": 0,
+        "max": 1
+      },
+      "nightHuntRitualHintChance": {
+        "display": "percent",
+        "min": 0,
+        "max": 1
+      },
+      "nightHuntRitualFamiliarity": {
+        "display": "percent",
+        "min": 0
+      },
+      "snowdownAttack": {
+        "baseValue": 4
+      },
+      "snowdownHealth": {
+        "baseValue": 40,
+        "round": true
+      },
+      "snowdownDefense": {
+        "round": true
+      },
+      "snowdownCritRating": {},
+      "snowdownBlockRating": {},
+      "snowdownPetAttack": {},
+      "snowdownPetHealth": {
+        "round": true
+      },
+      "snowdownPetDefense": {
+        "round": true
+      },
+      "snowdownPetCritRating": {},
+      "snowdownPetBlockRating": {},
+      "snowdownAllAttack": {
+        "group": [
+          "snowdownAttack",
+          "snowdownPetAttack"
+        ]
+      },
+      "snowdownAllHealth": {
+        "group": [
+          "snowdownHealth",
+          "snowdownPetHealth"
+        ]
+      },
+      "snowdownAllDefense": {
+        "group": [
+          "snowdownDefense",
+          "snowdownPetDefense"
+        ]
+      },
+      "snowdownRevengeStats": {
+        "display": "percent"
+      },
+      "snowdownRevengeCrit": {},
+      "snowdownRevengeBlock": {},
+      "snowdownResourceGain": {}
+    },
+    "multGroup": [
+      {
+        "mult": "snowdownResourceGain",
+        "name": "currencyGain",
+        "subtype": "snowdownResource"
+      }
+    ],
+    "currency": {
+      "light": {
+        "type": "cinders",
+        "color": "yellow",
+        "icon": "mdi-lightbulb-on",
+        "gainMult": {}
+      },
+      "soot": {
+        "type": "cinders",
+        "color": "darker-grey",
+        "icon": "mdi-liquid-spot",
+        "gainMult": {}
+      },
+      "blossom": {
+        "type": "bloom",
+        "color": "pale-pink",
+        "icon": "mdi-flower-poppy",
+        "gainMult": {}
+      },
+      "algae": {
+        "type": "weatherChaos",
+        "color": "green",
+        "icon": "mdi-grass",
+        "gainMult": {}
+      },
+      "driftwood": {
+        "type": "weatherChaos",
+        "color": "wooden",
+        "icon": "mdi-tree",
+        "gainMult": {}
+      },
+      "plastic": {
+        "type": "weatherChaos",
+        "color": "pale-pink",
+        "icon": "mdi-delete-variant",
+        "gainMult": {}
+      },
+      "slime": {
+        "type": "weatherChaos",
+        "color": "lime",
+        "icon": "mdi-liquid-spot",
+        "gainMult": {}
+      },
+      "log": {
+        "type": "summerFestival",
+        "color": "wooden",
+        "icon": "mdi-tray-full"
+      },
+      "stoneBlock": {
+        "type": "summerFestival",
+        "color": "grey",
+        "icon": "mdi-cube"
+      },
+      "coconut": {
+        "type": "summerFestival",
+        "color": "brown",
+        "icon": "mdi-bowling"
+      },
+      "shell": {
+        "type": "summerFestival",
+        "color": "pale-pink",
+        "icon": "mdi-set-all"
+      },
+      "music": {
+        "type": "summerFestival",
+        "color": "pink",
+        "icon": "mdi-music",
+        "gainMult": {},
+        "showGainMult": true
+      },
+      "sand": {
+        "type": "summerFestival",
+        "color": "beige",
+        "icon": "mdi-dots-triangle",
+        "gainMult": {},
+        "showGainMult": true
+      },
+      "freshWater": {
+        "type": "summerFestival",
+        "color": "light-blue",
+        "icon": "mdi-water",
+        "gainMult": {},
+        "showGainMult": true
+      },
+      "coal": {
+        "type": "summerFestival",
+        "color": "darker-grey",
+        "icon": "mdi-chart-bubble",
+        "gainMult": {},
+        "showGainMult": true
+      },
+      "metalPart": {
+        "type": "summerFestival",
+        "color": "blue-grey",
+        "icon": "mdi-scatter-plot",
+        "gainMult": {},
+        "showGainMult": true
+      },
+      "pearl": {
+        "type": "summerFestival",
+        "color": "skyblue",
+        "icon": "mdi-circle-opacity",
+        "gainMult": {},
+        "showGainMult": true
+      },
+      "salt": {
+        "type": "summerFestival",
+        "color": "lighter-grey",
+        "icon": "mdi-shaker",
+        "gainMult": {},
+        "showGainMult": true
+      },
+      "pepper": {
+        "type": "summerFestival",
+        "color": "dark-grey",
+        "icon": "mdi-shaker",
+        "gainMult": {},
+        "showGainMult": true
+      },
+      "honey": {
+        "type": "summerFestival",
+        "color": "amber",
+        "icon": "mdi-beehive-outline",
+        "gainMult": {},
+        "showGainMult": true
+      },
+      "vegetable": {
+        "type": "summerFestival",
+        "color": "green",
+        "icon": "mdi-leek",
+        "gainMult": {},
+        "showGainMult": true
+      },
+      "citrusFruit": {
+        "type": "summerFestival",
+        "color": "yellow",
+        "icon": "mdi-fruit-citrus",
+        "gainMult": {},
+        "showGainMult": true
+      },
+      "rawFish": {
+        "type": "summerFestival",
+        "color": "teal",
+        "icon": "mdi-fish",
+        "gainMult": {},
+        "showGainMult": true
+      },
+      "cookedFish": {
+        "type": "summerFestival",
+        "color": "pale-orange",
+        "icon": "mdi-fish"
+      },
+      "rawMeat": {
+        "type": "summerFestival",
+        "color": "red",
+        "icon": "mdi-food-steak",
+        "gainMult": {},
+        "showGainMult": true
+      },
+      "cookedMeat": {
+        "type": "summerFestival",
+        "color": "brown",
+        "icon": "mdi-food-steak"
+      },
+      "solidPlate": {
+        "type": "summerFestival",
+        "color": "light-grey",
+        "icon": "mdi-layers"
+      },
+      "sandstone": {
+        "type": "summerFestival",
+        "color": "pale-yellow",
+        "icon": "mdi-wall"
+      },
+      "hardSteel": {
+        "type": "summerFestival",
+        "color": "dark-grey",
+        "icon": "mdi-gold"
+      },
+      "compositePlate": {
+        "type": "summerFestival",
+        "color": "pale-orange",
+        "icon": "mdi-pillar"
+      },
+      "coconutSalad": {
+        "type": "summerFestival",
+        "color": "pale-green",
+        "icon": "mdi-bowl-mix"
+      },
+      "saltyShell": {
+        "type": "summerFestival",
+        "color": "pale-red",
+        "icon": "mdi-set-all"
+      },
+      "lemonCandy": {
+        "type": "summerFestival",
+        "color": "yellow",
+        "icon": "mdi-candy"
+      },
+      "steak": {
+        "type": "summerFestival",
+        "color": "wooden",
+        "icon": "mdi-food-steak"
+      },
+      "fishSticks": {
+        "type": "summerFestival",
+        "color": "pale-orange",
+        "icon": "mdi-tally-mark-4"
+      },
+      "essence": {
+        "type": "nightHunt",
+        "color": "pink",
+        "icon": "mdi-flask-round-bottom",
+        "gainMult": {
+          "display": "perSecond"
+        },
+        "showGainMult": true
+      },
+      "lavender": {
+        "type": "nightHunt",
+        "color": "pale-purple",
+        "icon": "mdi-grass"
+      },
+      "mapleLeaf": {
+        "type": "nightHunt",
+        "color": "orange",
+        "icon": "mdi-leaf-maple"
+      },
+      "fourLeafClover": {
+        "type": "nightHunt",
+        "color": "pale-green",
+        "icon": "mdi-clover"
+      },
+      "charredSkull": {
+        "type": "nightHunt",
+        "color": "dark-grey",
+        "icon": "mdi-skull"
+      },
+      "mysticalWater": {
+        "type": "nightHunt",
+        "color": "cyan",
+        "icon": "mdi-flask-round-bottom-outline"
+      },
+      "cheese": {
+        "type": "nightHunt",
+        "color": "yellow",
+        "icon": "mdi-cheese"
+      },
+      "spiderWeb": {
+        "type": "nightHunt",
+        "color": "light-grey",
+        "icon": "mdi-spider-web"
+      },
+      "strangeEgg": {
+        "type": "nightHunt",
+        "color": "orange-red",
+        "icon": "mdi-egg-easter"
+      },
+      "puzzlePiece": {
+        "type": "nightHunt",
+        "color": "red-pink",
+        "icon": "mdi-puzzle"
+      },
+      "wizardHat": {
+        "type": "nightHunt",
+        "color": "indigo",
+        "icon": "mdi-wizard-hat"
+      },
+      "cactus": {
+        "type": "nightHunt",
+        "color": "green",
+        "icon": "mdi-cactus"
+      },
+      "feather": {
+        "type": "nightHunt",
+        "color": "skyblue",
+        "icon": "mdi-feather"
+      },
+      "sapling": {
+        "type": "snowdown",
+        "subtype": "snowdownResource",
+        "color": "green",
+        "icon": "mdi-sprout",
+        "gainMult": {
+          "display": "perSecond"
+        },
+        "showGainMult": true,
+        "showGainTimer": true
+      },
+      "yarn": {
+        "type": "snowdown",
+        "subtype": "snowdownResource",
+        "color": "red",
+        "icon": "mdi-link",
+        "gainMult": {
+          "display": "perSecond"
+        },
+        "showGainMult": true,
+        "showGainTimer": true
+      },
+      "dough": {
+        "type": "snowdown",
+        "subtype": "snowdownResource",
+        "color": "beige",
+        "icon": "mdi-liquid-spot",
+        "gainMult": {
+          "display": "perSecond"
+        },
+        "showGainMult": true,
+        "showGainTimer": true
+      },
+      "snow": {
+        "type": "snowdown",
+        "subtype": "snowdownResource",
+        "color": "light-blue",
+        "icon": "mdi-snowflake",
+        "gainMult": {
+          "display": "perSecond"
+        },
+        "showGainMult": true,
+        "showGainTimer": true
+      },
+      "wax": {
+        "type": "cinders",
+        "color": "pale-yellow",
+        "icon": "mdi-beehive-outline"
+      },
+      "humus": {
+        "type": "bloom",
+        "color": "brown",
+        "icon": "mdi-gradient-vertical"
+      },
+      "cloud": {
+        "type": "weatherChaos",
+        "color": "skyblue",
+        "icon": "mdi-cloud"
+      },
+      "cocktail": {
+        "type": "summerFestival",
+        "color": "amber",
+        "icon": "mdi-glass-cocktail"
+      },
+      "magic": {
+        "type": "nightHunt",
+        "color": "pink-purple",
+        "icon": "mdi-auto-fix"
+      },
+      "snowball": {
+        "type": "snowdown",
+        "color": "skyblue",
+        "icon": "mdi-circle"
+      },
+      "cindersToken": {
+        "type": "token",
+        "color": "amber",
+        "icon": "mdi-poker-chip",
+        "gainMult": {}
+      },
+      "bloomToken": {
+        "type": "token",
+        "color": "light-green",
+        "icon": "mdi-poker-chip"
+      },
+      "weatherChaosToken": {
+        "type": "token",
+        "color": "grey",
+        "icon": "mdi-poker-chip"
+      },
+      "summerFestivalToken": {
+        "type": "token",
+        "color": "red",
+        "icon": "mdi-poker-chip"
+      },
+      "nightHuntToken": {
+        "type": "token",
+        "color": "purple",
+        "icon": "mdi-poker-chip"
+      },
+      "snowdownToken": {
+        "type": "token",
+        "color": "blue",
+        "icon": "mdi-poker-chip"
+      }
+    },
+    "upgrade": {
+      "_spread_0": {
+        "_type": "spread",
+        "from": "cindersUpgrade"
+      },
+      "_spread_1": {
+        "_type": "spread",
+        "from": "cindersProducer"
+      },
+      "_spread_2": {
+        "_type": "spread",
+        "from": "bloomUpgrade"
+      },
+      "_spread_3": {
+        "_type": "spread",
+        "from": "weatherChaosUpgrade"
+      },
+      "_spread_4": {
+        "_type": "spread",
+        "from": "summerFestivalUpgrade"
+      },
+      "_spread_5": {
+        "_type": "spread",
+        "from": "nightHuntUpgrade"
+      },
+      "_spread_6": {
+        "_type": "spread",
+        "from": "snowdownUpgrade"
+      }
+    },
+    "relic": {
+      "_type": "expression",
+      "code": "relic"
+    },
+    "note": {
+      "_type": "expression",
+      "code": "buildArray(34).map(() => 'g')"
+    },
+    "init": {
+      "_type": "formula",
+      "code": "init() {\n        for (const [key, elem] of Object.entries(weather)) {\n            store.commit('weatherChaos/initWeather', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(fishingRod)) {\n            store.commit('weatherChaos/initFishingRod', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(location)) {\n            store.commit('weatherChaos/initLocation', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(fish)) {\n            store.commit('weatherChaos/initFish', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(bait)) {\n            store.commit('weatherChaos/initBait', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(building)) {\n            store.commit('summerFestival/initBuilding', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(ingredientStat)) {\n            store.commit('nightHunt/initIngredientStat', {name: key, effect: elem});\n        }\n        for (const [key, elem] of Object.entries(potion)) {\n            store.commit('nightHunt/initPotion', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(item)) {\n            store.commit('snowdown/initItem', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(prize)) {\n            store.commit('event/initPrize', {name: key, ...elem});\n        }\n        for (const [key, elem] of Object.entries(project)) {\n            store.commit('event/initBankProject', {name: key, ...elem});\n        }\n    }"
+    },
+    "saveGame": {
+      "_type": "formula",
+      "code": "saveGame() {\n        let obj = {};\n\n        if (store.state.event.force_event !== null) {\n            obj.force_event = store.state.event.force_event;\n        }\n        if (store.state.event.shop_merchant.length > 0) {\n            obj.shop_merchant = store.state.event.shop_merchant;\n        }\n        if (store.state.event.shop_big.length > 0) {\n            obj.shop_big = store.state.event.shop_big;\n        }\n        if (store.state.event.casino_type !== null) {\n            obj.casino_type = store.state.event.casino_type;\n        }\n        if (store.state.event.casino_bingo_bought) {\n            obj.casino_bingo_bought = true;\n        }\n        if (store.state.event.casino_bingo_card !== null) {\n            obj.casino_bingo_card = store.state.event.casino_bingo_card;\n        }\n        if (store.state.event.casino_bingo_draws.length > 0) {\n            obj.casino_bingo_draws = store.state.event.casino_bingo_draws;\n        }\n        if (store.state.event.casino_bingo_boosts.length > 0) {\n            obj.casino_bingo_boosts = store.state.event.casino_bingo_boosts;\n        }\n        if (store.state.event.casino_bingo_prize_1 !== null) {\n            obj.casino_bingo_prize_1 = store.state.event.casino_bingo_prize_1;\n        }\n        if (store.state.event.casino_bingo_prize_2 !== null) {\n            obj.casino_bingo_prize_2 = store.state.event.casino_bingo_prize_2;\n        }\n        if (store.state.event.casino_bingo_prize_3 !== null) {\n            obj.casino_bingo_prize_3 = store.state.event.casino_bingo_prize_3;\n        }\n        if (store.state.event.casino_wheel_segments.length > 0) {\n            obj.casino_wheel_segments = store.state.event.casino_wheel_segments;\n        }\n        if (store.state.event.casino_wheel_rotation > 0) {\n            obj.casino_wheel_rotation = store.state.event.casino_wheel_rotation;\n        }\n\n        let bankProjects = {};\n        let hasBankProject = false;\n        for (const [key, elem] of Object.entries(store.state.event.bank_project)) {\n            if (elem.level > 0 || elem.spent > 0) {\n                bankProjects[key] = {level: elem.level, spent: elem.spent};\n                hasBankProject = true;\n            }\n        }\n\n        if (hasBankProject) {\n            obj.bank_project = bankProjects;\n        }\n\n        if (store.state.event.bank_project_current !== null) {\n            obj.bank_project_current = store.state.event.bank_project_current;\n        }\n        if (store.state.event.bank_investment > 0) {\n            obj.bank_investment = store.state.event.bank_investment;\n        }\n        if (store.state.event.bank_loan > 0) {\n            obj.bank_loan = store.state.event.bank_loan;\n        }\n        if (store.state.event.bank_action) {\n            obj.bank_action = true;\n        }\n\n        // cinders stuff\n        if (store.state.cinders.activeCandle !== null) {\n            obj.cinders_candle = store.state.cinders.activeCandle;\n        }\n\n        // bloom stuff\n        if (store.state.bloom.inventory.length > 0) {\n            obj.bloom_inventory = store.state.bloom.inventory;\n        }\n        if (store.state.bloom.breeder.length > 0) {\n            obj.bloom_breeder = store.state.bloom.breeder;\n        }\n\n        // weather chaos stuff\n        if (store.state.weatherChaos.currentLocation !== 'pond') {\n            obj.weatherChaos_currentLocation = store.state.weatherChaos.currentLocation;\n        }\n        if (store.state.weatherChaos.currentFishingRod !== 'basic') {\n            obj.weatherChaos_currentFishingRod = store.state.weatherChaos.currentFishingRod;\n        }\n        if (store.state.weatherChaos.currentBait !== null) {\n            obj.weatherChaos_currentBait = store.state.weatherChaos.currentBait;\n        }\n        if (store.state.weatherChaos.nextWeather.length > 0) {\n            obj.weatherChaos_nextWeather = store.state.weatherChaos.nextWeather;\n        }\n        if (store.state.weatherChaos.fishingProgress > 0) {\n            obj.weatherChaos_fishingProgress = store.state.weatherChaos.fishingProgress;\n        }\n        if (store.state.weatherChaos.treasureRods > 0) {\n            obj.weatherChaos_treasureRods = store.state.weatherChaos.treasureRods;\n        }\n        if (store.state.weatherChaos.boughtRods > 0) {\n            obj.weatherChaos_boughtRods = store.state.weatherChaos.boughtRods;\n        }\n\n        let weatherChaosFishingRod = [];\n        for (const [key, elem] of Object.entries(store.state.weatherChaos.fishingRod)) {\n            if (elem.owned && !elem.ownedDefault) {\n                weatherChaosFishingRod.push(key);\n            }\n        }\n        if (weatherChaosFishingRod.length > 0) {\n            obj.weatherChaos_fishingRod = weatherChaosFishingRod;\n        }\n\n        let weatherChaosLocation = [];\n        for (const [key, elem] of Object.entries(store.state.weatherChaos.location)) {\n            if (elem.owned && !elem.ownedDefault) {\n                weatherChaosLocation.push(key);\n            }\n        }\n        if (weatherChaosLocation.length > 0) {\n            obj.weatherChaos_location = weatherChaosLocation;\n        }\n\n        let weatherChaosBait = {};\n        for (const [key, elem] of Object.entries(store.state.weatherChaos.bait)) {\n            if (elem.owned > 0) {\n                weatherChaosBait[key] = elem.owned;\n            }\n        }\n        if (Object.keys(weatherChaosBait).length > 0) {\n            obj.weatherChaos_bait = weatherChaosBait;\n        }\n\n        let weatherChaosFish = {};\n        for (const [key, elem] of Object.entries(store.state.weatherChaos.fish)) {\n            if (elem.catchRecord !== null) {\n                weatherChaosFish[key] = elem.catchRecord;\n            }\n        }\n        if (Object.keys(weatherChaosFish).length > 0) {\n            obj.weatherChaos_fish = weatherChaosFish;\n        }\n\n        // summer festival stuff\n        if (Object.keys(store.state.summerFestival.placedBuilding).length > 0) {\n            obj.summerFestival_placedBuilding = store.state.summerFestival.placedBuilding;\n        }\n        if (store.state.summerFestival.buildQueue.length > 0) {\n            obj.summerFestival_buildQueue = store.state.summerFestival.buildQueue;\n        }\n        if (store.state.summerFestival.nextBuildingId > 1) {\n            obj.summerFestival_nextBuildingId = store.state.summerFestival.nextBuildingId;\n        }\n        if (store.state.summerFestival.island !== null) {\n            obj.summerFestival_island = store.state.summerFestival.island.map(row => row.map(cell => {\n                return {\n                    tile: cell.tile,\n                    drop: cell.drop,\n                    building: cell.building,\n                    unlocked: cell.unlocked,\n                };\n            }));\n        }\n        if (store.state.summerFestival.freeExpansion > 0) {\n            obj.summerFestival_freeExpansion = store.state.summerFestival.freeExpansion;\n        }\n        if (store.state.summerFestival.topazExpansion > 0) {\n            obj.summerFestival_topazExpansion = store.state.summerFestival.topazExpansion;\n        }\n        if (store.state.summerFestival.questsCompleted > 0) {\n            obj.summerFestival_questsCompleted = store.state.summerFestival.questsCompleted;\n        }\n\n        // night hunt stuff\n        if (Object.keys(store.state.nightHunt.changedCurrency).length > 0) {\n            obj.nightHunt_changedCurrency = store.state.nightHunt.changedCurrency;\n        }\n        if (store.state.nightHunt.ritualIngredients.length > 0) {\n            obj.nightHunt_ritualIngredients = store.state.nightHunt.ritualIngredients;\n        }\n        if (store.state.nightHunt.bonusIngredients.length > 0) {\n            obj.nightHunt_bonusIngredients = store.state.nightHunt.bonusIngredients;\n        }\n        if (store.state.nightHunt.performedRituals.length > 0) {\n            obj.nightHunt_performedRituals = store.state.nightHunt.performedRituals;\n        }\n        if (Object.keys(store.state.nightHunt.ritualFamiliarity).length > 0) {\n            obj.nightHunt_ritualFamiliarity = store.state.nightHunt.ritualFamiliarity;\n        }\n        if (Object.keys(store.state.nightHunt.ritualHint).length > 0) {\n            obj.nightHunt_ritualHint = store.state.nightHunt.ritualHint;\n        }\n        if (store.state.nightHunt.favouriteIngredient !== 'copy') {\n            obj.nightHunt_favouriteIngredient = store.state.nightHunt.favouriteIngredient;\n        }\n\n        let potions = {};\n        let hasPotions = false;\n        for (const [key, elem] of Object.entries(store.state.nightHunt.potion)) {\n            if (elem.recipe !== null || elem.level > 0) {\n                potions[key] = {recipe: elem.recipe, level: elem.level};\n                hasPotions = true;\n            }\n        }\n\n        if (hasPotions) {\n            obj.nightHunt_potion = potions;\n        }\n\n        // snowdown stuff\n        if (store.state.snowdown.fight > 0) {\n            obj.snowdown_fight = store.state.snowdown.fight;\n        }\n        if (store.state.snowdown.rewardProducer) {\n            obj.snowdown_rewardProducer = true;\n        }\n        if (store.state.snowdown.rewardItem !== null) {\n            obj.snowdown_rewardItem = store.state.snowdown.rewardItem;\n        }\n        if (store.state.snowdown.itemsBought > 0) {\n            obj.snowdown_itemsBought = store.state.snowdown.itemsBought;\n        }\n        if (store.state.snowdown.itemsBoughtTopaz > 0) {\n            obj.snowdown_itemsBoughtTopaz = store.state.snowdown.itemsBoughtTopaz;\n        }\n        if (store.state.snowdown.revenge > 0) {\n            obj.snowdown_revenge = store.state.snowdown.revenge;\n        }\n\n        let items = {};\n        let hasItems = false;\n        for (const [key, elem] of Object.entries(store.state.snowdown.item)) {\n            if (elem.amount > 0) {\n                items[key] = elem.amount;\n                hasItems = true;\n            }\n        }\n\n        if (hasItems) {\n            obj.snowdown_item = items;\n        }\n\n        return obj;\n    }"
+    },
+    "loadGame": {
+      "_type": "formula",
+      "code": "loadGame(data) {\n        if (data.force_event !== undefined) {\n            store.commit('event/updateKey', {key: 'force_event', value: data.force_event});\n        }\n        if (data.shop_merchant !== undefined) {\n            store.commit('event/updateKey', {key: 'shop_merchant', value: data.shop_merchant});\n        }\n        if (data.shop_big !== undefined) {\n            store.commit('event/updateKey', {key: 'shop_big', value: data.shop_big});\n        }\n        if (data.casino_type !== undefined) {\n            store.commit('event/updateKey', {key: 'casino_type', value: data.casino_type});\n        }\n        if (data.casino_bingo_bought !== undefined) {\n            store.commit('event/updateKey', {key: 'casino_bingo_bought', value: data.casino_bingo_bought});\n        }\n        if (data.casino_bingo_card !== undefined) {\n            store.commit('event/updateKey', {key: 'casino_bingo_card', value: data.casino_bingo_card});\n        }\n        if (data.casino_bingo_draws !== undefined) {\n            store.commit('event/updateKey', {key: 'casino_bingo_draws', value: data.casino_bingo_draws});\n        }\n        if (data.casino_bingo_boosts !== undefined) {\n            store.commit('event/updateKey', {key: 'casino_bingo_boosts', value: data.casino_bingo_boosts});\n        }\n        if (data.casino_bingo_prize_1 !== undefined) {\n            store.commit('event/updateKey', {key: 'casino_bingo_prize_1', value: data.casino_bingo_prize_1});\n        }\n        if (data.casino_bingo_prize_2 !== undefined) {\n            store.commit('event/updateKey', {key: 'casino_bingo_prize_2', value: data.casino_bingo_prize_2});\n        }\n        if (data.casino_bingo_prize_3 !== undefined) {\n            store.commit('event/updateKey', {key: 'casino_bingo_prize_3', value: data.casino_bingo_prize_3});\n        }\n        if (data.casino_wheel_segments !== undefined) {\n            store.commit('event/updateKey', {key: 'casino_wheel_segments', value: data.casino_wheel_segments});\n        }\n        if (data.casino_wheel_rotation !== undefined) {\n            store.commit('event/updateKey', {key: 'casino_wheel_rotation', value: data.casino_wheel_rotation});\n        }\n        if (data.bank_project_current !== undefined) {\n            store.commit('event/updateKey', {key: 'bank_project_current', value: data.bank_project_current});\n        }\n        if (data.bank_project !== undefined) {\n            for (const [key, elem] of Object.entries(data.bank_project)) {\n                store.commit('event/updateBankProjectKey', {name: key, key: 'spent', value: elem.spent});\n                if (elem.level > 0) {\n                    store.commit('event/updateBankProjectKey', {name: key, key: 'level', value: elem.level});\n                    store.dispatch('event/bankProjectApply', {name: key, onBuy: false});\n                }\n            }\n        }\n        if (data.bank_investment !== undefined) {\n            store.commit('event/updateKey', {key: 'bank_investment', value: data.bank_investment});\n        }\n        if (data.bank_loan !== undefined) {\n            store.commit('event/updateKey', {key: 'bank_loan', value: data.bank_loan});\n        }\n        if (data.bank_action !== undefined) {\n            store.commit('event/updateKey', {key: 'bank_action', value: data.bank_action});\n        }\n        if (data.cinders_candle !== undefined) {\n            store.commit('cinders/updateKey', {key: 'activeCandle', value: data.cinders_candle});\n        }\n        if (data.bloom_inventory !== undefined) {\n            store.commit('bloom/updateKey', {key: 'inventory', value: data.bloom_inventory});\n        }\n        if (data.bloom_breeder !== undefined) {\n            store.commit('bloom/updateKey', {key: 'breeder', value: data.bloom_breeder});\n        }\n        if (data.weatherChaos_currentLocation !== undefined) {\n            store.commit('weatherChaos/updateKey', {key: 'currentLocation', value: data.weatherChaos_currentLocation});\n            store.dispatch('weatherChaos/applyLocationEffects', data.weatherChaos_currentLocation);\n        }\n        if (data.weatherChaos_currentFishingRod !== undefined) {\n            store.commit('weatherChaos/updateKey', {key: 'currentFishingRod', value: data.weatherChaos_currentFishingRod});\n            store.dispatch('weatherChaos/applyFishingRodEffects', data.weatherChaos_currentFishingRod);\n        }\n        if (data.weatherChaos_currentBait !== undefined) {\n            store.commit('weatherChaos/updateKey', {key: 'currentBait', value: data.weatherChaos_currentBait});\n            store.dispatch('weatherChaos/applyBaitEffects', data.weatherChaos_currentBait);\n        }\n        if (data.weatherChaos_nextWeather !== undefined) {\n            store.commit('weatherChaos/updateKey', {key: 'nextWeather', value: data.weatherChaos_nextWeather});\n        }\n        if (data.weatherChaos_fishingProgress !== undefined) {\n            store.commit('weatherChaos/updateKey', {key: 'fishingProgress', value: data.weatherChaos_fishingProgress});\n        }\n        if (data.weatherChaos_treasureRods !== undefined) {\n            store.commit('weatherChaos/updateKey', {key: 'treasureRods', value: data.weatherChaos_treasureRods});\n        }\n        if (data.weatherChaos_boughtRods !== undefined) {\n            store.commit('weatherChaos/updateKey', {key: 'boughtRods', value: data.weatherChaos_boughtRods});\n        }\n        if (data.weatherChaos_fishingRod !== undefined) {\n            data.weatherChaos_fishingRod.forEach(key => {\n                store.commit('weatherChaos/updateSubkey', {name: 'fishingRod', key, subkey: 'owned', value: true});\n            });\n        }\n        if (data.weatherChaos_location !== undefined) {\n            data.weatherChaos_location.forEach(key => {\n                store.commit('weatherChaos/updateSubkey', {name: 'location', key, subkey: 'owned', value: true});\n            });\n        }\n        if (data.weatherChaos_bait !== undefined) {\n            for (const [key, elem] of Object.entries(data.weatherChaos_bait)) {\n                store.commit('weatherChaos/updateSubkey', {name: 'bait', key, subkey: 'owned', value: elem});\n            }\n        }\n        if (data.weatherChaos_fish !== undefined) {\n            for (const [key, elem] of Object.entries(data.weatherChaos_fish)) {\n                store.commit('weatherChaos/updateSubkey', {name: 'fish', key, subkey: 'catchRecord', value: elem});\n            }\n        }\n        if (data.summerFestival_buildQueue !== undefined) {\n            store.commit('summerFestival/updateKey', {key: 'buildQueue', value: data.summerFestival_buildQueue});\n        }\n        if (data.summerFestival_nextBuildingId !== undefined) {\n            store.commit('summerFestival/updateKey', {key: 'nextBuildingId', value: data.summerFestival_nextBuildingId});\n        }\n        if (data.summerFestival_island !== undefined) {\n            store.commit('summerFestival/updateKey', {key: 'island', value: data.summerFestival_island.map(row => row.map(cell => {\n                return {\n                    ...cell,\n                    cacheAutocollect: null,\n                };\n            }))});\n        }\n        if (data.summerFestival_freeExpansion !== undefined) {\n            store.commit('summerFestival/updateKey', {key: 'freeExpansion', value: data.summerFestival_freeExpansion});\n        }\n        if (data.summerFestival_topazExpansion !== undefined) {\n            store.commit('summerFestival/updateKey', {key: 'topazExpansion', value: data.summerFestival_topazExpansion});\n        }\n        if (data.summerFestival_questsCompleted !== undefined) {\n            store.commit('summerFestival/updateKey', {key: 'questsCompleted', value: data.summerFestival_questsCompleted});\n        }\n        if (data.summerFestival_placedBuilding !== undefined) {\n            store.commit('summerFestival/updateKey', {key: 'placedBuilding', value: data.summerFestival_placedBuilding});\n            for (const [key, elem] of Object.entries(data.summerFestival_placedBuilding)) {\n                if (elem.level > 0) {\n                    store.dispatch('summerFestival/applyBuildingEffects', parseInt(key));\n                }\n            }\n            store.dispatch('summerFestival/calculateConnectCaches');\n        }\n        if (data.nightHunt_changedCurrency !== undefined) {\n            store.commit('nightHunt/updateKey', {key: 'changedCurrency', value: data.nightHunt_changedCurrency});\n        }\n        if (data.nightHunt_ritualIngredients !== undefined) {\n            store.commit('nightHunt/updateKey', {key: 'ritualIngredients', value: data.nightHunt_ritualIngredients});\n        }\n        if (data.nightHunt_bonusIngredients !== undefined) {\n            store.commit('nightHunt/updateKey', {key: 'bonusIngredients', value: data.nightHunt_bonusIngredients});\n        }\n        if (data.nightHunt_performedRituals !== undefined) {\n            store.commit('nightHunt/updateKey', {key: 'performedRituals', value: data.nightHunt_performedRituals});\n        }\n        if (data.nightHunt_ritualFamiliarity !== undefined) {\n            store.commit('nightHunt/updateKey', {key: 'ritualFamiliarity', value: data.nightHunt_ritualFamiliarity});\n        }\n        if (data.nightHunt_ritualHint !== undefined) {\n            store.commit('nightHunt/updateKey', {key: 'ritualHint', value: data.nightHunt_ritualHint});\n        }\n        if (data.nightHunt_favouriteIngredient !== undefined) {\n            store.commit('nightHunt/updateKey', {key: 'favouriteIngredient', value: data.nightHunt_favouriteIngredient});\n        }\n        if (data.nightHunt_potion !== undefined) {\n            for (const [key, elem] of Object.entries(data.nightHunt_potion)) {\n                store.commit('nightHunt/updatePotionKey', {name: key, key: 'recipe', value: elem.recipe});\n                if (elem.level > 0) {\n                    store.commit('nightHunt/updatePotionKey', {name: key, key: 'level', value: elem.level});\n                    store.dispatch('nightHunt/applyPotionEffects', key);\n                }\n            }\n        }\n        if (data.snowdown_fight !== undefined) {\n            store.commit('snowdown/updateKey', {key: 'fight', value: data.snowdown_fight});\n        }\n        if (data.snowdown_rewardProducer !== undefined) {\n            store.commit('snowdown/updateKey', {key: 'rewardProducer', value: data.snowdown_rewardProducer});\n        }\n        if (data.snowdown_rewardItem !== undefined) {\n            store.commit('snowdown/updateKey', {key: 'rewardItem', value: data.snowdown_rewardItem});\n        }\n        if (data.snowdown_itemsBought !== undefined) {\n            store.commit('snowdown/updateKey', {key: 'itemsBought', value: data.snowdown_itemsBought});\n        }\n        if (data.snowdown_itemsBoughtTopaz !== undefined) {\n            store.commit('snowdown/updateKey', {key: 'itemsBoughtTopaz', value: data.snowdown_itemsBoughtTopaz});\n        }\n        if (data.snowdown_revenge !== undefined) {\n            store.commit('snowdown/updateKey', {key: 'revenge', value: data.snowdown_revenge});\n            store.dispatch('snowdown/applyRevengeEffect');\n        }\n        if (data.snowdown_item !== undefined) {\n            for (const [key, elem] of Object.entries(data.snowdown_item)) {\n                store.commit('snowdown/updateItemKey', {name: key, key: 'amount', value: elem});\n                store.dispatch('snowdown/applyItemEffects', key);\n            }\n        }\n    }"
+    }
+  },
+  "js/modules/gem.js": {
+    "name": "gem",
+    "tickspeed": 1,
+    "unlockNeeded": "gemFeature",
+    "tick": {
+      "_type": "formula",
+      "code": "tick(seconds, oldTime, newTime) {\n        let progress = store.state.gem.progress;\n        const genSpeed = store.getters['gem/genSpeed'] / GEM_SPEED_BASE;\n\n        if (store.state.unlock.eventFeature.see) {\n            let currentTime = oldTime;\n            let nextDay = Math.floor((new Date(oldTime * 1000)).setHours(0, 0, 0, 0) / 1000) + SECONDS_PER_DAY;\n\n            let topazProgress = 0;\n            let eventProgress = 0;\n            let totalProgress = 0;\n\n            const isSimulation = oldTime === 0 || store.state.event.force_event !== null;\n\n            const lastEvent = store.getters['event/eventOnDay'](getDay(new Date(isSimulation ? Date.now() : (newTime * 1000))));\n            let lastEventTime = null;\n            if (lastEvent !== null && store.getters['event/eventIsBig'](lastEvent)) {\n                const year = (new Date(newTime * 1000)).getFullYear();\n                const start = store.state.event.big[lastEvent].start;\n                lastEventTime = isSimulation ? -1 : Math.floor((new Date(`${year}-${start}T00:00:00`)).getTime() / 1000);\n            }\n\n            while (currentTime < newTime) {\n                let timeDiff = Math.min(nextDay, newTime) - currentTime;\n\n                progress += timeDiff * genSpeed * store.state.system.timeMult;\n\n                if (progress >= 1) {\n                    if (lastEventTime !== null && currentTime > lastEventTime) {\n                        eventProgress += Math.floor(progress) - totalProgress;\n                    } else {\n                        const currentEvent = store.getters['event/eventOnDay'](getDay(new Date(isSimulation ? Date.now() : (currentTime * 1000))));\n                        if (currentEvent === null || !store.getters['event/eventIsBig'](currentEvent)) {\n                            topazProgress += Math.floor(progress) - totalProgress;\n                        }\n                    }\n                }\n\n                currentTime = nextDay;\n                nextDay += SECONDS_PER_DAY;\n                totalProgress = Math.floor(progress);\n            }\n\n            if (eventProgress > 0) {\n                store.dispatch('currency/gain', {feature: 'event', name: store.state.event.big[lastEvent].currency, amount: eventProgress});\n                store.dispatch('note/find', 'event_2');\n            }\n            if (topazProgress > 0) {\n                store.dispatch('currency/gain', {feature: 'gem', name: 'topaz', amount: topazProgress});\n            }\n        } else {\n            progress += seconds * genSpeed;\n        }\n\n        if (progress >= 1) {\n            const gems = Math.floor(progress);\n            ['ruby', 'emerald', 'sapphire', 'amethyst'].forEach(elem => {\n                store.dispatch('currency/gain', {feature: 'gem', name: elem, amount: gems});\n            });\n            progress -= gems;\n        }\n\n        store.commit('gem/updateKey', {key: 'progress', value: progress});\n    }"
+    },
+    "unlock": [
+      "gemFeature"
+    ],
+    "currency": {
+      "ruby": {
+        "color": "red",
+        "icon": "mdi-rhombus",
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            return store.getters['gem/genSpeed'] / GEM_SPEED_BASE;\n        }"
+        },
+        "timerIsEstimate": true,
+        "hideGainTag": true
+      },
+      "emerald": {
+        "color": "green",
+        "icon": "mdi-hexagon",
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            return store.getters['gem/genSpeed'] / GEM_SPEED_BASE;\n        }"
+        },
+        "timerIsEstimate": true,
+        "hideGainTag": true
+      },
+      "sapphire": {
+        "color": "indigo",
+        "icon": "mdi-pentagon",
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            return store.getters['gem/genSpeed'] / GEM_SPEED_BASE;\n        }"
+        },
+        "timerIsEstimate": true,
+        "hideGainTag": true
+      },
+      "amethyst": {
+        "color": "purple",
+        "icon": "mdi-cards-diamond",
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            return store.getters['gem/genSpeed'] / GEM_SPEED_BASE;\n        }"
+        },
+        "timerIsEstimate": true,
+        "hideGainTag": true
+      },
+      "topaz": {
+        "color": "amber",
+        "icon": "mdi-triangle",
+        "overcapMult": 0,
+        "capMult": {
+          "round": true,
+          "baseValue": 1000
+        },
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            return store.getters['gem/genSpeed'] / GEM_SPEED_BASE;\n        }"
+        },
+        "timerIsEstimate": true,
+        "hideGainTag": true
+      },
+      "diamond": {
+        "color": "cyan",
+        "icon": "mdi-diamond"
+      },
+      "onyx": {
+        "color": "deep-purple",
+        "icon": "mdi-octagon"
+      }
+    },
+    "upgrade": {
+      "topazBag": {
+        "type": "premium",
+        "requirement": {
+          "_type": "formula",
+          "code": "requirement() {\n            return store.state.unlock.eventFeature.see;\n        }"
+        },
+        "price": {
+          "_type": "formula",
+          "code": "price(lvl) {\n            return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 100};\n        }"
+        },
+        "effect": [
+          {
+            "name": "currencyGemTopazCap",
+            "type": "base",
+            "value": {
+              "_type": "formula",
+              "code": "lvl => lvl * 200"
+            }
+          }
+        ]
+      }
+    },
+    "note": {
+      "_type": "expression",
+      "code": "buildArray(2).map(() => 'g')"
+    },
+    "consumable": {
+      "prestigeStone": {
+        "icon": "mdi-circle-double",
+        "color": "deep-purple",
+        "price": {
+          "gem_sapphire": 400
+        }
+      }
+    },
+    "saveGame": {
+      "_type": "formula",
+      "code": "saveGame() {\n        return {\n            progress: store.state.gem.progress\n        };\n    }"
+    },
+    "loadGame": {
+      "_type": "formula",
+      "code": "loadGame(data) {\n        if (data.progress !== undefined) {\n            store.commit('gem/updateKey', {key: 'progress', value: data.progress});\n        }\n    }"
+    }
+  },
+  "js/modules/achievement.js": {
+    "name": "achievement",
+    "tickspeed": 1,
+    "unlockNeeded": "achievementFeature",
+    "tick": {
+      "_type": "formula",
+      "code": "tick() {\n        store.dispatch('achievement/check');\n    }"
+    },
+    "unlock": [
+      "achievementFeature"
+    ],
+    "relic": {
+      "excavator": {
+        "icon": "mdi-excavator",
+        "feature": [
+          "achievement",
+          "mining"
+        ],
+        "color": "orange",
+        "effect": [
+          {
+            "name": "currencyMiningScrapGain",
+            "type": "mult",
+            "value": 2
+          },
+          {
+            "name": "currencyMiningScrapCap",
+            "type": "mult",
+            "value": 2
+          }
+        ]
+      },
+      "redCard": {
+        "icon": "mdi-cards",
+        "feature": [
+          "achievement",
+          "horde"
+        ],
+        "color": "red",
+        "effect": [
+          {
+            "name": "currencyHordeMonsterPartCap",
+            "type": "bonus",
+            "value": {
+              "_type": "expression",
+              "code": "buildNum(10, 'K')"
+            }
+          },
+          {
+            "name": "hordeCardCap",
+            "type": "base",
+            "value": 1
+          }
+        ]
+      },
+      "briefcase": {
+        "icon": "mdi-briefcase",
+        "feature": [
+          "achievement",
+          "treasure"
+        ],
+        "color": "pale-blue",
+        "effect": [
+          {
+            "name": "treasureSlots",
+            "type": "base",
+            "value": 8
+          }
+        ]
+      },
+      "strangePlant": {
+        "icon": "mdi-sprout",
+        "feature": [
+          "achievement",
+          "village",
+          "farm"
+        ],
+        "color": "pale-purple",
+        "effect": [
+          {
+            "name": "villageMaterialGain",
+            "type": "mult",
+            "value": 2
+          },
+          {
+            "name": "farmCropGain",
+            "type": "mult",
+            "value": 2
+          }
+        ]
+      },
+      "beneficialVirus": {
+        "icon": "mdi-virus",
+        "feature": [
+          "achievement",
+          "mining",
+          "horde"
+        ],
+        "color": "pale-green",
+        "effect": [
+          {
+            "name": "miningToughness",
+            "type": "mult",
+            "value": 0.5
+          },
+          {
+            "name": "hordeCorruption",
+            "type": "bonus",
+            "value": -0.5
+          }
+        ]
+      }
+    },
+    "note": {
+      "_type": "expression",
+      "code": "buildArray(1).map(() => 'g')"
+    },
+    "saveGame": {
+      "_type": "formula",
+      "code": "saveGame() {\n        let obj = {};\n\n        for (const [key, elem] of Object.entries(store.state.achievement)) {\n            if (elem.level > 0) {\n                obj[key] = elem.level;\n            }\n        }\n\n        return obj;\n    }"
+    },
+    "loadGame": {
+      "_type": "formula",
+      "code": "loadGame(data) {\n        for (const [key, elem] of Object.entries(data)) {\n            if (store.state.achievement[key] !== undefined) {\n                store.commit('achievement/updateKey', {name: key, key: 'cacheHideNotification', value: elem});\n            }\n        }\n        store.dispatch('achievement/check');\n    }"
+    }
+  },
+  "js/modules/horde.js": {},
+  "js/modules/school.js": {
+    "name": "school",
+    "tickspeed": 60,
+    "unlockNeeded": "schoolFeature",
+    "tick": {
+      "_type": "formula",
+      "code": "tick(minutes, oldTime, newTime) {\n        store.dispatch('currency/gain', {feature: 'school', name: 'book', amount: store.getters['mult/get']('currencySchoolBookGain', store.getters['school/subjectsBookGain']) * minutes / MINUTES_PER_HOUR});\n        store.dispatch('note/find', 'school_2');\n        const dayDiff = Math.floor(newTime / SECONDS_PER_DAY) - Math.floor(oldTime / SECONDS_PER_DAY);\n        if (dayDiff > 0) {\n            store.dispatch('currency/gain', {feature: 'school', name: 'examPass', amount: dayDiff}, {root: true});\n        }\n    }"
+    },
+    "unlock": [
+      "schoolFeature",
+      "schoolLiteratureSubfeature",
+      "schoolHistorySubfeature",
+      "schoolArtSubfeature"
+    ],
+    "stat": {
+      "highestGrade": {
+        "display": "grade"
+      }
+    },
+    "currency": {
+      "book": {
+        "color": "brown",
+        "icon": "mdi-book",
+        "gainMult": {
+          "display": "perHour"
+        },
+        "showGainMult": true,
+        "gainTimerFunction": {
+          "_type": "formula",
+          "code": "gainTimerFunction() {\n            return store.getters['mult/get']('currencySchoolBookGain', store.getters['school/subjectsBookGain']);\n        }"
+        }
+      },
+      "goldenDust": {
+        "color": "amber",
+        "icon": "mdi-timer-sand",
+        "overcapMult": 0,
+        "capMult": {
+          "baseValue": {
+            "_type": "expression",
+            "code": "buildNum(10, 'K')"
+          }
+        }
+      },
+      "examPass": {
+        "color": "pale-blue",
+        "icon": "mdi-ticket-account"
+      }
+    },
+    "upgrade": {
+      "_type": "expression",
+      "code": "upgradePremium"
+    },
+    "note": {
+      "_type": "expression",
+      "code": "buildArray(5).map(() => 'g')"
+    },
+    "init": {
+      "_type": "formula",
+      "code": "init() {\n        for (const [key, elem] of Object.entries({\n            math: {scoreGoal: 12},\n            literature: {unlock: 'schoolLiteratureSubfeature', scoreGoal: 8},\n            history: {unlock: 'schoolHistorySubfeature', scoreGoal: 5},\n            art: {unlock: 'schoolArtSubfeature', scoreGoal: 10}\n        })) {\n            store.commit('school/init', {name: key, ...elem});\n        }\n    }"
+    },
+    "saveGame": {
+      "_type": "formula",
+      "code": "saveGame() {\n        let obj = {};\n        for (const [key, elem] of Object.entries(store.state.school)) {\n            if (elem.grade > 0 || elem.progress > 0) {\n                obj[key] = [elem.grade, elem.currentGrade, elem.progress];\n            }\n        }\n        return obj;\n    }"
+    },
+    "loadGame": {
+      "_type": "formula",
+      "code": "loadGame(data) {\n        for (const [key, elem] of Object.entries(data)) {\n            if (store.state.school[key] !== undefined) {\n                store.commit('school/updateKey', {name: key, key: 'grade', value: elem[0]});\n                store.commit('school/updateKey', {name: key, key: 'currentGrade', value: elem[1]});\n                store.commit('school/updateKey', {name: key, key: 'progress', value: elem[2]});\n            }\n        }\n    }"
+    }
+  },
+  "js/modules/village.js": {},
+  "js/modules/village/card.js": {
+    "feature": {
+      "prefix": "VI",
+      "reward": [
+        {
+          "name": "villageResourceGain",
+          "type": "mult",
+          "value": {
+            "_type": "formula",
+            "code": "lvl => lvl * 0.03 + 1"
+          }
+        }
+      ],
+      "shinyReward": [
+        {
+          "name": "villagePrestigeIncome",
+          "type": "mult",
+          "value": {
+            "_type": "formula",
+            "code": "lvl => lvl * 0.05 + 1"
+          }
+        }
+      ],
+      "powerReward": [
+        {
+          "name": "villageMaterialGain",
+          "type": "mult",
+          "value": {
+            "_type": "formula",
+            "code": "lvl => Math.pow(1.07, lvl)"
+          }
+        },
+        {
+          "name": "villageMaterialCap",
+          "type": "mult",
+          "value": {
+            "_type": "formula",
+            "code": "lvl => Math.pow(1.03, lvl)"
+          }
+        },
+        {
+          "name": "villagePrestigeIncome",
+          "type": "mult",
+          "value": {
+            "_type": "formula",
+            "code": "lvl => Math.pow(1.05, lvl)"
+          }
+        }
+      ],
+      "unlock": "villageFeature"
+    },
+    "collection": {
+      "neighborhood": {
+        "reward": [
+          {
+            "name": "villageWorker",
+            "type": "base",
+            "value": 8
+          }
+        ]
+      },
+      "plantsInTheCity": {
+        "reward": [
+          {
+            "name": "currencyVillagePlantFiberGain",
+            "type": "mult",
+            "value": 1.5
+          }
+        ]
+      },
+      "industrialRevolution": {
+        "reward": [
+          {
+            "name": "currencyVillageWoodGain",
+            "type": "mult",
+            "value": 1.5
+          }
+        ]
+      },
+      "maintainingSafety": {
+        "reward": [
+          {
+            "name": "villageCardCap",
+            "type": "base",
+            "value": 1
+          },
+          {
+            "name": "hordeCardCap",
+            "type": "base",
+            "value": 1
+          }
+        ]
+      }
+    },
+    "pack": {
+      "meetingNewPeople": {
+        "unlock": "villageBuildings3",
+        "amount": 3,
+        "price": 18,
+        "content": {
+          "VI-0001": 1.11,
+          "VI-0003": 0.9,
+          "VI-0004": 1.04,
+          "VI-0005": 1.11,
+          "VI-0006": 2.4,
+          "VI-0007": 0.63,
+          "VI-0008": 2.8,
+          "VI-0010": 2.55,
+          "VI-0011": 1.85,
+          "VI-0012": 1.6,
+          "VI-0014": 0.7,
+          "VI-0015": 0.1,
+          "VI-0016": 1.11,
+          "VI-0017": 0.35,
+          "VI-0018": 0.1,
+          "VI-0019": 1.44,
+          "VI-0024": 0.97,
+          "VI-0025": 1.03,
+          "VI-0027": 0.7
+        }
+      },
+      "darkCult": {
+        "unlock": "villageBuildings4",
+        "amount": 5,
+        "price": 65,
+        "content": {
+          "VI-0002": 0.84,
+          "VI-0009": 1.75,
+          "VI-0015": 0.22,
+          "VI-0017": 0.82,
+          "VI-0018": 0.22,
+          "VI-0019": 1.33,
+          "VI-0020": 0.84,
+          "VI-0021": 1.25,
+          "VI-0022": 1.4,
+          "VI-0024": 1.07,
+          "VI-0025": 1.23,
+          "VI-0026": 2.55,
+          "VI-0027": 0.7,
+          "VI-0028": 2.3,
+          "VI-0029": 0.38,
+          "VI-0030": 1.6,
+          "VI-0031": 1.15
+        }
+      },
+      "technologicalAdvancement": {
+        "unlock": "villageBuildings5",
+        "amount": 4,
+        "price": 115,
+        "content": {
+          "VI-0013": 0.5,
+          "VI-0023": 1.1,
+          "VI-0030": 2.6,
+          "VI-0031": 1.65,
+          "VI-0032": 0.38,
+          "VI-0033": 0.7,
+          "VI-0034": 1.32,
+          "VI-0035": 1.05,
+          "VI-0036": 0.82,
+          "VI-0037": 1.02,
+          "VI-0038": 1.4,
+          "VI-0039": 0.9
+        }
+      }
+    },
+    "card": {
+      "_type": "expression",
+      "code": "cardList"
+    }
+  },
+  "js/modules/village/upgradePrestige.js": {},
+  "js/modules/village/offering.js": {
+    "plantFiber": {
+      "unlock": "villageOffering1",
+      "cost": {
+        "_type": "formula",
+        "code": "lvl => Math.pow(1.5, lvl) * buildNum(1, 'M')"
+      },
+      "effect": 200
+    },
+    "wood": {
+      "unlock": "villageOffering1",
+      "cost": {
+        "_type": "formula",
+        "code": "lvl => Math.pow(1.5, lvl) * buildNum(1, 'M')"
+      },
+      "effect": 200
+    },
+    "stone": {
+      "unlock": "villageOffering1",
+      "cost": {
+        "_type": "formula",
+        "code": "lvl => Math.pow(1.5, lvl) * buildNum(1, 'M')"
+      },
+      "effect": 200
+    },
+    "coin": {
+      "unlock": "villageOffering2",
+      "amount": 3,
+      "cost": {
+        "_type": "formula",
+        "code": "lvl => Math.pow(1.75, lvl) * buildNum(10, 'M')"
+      },
+      "effect": 200
+    },
+    "metal": {
+      "unlock": "villageOffering2",
+      "amount": 3,
+      "cost": {
+        "_type": "formula",
+        "code": "lvl => Math.pow(1.5, lvl) * buildNum(3, 'M')"
+      },
+      "effect": 200
+    },
+    "water": {
+      "unlock": "villageOffering2",
+      "amount": 3,
+      "cost": {
+        "_type": "formula",
+        "code": "lvl => Math.pow(2, lvl) * buildNum(5, 'M')"
+      },
+      "effect": 500
+    },
+    "glass": {
+      "unlock": "villageOffering3",
+      "amount": 8,
+      "cost": {
+        "_type": "formula",
+        "code": "lvl => Math.pow(1.5, lvl) * buildNum(120, 'K')"
+      },
+      "effect": 100
+    },
+    "hardwood": {
+      "unlock": "villageOffering3",
+      "amount": 8,
+      "cost": {
+        "_type": "formula",
+        "code": "lvl => Math.pow(1.5, lvl) * buildNum(40, 'K')"
+      },
+      "effect": 100
+    },
+    "gem": {
+      "unlock": "villageOffering3",
+      "amount": 8,
+      "cost": {
+        "_type": "formula",
+        "code": "lvl => Math.pow(1.5, lvl) * buildNum(40, 'K')"
+      },
+      "effect": 100
+    },
+    "knowledge": {
+      "unlock": "villageOffering4",
+      "amount": 20,
+      "increment": 1,
+      "cost": {
+        "_type": "formula",
+        "code": "lvl => Math.pow(1.25, lvl) * 250"
+      },
+      "effect": 2
+    },
+    "science": {
+      "unlock": "villageOffering4",
+      "amount": 20,
+      "increment": 1,
+      "cost": {
+        "_type": "formula",
+        "code": "lvl => Math.pow(1.25, lvl) * 100"
+      },
+      "effect": 1
+    },
+    "joy": {
+      "unlock": "villageOffering4",
+      "amount": 20,
+      "increment": 1,
+      "cost": {
+        "_type": "formula",
+        "code": "lvl => Math.pow(1.25, lvl) * 750"
+      },
+      "effect": 5
+    }
+  },
+  "js/modules/village/upgradePremium.js": {},
+  "js/modules/village/upgrade.js": {},
+  "js/modules/village/job.js": {
+    "collector": {
+      "max": null,
+      "needed": 1,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "currencyVillagePlantFiberGain",
+          "amount": 0.3
+        },
+        {
+          "type": "base",
+          "name": "currencyVillageWoodGain",
+          "amount": 0.3
+        },
+        {
+          "type": "base",
+          "name": "currencyVillageStoneGain",
+          "amount": 0.3
+        }
+      ]
+    },
+    "farmer": {
+      "max": 0,
+      "needed": 2,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "currencyVillagePlantFiberGain",
+          "amount": 2
+        },
+        {
+          "type": "base",
+          "name": "currencyVillageGrainGain",
+          "amount": 0.5
+        }
+      ]
+    },
+    "harvester": {
+      "max": 0,
+      "needed": 2,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "currencyVillageWoodGain",
+          "amount": 2
+        },
+        {
+          "type": "base",
+          "name": "currencyVillageFruitGain",
+          "amount": 0.5
+        }
+      ]
+    },
+    "miner": {
+      "max": 0,
+      "needed": 2,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "currencyVillageStoneGain",
+          "amount": 2
+        },
+        {
+          "type": "base",
+          "name": "currencyVillageMetalGain",
+          "amount": 0.5
+        }
+      ]
+    },
+    "wellWorker": {
+      "max": 0,
+      "needed": 3,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "currencyVillageWaterGain",
+          "amount": 3
+        }
+      ]
+    },
+    "librarian": {
+      "max": 0,
+      "needed": 4,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "currencyVillageKnowledgeGain",
+          "amount": 0.02
+        }
+      ]
+    },
+    "glassblower": {
+      "max": 0,
+      "needed": 4,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "currencyVillageGlassGain",
+          "amount": 0.25
+        }
+      ]
+    },
+    "entertainer": {
+      "max": 0,
+      "needed": 5,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "villageHappiness",
+          "amount": 0.03
+        }
+      ]
+    },
+    "lumberjack": {
+      "max": 0,
+      "needed": 6,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "currencyVillageWoodGain",
+          "amount": 12
+        },
+        {
+          "type": "base",
+          "name": "currencyVillageHardwoodGain",
+          "amount": 0.25
+        }
+      ]
+    },
+    "blastMiner": {
+      "max": 0,
+      "needed": 6,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "currencyVillageStoneGain",
+          "amount": 12
+        },
+        {
+          "type": "base",
+          "name": "currencyVillageGemGain",
+          "amount": 0.25
+        }
+      ]
+    },
+    "fisherman": {
+      "max": 0,
+      "needed": 7,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "currencyVillageFishGain",
+          "amount": 30
+        }
+      ]
+    },
+    "scientist": {
+      "max": 0,
+      "needed": 8,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "currencyVillageScienceGain",
+          "amount": 0.008
+        }
+      ]
+    },
+    "gardener": {
+      "max": 0,
+      "needed": 8,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "currencyVillagePlantFiberGain",
+          "amount": 20
+        },
+        {
+          "type": "base",
+          "name": "currencyVillageVegetableGain",
+          "amount": 40
+        }
+      ]
+    },
+    "oilWorker": {
+      "max": 0,
+      "needed": 11,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "currencyVillageOilGain",
+          "amount": 0.35
+        }
+      ]
+    },
+    "sculptor": {
+      "max": 0,
+      "needed": 14,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "currencyVillageMarbleGain",
+          "amount": 0.001
+        }
+      ]
+    },
+    "explorer": {
+      "max": 0,
+      "needed": 600,
+      "rewards": [
+        {
+          "type": "base",
+          "name": "villageLootGain",
+          "amount": 0.5
+        }
+      ]
+    }
+  },
+  "js/modules/village/policy.js": {
+    "taxes": {
+      "mult": "villagePolicyTaxes",
+      "icon": "mdi-cash-register",
+      "effect": [
+        {
+          "name": "villageTaxRate",
+          "type": "mult",
+          "value": {
+            "_type": "formula",
+            "code": "lvl => lvl * 0.25 + 1"
+          }
+        },
+        {
+          "name": "villageHappiness",
+          "type": "base",
+          "value": {
+            "_type": "formula",
+            "code": "lvl => lvl * (lvl > 0 ? -0.05 : -0.03)"
+          }
+        }
+      ]
+    },
+    "immigration": {
+      "mult": "villagePolicyImmigration",
+      "icon": "mdi-account-group",
+      "effect": [
+        {
+          "name": "villageWorker",
+          "type": "mult",
+          "value": {
+            "_type": "formula",
+            "code": "lvl => lvl * 0.15 + 1"
+          }
+        },
+        {
+          "name": "villageHappiness",
+          "type": "base",
+          "value": {
+            "_type": "formula",
+            "code": "lvl => lvl * (lvl > 0 ? -0.05 : -0.1)"
+          }
+        }
+      ]
+    },
+    "religion": {
+      "mult": "villagePolicyReligion",
+      "icon": "mdi-hands-pray",
+      "effect": [
+        {
+          "name": "villageResourceGain",
+          "type": "mult",
+          "value": {
+            "_type": "formula",
+            "code": "lvl => lvl * (lvl > 0 ? -0.25 : -0.1) + 1"
+          }
+        },
+        {
+          "name": "currencyVillageFaithGain",
+          "type": "mult",
+          "value": {
+            "_type": "formula",
+            "code": "lvl => lvl * 0.25 + 1"
+          }
+        }
+      ]
+    },
+    "scanning": {
+      "mult": "villagePolicyScanning",
+      "icon": "mdi-magnify-scan",
+      "effect": [
+        {
+          "name": "villageLootGain",
+          "type": "mult",
+          "value": {
+            "_type": "formula",
+            "code": "lvl => 1 - lvl * (lvl > 0 ? 0.1 : 0.05)"
+          }
+        },
+        {
+          "name": "villageLootQuality",
+          "type": "base",
+          "value": {
+            "_type": "formula",
+            "code": "lvl => Math.max(lvl, 0)"
+          }
+        },
+        {
+          "name": "villageLootQuality",
+          "type": "mult",
+          "value": {
+            "_type": "formula",
+            "code": "lvl => Math.min(1 + lvl * 0.1, 1)"
+          }
+        }
+      ]
+    }
+  },
+  "js/modules/village/cardList.js": {},
+  "js/modules/village/relic.js": {
+    "mudBrick": {
+      "icon": "mdi-wall",
+      "color": "brown",
+      "effect": [
+        {
+          "name": "village_hut",
+          "type": "keepUpgrade",
+          "value": true
+        },
+        {
+          "name": "currencyVillageWaterGain",
+          "type": "mult",
+          "value": 1.5
+        }
+      ]
+    },
+    "sapling": {
+      "icon": "mdi-sprout",
+      "color": "light-green",
+      "effect": [
+        {
+          "name": "village_shed",
+          "type": "keepUpgrade",
+          "value": true
+        },
+        {
+          "name": "currencyVillagePlantFiberGain",
+          "type": "mult",
+          "value": 1.5
+        }
+      ]
+    },
+    "keychain": {
+      "icon": "mdi-key-chain",
+      "color": "light-grey",
+      "effect": [
+        {
+          "name": "village_smallHouse",
+          "type": "keepUpgrade",
+          "value": true
+        },
+        {
+          "name": "currencyVillageWoodGain",
+          "type": "mult",
+          "value": 1.5
+        }
+      ]
+    },
+    "treasureChest": {
+      "icon": "mdi-treasure-chest",
+      "color": "amber",
+      "effect": [
+        {
+          "name": "village_treasury",
+          "type": "keepUpgrade",
+          "value": true
+        },
+        {
+          "name": "village_wallet",
+          "type": "keepUpgrade",
+          "value": true
+        },
+        {
+          "name": "village_resourceBag",
+          "type": "keepUpgrade",
+          "value": true
+        },
+        {
+          "name": "village_metalBag",
+          "type": "keepUpgrade",
+          "value": true
+        }
+      ]
+    },
+    "screwdriver": {
+      "icon": "mdi-screwdriver",
+      "color": "indigo",
+      "effect": [
+        {
+          "name": "village_crane",
+          "type": "keepUpgrade",
+          "value": true
+        },
+        {
+          "name": "currencyVillageStoneGain",
+          "type": "mult",
+          "value": 1.5
+        }
+      ]
+    },
+    "rose": {
+      "icon": "mdi-flower",
+      "color": "red",
+      "effect": [
+        {
+          "name": "village_garden",
+          "type": "keepUpgrade",
+          "value": true
+        },
+        {
+          "name": "village_well",
+          "type": "keepUpgrade",
+          "value": true
+        }
+      ]
+    },
+    "goldenKey": {
+      "icon": "mdi-key-chain",
+      "color": "amber",
+      

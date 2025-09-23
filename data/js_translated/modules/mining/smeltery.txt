@@ -1,68 +1,68 @@
-export default {
+{
     aluminium: {
         price: {
-            mining_oreAluminium: {基础 {0}: 1000, increment: 50},
-            mining_granite: {基础 {0}: 800, increment: 800}
+            铝矿石: {基础: 1000, increment: 50},
+            花岗岩: {基础: 800, increment: 800}
         },
-        output: 'mining_barAluminium',
+        output: '轻量',
         减少制作时间至 {0}: 300,
         minTemperature: 100
     },
     bronze: {
         price: {
-            mining_oreCopper: {基础 {0}: 900, increment: 45},
-            mining_oreTin: {基础 {0}: 100, increment: 5},
-            mining_salt: {基础 {0}: 150, increment: 50}
+            铜矿石: {基础: 900, increment: 45},
+            锡矿石: {基础: 100, increment: 5},
+            盐: {基础: 150, increment: 50}
         },
-        output: 'mining_barBronze',
+        output: '坚固',
         减少制作时间至 {0}: SECONDS_PER_HOUR,
         minTemperature: 275
     },
     steel: {
         price: {
-            mining_oreIron: {基础 {0}: 1000, increment: 50},
-            mining_coal: {基础 {0}: 2, increment: 0}
+            铁矿石: {基础: 1000, increment: 50},
+            煤: {基础: 2, increment: 0}
         },
-        output: 'mining_barSteel',
+        output: '锋利',
         减少制作时间至 {0}: 8 * SECONDS_PER_HOUR,
         minTemperature: 500
     },
     titanium: {
         price: {
-            mining_oreTitanium: {基础 {0}: 1000, increment: 50},
-            mining_sulfur: {基础 {0}: 200, increment: 10},
-            mining_niter: {基础 {0}: 50, increment: 0}
+            钛矿石: {基础: 1000, increment: 50},
+            硫: {基础: 200, increment: 10},
+            硝: {基础: 50, increment: 0}
         },
-        output: 'mining_barTitanium',
+        output: '挖掘机',
         减少制作时间至 {0}: 3 * SECONDS_PER_DAY,
         minTemperature: 800
     },
     闪亮肥料: {
         price: {
-            mining_orePlatinum: {基础 {0}: 1000, increment: 50},
-            mining_obsidian: {基础 {0}: buildNum(2, 'M'), increment: buildNum(100, 'K')}
+            铂矿石: {基础: 1000, increment: 50},
+            黑曜石: {基础: buildNum(2, '分钟'), increment: buildNum(100, 'K')}
         },
-        output: 'mining_barShiny',
+        output: '丰富',
         减少制作时间至 {0}: 30 * SECONDS_PER_DAY,
         minTemperature: 1200
     },
     iridium: {
         price: {
-            mining_oreIridium: {基础 {0}: 1000, increment: 50},
-            mining_helium: {基础 {0}: buildNum(10, 'K'), increment: 2500}
+            铱矿石: {基础: 1000, increment: 50},
+            氦: {基础: buildNum(10, 'K'), increment: 2500}
         },
-        output: 'mining_barIridium',
+        output: '熔岩',
         减少制作时间至 {0}: 365 * SECONDS_PER_DAY,
         minTemperature: 1750
     },
     darkIron: {
         price: {
-            mining_oreIron: {基础 {0}: buildNum(10, 'M'), increment: buildNum(500, 'K')},
-            mining_oreOsmium: {基础 {0}: 1000, increment: 50},
-            mining_deeprock: {基础 {0}: buildNum(100, 'M'), increment: buildNum(25, 'M')},
-            mining_neon: {基础 {0}: buildNum(10, 'K'), increment: 2500}
+            铁矿石: {基础: buildNum(10, '分钟'), increment: buildNum(500, 'K')},
+            锇矿石: {基础: 1000, increment: 50},
+            深岩: {基础: buildNum(100, '分钟'), increment: buildNum(25, '分钟')},
+            氖: {基础: buildNum(10, 'K'), increment: 2500}
         },
-        output: 'mining_barDarkIron',
+        output: '虚空',
         减少制作时间至 {0}: 5000 * SECONDS_PER_DAY,
         minTemperature: 2500
     },

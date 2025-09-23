@@ -1,44 +1,44 @@
-export default {
-    theme_candlelight: {
+{
+    烛光: {
         类型: 'theme',
         item: '烛光',
         pool: {
-            cinders: {price: {event_cindersToken: 170}}
+            cinders: {price: {煤渣代币: 170}}
         }
     },
-    relic_geode: {
+    晶洞: {
         类型: '圣遗物',
         item: '晶洞',
         pool: {
-            cinders: {price: {event_cindersToken: 140}}
+            cinders: {price: {煤渣代币: 140}}
         }
     },
-    relic_birthdayCake: {
+    生日蛋糕: {
         类型: '圣遗物',
         item: '生日蛋糕',
         requirement() {
             return store.state.解锁.treasureFeature.see;
         },
         pool: {
-            cinders: {price: {event_cindersToken: 180}}
+            cinders: {price: {煤渣代币: 180}}
         }
     },
     cardPack_sparksOfJoy: {
         类型: '卡包',
         item: '欢乐的火花',
         pool: {
-            cinders: {price: {event_cindersToken: 30}}
+            cinders: {price: {煤渣代币: 30}}
         }
     },
-    farm_sunshine: {
-        类型: '此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？',
-        item: 'farm_sunshine',
+    Sunshine: {
+        类型: 'consumable',
+        item: 'Sunshine',
         amount: 20,
         requirement() {
             return store.state.解锁.肥料.see;
         },
         pool: {
-            cinders: {price: {event_cindersToken: 1}}
+            cinders: {price: {煤渣代币: 1}}
         }
     }
 }

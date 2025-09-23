@@ -1,4 +1,4 @@
-export default function(save) {
+function(save) {
     if (save.农场?.field) {
         let newField = {};
         save.农场.field.forEach(cell => {
@@ -22,7 +22,6 @@ export default function(save) {
             elem.升级 = {};
         }
     }
-    
     if (save.达到 {0} {1}.mining_depthDweller0) {
         save.达到 {0} {1}.mining_depthDwellerCap0 = save.达到 {0} {1}.mining_depthDweller0;
     }

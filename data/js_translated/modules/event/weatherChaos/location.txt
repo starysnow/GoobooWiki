@@ -8,7 +8,7 @@
         效果: [
             {name: '平均鱼尺寸', 类型: 'mult', value: 1.2},
             {name: '海藻比重', 类型: 'mult', value: 3},
-            {name: 'EventAlgae增益', 类型: 'mult', value: 2},
+            {name: '海藻增益', 类型: 'mult', value: 2},
         ],
     },
     河流: {
@@ -16,7 +16,7 @@
         效果: [
             {name: '平均鱼尺寸', 类型: 'mult', value: 1.4},
             {name: '浮木比重', 类型: 'mult', value: 3},
-            {name: 'EventDriftwood增益', 类型: 'mult', value: 2},
+            {name: '浮木增益', 类型: 'mult', value: 2},
         ],
     },
     海洋: {
@@ -24,16 +24,16 @@
         效果: [
             {name: '平均鱼尺寸', 类型: 'mult', value: 1.6},
             {name: '塑料比重', 类型: 'mult', value: 3},
-            {name: 'EventPlastic增益', 类型: 'mult', value: 2},
+            {name: '塑料增益', 类型: 'mult', value: 2},
         ],
     },
     高山: {
         声望此农作物可将您的声望等级提高 {0}。 这会将您的总声望等级提高到 {1}，将您的农作物收益增加到 x{2}。: {minPower: 1000, name: '洞穴'},
         效果: [
             {name: '平均鱼尺寸', 类型: 'mult', value: 1.8},
-            {name: 'EventAlgae增益', 类型: 'mult', value: 1.5},
-            {name: 'EventDriftwood增益', 类型: 'mult', value: 1.5},
-            {name: 'EventPlastic增益', 类型: 'mult', value: 1.5},
+            {name: '海藻增益', 类型: 'mult', value: 1.5},
+            {name: '浮木增益', 类型: 'mult', value: 1.5},
+            {name: '塑料增益', 类型: 'mult', value: 1.5},
         ],
     },
     洞穴: {

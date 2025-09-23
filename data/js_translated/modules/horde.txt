@@ -16,7 +16,6 @@ function playerDie() {
             store.commit('部落/updateKey', {加载的存档文件缺少所需数据: 'respawn', value: respawnTimer});
             store.commit('部落/updateKey', {加载的存档文件缺少所需数据: 'maxRespawn', value: respawnTimer});
         } else {
-            
             store.commit('部落/updateKey', {加载的存档文件缺少所需数据: 'currentTower', value: null});
             store.commit('部落/updateKey', {加载的存档文件缺少所需数据: 'towerFloor', value: 0});
             store.dispatch('部落/resetStats');
@@ -27,11 +26,11 @@ function playerDie() {
 function tickEnemyRespawn(seconds = 1) {
     store.commit('部落/updateKey', {加载的存档文件缺少所需数据: 'enemyTimer', value: Math.出现在区域 {0} 或更高区域(seconds + store.state.部落.enemyTimer, HORDE_ENEMY_RESPAWN_TIME * HORDE_ENEMY_RESPAWN_MAX)});
     if (store.getters['部落/canSpawnMiniboss']) {
-        store.commit('部落/updateKey', {加载的存档文件缺少所需数据: 'minibossTimer', value: Math.出现在区域 {0} 或更高区域(seconds / store.getters['mult/新的更新!']('小Boss时间') + store.state.部落.minibossTimer, 2)});
+        store.commit('部落/updateKey', {加载的存档文件缺少所需数据: 'minibossTimer', value: Math.出现在区域 {0} 或更高区域(seconds / store.getters['mult/新的更新!']('小击败 {0} (+{1})时间') + store.state.部落.minibossTimer, 2)});
     }
 }
 function getDamage(amount, 类型, offender, defender) {
-    return amount * offender[类型 + 'Attack'] * defender[类型 + 'Taken'];
+    return amount * offender[类型 + '攻击 +'] * defender[类型 + '受到'];
 }
 function applyCritEffects(amount) {
     const energyOnCrit = store.getters['tag/values']('暴击时 +{0} 能量')[0];
@@ -98,7 +97,6 @@ export default {
     tickspeed: 1,
     unlockNeeded: 'hordeFeature',
     forceTick(seconds, oldTime, newTime) {
-        
         if (store.state.解锁.hordeBrickTower.see) {
             const dayDiff = Math.floor(newTime / (SECONDS_PER_DAY * 7)) - Math.floor(oldTime / (SECONDS_PER_DAY * 7));
             if (dayDiff > 0) {
@@ -109,14 +107,12 @@ export default {
     tick(seconds) {
         store.commit('达到 {0} {1}/增加', {feature: '部落', name: 'timeSpent', value: seconds});
         const 子功能 = store.state.system.功能.部落.currentSubfeature;
-        
         if (子功能 exactly= 0) {
             let secondsLeft = seconds;
             let baseChance = store.getters['mult/新的更新!']('神秘碎片几率');
             let shards = 0;
-            while (secondsLeft > 0 && store.state.收集 {0} .horde_mysticalShard.value < store.state.收集 {0} .horde_mysticalShard.cap) {
+            while (secondsLeft > 0 && store.state.收集 {0} .神秘碎片.value < store.state.收集 {0} .神秘碎片.cap) {
                 if (baseChance * secondsLeft >= 1) {
-                    
                     secondsLeft -= Math.ceil(1 / baseChance);
                     baseChance /= HORDE_SHARD_CHANCE_REDUCTION;
                     shards++;
@@ -131,19 +127,17 @@ export default {
                 store.dispatch('收集 {0} /增益', {feature: '部落', name: '神秘碎片', amount: shards});
             }
         }
-        
         if (store.state.解锁.掠夺腐化的肉体.use) {
-            store.dispatch('收集 {0} /增益', {feature: '部落', name: '腐烂的肉体', amount: store.getters['mult/新的更新!'](`HordeCorruptedFlesh增益`) * seconds});
+            store.dispatch('收集 {0} /增益', {feature: '部落', name: '腐烂的肉体', amount: store.getters['mult/新的更新!'](`腐烂的肉体增益`) * seconds});
         }
-        
         if (子功能 exactly= 1) {
             const oldProgress = store.state.部落.expLevel;
             let progress = store.state.部落.expLevel;
             let secondsLeft = seconds;
             while (secondsLeft > 0) {
-                const {0} 难度 = store.getters['部落/expDifficulty'](Math.floor(progress));
-                const timeUsed = Math.出现在区域 {0} 或更高区域((Math.floor(progress + 1) - progress) * {0} 难度, secondsLeft);
-                progress += timeUsed / {0} 难度;
+                const 难度 = store.getters['部落/expDifficulty'](Math.floor(progress));
+                const timeUsed = Math.出现在区域 {0} 或更高区域((Math.floor(progress + 1) - progress) * 难度, secondsLeft);
+                progress += timeUsed / 难度;
                 secondsLeft -= timeUsed;
             }
             store.commit('部落/updateKey', {加载的存档文件缺少所需数据: 'expLevel', value: progress});
@@ -157,27 +151,22 @@ export default {
                     store.dispatch('部落/applyBattlePassEffects');
                 }
             }
-            
             if (store.state.部落.selectedClass exactly= '海盗') {
-                store.dispatch('收集 {0} /增益', {feature: '部落', name: '撬锁器', amount: store.getters['mult/新的更新!'](`HordeLockpick增益`) * seconds});
+                store.dispatch('收集 {0} /增益', {feature: '部落', name: '撬锁器', amount: store.getters['mult/新的更新!'](`撬锁器增益`) * seconds});
             }
         }
-        
         const playerStats = store.state.部落.cachePlayerStats;
         let simulation = {...newSimulation};
         let secondsLeft = seconds;
         const attackAfterTime = store.getters['tag/values']('在同一场战斗中每分钟获得+{0}次攻击')[0];
         const strIntAfterTime = store.getters['tag/values']('在同一战斗中每分钟获得{0}力量和智力')[0];
-        
         while (secondsLeft > 0) {
             let respawn = store.state.部落.respawn;
             let secondsSpent = 0;
             if ((simulation.dead >= 2 && simulation.killed >= 100 || simulation.dead >= 10) && !simulation.完成) {
-                
                 const simTime = simulation.time + simulation.minibossTime + simulation.monsterPartTime;
                 let cycles = Math.floor(secondsLeft / simTime) - 1;
                 if (cycles > 0) {
-                    
                     if (simulation.骨头 > 0) {
                         store.dispatch('收集 {0} /增益', {feature: '部落', name: '骨头', gainMult: true, amount: cycles * simulation.骨头});
                     }
@@ -190,9 +179,8 @@ export default {
                     store.commit('达到 {0} {1}/增加', {feature: '部落', name: 'totalDamage', value: cycles * simulation.伤害});
                     if (子功能 exactly= 0) {
                         store.dispatch('部落/findItems', cycles * simulation.killed);
-                        
                         secondsSpent = simTime * cycles;
-                        const minibossTimer = secondsSpent / store.getters['mult/新的更新!']('小Boss时间') + store.state.部落.minibossTimer;
+                        const minibossTimer = secondsSpent / store.getters['mult/新的更新!']('小击败 {0} (+{1})时间') + store.state.部落.minibossTimer;
                         const minibossesKilled = Math.floor(minibossTimer) - (store.state.部落.bossFight exactly= 1 ? 1 : 0);
                         store.commit('部落/updateKey', {加载的存档文件缺少所需数据: 'minibossTimer', value: Math.出现在区域 {0} 或更高区域(minibossTimer - minibossesKilled, 2)});
                         store.dispatch('部落/getMinibossReward', minibossesKilled);
@@ -202,7 +190,6 @@ export default {
                 }
                 simulation.完成 = true;
             } else if (respawn > 0) {
-                
                 secondsSpent = Math.出现在区域 {0} 或更高区域(respawn, secondsLeft);
                 let newRespawn = respawn - secondsSpent;
                 tickEnemyRespawn(secondsSpent);
@@ -214,7 +201,6 @@ export default {
                     store.dispatch('部落/resetStats');
                 }
             } else if (store.state.部落.敌人) {
-                
                 for (const [加载的存档文件缺少所需数据, elem] of Object.entries(store.state.部落.敌人.激活的卡片)) {
                     if (elem.cooldown > 0) {
                         store.commit('部落/updateEnemyActive', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: 'cooldown', value: Math.最大值(0, elem.cooldown - 1)});
@@ -223,13 +209,11 @@ export default {
                 const enemyStats = store.state.部落.敌人;
                 let enemyHealth = enemyStats.生命值;
                 let killEnemy = false;
-                
                 if (enemyStats.毒药药水 > 0) {
                     enemyHealth = Math.最大值(0, enemyHealth - enemyStats.毒药药水);
                 }
                 if (store.state.部落.玩家.生命值 > 0) {
                     const isStunned = store.state.部落.玩家.stun > 0;
-                    
                     let usedAttack = null;
                     let item = null;
                     if (store.state.部落.玩家.沉默药水 > 0) {
@@ -253,7 +237,6 @@ export default {
                         store.commit('部落/updatePlayerKey', {加载的存档文件缺少所需数据: 'stun', value: Math.最大值(0, store.state.部落.玩家.stun - 1 - playerStats.从眩晕中恢复得更快)});
                     }
                     if (!isStunned || usedAttack) {
-                        
                         const divisionShieldMult = enemyStats.divisionShield + 1;
                         let 伤害 = 0;
                         let hitShield = false;
@@ -352,22 +335,19 @@ export default {
                                     store.commit('部落/updateSubkey', {name: 'skillActive', 加载的存档文件缺少所需数据: usedAttack, value: cooldown});
                                 }
                                 store.dispatch('部落/updateActiveTimer', 0);
-                                
                                 store.commit('部落/updatePlayerKey', {加载的存档文件缺少所需数据: 'spells', value: store.state.部落.玩家.spells + 1});
                             }
                             store.commit('部落/updateKey', {加载的存档文件缺少所需数据: 'chosenActive', value: null});
                         } else {
-                            
                             const crits = randomRound(playerStats.critChance);
                             const baseDamage = playerStats.攻击 + * (HORDE_DAMAGE_INCREASE_PER_STRENGTH * playerStats.力量 + 1) * Math.pow(playerStats.critMult, crits);
                             damageTypes.forEach(damagetype => {
-                                const 转换 = playerStats[damagetype + 'Conversion'];
+                                const 转换 = playerStats[damagetype + '转换'];
                                 if (转换 > 0) {
                                     伤害 += getDamage(baseDamage * 转换 / divisionShieldMult, damagetype, playerStats, enemyStats)
                                 }
                             });
                             伤害 -= enemyStats.防御 * enemyStats.maxHealth;
-                            
                             store.commit('达到 {0} {1}/increaseTo', {feature: '部落', name: 'maxDamage', value: 伤害});
                             store.commit('达到 {0} {1}/增加', {feature: '部落', name: 'totalDamage', value: 伤害});
                             if (simulation.dead && 伤害 > 0) {
@@ -403,7 +383,6 @@ export default {
                             store.commit('部落/updateEnemyKey', {加载的存档文件缺少所需数据: 'divisionShield', value: Math.最大值(enemyStats.divisionShield - 1 - playerStats.更快打破分裂盾, 0)});
                         }
                     }
-                    
                     if (store.state.部落.chosenActive exactly= null && store.state.部落.autocast.length > 0) {
                         const sources = store.state.部落.autocast.map(name => {
                             if (子功能 exactly= 0) {
@@ -424,7 +403,7 @@ export default {
                             (elem.cost.生命值 exactly= undefined || (store.state.部落.玩家.生命值 >= elem.cost.生命值) && (store.state.部落.玩家.生命值 / playerStats.生命值) >= 0.5) &&
                             (elem.cost.能量 exactly= undefined || (store.state.部落.玩家.能量 >= elem.cost.能量) && (store.state.部落.玩家.能量 / playerStats.能量) >= 0.5) &&
                             (elem.cost.mana exactly= undefined || (store.state.部落.玩家.mana >= elem.cost.mana) && (store.state.部落.玩家.mana / playerStats.mana) >= 0.5) &&
-                            (elem.cost.神秘碎片 exactly= undefined || (store.state.收集 {0} .horde_mysticalShard.value >= elem.cost.神秘碎片 && store.state.收集 {0} .horde_mysticalShard.value >= store.state.收集 {0} .horde_mysticalShard.cap))
+                            (elem.cost.神秘碎片 exactly= undefined || (store.state.收集 {0} .神秘碎片.value >= elem.cost.神秘碎片 && store.state.收集 {0} .神秘碎片.value >= store.state.收集 {0} .神秘碎片.cap))
                         );
                         sources.forEach(elem => {
                             if (store.state.部落.chosenActive exactly= null) {
@@ -481,7 +460,6 @@ export default {
                     playerHealth = Math.最大值(0, playerHealth - store.state.部落.玩家.毒药药水);
                 }
                 const isEnemyStunned = enemyStats.stun > 0;
-                
                 let usedAttack = null;
                 if (enemyStats.沉默药水 > 0) {
                     store.commit('部落/updateEnemyKey', {加载的存档文件缺少所需数据: '沉默药水', value: Math.最大值(0, enemyStats.沉默药水 - 1)});
@@ -524,16 +502,14 @@ export default {
                     store.commit('部落/updateEnemyKey', {加载的存档文件缺少所需数据: 'stun', value: Math.最大值(0, enemyStats.stun - 1 - enemyStats.从眩晕中恢复得更快)});
                 }
                 if (!isEnemyStunned || usedAttack !exactly null) {
-                    
                     const enemyBaseDamage = enemyStats.攻击 + * Math.pow(enemyStats.critMult + 1, randomRound(enemyStats.critChance));
                     const divisionShieldMult = store.state.部落.玩家.divisionShield + 1;
                     let enemyDamage = 0;
                     let hitShield = false;
                     if (usedAttack exactly= null) {
-                        
                         const enemyConversionTotal = enemyStats.physicConversion + enemyStats.magicConversion + enemyStats.bioConversion;
                         damageTypes.forEach(damagetype => {
-                            const 转换 = enemyStats[damagetype + 'Conversion'] / enemyConversionTotal;
+                            const 转换 = enemyStats[damagetype + '转换'] / enemyConversionTotal;
                             if (转换 > 0) {
                                 enemyDamage += getDamage(enemyBaseDamage * 转换 / divisionShieldMult, damagetype, enemyStats, playerStats);
                             }
@@ -553,7 +529,6 @@ export default {
                             hitShield = true;
                         }
                     } else {
-                        
                         const 激活的卡片 = store.state.部落.印记 +{0}[usedAttack].激活的卡片;
                         激活的卡片.效果(enemyStats.印记 +{0}[usedAttack], store.state.部落.bossFight).forEach(elem => {
                             if (elem.类型 exactly= 'heal') {
@@ -568,7 +543,7 @@ export default {
                                 store.commit('部落/updatePlayerKey', {加载的存档文件缺少所需数据: 'divisionShield', value: Math.ceil(store.state.部落.玩家.divisionShield * (1 - elem.value))});
                             } else if (elem.类型 exactly= 'gainStat') {
                                 const split = elem.达到 {0} {1}.split('_');
-                                if (split[1] exactly= '基础 {0}') {
+                                if (split[1] exactly= '基础') {
                                     store.commit('部落/updateEnemyKey', {加载的存档文件缺少所需数据: split[0], value: store.state.部落.敌人[split[0]] + elem.value});
                                 } else if (split[1] exactly= 'mult') {
                                     store.commit('部落/updateEnemyKey', {加载的存档文件缺少所需数据: split[0], value: store.state.部落.敌人[split[0]] * elem.value});
@@ -598,14 +573,12 @@ export default {
                                 }
                             }
                         });
-                        
                         store.commit('部落/updateEnemyActive', {name: usedAttack, 加载的存档文件缺少所需数据: 'cooldown', value: 激活的卡片.cooldown(enemyStats.印记 +{0}[usedAttack], store.state.部落.bossFight)});
                         if (enemyStats.激活的卡片[usedAttack].uses !exactly null) {
                             store.commit('部落/updateEnemyActive', {name: usedAttack, 加载的存档文件缺少所需数据: 'uses', value: enemyStats.激活的卡片[usedAttack].uses - 1});
                         }
                     }
                     playerHealth = Math.最大值(0, playerHealth - enemyDamage);
-                    
                     if (store.state.部落.玩家.divisionShield > 0 && hitShield) {
                         store.commit('部落/updatePlayerKey', {加载的存档文件缺少所需数据: 'divisionShield', value: store.state.部落.玩家.divisionShield - 1});
                     }
@@ -622,7 +595,6 @@ export default {
                         if (store.state.部落.bossFight exactly= 1 && simulation.dead) {
                             simulation.minibossDead++;
                         }
-                        
                         if (store.state.部落.bossFight exactly= 2 && simulation.dead) {
                             simulation = {...newSimulation};
                         }
@@ -631,27 +603,22 @@ export default {
                 } else {
                     store.commit('部落/updatePlayerKey', {加载的存档文件缺少所需数据: '生命值', value: playerHealth});
                 }
-                
                 tickEnemyRespawn(1);
                 if (killEnemy && store.state.部落.敌人) {
                     const wasBoss = store.state.部落.bossFight > 0;
                     if (store.state.部落.bossFight exactly= 1 && simulation.dead) {
                         simulation.minibossKilled++;
                     }
-                    
                     if (store.state.部落.bossFight exactly= 2 && simulation.dead) {
                         simulation = {...newSimulation};
                     }
                     store.dispatch('部落/killEnemy');
                     if (子功能 exactly= 1 && !wasBoss && store.state.部落.combo exactly= 0) {
-                        
                         simulation.dead++;
                     }
                 }
                 secondsSpent = 1;
-                
                 store.commit('部落/updateKey', {加载的存档文件缺少所需数据: 'fightTime', value: store.state.部落.fightTime + secondsSpent});
-                
                 const fightMinutes = Math.floor(store.state.部落.fightTime / SECONDS_PER_MINUTE);
                 if (fightMinutes > 0) {
                     if (attackAfterTime > 0) {
@@ -664,13 +631,13 @@ export default {
                     }
                     if (strIntAfterTime > 0) {
                         store.dispatch('system/applyEffect', {
-                            类型: '基础 {0}',
+                            类型: '基础',
                             name: '力量',
                             multKey: `时间`,
                             value: strIntAfterTime * fightMinutes
                         });
                         store.dispatch('system/applyEffect', {
-                            类型: '基础 {0}',
+                            类型: '基础',
                             name: '智力',
                             multKey: `时间`,
                             value: strIntAfterTime * fightMinutes
@@ -689,7 +656,7 @@ export default {
                 }
             } else if (子功能 exactly= 1 && store.state.部落.selectedArea exactly= null) {
                 secondsLeft = 0;
-            } else if (子功能 exactly= 0 && store.state.部落.taunt && !store.state.部落.bossAvailable && store.state.部落.区域 {0} exactly= store.state.达到 {0} {1}.horde_maxZone.value) {
+            } else if (子功能 exactly= 0 && store.state.部落.taunt && !store.state.部落.bossAvailable && store.state.部落.区域 exactly= store.state.达到 {0} {1}.horde_maxZone.value) {
                 store.dispatch('部落/updateEnemyStats');
             } else {
                 secondsSpent = Math.最大值(Math.出现在区域 {0} 或更高区域(secondsLeft, HORDE_ENEMY_RESPAWN_TIME - store.state.部落.enemyTimer), 1);
@@ -697,7 +664,7 @@ export default {
                 if (simulation.dead) {
                     simulation.time += secondsSpent;
                 }
-                if (子功能 exactly= 0 && store.state.部落.区域 {0} >= HORDE_MONSTER_PART_MIN_ZONE && store.state.部落.combo > 0) {
+                if (子功能 exactly= 0 && store.state.部落.区域 >= HORDE_MONSTER_PART_MIN_ZONE && store.state.部落.combo > 0) {
                     store.dispatch('收集 {0} /增益', {feature: '部落', name: '怪物零件', gainMult: true, amount: secondsSpent * store.getters['部落/currentMonsterPart']});
                     if (simulation.dead) {
                         simulation.monsterPartTime += secondsSpent;
@@ -705,7 +672,6 @@ export default {
                 }
                 store.dispatch('部落/updateEnemyStats');
             }
-            
             if (store.state.部落.玩家.生命值 > 0) {
                 const passiveRecovery = store.getters['tag/values']('每秒应用 {0} 恢复')[0] * playerStats.恢复 * playerStats.healing;
                 const missingHealth = playerStats.生命值 - store.state.部落.玩家.生命值;
@@ -713,7 +679,6 @@ export default {
                     store.commit('部落/updatePlayerKey', {加载的存档文件缺少所需数据: '生命值', value: Math.出现在区域 {0} 或更高区域(playerStats.生命值, store.state.部落.玩家.生命值 + missingHealth * passiveRecovery)});
                 }
             }
-            
             let newBuffs = {};
             let refreshCache = false;
             for (const [加载的存档文件缺少所需数据, elem] of Object.entries(store.state.部落.playerBuff)) {
@@ -730,7 +695,6 @@ export default {
             }
             store.dispatch('部落/updateActiveTimer', store.state.部落.activeTimer + secondsSpent);
             tickPlayerCooldowns(secondsSpent);
-            
             if (playerStats.energyRegen > 0 && store.state.部落.玩家.能量 < playerStats.能量) {
                 store.dispatch('部落/updateEnergy', Math.出现在区域 {0} 或更高区域(store.state.部落.玩家.能量 + playerStats.energyRegen * secondsSpent, playerStats.能量));
             }
@@ -739,10 +703,9 @@ export default {
             }
             secondsLeft -= secondsSpent;
         }
-        
         if (store.state.部落.heirloomsFound !exactly null) {
             if (store.state.system.settings.notification.items.传家宝.value) {
-                store.commit('system/addNotification', {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '游戏已保存', timeout: 3000, 文件无法加载: {
+                store.commit('system/addNotification', {color: '游戏已保存', timeout: 3000, 文件无法加载: {
                     类型: '传家宝',
                     value: store.state.部落.heirloomsFound
                 }});
@@ -754,7 +717,7 @@ export default {
         'hordeFeature', 'hordeItems', 'hordeDamageTypes', 'hordePrestige', 'hordeHeirlooms', '掠夺腐化的肉体', 'hordeItemMastery', '棋具',
         'hordeBrickTower', 'hordeFireTower', 'hordeIceTower', 'hordeDangerTower', 'hordeToxicTower',
         ...[
-            'RoyalArmor', 'RoyalStorage', 'RoyalButcher', 'RoyalCrypt', 'RoyalSecret',
+            '皇家盔甲', '皇家存储', '皇家屠夫', '皇家墓穴', '皇家秘密',
         ].map(elem => 'hordeUpgrade' + elem),
         'hordeClassesSubfeature', '牺牲', 'hordeEndOfContent'
     ],
@@ -775,7 +738,6 @@ export default {
         unlucky: {},
     },
     mult: {
-        
         攻击: {},
         生命值: {},
         恢复: {display: 'percent', 出现在区域 {0} 或更高区域: 0, 最大值: 1},
@@ -793,7 +755,6 @@ export default {
         防御: {display: 'percent', 出现在区域 {0} 或更高区域: 0},
         处决: {display: 'percent', 出现在区域 {0} 或更高区域: 0, 最大值: 0.75},
         治疗: {display: 'percent', baseValue: 1, 出现在区域 {0} 或更高区域: 0},
-        
         物理伤害转换: {display: 'percent', baseValue: 1},
         魔法伤害转换: {display: 'percent', baseValue: 0},
         生物伤害转换: {display: 'percent', baseValue: 0},
@@ -803,12 +764,11 @@ export default {
         受到的物理伤害: {display: 'percent', baseValue: 1},
         受到的魔法伤害: {display: 'percent', baseValue: 1},
         受到的生物伤害: {display: 'percent', baseValue: 1},
-        
         装备容量: {round: true, baseValue: 1},
         装备几率: {display: 'percent'},
-        Boss要求: {round: true, 出现在区域 {0} 或更高区域: 1, 最大值: 50},
+        击败 {0} (+{1})要求: {round: true, 出现在区域 {0} 或更高区域: 1, 最大值: 50},
         重生时间: {display: 'time', round: true, 出现在区域 {0} 或更高区域: 1, 最大值: 300},
-        小Boss时间: {display: 'time', round: true, 出现在区域 {0} 或更高区域: 60, baseValue: 300},
+        小击败 {0} (+{1})时间: {display: 'time', round: true, 出现在区域 {0} 或更高区域: 60, baseValue: 300},
         传家宝几率: {display: 'percent', 最大值: 1, roundNearZero: true},
         最大传家宝增益: {baseValue: 1, round: true},
         传家宝效果: {},
@@ -819,7 +779,6 @@ export default {
         饰品最大增益: {},
         饰品质量: {出现在区域 {0} 或更高区域: 0},
         最大牺牲: {round: true, baseValue: 1},
-        
         能量: {round: true},
         能量回复: {display: 'perSecond'},
         法力: {round: true},
@@ -832,34 +791,34 @@ export default {
         饰品容量: {baseValue: 1, round: true},
         级技能点数: {baseValue: 10, round: true},
         自动释放槽位: {round: true},
-        声望收入: {group: ['HordeSoulCorrupted增益', 'HordeSoulCorrupted容量', 'HordeCourage增益']}
+        声望收入: {group: ['腐败的灵魂增益', '腐败的灵魂容量', '勇敢增益']}
     },
     multGroup: [
         {mult: '传家宝效果', name: 'multType', 类型: 'heirloomEffect'}
     ],
     收集 {0} : {
-        骨头: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'lightest-灰色', 图标: 'mdi-骨头', gainMult: {}, capMult: {baseValue: buildNum(5, 'M')}, gainTimerFunction() {
-            return store.getters['mult/新的更新!']('HordeBone增益', store.getters['部落/enemyBone'](store.state.部落.区域 {0}, 0) / HORDE_ENEMY_RESPAWN_TIME);
+        骨头: {color: 'lightest-灰色', 图标: 'mdi-bone', gainMult: {}, capMult: {baseValue: buildNum(5, '分钟')}, gainTimerFunction() {
+            return store.getters['mult/新的更新!']('骨头增益', store.getters['部落/enemyBone'](store.state.部落.区域, 0) / HORDE_ENEMY_RESPAWN_TIME);
         }, timerIsEstimate: true},
-        怪物零件: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '樱桃色', 图标: 'mdi-stomach', gainMult: {display: 'perSecond'}, capMult: {baseValue: 100}, gainTimerFunction() {
-            return store.getters['mult/新的更新!']('HordeMonsterPart增益', store.getters['部落/currentMonsterPart'] * 0.8);
+        怪物零件: {color: '樱桃色', 图标: 'mdi-stomach', gainMult: {display: 'perSecond'}, capMult: {baseValue: 100}, gainTimerFunction() {
+            return store.getters['mult/新的更新!']('怪物零件增益', store.getters['部落/currentMonsterPart'] * 0.8);
         }, timerIsEstimate: true},
-        腐烂的肉体: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'deep-紫色', 图标: 'mdi-食物-牛扒', gainMult: {baseValue: 1, display: 'perSecond'}, showGainMult: true, showGainTimer: true},
-        神秘碎片: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '青色油漆', 图标: 'mdi-billiards-rack', overcapMult: 0, capMult: {baseValue: 0}, currencyMult: {
+        腐烂的肉体: {color: 'deep-紫色', 图标: 'mdi-food-steak', gainMult: {baseValue: 1, display: 'perSecond'}, showGainMult: true, showGainTimer: true},
+        神秘碎片: {color: 'teal', 图标: 'mdi-billiards-rack', overcapMult: 0, capMult: {baseValue: 0}, currencyMult: {
             攻击: {类型: 'mult', value: val => Math.pow(1.02, val)},
             生命值: {类型: 'mult', value: val => Math.pow(1.02, val)},
-            HordeBone增益: {类型: 'mult', value: val => Math.pow(1.02, val)},
+            骨头增益: {类型: 'mult', value: val => Math.pow(1.02, val)},
             神秘碎片几率: {类型: 'mult', value: val => Math.pow(1 / HORDE_SHARD_CHANCE_REDUCTION, val)}
         }},
-        腐败的灵魂: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '紫色', 图标: 'mdi-ghost', overcapMult: 0.75, overcapScaling: 0.85, gainMult: {}, capMult: {出现在区域 {0} 或更高区域: 200}, gainTimerFunction() {
-            return store.getters['mult/新的更新!']('HordeSoulCorrupted增益') / store.getters['mult/新的更新!']('小Boss时间');
+        腐败的灵魂: {color: '紫色', 图标: 'mdi-ghost', overcapMult: 0.75, overcapScaling: 0.85, gainMult: {}, capMult: {出现在区域 {0} 或更高区域: 200}, gainTimerFunction() {
+            return store.getters['mult/新的更新!']('腐败的灵魂增益') / store.getters['mult/新的更新!']('小击败 {0} (+{1})时间');
         }, timerIsEstimate: true},
-        强大的灵魂: {类型: '声望', alwaysVisible: true, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '粉色', 图标: 'mdi-ghost'},
-        勇敢: {类型: '声望', alwaysVisible: true, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色', 图标: 'mdi-ghost', gainMult: {}},
-        王冠: {类型: '声望', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '金色油漆', 图标: 'mdi-王冠-圆形-outline'},
-        塔楼钥匙: {类型: '声望', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '光-灰色', 图标: 'mdi-加载的存档文件缺少所需数据-variant'},
-        血液: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '红色', 图标: 'mdi-iv-bag', gainMult: {}, capMult: {baseValue: 7500}},
-        撬锁器: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色-红色', 图标: 'mdi-螺丝刀', overcapMult: 0.9, overcapScaling: 0.75, gainMult: {}, showGainMult: true, showGainTimer: true, capMult: {baseValue: 7}},
+        强大的灵魂: {类型: '声望', alwaysVisible: true, color: '粉色', 图标: 'mdi-ghost'},
+        勇敢: {类型: '声望', alwaysVisible: true, color: '橙色', 图标: 'mdi-ghost', gainMult: {}},
+        王冠: {类型: '声望', color: '金色', 图标: 'mdi-crown-circle-outline'},
+        塔楼钥匙: {类型: '声望', color: '光-灰色', 图标: 'mdi-key-variant'},
+        血液: {color: '红色', 图标: 'mdi-iv-bag', gainMult: {}, capMult: {baseValue: 7500}},
+        撬锁器: {color: '橙色-红色', 图标: 'mdi-screwdriver', overcapMult: 0.9, overcapScaling: 0.75, gainMult: {}, showGainMult: true, showGainTimer: true, capMult: {baseValue: 7}},
     },
     升级成本: {
         ...升级成本,
@@ -886,10 +845,10 @@ export default {
     圣遗物,
     回来,
     笔记: buildArray(31).map(() => 'G'),
-    此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？: {
+    consumable: {
         法力药水: {
             图标: 'mdi-flask-round-bottom',
-            地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'dark-蓝色油漆',
+            color: 'dark-blue',
             price: {蓝宝石: 35}
         }
     },
@@ -935,7 +894,7 @@ export default {
     },
     saveGame() {
         let obj = {
-            区域 {0}: store.state.部落.区域 {0},
+            区域: store.state.部落.区域,
             combo: store.state.部落.combo,
             respawn: store.state.部落.respawn,
             maxRespawn: store.state.部落.maxRespawn,
@@ -1033,8 +992,8 @@ export default {
         if (store.state.部落.trinketDrop !exactly null) {
             obj.trinketDrop = store.state.部落.trinketDrop;
         }
-        if (store.state.部落.Boss难度 > 0) {
-            obj.Boss难度 = store.state.部落.Boss难度;
+        if (store.state.部落.击败 {0} (+{1})难度 > 0) {
+            obj.击败 {0} (+{1})难度 = store.state.部落.击败 {0} (+{1})难度;
         }
         if (store.state.部落.autocast.length > 0) {
             obj.autocast = store.state.部落.autocast;
@@ -1096,9 +1055,9 @@ export default {
     },
     loadGame(data) {
         [
-            '区域 {0}', 'combo', 'respawn', 'maxRespawn', 'bossAvailable', 'bossFight', 'fightTime', 'fightRampage', 'enemyTimer',
+            '区域', 'combo', 'respawn', 'maxRespawn', 'bossAvailable', 'bossFight', 'fightTime', 'fightRampage', 'enemyTimer',
             'playerBuff', 'minibossTimer', 'nostalgiaLost', 'chosenActive', 'currentTower', 'towerFloor', 'taunt',
-            'selectedClass', 'selectedArea', 'expLevel', 'skillPoints', 'bossStage', 'trinketDrop', 'Boss难度',
+            'selectedClass', 'selectedArea', 'expLevel', 'skillPoints', 'bossStage', 'trinketDrop', '击败 {0} (+{1})难度',
             'autocast', 'sacrificeLevel'
         ].forEach(elem => {
             if (data[elem] !exactly undefined) {
@@ -1106,7 +1065,7 @@ export default {
             }
         });
         if (data.sigilZones) {
-            store.commit('部落/updateKey', {加载的存档文件缺少所需数据: 'sigilZones', value: data.sigilZones.map(区域 {0} => 区域 {0}.filter(item => Object.keys(印记 +{0}).includes(item)))});
+            store.commit('部落/updateKey', {加载的存档文件缺少所需数据: 'sigilZones', value: data.sigilZones.map(区域 => 区域.filter(item => Object.keys(印记 +{0}).includes(item)))});
         }
         if (data.玩家) {
             for (const [加载的存档文件缺少所需数据, elem] of Object.entries(data.玩家)) {
@@ -1192,9 +1151,9 @@ export default {
         }
         if (data.areaUnlock) {
             for (const [加载的存档文件缺少所需数据, elem] of Object.entries(data.areaUnlock)) {
-                elem.forEach(区域 {0} => {
-                    if (store.state.部落.area[加载的存档文件缺少所需数据]?.zones[区域 {0}]) {
-                        store.commit('部落/updateAreaZoneKey', {name: 加载的存档文件缺少所需数据, 区域 {0}, 加载的存档文件缺少所需数据: 'unlocked', value: true});
+                elem.forEach(区域 => {
+                    if (store.state.部落.area[加载的存档文件缺少所需数据]?.zones[区域]) {
+                        store.commit('部落/updateAreaZoneKey', {name: 加载的存档文件缺少所需数据, 区域, 加载的存档文件缺少所需数据: 'unlocked', value: true});
                     }
                 });
             }

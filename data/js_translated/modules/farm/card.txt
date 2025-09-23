@@ -1,22 +1,22 @@
-export default {
+{
     feature: {
         prefix: 'FA',
         reward: [{name: '作物增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}],
         shinyReward: [{name: '作物经验', 类型: 'mult', value: lvl => lvl * 0.05 + 1}],
         powerReward: [
             {name: '作物增益', 类型: 'mult', value: lvl => Math.pow(1.08, lvl)},
-            {name: '作物经验', 类型: '基础 {0}', value: lvl => lvl * 0.08},
+            {name: '作物经验', 类型: '基础', value: lvl => lvl * 0.08},
         ],
         解锁: 'farmFeature'
     },
     collection: {
         喂养世界: {reward: [
-            {name: 'FarmGrain增益', 类型: 'mult', value: 1.25},
-            {name: 'FarmFlower增益', 类型: 'mult', value: 1.25}
+            {name: '仅粮食增益', 类型: 'mult', value: 1.25},
+            {name: '仅鲜花增益', 类型: 'mult', value: 1.25}
         ]},
         有机染料: {reward: [
-            {name: '画廊卡片容量', 类型: '基础 {0}', value: 1},
-            {name: 'FarmBerry增益', 类型: 'mult', value: 1.25}
+            {name: '画廊卡片容量', 类型: '基础', value: 1},
+            {name: '仅浆果增益', 类型: 'mult', value: 1.25}
         ]},
     },
     pack: {

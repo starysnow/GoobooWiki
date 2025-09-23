@@ -1,49 +1,49 @@
 采矿: [
-        {mining_crystalGreen: 'mining_bestPrestige0'},
-        {mining_crystalYellow: 'mining_bestPrestige1'},
+        {绿水晶: 'mining_bestPrestige0'},
+        {黄水晶: 'mining_bestPrestige1'},
     ],
     村庄: [
-        {village_blessing: 'village_bestPrestige0'},
-        {village_shares: 'village_bestPrestige1'},
+        {祝福: 'village_bestPrestige0'},
+        {股票: 'village_bestPrestige1'},
     ],
     部落: [
-        {horde_soulEmpowered: 'horde_bestPrestige0'},
-        {horde_courage: 'horde_bestPrestige1'},
+        {强大的灵魂: 'horde_bestPrestige0'},
+        {勇敢: 'horde_bestPrestige1'},
     ],
     农场: [
-        {farm_exp: 'farm_bestPrestige'},
+        {经验值: 'farm_bestPrestige'},
     ],
     画廊: [
-        {gallery_cash: 'gallery_bestPrestige'},
+        {现金: 'gallery_bestPrestige'},
     ]
 };
     采矿: [
-        [{name: 'MiningCrystalGreen增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}],
-        [{name: 'MiningCrystalYellow增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}],
+        [{name: '绿水晶增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}],
+        [{name: '黄水晶增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}],
     ],
     村庄: [
         [
-            {name: 'VillageFaith增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-            {name: 'VillageFaith容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+            {name: '信仰增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
+            {name: '信仰容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
         ],
         [
-            {name: 'VillageShares增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+            {name: '股票增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
         ],
     ],
     部落: [
         [
-            {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-            {name: 'HordeSoulCorrupted容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+            {name: '腐败的灵魂增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
+            {name: '腐败的灵魂容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
         ],
         [
-            {name: 'HordeCourage增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
+            {name: '勇敢增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
         ],
     ],
     农场: [
         [{name: '作物经验', 类型: 'mult', value: lvl => lvl * 0.1 + 1}],
     ],
     画廊: [
-        [{name: 'GalleryCash增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}],
+        [{name: '现金增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}],
     ]
 };
 export default {
@@ -60,8 +60,7 @@ export default {
             }
             const prestigeGain = store.getters['冷冻实验室/prestigeGain'](加载的存档文件缺少所需数据);
             for (const [收集 {0} , amount] of Object.entries(prestigeGain)) {
-                if (收集 {0}  exactly= 'farm_exp') {
-                    
+                if (收集 {0}  exactly= '经验值') {
                     for (const [加载的存档文件缺少所需数据, elem] of Object.entries(store.state.农场.crop)) {
                         if (elem.found) {
                             let amountLeft = amount * elem.baseExpMult * seconds / SECONDS_PER_DAY;

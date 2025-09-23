@@ -1,287 +1,224 @@
 {
-  森林: {
-    类型: 'producer',
-    图标: 'mdi-森林',
-    效果: [{
-      name: 'EventSapling增益',
-      类型: '基础 {0}',
-      value: "((2^{lvl} \\cdot ((lvl + 1))^{2}) \\cdot 0.01)"
-    }]
-  },
-  牧羊人: {
-    类型: 'producer',
-    图标: 'mdi-sheep',
-    效果: [{
-      name: 'EventYarn增益',
-      类型: '基础 {0}',
-      value: "((2^{lvl} \\cdot ((lvl + 1))^{2}) \\cdot 0.01)"
-    }]
-  },
-  擀面杖: {
-    类型: 'producer',
-    图标: 'mdi-arrow-top-right-bottom-left-bold',
-    效果: [{
-      name: 'EventDough增益',
-      类型: '基础 {0}',
-      value: "((2^{lvl} \\cdot ((lvl + 1))^{2}) \\cdot 0.01)"
-    }]
-  },
-  雪炮: {
-    类型: 'producer',
-    图标: 'mdi-雪花-alert',
-    效果: [{
-      name: 'EventSnow增益',
-      类型: '基础 {0}',
-      value: "((2^{lvl} \\cdot ((lvl + 1))^{2}) \\cdot 0.01)"
-    }]
-  },
-  雪鸮: {
-    类型: 'pet',
-    图标: 'mdi-owl',
-    最大值: 1
-  },
-  狗: {
-    类型: 'pet',
-    图标: 'mdi-狗',
-    最大值: 1
-  },
-  猫: {
-    类型: 'pet',
-    图标: 'mdi-猫',
-    最大值: 1
-  },
-  企鹅: {
-    类型: 'pet',
-    图标: 'mdi-企鹅',
-    最大值: 1
-  },
-  兔子: {
-    类型: 'pet',
-    图标: 'mdi-兔子',
-    最大值: 1
-  },
-  乌龟: {
-    类型: 'pet',
-    图标: 'mdi-tortoise',
-    最大值: 1
-  },
-  动物牙齿: {
-    类型: 'petBoost',
-    图标: 'mdi-tooth',
-    效果: [{
-      name: '宠物攻击',
-      类型: '基础 {0}',
-      value: "(lvl \\cdot 0.5)"
-    }, {
-      name: '宠物攻击',
-      类型: 'mult',
-      value: "((lvl \\cdot 0.1) + 1)"
-    }]
-  },
-  项圈: {
-    类型: 'petBoost',
-    图标: 'mdi-狗-service',
-    效果: [{
-      name: '宠物生命值',
-      类型: '基础 {0}',
-      value: "(lvl \\cdot 5)"
-    }, {
-      name: '宠物生命值',
-      类型: 'mult',
-      value: "((lvl \\cdot 0.1) + 1)"
-    }]
-  },
-  辣椒: {
-    类型: 'petBoost',
-    图标: 'mdi-辣椒-mild',
-    效果: [{
-      name: '暴击率',
-      类型: '基础 {0}',
-      value: "(lvl \\cdot 8)"
-    }, {
-      name: '宠物暴击率',
-      类型: '基础 {0}',
-      value: "(lvl \\cdot 10)"
-    }]
-  },
-  鼓槌: {
-    类型: 'petBoost',
-    图标: 'mdi-食物-鼓槌',
-    效果: [{
-      name: '宠物攻击',
-      类型: 'mult',
-      value: "((lvl \\cdot 0.1) + 1)"
-    }, {
-      name: '宠物生命值',
-      类型: 'mult',
-      value: "((lvl \\cdot 0.1) + 1)"
-    }, {
-      name: '宠物格挡率',
-      类型: '基础 {0}',
-      value: "(lvl \\cdot 5)"
-    }]
-  },
-  老鼠: {
-    类型: 'petBoost',
-    图标: 'mdi-rodent',
-    最大值: 5
-  },
-  骨头: {
-    类型: 'petBoost',
-    图标: 'mdi-骨头',
-    最大值: 5
-  },
-  墓碑: {
-    类型: 'petBoost',
-    图标: 'mdi-grave-石头',
-    最大值: 3
-  },
-  尖刺项圈: {
-    类型: 'petBoost',
-    图标: 'mdi-decagram-outline',
-    最大值: 1
-  },
-  心形项圈: {
-    类型: 'petBoost',
-    图标: 'mdi-心形-outline',
-    最大值: 3
-  },
-  治疗袋: {
-    类型: 'petBoost',
-    图标: 'mdi-sack'
-  },
-  网球: {
-    类型: 'petBoost',
-    图标: 'mdi-tennis-ball',
-    最大值: 1
-  },
-  苹果汁: {
-    类型: 'tank',
-    图标: 'mdi-cup'
-  },
-  热水: {
-    类型: 'tank',
-    图标: 'mdi-针',
-    最大值: 1
-  },
-  哑铃: {
-    类型: 'tank',
-    图标: 'mdi-哑铃',
-    最大值: 5
-  },
-  目标: {
-    类型: 'tank',
-    图标: 'mdi-bullseye',
-    最大值: 5
-  },
-  手套: {
-    类型: 'tank',
-    图标: 'mdi-hand-back-left',
-    最大值: 5
-  },
-  滑雪板: {
-    类型: '暴击',
-    图标: 'mdi-滑雪板',
-    最大值: 1
-  },
-  茶: {
-    类型: '暴击',
-    图标: 'mdi-茶',
-    最大值: 3
-  },
-  星盾: {
-    类型: '暴击',
-    图标: 'mdi-护盾-星形',
-    最大值: 1
-  },
-  咖啡: {
-    类型: '暴击',
-    图标: 'mdi-咖啡',
-    最大值: 3
-  },
-  鹅卵石: {
-    类型: '暴击',
-    图标: 'mdi-chart-bubble',
-    最大值: 1
-  },
-  日盾: {
-    图标: 'mdi-护盾-太阳药水',
-    效果: [{
-      name: '防御',
-      类型: '基础 {0}',
-      value: "(lvl \\cdot 2)"
-    }]
-  },
-  月盾: {
-    图标: 'mdi-护盾-moon',
-    效果: [{
-      name: '防御',
-      类型: '基础 {0}',
-      value: "lvl"
-    }, {
-      name: '格挡率',
-      类型: '基础 {0}',
-      value: "(lvl \\cdot 5)"
-    }]
-  },
-  壁炉: {
-    图标: 'mdi-壁炉',
-    效果: [{
-      name: '生命值',
-      类型: '基础 {0}',
-      value: "(lvl \\cdot 10)"
-    }, {
-      name: '生命值',
-      类型: 'mult',
-      value: "((lvl \\cdot 0.1) + 1)"
-    }]
-  },
-  特殊雪花: {
-    图标: 'mdi-雪花-variant',
-    效果: [{
-      name: '攻击',
-      类型: 'mult',
-      value: "((lvl \\cdot 0.1) + 1)"
-    }, {
-      name: '暴击率',
-      类型: '基础 {0}',
-      value: "(lvl \\cdot 5)"
-    }]
-  },
-  糖果手杖: {
-    图标: 'mdi-candycane',
-    效果: [{
-      name: '生命值',
-      类型: '基础 {0}',
-      value: "(lvl \\cdot 15)"
-    }, {
-      name: '格挡率',
-      类型: '基础 {0}',
-      value: "(lvl \\cdot 5)"
-    }]
-  },
-  铲子: {
-    图标: 'mdi-铲子',
-    效果: [{
-      name: '攻击',
-      类型: '基础 {0}',
-      value: "lvl"
-    }, {
-      name: '攻击',
-      类型: 'mult',
-      value: "((lvl \\cdot 0.1) + 1)"
-    }]
-  },
-  火鸡: {
-    图标: 'mdi-食物-火鸡',
-    效果: [{
-      name: '攻击',
-      类型: '基础 {0}',
-      value: "lvl"
-    }, {
-      name: '生命值',
-      类型: 'mult',
-      value: "((lvl \\cdot 0.1) + 1)"
-    }]
-  }
+    森林: {
+        类型: 'producer',
+        图标: 'mdi-forest',
+        效果: [
+            {name: '树苗增益', 类型: '基础', value: lvl => Math.pow(2, lvl) * Math.pow(lvl + 1, 2) * 0.01}
+        ]
+    },
+    牧羊人: {
+        类型: 'producer',
+        图标: 'mdi-sheep',
+        效果: [
+            {name: '纱增益', 类型: '基础', value: lvl => Math.pow(2, lvl) * Math.pow(lvl + 1, 2) * 0.01}
+        ]
+    },
+    擀面杖: {
+        类型: 'producer',
+        图标: 'mdi-arrow-top-right-bottom-left-bold',
+        效果: [
+            {name: '面团增益', 类型: '基础', value: lvl => Math.pow(2, lvl) * Math.pow(lvl + 1, 2) * 0.01}
+        ]
+    },
+    雪炮: {
+        类型: 'producer',
+        图标: 'mdi-snowflake-alert',
+        效果: [
+            {name: '雪增益', 类型: '基础', value: lvl => Math.pow(2, lvl) * Math.pow(lvl + 1, 2) * 0.01}
+        ]
+    },
+    雪鸮: {
+        类型: 'pet',
+        图标: 'mdi-owl',
+        最大值: 1
+    },
+    狗: {
+        类型: 'pet',
+        图标: 'mdi-dog',
+        最大值: 1
+    },
+    猫: {
+        类型: 'pet',
+        图标: 'mdi-cat',
+        最大值: 1
+    },
+    企鹅: {
+        类型: 'pet',
+        图标: 'mdi-penguin',
+        最大值: 1
+    },
+    兔子: {
+        类型: 'pet',
+        图标: 'mdi-rabbit',
+        最大值: 1
+    },
+    乌龟: {
+        类型: 'pet',
+        图标: 'mdi-tortoise',
+        最大值: 1
+    },
+    动物牙齿: {
+        类型: 'petBoost',
+        图标: 'mdi-tooth',
+        效果: [
+            {name: '宠物攻击', 类型: '基础', value: lvl => lvl * 0.5},
+            {name: '宠物攻击', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
+        ]
+    },
+    项圈: {
+        类型: 'petBoost',
+        图标: 'mdi-dog-service',
+        效果: [
+            {name: '宠物生命值', 类型: '基础', value: lvl => lvl * 5},
+            {name: '宠物生命值', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
+        ]
+    },
+    辣椒: {
+        类型: 'petBoost',
+        图标: 'mdi-chili-mild',
+        效果: [
+            {name: '暴击率', 类型: '基础', value: lvl => lvl * 8},
+            {name: '宠物暴击率', 类型: '基础', value: lvl => lvl * 10},
+        ]
+    },
+    鼓槌: {
+        类型: 'petBoost',
+        图标: 'mdi-food-drumstick',
+        效果: [
+            {name: '宠物攻击', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
+            {name: '宠物生命值', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
+            {name: '宠物格挡率', 类型: '基础', value: lvl => lvl * 5},
+        ]
+    },
+    老鼠: {
+        类型: 'petBoost',
+        图标: 'mdi-rodent',
+        最大值: 5
+    },
+    骨头: {
+        类型: 'petBoost',
+        图标: 'mdi-bone',
+        最大值: 5
+    },
+    墓碑: {
+        类型: 'petBoost',
+        图标: 'mdi-grave-stone',
+        最大值: 3
+    },
+    尖刺项圈: {
+        类型: 'petBoost',
+        图标: 'mdi-decagram-outline',
+        最大值: 1
+    },
+    心形项圈: {
+        类型: 'petBoost',
+        图标: 'mdi-heart-outline',
+        最大值: 3
+    },
+    治疗袋: {
+        类型: 'petBoost',
+        图标: 'mdi-sack'
+    },
+    网球: {
+        类型: 'petBoost',
+        图标: 'mdi-tennis-ball',
+        最大值: 1
+    },
+    苹果汁: {
+        类型: 'tank',
+        图标: 'mdi-cup'
+    },
+    热水: {
+        类型: 'tank',
+        图标: 'mdi-needle',
+        最大值: 1
+    },
+    哑铃: {
+        类型: 'tank',
+        图标: 'mdi-dumbbell',
+        最大值: 5
+    },
+    目标: {
+        类型: 'tank',
+        图标: 'mdi-bullseye',
+        最大值: 5
+    },
+    手套: {
+        类型: 'tank',
+        图标: 'mdi-hand-back-left',
+        最大值: 5
+    },
+    滑雪板: {
+        类型: '暴击',
+        图标: 'mdi-snowboard',
+        最大值: 1
+    },
+    茶: {
+        类型: '暴击',
+        图标: 'mdi-tea',
+        最大值: 3
+    },
+    星盾: {
+        类型: '暴击',
+        图标: 'mdi-shield-star',
+        最大值: 1
+    },
+    咖啡: {
+        类型: '暴击',
+        图标: 'mdi-coffee',
+        最大值: 3
+    },
+    鹅卵石: {
+        类型: '暴击',
+        图标: 'mdi-chart-bubble',
+        最大值: 1
+    },
+    日盾: {
+        图标: 'mdi-shield-sun',
+        效果: [
+            {name: '防御', 类型: '基础', value: lvl => lvl * 2}
+        ]
+    },
+    月盾: {
+        图标: 'mdi-shield-moon',
+        效果: [
+            {name: '防御', 类型: '基础', value: lvl => lvl},
+            {name: '格挡率', 类型: '基础', value: lvl => lvl * 5}
+        ]
+    },
+    壁炉: {
+        图标: 'mdi-fireplace',
+        效果: [
+            {name: '生命值', 类型: '基础', value: lvl => lvl * 10},
+            {name: '生命值', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        ]
+    },
+    特殊雪花: {
+        图标: 'mdi-snowflake-variant',
+        效果: [
+            {name: '攻击', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
+            {name: '暴击率', 类型: '基础', value: lvl => lvl * 5}
+        ]
+    },
+    糖果手杖: {
+        图标: 'mdi-candycane',
+        效果: [
+            {name: '生命值', 类型: '基础', value: lvl => lvl * 15},
+            {name: '格挡率', 类型: '基础', value: lvl => lvl * 5}
+        ]
+    },
+    铲子: {
+        图标: 'mdi-shovel',
+        效果: [
+            {name: '攻击', 类型: '基础', value: lvl => lvl},
+            {name: '攻击', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        ]
+    },
+    火鸡: {
+        图标: 'mdi-food-turkey',
+        效果: [
+            {name: '攻击', 类型: '基础', value: lvl => lvl},
+            {name: '生命值', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        ]
+    },
 }

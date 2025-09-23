@@ -1,14 +1,14 @@
 {
-  price: 5000,
-  自定义背景色: true,
-  光: {
-    primary: '#29C229',
-    secondary: '#B76715',
-    accent: '#92EF92'
-  },
-  dark: {
-    primary: '#1C831C',
-    secondary: '#72400D',
-    accent: '#92EF92'
-  }
+    price: 5000,
+    自定义背景色: true,
+    光: {
+        primary: '#29C229',
+        secondary: '#B76715',
+        accent: '#92EF92',
+    },
+    dark: {
+        primary: '#1C831C',
+        secondary: '#72400D',
+        accent: '#92EF92',
+    }
 }

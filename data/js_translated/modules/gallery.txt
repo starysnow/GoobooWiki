@@ -1,4 +1,4 @@
-export default {
+{
     name: '画廊',
     tickspeed: 1,
     unlockNeeded: 'galleryFeature',
@@ -9,22 +9,22 @@ export default {
         for (let i = 0; i < segments; i++) {
             const secondsSegment = Math.round(seconds * (i + 1) / segments) - secondsSpent;
             secondsSpent += secondsSegment;
-            const colors = ['美丽', ...store.state.画廊.地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块].reverse();
-            const baseGain = colors.map(地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块 => store.getters['mult/新的更新!'](`currencyGallery${ capitalize(地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块) }Gain`));
-            colors.forEach((地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块, index) => {
-                const 增益 = (baseGain[index] + store.getters['mult/新的更新!'](`currencyGallery${ capitalize(地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块) }Gain`)) / 2;
+            const colors = ['美丽', ...store.state.画廊.color].reverse();
+            const baseGain = colors.map(color => store.getters['mult/新的更新!'](`currencyGallery${ capitalize(color) }增益`));
+            colors.forEach((color, index) => {
+                const 增益 = (baseGain[index] + store.getters['mult/新的更新!'](`currencyGallery${ capitalize(color) }增益`)) / 2;
                 if (增益 > 0) {
-                    store.dispatch('收集 {0} /增益', {feature: '画廊', name: 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块, amount: secondsSegment * 增益});
+                    store.dispatch('收集 {0} /增益', {feature: '画廊', name: color, amount: secondsSegment * 增益});
                 }
             });
         }
-        const globalLevelGallery = Math.floor(logBase(store.state.达到 {0} {1}.gallery_beauty.总计 {0}, 4));
+        const globalLevelGallery = Math.floor(logBase(store.state.达到 {0} {1}.美丽.总计, 4));
         if (globalLevelGallery > 0) {
             store.dispatch('游戏/globalLevelPart', {加载的存档文件缺少所需数据: 'gallery_0', amount: globalLevelGallery});
         }
         store.dispatch('画廊/packageAndConverterTick', seconds);
         if (store.state.解锁.形状.use) {
-            store.dispatch('收集 {0} /增益', {feature: '画廊', name: '动机', amount: seconds * store.getters['mult/新的更新!']('GalleryMotivation增益')});
+            store.dispatch('收集 {0} /增益', {feature: '画廊', name: '动机', amount: seconds * store.getters['mult/新的更新!']('动机增益')});
         }
         if (store.state.解锁.灵感.use) {
             let newTime = store.state.画廊.inspirationTime + seconds;
@@ -48,9 +48,9 @@ export default {
                     let progress = elem.progress;
                     let secondsLeft = seconds;
                     while (secondsLeft > 0) {
-                        const {0} 难度 = store.getters['画廊/canvasDifficulty'](加载的存档文件缺少所需数据, Math.floor(progress));
-                        const timeUsed = Math.出现在区域 {0} 或更高区域((Math.floor(progress + 1) - progress) * {0} 难度 / speed, secondsLeft);
-                        progress += timeUsed * speed / {0} 难度;
+                        const 难度 = store.getters['画廊/canvasDifficulty'](加载的存档文件缺少所需数据, Math.floor(progress));
+                        const timeUsed = Math.出现在区域 {0} 或更高区域((Math.floor(progress + 1) - progress) * 难度 / speed, secondsLeft);
+                        progress += timeUsed * speed / 难度;
                         secondsLeft -= timeUsed;
                     }
                     store.commit('画廊/updateColorDataKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: 'progress', value: progress});
@@ -85,13 +85,13 @@ export default {
         画布速度: {解锁: '画布', display: 'perSecond'}
     },
     收集 {0} : {
-        美丽: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'deep-紫色', 图标: 'mdi-image-filter-vintage', gainMult: {baseValue: 1, display: 'perSecond'}, showGainMult: true, showGainTimer: true, timerIsEstimate: true},
-        转换器: {multUnlock: '转换', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-绿色', 图标: 'mdi-recycle', overcapMult: 0.75, overcapScaling: 0.95, gainMult: {baseValue: 0.2, display: 'perSecond'}, showGainMult: true, capMult: {baseValue: 1000}},
-        灵感: {multUnlock: '灵感', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '黄色', 图标: 'mdi-灯泡-嘲讽模式已开启'},
-        包裹: {multUnlock: '鼓', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'beige', 图标: 'mdi-包裹-variant', overcapMult: 0.8, overcapScaling: 0.8, gainMult: {baseValue: 0.0125, display: 'perSecond'}, showGainMult: true, showGainTimer: true, capMult: {baseValue: 10}},
-        动机: {multUnlock: '形状', 类型: 'shape', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '粉色-紫色', 图标: 'mdi-emoticon-excited', overcapMult: 0.5, gainMult: {baseValue: 0.2, display: 'perSecond'}, showGainMult: true, showGainTimer: true, capMult: {baseValue: 100}},
-        神秘形状: {multUnlock: '形状', 类型: 'shape', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-紫色', 图标: 'mdi-octahedron', overcapMult: 0, gainMult: {baseValue: 1}, capMult: {baseValue: 1337}},
-        现金: {multUnlock: '拍卖', 类型: '声望', alwaysVisible: true, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '绿色', 图标: 'mdi-现金', gainMult: {}}
+        美丽: {color: 'deep-紫色', 图标: 'mdi-image-filter-vintage', gainMult: {baseValue: 1, display: 'perSecond'}, showGainMult: true, showGainTimer: true, timerIsEstimate: true},
+        转换器: {multUnlock: '转换', color: 'pale-绿色', 图标: 'mdi-recycle', overcapMult: 0.75, overcapScaling: 0.95, gainMult: {baseValue: 0.2, display: 'perSecond'}, showGainMult: true, capMult: {baseValue: 1000}},
+        灵感: {multUnlock: '灵感', color: '黄色', 图标: 'mdi-lightbulb-on'},
+        包裹: {multUnlock: '鼓', color: 'beige', 图标: 'mdi-package-variant', overcapMult: 0.8, overcapScaling: 0.8, gainMult: {baseValue: 0.0125, display: 'perSecond'}, showGainMult: true, showGainTimer: true, capMult: {baseValue: 10}},
+        动机: {multUnlock: '形状', 类型: 'shape', color: '粉色-紫色', 图标: 'mdi-emoticon-excited', overcapMult: 0.5, gainMult: {baseValue: 0.2, display: 'perSecond'}, showGainMult: true, showGainTimer: true, capMult: {baseValue: 100}},
+        神秘形状: {multUnlock: '形状', 类型: 'shape', color: 'pale-紫色', 图标: 'mdi-octahedron', overcapMult: 0, gainMult: {baseValue: 1}, capMult: {baseValue: 1337}},
+        现金: {multUnlock: '拍卖', 类型: '声望', alwaysVisible: true, color: '绿色', 图标: 'mdi-cash', gainMult: {}}
     },
     笔记: buildArray(10).map(() => 'G'),
     升级成本: {
@@ -102,38 +102,37 @@ export default {
         ...bookGallery
     },
     multGroup: [
-        {mult: '形状增益', name: 'currencyGain', 类型: 'shape', blacklist: ['gallery_motivation', 'gallery_mysteryShape']}
+        {mult: '形状增益', name: 'currencyGain', 类型: 'shape', blacklist: ['动机', '神秘形状']}
     ],
     圣遗物,
     回来,
     init() {
-        
-        store.state.画廊.地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块.forEach((elem, index) => {
-            const colorMult = ['美丽', ...store.state.画廊.地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块][index];
-            store.dispatch('收集 {0} /init', {feature: '画廊', multUnlock: 'galleryFeature', name: elem, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: elem, 图标: 'mdi-liquid-spot', currencyMult: {
-                [`currencyGallery${ capitalize(colorMult) }Gain`]: {类型: '基础 {0}', value: val => val > 100 ? Math.pow(val * 100, 0.5) : val}
+        store.state.画廊.color.forEach((elem, index) => {
+            const colorMult = ['美丽', ...store.state.画廊.color][index];
+            store.dispatch('收集 {0} /init', {feature: '画廊', multUnlock: 'galleryFeature', name: elem, color: elem, 图标: 'mdi-liquid-spot', currencyMult: {
+                [`currencyGallery${ capitalize(colorMult) }增益`]: {类型: '基础', value: val => val > 100 ? Math.pow(val * 100, 0.5) : val}
             }, gainMult: {display: 'perSecond'}, showGainMult: true, showGainTimer: true, timerIsEstimate: true});
-            store.dispatch('收集 {0} /init', {feature: '画廊', multUnlock: '鼓', name: elem + 'Drum', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: elem, 图标: 'mdi-barrel', currencyMult: elem exactly= '红色' ? {
-                GalleryBeauty增益: {类型: 'mult', value: val => Math.pow(val * 0.1 + 1, 2)}
+            store.dispatch('收集 {0} /init', {feature: '画廊', multUnlock: '鼓', name: elem + 'Drum', color: elem, 图标: 'mdi-barrel', currencyMult: elem exactly= '红色' ? {
+                美丽增益: {类型: 'mult', value: val => Math.pow(val * 0.1 + 1, 2)}
             } : {
-                GalleryBeauty增益: {类型: 'mult', value: val => val * 0.1 + 1},
-                [`currencyGallery${ capitalize(colorMult) }Gain`]: {类型: 'mult', value: val => val * 0.1 + 1},
+                美丽增益: {类型: 'mult', value: val => val * 0.1 + 1},
+                [`currencyGallery${ capitalize(colorMult) }增益`]: {类型: 'mult', value: val => val * 0.1 + 1},
                 [`currencyGallery${ capitalize(colorMult) }DrumCap`]: {类型: 'bonus', value: val => val}
             }, overcapMult: 0, capMult: {baseValue: 10, round: true}});
             store.commit('画廊/initColorData', {name: elem});
-            store.commit('mult/init', {feature: '画廊', name: `画廊${ capitalize(elem) }Conversion`, 解锁: 'galleryFeature', baseValue: 1}, {root: true});
+            store.commit('mult/init', {feature: '画廊', name: `画廊${ capitalize(elem) }转换`, 解锁: 'galleryFeature', baseValue: 1}, {root: true});
             store.commit('mult/init', {feature: '画廊', name: `画廊${ capitalize(elem) }DrumChance`, 解锁: '鼓', display: 'percent', 出现在区域 {0} 或更高区域: 0, 最大值: 1}, {root: true});
         });
-        store.commit('mult/init', {feature: '画廊', name: '所有颜色增益', 解锁: 'galleryFeature', group: store.state.画廊.地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块.map(elem => `currencyGallery${ capitalize(elem) }Gain`)}, {root: true});
-        store.commit('mult/init', {feature: '画廊', name: '所有鼓几率', 解锁: '鼓', group: store.state.画廊.地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块.map(elem => `画廊${ capitalize(elem) }DrumChance`)}, {root: true});
-        store.commit('mult/init', {feature: '画廊', name: '所有鼓上限', 解锁: '鼓', group: store.state.画廊.地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块.map(elem => `currencyGallery${ capitalize(elem) }DrumCap`)}, {root: true});
+        store.commit('mult/init', {feature: '画廊', name: '所有颜色增益', 解锁: 'galleryFeature', group: store.state.画廊.color.map(elem => `currencyGallery${ capitalize(elem) }增益`)}, {root: true});
+        store.commit('mult/init', {feature: '画廊', name: '所有鼓几率', 解锁: '鼓', group: store.state.画廊.color.map(elem => `画廊${ capitalize(elem) }DrumChance`)}, {root: true});
+        store.commit('mult/init', {feature: '画廊', name: '所有鼓上限', 解锁: '鼓', group: store.state.画廊.color.map(elem => `currencyGallery${ capitalize(elem) }DrumCap`)}, {root: true});
         for (const [加载的存档文件缺少所需数据, elem] of Object.entries(idea)) {
             store.commit('画廊/initIdea', {name: 加载的存档文件缺少所需数据, ...elem});
         }
         for (const [加载的存档文件缺少所需数据, elem] of Object.entries(shape)) {
             store.commit('画廊/initShape', {name: 加载的存档文件缺少所需数据, ...elem});
             if (!elem.isSpecial) {
-                store.dispatch('收集 {0} /init', {feature: '画廊', 类型: 'shape', multUnlock: 'galleryFeature', name: 加载的存档文件缺少所需数据, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: elem.地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块, 图标: elem.图标, gainMult: {}, showGainMult: true});
+                store.dispatch('收集 {0} /init', {feature: '画廊', 类型: 'shape', multUnlock: 'galleryFeature', name: 加载的存档文件缺少所需数据, color: elem.color, 图标: elem.图标, gainMult: {}, showGainMult: true});
             }
         }
         store.commit('画廊/initShapeGrid');

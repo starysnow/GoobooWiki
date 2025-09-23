@@ -1,4 +1,4 @@
-export default {
+{
     {0} 已拥有: true,
     光: {
         primary: '#1976D2',

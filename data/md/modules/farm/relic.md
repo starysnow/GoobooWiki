@@ -1,0 +1,9 @@
+| 名称  | 图标  | color | 效果  |
+| --- | --- | ----- | --- |
+| 金胡萝卜 | mdi-carrot | 金色 | [{"name":"仅蔬菜增益","类型":"mult","value":1.4}] |
+| 金苹果 | mdi-food-apple | 金色 | [{"name":"仅浆果增益","类型":"mult","value":1.4}] |
+| 爆米花 | mdi-popcorn | pale-黄色 | [{"name":"仅粮食增益","类型":"mult","value":1.4}] |
+| 蔷薇石英 | mdi-crystal-ball | pale-粉色 | [{"name":"仅鲜花增益","类型":"mult","value":1.4}] |
+| 金种子 | mdi-seed | 金色 | [{"name":"金玫瑰","类型":"farmSeed","value":true}] |
+| 格子 | mdi-fence | 棕色 | [{"name":"过度生长","类型":"基础","value":0.05}] |
+| 砖墙 | mdi-wall | 樱桃色 | [{"name":"过度生长","类型":"基础","value":0.05}] |

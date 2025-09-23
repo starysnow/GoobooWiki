@@ -1,18 +1,15 @@
-export default function(save) {
-    
+function(save) {
     save.cheaterSelfMark = 0;
     save.cheatDetected = {};
-    
-    save = lowerUpgradeLevel(save, 'mining_crystalRefinery', 50);
-    save = lowerUpgradeLevel(save, 'mining_crystalSalt', 50);
-    save = lowerUpgradeLevel(save, 'mining_crystalSmeltery', 100);
-    save = lowerUpgradeLevel(save, 'mining_crystalEnhancer', 25);
-    save = lowerUpgradeLevel(save, 'horde_beginnerLuck', 120);
-    save = lowerUpgradeLevel(save, 'horde_boneTrader', 150);
-    save = lowerUpgradeLevel(save, 'horde_soulCage', 80);
-    save = lowerUpgradeLevel(save, 'horde_mausoleum', 80);
-    save = lowerUpgradeLevel(save, 'farm_goldenTools', 5);
-    
+    save = lowerUpgradeLevel(save, '水晶精炼厂', 50);
+    save = lowerUpgradeLevel(save, '水晶盐', 50);
+    save = lowerUpgradeLevel(save, '水晶冶炼厂', 100);
+    save = lowerUpgradeLevel(save, '水晶强化', 25);
+    save = lowerUpgradeLevel(save, '新手运气', 120);
+    save = lowerUpgradeLevel(save, '骨头商人', 150);
+    save = lowerUpgradeLevel(save, '灵魂牢笼', 80);
+    save = lowerUpgradeLevel(save, '陵墓', 80);
+    save = lowerUpgradeLevel(save, '黄金工具', 5);
     if (save.达到 {0} {1}.village_bestPrestige !exactly undefined) {
         save.达到 {0} {1}.village_bestPrestige0 = save.达到 {0} {1}.village_bestPrestige;
         从地块上移除作物。 消耗的资源不予退还 save.达到 {0} {1}.village_bestPrestige;
@@ -21,7 +18,6 @@ export default function(save) {
         save.达到 {0} {1}.horde_bestPrestige0 = save.达到 {0} {1}.horde_bestPrestige;
         从地块上移除作物。 消耗的资源不予退还 save.达到 {0} {1}.horde_bestPrestige;
     }
-    
     if (save.村庄 && save.村庄.供品 && (save.村庄.供品.知识 !exactly undefined || save.村庄.供品.科学 !exactly undefined || save.村庄.供品.快乐 !exactly undefined)) {
         let spent = 0;
         ['植物纤维', '木头', '石头'].forEach(elem => {
@@ -39,7 +35,7 @@ export default function(save) {
                 spent += save.村庄.供品[elem].upgradeBought * 8;
             }
         });
-        save.收集 {0} .village_offering = save.达到 {0} {1}.village_offering[1] - spent;
+        save.收集 {0} .供品 = save.达到 {0} {1}.供品[1] - spent;
         if (save.村庄.供品.知识 !exactly undefined) {
             save.村庄.供品.知识.upgradeBought = 0;
         }
@@ -51,12 +47,10 @@ export default function(save) {
         }
     }
     if (save.部落) {
-        
         if (save.部落.敌人 !exactly undefined) {
             save.部落.敌人.防御 = 0;
             save.部落.敌人.处决 +{0}% = 0;
         }
-        
         if (save.部落.itemStatMult !exactly undefined) {
             let newObj = {};
             for (const [加载的存档文件缺少所需数据, elem] of Object.entries(save.部落.itemStatMult)) {
@@ -67,7 +61,6 @@ export default function(save) {
         if (save.部落.items?.星盾) {
             save.部落.items.星盾.达到等级 {0} = 1;
         }
-        
         if (save.部落.items) {
             for (const [, elem] of Object.entries(save.部落.items)) {
                 if (elem.装备的卡片) {
@@ -87,41 +80,36 @@ export default function(save) {
             }
         }
     }
-    
-    if (save.收集 {0} .farm_fruit !exactly undefined) {
-        save.收集 {0} .farm_berry = save.收集 {0} .farm_fruit;
+    if (save.收集 {0} .水果 !exactly undefined) {
+        save.收集 {0} .仅浆果 = save.收集 {0} .水果;
     }
-    if (save.达到 {0} {1}.farm_fruit !exactly undefined) {
-        save.达到 {0} {1}.farm_berry = save.达到 {0} {1}.farm_fruit;
+    if (save.达到 {0} {1}.水果 !exactly undefined) {
+        save.达到 {0} {1}.仅浆果 = save.达到 {0} {1}.水果;
     }
-    save = removeCurrency(save, 'farm_fruit');
-    save = replaceTreasureEffect(save, 'FarmFruit增益', 'FarmBerry增益');
+    save = removeCurrency(save, '水果');
+    save = replaceTreasureEffect(save, '水果增益', '仅浆果增益');
     if (save.升级成本.farm_biggerFruits !exactly undefined) {
-        save.升级成本.farm_biggerBerries = save.升级成本.farm_biggerFruits;
+        save.升级成本.更大的浆果 = save.升级成本.farm_biggerFruits;
         save = removeUpgrade(save, 'farm_biggerFruits');
     }
-    
-    if (save.收集 {0} .farm_gold !exactly undefined && save.收集 {0} .farm_gold > 1000) {
-        save.收集 {0} .farm_gold = 1000;
+    if (save.收集 {0} .黄金 !exactly undefined && save.收集 {0} .黄金 > 1000) {
+        save.收集 {0} .黄金 = 1000;
     }
-    if (save.达到 {0} {1}.farm_gold !exactly undefined && save.达到 {0} {1}.farm_gold[0] > 20759) {
-        save.达到 {0} {1}.farm_gold = [20759, 20759];
+    if (save.达到 {0} {1}.黄金 !exactly undefined && save.达到 {0} {1}.黄金[0] > 20759) {
+        save.达到 {0} {1}.黄金 = [20759, 20759];
     }
-    
-    if (save.收集 {0} .farm_mysteryStone !exactly undefined) {
-        const newAmount = Math.ceil(save.收集 {0} .farm_mysteryStone / 100);
-        save.收集 {0} .farm_mysteryStone = newAmount;
-        save.达到 {0} {1}.farm_mysteryStone = [newAmount, newAmount];
+    if (save.收集 {0} .神秘石 !exactly undefined) {
+        const newAmount = Math.ceil(save.收集 {0} .神秘石 / 100);
+        save.收集 {0} .神秘石 = newAmount;
+        save.达到 {0} {1}.神秘石 = [newAmount, newAmount];
     }
-    
-    if (save.此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？) {
-        ['farm_sunshine', 'farm_superFlower', 'farm_smellyMud', 'farm_tropicalWater', 'farm_fieldBlessing', 'farm_cinnamonBag'].forEach(elem => {
-            if (save.此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？[elem] !exactly undefined && save.此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？[elem] > 0) {
-                save.此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？[elem] *= 4;
+    if (save.consumable) {
+        ['Sunshine', '超级鲜花', '臭泥', '热带水', '田野祝福', '肉桂袋'].forEach(elem => {
+            if (save.consumable[elem] !exactly undefined && save.consumable[elem] > 0) {
+                save.consumable[elem] *= 4;
             }
         });
     }
-    
     [
         '艺术学院', '红色蜡笔', '彩虹罐', '垃圾箱', '橙色蜡笔',
         'headstart', '叉车', '红色箱子', '黄色蜡笔', '励志书籍',
@@ -131,46 +119,42 @@ export default function(save) {
     ].forEach(name => {
         save = removeUpgrade(save, 'gallery_' + name);
     });
-    save = refundCurrency(save, 'gallery_cash');
-    
+    save = refundCurrency(save, '现金');
     save = applyTreasureFilter(save, 宝藏 => {
         if (宝藏.类型 exactly= 'empowered' && 宝藏.层 > 0) {
             宝藏.层--;
         }
         return 宝藏;
     });
-    
-    if (save.收集 {0} .horde_soulCorrupted !exactly undefined && save.达到 {0} {1}.horde_soulCorrupted !exactly undefined && save.收集 {0} .horde_soulCorrupted > save.达到 {0} {1}.horde_soulCorrupted[1]) {
-        save.达到 {0} {1}.horde_soulCorrupted[1] = save.收集 {0} .horde_soulCorrupted;
+    if (save.收集 {0} .腐败的灵魂 !exactly undefined && save.达到 {0} {1}.腐败的灵魂 !exactly undefined && save.收集 {0} .腐败的灵魂 > save.达到 {0} {1}.腐败的灵魂[1]) {
+        save.达到 {0} {1}.腐败的灵魂[1] = save.收集 {0} .腐败的灵魂;
     }
-    if (save.收集 {0} .horde_soulEmpowered !exactly undefined && save.达到 {0} {1}.horde_soulEmpowered !exactly undefined && save.收集 {0} .horde_soulEmpowered > save.达到 {0} {1}.horde_soulEmpowered[1]) {
-        save.达到 {0} {1}.horde_soulEmpowered[1] = save.收集 {0} .horde_soulEmpowered;
+    if (save.收集 {0} .强大的灵魂 !exactly undefined && save.达到 {0} {1}.强大的灵魂 !exactly undefined && save.收集 {0} .强大的灵魂 > save.达到 {0} {1}.强大的灵魂[1]) {
+        save.达到 {0} {1}.强大的灵魂[1] = save.收集 {0} .强大的灵魂;
     }
-    
     if (save.卡片) {
         for (const [加载的存档文件缺少所需数据, elem] of Object.entries(save.卡片.feature)) {
             save.卡片.feature[加载的存档文件缺少所需数据].cardSelected = filterUnique(elem.cardSelected);
             save.卡片.feature[加载的存档文件缺少所需数据].cardEquipped = filterUnique(elem.cardEquipped);
         }
     }
-    
-    if (save.达到 {0} {1}.event_cindersToken !exactly undefined) {
-        save.达到 {0} {1}.event_cindersHighscore = [0, save.达到 {0} {1}.event_cindersToken[1]];
+    if (save.达到 {0} {1}.煤渣代币 !exactly undefined) {
+        save.达到 {0} {1}.event_cindersHighscore = [0, save.达到 {0} {1}.煤渣代币[1]];
     }
-    if (save.达到 {0} {1}.event_bloomToken !exactly undefined) {
-        save.达到 {0} {1}.event_bloomHighscore = [0, save.达到 {0} {1}.event_bloomToken[1]];
+    if (save.达到 {0} {1}.绽放代币 !exactly undefined) {
+        save.达到 {0} {1}.event_bloomHighscore = [0, save.达到 {0} {1}.绽放代币[1]];
     }
-    if (save.达到 {0} {1}.event_weatherChaosToken !exactly undefined) {
-        save.达到 {0} {1}.event_weatherChaosHighscore = [0, save.达到 {0} {1}.event_weatherChaosToken[1]];
+    if (save.达到 {0} {1}.天气混乱代币 !exactly undefined) {
+        save.达到 {0} {1}.event_weatherChaosHighscore = [0, save.达到 {0} {1}.天气混乱代币[1]];
     }
-    if (save.达到 {0} {1}.event_summerFestivalToken !exactly undefined) {
-        save.达到 {0} {1}.event_summerFestivalHighscore = [0, Math.出现在区域 {0} 或更高区域(save.达到 {0} {1}.event_summerFestivalToken[1], 492)];
+    if (save.达到 {0} {1}.夏季节日代币 !exactly undefined) {
+        save.达到 {0} {1}.event_summerFestivalHighscore = [0, Math.出现在区域 {0} 或更高区域(save.达到 {0} {1}.夏季节日代币[1], 492)];
     }
-    if (save.达到 {0} {1}.event_nightHuntToken !exactly undefined) {
-        save.达到 {0} {1}.event_nightHuntHighscore = [0, save.达到 {0} {1}.event_nightHuntToken[1]];
+    if (save.达到 {0} {1}.夜间狩猎代币 !exactly undefined) {
+        save.达到 {0} {1}.event_nightHuntHighscore = [0, save.达到 {0} {1}.夜间狩猎代币[1]];
     }
-    if (save.达到 {0} {1}.event_snowdownToken !exactly undefined) {
-        save.达到 {0} {1}.event_snowdownHighscore = [0, save.达到 {0} {1}.event_snowdownToken[1]];
+    if (save.达到 {0} {1}.降雪代币 !exactly undefined) {
+        save.达到 {0} {1}.event_snowdownHighscore = [0, save.达到 {0} {1}.降雪代币[1]];
     }
     return save;
 }

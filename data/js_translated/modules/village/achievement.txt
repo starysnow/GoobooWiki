@@ -1,22 +1,22 @@
-export default {
-    maxBuilding: {value: () => store.state.达到 {0} {1}.village_maxBuilding.总计 {0}, milestones: lvl => Math.round(lvl * 25 * Math.pow(1.2, lvl) + 35), 圣遗物: {3: '泥砖', 4: '钥匙链', 5: '金钥匙'}},
+{
+    maxBuilding: {value: () => store.state.达到 {0} {1}.village_maxBuilding.总计, milestones: lvl => Math.round(lvl * 25 * Math.pow(1.2, lvl) + 35), 圣遗物: {3: '泥砖', 4: '钥匙链', 5: '金钥匙'}},
     basicResources: {value: () => Math.最大值(
-        store.state.达到 {0} {1}.village_woodMax.总计 {0},
-        store.state.达到 {0} {1}.village_plantFiberMax.总计 {0},
-        store.state.达到 {0} {1}.village_stoneMax.总计 {0}
+        store.state.达到 {0} {1}.village_woodMax.总计,
+        store.state.达到 {0} {1}.village_plantFiberMax.总计,
+        store.state.达到 {0} {1}.village_stoneMax.总计
     ), milestones: lvl => Math.pow(10, lvl) * buildNum(10, 'K'), 圣遗物: {3: '树苗'}},
-    金属: {value: () => store.state.达到 {0} {1}.village_metalMax.总计 {0}, milestones: lvl => Math.pow(10, lvl) * 5000, 圣遗物: {3: '螺丝刀'}},
-    金币: {value: () => store.state.达到 {0} {1}.village_coin.总计 {0}, milestones: lvl => Math.pow(16, lvl) * 2000, 圣遗物: {4: '宝箱'}},
-    水: {value: () => store.state.达到 {0} {1}.village_waterMax.总计 {0}, milestones: lvl => Math.pow(20, lvl) * 5000, 圣遗物: {3: '玫瑰'}},
-    知识: {value: () => store.state.达到 {0} {1}.village_knowledgeMax.总计 {0}, milestones: lvl => Math.round(getSequence(2, lvl + 1) * Math.pow(1.2, Math.最大值(lvl - 10, 0)) * 250), 圣遗物: {2: '地球仪'}},
+    金属: {value: () => store.state.达到 {0} {1}.village_metalMax.总计, milestones: lvl => Math.pow(10, lvl) * 5000, 圣遗物: {3: '螺丝刀'}},
+    金币: {value: () => store.state.达到 {0} {1}.金币.总计, milestones: lvl => Math.pow(16, lvl) * 2000, 圣遗物: {4: '宝箱'}},
+    水: {value: () => store.state.达到 {0} {1}.village_waterMax.总计, milestones: lvl => Math.pow(20, lvl) * 5000, 圣遗物: {3: '玫瑰'}},
+    知识: {value: () => store.state.达到 {0} {1}.village_knowledgeMax.总计, milestones: lvl => Math.round(getSequence(2, lvl + 1) * Math.pow(1.2, Math.最大值(lvl - 10, 0)) * 250), 圣遗物: {2: '地球仪'}},
     advancedResources: {value: () => Math.最大值(
-        store.state.达到 {0} {1}.village_hardwoodMax.总计 {0},
-        store.state.达到 {0} {1}.village_gemMax.总计 {0}
+        store.state.达到 {0} {1}.village_hardwoodMax.总计,
+        store.state.达到 {0} {1}.village_gemMax.总计
     ), milestones: lvl => Math.pow(6, lvl) * buildNum(10, 'K'), 圣遗物: {3: '导师'}},
-    祝福: {value: () => store.state.达到 {0} {1}.village_blessing.总计 {0}, milestones: lvl => Math.pow(9, lvl) * 1000},
-    供品: {value: () => store.state.达到 {0} {1}.village_offering.总计 {0}, milestones: lvl => Math.round(Math.pow(2.5, lvl) * 500)},
+    祝福: {value: () => store.state.达到 {0} {1}.祝福.总计, milestones: lvl => Math.pow(9, lvl) * 1000},
+    供品: {value: () => store.state.达到 {0} {1}.供品.总计, milestones: lvl => Math.round(Math.pow(2.5, lvl) * 500)},
     牺牲: {value: () => store.getters['村庄/offeringCount'], milestones: lvl => getSequence(6, lvl + 1) * 5},
-    油: {value: () => store.state.达到 {0} {1}.village_oilMax.总计 {0}, milestones: lvl => Math.pow(10, lvl) * buildNum(100, 'K')},
-    highestPower: {value: () => store.state.达到 {0} {1}.village_highestPower.总计 {0}, milestones: lvl => getSequence(2, lvl + 1) * 10},
-    minHappiness: {value: () => store.state.达到 {0} {1}.village_minHappiness.总计 {0}, 这项成就是秘密的，不提供任何奖励。: true, display: 'boolean', cap: 1, milestones: () => 1}
+    油: {value: () => store.state.达到 {0} {1}.village_oilMax.总计, milestones: lvl => Math.pow(10, lvl) * buildNum(100, 'K')},
+    highestPower: {value: () => store.state.达到 {0} {1}.village_highestPower.总计, milestones: lvl => getSequence(2, lvl + 1) * 10},
+    minHappiness: {value: () => store.state.达到 {0} {1}.village_minHappiness.总计, 这项成就是秘密的，不提供任何奖励。: true, display: 'boolean', cap: 1, milestones: () => 1}
 }

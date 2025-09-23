@@ -1,22 +1,22 @@
-export default {
+{
     feature: {
         prefix: 'GA',
-        reward: [{name: 'GalleryBeauty增益', 类型: 'mult', value: lvl => lvl * 0.075 + 1}],
-        shinyReward: [{name: 'GalleryCash增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}],
+        reward: [{name: '美丽增益', 类型: 'mult', value: lvl => lvl * 0.075 + 1}],
+        shinyReward: [{name: '现金增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}],
         powerReward: [
-            {name: 'GalleryBeauty增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
-            {name: 'GalleryCash增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl)},
+            {name: '美丽增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
+            {name: '现金增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl)},
         ],
         解锁: 'galleryFeature'
     },
     collection: {
         艺术展示: {reward: [
-            {name: '画廊卡片容量', 类型: '基础 {0}', value: 1},
-            {name: 'GalleryBeauty增益', 类型: 'mult', value: 2}
+            {name: '画廊卡片容量', 类型: '基础', value: 1},
+            {name: '美丽增益', 类型: 'mult', value: 2}
         ]},
         送货服务: {reward: [
-            {name: 'GalleryConverter增益', 类型: 'mult', value: 1.25},
-            {name: 'GalleryPackage增益', 类型: 'mult', value: 1.25}
+            {name: '转换器增益', 类型: 'mult', value: 1.25},
+            {name: '包裹增益', 类型: 'mult', value: 1.25}
         ]},
     },
     pack: {

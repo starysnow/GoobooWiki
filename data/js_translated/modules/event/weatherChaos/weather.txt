@@ -73,7 +73,7 @@
         雪: true,
     },
     snowstorm: {
-        图标: 'mdi-weather-snowy-重',
+        图标: 'mdi-weather-snowy-heavy',
         声望此农作物可将您的声望等级提高 {0}。 这会将您的总声望等级提高到 {1}，将您的农作物收益增加到 x{2}。: ['hail', 'snowy'],
         雪: true,
     },

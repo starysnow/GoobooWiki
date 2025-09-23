@@ -1,23 +1,23 @@
-export default {
+{
     多汁的诱饵: {类型: 'weatherChaos', price(lvl) {
-        return {event_algae: Math.pow(1.35 + 0.08 * lvl, lvl) * 500};
+        return {海藻: Math.pow(1.35 + 0.08 * lvl, lvl) * 500};
     }, 效果: [
-        {name: '最大鱼尺寸', 类型: '基础 {0}', value: lvl => lvl * 0.1},
+        {name: '最大鱼尺寸', 类型: '基础', value: lvl => lvl * 0.1},
         {name: '最大鱼尺寸', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
     ]},
     培养箱: {类型: 'weatherChaos', price(lvl) {
-        return {event_driftwood: Math.pow(1.25 + 0.065 * lvl, lvl) * 250};
+        return {浮木: Math.pow(1.25 + 0.065 * lvl, lvl) * 250};
     }, 效果: [
-        {name: '平均鱼尺寸', 类型: '基础 {0}', value: lvl => lvl * 0.2},
+        {name: '平均鱼尺寸', 类型: '基础', value: lvl => lvl * 0.2},
         {name: '平均鱼尺寸', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
     ]},
     鱼哨: {类型: 'weatherChaos', price(lvl) {
-        return {event_plastic: Math.pow(1.15 + 0.015 * lvl, lvl) * 100};
+        return {塑料: Math.pow(1.15 + 0.015 * lvl, lvl) * 100};
     }, 效果: [
-        {name: '钓鱼力量', 类型: '基础 {0}', value: lvl => getSequence(1, lvl) * 0.1 + lvl}
+        {name: '钓鱼力量', 类型: '基础', value: lvl => getSequence(1, lvl) * 0.1 + lvl}
     ]},
     污染: {类型: 'weatherChaos', price(lvl) {
-        return {event_slime: Math.pow(1.35, lvl) * 100};
+        return {粘液: Math.pow(1.35, lvl) * 100};
     }, 效果: [
         {name: '垃圾增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
     ]},

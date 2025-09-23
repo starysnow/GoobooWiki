@@ -1,44 +1,44 @@
-export default {
-    书籍: 训练: {类型: '书籍', raiseOtherCap: 'horde_training', requirement() {
-        return store.state.升级成本.item.horde_training.highestLevel >= 100;
+{
+    书籍: 训练: {类型: '书籍', raiseOtherCap: '训练', requirement() {
+        return store.state.升级成本.item.训练.highestLevel >= 100;
     }, price(lvl) {
-        return {school_book: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 28)};
+        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 28)};
     }, 效果: [
-        {name: 'upgradeHordeTrainingCap', 类型: '基础 {0}', value: lvl => lvl}
+        {name: 'upgradeHordeTrainingCap', 类型: '基础', value: lvl => lvl}
     ]},
-    书籍: 幸运一击: {类型: '书籍', raiseOtherCap: 'horde_luckyStrike', requirement() {
-        return store.state.升级成本.item.horde_luckyStrike.highestLevel >= 15;
+    书籍: 幸运一击: {类型: '书籍', raiseOtherCap: '幸运一击', requirement() {
+        return store.state.升级成本.item.幸运一击.highestLevel >= 15;
     }, price(lvl) {
-        return {school_book: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 85)};
+        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 85)};
     }, 效果: [
-        {name: 'upgradeHordeLuckyStrikeCap', 类型: '基础 {0}', value: lvl => lvl}
+        {name: 'upgradeHordeLuckyStrikeCap', 类型: '基础', value: lvl => lvl}
     ]},
-    书籍: 掠夺: {类型: '书籍', raiseOtherCap: 'horde_looting', requirement() {
-        return store.state.升级成本.item.horde_looting.highestLevel >= 25;
+    书籍: 掠夺: {类型: '书籍', raiseOtherCap: '掠夺', requirement() {
+        return store.state.升级成本.item.掠夺.highestLevel >= 25;
     }, price(lvl) {
-        return {school_book: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 140)};
+        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 140)};
     }, 效果: [
-        {name: 'upgradeHordeLootingCap', 类型: '基础 {0}', value: lvl => lvl}
+        {name: 'upgradeHordeLootingCap', 类型: '基础', value: lvl => lvl}
     ]},
-    书籍: 生存指南: {类型: '书籍', raiseOtherCap: 'horde_survivalGuide', requirement() {
-        return store.state.升级成本.item.horde_survivalGuide.highestLevel >= 25;
+    书籍: 生存指南: {类型: '书籍', raiseOtherCap: '生存指南', requirement() {
+        return store.state.升级成本.item.生存指南.highestLevel >= 25;
     }, price(lvl) {
-        return {school_book: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 190)};
+        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 190)};
     }, 效果: [
-        {name: 'upgradeHordeSurvivalGuideCap', 类型: '基础 {0}', value: lvl => lvl}
+        {name: 'upgradeHordeSurvivalGuideCap', 类型: '基础', value: lvl => lvl}
     ]},
-    书籍: 雕刻: {类型: '书籍', raiseOtherCap: 'horde_carving', requirement() {
-        return store.state.升级成本.item.horde_carving.highestLevel >= 5;
+    书籍: 雕刻: {类型: '书籍', raiseOtherCap: '雕刻', requirement() {
+        return store.state.升级成本.item.雕刻.highestLevel >= 5;
     }, price(lvl) {
-        return {school_book: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 310)};
+        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 310)};
     }, 效果: [
-        {name: 'upgradeHordeCarvingCap', 类型: '基础 {0}', value: lvl => lvl}
+        {name: 'upgradeHordeCarvingCap', 类型: '基础', value: lvl => lvl}
     ]},
-    书籍: 白漆: {类型: '书籍', raiseOtherCap: 'horde_whitePaint', requirement() {
-        return store.state.升级成本.item.horde_whitePaint.highestLevel >= 25;
+    书籍: 白漆: {类型: '书籍', raiseOtherCap: '白漆', requirement() {
+        return store.state.升级成本.item.白漆.highestLevel >= 25;
     }, price(lvl) {
-        return {school_book: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 475)};
+        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 475)};
     }, 效果: [
-        {name: 'upgradeHordeWhitePaintCap', 类型: '基础 {0}', value: lvl => lvl}
+        {name: 'upgradeHordeWhitePaintCap', 类型: '基础', value: lvl => lvl}
     ]},
 }

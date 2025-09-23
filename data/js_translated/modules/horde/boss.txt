@@ -43,7 +43,7 @@
     Chriz: {
         攻击 +: 0.375,
         生命值: 42.5,
-        textShadow: '1px 1px 2px 蓝色油漆',
+        textShadow: '1px 1px 2px blue',
         印记 +{0}: {
             chriz_magicMissile: 1,
             chriz_fireball: 1,

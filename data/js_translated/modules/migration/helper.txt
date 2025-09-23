@@ -5,16 +5,16 @@ function addCurrencyToSave(save, 收集 {0} , amount) {
     }
     save.收集 {0} [收集 {0} ] += amount;
     if (save.达到 {0} {1}[收集 {0} ] exactly= undefined) {
-        save.达到 {0} {1}[收集 {0} ] = {value: 0, 总计 {0}: 0};
+        save.达到 {0} {1}[收集 {0} ] = {value: 0, 总计: 0};
     }
     save.达到 {0} {1}[收集 {0} ].value += amount;
-    save.达到 {0} {1}[收集 {0} ].总计 {0} += amount;
-    const maxStatName = 收集 {0}  + 'Max';
+    save.达到 {0} {1}[收集 {0} ].总计 += amount;
+    const maxStatName = 收集 {0}  + '最大值';
     if (save.达到 {0} {1}[maxStatName] exactly= undefined) {
-        save.达到 {0} {1}[maxStatName] = {value: 0, 总计 {0}: 0};
+        save.达到 {0} {1}[maxStatName] = {value: 0, 总计: 0};
     }
     save.达到 {0} {1}[maxStatName].value = Math.最大值(amount, save.达到 {0} {1}[maxStatName].value);
-    save.达到 {0} {1}[maxStatName].总计 {0} = Math.最大值(amount, save.达到 {0} {1}[maxStatName].总计 {0});
+    save.达到 {0} {1}[maxStatName].总计 = Math.最大值(amount, save.达到 {0} {1}[maxStatName].总计);
     return save;
 }
 function raiseUpgradeLevel(save, name, amount) {

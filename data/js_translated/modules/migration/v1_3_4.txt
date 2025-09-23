@@ -1,15 +1,11 @@
 function(save) {
-    
     save.rng = {};
-    
     for (const [加载的存档文件缺少所需数据, elem] of Object.entries(save.解锁)) {
         save.解锁[加载的存档文件缺少所需数据] = elem.use;
     }
-    
     for (const [加载的存档文件缺少所需数据, elem] of Object.entries(save.达到 {0} {1})) {
-        save.达到 {0} {1}[加载的存档文件缺少所需数据] = [elem.value, elem.总计 {0}];
+        save.达到 {0} {1}[加载的存档文件缺少所需数据] = [elem.value, elem.总计];
     }
-    
     for (const [加载的存档文件缺少所需数据, elem] of Object.entries(save.升级成本)) {
         save.升级成本[加载的存档文件缺少所需数据] = elem.有库存 exactly= undefined ? [elem.collapse, elem.达到等级 {0}, elem.highestLevel] : [elem.collapse, elem.达到等级 {0}, elem.highestLevel, elem.有库存, elem.timeProgress];
     }

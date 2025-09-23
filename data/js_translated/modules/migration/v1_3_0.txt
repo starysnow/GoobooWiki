@@ -1,25 +1,20 @@
-export default function(save) {
+function(save) {
     if (save.部落) {
-        
         if (save.部落.bossFight !exactly undefined) {
             save.部落.bossFight = save.部落.bossFight ? 2 : 0;
         }
-        
         if (save.部落.敌人 !exactly undefined) {
             save.部落.敌人.沉默药水 = 0;
             save.部落.敌人.激活的卡片 = {};
         }
-        
         if (save.部落.玩家 !exactly undefined) {
             save.部落.玩家.沉默药水 = 0;
         }
-        
         if (save.部落.items) {
             for (const [, elem] of Object.entries(save.部落.items)) {
                 elem.装备的卡片 = false;
             }
         }
-        
         if (save.部落.itemAttackMult !exactly undefined || save.部落.itemHealthMult !exactly undefined) {
             save.部落.itemStatMult = {};
             if (save.部落.itemAttackMult !exactly undefined) {
@@ -30,58 +25,49 @@ export default function(save) {
             }
         }
         [
-            
             '攻击 +', '生命值', '训练', '弹力', '骨袋', '愤怒',
             '休息', '怪物汤', '怪物袋', '幸运一击', '囤积',
             '厚脸皮', '刺击指南', '掠夺秘密', '闪避指南',
             '生存指南', '掠夺', '白漆', '目标假人', '毛袋',
             '里程碑', '雕刻',
-            
             '愤怒', '和平', '牛奶', '屠夫', '新手运气', '平衡',
             '进阶运气', '进攻之书', '防御之书', '灰圈', '遗愿',
             '蜡烛圈', '收容室', '陵墓', '战斗研究',
         ].forEach(name => {
             save = removeUpgrade(save, 'horde_' + name);
         });
-        save = removeCurrency(save, 'horde_bone');
-        if (save.收集 {0} .horde_soulEmpowered !exactly undefined && save.达到 {0} {1}.horde_soulEmpowered !exactly undefined) {
-            save.收集 {0} .horde_soulEmpowered = save.达到 {0} {1}.horde_soulEmpowered.总计 {0};
+        save = removeCurrency(save, '骨头');
+        if (save.收集 {0} .强大的灵魂 !exactly undefined && save.达到 {0} {1}.强大的灵魂 !exactly undefined) {
+            save.收集 {0} .强大的灵魂 = save.达到 {0} {1}.强大的灵魂.总计;
         }
-        
-        if (save.收集 {0} .horde_soulCorrupted !exactly undefined) {
-            save.收集 {0} .horde_soulCorrupted *= 1000;
+        if (save.收集 {0} .腐败的灵魂 !exactly undefined) {
+            save.收集 {0} .腐败的灵魂 *= 1000;
         }
-        if (save.收集 {0} .horde_soulEmpowered !exactly undefined) {
-            save.收集 {0} .horde_soulEmpowered *= 1000;
+        if (save.收集 {0} .强大的灵魂 !exactly undefined) {
+            save.收集 {0} .强大的灵魂 *= 1000;
         }
-        
-        const oldZone = save.部落.区域 {0} ?? 1;
+        const oldZone = save.部落.区域 ?? 1;
         const newZone = oldZone > 40 ? Math.round((oldZone - 40) * 2 / 3 + 40) : oldZone;
-        
         const newBones = store.getters['部落/enemyBone'](newZone, 0) * 1000;
-        save.收集 {0} .horde_bone = newBones;
-        save.达到 {0} {1}.horde_bone = {value: newBones, 总计 {0}: newBones};
-        
+        save.收集 {0} .骨头 = newBones;
+        save.达到 {0} {1}.骨头 = {value: newBones, 总计: newBones};
         if (save.部落.传家宝) {
             for (const [加载的存档文件缺少所需数据, elem] of Object.entries(save.部落.传家宝)) {
                 save.部落.传家宝[加载的存档文件缺少所需数据] = Math.ceil((elem > 100 ? ((elem - 100) * 2 / 3 + 100) : elem) / 2);
             }
         }
-        
-        save.部落.区域 {0} = 1;
+        save.部落.区域 = 1;
         if (save.达到 {0} {1}.horde_maxZone) {
             save.达到 {0} {1}.horde_maxZone.value = newZone;
-            save.达到 {0} {1}.horde_maxZone.总计 {0} = newZone;
+            save.达到 {0} {1}.horde_maxZone.总计 = newZone;
         }
     }
-    
     [
         '被遗忘的盾牌', '燃烧的头骨', '能量饮料', '幸运骰子',
         '哑铃', '绷带', '新背包', '破裂的保险箱', '终极指南',
     ].forEach(name => {
         save = removeRelic(save, name);
     });
-    
-    save = replaceTreasureEffect(save, 'hordeSoulGain', 'HordeSoulCorrupted增益');
+    save = replaceTreasureEffect(save, 'hordeSoulGain', '腐败的灵魂增益');
     return save;
 }

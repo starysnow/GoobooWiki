@@ -1,17 +1,14 @@
 function(save) {
-    
     if (save.学校) {
         for (const [加载的存档文件缺少所需数据, elem] of Object.entries(save.学校)) {
             save.学校[加载的存档文件缺少所需数据] = [elem.成绩, elem.currentGrade, elem.progress];
         }
     }
-    
     if (save.采矿 && save.采矿.冶炼厂) {
         for (const [加载的存档文件缺少所需数据, elem] of Object.entries(save.采矿.冶炼厂)) {
-            save.采矿.冶炼厂[加载的存档文件缺少所需数据] = [elem.progress, elem.stored, elem.总计 {0}];
+            save.采矿.冶炼厂[加载的存档文件缺少所需数据] = [elem.progress, elem.stored, elem.总计];
         }
     }
-    
     if (save.村庄 && save.村庄.供品) {
         for (const [加载的存档文件缺少所需数据, elem] of Object.entries(save.村庄.供品)) {
             save.村庄.供品[加载的存档文件缺少所需数据] = [elem.offeringBought, elem.upgradeBought];

@@ -1,320 +1,320 @@
-export default {
+{
     新风格: {cap: 10, 笔记: 'gallery_1', price(lvl) {
-        return {gallery_beauty: Math.pow(2.1 + 0.05 * lvl, lvl) * 15};
+        return {美丽: Math.pow(2.1 + 0.05 * lvl, lvl) * 15};
     }, 效果: [
-        {name: 'GalleryBeauty增益', 类型: '基础 {0}', value: lvl => Math.pow(2, lvl) - 1}
+        {name: '美丽增益', 类型: '基础', value: lvl => Math.pow(2, lvl) - 1}
     ]},
     回收: {cap: 1, hasDescription: true, 笔记: 'gallery_2', price() {
-        return {gallery_beauty: 2000};
+        return {美丽: 2000};
     }, 效果: [
         {name: '转换', 类型: '解锁', value: lvl => lvl >= 1}
     ]},
     红色力量: {cap: 15, capMult: true, requirement() {
-        return store.state.达到 {0} {1}.gallery_red.总计 {0} > 0;
+        return store.state.达到 {0} {1}.红色.总计 > 0;
     }, price(lvl) {
-        return {gallery_red: Math.pow(2.5, lvl) * 2};
+        return {红色: Math.pow(2.5, lvl) * 2};
     }, 效果: [
-        {name: 'GalleryBeauty增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
+        {name: '美丽增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
     ]},
     红色转换: {cap: 10, 笔记: 'gallery_3', requirement() {
-        return store.state.达到 {0} {1}.gallery_red.总计 {0} > 0;
+        return store.state.达到 {0} {1}.红色.总计 > 0;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(5, lvl) * buildNum(20, 'K')};
+        return {美丽: Math.pow(5, lvl) * buildNum(20, 'K')};
     }, 效果: [
         {name: '红色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
     ]},
     过滤器: {笔记: 'gallery_4', requirement() {
-        return store.state.达到 {0} {1}.gallery_red.总计 {0} > 0;
+        return store.state.达到 {0} {1}.红色.总计 > 0;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(4.8, lvl) * buildNum(1, 'M')};
+        return {美丽: Math.pow(4.8, lvl) * buildNum(1, '分钟')};
     }, 效果: [
-        {name: 'GalleryConverter增益', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)}
+        {name: '转换器增益', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)}
     ]},
     橙色力量: {cap: 15, capMult: true, requirement() {
-        return store.state.达到 {0} {1}.gallery_orange.总计 {0} > 0;
+        return store.state.达到 {0} {1}.橙色.总计 > 0;
     }, price(lvl) {
-        return {gallery_orange: Math.pow(2.5, lvl) * 2};
+        return {橙色: Math.pow(2.5, lvl) * 2};
     }, 效果: [
-        {name: 'GalleryRed增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
+        {name: '红色增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
     ]},
     红色幸运: {cap: 40, hasDescription: true, requirement() {
-        return store.state.达到 {0} {1}.gallery_orange.总计 {0} > 0 && store.state.解锁.鼓.see;
+        return store.state.达到 {0} {1}.橙色.总计 > 0 && store.state.解锁.鼓.see;
     }, price(lvl) {
-        return {gallery_orange: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(1, 'M')};
+        return {橙色: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(1, '分钟')};
     }, 效果: [
-        {name: '红色鼓几率', 类型: '基础 {0}', value: lvl => lvl * 0.02}
+        {name: '红色鼓几率', 类型: '基础', value: lvl => lvl * 0.02}
     ]},
     顿悟: {笔记: 'gallery_5', cap: 1, hasDescription: true, requirement() {
-        return store.state.达到 {0} {1}.gallery_orange.总计 {0} > 0;
+        return store.state.达到 {0} {1}.橙色.总计 > 0;
     }, price() {
-        return {gallery_beauty: buildNum(17.5, 'M')};
+        return {美丽: buildNum(17.5, '分钟')};
     }, 效果: [
         {name: '灵感', 类型: '解锁', value: lvl => lvl >= 1}
     ]},
     垃圾箱: {笔记: 'gallery_6', requirement() {
-        return store.state.达到 {0} {1}.gallery_orange.总计 {0} > 0;
+        return store.state.达到 {0} {1}.橙色.总计 > 0;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(15, lvl) * buildNum(350, 'M')};
+        return {美丽: Math.pow(15, lvl) * buildNum(350, '分钟')};
     }, 效果: [
-        {name: 'GalleryConverter容量', 类型: 'mult', value: lvl => Math.pow(1.9, lvl)}
+        {name: '转换器容量', 类型: 'mult', value: lvl => Math.pow(1.9, lvl)}
     ]},
     橙色转换: {cap: 10, requirement() {
-        return store.state.达到 {0} {1}.gallery_orange.总计 {0} > 0;
+        return store.state.达到 {0} {1}.橙色.总计 > 0;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(10, lvl) * buildNum(500, 'M')};
+        return {美丽: Math.pow(10, lvl) * buildNum(500, '分钟')};
     }, 效果: [
         {name: '橙色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
     ]},
     画笔: {笔记: 'gallery_7', requirement() {
-        return store.state.达到 {0} {1}.gallery_orange.总计 {0} > 0;
+        return store.state.达到 {0} {1}.橙色.总计 > 0;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(8 + lvl * 0.5, lvl) * buildNum(7, 'B')};
+        return {美丽: Math.pow(8 + lvl * 0.5, lvl) * buildNum(7, 'B')};
     }, 效果: [
         {name: '所有颜色增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)}
     ]},
     拍卖行: {保留: true, cap: 1, hasDescription: true, 笔记: 'gallery_8', requirement() {
-        return store.state.达到 {0} {1}.gallery_orange.总计 {0} > 0;
+        return store.state.达到 {0} {1}.橙色.总计 > 0;
     }, price() {
-        return {gallery_beauty: buildNum(1, 'T')};
+        return {美丽: buildNum(1, 'T')};
     }, 效果: [
         {name: '拍卖', 类型: '解锁', value: lvl => lvl >= 1}
     ]},
     黄色力量: {cap: 15, capMult: true, requirement() {
-        return store.state.达到 {0} {1}.gallery_yellow.总计 {0} > 0;
+        return store.state.达到 {0} {1}.黄色.总计 > 0;
     }, price(lvl) {
-        return {gallery_yellow: Math.pow(2.5, lvl) * 2};
+        return {黄色: Math.pow(2.5, lvl) * 2};
     }, 效果: [
-        {name: 'GalleryOrange增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
+        {name: '橙色增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
     ]},
     橙色幸运: {cap: 40, requirement() {
-        return store.state.达到 {0} {1}.gallery_yellow.总计 {0} > 0 && store.state.解锁.鼓.see;
+        return store.state.达到 {0} {1}.黄色.总计 > 0 && store.state.解锁.鼓.see;
     }, price(lvl) {
-        return {gallery_yellow: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(1, 'M')};
+        return {黄色: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(1, '分钟')};
     }, 效果: [
-        {name: '橙色鼓几率', 类型: '基础 {0}', value: lvl => lvl * 0.02}
+        {name: '橙色鼓几率', 类型: '基础', value: lvl => lvl * 0.02}
     ]},
     黄色转换: {cap: 10, requirement() {
-        return store.state.达到 {0} {1}.gallery_yellow.总计 {0} > 0;
+        return store.state.达到 {0} {1}.黄色.总计 > 0;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(15, lvl) * buildNum(12, 'T')};
+        return {美丽: Math.pow(15, lvl) * buildNum(12, 'T')};
     }, 效果: [
         {name: '黄色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
     ]},
     油漆桶储存: {笔记: 'gallery_9', cap: 1, hasDescription: true, requirement() {
-        return store.state.达到 {0} {1}.gallery_yellow.总计 {0} > 0;
+        return store.state.达到 {0} {1}.黄色.总计 > 0;
     }, price() {
-        return {gallery_beauty: buildNum(250, 'T')};
+        return {美丽: buildNum(250, 'T')};
     }, 效果: [
         {name: '鼓', 类型: '解锁', value: lvl => lvl >= 1}
     ]},
     绿色力量: {cap: 15, capMult: true, requirement() {
-        return store.state.达到 {0} {1}.gallery_green.总计 {0} > 0;
+        return store.state.达到 {0} {1}.绿色.总计 > 0;
     }, price(lvl) {
-        return {gallery_green: Math.pow(2.5, lvl) * 2};
+        return {绿色: Math.pow(2.5, lvl) * 2};
     }, 效果: [
-        {name: 'GalleryYellow增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
+        {name: '黄色增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
     ]},
     黄色幸运: {cap: 40, requirement() {
-        return store.state.达到 {0} {1}.gallery_green.总计 {0} > 0 && store.state.解锁.鼓.see;
+        return store.state.达到 {0} {1}.绿色.总计 > 0 && store.state.解锁.鼓.see;
     }, price(lvl) {
-        return {gallery_green: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(1, 'M')};
+        return {绿色: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(1, '分钟')};
     }, 效果: [
-        {name: '黄色鼓几率', 类型: '基础 {0}', value: lvl => lvl * 0.02}
+        {name: '黄色鼓几率', 类型: '基础', value: lvl => lvl * 0.02}
     ]},
     绿色转换: {cap: 10, requirement() {
-        return store.state.达到 {0} {1}.gallery_green.总计 {0} > 0;
+        return store.state.达到 {0} {1}.绿色.总计 > 0;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(20, lvl) * buildNum(1.35, 'Qi')};
+        return {美丽: Math.pow(20, lvl) * buildNum(1.35, 'Qi')};
     }, 效果: [
         {name: '绿色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
     ]},
     红色愤怒: {cap: 40, requirement() {
-        return store.state.达到 {0} {1}.gallery_green.总计 {0} > 0 && store.state.解锁.鼓.see;
+        return store.state.达到 {0} {1}.绿色.总计 > 0 && store.state.解锁.鼓.see;
     }, price(lvl) {
-        return {gallery_red: Math.pow(2.75 + 0.1 * lvl, lvl) * buildNum(100, 'T')};
+        return {红色: Math.pow(2.75 + 0.1 * lvl, lvl) * buildNum(100, 'T')};
     }, 效果: [
-        {name: 'GalleryBeauty增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
-        {name: 'GalleryRedDrum容量', 类型: '基础 {0}', value: lvl => lvl * 2}
+        {name: '美丽增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
+        {name: '红色鼓容量', 类型: '基础', value: lvl => lvl * 2}
     ]},
     蓝色力量: {cap: 15, capMult: true, requirement() {
-        return store.state.达到 {0} {1}.gallery_blue.总计 {0} > 0;
+        return store.state.达到 {0} {1}.gallery_blue.总计 > 0;
     }, price(lvl) {
         return {gallery_blue: Math.pow(2.5, lvl) * 2};
     }, 效果: [
-        {name: 'GalleryGreen增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
+        {name: '绿色增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
     ]},
     绿色幸运: {cap: 40, requirement() {
-        return store.state.达到 {0} {1}.gallery_blue.总计 {0} > 0 && store.state.解锁.鼓.see;
+        return store.state.达到 {0} {1}.gallery_blue.总计 > 0 && store.state.解锁.鼓.see;
     }, price(lvl) {
-        return {gallery_blue: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(1, 'M')};
+        return {gallery_blue: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(1, '分钟')};
     }, 效果: [
-        {name: '绿色鼓几率', 类型: '基础 {0}', value: lvl => lvl * 0.02}
+        {name: '绿色鼓几率', 类型: '基础', value: lvl => lvl * 0.02}
     ]},
     蓝色转换: {cap: 10, requirement() {
-        return store.state.达到 {0} {1}.gallery_blue.总计 {0} > 0;
+        return store.state.达到 {0} {1}.gallery_blue.总计 > 0;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(25, lvl) * buildNum(35, 'Sx')};
+        return {美丽: Math.pow(25, lvl) * buildNum(35, 'Sx')};
     }, 效果: [
         {name: '蓝色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
     ]},
     紫色力量: {cap: 15, capMult: true, requirement() {
-        return store.state.达到 {0} {1}.gallery_purple.总计 {0} > 0;
+        return store.state.达到 {0} {1}.紫色.总计 > 0;
     }, price(lvl) {
-        return {gallery_purple: Math.pow(2.5, lvl) * 2};
+        return {紫色: Math.pow(2.5, lvl) * 2};
     }, 效果: [
-        {name: 'GalleryBlue增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
+        {name: 'currencyGalleryBlueGain', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
     ]},
     蓝色幸运: {cap: 40, requirement() {
-        return store.state.达到 {0} {1}.gallery_purple.总计 {0} > 0 && store.state.解锁.鼓.see;
+        return store.state.达到 {0} {1}.紫色.总计 > 0 && store.state.解锁.鼓.see;
     }, price(lvl) {
-        return {gallery_purple: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(1, 'M')};
+        return {紫色: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(1, '分钟')};
     }, 效果: [
-        {name: '蓝色鼓几率', 类型: '基础 {0}', value: lvl => lvl * 0.02}
+        {name: '蓝色鼓几率', 类型: '基础', value: lvl => lvl * 0.02}
     ]},
     紫色转换: {cap: 10, requirement() {
-        return store.state.达到 {0} {1}.gallery_purple.总计 {0} > 0;
+        return store.state.达到 {0} {1}.紫色.总计 > 0;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(30, lvl) * buildNum(9.4, 'N')};
+        return {美丽: Math.pow(30, lvl) * buildNum(9.4, 'N')};
     }, 效果: [
         {name: '紫色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
     ]},
     红橙色力量: {cap: 15, capMult: true, requirement() {
-        return store.state.达到 {0} {1}['gallery_deep-橙色'].总计 {0} > 0;
+        return store.state.达到 {0} {1}['gallery_deep-橙色'].总计 > 0;
     }, price(lvl) {
         return {'gallery_deep-橙色': Math.pow(2.5, lvl) * 4};
     }, 效果: [
-        {name: 'GalleryPurple增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
+        {name: '紫色增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
     ]},
     紫色幸运: {cap: 40, requirement() {
-        return store.state.达到 {0} {1}['gallery_deep-橙色'].总计 {0} > 0 && store.state.解锁.鼓.see;
+        return store.state.达到 {0} {1}['gallery_deep-橙色'].总计 > 0 && store.state.解锁.鼓.see;
     }, price(lvl) {
-        return {'gallery_deep-橙色': Math.pow(3 + 0.1 * lvl, lvl) * buildNum(3, 'M')};
+        return {'gallery_deep-橙色': Math.pow(3 + 0.1 * lvl, lvl) * buildNum(3, '分钟')};
     }, 效果: [
-        {name: '紫色鼓几率', 类型: '基础 {0}', value: lvl => lvl * 0.02}
+        {name: '紫色鼓几率', 类型: '基础', value: lvl => lvl * 0.02}
     ]},
     红橙转换: {cap: 10, requirement() {
-        return store.state.达到 {0} {1}['gallery_deep-橙色'].总计 {0} > 0;
+        return store.state.达到 {0} {1}['gallery_deep-橙色'].总计 > 0;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(35, lvl) * buildNum(11, 'UD')};
+        return {美丽: Math.pow(35, lvl) * buildNum(11, 'UD')};
     }, 效果: [
         {name: '橙红转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
     ]},
     空画布: {cap: 1, hasDescription: true, requirement() {
-        return store.state.达到 {0} {1}['gallery_deep-橙色'].总计 {0} > 0;
+        return store.state.达到 {0} {1}['gallery_deep-橙色'].总计 > 0;
     }, price() {
-        return {gallery_beauty: buildNum(40, 'UD'), 'gallery_deep-橙色': 10};
+        return {美丽: buildNum(40, 'UD'), 'gallery_deep-橙色': 10};
     }, 效果: [
         {name: '画布', 类型: '解锁', value: lvl => lvl >= 1}
     ]},
     亚麻: {requirement() {
         return store.state.解锁.画布.use;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(1000, lvl) * buildNum(1, 'DD')};
+        return {美丽: Math.pow(1000, lvl) * buildNum(1, 'DD')};
     }, 效果: [
-        {name: '画布大小', 类型: '基础 {0}', value: lvl => lvl}
+        {name: '画布大小', 类型: '基础', value: lvl => lvl}
     ]},
     金色力量: {cap: 15, capMult: true, requirement() {
-        return store.state.达到 {0} {1}.gallery_amber.总计 {0} > 0;
+        return store.state.达到 {0} {1}.金色.总计 > 0;
     }, price(lvl) {
-        return {gallery_amber: Math.pow(2.5, lvl) * 8};
+        return {金色: Math.pow(2.5, lvl) * 8};
     }, 效果: [
         {name: 'currencyGalleryDeep-orangeGain', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
     ]},
     红橙色幸运: {cap: 40, requirement() {
-        return store.state.达到 {0} {1}.gallery_amber.总计 {0} > 0 && store.state.解锁.鼓.see;
+        return store.state.达到 {0} {1}.金色.总计 > 0 && store.state.解锁.鼓.see;
     }, price(lvl) {
-        return {gallery_amber: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(9, 'M')};
+        return {金色: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(9, '分钟')};
     }, 效果: [
-        {name: '橙红鼓几率', 类型: '基础 {0}', value: lvl => lvl * 0.02}
+        {name: '橙红鼓几率', 类型: '基础', value: lvl => lvl * 0.02}
     ]},
     金色转换: {cap: 10, requirement() {
-        return store.state.达到 {0} {1}.gallery_amber.总计 {0} > 0;
+        return store.state.达到 {0} {1}.金色.总计 > 0;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(50, lvl) * buildNum(555, 'QiD')};
+        return {美丽: Math.pow(50, lvl) * buildNum(555, 'QiD')};
     }, 效果: [
         {name: '金色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
     ]},
     浅绿力量: {cap: 15, capMult: true, requirement() {
-        return store.state.达到 {0} {1}['gallery_light-绿色'].总计 {0} > 0;
+        return store.state.达到 {0} {1}['光-绿色'].总计 > 0;
     }, price(lvl) {
-        return {'gallery_light-绿色': Math.pow(2.5, lvl) * 16};
+        return {'光-绿色': Math.pow(2.5, lvl) * 16};
     }, 效果: [
-        {name: 'GalleryAmber增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
+        {name: '金色增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
     ]},
     金色幸运: {cap: 40, requirement() {
-        return store.state.达到 {0} {1}['gallery_light-绿色'].总计 {0} > 0 && store.state.解锁.鼓.see;
+        return store.state.达到 {0} {1}['光-绿色'].总计 > 0 && store.state.解锁.鼓.see;
     }, price(lvl) {
-        return {'gallery_light-绿色': Math.pow(3 + 0.1 * lvl, lvl) * buildNum(27, 'M')};
+        return {'光-绿色': Math.pow(3 + 0.1 * lvl, lvl) * buildNum(27, '分钟')};
     }, 效果: [
-        {name: '金色鼓几率', 类型: '基础 {0}', value: lvl => lvl * 0.02}
+        {name: '金色鼓几率', 类型: '基础', value: lvl => lvl * 0.02}
     ]},
     浅绿转换: {cap: 10, requirement() {
-        return store.state.达到 {0} {1}['gallery_light-绿色'].总计 {0} > 0;
+        return store.state.达到 {0} {1}['光-绿色'].总计 > 0;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(60, lvl) * buildNum(90, 'ND')};
+        return {美丽: Math.pow(60, lvl) * buildNum(90, 'ND')};
     }, 效果: [
         {name: '浅绿色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
     ]},
     青色力量: {cap: 15, capMult: true, requirement() {
-        return store.state.达到 {0} {1}.gallery_teal.总计 {0} > 0;
+        return store.state.达到 {0} {1}.gallery_teal.总计 > 0;
     }, price(lvl) {
         return {gallery_teal: Math.pow(2.5, lvl) * 32};
     }, 效果: [
         {name: 'currencyGalleryLight-greenGain', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
     ]},
     浅绿幸运: {cap: 40, requirement() {
-        return store.state.达到 {0} {1}.gallery_teal.总计 {0} > 0 && store.state.解锁.鼓.see;
+        return store.state.达到 {0} {1}.gallery_teal.总计 > 0 && store.state.解锁.鼓.see;
     }, price(lvl) {
-        return {gallery_teal: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(81, 'M')};
+        return {gallery_teal: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(81, '分钟')};
     }, 效果: [
-        {name: '浅绿色鼓几率', 类型: '基础 {0}', value: lvl => lvl * 0.02}
+        {name: '浅绿色鼓几率', 类型: '基础', value: lvl => lvl * 0.02}
     ]},
     青色转换: {cap: 10, requirement() {
-        return store.state.达到 {0} {1}.gallery_teal.总计 {0} > 0;
+        return store.state.达到 {0} {1}.gallery_teal.总计 > 0;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(80, lvl) * buildNum(750, 'DV')};
+        return {美丽: Math.pow(80, lvl) * buildNum(750, 'DV')};
     }, 效果: [
         {name: '青色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
     ]},
     浅蓝力量: {cap: 15, capMult: true, requirement() {
-        return store.state.达到 {0} {1}['gallery_light-蓝色油漆'].总计 {0} > 0;
+        return store.state.达到 {0} {1}['光-blue'].总计 > 0;
     }, price(lvl) {
-        return {'gallery_light-蓝色油漆': Math.pow(2.5, lvl) * 64};
+        return {'光-blue': Math.pow(2.5, lvl) * 64};
     }, 效果: [
-        {name: 'GalleryTeal增益', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
+        {name: 'currencyGalleryTealGain', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
     ]},
     青色幸运: {cap: 40, requirement() {
-        return store.state.达到 {0} {1}['gallery_light-蓝色油漆'].总计 {0} > 0 && store.state.解锁.鼓.see;
+        return store.state.达到 {0} {1}['光-blue'].总计 > 0 && store.state.解锁.鼓.see;
     }, price(lvl) {
-        return {'gallery_light-蓝色油漆': Math.pow(3 + 0.1 * lvl, lvl) * buildNum(243, 'M')};
+        return {'光-blue': Math.pow(3 + 0.1 * lvl, lvl) * buildNum(243, '分钟')};
     }, 效果: [
-        {name: '青色鼓几率', 类型: '基础 {0}', value: lvl => lvl * 0.02}
+        {name: '青色鼓几率', 类型: '基础', value: lvl => lvl * 0.02}
     ]},
     浅蓝转换: {cap: 10, requirement() {
-        return store.state.达到 {0} {1}['gallery_light-蓝色油漆'].总计 {0} > 0;
+        return store.state.达到 {0} {1}['光-blue'].总计 > 0;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(100, lvl) * buildNum(38, 'SxV')};
+        return {美丽: Math.pow(100, lvl) * buildNum(38, 'SxV')};
     }, 效果: [
         {name: '浅蓝色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
     ]},
     粉色力量: {cap: 15, capMult: true, requirement() {
-        return store.state.达到 {0} {1}.gallery_pink.总计 {0} > 0;
+        return store.state.达到 {0} {1}.粉色.总计 > 0;
     }, price(lvl) {
-        return {gallery_pink: Math.pow(2.5, lvl) * 128};
+        return {粉色: Math.pow(2.5, lvl) * 128};
     }, 效果: [
         {name: 'currencyGalleryLight-blueGain', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.1, 15, lvl)}
     ]},
     浅蓝幸运: {cap: 40, requirement() {
-        return store.state.达到 {0} {1}.gallery_pink.总计 {0} > 0 && store.state.解锁.鼓.see;
+        return store.state.达到 {0} {1}.粉色.总计 > 0 && store.state.解锁.鼓.see;
     }, price(lvl) {
-        return {gallery_pink: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(729, 'M')};
+        return {粉色: Math.pow(3 + 0.1 * lvl, lvl) * buildNum(729, '分钟')};
     }, 效果: [
-        {name: '浅蓝色鼓几率', 类型: '基础 {0}', value: lvl => lvl * 0.02}
+        {name: '浅蓝色鼓几率', 类型: '基础', value: lvl => lvl * 0.02}
     ]},
     粉色转换: {cap: 10, requirement() {
-        return store.state.达到 {0} {1}.gallery_pink.总计 {0} > 0;
+        return store.state.达到 {0} {1}.粉色.总计 > 0;
     }, price(lvl) {
-        return {gallery_beauty: Math.pow(125, lvl) * buildNum(5, 'Tg')};
+        return {美丽: Math.pow(125, lvl) * buildNum(5, 'Tg')};
     }, 效果: [
         {name: '粉色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
     ]},

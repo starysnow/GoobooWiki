@@ -1,5 +1,4 @@
-export default function(save) {
-    
+function(save) {
     if (save.村庄 && save.村庄.供品) {
         let spent = 0;
         let spentWithoutT4 = 0;
@@ -26,9 +25,8 @@ export default function(save) {
                 spent += deltaLinear(20, 1, save.村庄.供品[elem][1]);
             }
         });
-        let missing = save.达到 {0} {1}.village_offering[1] - spent;
+        let missing = save.达到 {0} {1}.供品[1] - spent;
         if (missing < 0) {
-            
             if (save.村庄.供品.知识 !exactly undefined) {
                 save.村庄.供品.知识[1] = 0;
             }
@@ -38,17 +36,16 @@ export default function(save) {
             if (save.村庄.供品.快乐 !exactly undefined) {
                 save.村庄.供品.快乐[1] = 0;
             }
-            missing = save.达到 {0} {1}.village_offering[1] - spentWithoutT4;
+            missing = save.达到 {0} {1}.供品[1] - spentWithoutT4;
         }
-        save.收集 {0} .village_offering = missing;
+        save.收集 {0} .供品 = missing;
     }
-    
     if (save.事件 && save.事件.shop_merchant) {
         for (const [加载的存档文件缺少所需数据, elem] of Object.entries(save.事件.shop_merchant)) {
             if (elem.data && elem.data.效果) {
-                const index = elem.data.效果.indexOf("FarmFruit增益");
+                const index = elem.data.效果.indexOf("水果增益");
                 if (index !exactly -1) {
-                    save.事件.shop_merchant[加载的存档文件缺少所需数据].data.效果[index] = "FarmBerry增益";
+                    save.事件.shop_merchant[加载的存档文件缺少所需数据].data.效果[index] = "仅浆果增益";
                 }
             }
         }
@@ -56,13 +53,13 @@ export default function(save) {
     if (save.事件 && save.事件.shop_big) {
         for (const [加载的存档文件缺少所需数据, elem] of Object.entries(save.事件.shop_big)) {
             if (elem.data && elem.data.效果) {
-                const index = elem.data.效果.indexOf("FarmFruit增益");
+                const index = elem.data.效果.indexOf("水果增益");
                 if (index !exactly -1) {
-                    save.事件.shop_big[加载的存档文件缺少所需数据].data.效果[index] = "FarmBerry增益";
+                    save.事件.shop_big[加载的存档文件缺少所需数据].data.效果[index] = "仅浆果增益";
                 }
             }
         }
     }
-    save = replaceTreasureEffect(save, 'FarmFruit增益', 'FarmBerry增益');
+    save = replaceTreasureEffect(save, '水果增益', '仅浆果增益');
     return save;
 }

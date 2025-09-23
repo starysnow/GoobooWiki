@@ -1,4 +1,4 @@
-export default {
+{
     feature: {
         prefix: 'HO',
         reward: [
@@ -21,10 +21,10 @@ export default {
         ]},
         供应与支持: {reward: [
             {name: '生命值', 类型: 'mult', value: 1.35},
-            {name: 'FarmVegetable增益', 类型: 'mult', value: 1.25}
+            {name: '仅蔬菜增益', 类型: 'mult', value: 1.25}
         ]},
         反对腐败: {reward: [
-            {name: 'HordeCorruptedFlesh增益', 类型: 'mult', value: 1.5}
+            {name: '腐烂的肉体增益', 类型: 'mult', value: 1.5}
         ]},
     },
     pack: {

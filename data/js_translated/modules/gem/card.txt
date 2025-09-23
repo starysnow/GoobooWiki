@@ -1,13 +1,13 @@
-export default {
+{
     feature: {
         prefix: 'GE',
-        reward: [{name: 'GemTopaz容量', 类型: '基础 {0}', value: lvl => lvl * 20}],
-        shinyReward: [{name: 'GemTopaz容量', 类型: '基础 {0}', value: lvl => lvl * 20}],
+        reward: [{name: 'currencyGemTopazCap', 类型: '基础', value: lvl => lvl * 20}],
+        shinyReward: [{name: 'currencyGemTopazCap', 类型: '基础', value: lvl => lvl * 20}],
         解锁: 'gemFeature'
     },
     collection: {
         贵重珠宝: {reward: [
-            {name: 'GemTopaz容量', 类型: '基础 {0}', value: 160}
+            {name: 'currencyGemTopazCap', 类型: '基础', value: 160}
         ]},
     },
     pack: {},

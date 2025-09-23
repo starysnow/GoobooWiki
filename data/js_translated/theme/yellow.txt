@@ -1,13 +1,13 @@
 {
-  price: 1000,
-  光: {
-    primary: '#D2D219',
-    secondary: '#424242',
-    accent: '#FFFF82'
-  },
-  dark: {
-    primary: '#D2D219',
-    secondary: '#424242',
-    accent: '#FFFF82'
-  }
+    price: 1000,
+    光: {
+        primary: '#D2D219',
+        secondary: '#424242',
+        accent: '#FFFF82',
+    },
+    dark: {
+        primary: '#D2D219',
+        secondary: '#424242',
+        accent: '#FFFF82',
+    }
 }

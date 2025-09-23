@@ -60,16 +60,16 @@ function awardLoot(breaks, loots, hits) {
                 }
             }
             breaksMult = breaks > 0 ? (breaksMult / breaks) : Math.pow(2, Math.floor(Math.log10(existingBreaks)) - 3);
-            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '可以在 {0}分钟 或以下找到已破碎 1000 次或以上的岩石。 每突破 10 次，获得的数量就会翻倍', amount: store.getters['采矿/rareDropFinal']('可以在 {0}分钟 或以下找到已破碎 1000 次或以上的岩石。 每突破 10 次，获得的数量就会翻倍') * (MINING_RARE_DROP_BREAK * breaks + loots) * breaksMult});
+            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '花岗岩', amount: store.getters['采矿/rareDropFinal']('花岗岩') * (MINING_RARE_DROP_BREAK * breaks + loots) * breaksMult});
         }
         if (gotLoot && depth >= MINING_SALT_DEPTH && Object.keys(store.getters['采矿/currentOre']).length exactly= 1) {
-            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '可以在 {0}分钟 或以下找到含有 1 个矿石的岩石', amount: store.getters['采矿/rareDropFinal']('可以在 {0}分钟 或以下找到含有 1 个矿石的岩石') * (MINING_RARE_DROP_BREAK * breaks + loots)});
+            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '盐', amount: store.getters['采矿/rareDropFinal']('盐') * (MINING_RARE_DROP_BREAK * breaks + loots)});
         }
         if (depth >= MINING_COAL_DEPTH && existingBreaks exactly= 0 && breaks > 0) {
-            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '可以在每块岩石第一次破碎处的 {0} 米或以下位置找到', amount: store.getters['采矿/rareDropFinal']('可以在每块岩石第一次破碎处的 {0} 米或以下位置找到')});
+            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '煤', amount: store.getters['采矿/rareDropFinal']('煤')});
         }
         if (depth >= MINING_SULFUR_DEPTH && existingBreaks exactly= 0 && hits > loots) {
-            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '当撞到最深的岩石时，可以在 {0} 米或以下找到', amount: store.getters['采矿/rareDropFinal']('当撞到最深的岩石时，可以在 {0} 米或以下找到') * (hits - loots)});
+            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '硫', amount: store.getters['采矿/rareDropFinal']('硫') * (hits - loots)});
         }
         if (depth >= MINING_NITER_DEPTH && breaks > 0) {
             let breaksMult = 0;
@@ -82,13 +82,13 @@ function awardLoot(breaks, loots, hits) {
                     breaksMult++;
                 }
             }
-            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '可以在 {0} 米或以下的地方找到，力量为 10 次岩石破碎', amount: store.getters['采矿/rareDropFinal']('可以在 {0} 米或以下的地方找到，力量为 10 次岩石破碎') * breaksMult});
+            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '硝', amount: store.getters['采矿/rareDropFinal']('硝') * breaksMult});
         }
         if (gotLoot && depth >= MINING_OBSIDIAN_DEPTH && store.getters['采矿/enhancementLevel'] <= 0) {
-            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '如果你的镐没有增强，可以在 {0}分钟 或以下找到', amount: store.getters['采矿/rareDropFinal']('如果你的镐没有增强，可以在 {0}分钟 或以下找到') * (MINING_RARE_DROP_BREAK * breaks + loots)});
+            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '黑曜石', amount: store.getters['采矿/rareDropFinal']('黑曜石') * (MINING_RARE_DROP_BREAK * breaks + loots)});
         }
         if (gotLoot && depth >= MINING_DEEPROCK_DEPTH && digitSum(depth) >= 14) {
-            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '如果当前深度的数字加到14或更高，在{0}分钟或以下可以找到', amount: store.getters['采矿/rareDropFinal']('如果当前深度的数字加到14或更高，在{0}分钟或以下可以找到') * (MINING_RARE_DROP_BREAK * breaks + loots)});
+            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '深岩', amount: store.getters['采矿/rareDropFinal']('深岩') * (MINING_RARE_DROP_BREAK * breaks + loots)});
         }
     }
     if (breaks > 0) {
@@ -105,7 +105,6 @@ export default {
         if (store.state.采矿.beaconCooldown > 0) {
             store.commit('采矿/updateKey', {加载的存档文件缺少所需数据: 'beaconCooldown', value: Math.最大值(store.state.采矿.beaconCooldown - seconds, 0)});
         }
-        
         for (const [加载的存档文件缺少所需数据, elem] of Object.entries(store.state.采矿.冶炼厂)) {
             if (elem.stored > 0) {
                 let newProgress = elem.progress + seconds / store.getters['采矿/smelteryTimeNeeded'](加载的存档文件缺少所需数据);
@@ -123,11 +122,9 @@ export default {
                 store.commit('采矿/updateSmelteryKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: 'progress', value: newProgress});
             }
         }
-        
         if (store.state.解锁.树脂.use && 子功能 exactly= 0) {
-            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '树脂', amount: seconds * store.getters['mult/新的更新!']('MiningResin增益')});
+            store.dispatch('收集 {0} /增益', {feature: '采矿', name: '树脂', amount: seconds * store.getters['mult/新的更新!']('树脂增益')});
         }
-        
         if (store.getters['采矿/currentDamage'] > 0) {
             let secondsLeft = seconds;
             while (secondsLeft > 0) {
@@ -146,26 +143,21 @@ export default {
                     breaks++;
                     let isLatest = maxDepth exactly= store.state.采矿.depth;
                     if (isLatest) {
-                        
                         for (const [加载的存档文件缺少所需数据, elem] of Object.entries(store.getters['采矿/currentGas'])) {
                             store.dispatch('收集 {0} /增益', {feature: '采矿', name: 加载的存档文件缺少所需数据, amount: elem});
                         }
-                        
                         loots++;
                         store.commit('达到 {0} {1}/increaseTo', {feature: '采矿', name: 'maxDepth' + 子功能, value: store.state.采矿.depth + 1});
-                        store.dispatch('游戏/globalLevelPart', {加载的存档文件缺少所需数据: 'mining_' + 子功能, amount: store.state.达到 {0} {1}[`mining_maxDepth${子功能}`].总计 {0} - 1});
-                        
+                        store.dispatch('游戏/globalLevelPart', {加载的存档文件缺少所需数据: 'mining_' + 子功能, amount: store.state.达到 {0} {1}[`mining_maxDepth${子功能}`].总计 - 1});
                         if (子功能 exactly= 0) {
-                            const 笔记 = notes[store.state.达到 {0} {1}.mining_maxDepth0.总计 {0} - 1];
+                            const 笔记 = notes[store.state.达到 {0} {1}.mining_maxDepth0.总计 - 1];
                             if (笔记 !exactly undefined) {
                                 store.dispatch('笔记/find', 笔记);
                             }
                         }
-                        
                         if (store.state.达到 {0} {1}.mining_timeSpent.value <= 900 && 子功能 exactly= 0) {
                             store.commit('达到 {0} {1}/increaseTo', {feature: '采矿', name: 'maxDepthSpeedrun', value: store.state.采矿.depth + 1});
                         }
-                        
                         store.dispatch('采矿/updateDwellerStat');
                     }
                     if (
@@ -190,21 +182,18 @@ export default {
                 store.commit('采矿/updateKey', {加载的存档文件缺少所需数据: '耐用性', value: newDurability});
             }
         } else {
-            
             if (store.state.采矿.depth >= MINING_SULFUR_DEPTH && store.getters['采矿/currentBreaks'] exactly= 0) {
-                store.dispatch('收集 {0} /增益', {feature: '采矿', name: '当撞到最深的岩石时，可以在 {0} 米或以下找到', amount: store.getters['采矿/rareDropFinal']('当撞到最深的岩石时，可以在 {0} 米或以下找到') * seconds});
+                store.dispatch('收集 {0} /增益', {feature: '采矿', name: '硫', amount: store.getters['采矿/rareDropFinal']('硫') * seconds});
             }
         }
-        
         if (store.state.解锁.深度居民.use) {
             const dwellerLimit = store.getters['采矿/dwellerLimit'];
             const dwellerSpeed = store.getters['mult/新的更新!']('深度居民速度') / dwellerLimit;
             let timeLeft = seconds;
-            if (store.state.达到 {0} {1}[`mining_depthDweller${子功能}`].value < dwellerLimit) {
-                
+            if (store.state.达到 {0} {1}[`深度居民${子功能}`].value < dwellerLimit) {
                 const newDweller = Math.出现在区域 {0} 或更高区域(
                     MINING_DWELLER_OVERFLOW + dwellerLimit -
-                    (MINING_DWELLER_OVERFLOW + dwellerLimit - store.state.达到 {0} {1}[`mining_depthDweller${子功能}`].value) *
+                    (MINING_DWELLER_OVERFLOW + dwellerLimit - store.state.达到 {0} {1}[`深度居民${子功能}`].value) *
                     Math.pow(1 - dwellerSpeed, seconds), dwellerLimit
                 );
                 if (newDweller >= dwellerLimit) {
@@ -217,8 +206,7 @@ export default {
                 store.commit('达到 {0} {1}/increaseTo', {feature: '采矿', name: 'depthDwellerCap' + 子功能, value: newDweller});
             }
             if (timeLeft > 0 && dwellerLimit > 0) {
-                
-                let newDweller = store.state.达到 {0} {1}[`mining_depthDweller${子功能}`].value;
+                let newDweller = store.state.达到 {0} {1}[`深度居民${子功能}`].value;
                 let dwellerProgress = dwellerSpeed * MINING_DWELLER_OVERFLOW * timeLeft;
                 while (dwellerProgress > 0) {
                     const breakpointCount = Math.floor(10 * (newDweller + 0.000000000001) / dwellerLimit) - 10;
@@ -275,7 +263,7 @@ export default {
         冶炼温度: {display: 'temperature', baseValue: 100},
         金属锭增量: {display: 'percent', baseValue: 0.75, 出现在区域 {0} 或更高区域: 0},
         增强增量: {display: 'percent', baseValue: 3, 出现在区域 {0} 或更高区域: 0},
-        声望收入: {group: ['MiningCrystalGreen增益', 'MiningCrystalYellow增益']}
+        声望收入: {group: ['绿水晶增益', '黄水晶增益']}
     },
     multGroup: [
         {mult: '矿石增益', name: 'currencyGain', subtype: 'ore'},
@@ -283,114 +271,114 @@ export default {
         {mult: '稀土增益', name: 'currencyGain', subtype: 'rareEarth'}
     ],
     收集 {0} : {
-        废料: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色', 图标: 'mdi-dots-三角形', gainMult: {}, capMult: {baseValue: buildNum(10, 'K')}, gainTimerFunction() {
+        废料: {color: '棕色', 图标: 'mdi-dots-triangle', gainMult: {}, capMult: {baseValue: buildNum(10, 'K')}, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             return hitsNeeded exactly= Infinity ? null : (((hitsNeeded + MINING_SCRAP_BREAK) * store.getters['采矿/currentScrap']) / hitsNeeded);
         }, timerIsEstimate: true},
-        铝矿石: {subtype: 'ore', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '蓝色油漆-灰色', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 12, round: true}, gainTimerFunction() {
+        铝矿石: {subtype: 'ore', color: 'blue-灰色', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 12, round: true}, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             const oreGain = store.getters['采矿/currentOre'];
             return (hitsNeeded exactly= Infinity || !oreGain.铝矿石) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.铝矿石.amount) / hitsNeeded);
         }, timerIsEstimate: true},
-        铜矿石: {subtype: 'ore', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 4, round: true}, gainTimerFunction() {
+        铜矿石: {subtype: 'ore', color: '橙色', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 4, round: true}, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             const oreGain = store.getters['采矿/currentOre'];
             return (hitsNeeded exactly= Infinity || !oreGain.铜矿石) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.铜矿石.amount) / hitsNeeded);
         }, timerIsEstimate: true},
-        锡矿石: {subtype: 'ore', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '灰色', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 2, round: true}, gainTimerFunction() {
+        锡矿石: {subtype: 'ore', color: '灰色', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 2, round: true}, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             const oreGain = store.getters['采矿/currentOre'];
             return (hitsNeeded exactly= Infinity || !oreGain.锡矿石) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.锡矿石.amount) / hitsNeeded);
         }, timerIsEstimate: true},
-        铁矿石: {subtype: 'ore', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙红色油漆', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 1, round: true}, gainTimerFunction() {
+        铁矿石: {subtype: 'ore', color: 'deep-橙色', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 1, round: true}, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             const oreGain = store.getters['采矿/currentOre'];
             return (hitsNeeded exactly= Infinity || !oreGain.铁矿石) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.铁矿石.amount) / hitsNeeded);
         }, timerIsEstimate: true},
-        钛矿石: {subtype: 'ore', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-浅绿色油漆', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 1, round: true}, gainTimerFunction() {
+        钛矿石: {subtype: 'ore', color: 'pale-光-绿色', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 1, round: true}, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             const oreGain = store.getters['采矿/currentOre'];
             return (hitsNeeded exactly= Infinity || !oreGain.钛矿石) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.钛矿石.amount) / hitsNeeded);
         }, timerIsEstimate: true},
-        铂矿石: {subtype: 'ore', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'skyblue', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 1, round: true}, gainTimerFunction() {
+        铂矿石: {subtype: 'ore', color: 'skyblue', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 1, round: true}, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             const oreGain = store.getters['采矿/currentOre'];
             return (hitsNeeded exactly= Infinity || !oreGain.铂矿石) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.铂矿石.amount) / hitsNeeded);
         }, timerIsEstimate: true},
-        铱矿石: {subtype: 'ore', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-紫色', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 1, round: true}, gainTimerFunction() {
+        铱矿石: {subtype: 'ore', color: 'pale-紫色', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 1, round: true}, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             const oreGain = store.getters['采矿/currentOre'];
             return (hitsNeeded exactly= Infinity || !oreGain.铱矿石) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.铱矿石.amount) / hitsNeeded);
         }, timerIsEstimate: true},
-        锇矿石: {subtype: 'ore', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-绿色', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 1, round: true}, gainTimerFunction() {
+        锇矿石: {subtype: 'ore', color: 'pale-绿色', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 1, round: true}, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             const oreGain = store.getters['采矿/currentOre'];
             return (hitsNeeded exactly= Infinity || !oreGain.锇矿石) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.锇矿石.amount) / hitsNeeded);
         }, timerIsEstimate: true},
-        铅矿石: {subtype: 'ore', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-蓝色油漆', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 1, round: true}, gainTimerFunction() {
+        铅矿石: {subtype: 'ore', color: 'pale-blue', 图标: 'mdi-chart-bubble', gainMult: {}, capMult: {baseValue: 1, round: true}, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             const oreGain = store.getters['采矿/currentOre'];
             return (hitsNeeded exactly= Infinity || !oreGain.铅矿石) ? null : (((hitsNeeded + MINING_ORE_BREAK) * oreGain.铅矿石.amount) / hitsNeeded);
         }, timerIsEstimate: true},
-        轻量: {subtype: 'bar', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '蓝色油漆-灰色', 图标: 'mdi-黄金'},
-        坚固: {subtype: 'bar', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-橙色', 图标: 'mdi-黄金'},
-        锋利: {subtype: 'bar', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '灰色', 图标: 'mdi-黄金'},
-        挖掘机: {subtype: 'bar', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-绿色', 图标: 'mdi-黄金'},
-        丰富: {subtype: 'bar', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-蓝色油漆', 图标: 'mdi-黄金'},
-        熔岩: {subtype: 'bar', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-粉色', 图标: 'mdi-黄金'},
-        虚空: {subtype: 'bar', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'darker-灰色', 图标: 'mdi-黄金'},
-        可以在 {0}分钟 或以下找到已破碎 1000 次或以上的岩石。 每突破 10 次，获得的数量就会翻倍: {subtype: 'rareEarth', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'skyblue', 图标: 'mdi-cube', gainMult: {}, gainTimerFunction() {
+        轻量: {subtype: 'bar', color: 'blue-灰色', 图标: 'mdi-gold'},
+        坚固: {subtype: 'bar', color: 'pale-橙色', 图标: 'mdi-gold'},
+        锋利: {subtype: 'bar', color: '灰色', 图标: 'mdi-gold'},
+        挖掘机: {subtype: 'bar', color: 'pale-绿色', 图标: 'mdi-gold'},
+        丰富: {subtype: 'bar', color: 'pale-blue', 图标: 'mdi-gold'},
+        熔岩: {subtype: 'bar', color: 'pale-粉色', 图标: 'mdi-gold'},
+        虚空: {subtype: 'bar', color: 'darker-灰色', 图标: 'mdi-gold'},
+        花岗岩: {subtype: 'rareEarth', color: 'skyblue', 图标: 'mdi-cube', gainMult: {}, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             const rareDropGain = store.getters['采矿/稀有掉落'];
-            return (hitsNeeded exactly= Infinity || !rareDropGain.可以在 {0}分钟 或以下找到已破碎 1000 次或以上的岩石。 每突破 10 次，获得的数量就会翻倍) ? null : (((hitsNeeded + MINING_RARE_DROP_BREAK) * rareDropGain.可以在 {0}分钟 或以下找到已破碎 1000 次或以上的岩石。 每突破 10 次，获得的数量就会翻倍) / hitsNeeded);
+            return (hitsNeeded exactly= Infinity || !rareDropGain.花岗岩) ? null : (((hitsNeeded + MINING_RARE_DROP_BREAK) * rareDropGain.花岗岩) / hitsNeeded);
         }, timerIsEstimate: true},
-        可以在 {0}分钟 或以下找到含有 1 个矿石的岩石: {subtype: 'rareEarth', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'lighter-灰色', 图标: 'mdi-shaker', gainMult: {}, gainTimerFunction() {
+        盐: {subtype: 'rareEarth', color: 'lighter-灰色', 图标: 'mdi-shaker', gainMult: {}, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             const rareDropGain = store.getters['采矿/稀有掉落'];
-            return (hitsNeeded exactly= Infinity || !rareDropGain.可以在 {0}分钟 或以下找到含有 1 个矿石的岩石) ? null : (((hitsNeeded + MINING_RARE_DROP_BREAK) * rareDropGain.可以在 {0}分钟 或以下找到含有 1 个矿石的岩石) / hitsNeeded);
+            return (hitsNeeded exactly= Infinity || !rareDropGain.盐) ? null : (((hitsNeeded + MINING_RARE_DROP_BREAK) * rareDropGain.盐) / hitsNeeded);
         }, timerIsEstimate: true},
-        可以在每块岩石第一次破碎处的 {0} 米或以下位置找到: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'dark-灰色', 图标: 'mdi-chart-bubble', gainMult: {round: true}},
-        当撞到最深的岩石时，可以在 {0} 米或以下找到: {subtype: 'rareEarth', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-黄色', 图标: 'mdi-fire-圆形', gainMult: {}, gainTimerFunction() {
-            return store.getters['采矿/稀有掉落'].当撞到最深的岩石时，可以在 {0} 米或以下找到 ?? null;
+        煤: {color: 'dark-灰色', 图标: 'mdi-chart-bubble', gainMult: {round: true}},
+        硫: {subtype: 'rareEarth', color: 'pale-黄色', 图标: 'mdi-fire-circle', gainMult: {}, gainTimerFunction() {
+            return store.getters['采矿/稀有掉落'].硫 ?? null;
         }, timerIsEstimate: true},
-        可以在 {0} 米或以下的地方找到，力量为 10 次岩石破碎: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-浅绿色油漆', 图标: 'mdi-水-圆形', gainMult: {}},
-        如果你的镐没有增强，可以在 {0}分钟 或以下找到: {subtype: 'rareEarth', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'deep-紫色', 图标: 'mdi-cone', gainMult: {}, gainTimerFunction() {
+        硝: {color: 'pale-光-绿色', 图标: 'mdi-water-circle', gainMult: {}},
+        黑曜石: {subtype: 'rareEarth', color: 'deep-紫色', 图标: 'mdi-cone', gainMult: {}, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             const rareDropGain = store.getters['采矿/稀有掉落'];
-            return (hitsNeeded exactly= Infinity || !rareDropGain.如果你的镐没有增强，可以在 {0}分钟 或以下找到) ? null : (((hitsNeeded + MINING_RARE_DROP_BREAK) * rareDropGain.如果你的镐没有增强，可以在 {0}分钟 或以下找到) / hitsNeeded);
+            return (hitsNeeded exactly= Infinity || !rareDropGain.黑曜石) ? null : (((hitsNeeded + MINING_RARE_DROP_BREAK) * rareDropGain.黑曜石) / hitsNeeded);
         }, timerIsEstimate: true},
-        如果当前深度的数字加到14或更高，在{0}分钟或以下可以找到: {subtype: 'rareEarth', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'darker-灰色', 图标: 'mdi-gamepad-圆形', gainMult: {}, gainTimerFunction() {
+        深岩: {subtype: 'rareEarth', color: 'darker-灰色', 图标: 'mdi-gamepad-circle', gainMult: {}, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             const rareDropGain = store.getters['采矿/稀有掉落'];
-            return (hitsNeeded exactly= Infinity || !rareDropGain.如果当前深度的数字加到14或更高，在{0}分钟或以下可以找到) ? null : (((hitsNeeded + MINING_RARE_DROP_BREAK) * rareDropGain.如果当前深度的数字加到14或更高，在{0}分钟或以下可以找到) / hitsNeeded);
+            return (hitsNeeded exactly= Infinity || !rareDropGain.深岩) ? null : (((hitsNeeded + MINING_RARE_DROP_BREAK) * rareDropGain.深岩) / hitsNeeded);
         }, timerIsEstimate: true},
-        可以在{0}分钟或以下找到，每米低于限值0.1%的几率。获得一个需要你挖1米深，这个限制每天减少10%: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '青色', 图标: 'mdi-灯泡-fluorescent-tube', gainMult: {}, gainTimerFunction() {
+        辉光碎片: {color: '青色', 图标: 'mdi-lightbulb-fluorescent-tube', gainMult: {}, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             const rareDropGain = store.getters['采矿/稀有掉落'];
-            return (hitsNeeded exactly= Infinity || !rareDropGain.可以在{0}分钟或以下找到，每米低于限值0.1%的几率。获得一个需要你挖1米深，这个限制每天减少10%) ? null : (((hitsNeeded + MINING_RARE_DROP_BREAK) * rareDropGain.可以在{0}分钟或以下找到，每米低于限值0.1%的几率。获得一个需要你挖1米深，这个限制每天减少10%) / hitsNeeded);
+            return (hitsNeeded exactly= Infinity || !rareDropGain.辉光碎片) ? null : (((hitsNeeded + MINING_RARE_DROP_BREAK) * rareDropGain.辉光碎片) / hitsNeeded);
         }, timerIsEstimate: true},
-        烟雾: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '灰色', 图标: 'mdi-烟雾', gainMult: {}, capMult: {baseValue: 10}, overcapScaling: 0.25, gainTimerFunction() {
+        烟雾: {color: '灰色', 图标: 'mdi-smoke', gainMult: {}, capMult: {baseValue: 10}, overcapScaling: 0.25, gainTimerFunction() {
             const hitsNeeded = store.getters['采矿/hitsNeeded'];
             return hitsNeeded exactly= Infinity ? null : (((hitsNeeded + MINING_SMOKE_BREAK) * store.getters['采矿/currentSmoke']) / hitsNeeded);
         }, timerIsEstimate: true},
-        余烬: {类型: '声望', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色-红色', 图标: 'mdi-fire', overcapMult: 0, gainMult: {display: 'percent'}, capMult: {baseValue: 100}, currencyMult: {
+        余烬: {类型: '声望', color: '橙色-红色', 图标: 'mdi-fire', overcapMult: 0, gainMult: {display: 'percent'}, capMult: {baseValue: 100}, currencyMult: {
             冶炼速度: {类型: 'mult', value: val => val * 0.02 + 1}
         }},
-        树脂: {类型: '声望', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色', 图标: 'mdi-水', gainMult: {baseValue: 0.0001, display: 'perSecond'}, showGainMult: true, showGainTimer: true, capMult: {baseValue: 5}},
-        绿水晶: {类型: '声望', alwaysVisible: true, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅绿色油漆', 图标: 'mdi-星形-three-points', gainMult: {}},
-        氦: {类型: '声望', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-蓝色油漆', 图标: 'mdi-gas-cylinder', gainMult: {display: 'percent', baseValue: 0.01}, currencyMult: {
-            MiningScrap容量: {类型: 'mult', value: val => val * 0.01 + 1}
+        树脂: {类型: '声望', color: '橙色', 图标: 'mdi-water', gainMult: {baseValue: 0.0001, display: 'perSecond'}, showGainMult: true, showGainTimer: true, capMult: {baseValue: 5}},
+        绿水晶: {类型: '声望', alwaysVisible: true, color: '光-绿色', 图标: 'mdi-star-three-points', gainMult: {}},
+        氦: {类型: '声望', color: 'pale-blue', 图标: 'mdi-gas-cylinder', gainMult: {display: 'percent', baseValue: 0.01}, currencyMult: {
+            废料容量: {类型: 'mult', value: val => val * 0.01 + 1}
         }},
-        氖: {类型: '声望', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色-红色', 图标: 'mdi-gas-cylinder', gainMult: {display: 'percent', baseValue: 0.01}, currencyMult: {
+        氖: {类型: '声望', color: '橙色-红色', 图标: 'mdi-gas-cylinder', gainMult: {display: 'percent', baseValue: 0.01}, currencyMult: {
             制作力量: {类型: 'mult', value: val => val * 0.01 + 1}
         }},
-        氩: {类型: '声望', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '粉色-紫色', 图标: 'mdi-gas-cylinder', gainMult: {display: 'percent', baseValue: 0.01}, currencyMult: {
-            MiningScrap增益: {类型: 'mult', value: val => val * 0.01 + 1}
+        氩: {类型: '声望', color: '粉色-紫色', 图标: 'mdi-gas-cylinder', gainMult: {display: 'percent', baseValue: 0.01}, currencyMult: {
+            废料增益: {类型: 'mult', value: val => val * 0.01 + 1}
         }},
-        氪: {类型: '声望', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅蓝色油漆', 图标: 'mdi-gas-cylinder', gainMult: {display: 'percent', baseValue: 0.01}},
-        氙: {类型: '声望', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '蓝色油漆', 图标: 'mdi-gas-cylinder', gainMult: {display: 'percent', baseValue: 0.01}},
-        氡: {类型: '声望', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅绿色油漆', 图标: 'mdi-gas-cylinder', gainMult: {display: 'percent', baseValue: 0.01}},
-        黄水晶: {类型: '声望', alwaysVisible: true, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '黄色', 图标: 'mdi-星形-four-points', gainMult: {}}
+        氪: {类型: '声望', color: '光-blue', 图标: 'mdi-gas-cylinder', gainMult: {display: 'percent', baseValue: 0.01}},
+        氙: {类型: '声望', color: 'blue', 图标: 'mdi-gas-cylinder', gainMult: {display: 'percent', baseValue: 0.01}},
+        氡: {类型: '声望', color: '光-绿色', 图标: 'mdi-gas-cylinder', gainMult: {display: 'percent', baseValue: 0.01}},
+        黄水晶: {类型: '声望', alwaysVisible: true, color: '黄色', 图标: 'mdi-star-four-points', gainMult: {}}
     },
     升级成本: {
         ...升级成本,
@@ -402,10 +390,10 @@ export default {
     圣遗物,
     回来,
     笔记: buildArray(34).map(() => 'G'),
-    此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？: {
+    consumable: {
         金锤: {
-            图标: 'mdi-锤子',
-            地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '金色油漆',
+            图标: 'mdi-hammer',
+            color: '金色',
             price: {蓝宝石: 20}
         }
     },
@@ -449,8 +437,8 @@ export default {
         }
         let smelteryData = {};
         for (const [加载的存档文件缺少所需数据, elem] of Object.entries(store.state.采矿.冶炼厂)) {
-            if (elem.总计 {0} > 0) {
-                smelteryData[加载的存档文件缺少所需数据] = [elem.progress, elem.stored, elem.总计 {0}];
+            if (elem.总计 > 0) {
+                smelteryData[加载的存档文件缺少所需数据] = [elem.progress, elem.stored, elem.总计];
             }
         }
         if (Object.keys(smelteryData).length > 0) {
@@ -484,7 +472,7 @@ export default {
                 if (store.state.采矿.冶炼厂[加载的存档文件缺少所需数据] !exactly undefined) {
                     store.commit('采矿/updateSmelteryKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: 'progress', value: elem[0]});
                     store.commit('采矿/updateSmelteryKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: 'stored', value: elem[1]});
-                    store.commit('采矿/updateSmelteryKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: '总计 {0}', value: elem[2]});
+                    store.commit('采矿/updateSmelteryKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: '总计', value: elem[2]});
                 }
             }
         }

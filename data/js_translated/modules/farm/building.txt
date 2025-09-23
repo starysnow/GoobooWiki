@@ -1,17 +1,17 @@
 {
-  花园侏儒: {
-    图标: 'mdi-human-child'
-  },
-  洒水装置: {
-    图标: 'mdi-洒水装置-variant'
-  },
-  讲台: {
-    图标: 'mdi-书籍-open-page-variant'
-  },
-  风车: {
-    图标: 'mdi-风车'
-  },
-  旗帜: {
-    图标: 'mdi-旗帜'
-  }
+    花园侏儒: {
+        图标: 'mdi-human-child'
+    },
+    洒水装置: {
+        图标: 'mdi-sprinkler-variant'
+    },
+    讲台: {
+        图标: 'mdi-book-open-page-variant'
+    },
+    风车: {
+        图标: 'mdi-pinwheel'
+    },
+    旗帜: {
+        图标: 'mdi-flag'
+    }
 }

@@ -1,28 +1,12 @@
 {
-  更多插槽: {
-    类型: '高级',
-    price(lvl) {
-      return {
-        红宝石: lvl * 10 + 50
-      };
-    },
-    效果: [{
-      name: '宝藏插槽',
-      类型: '基础 {0}',
-      value: "lvl"
-    }]
-  },
-  更多碎片: {
-    类型: '高级',
-    price(lvl) {
-      return {
-        红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 150
-      };
-    },
-    效果: [{
-      name: 'TreasureFragment增益',
-      类型: 'mult',
-      value: "((lvl \\cdot 0.2) + 1)"
-    }]
-  }
+    更多插槽: {类型: '高级', price(lvl) {
+        return {红宝石: lvl * 10 + 50};
+    }, 效果: [
+        {name: '宝藏插槽', 类型: '基础', value: lvl => lvl}
+    ]},
+    更多碎片: {类型: '高级', price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 150};
+    }, 效果: [
+        {name: '碎片增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1}
+    ]}
 }

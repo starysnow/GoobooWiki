@@ -1,9 +1,8 @@
-export default {
-    
+{
     收集者: {
-        图标: 'mdi-仓库',
+        图标: 'mdi-warehouse',
         price(lvl) {
-            return {event_log: Math.pow(6, lvl) * 750};
+            return {木头: Math.pow(6, lvl) * 750};
         },
         减少制作时间至 {0}: lvl => Math.round(Math.pow(1.35, lvl) * 180),
         效果: [
@@ -16,27 +15,26 @@ export default {
         maxAmount: 1,
         price(lvl) {
             return fallbackArray([
-                {event_log: 4500, event_coconut: 3000},
-                {event_log: buildNum(500, 'K'), event_shell: buildNum(200, 'K'), event_solidPlate: 750},
-                {event_log: buildNum(200, 'M'), event_solidPlate: buildNum(10, 'K'), event_sandstone: buildNum(30, 'K')},
-                {event_log: buildNum(80, 'B'), event_solidPlate: buildNum(150, 'K'), event_hardSteel: 500},
-            ], {event_log: Math.pow(600, lvl) * buildNum(50, 'T'), event_compositePlate: Math.pow(12, lvl) * 100}, lvl);
+                {木头: 4500, 椰子: 3000},
+                {木头: buildNum(500, 'K'), 贝壳: buildNum(200, 'K'), 实心板: 750},
+                {木头: buildNum(200, '分钟'), 实心板: buildNum(10, 'K'), 砂岩: buildNum(30, 'K')},
+                {木头: buildNum(80, 'B'), 实心板: buildNum(150, 'K'), 硬钢: 500},
+            ], {木头: Math.pow(600, lvl) * buildNum(50, 'T'), 复合板: Math.pow(12, lvl) * 100}, lvl);
         },
         减少制作时间至 {0}: lvl => Math.pow(3, lvl) * 900,
         效果: [
-            {name: 'EventMusic增益', 类型: '基础 {0}', value: lvl => Math.pow(2, lvl)},
+            {name: '音乐增益', 类型: '基础', value: lvl => Math.pow(2, lvl)},
         ]
     },
-    
     扬声器: {
-        图标: 'mdi-扬声器',
+        图标: 'mdi-speaker',
         stageLevel: 1,
         price(lvl) {
-            return {event_log: Math.pow(25, lvl) * buildNum(10, 'K'), event_coconut: Math.pow(25, lvl) * 3000};
+            return {木头: Math.pow(25, lvl) * buildNum(10, 'K'), 椰子: Math.pow(25, lvl) * 3000};
         },
         减少制作时间至 {0}: lvl => Math.pow(2, lvl) * 600,
         效果: [
-            {name: 'EventMusic增益', 类型: '基础 {0}', value: lvl => Math.pow(2, lvl) * 0.5},
+            {name: '音乐增益', 类型: '基础', value: lvl => Math.pow(2, lvl) * 0.5},
         ]
     },
     菜地: {
@@ -44,11 +42,11 @@ export default {
         stageLevel: 1,
         shape: {0: '陆地', 1: '陆地', 4: '陆地'},
         price(lvl) {
-            return {event_log: Math.pow(12, lvl) * buildNum(37.5, 'K')};
+            return {木头: Math.pow(12, lvl) * buildNum(37.5, 'K')};
         },
         减少制作时间至 {0}: lvl => Math.round(Math.pow(1.5, lvl) * 1500),
         效果: [
-            {name: 'EventVegetable增益', 类型: '基础 {0}', value: lvl => Math.pow(1.75, lvl) * 0.05},
+            {name: '仅蔬菜增益', 类型: '基础', value: lvl => Math.pow(1.75, lvl) * 0.05},
         ]
     },
     锯木厂: {
@@ -56,14 +54,14 @@ export default {
         stageLevel: 1,
         shape: {0: '陆地', 1: '陆地'},
         price(lvl) {
-            return {event_stoneBlock: Math.pow(16, lvl) * buildNum(440, 'K')};
+            return {石块: Math.pow(16, lvl) * buildNum(440, 'K')};
         },
         减少制作时间至 {0}: lvl => Math.round(Math.pow(1.5, lvl) * 1800),
         action: {
-            cutPlates: {图标: 'mdi-layers', input: {event_log: 1000, event_stoneBlock: 800}, output: {event_solidPlate: 1}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.005},
-            cutSandstone: {图标: 'mdi-wall', input: {event_sand: 400, event_stoneBlock: 600}, output: {event_sandstone: 1}, minLevel: 3, speed: lvl => Math.pow(2, lvl) * 0.01},
-            smeltSteel: {图标: 'mdi-黄金', input: {event_metalPart: 20, event_freshWater: 500}, output: {event_hardSteel: 1}, minLevel: 5, speed: lvl => Math.pow(2, lvl) * 0.008},
-            combineMaterial: {图标: 'mdi-pillar', input: {event_solidPlate: 10, event_sandstone: 10, event_hardSteel: 10}, output: {event_compositePlate: 1}, minLevel: 7, speed: lvl => Math.pow(2, lvl) * 0.001},
+            cutPlates: {图标: 'mdi-layers', input: {木头: 1000, 石块: 800}, output: {实心板: 1}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.005},
+            cutSandstone: {图标: 'mdi-wall', input: {沙子: 400, 石块: 600}, output: {砂岩: 1}, minLevel: 3, speed: lvl => Math.pow(2, lvl) * 0.01},
+            smeltSteel: {图标: 'mdi-gold', input: {金属零件: 20, 淡水: 500}, output: {硬钢: 1}, minLevel: 5, speed: lvl => Math.pow(2, lvl) * 0.008},
+            combineMaterial: {图标: 'mdi-pillar', input: {实心板: 10, 砂岩: 10, 硬钢: 10}, output: {复合板: 1}, minLevel: 7, speed: lvl => Math.pow(2, lvl) * 0.001},
         }
     },
     厨房: {
@@ -71,28 +69,27 @@ export default {
         stageLevel: 1,
         shape: {0: '陆地', 1: '陆地', 3: '陆地', 5: '陆地'},
         price(lvl) {
-            return {event_solidPlate: Math.pow(10, lvl) * 80, event_coconut: Math.pow(30, lvl) * buildNum(1.2, 'M')};
+            return {实心板: Math.pow(10, lvl) * 80, 椰子: Math.pow(30, lvl) * buildNum(1.2, '分钟')};
         },
         减少制作时间至 {0}: lvl => Math.round(Math.pow(1.5, lvl) * 2700),
         action: {
-            椰子沙拉: {图标: 'mdi-碗-mix', input: {event_coconut: 4000, event_vegetable: 50}, output: {event_coconutSalad: 1}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.002},
-            咸贝壳: {图标: 'mdi-set-all', input: {event_shell: buildNum(60, 'K'), event_salt: 75}, output: {event_saltyShell: 1}, minLevel: 3, speed: lvl => Math.pow(2, lvl) * 0.0015},
-            柠檬糖: {图标: 'mdi-candy', input: {event_citrusFruit: 30, event_honey: 20}, output: {event_lemonCandy: 1}, minLevel: 5, speed: lvl => Math.pow(2, lvl) * 0.008},
-            牛扒: {图标: 'mdi-食物-牛扒', input: {event_cookedMeat: 10, event_salt: 250, event_pepper: 250}, output: {event_steak: 1}, minLevel: 7, speed: lvl => Math.pow(2, lvl) * 0.001},
-            鱼条: {图标: 'mdi-tally-mark-4', input: {event_cookedFish: 5, event_citrusFruit: 250, event_vegetable: 300}, output: {event_fishSticks: 1}, minLevel: 9, speed: lvl => Math.pow(2, lvl) * 0.003},
+            椰子沙拉: {图标: 'mdi-bowl-mix', input: {椰子: 4000, 仅蔬菜: 50}, output: {椰子沙拉: 1}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.002},
+            咸贝壳: {图标: 'mdi-set-all', input: {贝壳: buildNum(60, 'K'), 盐: 75}, output: {咸贝壳: 1}, minLevel: 3, speed: lvl => Math.pow(2, lvl) * 0.0015},
+            柠檬糖: {图标: 'mdi-candy', input: {柑橘类水果: 30, 蜂蜜: 20}, output: {柠檬糖: 1}, minLevel: 5, speed: lvl => Math.pow(2, lvl) * 0.008},
+            牛扒: {图标: 'mdi-food-steak', input: {熟肉: 10, 盐: 250, 胡椒: 250}, output: {牛扒: 1}, minLevel: 7, speed: lvl => Math.pow(2, lvl) * 0.001},
+            鱼条: {图标: 'mdi-tally-mark-4', input: {熟鱼: 5, 柑橘类水果: 250, 仅蔬菜: 300}, output: {鱼条: 1}, minLevel: 9, speed: lvl => Math.pow(2, lvl) * 0.003},
         }
     },
-    
     狩猎区: {
         图标: 'mdi-bow-arrow',
         stageLevel: 2,
         shape: {0: '森林', 1: '陆地', 2: '陆地', 3: '陆地'},
         price(lvl) {
-            return {event_log: Math.pow(25, lvl) * buildNum(6.6, 'M'), event_shell: Math.pow(25, lvl) * buildNum(2.4, 'M')};
+            return {木头: Math.pow(25, lvl) * buildNum(6.6, '分钟'), 贝壳: Math.pow(25, lvl) * buildNum(2.4, '分钟')};
         },
         减少制作时间至 {0}: lvl => Math.round(Math.pow(1.5, lvl) * 5400),
         效果: [
-            {name: 'EventRawMeat增益', 类型: '基础 {0}', value: lvl => Math.pow(1.75, lvl) * 0.004},
+            {name: '生肉增益', 类型: '基础', value: lvl => Math.pow(1.75, lvl) * 0.004},
         ]
     },
     巨大的铲子: {
@@ -100,62 +97,61 @@ export default {
         stageLevel: 2,
         shape: {0: '海滩'},
         price(lvl) {
-            return {event_solidPlate: Math.pow(6, lvl) * buildNum(12, 'K')};
+            return {实心板: Math.pow(6, lvl) * buildNum(12, 'K')};
         },
         减少制作时间至 {0}: lvl => Math.round(Math.pow(1.5, lvl) * 9600),
         效果: [
-            {name: 'EventSand增益', 类型: '基础 {0}', value: lvl => Math.pow(1.75, lvl) * 2},
+            {name: '沙子增益', 类型: '基础', value: lvl => Math.pow(1.75, lvl) * 2},
         ]
     },
     矿山: {
-        图标: 'mdi-隧道',
+        图标: 'mdi-tunnel',
         stageLevel: 2,
         shape: {0: '高山'},
         price(lvl) {
-            return {event_log: Math.pow(25, lvl) * buildNum(30, 'M'), event_solidPlate: Math.pow(8, lvl) * buildNum(37.5, 'K'), event_sandstone: Math.pow(8, lvl) * 3300};
+            return {木头: Math.pow(25, lvl) * buildNum(30, '分钟'), 实心板: Math.pow(8, lvl) * buildNum(37.5, 'K'), 砂岩: Math.pow(8, lvl) * 3300};
         },
         减少制作时间至 {0}: lvl => Math.round(Math.pow(1.5, lvl) * 10800),
         效果: [
-            {name: 'EventSalt增益', 类型: '基础 {0}', value: lvl => Math.pow(1.75, lvl) * 0.06},
-            {name: 'EventCoal增益', 类型: '基础 {0}', value: lvl => Math.pow(1.75, lvl) * 0.005},
+            {name: '盐增益', 类型: '基础', value: lvl => Math.pow(1.75, lvl) * 0.06},
+            {name: '煤增益', 类型: '基础', value: lvl => Math.pow(1.75, lvl) * 0.005},
         ]
     },
     烤架: {
-        图标: 'mdi-烤架',
+        图标: 'mdi-grill',
         stageLevel: 2,
         price(lvl) {
-            return {event_coconut: Math.pow(25, lvl) * buildNum(100, 'M'), event_stoneBlock: Math.pow(25, lvl) * buildNum(60, 'M')};
+            return {椰子: Math.pow(25, lvl) * buildNum(100, '分钟'), 石块: Math.pow(25, lvl) * buildNum(60, '分钟')};
         },
         减少制作时间至 {0}: lvl => Math.round(Math.pow(1.5, lvl) * 7200),
         action: {
-            cookMeat: {图标: 'mdi-食物-牛扒', input: {event_rawMeat: 1, event_coal: 1}, output: {event_cookedMeat: 1}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.01},
-            cookFish: {图标: 'mdi-鱼', input: {event_rawFish: 1, event_coal: 1}, output: {event_cookedFish: 1}, minLevel: 2, speed: lvl => Math.pow(2, lvl) * 0.01},
+            cookMeat: {图标: 'mdi-food-steak', input: {生肉: 1, 煤: 1}, output: {熟肉: 1}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.01},
+            cookFish: {图标: 'mdi-fish', input: {生鱼: 1, 煤: 1}, output: {熟鱼: 1}, minLevel: 2, speed: lvl => Math.pow(2, lvl) * 0.01},
         }
     },
     挖掘机: {
-        图标: 'mdi-挖掘机',
+        图标: 'mdi-excavator',
         stageLevel: 2,
         {0} 最高等级: 1,
         maxAmount: 1,
         price() {
-            return {event_solidPlate: buildNum(120, 'K'), event_sandstone: buildNum(10, 'K'), event_cocktail: 25};
+            return {实心板: buildNum(120, 'K'), 砂岩: buildNum(10, 'K'), 混合物: 25};
         },
         减少制作时间至 {0}: () => 3600,
         效果: [
             {name: '地形改造', 类型: '解锁', value: () => true},
         ]
     },
-    
     开壳器: {
         图标: 'mdi-filter',
         stageLevel: 3,
         shape: {0: '陆地', 1: '陆地', 3: '陆地'},
         price(lvl) {
-            return {event_coconut: Math.pow(40, lvl) * buildNum(8.5, 'B'), event_sandstone: Math.pow(12, lvl) * buildNum(50, 'K')};
+            return {椰子: Math.pow(40, lvl) * buildNum(8.5, 'B'), 砂岩: Math.pow(12, lvl) * buildNum(50, 'K')};
         },
         减少制作时间至 {0}: lvl => Math.round(Math.pow(1.5, lvl) * 14400),
         action: {
-            openShell: {图标: 'mdi-filter', input: {event_shell: buildNum(20, 'K')}, output: {event_metalPart: 3}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.01},
+            openShell: {图标: 'mdi-filter', input: {贝壳: buildNum(20, 'K')}, output: {金属零件: 3}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.01},
         },
         效果: [
             {name: '珍珠几率', 类型: 'summerFestivalBuildingBase', value: lvl => 0.0002 * lvl + 0.001}
@@ -166,33 +162,33 @@ export default {
         stageLevel: 3,
         shape: {0: '陆地', 1: '水'},
         price(lvl) {
-            return {event_stoneBlock: Math.pow(25, lvl) * buildNum(60, 'B')};
+            return {石块: Math.pow(25, lvl) * buildNum(60, 'B')};
         },
         减少制作时间至 {0}: lvl => Math.round(Math.pow(1.5, lvl) * 21600),
         效果: [
-            {name: 'EventFreshWater增益', 类型: '基础 {0}', value: lvl => Math.pow(1.75, lvl) * 0.08},
-            {name: 'EventSalt增益', 类型: '基础 {0}', value: lvl => Math.pow(1.75, lvl) * 0.01},
+            {name: '淡水增益', 类型: '基础', value: lvl => Math.pow(1.75, lvl) * 0.08},
+            {name: '盐增益', 类型: '基础', value: lvl => Math.pow(1.75, lvl) * 0.01},
         ]
     },
     捕鱼网: {
-        图标: 'mdi-蜘蛛-Web',
+        图标: 'mdi-spider-web',
         stageLevel: 3,
         shape: {0: '水', 1: '水'},
         price(lvl) {
-            return {event_solidPlate: Math.pow(9, lvl) * buildNum(350, 'K'), event_sandstone: Math.pow(7, lvl) * buildNum(405, 'K')};
+            return {实心板: Math.pow(9, lvl) * buildNum(350, 'K'), 砂岩: Math.pow(7, lvl) * buildNum(405, 'K')};
         },
         减少制作时间至 {0}: lvl => Math.round(Math.pow(1.5, lvl) * 28800),
         效果: [
-            {name: 'EventRawFish增益', 类型: '基础 {0}', value: lvl => Math.pow(1.75, lvl) * 0.03},
+            {name: '生鱼增益', 类型: '基础', value: lvl => Math.pow(1.75, lvl) * 0.03},
         ]
     },
     灯塔: {
-        图标: 'mdi-灯塔',
+        图标: 'mdi-lighthouse',
         stageLevel: 3,
         {0} 最高等级: 1,
         shape: {0: '高山'},
         price() {
-            return {event_pearl: 1};
+            return {珍珠: 1};
         },
         减少制作时间至 {0}: () => 43200,
         效果: [
@@ -201,29 +197,28 @@ export default {
             {name: '材料堆叠容量', 类型: 'mult', value: () => 5}
         ]
     },
-    
     胡椒田: {
-        图标: 'mdi-仅鲜花-outline',
+        图标: 'mdi-flower-outline',
         stageLevel: 4,
         shape: {0: '棕榈树', 1: '陆地'},
         price(lvl) {
-            return {event_coconut: Math.pow(25, lvl) * buildNum(975, 'B'), event_sandstone: Math.pow(8, lvl) * buildNum(2.75, 'M')};
+            return {椰子: Math.pow(25, lvl) * buildNum(975, 'B'), 砂岩: Math.pow(8, lvl) * buildNum(2.75, '分钟')};
         },
         减少制作时间至 {0}: lvl => Math.round(Math.pow(1.5, lvl) * 57600),
         效果: [
-            {name: 'EventPepper增益', 类型: '基础 {0}', value: lvl => Math.pow(1.75, lvl) * 0.6},
+            {name: '胡椒增益', 类型: '基础', value: lvl => Math.pow(1.75, lvl) * 0.6},
         ]
     },
     蜂窝: {
-        图标: 'mdi-蜂窝-outline',
+        图标: 'mdi-beehive-outline',
         stageLevel: 4,
         shape: {0: '森林'},
         price(lvl) {
-            return {event_log: Math.pow(25, lvl) * buildNum(7.1, 'T'), event_hardSteel: Math.pow(6, lvl) * 75};
+            return {木头: Math.pow(25, lvl) * buildNum(7.1, 'T'), 硬钢: Math.pow(6, lvl) * 75};
         },
         减少制作时间至 {0}: lvl => Math.round(Math.pow(1.5, lvl) * 72000),
         效果: [
-            {name: 'EventHoney增益', 类型: '基础 {0}', value: lvl => Math.pow(1.75, lvl) * 0.04},
+            {name: '蜂蜜增益', 类型: '基础', value: lvl => Math.pow(1.75, lvl) * 0.04},
         ]
     },
     柑橘种植园: {
@@ -231,11 +226,11 @@ export default {
         stageLevel: 4,
         shape: {0: '棕榈树', 1: '陆地', 2: '陆地'},
         price(lvl) {
-            return {event_stoneBlock: Math.pow(25, lvl) * buildNum(63, 'T'), event_solidPlate: Math.pow(8, lvl) * buildNum(5, 'M')};
+            return {石块: Math.pow(25, lvl) * buildNum(63, 'T'), 实心板: Math.pow(8, lvl) * buildNum(5, '分钟')};
         },
         减少制作时间至 {0}: lvl => Math.round(Math.pow(1.5, lvl) * 86400),
         效果: [
-            {name: 'EventCitrusFruit增益', 类型: '基础 {0}', value: lvl => Math.pow(1.75, lvl) * 0.12},
+            {name: '柑橘类水果增益', 类型: '基础', value: lvl => Math.pow(1.75, lvl) * 0.12},
         ]
     }
 }

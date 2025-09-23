@@ -1,5 +1,4 @@
-export default function(save) {
-    
+function(save) {
     if (save.学校) {
         for (const [加载的存档文件缺少所需数据, elem] of Object.entries(save.学校)) {
             const oldGradeBase = Math.最大值(elem.elo, elem.成绩) * 0.6;
@@ -11,19 +10,17 @@ export default function(save) {
             };
         }
     }
-    
     if (save.达到 {0} {1}?.school_highestGrade) {
         save.达到 {0} {1}.school_highestGrade.value = Math.floor(save.达到 {0} {1}.school_highestGrade.value * 0.006);
-        save.达到 {0} {1}.school_highestGrade.总计 {0} = Math.floor(save.达到 {0} {1}.school_highestGrade.总计 {0} * 0.006);
+        save.达到 {0} {1}.school_highestGrade.总计 = Math.floor(save.达到 {0} {1}.school_highestGrade.总计 * 0.006);
     }
-    
     if (save.你的全局等级增加了宝藏层级和获得更高层级宝藏的机会。) {
         let totalLevel = 0;
         for (const [, elem] of Object.entries(save.你的全局等级增加了宝藏层级和获得更高层级宝藏的机会。)) {
             totalLevel += elem;
         }
         if (totalLevel >= 25) {
-            save = addCurrencyToSave(save, 'school_examPass', Math.floor(totalLevel / 10));
+            save = addCurrencyToSave(save, '考试通过', Math.floor(totalLevel / 10));
         }
     }
     return save;

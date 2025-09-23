@@ -1,4 +1,4 @@
-export default {
+{
     name: '圣遗物',
     unlockNeeded: 'relicFeature',
     解锁: ['relicFeature', 'relicMuseum'],

@@ -1,4 +1,4 @@
-export default {
+{
     feature: {
         prefix: 'MI',
         reward: [{name: '伤害', 类型: 'mult', value: lvl => lvl * 0.05 + 1}],
@@ -14,16 +14,16 @@ export default {
             {name: '伤害', 类型: 'mult', value: 1.35}
         ]},
         废料物流: {reward: [
-            {name: '矿山卡片容量', 类型: '基础 {0}', value: 1},
-            {name: 'MiningScrap容量', 类型: 'mult', value: 2}
+            {name: '矿山卡片容量', 类型: '基础', value: 1},
+            {name: '废料容量', 类型: 'mult', value: 2}
         ]},
         洞穴位置: {reward: [
-            {name: '村庄卡片容量', 类型: '基础 {0}', value: 1},
-            {name: 'VillageStone增益', 类型: 'mult', value: 1.5}
+            {name: '村庄卡片容量', 类型: '基础', value: 1},
+            {name: '石头增益', 类型: 'mult', value: 1.5}
         ]},
         黑暗中的危险: {reward: [
-            {name: '矿山卡片容量', 类型: '基础 {0}', value: 1},
-            {name: '部落卡片容量', 类型: '基础 {0}', value: 1}
+            {name: '矿山卡片容量', 类型: '基础', value: 1},
+            {name: '部落卡片容量', 类型: '基础', value: 1}
         ]}
     },
     pack: {

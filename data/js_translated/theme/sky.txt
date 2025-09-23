@@ -1,4 +1,4 @@
-export default {
+{
     price: buildNum(10, 'K'),
     自定义导航栏: true,
     自定义背景色: true,

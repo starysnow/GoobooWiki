@@ -1,15 +1,15 @@
-export default {
+{
     加时赛: {类型: '高级', price(lvl) {
         return {红宝石: fallbackArray([70], [2, 3][(lvl - 1) % 2] * Math.pow(2, Math.floor((lvl - 1) / 2)) * 100, lvl)};
     }, 效果: [
         {name: '材料增益', 类型: 'mult', value: lvl => fallbackArray([1, 1.1], Math.pow(1.25, lvl - 1), lvl)}
     ]},
     黄金王座: {类型: '高级', requirement() {
-        return store.state.达到 {0} {1}.village_coin.总计 {0} > 0;
+        return store.state.达到 {0} {1}.金币.总计 > 0;
     }, price(lvl) {
         return {红宝石: fallbackArray([30], [2, 3][(lvl - 1) % 2] * Math.pow(2, Math.floor((lvl - 1) / 2)) * 60, lvl)};
     }, 效果: [
-        {name: 'VillageCoin增益', 类型: 'mult', value: lvl => fallbackArray([1, 1.5], getSequence(2, lvl - 1) * 0.5 + 1, lvl)}
+        {name: '金币增益', 类型: 'mult', value: lvl => fallbackArray([1, 1.5], getSequence(2, lvl - 1) * 0.5 + 1, lvl)}
     ]},
     更快的建造: {类型: '高级', price(lvl) {
         return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 75};
@@ -17,105 +17,105 @@ export default {
         {name: '建造速度', 类型: 'mult', value: lvl => lvl + 1}
     ]},
     更多信仰: {类型: '高级', requirement() {
-        return store.state.达到 {0} {1}.village_faith.总计 {0} > 0;
+        return store.state.达到 {0} {1}.信仰.总计 > 0;
     }, price(lvl) {
         return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 80};
     }, 效果: [
-        {name: 'VillageFaith增益', 类型: 'mult', value: lvl => lvl * 0.25 + 1},
-        {name: 'VillageFaith容量', 类型: 'mult', value: lvl => lvl * 0.25 + 1}
+        {name: '信仰增益', 类型: 'mult', value: lvl => lvl * 0.25 + 1},
+        {name: '信仰容量', 类型: 'mult', value: lvl => lvl * 0.25 + 1}
     ]},
     更多植物纤维: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.village_plantFiber.总计 {0} > 0;
+        return store.state.达到 {0} {1}.植物纤维.总计 > 0;
     }, price(lvl) {
         return {红宝石: Math.pow(2, lvl) * 275};
     }, 效果: [
-        {name: 'VillagePlantFiber增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
-        {name: 'VillagePlantFiber容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '植物纤维增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
+        {name: '植物纤维容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
     ]},
     更多木头: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.village_wood.总计 {0} > 0;
+        return store.state.达到 {0} {1}.木头.总计 > 0;
     }, price(lvl) {
         return {红宝石: Math.pow(2, lvl) * 275};
     }, 效果: [
-        {name: 'VillageWood增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
-        {name: 'VillageWood容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '木头增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
+        {name: '木头容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
     ]},
     更多石头: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.village_stone.总计 {0} > 0;
+        return store.state.达到 {0} {1}.石头.总计 > 0;
     }, price(lvl) {
         return {红宝石: Math.pow(2, lvl) * 275};
     }, 效果: [
-        {name: 'VillageStone增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
-        {name: 'VillageStone容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '石头增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
+        {name: '石头容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
     ]},
     更多金属: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.village_metal.总计 {0} > 0;
+        return store.state.达到 {0} {1}.金属.总计 > 0;
     }, price(lvl) {
         return {红宝石: Math.pow(2, lvl) * 375};
     }, 效果: [
-        {name: 'VillageMetal增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
-        {name: 'VillageMetal容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '金属增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
+        {name: '金属容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
     ]},
     更多水: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.village_water.总计 {0} > 0;
+        return store.state.达到 {0} {1}.水.总计 > 0;
     }, price(lvl) {
         return {红宝石: Math.pow(2, lvl) * 450};
     }, 效果: [
-        {name: 'VillageWater增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
-        {name: 'VillageWater容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '水增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
+        {name: '水容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
     ]},
     更多玻璃: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.village_glass.总计 {0} > 0;
+        return store.state.达到 {0} {1}.玻璃.总计 > 0;
     }, price(lvl) {
         return {红宝石: Math.pow(2, lvl) * 600};
     }, 效果: [
-        {name: 'VillageGlass增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
-        {name: 'VillageGlass容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '玻璃增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
+        {name: '玻璃容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
     ]},
     更多硬木: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.village_hardwood.总计 {0} > 0;
+        return store.state.达到 {0} {1}.硬木.总计 > 0;
     }, price(lvl) {
         return {红宝石: Math.pow(2, lvl) * 900};
     }, 效果: [
-        {name: 'VillageHardwood增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
-        {name: 'VillageHardwood容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '硬木增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
+        {name: '硬木容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
     ]},
     更多宝石: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.village_gem.总计 {0} > 0;
+        return store.state.达到 {0} {1}.宝石.总计 > 0;
     }, price(lvl) {
         return {红宝石: Math.pow(2, lvl) * 900};
     }, 效果: [
-        {name: 'VillageGem增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
-        {name: 'VillageGem容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '宝石增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
+        {name: '宝石容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
     ]},
     更多知识: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.village_knowledge.总计 {0} > 0;
+        return store.state.达到 {0} {1}.知识.总计 > 0;
     }, price(lvl) {
         return {红宝石: Math.pow(2, lvl) * 675};
     }, 效果: [
-        {name: 'VillageKnowledge增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)}
+        {name: '知识增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)}
     ]},
     更多科学: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.village_science.总计 {0} > 0;
+        return store.state.达到 {0} {1}.科学.总计 > 0;
     }, price(lvl) {
         return {红宝石: Math.pow(2, lvl) * 1300};
     }, 效果: [
-        {name: 'VillageScience增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)}
+        {name: '科学增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)}
     ]},
     更多油: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.village_oil.总计 {0} > 0;
+        return store.state.达到 {0} {1}.油.总计 > 0;
     }, price(lvl) {
         return {红宝石: Math.pow(2, lvl) * 1800};
     }, 效果: [
-        {name: 'VillageOil增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
-        {name: 'VillageOil容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '油增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
+        {name: '油容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
     ]},
     更多大理石: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.village_marble.总计 {0} > 0;
+        return store.state.达到 {0} {1}.大理石.总计 > 0;
     }, price(lvl) {
         return {红宝石: Math.pow(2, lvl) * 2250};
     }, 效果: [
-        {name: 'VillageMarble增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
-        {name: 'VillageMarble容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '大理石增益', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
+        {name: '大理石容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
     ]},
 }

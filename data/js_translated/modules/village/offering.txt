@@ -1,10 +1,10 @@
-export default {
-    植物纤维: {解锁: '供品', cost: lvl => Math.pow(1.5, lvl) * buildNum(1, 'M'), 效果: 200},
-    木头: {解锁: '供品', cost: lvl => Math.pow(1.5, lvl) * buildNum(1, 'M'), 效果: 200},
-    石头: {解锁: '供品', cost: lvl => Math.pow(1.5, lvl) * buildNum(1, 'M'), 效果: 200},
-    金币: {解锁: '层 2 供品', amount: 3, cost: lvl => Math.pow(1.75, lvl) * buildNum(10, 'M'), 效果: 200},
-    金属: {解锁: '层 2 供品', amount: 3, cost: lvl => Math.pow(1.5, lvl) * buildNum(3, 'M'), 效果: 200},
-    水: {解锁: '层 2 供品', amount: 3, cost: lvl => Math.pow(2, lvl) * buildNum(5, 'M'), 效果: 500},
+{
+    植物纤维: {解锁: '供品', cost: lvl => Math.pow(1.5, lvl) * buildNum(1, '分钟'), 效果: 200},
+    木头: {解锁: '供品', cost: lvl => Math.pow(1.5, lvl) * buildNum(1, '分钟'), 效果: 200},
+    石头: {解锁: '供品', cost: lvl => Math.pow(1.5, lvl) * buildNum(1, '分钟'), 效果: 200},
+    金币: {解锁: '层 2 供品', amount: 3, cost: lvl => Math.pow(1.75, lvl) * buildNum(10, '分钟'), 效果: 200},
+    金属: {解锁: '层 2 供品', amount: 3, cost: lvl => Math.pow(1.5, lvl) * buildNum(3, '分钟'), 效果: 200},
+    水: {解锁: '层 2 供品', amount: 3, cost: lvl => Math.pow(2, lvl) * buildNum(5, '分钟'), 效果: 500},
     玻璃: {解锁: '层 3 供品', amount: 8, cost: lvl => Math.pow(1.5, lvl) * buildNum(120, 'K'), 效果: 100},
     硬木: {解锁: '层 3 供品', amount: 8, cost: lvl => Math.pow(1.5, lvl) * buildNum(40, 'K'), 效果: 100},
     宝石: {解锁: '层 3 供品', amount: 8, cost: lvl => Math.pow(1.5, lvl) * buildNum(40, 'K'), 效果: 100},

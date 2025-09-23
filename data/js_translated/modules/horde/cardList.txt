@@ -1,52 +1,52 @@
 [
-    {id: 1, collection: '黑暗中的危险', 攻击和生命值 x{0}: 3, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '绿色', icons: [
+    {id: 1, collection: '黑暗中的危险', 攻击和生命值 x{0}: 3, color: '绿色', icons: [
         {"x": -0.1, "y": 0.1, "rotate": -20, "size": 2.5, "图标": "mdi-chart-bubble"},
         {"x": 0.85, "y": 0.1, "rotate": 0, "size": 1.5, "图标": "mdi-snake"},
         {"x": -0.85, "y": 0.05, "rotate": 0, "size": 2, "图标": "mdi-human-handsdown"}
     ]},
     {id: 2, collection: '黑暗中的危险', 攻击和生命值 x{0}: 2, reward: [
-        {name: 'Boss要求', 类型: '基础 {0}', value: -5}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'darker-灰色', icons: [
-        {"x": 0, "y": 0.1, "rotate": 0, "size": 3, "图标": "mdi-椭圆形-outline"},
-        {"x": -0.85, "y": 0.9, "rotate": 0, "size": 1.4, "图标": "mdi-草"},
-        {"x": 0.85, "y": 0.75, "rotate": 0, "size": 1.2, "图标": "mdi-草"},
-        {"x": 0.85, "y": -0.8, "rotate": 0, "size": 1, "图标": "mdi-草"},
-        {"x": 0, "y": -1, "rotate": 0, "size": 0.9, "图标": "mdi-草"}
+        {name: '击败 {0} (+{1})要求', 类型: '基础', value: -5}
+    ], color: 'darker-灰色', icons: [
+        {"x": 0, "y": 0.1, "rotate": 0, "size": 3, "图标": "mdi-ellipse-outline"},
+        {"x": -0.85, "y": 0.9, "rotate": 0, "size": 1.4, "图标": "mdi-grass"},
+        {"x": 0.85, "y": 0.75, "rotate": 0, "size": 1.2, "图标": "mdi-grass"},
+        {"x": 0.85, "y": -0.8, "rotate": 0, "size": 1, "图标": "mdi-grass"},
+        {"x": 0, "y": -1, "rotate": 0, "size": 0.9, "图标": "mdi-grass"}
     ]},
     {id: 3, collection: '黑暗中的危险', 攻击和生命值 x{0}: 1, reward: [
-        {name: 'HordeBone增益', 类型: 'mult', value: 1.2},
-        {name: 'HordeBone容量', 类型: 'mult', value: 1.35}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色-红色', icons: [
+        {name: '骨头增益', 类型: 'mult', value: 1.2},
+        {name: '骨头容量', 类型: 'mult', value: 1.35}
+    ], color: '橙色-红色', icons: [
         {"x": 0, "y": 0.8, "rotate": 0, "size": 3, "图标": "mdi-image-filter-hdr"},
-        {"x": 0.15, "y": 0.55, "rotate": 0, "size": 1, "图标": "mdi-喷泉"},
+        {"x": 0.15, "y": 0.55, "rotate": 0, "size": 1, "图标": "mdi-fountain"},
         {"x": 0.55, "y": -0.2, "rotate": -60, "size": 0.7, "图标": "mdi-motion"},
         {"x": -0.6, "y": -0.15, "rotate": -140, "size": 0.95, "图标": "mdi-motion"},
         {"x": -0.1, "y": -0.75, "rotate": -100, "size": 1.15, "图标": "mdi-motion"}
     ]},
     {id: 4, collection: '黑暗中的危险', 攻击和生命值 x{0}: 2, reward: [
-        {name: 'HordeMonsterPart容量', 类型: '基础 {0}', value: 50}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'deep-紫色', icons: [
+        {name: '怪物零件容量', 类型: '基础', value: 50}
+    ], color: 'deep-紫色', icons: [
         {"x": 0, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-human-handsdown"},
         {"x": -0.3, "y": -0.7, "rotate": -30, "size": 0.75, "图标": "mdi-help"},
         {"x": 0.55, "y": -0.3, "rotate": 0, "size": 1, "图标": "mdi-map-legend"},
         {"x": -0.7, "y": 0.85, "rotate": 75, "size": 1.75, "图标": "mdi-chart-bubble"}
     ]},
     {id: 5, collection: '黑暗中的危险', 攻击和生命值 x{0}: 2, reward: [
-        {name: 'HordeBone增益', 类型: 'mult', value: 1.25}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '青色', icons: [
-        {"x": 0.6, "y": 0.2, "rotate": 0, "size": 2.5, "图标": "mdi-mirror-矩形"},
+        {name: '骨头增益', 类型: 'mult', value: 1.25}
+    ], color: '青色', icons: [
+        {"x": 0.6, "y": 0.2, "rotate": 0, "size": 2.5, "图标": "mdi-mirror-rectangle"},
         {"x": 0.65, "y": 0.5, "rotate": 0, "size": 1, "图标": "mdi-human-greeting"},
         {"x": 0.65, "y": 0.25, "rotate": 0, "size": 0.5, "图标": "mdi-skull"},
         {"x": -0.4, "y": 0.65, "rotate": 0, "size": 1.1, "图标": "mdi-human-handsdown"},
         {"x": -0.3, "y": 0.05, "rotate": 15, "size": 0.75, "图标": "mdi-exclamation-thick"}
     ]},
     {id: 6, collection: '黑暗中的危险', 攻击和生命值 x{0}: 2, reward: [
-        {name: '分裂盾', 类型: '基础 {0}', value: 4}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '红色', icons: [
-        {"x": -0.95, "y": 0.8, "rotate": 0, "size": 1.5, "图标": "mdi-波浪"},
-        {"x": -0.3, "y": 0.8, "rotate": 0, "size": 1.5, "图标": "mdi-波浪"},
-        {"x": 0.3, "y": 0.8, "rotate": 0, "size": 1.5, "图标": "mdi-波浪"},
-        {"x": 0.95, "y": 0.8, "rotate": 0, "size": 1.5, "图标": "mdi-波浪"},
+        {name: '分裂盾', 类型: '基础', value: 4}
+    ], color: '红色', icons: [
+        {"x": -0.95, "y": 0.8, "rotate": 0, "size": 1.5, "图标": "mdi-waves"},
+        {"x": -0.3, "y": 0.8, "rotate": 0, "size": 1.5, "图标": "mdi-waves"},
+        {"x": 0.3, "y": 0.8, "rotate": 0, "size": 1.5, "图标": "mdi-waves"},
+        {"x": 0.95, "y": 0.8, "rotate": 0, "size": 1.5, "图标": "mdi-waves"},
         {"x": 0, "y": 0.46, "rotate": 0, "size": 1, "图标": "mdi-swim"},
         {"x": -0.7, "y": -0.15, "rotate": 0, "size": 1.8, "图标": "mdi-scent"},
         {"x": 0.7, "y": -0.55, "rotate": 0, "size": 1.9, "图标": "mdi-scent"},
@@ -54,88 +54,88 @@
     ]},
     {id: 7, collection: '维护安全', 攻击和生命值 x{0}: 2, reward: [
         {name: '装备几率', 类型: 'mult', value: 1.6}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-黄色', icons: [
-        {"x": 0, "y": 1, "rotate": 90, "size": 2, "图标": "mdi-矩形"},
+    ], color: 'pale-黄色', icons: [
+        {"x": 0, "y": 1, "rotate": 90, "size": 2, "图标": "mdi-rectangle"},
         {"x": 0, "y": 0.35, "rotate": 0, "size": 1, "图标": "mdi-bag-personal"},
         {"x": 0.55, "y": 0.75, "rotate": 0, "size": 1.6, "图标": "mdi-human-greeting"},
         {"x": -0.9, "y": 0.75, "rotate": 0, "size": 1.55, "图标": "mdi-human-handsdown"}
     ]},
     {id: 8, collection: '维护安全', 攻击和生命值 x{0}: 2, reward: [
-        {name: 'HordeBone容量', 类型: 'mult', value: 1.2},
-        {name: 'HordeMonsterPart容量', 类型: '基础 {0}', value: 30}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '樱桃色', icons: [
+        {name: '骨头容量', 类型: 'mult', value: 1.2},
+        {name: '怪物零件容量', 类型: '基础', value: 30}
+    ], color: '樱桃色', icons: [
         {"x": -0.1, "y": 0.55, "rotate": 0, "size": 1.25, "图标": "mdi-wall"},
         {"x": 0.45, "y": 0.55, "rotate": 0, "size": 1.25, "图标": "mdi-wall"},
         {"x": 1, "y": 0.55, "rotate": 0, "size": 1.25, "图标": "mdi-wall"},
-        {"x": -0.5, "y": 0.2, "rotate": -15, "size": 0.8, "图标": "mdi-锤子"},
+        {"x": -0.5, "y": 0.2, "rotate": -15, "size": 0.8, "图标": "mdi-hammer"},
         {"x": -0.85, "y": 0.45, "rotate": 0, "size": 1.6, "图标": "mdi-walk"}
     ]},
     {id: 9, collection: '维护安全', 攻击和生命值 x{0}: 2, reward: [
         {name: '生命值', 类型: 'mult', value: 1.3}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'indigo', icons: [
+    ], color: 'indigo', icons: [
         {"x": -0.7, "y": 0, "rotate": 0, "size": 2.5, "图标": "mdi-home"},
         {"x": 0.7, "y": 0, "rotate": 0, "size": 2.5, "图标": "mdi-home"},
         {"x": 0.3, "y": -0.5, "rotate": 0, "size": 1, "图标": "mdi-cctv"}
     ]},
     {id: 10, collection: '维护安全', 攻击和生命值 x{0}: 2, reward: [
-        {name: '复活', 类型: '基础 {0}', value: 1}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '绿色', icons: [
+        {name: '复活', 类型: '基础', value: 1}
+    ], color: '绿色', icons: [
         {"x": -0.75, "y": 0, "rotate": 20, "size": 0.75, "图标": "mdi-leaf"},
         {"x": 0.85, "y": 0.5, "rotate": -45, "size": 0.8, "图标": "mdi-leaf"},
         {"x": -0.4, "y": -0.05, "rotate": -105, "size": 0.85, "图标": "mdi-leaf"},
         {"x": 0.3, "y": -0.6, "rotate": 0, "size": 1.25, "图标": "mdi-mushroom"},
-        {"x": -0.3, "y": 0.7, "rotate": 0, "size": 2, "图标": "mdi-书籍-open-page-variant-outline"},
-        {"x": -0.55, "y": 0.7, "rotate": 0, "size": 0.6, "图标": "mdi-mushroom-嘲讽模式已关闭"}
+        {"x": -0.3, "y": 0.7, "rotate": 0, "size": 2, "图标": "mdi-book-open-page-variant-outline"},
+        {"x": -0.55, "y": 0.7, "rotate": 0, "size": 0.6, "图标": "mdi-mushroom-off"}
     ]},
     {id: 11, collection: '维护安全', 攻击和生命值 x{0}: 2, reward: [
-        {name: '重生时间', 类型: '基础 {0}', value: -60}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '黄色', icons: [
+        {name: '重生时间', 类型: '基础', value: -60}
+    ], color: '黄色', icons: [
         {"x": 0, "y": 0.24, "rotate": 0, "size": 1.55, "图标": "mdi-fence-electric"},
         {"x": -0.75, "y": 0.24, "rotate": 0, "size": 1.5, "图标": "mdi-fence"},
         {"x": 0.75, "y": 0.24, "rotate": 0, "size": 1.5, "图标": "mdi-fence"},
         {"x": 0.7, "y": -0.35, "rotate": 0, "size": 1.25, "图标": "mdi-horse"},
         {"x": -0.55, "y": -0.45, "rotate": 0, "size": 1.25, "图标": "mdi-donkey"},
-        {"x": 0.3, "y": -1, "rotate": 0, "size": 0.9, "图标": "mdi-狗-side"}
+        {"x": 0.3, "y": -1, "rotate": 0, "size": 0.9, "图标": "mdi-dog-side"}
     ]},
     {id: 12, collection: '危险武器', 攻击和生命值 x{0}: 2, reward: [
-        {name: '暴击率', 类型: '基础 {0}', value: 0.05},
-        {name: '暴击伤害', 类型: '基础 {0}', value: 0.1}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙红色油漆', icons: [
-        {"x": 0, "y": 0, "rotate": 0, "size": 3, "图标": "mdi-炸弹"},
-        {"x": -0.55, "y": -0.4, "rotate": -25, "size": 1.25, "图标": "mdi-炸弹"},
-        {"x": -0.8, "y": 0.2, "rotate": -140, "size": 1.25, "图标": "mdi-炸弹"},
-        {"x": -0.65, "y": 0.65, "rotate": -125, "size": 1.25, "图标": "mdi-炸弹"},
-        {"x": -0.1, "y": 0.95, "rotate": 135, "size": 1.25, "图标": "mdi-炸弹"},
-        {"x": 0.45, "y": 0.85, "rotate": 95, "size": 1.25, "图标": "mdi-炸弹"},
-        {"x": 0.75, "y": 0.3, "rotate": 20, "size": 1.25, "图标": "mdi-炸弹"}
+        {name: '暴击率', 类型: '基础', value: 0.05},
+        {name: '暴击伤害', 类型: '基础', value: 0.1}
+    ], color: 'deep-橙色', icons: [
+        {"x": 0, "y": 0, "rotate": 0, "size": 3, "图标": "mdi-bomb"},
+        {"x": -0.55, "y": -0.4, "rotate": -25, "size": 1.25, "图标": "mdi-bomb"},
+        {"x": -0.8, "y": 0.2, "rotate": -140, "size": 1.25, "图标": "mdi-bomb"},
+        {"x": -0.65, "y": 0.65, "rotate": -125, "size": 1.25, "图标": "mdi-bomb"},
+        {"x": -0.1, "y": 0.95, "rotate": 135, "size": 1.25, "图标": "mdi-bomb"},
+        {"x": 0.45, "y": 0.85, "rotate": 95, "size": 1.25, "图标": "mdi-bomb"},
+        {"x": 0.75, "y": 0.3, "rotate": 20, "size": 1.25, "图标": "mdi-bomb"}
     ]},
     {id: 13, collection: '危险武器', 攻击和生命值 x{0}: 1, reward: [
         {name: '攻击', 类型: 'mult', value: 1.15},
-        {name: '暴击伤害', 类型: '基础 {0}', value: 0.35}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '紫色', icons: [
-        {"x": -0.5, "y": 0.6, "rotate": 0, "size": 1.65, "图标": "mdi-三角形"},
-        {"x": 0, "y": 0.25, "rotate": 15, "size": 2.1, "图标": "mdi-烟花"},
+        {name: '暴击伤害', 类型: '基础', value: 0.35}
+    ], color: '紫色', icons: [
+        {"x": -0.5, "y": 0.6, "rotate": 0, "size": 1.65, "图标": "mdi-triangle"},
+        {"x": 0, "y": 0.25, "rotate": 15, "size": 2.1, "图标": "mdi-firework"},
         {"x": 0.1, "y": 0.7, "rotate": 0, "size": 1, "图标": "mdi-human-handsup"}
     ]},
     {id: 14, collection: '危险武器', 攻击和生命值 x{0}: 2, reward: [
         {name: '攻击', 类型: 'mult', value: 1.05},
-        {name: 'Boss要求', 类型: '基础 {0}', value: -3}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅蓝色油漆', icons: [
+        {name: '击败 {0} (+{1})要求', 类型: '基础', value: -3}
+    ], color: '光-blue', icons: [
         {"x": 0, "y": 0, "rotate": 15, "size": 2.75, "图标": "mdi-sword"},
-        {"x": -0.45, "y": -0.2, "rotate": -70, "size": 1, "图标": "mdi-矩形"},
-        {"x": -0.55, "y": 0.15, "rotate": -70, "size": 1, "图标": "mdi-矩形"},
-        {"x": -0.68, "y": 0.48, "rotate": -160, "size": 0.6, "图标": "mdi-三角形"}
+        {"x": -0.45, "y": -0.2, "rotate": -70, "size": 1, "图标": "mdi-rectangle"},
+        {"x": -0.55, "y": 0.15, "rotate": -70, "size": 1, "图标": "mdi-rectangle"},
+        {"x": -0.68, "y": 0.48, "rotate": -160, "size": 0.6, "图标": "mdi-triangle"}
     ]},
     {id: 15, collection: '危险武器', 攻击和生命值 x{0}: 3, reward: [
-        {name: '中毒', 类型: '基础 {0}', value: 0.01}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '绿色', icons: [
+        {name: '中毒', 类型: '基础', value: 0.01}
+    ], color: '绿色', icons: [
         {"x": -0.85, "y": 0.45, "rotate": 0, "size": 1.25, "图标": "mdi-bottle-tonic-skull"},
         {"x": 0.3, "y": 0, "rotate": 0, "size": 2.1, "图标": "mdi-bow-arrow"},
-        {"x": 0.8, "y": -0.1, "rotate": 0, "size": 0.65, "图标": "mdi-水"}
+        {"x": 0.8, "y": -0.1, "rotate": 0, "size": 0.65, "图标": "mdi-water"}
     ]},
     {id: 16, collection: '危险武器', 攻击和生命值 x{0}: 3, reward: [
-        {name: '先发制人', 类型: '基础 {0}', value: 0.8},
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '粉色', icons: [
+        {name: '先发制人', 类型: '基础', value: 0.8},
+    ], color: '粉色', icons: [
         {"x": 0, "y": 0, "rotate": 0, "size": 1.75, "图标": "mdi-rocket-launch"},
         {"x": -0.5, "y": -0.5, "rotate": 0, "size": 1, "图标": "mdi-rocket-launch"},
         {"x": 0.5, "y": 0.5, "rotate": 0, "size": 1, "图标": "mdi-rocket-launch"},
@@ -144,72 +144,72 @@
     ]},
     {id: 17, collection: '危险武器', 攻击和生命值 x{0}: 2, reward: [
         {name: '攻击', 类型: 'mult', value: 1.35}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '红色', icons: [
+    ], color: '红色', icons: [
         {"x": 0, "y": 0.55, "rotate": 0, "size": 2.75, "图标": "mdi-human-handsup"},
-        {"x": -0.35, "y": -0.3, "rotate": 0, "size": 1.25, "图标": "mdi-斧子-battle"},
-        {"x": -0.6, "y": 0, "rotate": 180, "size": 1.25, "图标": "mdi-斧子-battle"},
-        {"x": 0.35, "y": -0.3, "rotate": 270, "size": 1.25, "图标": "mdi-斧子-battle"},
-        {"x": 0.65, "y": 0, "rotate": 90, "size": 1.25, "图标": "mdi-斧子-battle"}
+        {"x": -0.35, "y": -0.3, "rotate": 0, "size": 1.25, "图标": "mdi-axe-battle"},
+        {"x": -0.6, "y": 0, "rotate": 180, "size": 1.25, "图标": "mdi-axe-battle"},
+        {"x": 0.35, "y": -0.3, "rotate": 270, "size": 1.25, "图标": "mdi-axe-battle"},
+        {"x": 0.65, "y": 0, "rotate": 90, "size": 1.25, "图标": "mdi-axe-battle"}
     ]},
     {id: 18, collection: '危险武器', 攻击和生命值 x{0}: 3, reward: [
-        {name: '暴击率', 类型: '基础 {0}', value: 0.1},
+        {name: '暴击率', 类型: '基础', value: 0.1},
         {name: '装备几率', 类型: 'mult', value: 1.25}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-黄色', icons: [
-        {"x": 0, "y": 0.65, "rotate": 0, "size": 2, "图标": "mdi-书籍-open-variant"},
+    ], color: 'pale-黄色', icons: [
+        {"x": 0, "y": 0.65, "rotate": 0, "size": 2, "图标": "mdi-book-open-variant"},
         {"x": -0.2, "y": -0.3, "rotate": 20, "size": 1.65, "图标": "mdi-hand-front-left"},
         {"x": 0.4, "y": -0.4, "rotate": -60, "size": 2, "图标": "mdi-pen"}
     ]},
     {id: 19, collection: '危险武器', 攻击和生命值 x{0}: 3, reward: [
-        {name: 'Boss要求', 类型: '基础 {0}', value: -2},
-        {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: 1.12}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色', icons: [
-        {"x": -0.7, "y": 0, "rotate": 0, "size": 1, "图标": "mdi-碗"},
+        {name: '击败 {0} (+{1})要求', 类型: '基础', value: -2},
+        {name: '腐败的灵魂增益', 类型: 'mult', value: 1.12}
+    ], color: '棕色', icons: [
+        {"x": -0.7, "y": 0, "rotate": 0, "size": 1, "图标": "mdi-bowl"},
         {"x": -0.2, "y": 0.15, "rotate": 0, "size": 2, "图标": "mdi-minus"},
         {"x": 0.45, "y": 0.15, "rotate": 0, "size": 2, "图标": "mdi-minus"},
-        {"x": 0.2, "y": -0.4, "rotate": 90, "size": 1, "图标": "mdi-矩形"},
-        {"x": 0.2, "y": -0.05, "rotate": 90, "size": 1, "图标": "mdi-矩形"},
-        {"x": 0.2, "y": 0.1, "rotate": 90, "size": 1, "图标": "mdi-矩形"},
-        {"x": -0.1, "y": 0.3, "rotate": 0, "size": 0.5, "图标": "mdi-圆形"},
-        {"x": 0.45, "y": 0.3, "rotate": 0, "size": 0.5, "图标": "mdi-圆形"},
-        {"x": -0.7, "y": -0.2, "rotate": 0, "size": 1, "图标": "mdi-圆形"}
+        {"x": 0.2, "y": -0.4, "rotate": 90, "size": 1, "图标": "mdi-rectangle"},
+        {"x": 0.2, "y": -0.05, "rotate": 90, "size": 1, "图标": "mdi-rectangle"},
+        {"x": 0.2, "y": 0.1, "rotate": 90, "size": 1, "图标": "mdi-rectangle"},
+        {"x": -0.1, "y": 0.3, "rotate": 0, "size": 0.5, "图标": "mdi-circle"},
+        {"x": 0.45, "y": 0.3, "rotate": 0, "size": 0.5, "图标": "mdi-circle"},
+        {"x": -0.7, "y": -0.2, "rotate": 0, "size": 1, "图标": "mdi-circle"}
     ]},
     {id: 20, collection: '危险武器', 攻击和生命值 x{0}: 3, reward: [
         {name: '装备几率', 类型: 'mult', value: 1.25},
-        {name: 'HordeSoulCorrupted容量', 类型: 'mult', value: 1.15}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-粉色', icons: [
+        {name: '腐败的灵魂容量', 类型: 'mult', value: 1.15}
+    ], color: 'pale-粉色', icons: [
         {"x": -0.15, "y": 0.2, "rotate": 0, "size": 2, "图标": "mdi-human"},
         {"x": 0.4, "y": 0, "rotate": 0, "size": 1, "图标": "mdi-pistol"},
         {"x": 0.42, "y": -0.2, "rotate": 45, "size": 1, "图标": "mdi-knife-military"}
     ]},
     {id: 21, collection: '危险武器', 攻击和生命值 x{0}: 2, reward: [
-        {name: 'HordeMonsterPart增益', 类型: 'mult', value: 1.3},
-        {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: 1.2}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '金色油漆', icons: [
-        {"x": 0.3, "y": -0.85, "rotate": 0, "size": 1.45, "图标": "mdi-white-平衡-sunny"},
+        {name: '怪物零件增益', 类型: 'mult', value: 1.3},
+        {name: '腐败的灵魂增益', 类型: 'mult', value: 1.2}
+    ], color: '金色', icons: [
+        {"x": 0.3, "y": -0.85, "rotate": 0, "size": 1.45, "图标": "mdi-white-balance-sunny"},
         {"x": -0.3, "y": -0.25, "rotate": -45, "size": 2, "图标": "mdi-minus"},
         {"x": -0.75, "y": 0.1, "rotate": 0, "size": 1, "图标": "mdi-mirror"},
         {"x": -0.3, "y": 0.45, "rotate": 45, "size": 2, "图标": "mdi-minus"},
         {"x": 0.2, "y": 0.55, "rotate": 10, "size": 1, "图标": "mdi-fire"}
     ]},
     {id: 22, collection: '危险武器', 攻击和生命值 x{0}: 2, reward: [
-        {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: 1.22},
-        {name: 'HordeSoulCorrupted容量', 类型: 'mult', value: 1.22}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '樱桃色', icons: [
+        {name: '腐败的灵魂增益', 类型: 'mult', value: 1.22},
+        {name: '腐败的灵魂容量', 类型: 'mult', value: 1.22}
+    ], color: '樱桃色', icons: [
         {"x": -0.85, "y": 0, "rotate": 0, "size": 1.5, "图标": "mdi-logout"},
         {"x": 0, "y": 0, "rotate": 0, "size": 1.25, "图标": "mdi-saw-blade"},
         {"x": 0.9, "y": 0, "rotate": 25, "size": 1.25, "图标": "mdi-saw-blade"}
     ]},
     {id: 23, collection: '危险武器', 攻击和生命值 x{0}: 0, reward: [
-        {name: '中毒', 类型: '基础 {0}', value: 0.025}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'lime', icons: [
-        {"x": 0, "y": -0.2, "rotate": 0, "size": 2.5, "图标": "mdi-flask-在这里你可以看到当前配方是否是新的（之前没有成功过）"},
+        {name: '中毒', 类型: '基础', value: 0.025}
+    ], color: 'lime', icons: [
+        {"x": 0, "y": -0.2, "rotate": 0, "size": 2.5, "图标": "mdi-flask-empty"},
         {"x": 0.05, "y": 0.45, "rotate": -90, "size": 1.25, "图标": "mdi-motion"},
         {"x": -0.3, "y": 0.45, "rotate": -90, "size": 1, "图标": "mdi-motion"},
         {"x": 0.35, "y": 0.45, "rotate": -90, "size": 0.75, "图标": "mdi-motion"}
     ]},
     {id: 24, collection: '供应与支持', 攻击和生命值 x{0}: 3, reward: [
         {name: '受到的物理伤害', 类型: 'mult', value: 1 / 1.25}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'wooden', icons: [
+    ], color: 'wooden', icons: [
         {"x": 0, "y": -0.2, "rotate": 0, "size": 3, "图标": "mdi-tree"},
         {"x": 0.03, "y": 0.5, "rotate": 90, "size": 3, "图标": "mdi-minus"},
         {"x": -0.2, "y": 0.55, "rotate": 0, "size": 1.25, "图标": "mdi-hiking"},
@@ -217,67 +217,67 @@
     ]},
     {id: 25, collection: '供应与支持', 攻击和生命值 x{0}: 5, reward: [
         {name: '精通点数增益', 类型: 'mult', value: 1.2}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '绿色', icons: [
+    ], color: '绿色', icons: [
         {"x": 0.1, "y": -0.15, "rotate": 0, "size": 1.25, "图标": "mdi-meditation"},
         {"x": 0.85, "y": 0.15, "rotate": 0, "size": 1.95, "图标": "mdi-tree"},
         {"x": -0.3, "y": -0.75, "rotate": 0, "size": 1.5, "图标": "mdi-tree"},
         {"x": -0.7, "y": 0.05, "rotate": 0, "size": 1.8, "图标": "mdi-pine-tree"},
-        {"x": 0.5, "y": -0.75, "rotate": 0, "size": 0.6, "图标": "mdi-草"},
-        {"x": -0.35, "y": 0.85, "rotate": 0, "size": 0.8, "图标": "mdi-草"},
-        {"x": 0.4, "y": 0.75, "rotate": 0, "size": 0.75, "图标": "mdi-草"}
+        {"x": 0.5, "y": -0.75, "rotate": 0, "size": 0.6, "图标": "mdi-grass"},
+        {"x": -0.35, "y": 0.85, "rotate": 0, "size": 0.8, "图标": "mdi-grass"},
+        {"x": 0.4, "y": 0.75, "rotate": 0, "size": 0.75, "图标": "mdi-grass"}
     ]},
     {id: 26, collection: '供应与支持', 攻击和生命值 x{0}: 3, reward: [
-        {name: 'HordeSoulCorrupted容量', 类型: 'mult', value: 1.1},
-        {name: 'HordeBone容量', 类型: 'mult', value: 1.15}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '光-灰色', icons: [
+        {name: '腐败的灵魂容量', 类型: 'mult', value: 1.1},
+        {name: '骨头容量', 类型: 'mult', value: 1.15}
+    ], color: '光-灰色', icons: [
         {"x": 0, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-human-handsdown"},
         {"x": 0.4, "y": 0.1, "rotate": 80, "size": 1.75, "图标": "mdi-minus"},
         {"x": 0.5, "y": 0.45, "rotate": 0, "size": 1, "图标": "mdi-minus-thick"},
-        {"x": 0.6, "y": 0.3, "rotate": 0, "size": 0.4, "图标": "mdi-alarm-光"},
+        {"x": 0.6, "y": 0.3, "rotate": 0, "size": 0.4, "图标": "mdi-alarm-light"},
         {"x": 0.6, "y": -0.05, "rotate": 0, "size": 0.75, "图标": "mdi-exclamation-thick"},
-        {"x": -0.45, "y": 0.95, "rotate": 0, "size": 0.75, "图标": "mdi-矿山"}
+        {"x": -0.45, "y": 0.95, "rotate": 0, "size": 0.75, "图标": "mdi-mine"}
     ]},
     {id: 27, collection: '供应与支持', 攻击和生命值 x{0}: 4, reward: [
-        {name: '怀旧之情', 类型: '基础 {0}', value: 20}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'dark-蓝色油漆', icons: [
+        {name: '怀旧之情', 类型: '基础', value: 20}
+    ], color: 'dark-blue', icons: [
         {"x": -0.65, "y": 0.25, "rotate": 0, "size": 1.55, "图标": "mdi-walk"},
-        {"x": -0.2, "y": 0.1, "rotate": -10, "size": 1, "图标": "mdi-护盾"},
+        {"x": -0.2, "y": 0.1, "rotate": -10, "size": 1, "图标": "mdi-shield"},
         {"x": 0.6, "y": -0.15, "rotate": 160, "size": 1, "图标": "mdi-motion"}
     ]},
     {id: 28, collection: '供应与支持', 攻击和生命值 x{0}: 4, reward: [
-        {name: '传家宝几率', 类型: '基础 {0}', value: 0.03}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '黄色', icons: [
-        {"x": 0, "y": 0.25, "rotate": 180, "size": 5, "图标": "mdi-dome-光"},
+        {name: '传家宝几率', 类型: '基础', value: 0.03}
+    ], color: '黄色', icons: [
+        {"x": 0, "y": 0.25, "rotate": 180, "size": 5, "图标": "mdi-dome-light"},
         {"x": -0.2, "y": 0.15, "rotate": 0, "size": 1.25, "图标": "mdi-human-handsdown"},
         {"x": 0.3, "y": 0.2, "rotate": 0, "size": 1.15, "图标": "mdi-human-greeting"}
     ]},
     {id: 29, collection: '供应与支持', 攻击和生命值 x{0}: 4, reward: [
-        {name: '暴击伤害', 类型: '基础 {0}', value: 0.25},
+        {name: '暴击伤害', 类型: '基础', value: 0.25},
         {name: '精通点数增益', 类型: 'mult', value: 1.3}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '粉色-紫色', icons: [
+    ], color: '粉色-紫色', icons: [
         {"x": 0, "y": 0.4, "rotate": 0, "size": 3, "图标": "mdi-desktop-classic"},
-        {"x": 0, "y": 0.12, "rotate": 20, "size": 1, "图标": "mdi-雷达"},
+        {"x": 0, "y": 0.12, "rotate": 20, "size": 1, "图标": "mdi-radar"},
         {"x": 0.25, "y": -0.6, "rotate": 0, "size": 1.25, "图标": "mdi-antenna"}
     ]},
     {id: 30, collection: '供应与支持', 攻击和生命值 x{0}: 3, reward: [
-        {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: 1.15},
-        {name: '传家宝几率', 类型: '基础 {0}', value: 0.04}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'dark-灰色', icons: [
+        {name: '腐败的灵魂增益', 类型: 'mult', value: 1.15},
+        {name: '传家宝几率', 类型: '基础', value: 0.04}
+    ], color: 'dark-灰色', icons: [
         {"x": -0.15, "y": 0.5, "rotate": 0, "size": 2.5, "图标": "mdi-human-handsdown"},
         {"x": -0.15, "y": -0.2, "rotate": 0, "size": 1.75, "图标": "mdi-incognito"},
         {"x": 0.5, "y": 0.55, "rotate": 15, "size": 1.2, "图标": "mdi-binoculars"}
     ]},
     {id: 31, collection: '反对腐败', 攻击和生命值 x{0}: 5, reward: [
         {name: '腐败', 类型: 'mult', value: 1 / 1.1}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '红色', icons: [
+    ], color: '红色', icons: [
         {"x": 0, "y": 0.6, "rotate": 0, "size": 2.5, "图标": "mdi-sign-pole"},
         {"x": 0, "y": -0.5, "rotate": -20, "size": 1.3, "图标": "mdi-liquid-spot"},
-        {"x": 0, "y": -0.5, "rotate": 0, "size": 2.5, "图标": "mdi-取消"}
+        {"x": 0, "y": -0.5, "rotate": 0, "size": 2.5, "图标": "mdi-cancel"}
     ]},
     {id: 32, collection: '反对腐败', 攻击和生命值 x{0}: 5, reward: [
-        {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: 1.1},
+        {name: '腐败的灵魂增益', 类型: 'mult', value: 1.1},
         {name: '腐败', 类型: 'mult', value: 1 / 1.05}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-绿色', icons: [
+    ], color: 'pale-绿色', icons: [
         {"x": 0, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-filter"},
         {"x": 0, "y": -0.55, "rotate": -85, "size": 1.25, "图标": "mdi-liquid-spot"},
         {"x": 0, "y": 0.7, "rotate": 0, "size": 1, "图标": "mdi-dots-vertical"}
@@ -286,7 +286,7 @@
         {name: '装备几率', 类型: 'mult', value: 2.5},
         {name: '精通点数增益', 类型: 'mult', value: 1.75},
         {name: '腐败', 类型: 'mult', value: 1.15}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'skyblue', icons: [
+    ], color: 'skyblue', icons: [
         {"x": -0.5, "y": 0.4, "rotate": 0, "size": 1.75, "图标": "mdi-washing-machine"},
         {"x": 0.5, "y": 0.4, "rotate": 0, "size": 1.75, "图标": "mdi-tumble-dryer"},
         {"x": -0.5, "y": -0.25, "rotate": 0, "size": 1, "图标": "mdi-basket"},
@@ -295,21 +295,21 @@
     ]},
     {id: 34, collection: '反对腐败', 攻击和生命值 x{0}: 5, reward: [
         {name: '攻击', 类型: 'mult', value: 1.25},
-        {name: '暴击率', 类型: '基础 {0}', value: 0.15},
-        {name: '暴击伤害', 类型: '基础 {0}', value: 0.4},
+        {name: '暴击率', 类型: '基础', value: 0.15},
+        {name: '暴击伤害', 类型: '基础', value: 0.4},
         {name: '腐败', 类型: 'mult', value: 1.15}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色', icons: [
+    ], color: '橙色', icons: [
         {"x": 0, "y": 0.5, "rotate": 30, "size": 1.5, "图标": "mdi-liquid-spot"},
         {"x": 0.4, "y": 0.5, "rotate": -45, "size": 1.5, "图标": "mdi-liquid-spot"},
         {"x": 0.2, "y": 0.05, "rotate": 0, "size": 1.75, "图标": "mdi-ghost"},
         {"x": -0.25, "y": -0.5, "rotate": -20, "size": 1.2, "图标": "mdi-fire"},
-        {"x": -0.6, "y": 0.25, "rotate": 30, "size": 1.95, "图标": "mdi-火炬"}
+        {"x": -0.6, "y": 0.25, "rotate": 30, "size": 1.95, "图标": "mdi-torch"}
     ]},
     {id: 35, collection: '反对腐败', 攻击和生命值 x{0}: 5, reward: [
-        {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: 1.4},
-        {name: 'HordeSoulCorrupted容量', 类型: 'mult', value: 1.4},
+        {name: '腐败的灵魂增益', 类型: 'mult', value: 1.4},
+        {name: '腐败的灵魂容量', 类型: 'mult', value: 1.4},
         {name: '腐败', 类型: 'mult', value: 1.15}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '粉色', icons: [
+    ], color: '粉色', icons: [
         {"x": -0.65, "y": 0.4, "rotate": 180, "size": 3, "图标": "mdi-alpha-t"},
         {"x": -0.45, "y": 0, "rotate": 120, "size": 2, "图标": "mdi-flashlight"},
         {"x": 0.35, "y": 0.4, "rotate": 30, "size": 2, "图标": "mdi-minus"},
@@ -317,10 +317,10 @@
     ]},
     {id: 36, collection: '反对腐败', 攻击和生命值 x{0}: 5, reward: [
         {name: '生命值', 类型: 'mult', value: 2},
-        {name: '分裂盾', 类型: '基础 {0}', value: 10},
-        {name: '复活', 类型: '基础 {0}', value: 1},
+        {name: '分裂盾', 类型: '基础', value: 10},
+        {name: '复活', 类型: '基础', value: 1},
         {name: '腐败', 类型: 'mult', value: 1.15}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-紫色', icons: [
+    ], color: 'pale-紫色', icons: [
         {"x": 0, "y": -0.9, "rotate": 0, "size": 1.5, "图标": "mdi-arrow-collapse-down"},
         {"x": 0, "y": 0.15, "rotate": 15, "size": 1.25, "图标": "mdi-liquid-spot"},
         {"x": -0.5, "y": 0.5, "rotate": 0, "size": 3, "图标": "mdi-minus"},
@@ -328,48 +328,48 @@
     ]},
     {id: 37, collection: '反对腐败', 攻击和生命值 x{0}: 7, reward: [
         {name: '腐败', 类型: 'mult', value: 1.15}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色', icons: [
+    ], color: '棕色', icons: [
         {"x": 0.25, "y": -0.6, "rotate": 0, "size": 1.75, "图标": "mdi-truck-cargo-container"},
         {"x": -0.7, "y": 0.45, "rotate": 0, "size": 1.5, "图标": "mdi-trash-can"},
-        {"x": -0.15, "y": 0.45, "rotate": 0, "size": 1.5, "图标": "mdi-从地块上移除作物。 消耗的资源不予退还-在这里你可以看到当前配方是否是新的（之前没有成功过）"},
+        {"x": -0.15, "y": 0.45, "rotate": 0, "size": 1.5, "图标": "mdi-delete-empty"},
         {"x": 0.45, "y": 0.6, "rotate": 0, "size": 0.8, "图标": "mdi-sack"},
         {"x": 0.85, "y": 0.6, "rotate": 0, "size": 0.8, "图标": "mdi-sack"}
     ]},
     {id: 38, collection: '反对腐败', 攻击和生命值 x{0}: 0, reward: [
         {name: '腐败', 类型: 'mult', value: 2}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '紫色', icons: [
+    ], color: '紫色', icons: [
         {"x": -0.39, "y": 0, "rotate": 0, "size": 3, "图标": "mdi-pot-mix"},
-        {"x": -0.39, "y": 0.65, "rotate": 0, "size": 2.35, "图标": "mdi-正方形-rounded"},
+        {"x": -0.39, "y": 0.65, "rotate": 0, "size": 2.35, "图标": "mdi-square-rounded"},
         {"x": -0.4, "y": -0.3, "rotate": -20, "size": 1, "图标": "mdi-mushroom"},
-        {"x": -0.75, "y": -0.1, "rotate": -45, "size": 1, "图标": "mdi-羽毛"},
+        {"x": -0.75, "y": -0.1, "rotate": -45, "size": 1, "图标": "mdi-feather"},
         {"x": 0.8, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-candle"}
     ]},
     {id: 39, collection: '反对腐败', 攻击和生命值 x{0}: 5, reward: [
-        {name: '先发制人', 类型: '基础 {0}', value: 6.75},
-        {name: 'Boss要求', 类型: '基础 {0}', value: -25},
+        {name: '先发制人', 类型: '基础', value: 6.75},
+        {name: '击败 {0} (+{1})要求', 类型: '基础', value: -25},
         {name: '重生时间', 类型: 'mult', value: 0.2},
         {name: '腐败', 类型: 'mult', value: 1.15}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '青色', icons: [
+    ], color: '青色', icons: [
         {"x": 0.3, "y": -0.1, "rotate": 0, "size": 2, "图标": "mdi-vacuum"},
         {"x": -0.5, "y": -0.1, "rotate": 0, "size": 2, "图标": "mdi-walk"},
         {"x": 0.85, "y": 0.55, "rotate": 25, "size": 1, "图标": "mdi-liquid-spot"},
         {"x": 0.6, "y": 0.65, "rotate": 150, "size": 1, "图标": "mdi-liquid-spot"}
     ]},
     {id: 40, collection: '反对腐败', 攻击和生命值 x{0}: 5, reward: [
-        {name: '传家宝几率', 类型: '基础 {0}', value: 0.1},
+        {name: '传家宝几率', 类型: '基础', value: 0.1},
         {name: '怀旧之情', 类型: 'mult', value: 2},
         {name: '腐败', 类型: 'mult', value: 1.15}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅绿色油漆', icons: [
-        {"x": -0.2, "y": -0.6, "rotate": 125, "size": 2.5, "图标": "mdi-flask-round-bottom-在这里你可以看到当前配方是否是新的（之前没有成功过）"},
-        {"x": 0.25, "y": -0.05, "rotate": 0, "size": 0.8, "图标": "mdi-水"},
-        {"x": 0.25, "y": 0.4, "rotate": 0, "size": 0.6, "图标": "mdi-水"},
+    ], color: '光-绿色', icons: [
+        {"x": -0.2, "y": -0.6, "rotate": 125, "size": 2.5, "图标": "mdi-flask-round-bottom-empty"},
+        {"x": 0.25, "y": -0.05, "rotate": 0, "size": 0.8, "图标": "mdi-water"},
+        {"x": 0.25, "y": 0.4, "rotate": 0, "size": 0.6, "图标": "mdi-water"},
         {"x": 0.45, "y": 0.9, "rotate": 50, "size": 1, "图标": "mdi-liquid-spot"},
         {"x": 0.25, "y": 0.9, "rotate": -65, "size": 1, "图标": "mdi-liquid-spot"},
         {"x": 0, "y": 0.9, "rotate": 20, "size": 1, "图标": "mdi-liquid-spot"}
     ]},
     {id: 41, collection: '反对腐败', 攻击和生命值 x{0}: 0, reward: [
         {name: '腐败', 类型: 'mult', value: 5}
-    ], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色-红色', icons: [
+    ], color: '橙色-红色', icons: [
         {"x": 0, "y": 0.2, "rotate": 0, "size": 3, "图标": "mdi-microwave"},
         {"x": -0.25, "y": 0.4, "rotate": -170, "size": 1, "图标": "mdi-liquid-spot"},
         {"x": 0, "y": -0.5, "rotate": 0, "size": 1, "图标": "mdi-alert"}

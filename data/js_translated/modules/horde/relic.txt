@@ -1,34 +1,34 @@
 {
-    被遗忘的盾牌: {图标: 'mdi-护盾-太阳药水', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-浅蓝色油漆', 效果: [
-        {name: 'horde_resilience', 类型: 'keepUpgrade', value: true},
-        {name: 'horde_rest', 类型: 'keepUpgrade', value: true}
+    被遗忘的盾牌: {图标: 'mdi-shield-sun', color: 'pale-光-blue', 效果: [
+        {name: '弹力', 类型: '保留', value: true},
+        {name: '休息', 类型: '保留', value: true}
     ]},
-    燃烧的头骨: {图标: 'mdi-skull', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色-红色', 效果: [
-        {name: 'horde_boneBag', 类型: 'keepUpgrade', value: true},
-        {name: 'horde_anger', 类型: 'keepUpgrade', value: true}
+    燃烧的头骨: {图标: 'mdi-skull', color: '橙色-红色', 效果: [
+        {name: '骨袋', 类型: '保留', value: true},
+        {name: '愤怒', 类型: '保留', value: true}
     ]},
-    能量饮料: {图标: 'mdi-bottle-soda', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '黄色', 效果: [
-        {name: 'HordeMonsterPart增益', 类型: '基础 {0}', value: 0.5},
-        {name: 'horde_monsterSoup', 类型: 'keepUpgrade', value: true}
+    能量饮料: {图标: 'mdi-bottle-soda', color: '黄色', 效果: [
+        {name: '怪物零件增益', 类型: '基础', value: 0.5},
+        {name: '怪物汤', 类型: '保留', value: true}
     ]},
-    幸运骰子: {图标: 'mdi-dice-6', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅绿色油漆', 效果: [
-        {name: 'horde_luckyStrike', 类型: 'keepUpgrade', value: true}
+    幸运骰子: {图标: 'mdi-dice-6', color: '光-绿色', 效果: [
+        {name: '幸运一击', 类型: '保留', value: true}
     ]},
-    哑铃: {图标: 'mdi-哑铃', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'indigo', 效果: [
-        {name: 'horde_training', 类型: 'keepUpgrade', value: true}
+    哑铃: {图标: 'mdi-dumbbell', color: 'indigo', 效果: [
+        {name: '训练', 类型: '保留', value: true}
     ]},
-    绷带: {图标: 'mdi-绷带', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-粉色', 效果: [
-        {name: 'horde_thickSkin', 类型: 'keepUpgrade', value: true}
+    绷带: {图标: 'mdi-bandage', color: 'pale-粉色', 效果: [
+        {name: '厚脸皮', 类型: '保留', value: true}
     ]},
-    新背包: {图标: 'mdi-bag-personal', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-橙色', 效果: [
-        {name: 'horde_hoarding', 类型: 'keepUpgrade', value: true},
-        {name: 'horde_plunderSecret', 类型: 'keepUpgrade', value: true}
+    新背包: {图标: 'mdi-bag-personal', color: 'pale-橙色', 效果: [
+        {name: '囤积', 类型: '保留', value: true},
+        {name: '掠夺秘密', 类型: '保留', value: true}
     ]},
-    终极指南: {图标: 'mdi-书籍-multiple', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色', 效果: [
-        {name: 'horde_stabbingGuide', 类型: 'keepUpgrade', value: true},
-        {name: 'horde_dodgingGuide', 类型: 'keepUpgrade', value: true}
+    终极指南: {图标: 'mdi-book-multiple', color: '棕色', 效果: [
+        {name: '刺击指南', 类型: '保留', value: true},
+        {name: '闪避指南', 类型: '保留', value: true}
     ]},
-    破裂的保险箱: {图标: 'mdi-保险箱-正方形', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'darker-灰色', 效果: [
-        {name: 'horde_looting', 类型: 'keepUpgrade', value: true}
+    破裂的保险箱: {图标: 'mdi-safe-square', color: 'darker-灰色', 效果: [
+        {name: '掠夺', 类型: '保留', value: true}
     ]},
 }

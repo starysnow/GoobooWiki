@@ -1,9 +1,8 @@
-export default {
-    
+{
     绳子: {
         图标: 'mdi-lasso',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'beige',
-        price: {village_plantFiber: buildNum(100, 'K')},
+        color: 'beige',
+        price: {植物纤维: buildNum(100, 'K')},
         value: 10,
         减少制作时间至 {0}: 60,
         里程碑: {
@@ -15,8 +14,8 @@ export default {
     },
     木板: {
         图标: 'mdi-view-dashboard-variant',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色',
-        price: {village_wood: buildNum(250, 'K')},
+        color: '棕色',
+        price: {木头: buildNum(250, 'K')},
         value: 22,
         减少制作时间至 {0}: 120,
         里程碑: {
@@ -28,8 +27,8 @@ export default {
     },
     砖块: {
         图标: 'mdi-wall',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '樱桃色',
-        price: {village_stone: buildNum(600, 'K')},
+        color: '樱桃色',
+        price: {石头: buildNum(600, 'K')},
         value: 48,
         减少制作时间至 {0}: 240,
         里程碑: {
@@ -41,8 +40,8 @@ export default {
     },
     螺丝: {
         图标: 'mdi-screw-flat-top',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '光-灰色',
-        price: {village_metal: buildNum(800, 'K')},
+        color: '光-灰色',
+        price: {金属: buildNum(800, 'K')},
         value: 25,
         减少制作时间至 {0}: 120,
         里程碑: {
@@ -54,8 +53,8 @@ export default {
     },
     水瓶: {
         图标: 'mdi-bottle-soda',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '蓝色油漆',
-        price: {village_water: buildNum(1.5, 'M')},
+        color: 'blue',
+        price: {水: buildNum(1.5, '分钟')},
         value: 15,
         减少制作时间至 {0}: 70,
         里程碑: {
@@ -66,9 +65,9 @@ export default {
         }
     },
     鸡尾酒杯: {
-        图标: 'mdi-玻璃-混合物',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅蓝色油漆',
-        price: {village_glass: buildNum(2.5, 'M')},
+        图标: 'mdi-glass-cocktail',
+        color: '光-blue',
+        price: {玻璃: buildNum(2.5, '分钟')},
         value: 50,
         减少制作时间至 {0}: 210,
         里程碑: {
@@ -79,62 +78,57 @@ export default {
         }
     },
     回旋镖: {
-        图标: 'mdi-回旋镖',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '樱桃色',
-        price: {village_hardwood: buildNum(4, 'M')},
+        图标: 'mdi-boomerang',
+        color: '樱桃色',
+        price: {硬木: buildNum(4, '分钟')},
         value: 38,
         减少制作时间至 {0}: 140,
         里程碑: {
             45: {类型: 'changeStat', name: 'value', value: 51},
             360: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 120},
-            
             14500: {类型: 'changeStat', name: 'value', value: 65},
         }
     },
     抛光宝石: {
-        图标: 'mdi-钻石-石头',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '青色',
-        price: {village_gem: buildNum(6.5, 'M')},
+        图标: 'mdi-diamond-stone',
+        color: '青色',
+        price: {宝石: buildNum(6.5, '分钟')},
         value: 36,
         减少制作时间至 {0}: 160,
         里程碑: {
             55: {类型: 'changeStat', name: 'value', value: 47},
             380: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 140},
-            
             13500: {类型: 'changeStat', name: 'value', value: 60},
         }
     },
     油灯: {
-        图标: 'mdi-油-lamp',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-橙色',
-        price: {village_oil: buildNum(10, 'M')},
+        图标: 'mdi-oil-lamp',
+        color: 'pale-橙色',
+        price: {油: buildNum(10, '分钟')},
         value: 51,
         减少制作时间至 {0}: 270,
         里程碑: {
             40: {类型: 'changeStat', name: 'value', value: 65},
             330: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 225},
-            
             12400: {类型: 'changeStat', name: 'value', value: 82},
         }
     },
     淋浴: {
-        图标: 'mdi-淋浴',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-蓝色油漆',
-        price: {village_marble: buildNum(15, 'M')},
+        图标: 'mdi-shower',
+        color: 'pale-blue',
+        price: {大理石: buildNum(15, '分钟')},
         value: 70,
         减少制作时间至 {0}: 360,
         里程碑: {
             40: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 300},
             330: {类型: 'changeStat', name: 'value', value: 90},
-            
             12400: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 250},
         }
     },
-    
     袋子: {
         图标: 'mdi-sack',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-橙色',
-        price: {village_plantFiber: buildNum(1, 'M')},
+        color: 'pale-橙色',
+        price: {植物纤维: buildNum(1, '分钟')},
         value: 18,
         减少制作时间至 {0}: 90,
         里程碑: {
@@ -145,9 +139,9 @@ export default {
         }
     },
     橱柜: {
-        图标: 'mdi-橱柜',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'wooden',
-        price: {village_wood: buildNum(3, 'M')},
+        图标: 'mdi-cupboard',
+        color: 'wooden',
+        price: {木头: buildNum(3, '分钟')},
         value: 33,
         减少制作时间至 {0}: 150,
         里程碑: {
@@ -158,9 +152,9 @@ export default {
         }
     },
     哑铃: {
-        图标: 'mdi-哑铃',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'dark-灰色',
-        price: {village_stone: buildNum(7, 'M')},
+        图标: 'mdi-weight',
+        color: 'dark-灰色',
+        price: {石头: buildNum(7, '分钟')},
         value: 65,
         减少制作时间至 {0}: 300,
         里程碑: {
@@ -172,8 +166,8 @@ export default {
     },
     剪刀: {
         图标: 'mdi-content-cut',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '光-灰色',
-        price: {village_metal: buildNum(8, 'M'), village_wood: buildNum(3, 'M')},
+        color: '光-灰色',
+        price: {金属: buildNum(8, '分钟'), 木头: buildNum(3, '分钟')},
         value: 30,
         减少制作时间至 {0}: 125,
         里程碑: {
@@ -184,9 +178,9 @@ export default {
         }
     },
     草药茶: {
-        图标: 'mdi-茶',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '绿色',
-        price: {village_water: buildNum(12, 'M'), village_plantFiber: buildNum(5, 'M')},
+        图标: 'mdi-tea',
+        color: '绿色',
+        price: {水: buildNum(12, '分钟'), 植物纤维: buildNum(5, '分钟')},
         value: 54,
         减少制作时间至 {0}: 200,
         里程碑: {
@@ -197,9 +191,9 @@ export default {
         }
     },
     杯子: {
-        图标: 'mdi-杯子',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '红色-粉色',
-        price: {village_glass: buildNum(14, 'M'), village_metal: buildNum(11, 'M')},
+        图标: 'mdi-glasses',
+        color: '红色-粉色',
+        price: {玻璃: buildNum(14, '分钟'), 金属: buildNum(11, '分钟')},
         value: 21,
         减少制作时间至 {0}: 80,
         里程碑: {
@@ -209,25 +203,22 @@ export default {
             30000: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 45},
         }
     },
-    
     箭头: {
         图标: 'mdi-arrow-projectile-multiple',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'wooden',
-        price: {village_wood: buildNum(1.25, 'M'), village_stone: buildNum(400, 'K')},
+        color: 'wooden',
+        price: {木头: buildNum(1.25, '分钟'), 石头: buildNum(400, 'K')},
         value: 21,
         减少制作时间至 {0}: 100,
         里程碑: {
             85: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 85},
             400: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 70},
-            
             10000: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 60},
-            
         }
     },
     碗: {
-        图标: 'mdi-碗',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色',
-        price: {village_wood: buildNum(2.5, 'M')},
+        图标: 'mdi-bowl',
+        color: '棕色',
+        price: {木头: buildNum(2.5, '分钟')},
         value: 25,
         减少制作时间至 {0}: 130,
         里程碑: {
@@ -239,8 +230,8 @@ export default {
     },
     链: {
         图标: 'mdi-link-variant',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '光-灰色',
-        price: {village_plantFiber: buildNum(3, 'M'), village_metal: buildNum(1.35, 'M')},
+        color: '光-灰色',
+        price: {植物纤维: buildNum(3, '分钟'), 金属: buildNum(1.35, '分钟')},
         value: 19,
         减少制作时间至 {0}: 70,
         里程碑: {
@@ -251,9 +242,9 @@ export default {
         }
     },
     矛: {
-        图标: 'mdi-矛',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'dark-灰色',
-        price: {village_wood: buildNum(8, 'M'), village_metal: buildNum(1.75, 'M')},
+        图标: 'mdi-spear',
+        color: 'dark-灰色',
+        price: {木头: buildNum(8, '分钟'), 金属: buildNum(1.75, '分钟')},
         value: 26,
         减少制作时间至 {0}: 120,
         里程碑: {
@@ -264,9 +255,9 @@ export default {
         }
     },
     金戒指: {
-        图标: 'mdi-圆形-outline',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '金色油漆',
-        price: {village_metal: buildNum(5, 'M'), village_water: buildNum(750, 'K')},
+        图标: 'mdi-circle-outline',
+        color: '金色',
+        price: {金属: buildNum(5, '分钟'), 水: buildNum(750, 'K')},
         value: 140,
         减少制作时间至 {0}: 600,
         里程碑: {
@@ -275,11 +266,10 @@ export default {
             1800: {类型: 'changeStat', name: 'value', value: 295},
         }
     },
-    
     毒箭: {
         图标: 'mdi-arrow-projectile-multiple',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅绿色油漆',
-        price: {craft_arrows: 5, village_acidVial: 1},
+        color: '光-绿色',
+        price: {craft_arrows: 5, 酸瓶: 1},
         prio: 1,
         value: 850,
         减少制作时间至 {0}: 600,
@@ -290,9 +280,9 @@ export default {
         }
     },
     冰霜长矛: {
-        图标: 'mdi-矛',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '青色',
-        price: {craft_spear: 10, village_snowflake: 1},
+        图标: 'mdi-spear',
+        color: '青色',
+        price: {craft_spear: 10, 雪花: 1},
         prio: 1,
         value: 2200,
         减少制作时间至 {0}: 1500,
@@ -303,9 +293,9 @@ export default {
         }
     },
     麻辣汤: {
-        图标: 'mdi-pot-您使用的是steam版本。 更新是通过 steam 处理的。',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色-红色',
-        price: {craft_bowl: 15, village_plantFiber: buildNum(250, 'M'), village_water: buildNum(35, 'M'), village_chiliBundle: 1},
+        图标: 'mdi-pot-steam',
+        color: '橙色-红色',
+        price: {craft_bowl: 15, 植物纤维: buildNum(250, '分钟'), 水: buildNum(35, '分钟'), 辣椒包: 1},
         prio: 1,
         value: 2550,
         减少制作时间至 {0}: 75,
@@ -317,8 +307,8 @@ export default {
     },
     秒表: {
         图标: 'mdi-timer',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-蓝色油漆',
-        price: {craft_screws: 20, village_metal: buildNum(1.44, 'B'), village_gears: 1},
+        color: 'pale-blue',
+        price: {craft_screws: 20, 金属: buildNum(1.44, 'B'), 齿轮: 1},
         prio: 1,
         value: 8600,
         减少制作时间至 {0}: 3600,
@@ -327,11 +317,9 @@ export default {
             335: {类型: 'changeStat', name: 'value', value: buildNum(12.5, 'K')},
         }
     },
-    
-    
     小宝箱: {
-        图标: 'mdi-宝藏-chest',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-黄色',
+        图标: 'mdi-treasure-chest',
+        color: 'pale-黄色',
         price: {
             craft_rope: lvl => Math.pow(2, lvl) * 60,
             craft_woodenPlanks: lvl => Math.pow(2, lvl) * 30,
@@ -346,64 +334,64 @@ export default {
         减少制作时间至 {0}: 7200
     },
     灌木: {
-        图标: 'mdi-自然药水',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '绿色',
+        图标: 'mdi-nature',
+        color: '绿色',
         price: {
-            village_water: lvl => Math.pow(1.25, lvl) * buildNum(500, 'K'),
+            水: lvl => Math.pow(1.25, lvl) * buildNum(500, 'K'),
             craft_pouch: lvl => getSequence(5, lvl + 1) * 8,
             craft_bowl: lvl => getSequence(2, lvl + 1) * 10
         },
         prio: 1,
         isSpecial: true,
         效果: [
-            {name: 'VillagePlantFiber增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-            {name: 'VillagePlantFiber容量', 类型: '基础 {0}', value: lvl => getSequence(2, lvl) * 500}
+            {name: '植物纤维增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
+            {name: '植物纤维容量', 类型: '基础', value: lvl => getSequence(2, lvl) * 500}
         ],
         减少制作时间至 {0}: 3600
     },
     手锯: {
         图标: 'mdi-hand-saw',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '光-灰色',
+        color: '光-灰色',
         price: {
-            village_metal: lvl => Math.pow(1.25, lvl) * buildNum(1.8, 'M'),
+            金属: lvl => Math.pow(1.25, lvl) * buildNum(1.8, '分钟'),
             craft_weight: lvl => getSequence(3, lvl + 1) * 15
         },
         prio: 1,
         isSpecial: true,
         效果: [
-            {name: 'VillageWood增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-            {name: 'VillageWood容量', 类型: '基础 {0}', value: lvl => getSequence(2, lvl) * 500}
+            {name: '木头增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
+            {name: '木头容量', 类型: '基础', value: lvl => getSequence(2, lvl) * 500}
         ],
         减少制作时间至 {0}: 3600
     },
     车库: {
-        图标: 'mdi-车库-open-variant',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'dark-灰色',
+        图标: 'mdi-garage-open-variant',
+        color: 'dark-灰色',
         price: {
-            village_wood: lvl => Math.pow(1.25, lvl) * buildNum(14, 'M'),
+            木头: lvl => Math.pow(1.25, lvl) * buildNum(14, '分钟'),
             craft_chain: lvl => getSequence(3, lvl + 1) * 15
         },
         prio: 1,
         isSpecial: true,
         效果: [
-            {name: 'VillageStone增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-            {name: 'VillageStone容量', 类型: '基础 {0}', value: lvl => getSequence(2, lvl) * 500}
+            {name: '石头增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
+            {name: '石头容量', 类型: '基础', value: lvl => getSequence(2, lvl) * 500}
         ],
         减少制作时间至 {0}: 3600
     },
     钻石戒指: {
         图标: 'mdi-ring',
-        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '青色',
+        color: '青色',
         price: {
-            village_metal: lvl => Math.pow(1.25, lvl) * buildNum(14, 'M'),
-            village_gem: lvl => Math.pow(1.25, lvl) * buildNum(2, 'M'),
+            金属: lvl => Math.pow(1.25, lvl) * buildNum(14, '分钟'),
+            宝石: lvl => Math.pow(1.25, lvl) * buildNum(2, '分钟'),
             craft_goldenRing: lvl => getSequence(2, lvl) * 5
         },
         prio: 1,
         isSpecial: true,
         效果: [
-            {name: 'VillageCoin增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-            {name: 'VillageCopperCoin增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
+            {name: '金币增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
+            {name: '铜币增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
         ],
         减少制作时间至 {0}: 14400
     },

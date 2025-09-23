@@ -1,4 +1,4 @@
-export default {
+{
     自定义调色板: true,
     光: {
         primary: '#D94712',

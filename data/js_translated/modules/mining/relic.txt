@@ -1,74 +1,74 @@
 {
-    友好的蝙蝠: {图标: 'mdi-bat', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'dark-灰色', 效果: [
-        {name: 'MiningScrap增益', 类型: 'mult', value: 1.25}
+    友好的蝙蝠: {图标: 'mdi-bat', color: 'dark-灰色', 效果: [
+        {name: '废料增益', 类型: 'mult', value: 1.25}
     ]},
-    锤子: {图标: 'mdi-锤子', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色', 效果: [
-        {name: 'mining_craftingStation', 类型: 'keepUpgrade', value: true}
+    锤子: {图标: 'mdi-hammer', color: '棕色', 效果: [
+        {name: '制作站', 类型: '保留', value: true}
     ]},
-    铝砖: {图标: 'mdi-wall', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '蓝色油漆-灰色', 效果: [
-        {name: 'mining_aluminiumCache', 类型: 'keepUpgrade', value: true},
-        {name: 'mining_aluminiumHardening', 类型: 'keepUpgrade', value: true}
+    铝砖: {图标: 'mdi-wall', color: 'blue-灰色', 效果: [
+        {name: '铝存储', 类型: '保留', value: true},
+        {name: '铝淬火', 类型: '保留', value: true}
     ]},
-    铜砖: {图标: 'mdi-wall', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色', 效果: [
-        {name: 'mining_copperCache', 类型: 'keepUpgrade', value: true}
+    铜砖: {图标: 'mdi-wall', color: '橙色', 效果: [
+        {name: '铜存储', 类型: '保留', value: true}
     ]},
-    铝堆: {图标: 'mdi-dots-三角形', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '蓝色油漆-灰色', 效果: [
-        {name: 'mining_aluminiumTanks', 类型: 'keepUpgrade', value: true},
-        {name: 'mining_aluminiumAnvil', 类型: 'keepUpgrade', value: true}
+    铝堆: {图标: 'mdi-dots-triangle', color: 'blue-灰色', 效果: [
+        {name: '铝罐', 类型: '保留', value: true},
+        {name: '铝砧', 类型: '保留', value: true}
     ]},
-    炸弹: {图标: 'mdi-炸弹', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '红色', 效果: [
-        {name: 'mining_hullbreaker', 类型: 'keepUpgrade', value: true}
+    炸弹: {图标: 'mdi-bomb', color: '红色', 效果: [
+        {name: '破壳者', 类型: '保留', value: true}
     ]},
-    铜堆: {图标: 'mdi-dots-三角形', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色', 效果: [
-        {name: 'mining_copperTanks', 类型: 'keepUpgrade', value: true}
+    铜堆: {图标: 'mdi-dots-triangle', color: '橙色', 效果: [
+        {name: '铜罐', 类型: '保留', value: true}
     ]},
-    雷达: {图标: 'mdi-雷达', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅绿色油漆', 效果: [
-        {name: 'mining_depthDweller', 类型: 'keepUpgrade', value: true}
+    雷达: {图标: 'mdi-radar', color: '光-绿色', 效果: [
+        {name: '深度居民', 类型: '保留', value: true}
     ]},
-    报刊: {图标: 'mdi-download', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'deep-紫色', 效果: [
-        {name: 'mining_compressor', 类型: 'keepUpgrade', value: true}
+    报刊: {图标: 'mdi-download', color: 'deep-紫色', 效果: [
+        {name: '压缩机', 类型: '保留', value: true}
     ]},
-    橱柜: {图标: 'mdi-橱柜', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色', 效果: [
-        {name: 'mining_oreSlots', 类型: 'keepUpgrade', value: true}
+    橱柜: {图标: 'mdi-cupboard', color: '棕色', 效果: [
+        {name: '矿石槽位', 类型: '保留', value: true}
     ]},
-    催化剂: {图标: 'mdi-flask', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '青色油漆', 效果: [
-        {name: 'mining_refinery', 类型: 'keepUpgrade', value: true}
+    催化剂: {图标: 'mdi-flask', color: 'teal', 效果: [
+        {name: '精炼厂', 类型: '保留', value: true}
     ]},
-    跳绳: {图标: 'mdi-jump-绳子', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色', 效果: [
-        {name: 'mining_aluminiumExpansion', 类型: 'keepUpgrade', value: true},
-        {name: 'mining_copperExpansion', 类型: 'keepUpgrade', value: true}
+    跳绳: {图标: 'mdi-jump-rope', color: '棕色', 效果: [
+        {name: '铝扩张', 类型: '保留', value: true},
+        {name: '铜扩张', 类型: '保留', value: true}
     ]},
-    青铜镐: {图标: 'mdi-镐子', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '金色油漆', 效果: [
-        {name: 'mining_graniteHardening', 类型: 'keepUpgrade', value: true}
+    青铜镐: {图标: 'mdi-pickaxe', color: '金色', 效果: [
+        {name: '花岗岩硬化', 类型: '保留', value: true}
     ]},
-    矿石架: {图标: 'mdi-window-closed', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色', 效果: [
-        {name: 'mining_oreShelf', 类型: 'keepUpgrade', value: true},
-        {name: 'mining_tinCache', 类型: 'keepUpgrade', value: true}
+    矿石架: {图标: 'mdi-window-closed', color: '棕色', 效果: [
+        {name: '矿石架', 类型: '保留', value: true},
+        {name: '锡存储', 类型: '保留', value: true}
     ]},
-    煤砖: {图标: 'mdi-wall', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'dark-灰色', 效果: [
-        {name: 'mining_furnace', 类型: 'keepUpgrade', value: true}
+    煤砖: {图标: 'mdi-wall', color: 'dark-灰色', 效果: [
+        {name: '熔炉', 类型: '保留', value: true}
     ]},
-    洗衣机: {图标: 'mdi-washing-machine', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'skyblue', 效果: [
-        {name: 'mining_oreWashing', 类型: 'keepUpgrade', value: true}
+    洗衣机: {图标: 'mdi-washing-machine', color: 'skyblue', 效果: [
+        {name: '矿石洗选', 类型: '保留', value: true}
     ]},
-    打开的礼物: {图标: 'mdi-gift-open', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '蓝色油漆', 效果: [
-        {name: 'mining_bronzeCache', 类型: 'keepUpgrade', value: true},
-        {name: 'mining_ironCache', 类型: 'keepUpgrade', value: true}
+    打开的礼物: {图标: 'mdi-gift-open', color: 'blue', 效果: [
+        {name: '青铜存储', 类型: '保留', value: true},
+        {name: '铁存储', 类型: '保留', value: true}
     ]},
-    磁铁: {图标: 'mdi-磁铁', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '红色', 效果: [
-        {name: 'mining_ironExpansion', 类型: 'keepUpgrade', value: true},
-        {name: 'mining_ironHardening', 类型: 'keepUpgrade', value: true},
-        {name: 'mining_ironFilter', 类型: 'keepUpgrade', value: true}
+    磁铁: {图标: 'mdi-magnet', color: '红色', 效果: [
+        {name: '铁扩张', 类型: '保留', value: true},
+        {name: '铁淬火', 类型: '保留', value: true},
+        {name: '铁过滤器', 类型: '保留', value: true}
     ]},
-    铜镐: {图标: 'mdi-镐子', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色', 效果: [
-        {name: 'mining_magnet', 类型: 'keepUpgrade', value: true},
-        {name: 'mining_warehouse', 类型: 'keepUpgrade', value: true}
+    铜镐: {图标: 'mdi-pickaxe', color: '橙色', 效果: [
+        {name: '磁铁', 类型: '保留', value: true},
+        {name: '仓库', 类型: '保留', value: true}
     ]},
-    锡桶: {图标: 'mdi-pail', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '灰色', 效果: [
-        {name: 'mining_titaniumExpansion', 类型: 'keepUpgrade', value: true},
-        {name: 'mining_titaniumCache', 类型: 'keepUpgrade', value: true}
+    锡桶: {图标: 'mdi-pail', color: '灰色', 效果: [
+        {name: '钛扩张', 类型: '保留', value: true},
+        {name: '钛存储', 类型: '保留', value: true}
     ]},
-    一罐蜂蜜: {图标: 'mdi-pot', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '金色油漆', 效果: [
-        {name: '最大树脂', 类型: '基础 {0}', value: 1}
+    一罐蜂蜜: {图标: 'mdi-pot', color: '金色', 效果: [
+        {name: '最大树脂', 类型: '基础', value: 1}
     ]},
 }

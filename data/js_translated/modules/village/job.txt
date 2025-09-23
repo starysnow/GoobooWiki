@@ -1,178 +1,122 @@
 {
-  收集者: {
-    最大值: null,
-    needed: 1,
-    奖励: [{
-      类型: '基础 {0}',
-      name: 'VillagePlantFiber增益',
-      amount: 0.3
-    }, {
-      类型: '基础 {0}',
-      name: 'VillageWood增益',
-      amount: 0.3
-    }, {
-      类型: '基础 {0}',
-      name: 'VillageStone增益',
-      amount: 0.3
-    }]
-  },
-  农夫: {
-    最大值: 0,
-    needed: 2,
-    奖励: [{
-      类型: '基础 {0}',
-      name: 'VillagePlantFiber增益',
-      amount: 2
-    }, {
-      类型: '基础 {0}',
-      name: 'VillageGrain增益',
-      amount: 0.5
-    }]
-  },
-  收割机: {
-    最大值: 0,
-    needed: 2,
-    奖励: [{
-      类型: '基础 {0}',
-      name: 'VillageWood增益',
-      amount: 2
-    }, {
-      类型: '基础 {0}',
-      name: 'VillageFruit增益',
-      amount: 0.5
-    }]
-  },
-  矿工: {
-    最大值: 0,
-    needed: 2,
-    奖励: [{
-      类型: '基础 {0}',
-      name: 'VillageStone增益',
-      amount: 2
-    }, {
-      类型: '基础 {0}',
-      name: 'VillageMetal增益',
-      amount: 0.5
-    }]
-  },
-  井工: {
-    最大值: 0,
-    needed: 3,
-    奖励: [{
-      类型: '基础 {0}',
-      name: 'VillageWater增益',
-      amount: 3
-    }]
-  },
-  图书管理员: {
-    最大值: 0,
-    needed: 4,
-    奖励: [{
-      类型: '基础 {0}',
-      name: 'VillageKnowledge增益',
-      amount: 0.02
-    }]
-  },
-  玻璃吹制工: {
-    最大值: 0,
-    needed: 4,
-    奖励: [{
-      类型: '基础 {0}',
-      name: 'VillageGlass增益',
-      amount: 0.25
-    }]
-  },
-  艺人: {
-    最大值: 0,
-    needed: 5,
-    奖励: [{
-      类型: '基础 {0}',
-      name: '幸福',
-      amount: 0.03
-    }]
-  },
-  伐木工: {
-    最大值: 0,
-    needed: 6,
-    奖励: [{
-      类型: '基础 {0}',
-      name: 'VillageWood增益',
-      amount: 12
-    }, {
-      类型: '基础 {0}',
-      name: 'VillageHardwood增益',
-      amount: 0.25
-    }]
-  },
-  爆破矿工: {
-    最大值: 0,
-    needed: 6,
-    奖励: [{
-      类型: '基础 {0}',
-      name: 'VillageStone增益',
-      amount: 12
-    }, {
-      类型: '基础 {0}',
-      name: 'VillageGem增益',
-      amount: 0.25
-    }]
-  },
-  渔夫: {
-    最大值: 0,
-    needed: 7,
-    奖励: [{
-      类型: '基础 {0}',
-      name: 'VillageFish增益',
-      amount: 30
-    }]
-  },
-  科学家: {
-    最大值: 0,
-    needed: 8,
-    奖励: [{
-      类型: '基础 {0}',
-      name: 'VillageScience增益',
-      amount: 0.008
-    }]
-  },
-  园丁: {
-    最大值: 0,
-    needed: 8,
-    奖励: [{
-      类型: '基础 {0}',
-      name: 'VillagePlantFiber增益',
-      amount: 20
-    }, {
-      类型: '基础 {0}',
-      name: 'VillageVegetable增益',
-      amount: 40
-    }]
-  },
-  石油工人: {
-    最大值: 0,
-    needed: 11,
-    奖励: [{
-      类型: '基础 {0}',
-      name: 'VillageOil增益',
-      amount: 0.35
-    }]
-  },
-  雕塑家: {
-    最大值: 0,
-    needed: 14,
-    奖励: [{
-      类型: '基础 {0}',
-      name: 'VillageMarble增益',
-      amount: 0.001
-    }]
-  },
-  探险家: {
-    最大值: 0,
-    needed: 600,
-    奖励: [{
-      类型: '基础 {0}',
-      name: '战利品增益',
-      amount: 0.5
-    }]
-  }
+    收集者: {
+        最大值: null,
+        needed: 1,
+        奖励: [
+            {类型: '基础', name: '植物纤维增益', amount: 0.3},
+            {类型: '基础', name: '木头增益', amount: 0.3},
+            {类型: '基础', name: '石头增益', amount: 0.3}
+        ]
+    },
+    农夫: {
+        最大值: 0,
+        needed: 2,
+        奖励: [
+            {类型: '基础', name: '植物纤维增益', amount: 2},
+            {类型: '基础', name: '仅粮食增益', amount: 0.5}
+        ]
+    },
+    收割机: {
+        最大值: 0,
+        needed: 2,
+        奖励: [
+            {类型: '基础', name: '木头增益', amount: 2},
+            {类型: '基础', name: '水果增益', amount: 0.5}
+        ]
+    },
+    矿工: {
+        最大值: 0,
+        needed: 2,
+        奖励: [
+            {类型: '基础', name: '石头增益', amount: 2},
+            {类型: '基础', name: '金属增益', amount: 0.5}
+        ]
+    },
+    井工: {
+        最大值: 0,
+        needed: 3,
+        奖励: [
+            {类型: '基础', name: '水增益', amount: 3}
+        ]
+    },
+    图书管理员: {
+        最大值: 0,
+        needed: 4,
+        奖励: [
+            {类型: '基础', name: '知识增益', amount: 0.02}
+        ]
+    },
+    玻璃吹制工: {
+        最大值: 0,
+        needed: 4,
+        奖励: [
+            {类型: '基础', name: '玻璃增益', amount: 0.25}
+        ]
+    },
+    艺人: {
+        最大值: 0,
+        needed: 5,
+        奖励: [
+            {类型: '基础', name: '幸福', amount: 0.03}
+        ]
+    },
+    伐木工: {
+        最大值: 0,
+        needed: 6,
+        奖励: [
+            {类型: '基础', name: '木头增益', amount: 12},
+            {类型: '基础', name: '硬木增益', amount: 0.25}
+        ]
+    },
+    爆破矿工: {
+        最大值: 0,
+        needed: 6,
+        奖励: [
+            {类型: '基础', name: '石头增益', amount: 12},
+            {类型: '基础', name: '宝石增益', amount: 0.25}
+        ]
+    },
+    渔夫: {
+        最大值: 0,
+        needed: 7,
+        奖励: [
+            {类型: '基础', name: '鱼增益', amount: 30}
+        ]
+    },
+    科学家: {
+        最大值: 0,
+        needed: 8,
+        奖励: [
+            {类型: '基础', name: '科学增益', amount: 0.008}
+        ]
+    },
+    园丁: {
+        最大值: 0,
+        needed: 8,
+        奖励: [
+            {类型: '基础', name: '植物纤维增益', amount: 20},
+            {类型: '基础', name: '仅蔬菜增益', amount: 40}
+        ]
+    },
+    石油工人: {
+        最大值: 0,
+        needed: 11,
+        奖励: [
+            {类型: '基础', name: '油增益', amount: 0.35}
+        ]
+    },
+    雕塑家: {
+        最大值: 0,
+        needed: 14,
+        奖励: [
+            {类型: '基础', name: '大理石增益', amount: 0.001}
+        ]
+    },
+    探险家: {
+        最大值: 0,
+        needed: 600,
+        奖励: [
+            {类型: '基础', name: '战利品增益', amount: 0.5}
+        ]
+    }
 }

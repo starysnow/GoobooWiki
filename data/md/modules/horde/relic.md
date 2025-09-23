@@ -1,0 +1,11 @@
+| 名称  | 图标  | color | 效果  |
+| --- | --- | ----- | --- |
+| 被遗忘的盾牌 | mdi-shield-sun | pale-光-blue | [{"name":"弹力","类型":"保留","value":true},{"name":"休息","类型":"保留","value":true}] |
+| 燃烧的头骨 | mdi-skull | 橙色-红色 | [{"name":"骨袋","类型":"保留","value":true},{"name":"愤怒","类型":"保留","value":true}] |
+| 能量饮料 | mdi-bottle-soda | 黄色 | [{"name":"怪物零件增益","类型":"基础","value":0.5},{"name":"怪物汤","类型":"保留","value":true}] |
+| 幸运骰子 | mdi-dice-6 | 光-绿色 | [{"name":"幸运一击","类型":"保留","value":true}] |
+| 哑铃 | mdi-dumbbell | indigo | [{"name":"训练","类型":"保留","value":true}] |
+| 绷带 | mdi-bandage | pale-粉色 | [{"name":"厚脸皮","类型":"保留","value":true}] |
+| 新背包 | mdi-bag-personal | pale-橙色 | [{"name":"囤积","类型":"保留","value":true},{"name":"掠夺秘密","类型":"保留","value":true}] |
+| 终极指南 | mdi-book-multiple | 棕色 | [{"name":"刺击指南","类型":"保留","value":true},{"name":"闪避指南","类型":"保留","value":true}] |
+| 破裂的保险箱 | mdi-safe-square | darker-灰色 | [{"name":"掠夺","类型":"保留","value":true}] |

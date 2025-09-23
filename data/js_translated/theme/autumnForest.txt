@@ -1,22 +1,22 @@
 {
-  包括粒子: true,
-  particles: {
-    icons: ['mdi-leaf', 'mdi-leaf-maple'],
-    colors: ['浅绿色油漆', '黄色', '金色油漆', '橙色', '橙色-红色', '棕色', '樱桃色'],
-    opacity: [20, 70],
-    size: [20, 80],
-    time: [4, 12],
-    amount: 4,
-    rotate: true
-  },
-  光: {
-    primary: '#74401B',
-    secondary: '#424242',
-    accent: '#503D30'
-  },
-  dark: {
-    primary: '#74401B',
-    secondary: '#424242',
-    accent: '#503D30'
-  }
+    包括粒子: true,
+    particles: {
+        icons: ['mdi-leaf', 'mdi-leaf-maple'],
+        colors: ['光-绿色', '黄色', '金色', '橙色', '橙色-红色', '棕色', '樱桃色'],
+        opacity: [20, 70],
+        size: [20, 80],
+        time: [4, 12],
+        amount: 4,
+        rotate: true
+    },
+    光: {
+        primary: '#74401B',
+        secondary: '#424242',
+        accent: '#503D30',
+    },
+    dark: {
+        primary: '#74401B',
+        secondary: '#424242',
+        accent: '#503D30',
+    }
 }

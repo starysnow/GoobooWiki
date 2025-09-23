@@ -1,0 +1,7 @@
+| 名称  | 类型  | item | pool | amount |
+| --- | --- | ---- | ---- | ------ |
+| 波浪 | theme | 波浪 | {"summerFestival":{"price":{"夏季节日代币":240}}} |  |
+| 热带帐篷 | 圣遗物 | 热带帐篷 | {"summerFestival":{"price":{"夏季节日代币":150}}} |  |
+| 水果篮 | 圣遗物 | 水果篮 | {"summerFestival":{"price":{"夏季节日代币":170}}} |  |
+| cardPack_charmingShip | 卡包 | 迷人的船 | {"summerFestival":{"price":{"夏季节日代币":30}}} |  |
+| 热带水 | consumable | 热带水 | {"summerFestival":{"price":{"夏季节日代币":1}}} | 20 |

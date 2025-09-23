@@ -1,47 +1,47 @@
-export default {
-    theme_colorful: {
+{
+    彩色: {
         类型: 'theme',
         item: '彩色',
         pool: {
-            bloom: {price: {event_bloomToken: 180}}
+            bloom: {price: {绽放代币: 180}}
         }
     },
-    relic_colorfulFlower: {
+    七彩花: {
         类型: '圣遗物',
         item: '七彩花',
         requirement() {
             return store.state.解锁.farmFeature.see;
         },
         pool: {
-            bloom: {price: {event_bloomToken: 170}}
+            bloom: {price: {绽放代币: 170}}
         }
     },
-    relic_heatingBulb: {
+    加热灯泡: {
         类型: '圣遗物',
         item: '加热灯泡',
         requirement() {
             return store.state.解锁.灵感.see;
         },
         pool: {
-            bloom: {price: {event_bloomToken: 200}}
+            bloom: {price: {绽放代币: 200}}
         }
     },
     cardPack_greenThumb: {
         类型: '卡包',
         item: '园艺高手',
         pool: {
-            bloom: {price: {event_bloomToken: 30}}
+            bloom: {price: {绽放代币: 30}}
         }
     },
-    farm_superFlower: {
-        类型: '此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？',
-        item: 'farm_superFlower',
+    超级鲜花: {
+        类型: 'consumable',
+        item: '超级鲜花',
         amount: 20,
         requirement() {
             return store.state.解锁.肥料.see;
         },
         pool: {
-            bloom: {price: {event_bloomToken: 1}}
+            bloom: {price: {绽放代币: 1}}
         }
     }
 }

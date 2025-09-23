@@ -1,4 +1,4 @@
-export default {
+{
     name: '回来',
     tickspeed: 1,
     unlockNeeded: 'achievementFeature',
@@ -7,22 +7,22 @@ export default {
     },
     解锁: ['achievementFeature'],
     圣遗物: {
-        挖掘机: {图标: 'mdi-挖掘机', feature: ['回来', '采矿'], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色', 效果: [
-            {name: 'MiningScrap增益', 类型: 'mult', value: 2},
-            {name: 'MiningScrap容量', 类型: 'mult', value: 2}
+        挖掘机: {图标: 'mdi-excavator', feature: ['回来', '采矿'], color: '橙色', 效果: [
+            {name: '废料增益', 类型: 'mult', value: 2},
+            {name: '废料容量', 类型: 'mult', value: 2}
         ]},
-        红牌: {图标: 'mdi-卡片', feature: ['回来', '部落'], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '红色', 效果: [
-            {name: 'HordeMonsterPart容量', 类型: 'bonus', value: buildNum(10, 'K')},
-            {name: '部落卡片容量', 类型: '基础 {0}', value: 1}
+        红牌: {图标: 'mdi-cards', feature: ['回来', '部落'], color: '红色', 效果: [
+            {name: '怪物零件容量', 类型: 'bonus', value: buildNum(10, 'K')},
+            {name: '部落卡片容量', 类型: '基础', value: 1}
         ]},
-        公文包: {图标: 'mdi-公文包', feature: ['回来', '宝藏'], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-蓝色油漆', 效果: [
-            {name: '宝藏插槽', 类型: '基础 {0}', value: 8}
+        公文包: {图标: 'mdi-briefcase', feature: ['回来', '宝藏'], color: 'pale-blue', 效果: [
+            {name: '宝藏插槽', 类型: '基础', value: 8}
         ]},
-        奇怪的植物: {图标: 'mdi-sprout', feature: ['回来', '村庄', '农场'], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-紫色', 效果: [
+        奇怪的植物: {图标: 'mdi-sprout', feature: ['回来', '村庄', '农场'], color: 'pale-紫色', 效果: [
             {name: '材料增益', 类型: 'mult', value: 2},
             {name: '作物增益', 类型: 'mult', value: 2}
         ]},
-        有益的病毒: {图标: 'mdi-virus', feature: ['回来', '采矿', '部落'], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-绿色', 效果: [
+        有益的病毒: {图标: 'mdi-virus', feature: ['回来', '采矿', '部落'], color: 'pale-绿色', 效果: [
             {name: '韧性', 类型: 'mult', value: 0.5},
             {name: '腐败', 类型: 'bonus', value: -0.5}
         ]}

@@ -1,178 +1,178 @@
-export default {
+{
     攻击 +: {price(lvl) {
-        return {horde_bone: Math.pow(lvl * 0.002 + 1.25, lvl) * 175};
+        return {骨头: Math.pow(lvl * 0.002 + 1.25, lvl) * 175};
     }, 效果: [
-        {name: '攻击', 类型: '基础 {0}', value: lvl => lvl},
+        {name: '攻击', 类型: '基础', value: lvl => lvl},
         {name: '攻击', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)}
     ]},
     生命值: {price(lvl) {
-        return {horde_bone: Math.pow(lvl * 0.002 + 1.25, lvl) * 210};
+        return {骨头: Math.pow(lvl * 0.002 + 1.25, lvl) * 210};
     }, 效果: [
-        {name: '生命值', 类型: '基础 {0}', value: lvl => lvl * 150},
+        {name: '生命值', 类型: '基础', value: lvl => lvl * 150},
         {name: '生命值', 类型: 'mult', value: lvl => Math.pow(1.12, lvl)}
     ]},
     训练: {cap: 100, capMult: true, requirementBase, requirementStat, requirementValue: 3, price(lvl) {
-        return {horde_bone: splicedPow(1.35, 2.8, 100, lvl) * 2500};
+        return {骨头: splicedPow(1.35, 2.8, 100, lvl) * 2500};
     }, 效果: [
         {name: '攻击', 类型: 'mult', value: lvl => splicedPowLinear(1.1, 0.1, 100, lvl)},
         {name: '生命值', 类型: 'mult', value: lvl => splicedPowLinear(1.1, 0.1, 100, lvl)}
     ]},
     弹力: {cap: 1, requirementBase, requirementStat, requirementValue: 5, price() {
-        return {horde_bone: buildNum(24, 'K')};
+        return {骨头: buildNum(24, 'K')};
     }, 效果: [
         {name: '生命值', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)},
-        {name: '复活', 类型: '基础 {0}', value: lvl => lvl}
+        {name: '复活', 类型: '基础', value: lvl => lvl}
     ]},
     骨头 +: {requirementBase, requirementStat, requirementValue: 6, price(lvl) {
-        return {horde_bone: Math.pow(lvl * 0.01 + 1.35, lvl) * buildNum(52, 'K')};
+        return {骨头: Math.pow(lvl * 0.01 + 1.35, lvl) * buildNum(52, 'K')};
     }, 效果: [
-        {name: 'HordeBone增益', 类型: 'mult', value: lvl => Math.pow(1.22, lvl)}
+        {name: '骨头增益', 类型: 'mult', value: lvl => Math.pow(1.22, lvl)}
     ]},
     骨袋: {cap: 4, requirementBase, requirementStat, requirementValue: 7, price(lvl) {
-        return {horde_bone: Math.pow(10, lvl) * buildNum(480, 'K')};
+        return {骨头: Math.pow(10, lvl) * buildNum(480, 'K')};
     }, 效果: [
-        {name: 'HordeBone容量', 类型: 'mult', value: lvl => Math.pow(10, lvl)},
-        {name: '装备容量', 类型: '基础 {0}', value: lvl => Math.出现在区域 {0} 或更高区域(1, lvl)}
+        {name: '骨头容量', 类型: 'mult', value: lvl => Math.pow(10, lvl)},
+        {name: '装备容量', 类型: '基础', value: lvl => Math.出现在区域 {0} 或更高区域(1, lvl)}
     ]},
     愤怒: {cap: 10, requirementBase, requirementStat, requirementValue: 9, price(lvl) {
-        return {horde_bone: Math.pow(1.65, lvl) * buildNum(145, 'K')};
+        return {骨头: Math.pow(1.65, lvl) * buildNum(145, 'K')};
     }, 效果: [
         {name: '攻击', 类型: 'mult', value: lvl => Math.pow(1.18, lvl)},
-        {name: '暴击率', 类型: '基础 {0}', value: lvl => lvl * 0.01}
+        {name: '暴击率', 类型: '基础', value: lvl => lvl * 0.01}
     ]},
     休息: {cap: 2, requirementBase, requirementStat, requirementValue: 11, price(lvl) {
-        return {horde_bone: Math.pow(75, lvl) * buildNum(2.6, 'M')};
+        return {骨头: Math.pow(75, lvl) * buildNum(2.6, '分钟')};
     }, 效果: [
         {name: '生命值', 类型: 'mult', value: lvl => lvl * 0.75 + 1},
-        {name: '恢复', 类型: '基础 {0}', value: lvl => lvl * 0.01}
+        {name: '恢复', 类型: '基础', value: lvl => lvl * 0.01}
     ]},
     怪物汤: {cap: 10, requirementBase, requirementStat, requirementValue: 13, price(lvl) {
-        return {horde_monsterPart: Math.pow(1.1, lvl) * (lvl + 10) * 3};
+        return {怪物零件: Math.pow(1.1, lvl) * (lvl + 10) * 3};
     }, 效果: [
-        {name: 'HordeBone增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
-        {name: 'HordeMonsterPart容量', 类型: '基础 {0}', value: lvl => lvl * 5}
+        {name: '骨头增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
+        {name: '怪物零件容量', 类型: '基础', value: lvl => lvl * 5}
     ]},
     怪物袋: {cap: 75, requirementBase, requirementStat, requirementValue: 17, price(lvl) {
-        return {horde_monsterPart: Math.pow(lvl * 0.005 + 1.35, lvl) * 80};
+        return {怪物零件: Math.pow(lvl * 0.005 + 1.35, lvl) * 80};
     }, 效果: [
-        {name: 'HordeBone容量', 类型: 'mult', value: lvl => Math.pow(1.6, lvl)},
-        {name: 'HordeMonsterPart容量', 类型: 'mult', value: lvl => Math.pow(1.3, lvl)},
-        {name: '装备容量', 类型: '基础 {0}', value: lvl => Math.出现在区域 {0} 或更高区域(1, lvl)}
+        {name: '骨头容量', 类型: 'mult', value: lvl => Math.pow(1.6, lvl)},
+        {name: '怪物零件容量', 类型: 'mult', value: lvl => Math.pow(1.3, lvl)},
+        {name: '装备容量', 类型: '基础', value: lvl => Math.出现在区域 {0} 或更高区域(1, lvl)}
     ]},
     幸运一击: {cap: 15, capMult: true, requirementBase, requirementStat, requirementValue: 21, price(lvl) {
-        return {horde_bone: splicedPow(1.85, 4.6, 15, lvl) * buildNum(30, 'B')};
+        return {骨头: splicedPow(1.85, 4.6, 15, lvl) * buildNum(30, 'B')};
     }, 效果: [
         {name: '攻击', 类型: 'mult', value: lvl => splicedPowLinear(1.14, 0.07, 15, lvl)},
         {name: '装备几率', 类型: 'mult', value: lvl => lvl * 0.2 + 1}
     ]},
     囤积: {cap: 20, requirementBase, requirementStat, requirementValue: 25, price(lvl) {
-        return {horde_bone: Math.pow(2.1, lvl) * buildNum(1.1, 'T')};
+        return {骨头: Math.pow(2.1, lvl) * buildNum(1.1, 'T')};
     }, 效果: [
-        {name: 'HordeBone容量', 类型: 'mult', value: lvl => Math.pow(1.4, lvl)},
+        {name: '骨头容量', 类型: 'mult', value: lvl => Math.pow(1.4, lvl)},
         {name: '生命值', 类型: 'mult', value: lvl => Math.pow(1.08, lvl)}
     ]},
     厚脸皮: {cap: 30, requirementBase, requirementStat, requirementValue: 30, price(lvl) {
-        return {horde_bone: Math.pow(1.85, lvl) * buildNum(52.5, 'T')};
+        return {骨头: Math.pow(1.85, lvl) * buildNum(52.5, 'T')};
     }, 效果: [
         {name: '攻击', 类型: 'mult', value: lvl => Math.pow(1.08, lvl)},
         {name: '生命值', 类型: 'mult', value: lvl => Math.pow(1.17, lvl)},
-        {name: '装备容量', 类型: '基础 {0}', value: lvl => Math.出现在区域 {0} 或更高区域(1, lvl)}
+        {name: '装备容量', 类型: '基础', value: lvl => Math.出现在区域 {0} 或更高区域(1, lvl)}
     ]},
     净化器: {保留: true, hasDescription: true, cap: 1, 笔记: 'horde_18', requirementBase, requirementStat, requirementValue: 42, price() {
-        return {horde_bone: buildNum(10, 'Qi')};
+        return {骨头: buildNum(10, 'Qi')};
     }, 效果: [
         {name: '掠夺腐化的肉体', 类型: '解锁', value: lvl => lvl >= 1}
     ]},
     净化仪式: {requirement() {
         return store.state.解锁.掠夺腐化的肉体.use;
     }, price(lvl) {
-        return {horde_corruptedFlesh: Math.pow(1.12, lvl) * 2000};
+        return {腐烂的肉体: Math.pow(1.12, lvl) * 2000};
     }, 效果: [
         {name: '腐败', 类型: 'bonus', value: lvl => -0.08 * lvl}
     ]},
     刺击指南: {cap: 5, requirementBase, requirementStat, requirementValue: 48, price(lvl) {
-        return {horde_bone: Math.pow(7, lvl) * buildNum(130, 'Qi')};
+        return {骨头: Math.pow(7, lvl) * buildNum(130, 'Qi')};
     }, 效果: [
         {name: '攻击', 类型: 'mult', value: lvl => Math.pow(1.46, lvl)},
-        {name: '暴击率', 类型: '基础 {0}', value: lvl => lvl * 0.01}
+        {name: '暴击率', 类型: '基础', value: lvl => lvl * 0.01}
     ]},
     掠夺秘密: {cap: 1, requirementBase, requirementStat, requirementValue: 53, price() {
-        return {horde_bone: buildNum(25, 'Sx')};
+        return {骨头: buildNum(25, 'Sx')};
     }, 效果: [
-        {name: 'HordeMonsterPart增益', 类型: 'mult', value: lvl => lvl >= 1 ? 1.5 : null},
-        {name: 'HordeBone容量', 类型: 'mult', value: lvl => lvl >= 1 ? 100 : null},
-        {name: '装备容量', 类型: '基础 {0}', value: lvl => Math.出现在区域 {0} 或更高区域(1, lvl)}
+        {name: '怪物零件增益', 类型: 'mult', value: lvl => lvl >= 1 ? 1.5 : null},
+        {name: '骨头容量', 类型: 'mult', value: lvl => lvl >= 1 ? 100 : null},
+        {name: '装备容量', 类型: '基础', value: lvl => Math.出现在区域 {0} 或更高区域(1, lvl)}
     ]},
     闪避指南: {cap: 15, requirementBase, requirementStat, requirementValue: 59, price(lvl) {
-        return {horde_bone: Math.pow(2.1, lvl) * buildNum(980, 'Sx')};
+        return {骨头: Math.pow(2.1, lvl) * buildNum(980, 'Sx')};
     }, 效果: [
         {name: '生命值', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)}
     ]},
     生存指南: {cap: 25, capMult: true, requirementBase, requirementStat, requirementValue: 66, price(lvl) {
-        return {horde_bone: splicedPow(2.25, 4.75, 25, lvl) * buildNum(1.25, 'O')};
+        return {骨头: splicedPow(2.25, 4.75, 25, lvl) * buildNum(1.25, 'O')};
     }, 效果: [
         {name: '攻击', 类型: 'mult', value: lvl => splicedPowLinear(1.2, 0.1, 25, lvl)},
         {name: '生命值', 类型: 'mult', value: lvl => splicedPowLinear(1.15, 0.075, 25, lvl)}
     ]},
     掠夺: {cap: 25, capMult: true, requirementBase, requirementStat, requirementValue: 69, price(lvl) {
-        return {horde_bone: splicedPow(3.3, 8.7, 25, lvl) * buildNum(22, 'O')};
+        return {骨头: splicedPow(3.3, 8.7, 25, lvl) * buildNum(22, 'O')};
     }, 效果: [
-        {name: 'HordeBone容量', 类型: 'mult', value: lvl => splicedPowLinear(2, 0.25, 25, lvl)},
-        {name: 'HordeMonsterPart容量', 类型: 'mult', value: lvl => splicedPowLinear(1.05, 0.05, 25, lvl)}
+        {name: '骨头容量', 类型: 'mult', value: lvl => splicedPowLinear(2, 0.25, 25, lvl)},
+        {name: '怪物零件容量', 类型: 'mult', value: lvl => splicedPowLinear(1.05, 0.05, 25, lvl)}
     ]},
     白漆: {cap: 25, capMult: true, requirementBase, requirementStat, requirementValue: 80, price(lvl) {
-        return {horde_bone: Math.pow(2.8, lvl) * buildNum(1.11, 'UD')};
+        return {骨头: Math.pow(2.8, lvl) * buildNum(1.11, 'UD')};
     }, 效果: [
-        {name: 'HordeBone增益', 类型: 'mult', value: lvl => splicedPowLinear(1.15, 0.075, 25, lvl)},
-        {name: 'HordeBone容量', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.125, 25, lvl)}
+        {name: '骨头增益', 类型: 'mult', value: lvl => splicedPowLinear(1.15, 0.075, 25, lvl)},
+        {name: '骨头容量', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.125, 25, lvl)}
     ]},
     目标假人: {requirementBase, requirementStat, requirementValue: 92, price(lvl) {
-        return {horde_bone: Math.pow(lvl * 0.005 + 1.7, lvl) * buildNum(250, 'TD')};
+        return {骨头: Math.pow(lvl * 0.005 + 1.7, lvl) * buildNum(250, 'TD')};
     }, 效果: [
         {name: '攻击', 类型: 'mult', value: lvl => Math.pow(1.15, lvl)},
         {name: '生命值', 类型: 'mult', value: lvl => Math.pow(1.15, lvl)}
     ]},
     毛袋: {cap: 1, requirementBase, requirementStat, requirementValue: 98, price() {
-        return {horde_bone: buildNum(155, 'QaD')};
+        return {骨头: buildNum(155, 'QaD')};
     }, 效果: [
-        {name: 'HordeBone容量', 类型: 'mult', value: lvl => Math.pow(100, lvl)},
-        {name: 'HordeMonsterPart增益', 类型: 'mult', value: lvl => Math.pow(3, lvl)},
-        {name: '装备容量', 类型: '基础 {0}', value: lvl => Math.出现在区域 {0} 或更高区域(1, lvl)}
+        {name: '骨头容量', 类型: 'mult', value: lvl => Math.pow(100, lvl)},
+        {name: '怪物零件增益', 类型: 'mult', value: lvl => Math.pow(3, lvl)},
+        {name: '装备容量', 类型: '基础', value: lvl => Math.出现在区域 {0} 或更高区域(1, lvl)}
     ]},
     里程碑: {requirementBase, requirementStat, requirementValue: 110, price(lvl) {
-        return {horde_bone: Math.pow(buildNum(1, 'M'), lvl) * buildNum(1, 'SxD')};
+        return {骨头: Math.pow(buildNum(1, '分钟'), lvl) * buildNum(1, 'SxD')};
     }, 效果: [
         {name: '攻击', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: '生命值', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: 'HordeBone增益', 类型: 'mult', value: lvl => Math.pow(4, lvl)},
-        {name: 'HordeBone容量', 类型: 'mult', value: lvl => Math.pow(1000, lvl)}
+        {name: '骨头增益', 类型: 'mult', value: lvl => Math.pow(4, lvl)},
+        {name: '骨头容量', 类型: 'mult', value: lvl => Math.pow(1000, lvl)}
     ]},
     实战课: {cap: 15, requirementBase, requirementStat, requirementValue: 120, price(lvl) {
-        return {horde_bone: Math.pow(lvl * 0.4 + 3.4, lvl) * buildNum(650, 'SpD')};
+        return {骨头: Math.pow(lvl * 0.4 + 3.4, lvl) * buildNum(650, 'SpD')};
     }, 效果: [
         {name: '攻击', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)},
         {name: '生命值', 类型: 'mult', value: lvl => Math.pow(1.22, lvl)}
     ]},
     雕刻: {cap: 5, capMult: true, requirementBase, requirementStat, requirementValue: 125, price(lvl) {
-        return {horde_bone: Math.pow(12, lvl) * buildNum(2, 'ND')};
+        return {骨头: Math.pow(12, lvl) * buildNum(2, 'ND')};
     }, 效果: [
-        {name: 'HordeBone容量', 类型: 'mult', value: lvl => splicedPowLinear(8, 0.25, 5, lvl)},
-        {name: 'HordeCorruptedFlesh增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1}
+        {name: '骨头容量', 类型: 'mult', value: lvl => splicedPowLinear(8, 0.25, 5, lvl)},
+        {name: '腐烂的肉体增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1}
     ]},
     神秘袋: {cap: 1, requirementBase, requirementStat, requirementValue: 135, price(lvl) {
-        return {horde_mysticalShard: 25 * (lvl + 1)};
+        return {神秘碎片: 25 * (lvl + 1)};
     }, 效果: [
-        {name: '装备容量', 类型: '基础 {0}', value: lvl => lvl}
+        {name: '装备容量', 类型: '基础', value: lvl => lvl}
     ], onBuy() {
         store.dispatch('部落/checkPlayerHealth');
     }},
     无限的愤怒: {cap: 20, requirementBase, requirementStat, requirementValue: 145, price(lvl) {
-        return {horde_bone: Math.pow(lvl * 0.1 + 4.7, lvl) * buildNum(4, 'QaV')};
+        return {骨头: Math.pow(lvl * 0.1 + 4.7, lvl) * buildNum(4, 'QaV')};
     }, 效果: [
         {name: '攻击', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)}
     ]},
     奇异的力量: {requirementBase, requirementStat, requirementValue: 155, price(lvl) {
-        return {horde_mysticalShard: lvl * 4 + 28};
+        return {神秘碎片: lvl * 4 + 28};
     }, 效果: [
         {name: '攻击', 类型: 'mult', value: lvl => Math.pow(1.35, lvl)},
         {name: '生命值', 类型: 'mult', value: lvl => Math.pow(1.35, lvl)}
@@ -180,19 +180,19 @@ export default {
         store.dispatch('部落/checkPlayerHealth');
     }},
     收集者: {requirementBase, requirementStat, requirementValue: 165, price(lvl) {
-        return {horde_mysticalShard: lvl * 8 + 34};
+        return {神秘碎片: lvl * 8 + 34};
     }, 效果: [
-        {name: 'HordeBone增益', 类型: 'mult', value: lvl => Math.pow(1.65, lvl)},
-        {name: 'HordeBone容量', 类型: 'mult', value: lvl => Math.pow(1.85, lvl)}
+        {name: '骨头增益', 类型: 'mult', value: lvl => Math.pow(1.65, lvl)},
+        {name: '骨头容量', 类型: 'mult', value: lvl => Math.pow(1.85, lvl)}
     ], onBuy() {
         store.dispatch('部落/checkPlayerHealth');
     }},
     准备牺牲: {保留: true, alwaysActive: true, cap: 4, requirementBase, requirementStat, requirementValue: 175, price(lvl) {
-        return {horde_mysticalShard: lvl * 40 + 20};
+        return {神秘碎片: lvl * 40 + 20};
     }, 效果: [
-        {name: 'horde_mysticalBag', 类型: 'keepUpgrade', value: lvl => lvl >= 1},
-        {name: 'horde_strangePower', 类型: 'keepUpgrade', value: lvl => lvl >= 2},
-        {name: 'horde_collector', 类型: 'keepUpgrade', value: lvl => lvl >= 3},
+        {name: '神秘袋', 类型: '保留', value: lvl => lvl >= 1},
+        {name: '奇异的力量', 类型: '保留', value: lvl => lvl >= 2},
+        {name: '收集者', 类型: '保留', value: lvl => lvl >= 3},
         {name: '牺牲', 类型: '解锁', value: lvl => lvl >= 4},
     ], onBuy() {
         store.dispatch('部落/checkPlayerHealth');

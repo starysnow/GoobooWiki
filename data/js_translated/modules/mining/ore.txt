@@ -1,4 +1,4 @@
-export default {
+{
     铝矿石: {
         攻击和生命值 x{0}: 15,
         杂质: 1.5,
@@ -63,7 +63,7 @@ export default {
         amountMult: 1.05
     },
     锇矿石: {
-        攻击和生命值 x{0}: buildNum(1.75, 'M'),
+        攻击和生命值 x{0}: buildNum(1.75, '分钟'),
         杂质: 6,
         minDepth: 350,
         maxDepth: 525,
@@ -72,7 +72,7 @@ export default {
         amountMult: 1.05
     },
     铅矿石: {
-        攻击和生命值 x{0}: buildNum(12.5, 'M'),
+        攻击和生命值 x{0}: buildNum(12.5, '分钟'),
         杂质: 7.5,
         minDepth: 450,
         maxDepth: 650,

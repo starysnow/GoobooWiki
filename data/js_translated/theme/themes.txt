@@ -1,4 +1,4 @@
-export default {
+{
     default: defaultTheme,
     青色,
     绿色,

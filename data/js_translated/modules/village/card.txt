@@ -1,4 +1,4 @@
-export default {
+{
     feature: {
         prefix: 'VI',
         reward: [{name: '所有资源增益', 类型: 'mult', value: lvl => lvl * 0.03 + 1}],
@@ -14,17 +14,17 @@ export default {
     },
     collection: {
         邻里: {reward: [
-            {name: '工人', 类型: '基础 {0}', value: 8}
+            {name: '工人', 类型: '基础', value: 8}
         ]},
         城市里的植物: {reward: [
-            {name: 'VillagePlantFiber增益', 类型: 'mult', value: 1.5}
+            {name: '植物纤维增益', 类型: 'mult', value: 1.5}
         ]},
         工业革命: {reward: [
-            {name: 'VillageWood增益', 类型: 'mult', value: 1.5}
+            {name: '木头增益', 类型: 'mult', value: 1.5}
         ]},
         维护安全: {reward: [
-            {name: '村庄卡片容量', 类型: '基础 {0}', value: 1},
-            {name: '部落卡片容量', 类型: '基础 {0}', value: 1}
+            {name: '村庄卡片容量', 类型: '基础', value: 1},
+            {name: '部落卡片容量', 类型: '基础', value: 1}
         ]},
     },
     pack: {

@@ -1,47 +1,47 @@
-export default {
-    theme_frozen: {
+{
+    冰冷: {
         类型: 'theme',
         item: '冰冷',
         pool: {
-            snowdown: {price: {event_snowdownToken: 225}}
+            snowdown: {price: {降雪代币: 225}}
         }
     },
-    relic_moneyGift: {
+    金钱礼物: {
         类型: '圣遗物',
         item: '金钱礼物',
         requirement() {
             return store.state.解锁.villageFeature.see;
         },
         pool: {
-            snowdown: {price: {event_snowdownToken: 155}}
+            snowdown: {price: {降雪代币: 155}}
         }
     },
-    relic_frozenCarrot: {
+    冷冻胡萝卜: {
         类型: '圣遗物',
         item: '冷冻胡萝卜',
         requirement() {
             return store.state.解锁.farmFeature.see;
         },
         pool: {
-            snowdown: {price: {event_snowdownToken: 170}}
+            snowdown: {price: {降雪代币: 170}}
         }
     },
     cardPack_icyWonderland: {
         类型: '卡包',
         item: '冰雪仙境',
         pool: {
-            snowdown: {price: {event_snowdownToken: 30}}
+            snowdown: {price: {降雪代币: 30}}
         }
     },
-    farm_cinnamonBag: {
-        类型: '此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？',
-        item: 'farm_cinnamonBag',
+    肉桂袋: {
+        类型: 'consumable',
+        item: '肉桂袋',
         amount: 20,
         requirement() {
             return store.state.解锁.肥料.see;
         },
         pool: {
-            snowdown: {price: {event_snowdownToken: 1}}
+            snowdown: {price: {降雪代币: 1}}
         }
     }
 }

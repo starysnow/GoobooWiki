@@ -1,4 +1,4 @@
-export default {
+{
     name: '将军',
     tickspeed: 1,
     unlockNeeded: 'generalFeature',
@@ -14,7 +14,7 @@ export default {
                                 let 您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。 = 0;
                                 switch (task.类型) {
                                     case '达到 {0} {1}': {
-                                        您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。 = store.state.达到 {0} {1}[task.name][task.subtype exactly= '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。' ? 'value' : '总计 {0}'];
+                                        您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。 = store.state.达到 {0} {1}[task.name][task.subtype exactly= '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。' ? 'value' : '总计'];
                                         break;
                                     }
                                     case '解锁': {
@@ -57,36 +57,36 @@ export default {
     解锁: ['generalFeature', 'generalOrladeeSubfeature', 'generalOppenschroeSubfeature', 'generalBelluxSubfeature', 'generalOnocluaSubfeature', 'generalOmnisolixSubfeature'],
     笔记: ['G', ...buildArray(31).map(() => '格罗博达尔'), ...buildArray(9).map(() => '奥拉迪')],
     圣遗物: {
-        火炬: {图标: 'mdi-火炬', feature: ['将军', '采矿', '村庄'], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色', 效果: [
-            {name: '矿山卡片容量', 类型: '基础 {0}', value: 1},
-            {name: '村庄卡片容量', 类型: '基础 {0}', value: 1}
+        火炬: {图标: 'mdi-torch', feature: ['将军', '采矿', '村庄'], color: '橙色', 效果: [
+            {name: '矿山卡片容量', 类型: '基础', value: 1},
+            {name: '村庄卡片容量', 类型: '基础', value: 1}
         ]},
-        紫心勋章: {图标: 'mdi-心形', feature: ['将军', '部落'], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '紫色', 效果: [
+        紫心勋章: {图标: 'mdi-heart', feature: ['将军', '部落'], color: '紫色', 效果: [
             {name: '生命值', 类型: 'mult', value: 1.5},
-            {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: 1.2}
+            {name: '腐败的灵魂增益', 类型: 'mult', value: 1.2}
         ]},
-        腐烂的叶子: {图标: 'mdi-leaf', feature: ['将军', '农场'], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色', 效果: [
+        腐烂的叶子: {图标: 'mdi-leaf', feature: ['将军', '农场'], color: '棕色', 效果: [
             {name: '作物增益', 类型: 'mult', value: 1.75},
             {name: '作物经验', 类型: 'mult', value: 1.2},
-            {name: '过度生长', 类型: '基础 {0}', value: 0.1}
+            {name: '过度生长', 类型: '基础', value: 0.1}
         ]},
-        雪国列车: {图标: 'mdi-螺丝刀', feature: ['将军', '采矿'], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '樱桃色', 效果: [
+        雪国列车: {图标: 'mdi-screwdriver', feature: ['将军', '采矿'], color: '樱桃色', 效果: [
             {name: '伤害', 类型: 'mult', value: 2.25}
         ]},
-        安慰奖: {图标: 'mdi-海豹-variant', feature: ['将军', '村庄', '部落', '农场'], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'lighter-灰色', 效果: [
+        安慰奖: {图标: 'mdi-seal-variant', feature: ['将军', '村庄', '部落', '农场'], color: 'lighter-灰色', 效果: [
             {name: '所有资源增益', 类型: 'mult', value: 1.4},
             {name: '精通点数增益', 类型: 'mult', value: 1.4},
             {name: '作物经验', 类型: 'mult', value: 1.4}
         ]},
-        漂亮的灯: {图标: 'mdi-vanity-光', feature: ['将军', '画廊'], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅蓝色油漆', 效果: [
-            {name: '灵感的开始', 类型: '基础 {0}', value: 3},
+        漂亮的灯: {图标: 'mdi-vanity-light', feature: ['将军', '画廊'], color: '光-blue', 效果: [
+            {name: '灵感的开始', 类型: '基础', value: 3},
             {name: '更加努力地思考', 类型: 'galleryIdea', value: true},
         ]},
-        棋盘: {图标: 'mdi-checkerboard', feature: ['将军', '部落'], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '灰色', 效果: [
+        棋盘: {图标: 'mdi-checkerboard', feature: ['将军', '部落'], color: '灰色', 效果: [
             {name: '棋具', 类型: '解锁', value: true},
         ]},
-        彩虹色的花朵: {图标: 'mdi-仅鲜花-pollen', feature: ['将军', '冷冻实验室'], 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '粉色', 效果: [
-            {name: '最大冻结的功能', 类型: '基础 {0}', value: 1},
+        彩虹色的花朵: {图标: 'mdi-flower-pollen', feature: ['将军', '冷冻实验室'], color: '粉色', 效果: [
+            {name: '最大冻结的功能', 类型: '基础', value: 1},
         ]},
     },
     init() {

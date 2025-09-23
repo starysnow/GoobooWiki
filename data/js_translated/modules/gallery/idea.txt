@@ -1,143 +1,137 @@
-export default {
-    
-    让它变得漂亮: {层: 1, {0} 已拥有: true, 图标: 'mdi-image', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'deep-紫色', 效果: [
-        {name: 'GalleryBeauty增益', 类型: 'mult', value: lvl => lvl * 0.4 + getSequence(1, lvl) * 0.1 + 1},
+{
+    让它变得漂亮: {层: 1, {0} 已拥有: true, 图标: 'mdi-image', color: 'deep-紫色', 效果: [
+        {name: '美丽增益', 类型: 'mult', value: lvl => lvl * 0.4 + getSequence(1, lvl) * 0.1 + 1},
     ]},
-    踩碎浆果: {层: 1, {0} 已拥有: true, 图标: 'mdi-水果-葡萄', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '红色', 效果: [
-        {name: 'GalleryRed增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    踩碎浆果: {层: 1, {0} 已拥有: true, 图标: 'mdi-fruit-grapes', color: '红色', 效果: [
+        {name: '红色增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: '红色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: 'GalleryBeauty增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: '美丽增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
-    雕刻南瓜: {层: 1, 图标: 'mdi-halloween', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色', 效果: [
-        {name: 'GalleryOrange增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    雕刻南瓜: {层: 1, 图标: 'mdi-halloween', color: '橙色', 效果: [
+        {name: '橙色增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: '橙色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: 'GalleryRed增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: '红色增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
-    垃圾分类: {层: 1, 图标: 'mdi-从地块上移除作物。 消耗的资源不予退还-variant', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-浅绿色油漆', 效果: [
-        {name: 'GalleryConverter增益', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.25 + 1},
+    垃圾分类: {层: 1, 图标: 'mdi-delete-variant', color: 'pale-光-绿色', 效果: [
+        {name: '转换器增益', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.25 + 1},
     ]},
-    广告: {层: 1, 图标: 'mdi-现金', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '绿色', 效果: [
-        {name: 'GalleryCash增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
+    广告: {层: 1, 图标: 'mdi-cash', color: '绿色', 效果: [
+        {name: '现金增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
     ]},
-    缺乏耐心: {层: 1, 图标: 'mdi-run-快速', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅蓝色油漆', 效果: [
-        {name: 'GalleryPackage增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: 'GalleryPackage容量', 类型: 'mult', value: lvl => lvl + 1},
+    缺乏耐心: {层: 1, 图标: 'mdi-run-fast', color: '光-blue', 效果: [
+        {name: '包裹增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
+        {name: '包裹容量', 类型: 'mult', value: lvl => lvl + 1},
     ]},
-    感到兴奋: {层: 1, 图标: 'mdi-emoticon-excited', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '粉色-紫色', 效果: [
-        {name: 'GalleryMotivation增益', 类型: '基础 {0}', value: lvl => lvl * 0.02},
-        {name: 'GalleryMotivation容量', 类型: '基础 {0}', value: lvl => lvl * 35},
+    感到兴奋: {层: 1, 图标: 'mdi-emoticon-excited', color: '粉色-紫色', 效果: [
+        {name: '动机增益', 类型: '基础', value: lvl => lvl * 0.02},
+        {name: '动机容量', 类型: '基础', value: lvl => lvl * 35},
     ]},
-    
-    制作柠檬水: {层: 2, 图标: 'mdi-水果-citrus', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '黄色', 效果: [
-        {name: 'GalleryYellow增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    制作柠檬水: {层: 2, 图标: 'mdi-fruit-citrus', color: '黄色', 效果: [
+        {name: '黄色增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: '黄色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: 'GalleryOrange增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: '橙色增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
-    种一棵树: {层: 2, 图标: 'mdi-tree', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '绿色', 效果: [
-        {name: 'GalleryGreen增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    种一棵树: {层: 2, 图标: 'mdi-tree', color: '绿色', 效果: [
+        {name: '绿色增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: '绿色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: 'GalleryYellow增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: '黄色增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
-    建造堆肥机: {层: 2, 图标: 'mdi-archive-sync', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色', 效果: [
-        {name: 'GalleryConverter容量', 类型: 'mult', value: lvl => lvl * 0.5 + 1},
+    建造堆肥机: {层: 2, 图标: 'mdi-archive-sync', color: '棕色', 效果: [
+        {name: '转换器容量', 类型: 'mult', value: lvl => lvl * 0.5 + 1},
     ]},
-    观察彩虹: {层: 2, 图标: 'mdi-looks', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'babypink', 效果: [
+    观察彩虹: {层: 2, 图标: 'mdi-looks', color: 'babypink', 效果: [
         {name: '所有颜色增益', 类型: 'mult', value: lvl => lvl * 0.12 + 1},
     ]},
-    建造红色储备: {层: 2, 图标: 'mdi-hoop-房子', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '红色', 效果: [
-        {name: 'GalleryRedDrum容量', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
+    建造红色储备: {层: 2, 图标: 'mdi-hoop-house', color: '红色', 效果: [
+        {name: '红色鼓容量', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
     ]},
-    订购大量保险箱: {层: 2, 图标: 'mdi-保险箱-正方形', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'dark-灰色', 效果: [
-        {name: '所有鼓上限', 类型: '基础 {0}', value: lvl => lvl * 3},
+    订购大量保险箱: {层: 2, 图标: 'mdi-safe-square', color: 'dark-灰色', 效果: [
+        {name: '所有鼓上限', 类型: '基础', value: lvl => lvl * 3},
         {name: '画布速度', 类型: 'mult', value: lvl => 1 - (lvl / (lvl + 10))},
     ]},
-    Buy pen: {层: 2, 图标: 'mdi-pen', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'indigo', 效果: [
+    购买 pen: {层: 2, 图标: 'mdi-pen', color: 'indigo', 效果: [
         {name: '形状增益', 类型: 'mult', value: lvl => lvl * 0.12 + 1},
     ]},
-    
-    画海洋: {层: 3, 图标: 'mdi-波浪', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '蓝色油漆', 效果: [
-        {name: 'GalleryBlue增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    画海洋: {层: 3, 图标: 'mdi-waves', color: 'blue', 效果: [
+        {name: 'currencyGalleryBlueGain', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: '蓝色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: 'GalleryGreen增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: '绿色增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
-    酿酒: {层: 3, 图标: 'mdi-bottle-wine', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '紫色', 效果: [
-        {name: 'GalleryPurple增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    酿酒: {层: 3, 图标: 'mdi-bottle-wine', color: '紫色', 效果: [
+        {name: '紫色增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: '紫色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: 'GalleryBlue增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: 'currencyGalleryBlueGain', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
-    计算胜算: {层: 3, 图标: 'mdi-strategy', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'indigo', 效果: [
+    计算胜算: {层: 3, 图标: 'mdi-strategy', color: 'indigo', 效果: [
         {name: '所有鼓几率', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
     ]},
-    建造橙色储备: {层: 3, 图标: 'mdi-hoop-房子', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色', 效果: [
-        {name: 'GalleryOrangeDrum容量', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
+    建造橙色储备: {层: 3, 图标: 'mdi-hoop-house', color: '橙色', 效果: [
+        {name: '橙色鼓容量', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
     ]},
-    更加努力地思考: {层: 3, 图标: 'mdi-head-灯泡', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '金色油漆', 效果: [
-        {name: '灵感的开始', 类型: '基础 {0}', value: lvl => lvl * 2},
+    更加努力地思考: {层: 3, 图标: 'mdi-head-lightbulb', color: '金色', 效果: [
+        {name: '灵感的开始', 类型: '基础', value: lvl => lvl * 2},
     ]},
-    涂得更快: {层: 3, 图标: 'mdi-画笔', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色-红色', 效果: [
+    涂得更快: {层: 3, 图标: 'mdi-brush', color: '橙色-红色', 效果: [
         {name: '画布速度', 类型: 'mult', value: lvl => lvl * 0.25 + 1},
     ]},
-    购买刷子: {层: 3, 图标: 'mdi-画笔-variant', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'beige', 效果: [
-        {name: '特殊形状几率', 类型: '基础 {0}', value: lvl => lvl * 0.002},
-        {name: '特殊形状乘数', 类型: '基础 {0}', value: lvl => lvl * 1.5},
+    购买刷子: {层: 3, 图标: 'mdi-brush-variant', color: 'beige', 效果: [
+        {name: '特殊形状几率', 类型: '基础', value: lvl => lvl * 0.002},
+        {name: '特殊形状乘数', 类型: '基础', value: lvl => lvl * 1.5},
     ]},
-    
-    收获橙子: {层: 4, 图标: 'mdi-水果-citrus', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙红色油漆', 效果: [
+    收获橙子: {层: 4, 图标: 'mdi-fruit-citrus', color: 'deep-橙色', 效果: [
         {name: 'currencyGalleryDeep-orangeGain', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: '橙红转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: 'GalleryPurple增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: '紫色增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
-    粉碎黄金: {层: 4, 图标: 'mdi-shimmer', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '金色油漆', 效果: [
-        {name: 'GalleryAmber增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    粉碎黄金: {层: 4, 图标: 'mdi-shimmer', color: '金色', 效果: [
+        {name: '金色增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: '金色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: 'currencyGalleryDeep-orangeGain', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
-    建造黄色储备: {层: 4, 图标: 'mdi-hoop-房子', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '黄色', 效果: [
-        {name: 'GalleryYellowDrum容量', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
+    建造黄色储备: {层: 4, 图标: 'mdi-hoop-house', color: '黄色', 效果: [
+        {name: '黄色鼓容量', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
     ]},
-    为了乐趣而作画: {层: 4, 图标: 'mdi-emoticon-happy', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '粉色', 效果: [
-        {name: 'GalleryBeauty增益', 类型: 'mult', value: lvl => Math.pow(4, lvl)},
-        {name: 'GalleryCash增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl)},
+    为了乐趣而作画: {层: 4, 图标: 'mdi-emoticon-happy', color: '粉色', 效果: [
+        {name: '美丽增益', 类型: 'mult', value: lvl => Math.pow(4, lvl)},
+        {name: '现金增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl)},
     ]},
-    印刷报纸: {层: 4, 图标: 'mdi-newspaper', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '光-灰色', 效果: [
-        {name: 'GalleryCash增益', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.25 + 1},
+    印刷报纸: {层: 4, 图标: 'mdi-newspaper', color: '光-灰色', 效果: [
+        {name: '现金增益', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.25 + 1},
     ]},
-    扩大画布: {层: 4, 图标: 'mdi-artboard', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'wooden', 效果: [
-        {name: '画布大小', 类型: '基础 {0}', value: lvl => lvl * 3},
+    扩大画布: {层: 4, 图标: 'mdi-artboard', color: 'wooden', 效果: [
+        {name: '画布大小', 类型: '基础', value: lvl => lvl * 3},
     ]},
-    高度关注: {层: 4, 图标: 'mdi-image-filter-center-聚焦-strong-outline', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '红色-粉色', 效果: [
-        {name: 'GalleryMotivation增益', 类型: '基础 {0}', value: lvl => lvl * 0.08},
-        {name: 'GalleryCircle增益', 类型: 'mult', value: lvl => lvl * 0.24 + 1},
+    高度关注: {层: 4, 图标: 'mdi-image-filter-center-focus-strong-outline', color: '红色-粉色', 效果: [
+        {name: '动机增益', 类型: '基础', value: lvl => lvl * 0.08},
+        {name: '圆形增益', 类型: 'mult', value: lvl => lvl * 0.24 + 1},
     ]},
-    
-    割草: {层: 5, 图标: 'mdi-草', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅绿色油漆', 效果: [
+    割草: {层: 5, 图标: 'mdi-grass', color: '光-绿色', 效果: [
         {name: 'currencyGalleryLight-greenGain', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: '浅绿色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: 'GalleryAmber增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: '金色增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
-    形状粘土: {层: 5, 图标: 'mdi-pot', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '青色油漆', 效果: [
-        {name: 'GalleryTeal增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    形状粘土: {层: 5, 图标: 'mdi-pot', color: 'teal', 效果: [
+        {name: 'currencyGalleryTealGain', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: '青色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: 'currencyGalleryLight-greenGain', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
-    建造绿色储备: {层: 5, 图标: 'mdi-hoop-房子', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '绿色', 效果: [
-        {name: 'GalleryGreenDrum容量', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
+    建造绿色储备: {层: 5, 图标: 'mdi-hoop-house', color: '绿色', 效果: [
+        {name: '绿色鼓容量', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
     ]},
-    保持神秘: {层: 5, 图标: 'mdi-wizard-hat', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-紫色', 效果: [
-        {name: 'GalleryMysteryShape增益', 类型: '基础 {0}', value: lvl => lvl},
+    保持神秘: {层: 5, 图标: 'mdi-wizard-hat', color: 'pale-紫色', 效果: [
+        {name: '神秘形状增益', 类型: '基础', value: lvl => lvl},
     ]},
-    
-    看看天空: {层: 6, 图标: 'mdi-clouds', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅蓝色油漆', 效果: [
+    看看天空: {层: 6, 图标: 'mdi-clouds', color: '光-blue', 效果: [
         {name: 'currencyGalleryLight-blueGain', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: '浅蓝色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: 'GalleryTeal增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: 'currencyGalleryTealGain', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
-    嚼泡泡糖: {层: 6, 图标: 'mdi-dots-圆形', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '粉色', 效果: [
-        {name: 'GalleryPink增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    嚼泡泡糖: {层: 6, 图标: 'mdi-dots-circle', color: '粉色', 效果: [
+        {name: '粉色增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: '粉色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
         {name: 'currencyGalleryLight-blueGain', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
-    建造蓝色储备: {层: 6, 图标: 'mdi-hoop-房子', 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '蓝色油漆', 效果: [
-        {name: 'GalleryBlueDrum容量', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
+    建造蓝色储备: {层: 6, 图标: 'mdi-hoop-house', color: 'blue', 效果: [
+        {name: '蓝色鼓容量', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
     ]},
 }

@@ -1,246 +1,240 @@
-export default {
+{
     钱包: {cap: 12, capMult: true, requirement() {
         return store.state.解锁.金币升级.use;
     }, price(lvl) {
-        return {village_coin: Math.ceil(Math.pow(1.3, lvl) * 200)};
+        return {金币: Math.ceil(Math.pow(1.3, lvl) * 200)};
     }, 效果: [
-        {name: 'VillageCoin容量', 类型: '基础 {0}', value: lvl => lvl * 150}
+        {name: '金币容量', 类型: '基础', value: lvl => lvl * 150}
     ]},
     资源包: {cap: 10, capMult: true, requirement() {
         return store.state.解锁.金币升级.use;
     }, price(lvl) {
-        return {village_coin: Math.ceil(Math.pow(1.4, lvl) * 200)};
+        return {金币: Math.ceil(Math.pow(1.4, lvl) * 200)};
     }, 效果: [
-        {name: 'VillagePlantFiber容量', 类型: '基础 {0}', value: lvl => lvl * 200},
-        {name: 'VillageWood容量', 类型: '基础 {0}', value: lvl => lvl * 200},
-        {name: 'VillageStone容量', 类型: '基础 {0}', value: lvl => lvl * 200}
+        {name: '植物纤维容量', 类型: '基础', value: lvl => lvl * 200},
+        {name: '木头容量', 类型: '基础', value: lvl => lvl * 200},
+        {name: '石头容量', 类型: '基础', value: lvl => lvl * 200}
     ]},
     金属包: {cap: 5, capMult: true, requirement() {
         return store.state.解锁.金币升级.use;
     }, price(lvl) {
-        return {village_coin: Math.ceil(Math.pow(1.7, lvl) * 300)};
+        return {金币: Math.ceil(Math.pow(1.7, lvl) * 300)};
     }, 效果: [
-        {name: 'VillageMetal容量', 类型: '基础 {0}', value: lvl => lvl * 400}
+        {name: '金属容量', 类型: '基础', value: lvl => lvl * 400}
     ]},
-    
     镰刀: {cap: 20, requirement() {
         return store.state.解锁.镰刀升级.use;
     }, price(lvl) {
-        return {village_coin: Math.ceil(Math.pow(1.55, lvl) * 2500)};
+        return {金币: Math.ceil(Math.pow(1.55, lvl) * 2500)};
     }, 效果: [
-        {name: 'VillagePlantFiber增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.05 + 1)},
-        {name: 'VillageGrain增益', 类型: 'mult', value: lvl => Math.pow(1.08, lvl)}
+        {name: '植物纤维增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.05 + 1)},
+        {name: '仅粮食增益', 类型: 'mult', value: lvl => Math.pow(1.08, lvl)}
     ]},
     柴刀: {cap: 20, requirement() {
         return store.state.解锁.斧头升级.use;
     }, price(lvl) {
-        return {village_coin: Math.ceil(Math.pow(1.55, lvl) * 5000)};
+        return {金币: Math.ceil(Math.pow(1.55, lvl) * 5000)};
     }, 效果: [
-        {name: 'VillageWood增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.05 + 1)},
-        {name: 'VillageFruit增益', 类型: 'mult', value: lvl => Math.pow(1.08, lvl)}
+        {name: '木头增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.05 + 1)},
+        {name: '水果增益', 类型: 'mult', value: lvl => Math.pow(1.08, lvl)}
     ]},
     镐子: {cap: 20, requirement() {
         return store.state.解锁.镐子升级.use;
     }, price(lvl) {
-        return {village_coin: Math.ceil(Math.pow(1.55, lvl) * 7500)};
+        return {金币: Math.ceil(Math.pow(1.55, lvl) * 7500)};
     }, 效果: [
-        {name: 'VillageStone增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.05 + 1)},
-        {name: 'VillageMetal增益', 类型: 'mult', value: lvl => Math.pow(1.04, lvl) * (lvl * 0.04 + 1)}
+        {name: '石头增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.05 + 1)},
+        {name: '金属增益', 类型: 'mult', value: lvl => Math.pow(1.04, lvl) * (lvl * 0.04 + 1)}
     ]},
     喷壶: {cap: 20, requirement() {
         return store.state.解锁.浇水器可以升级.use;
     }, price(lvl) {
-        return {village_coin: Math.ceil(Math.pow(1.55, lvl) * buildNum(10, 'K'))};
+        return {金币: Math.ceil(Math.pow(1.55, lvl) * buildNum(10, 'K'))};
     }, 效果: [
-        {name: 'VillageGrain增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl)},
-        {name: 'VillageFruit增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl)},
-        {name: 'VillageWater增益', 类型: 'mult', value: lvl => Math.pow(1.22, lvl)}
+        {name: '仅粮食增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl)},
+        {name: '水果增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl)},
+        {name: '水增益', 类型: 'mult', value: lvl => Math.pow(1.22, lvl)}
     ]},
     投资: {cap: 50, requirement() {
         return store.state.解锁.投资升级.use;
     }, price(lvl) {
-        return {village_coin: Math.ceil(Math.pow(1.35, lvl) * buildNum(12.5, 'K'))};
+        return {金币: Math.ceil(Math.pow(1.35, lvl) * buildNum(12.5, 'K'))};
     }, 效果: [
         {name: '税率', 类型: 'mult', value: lvl => Math.pow(1.05, lvl)},
-        {name: 'VillageCoin增益', 类型: 'mult', value: lvl => Math.pow(1.11, lvl)}
+        {name: '金币增益', 类型: 'mult', value: lvl => Math.pow(1.11, lvl)}
     ]},
-    
     基础: {cap: 20, requirement() {
         return store.state.解锁.基础升级.use;
     }, price(lvl) {
-        return {village_knowledge: 12 * lvl + 80};
+        return {知识: 12 * lvl + 80};
     }, 效果: [
-        {name: 'VillagePlantFiber增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.15 + 1)},
-        {name: 'VillageWood增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.05 + 1)},
-        {name: 'VillageStone增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.05 + 1)}
+        {name: '植物纤维增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.15 + 1)},
+        {name: '木头增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.05 + 1)},
+        {name: '石头增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.05 + 1)}
     ]},
     加工: {cap: 20, requirement() {
         return store.state.解锁.加工升级.use;
     }, price(lvl) {
-        return {village_knowledge: 12 * lvl + 120};
+        return {知识: 12 * lvl + 120};
     }, 效果: [
         {name: '食物增益', 类型: 'mult', value: lvl => Math.pow(1.07, lvl)},
-        {name: 'VillageMetal增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.05 + 1)}
+        {name: '金属增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.05 + 1)}
     ]},
     水泵: {cap: 20, requirement() {
         return store.state.解锁.水泵升级.use;
     }, price(lvl) {
-        return {village_knowledge: 12 * lvl + 160};
+        return {知识: 12 * lvl + 160};
     }, 效果: [
-        {name: 'VillageWater增益', 类型: 'mult', value: lvl => Math.pow(1.2, lvl) * (lvl * 0.04 + 1)}
+        {name: '水增益', 类型: 'mult', value: lvl => Math.pow(1.2, lvl) * (lvl * 0.04 + 1)}
     ]},
     沙子: {cap: 20, requirement() {
         return store.state.解锁.沙子升级.use;
     }, price(lvl) {
-        return {village_knowledge: 12 * lvl + 200};
+        return {知识: 12 * lvl + 200};
     }, 效果: [
-        {name: 'VillageGlass增益', 类型: 'mult', value: lvl => Math.pow(1.08, lvl) * (lvl * 0.08 + 1)}
+        {name: '玻璃增益', 类型: 'mult', value: lvl => Math.pow(1.08, lvl) * (lvl * 0.08 + 1)}
     ]},
     书籍: {cap: 20, requirement() {
         return store.state.解锁.书籍升级.use;
     }, price(lvl) {
-        return {village_knowledge: 12 * lvl + 240};
+        return {知识: 12 * lvl + 240};
     }, 效果: [
-        {name: 'VillageKnowledge增益', 类型: 'mult', value: lvl => lvl * 0.04 + 1}
+        {name: '知识增益', 类型: 'mult', value: lvl => lvl * 0.04 + 1}
     ]},
-    
     斧子: {cap: 40, requirement() {
         return store.state.解锁.斧子升级.use;
     }, price(lvl) {
-        return {village_coin: Math.ceil(Math.pow(1.3, lvl) * buildNum(500, 'K'))};
+        return {金币: Math.ceil(Math.pow(1.3, lvl) * buildNum(500, 'K'))};
     }, 效果: [
-        {name: 'VillageWood增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-        {name: 'VillageHardwood增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
+        {name: '木头增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
+        {name: '硬木增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
     ]},
     炸弹: {cap: 40, requirement() {
         return store.state.解锁.炸弹升级.use;
     }, price(lvl) {
-        return {village_coin: Math.ceil(Math.pow(1.3, lvl) * buildNum(1.5, 'M'))};
+        return {金币: Math.ceil(Math.pow(1.3, lvl) * buildNum(1.5, '分钟'))};
     }, 效果: [
-        {name: 'VillageStone增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-        {name: 'VillageGem增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
+        {name: '石头增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
+        {name: '宝石增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
     ]},
     收费: {cap: 40, requirement() {
         return store.state.解锁.收费升级.use;
     }, price(lvl) {
-        return {village_coin: Math.ceil(Math.pow(1.3, lvl) * buildNum(4, 'M'))};
+        return {金币: Math.ceil(Math.pow(1.3, lvl) * buildNum(4, '分钟'))};
     }, 效果: [
         {name: '税率', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
     ]},
     鱼竿: {cap: 40, requirement() {
         return store.state.解锁.鱼竿升级.use;
     }, price(lvl) {
-        return {village_coin: Math.ceil(Math.pow(1.3, lvl) * buildNum(10, 'M'))};
+        return {金币: Math.ceil(Math.pow(1.3, lvl) * buildNum(10, '分钟'))};
     }, 效果: [
-        {name: 'VillageFish增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '鱼增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
     ]},
     圣书: {cap: 40, requirement() {
         return store.state.解锁.圣书升级.use;
     }, price(lvl) {
-        return {village_coin: Math.ceil(Math.pow(1.45, lvl) * buildNum(22.5, 'M'))};
+        return {金币: Math.ceil(Math.pow(1.45, lvl) * buildNum(22.5, '分钟'))};
     }, 效果: [
-        {name: 'VillageFaith容量', 类型: '基础 {0}', value: lvl => lvl * 8}
+        {name: '信仰容量', 类型: '基础', value: lvl => lvl * 8}
     ]},
-    
     突破: {cap: 50, requirement() {
         return store.state.解锁.突破升级.use;
     }, price(lvl) {
-        return {village_science: Math.round(Math.pow(1.05, Math.最大值(lvl - 25, 0)) * lvl * 10 + 20)};
+        return {科学: Math.round(Math.pow(1.05, Math.最大值(lvl - 25, 0)) * lvl * 10 + 20)};
     }, 效果: [
-        {name: 'VillageKnowledge容量', 类型: '基础 {0}', value: lvl => lvl * 5},
-        {name: 'VillageScience容量', 类型: '基础 {0}', value: lvl => lvl * 2}
+        {name: '知识容量', 类型: '基础', value: lvl => lvl * 5},
+        {name: '科学容量', 类型: '基础', value: lvl => lvl * 2}
     ]},
     改良植物: {cap: 10, requirement() {
         return store.state.解锁.改造植物升级.use;
     }, price(lvl) {
-        return {village_science: lvl * 15 + 30};
+        return {科学: lvl * 15 + 30};
     }, 效果: [
-        {name: 'VillagePlantFiber增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: 'VillageGrain增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-        {name: 'VillageFruit增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-        {name: 'VillageVegetable增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
+        {name: '植物纤维增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
+        {name: '仅粮食增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
+        {name: '水果增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
+        {name: '仅蔬菜增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
     ]},
     多巴胺: {cap: 15, requirement() {
         return store.state.解锁.多巴胺升级.use;
     }, price(lvl) {
-        return {village_science: lvl * 15 + 40};
+        return {科学: lvl * 15 + 40};
     }, 效果: [
-        {name: '幸福', 类型: '基础 {0}', value: lvl => lvl * 0.002},
-        {name: 'VillageJoy容量', 类型: '基础 {0}', value: lvl => lvl * 50}
+        {name: '幸福', 类型: '基础', value: lvl => lvl * 0.002},
+        {name: '快乐容量', 类型: '基础', value: lvl => lvl * 50}
     ]},
     肾上腺素: {cap: 15, requirement() {
         return store.state.解锁.肾上腺素升级.use;
     }, price(lvl) {
-        return {village_science: lvl * 15 + 50};
+        return {科学: lvl * 15 + 50};
     }, 效果: [
-        {name: 'VillageHardwood增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-        {name: 'VillageGem增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-        {name: 'VillageFish增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
+        {name: '硬木增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
+        {name: '宝石增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
+        {name: '鱼增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
     ]},
-    
     洒水装置: {cap: 15, requirement() {
         return store.state.解锁.喷头升级.use;
     }, price(lvl) {
-        return {village_coin: Math.ceil(Math.pow(1.65, lvl) * buildNum(2, 'T'))};
+        return {金币: Math.ceil(Math.pow(1.65, lvl) * buildNum(2, 'T'))};
     }, 效果: [
-        {name: 'VillagePlantFiber增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-        {name: 'VillageGrain增益', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)},
-        {name: 'VillageFruit增益', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)},
-        {name: 'VillageVegetable增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
+        {name: '植物纤维增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
+        {name: '仅粮食增益', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)},
+        {name: '水果增益', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)},
+        {name: '仅蔬菜增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
     ]},
     贪婪: {cap: 15, requirement() {
         return store.state.解锁.贪婪升级.use;
     }, price(lvl) {
-        return {village_knowledge: lvl * 160 + 2200, village_science: lvl * 45 + 500};
+        return {知识: lvl * 160 + 2200, 科学: lvl * 45 + 500};
     }, 效果: [
         {name: '税率', 类型: 'mult', value: lvl => Math.pow(1.4, lvl)},
-        {name: 'VillageCoin增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
-        {name: '污染', 类型: '基础 {0}', value: lvl => lvl}
+        {name: '金币增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
+        {name: '污染', 类型: '基础', value: lvl => lvl}
     ]},
-    
     野心: {requirement() {
         return store.state.解锁.野心升级.use;
     }, price(lvl) {
-        return {village_loot0: Math.ceil(Math.pow(1.15, lvl) * (lvl * 2 + 6))};
+        return {常见战利品: Math.ceil(Math.pow(1.15, lvl) * (lvl * 2 + 6))};
     }, 效果: [
         {name: '战利品增益', 类型: 'mult', value: lvl => lvl * 0.01 + 1},
-        {name: '战利品品质', 类型: '基础 {0}', value: lvl => lvl * 3}
+        {name: '战利品品质', 类型: '基础', value: lvl => lvl * 3}
     ]},
     理解: {cap: 20, requirement() {
         return store.state.解锁.认知升级.use;
     }, price(lvl) {
-        return {village_loot0: Math.ceil(Math.pow(1.2, lvl) * 55)};
+        return {常见战利品: Math.ceil(Math.pow(1.2, lvl) * 55)};
     }, 效果: [
-        {name: 'VillageKnowledge容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: 'VillageScience容量', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
+        {name: '知识容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
+        {name: '科学容量', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
     ]},
     好奇心: {requirement() {
         return store.state.解锁.好奇心升级.use;
     }, price(lvl) {
-        return {village_loot1: Math.ceil(Math.pow(1.15, lvl) * (lvl + 4))};
+        return {罕见的战利品: Math.ceil(Math.pow(1.15, lvl) * (lvl + 4))};
     }, 效果: [
         {name: '战利品增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
     ]},
     崇拜: {cap: 20, requirement() {
         return store.state.解锁.崇拜升级.use;
     }, price(lvl) {
-        return {village_loot1: Math.ceil(Math.pow(1.18, lvl) * 55)};
+        return {罕见的战利品: Math.ceil(Math.pow(1.18, lvl) * 55)};
     }, 效果: [
-        {name: 'VillageFaith容量', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.1 + 1}
+        {name: '信仰容量', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.1 + 1}
     ]},
     物物交换: {requirement() {
         return store.state.解锁.易货升级.use;
     }, price(lvl) {
-        return {village_loot2: Math.ceil(Math.pow(1.15, lvl) * (lvl + 2.5))};
+        return {稀有战利品: Math.ceil(Math.pow(1.15, lvl) * (lvl + 2.5))};
     }, 效果: [
-        {name: '战利品品质', 类型: '基础 {0}', value: lvl => lvl},
-        {name: 'VillageCoin增益', 类型: 'mult', value: lvl => Math.pow(1.08, lvl)}
+        {name: '战利品品质', 类型: '基础', value: lvl => lvl},
+        {name: '金币增益', 类型: 'mult', value: lvl => Math.pow(1.08, lvl)}
     ]},
     火花: {cap: 20, requirement() {
         return store.state.解锁.火花升级.use;
     }, price(lvl) {
-        return {village_loot2: Math.ceil(Math.pow(1.16, lvl) * 55)};
+        return {稀有战利品: Math.ceil(Math.pow(1.16, lvl) * 55)};
     }, 效果: [
-        {name: '力量', 类型: '基础 {0}', value: lvl => lvl}
+        {name: '力量', 类型: '基础', value: lvl => lvl}
     ]},
 }

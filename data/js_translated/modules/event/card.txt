@@ -1,0 +1,73 @@
+
+export default {
+    feature: {
+        prefix: 'EV',
+        reward: [{name: 'GemTopaz容量', 类型: '基础 {0}', value: lvl => lvl * 5}],
+        shinyReward: [{name: 'GemTopaz容量', 类型: '基础 {0}', value: lvl => lvl * 5}],
+        解锁: 'eventFeature'
+    },
+    collection: {
+        周末旅行: {reward: [
+            {name: 'GemTopaz容量', 类型: '基础 {0}', value: 50}
+        ]},
+        热带天堂: {reward: [
+            {name: 'GemTopaz容量', 类型: '基础 {0}', value: 50}
+        ]},
+        寒冷时期: {reward: [
+            {name: 'GemTopaz容量', 类型: '基础 {0}', value: 50}
+        ]},
+    },
+    pack: {
+        好交易: {解锁: 'merchantEvent', amount: 1, content: {
+            ...gemTable,
+            ...smallTable,
+            '旧货出售': 2, '加油站': 2, '本地商户': 2,
+        }},
+        连接线: {解锁: 'bingoCasinoEvent', amount: 1, content: {
+            ...gemTable,
+            ...smallTable,
+            '电视宾果游戏': 6,
+        }},
+        感觉很幸运: {解锁: 'wheelOfFortuneCasinoEvent', amount: 1, content: {
+            ...gemTable,
+            ...smallTable,
+            '赌场': 6,
+        }},
+        投资者梦想: {解锁: 'bankEvent', amount: 3, content: {
+            ...gemTable,
+            ...smallTable,
+            '银行保险箱': 2, '利润！': 2, '信用卡': 2,
+        }},
+        园艺高手: {解锁: 'bloomEvent', amount: 1, content: {
+            ...gemTable,
+            ...summerTable,
+            '花卉育种': 3, '植物样本': 3,
+        }},
+        钓鱼为乐: {解锁: 'weatherChaosEvent', amount: 1, content: {
+            ...gemTable,
+            ...summerTable,
+            '鱼叉捕鱼': 3, '蜗牛赛跑': 3,
+        }},
+        迷人的船: {解锁: 'summerFestivalEvent', amount: 1, content: {
+            ...gemTable,
+            ...summerTable,
+            '孤岛': 3, '夏日之歌': 3,
+        }},
+        午夜异常: {解锁: 'nightHuntEvent', amount: 1, content: {
+            ...gemTable,
+            ...winterTable,
+            '神秘的汤': 3, '秘泉': 3,
+        }},
+        冰雪仙境: {解锁: 'snowdownEvent', amount: 1, content: {
+            ...gemTable,
+            ...winterTable,
+            '做雪人': 3, '冬季运动': 3,
+        }},
+        欢乐的火花: {解锁: 'cindersEvent', amount: 1, content: {
+            ...gemTable,
+            ...winterTable,
+            '城堡灯': 3, '灯泡店': 3,
+        }},
+    },
+    卡片: cardList
+}

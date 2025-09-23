@@ -1,0 +1,83 @@
+export default {
+    铝矿石: {
+        攻击和生命值 x{0}: 15,
+        杂质: 1.5,
+        minDepth: 15,
+        maxDepth: 45,
+        modulo: 3,
+        baseAmount: 0.02,
+        amountMult: 1.05
+    },
+    铜矿石: {
+        攻击和生命值 x{0}: 50,
+        杂质: 2,
+        minDepth: 30,
+        maxDepth: 68,
+        modulo: 4,
+        baseAmount: 0.004,
+        amountMult: 1.05
+    },
+    锡矿石: {
+        攻击和生命值 x{0}: 240,
+        杂质: 2.5,
+        minDepth: 50,
+        maxDepth: 100,
+        modulo: 5,
+        baseAmount: 0.0008,
+        amountMult: 1.05
+    },
+    铁矿石: {
+        攻击和生命值 x{0}: 1300,
+        杂质: 3,
+        minDepth: 80,
+        maxDepth: 140,
+        modulo: 7,
+        baseAmount: 0.00016,
+        amountMult: 1.05
+    },
+    钛矿石: {
+        攻击和生命值 x{0}: 7000,
+        杂质: 3.5,
+        minDepth: 120,
+        maxDepth: 200,
+        modulo: 11,
+        baseAmount: 0.000032,
+        amountMult: 1.05
+    },
+    铂矿石: {
+        攻击和生命值 x{0}: buildNum(40, 'K'),
+        杂质: 4,
+        minDepth: 175,
+        maxDepth: 295,
+        modulo: 13,
+        baseAmount: 0.0000064,
+        amountMult: 1.05
+    },
+    铱矿石: {
+        攻击和生命值 x{0}: buildNum(250, 'K'),
+        杂质: 5,
+        minDepth: 260,
+        maxDepth: 420,
+        modulo: 17,
+        baseAmount: 0.00000128,
+        amountMult: 1.05
+    },
+    锇矿石: {
+        攻击和生命值 x{0}: buildNum(1.75, 'M'),
+        杂质: 6,
+        minDepth: 350,
+        maxDepth: 525,
+        modulo: 23,
+        baseAmount: 0.000000256,
+        amountMult: 1.05
+    },
+    铅矿石: {
+        攻击和生命值 x{0}: buildNum(12.5, 'M'),
+        杂质: 7.5,
+        minDepth: 450,
+        maxDepth: 650,
+        modulo: 29,
+        baseAmount: 0.0000000512,
+        amountMult: 1.05
+    }
+}

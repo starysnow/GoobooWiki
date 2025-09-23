@@ -1,0 +1,13 @@
+export default {
+    maxZone: {value: () => store.state.达到 {0} {1}.horde_maxZone.总计 {0}, default: 1, cap: 30, milestones: lvl => lvl * 10 + 10, 圣遗物: {7: '终极指南', 11: '破裂的保险箱'}},
+    maxZoneSpeedrun: {value: () => store.state.达到 {0} {1}.horde_maxZoneSpeedrun.总计 {0}, default: 1, cap: 10, milestones: lvl => lvl * 5 + 10, 圣遗物: {8: '哑铃'}},
+    totalDamage: {value: () => store.state.达到 {0} {1}.horde_totalDamage.总计 {0}, milestones: lvl => Math.pow(lvl * 250 + 7500, lvl) * buildNum(10, 'K'), 圣遗物: {6: '新背包'}},
+    maxDamage: {value: () => store.state.达到 {0} {1}.horde_maxDamage.总计 {0}, milestones: lvl => Math.pow(lvl * 250 + 7500, lvl) * 10, 圣遗物: {3: '燃烧的头骨'}},
+    骨头: {value: () => store.state.达到 {0} {1}.horde_bone.总计 {0}, milestones: lvl => Math.pow(2, getSequence(10, lvl) - 10) * buildNum(1, 'M'), 圣遗物: {2: '被遗忘的盾牌'}},
+    怪物零件: {value: () => store.state.达到 {0} {1}.horde_monsterPart.总计 {0}, milestones: lvl => Math.pow(16, lvl) * 50, 圣遗物: {3: '能量饮料', 5: '绷带'}},
+    腐败的灵魂: {value: () => store.state.达到 {0} {1}.horde_soulCorrupted.总计 {0}, milestones: lvl => Math.pow(7 + lvl, lvl) * 1000, 圣遗物: {4: '幸运骰子'}},
+    maxCorruptionKill: {value: () => store.state.达到 {0} {1}.horde_maxCorruptionKill.总计 {0}, display: 'percent', milestones: lvl => lvl + 1},
+    maxMastery: {value: () => store.state.达到 {0} {1}.horde_maxMastery.总计 {0}, milestones: lvl => lvl + 1},
+    totalMastery: {value: () => store.state.达到 {0} {1}.horde_totalMastery.总计 {0}, milestones: lvl => Math.round((lvl + 1) * 25 * (lvl * 0.2 + 1))},
+    unlucky: {value: () => store.state.达到 {0} {1}.horde_unlucky.总计 {0}, 这项成就是秘密的，不提供任何奖励。: true, display: 'boolean', cap: 1, milestones: () => 1},
+}

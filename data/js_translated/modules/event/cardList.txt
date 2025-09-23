@@ -1,0 +1,272 @@
+{name: '红宝石', 类型: '收集 {0} ', value: 10},
+    {name: '翡翠', 类型: '收集 {0} ', value: 10},
+    {name: '蓝宝石', 类型: '收集 {0} ', value: 10},
+    {name: '紫水晶', 类型: '收集 {0} ', value: 10}
+];
+export default [
+    {id: 1, instant: true, collection: '周末旅行', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '粉色', icons: [
+        {"x": 0, "y": 0, "rotate": 0, "size": 2.5, "图标": "mdi-ferris-wheel"},
+        {"x": -1, "y": -0.05, "rotate": 0, "size": 1.7, "图标": "mdi-string-lights"},
+        {"x": 1, "y": -0.05, "rotate": 0, "size": 1.7, "图标": "mdi-string-lights"},
+        {"x": 0.85, "y": 0.75, "rotate": 0, "size": 1, "图标": "mdi-candycane"},
+        {"x": -0.95, "y": 0.95, "rotate": 35, "size": 0.75, "图标": "mdi-candy"},
+        {"x": -0.65, "y": 0.85, "rotate": 80, "size": 0.75, "图标": "mdi-candy"},
+        {"x": -0.9, "y": 0.7, "rotate": -5, "size": 0.75, "图标": "mdi-candy"}
+    ]},
+    {id: 2, instant: true, collection: '周末旅行', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅蓝色油漆', icons: [
+        {"x": -0.6, "y": 0.8, "rotate": 0, "size": 1, "图标": "mdi-toy-砖块"},
+        {"x": -0.15, "y": 0.8, "rotate": 0, "size": 1, "图标": "mdi-toy-砖块"},
+        {"x": -0.6, "y": 0.45, "rotate": 0, "size": 1, "图标": "mdi-toy-砖块"},
+        {"x": -0.15, "y": 0.45, "rotate": 0, "size": 1, "图标": "mdi-toy-砖块"},
+        {"x": -0.15, "y": 0.1, "rotate": 0, "size": 1, "图标": "mdi-toy-砖块"},
+        {"x": -1, "y": 0.75, "rotate": 0, "size": 1, "图标": "mdi-human-child"},
+        {"x": 0.6, "y": 0.8, "rotate": 0, "size": 1, "图标": "mdi-toy-砖块"},
+        {"x": 0.6, "y": 0.45, "rotate": 0, "size": 1, "图标": "mdi-toy-砖块"},
+        {"x": 1, "y": 0.75, "rotate": 0, "size": 1, "图标": "mdi-human-child"}
+    ]},
+    {id: 3, instant: true, collection: '周末旅行', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色', icons: [
+        {"x": -0.9, "y": 0.1, "rotate": 0, "size": 1.75, "图标": "mdi-烤架"},
+        {"x": 0.4, "y": 0, "rotate": 0, "size": 3, "图标": "mdi-table-furniture"},
+        {"x": 0, "y": -0.5, "rotate": 90, "size": 1, "图标": "mdi-食物-牛扒"},
+        {"x": 0.75, "y": -0.45, "rotate": 45, "size": 1, "图标": "mdi-baguette"}
+    ]},
+    {id: 4, instant: true, collection: '周末旅行', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-粉色', icons: [
+        {"x": -0.25, "y": 0.25, "rotate": 0, "size": 1.5, "图标": "mdi-human-male-female"},
+        {"x": 0.8, "y": 0.5, "rotate": 0, "size": 1.5, "图标": "mdi-human-male-female"},
+        {"x": -0.85, "y": 0.65, "rotate": 0, "size": 1.5, "图标": "mdi-human-male"},
+        {"x": 0.25, "y": 0.85, "rotate": 0, "size": 1.5, "图标": "mdi-human-female"},
+        {"x": -0.7, "y": -0.35, "rotate": 0, "size": 1, "图标": "mdi-party-popper"},
+        {"x": 0.65, "y": -0.45, "rotate": 0, "size": 1.5, "图标": "mdi-cake-layered"},
+        {"x": 0.35, "y": -0.5, "rotate": 0, "size": 1, "图标": "mdi-balloon"},
+        {"x": 1, "y": -0.5, "rotate": 0, "size": 1, "图标": "mdi-balloon"}
+    ]},
+    {id: 5, instant: true, collection: '周末旅行', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅绿色油漆', icons: [
+        {"x": 0.5, "y": -0.2, "rotate": 0, "size": 2.5, "图标": "mdi-home"},
+        {"x": -1.15, "y": 0, "rotate": 0, "size": 1, "图标": "mdi-fence"},
+        {"x": -0.65, "y": 0, "rotate": 0, "size": 1, "图标": "mdi-fence"},
+        {"x": -0.15, "y": 0, "rotate": 0, "size": 1, "图标": "mdi-fence"},
+        {"x": 1.15, "y": 0, "rotate": 0, "size": 1, "图标": "mdi-fence"},
+        {"x": -0.75, "y": 0.65, "rotate": 0, "size": 1.2, "图标": "mdi-storefront"},
+        {"x": 0.15, "y": 1, "rotate": 0, "size": 1, "图标": "mdi-human-male-female-child"}
+    ]},
+    {id: 6, instant: true, collection: '周末旅行', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'darker-灰色', icons: [
+        {"x": 0.6, "y": -0.22, "rotate": 0, "size": 2, "图标": "mdi-store"},
+        {"x": -0.4, "y": -0.15, "rotate": 0, "size": 1.4, "图标": "mdi-存储-tank"},
+        {"x": -1, "y": 0, "rotate": 0, "size": 0.7, "图标": "mdi-草"},
+        {"x": -0.9, "y": 0.7, "rotate": 0, "size": 1.3, "图标": "mdi-gas-station"},
+        {"x": 0.4, "y": 0.7, "rotate": 0, "size": 1.3, "图标": "mdi-gas-station"},
+        {"x": 1, "y": 0.75, "rotate": 0, "size": 1, "图标": "mdi-car"}
+    ]},
+    {id: 7, instant: true, collection: '周末旅行', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '黄色', icons: [
+        {"x": 0, "y": 0.15, "rotate": 0, "size": 1.5, "图标": "mdi-scale"},
+        {"x": -0.2, "y": -0.4, "rotate": 20, "size": 1, "图标": "mdi-胡萝卜"},
+        {"x": 0.15, "y": -0.4, "rotate": 0, "size": 1, "图标": "mdi-食物-apple"},
+        {"x": 0.9, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-human-greeting"},
+        {"x": -0.9, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-human-handsdown"},
+        {"x": 1.2, "y": 0.15, "rotate": 0, "size": 0.6, "图标": "mdi-钱包"}
+    ]},
+    {id: 8, instant: true, collection: '周末旅行', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色', icons: [
+        {"x": -0.75, "y": 0.25, "rotate": 0, "size": 1.5, "图标": "mdi-human-walker"},
+        {"x": 0, "y": 0.25, "rotate": 0, "size": 1.5, "图标": "mdi-human-walker"},
+        {"x": 0.8, "y": -0.27, "rotate": 0, "size": 1.1, "图标": "mdi-television-classic"},
+        {"x": 0.8, "y": 0.25, "rotate": 0, "size": 1.25, "图标": "mdi-壁炉-嘲讽模式已关闭"},
+        {"x": -0.5, "y": -0.6, "rotate": 0, "size": 0.5, "图标": "mdi-光-switch"}
+    ]},
+    {id: 9, instant: true, collection: '周末旅行', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '紫色', icons: [
+        {"x": -0.9, "y": 0, "rotate": 0, "size": 1.5, "图标": "mdi-slot-machine"},
+        {"x": 0, "y": 0, "rotate": 0, "size": 1.5, "图标": "mdi-slot-machine"},
+        {"x": 1, "y": 0.05, "rotate": 0, "size": 1.25, "图标": "mdi-human-greeting"},
+        {"x": 0.65, "y": -0.3, "rotate": 0, "size": 0.5, "图标": "mdi-poker-chip"}
+    ]},
+    {id: 10, instant: true, collection: '周末旅行', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '灰色', icons: []},
+    {id: 11, instant: true, collection: '周末旅行', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-浅绿色油漆', icons: [
+        {"x": 0, "y": 0.8, "rotate": 0, "size": 1.75, "图标": "mdi-保险箱-正方形"},
+        {"x": 0, "y": -0.5, "rotate": 0, "size": 3, "图标": "mdi-银行"},
+        {"x": -1, "y": 1.08, "rotate": 0, "size": 0.8, "图标": "mdi-sack"},
+        {"x": -0.65, "y": 1.05, "rotate": 0, "size": 1, "图标": "mdi-sack"}
+    ]},
+    {id: 12, instant: true, collection: '周末旅行', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-蓝色油漆', icons: [
+        {"x": -0.35, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-clipboard-outline"},
+        {"x": -0.35, "y": 0.05, "rotate": 0, "size": 1, "图标": "mdi-finance"},
+        {"x": -0.35, "y": 0.8, "rotate": 0, "size": 1.75, "图标": "mdi-sign-pole"},
+        {"x": 0.65, "y": 0.75, "rotate": 0, "size": 2, "图标": "mdi-human-greeting"}
+    ]},
+    {id: 13, instant: true, collection: '周末旅行', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '绿色', icons: [
+        {"x": 0, "y": -0.1, "rotate": 0, "size": 1.75, "图标": "mdi-现金-register"},
+        {"x": -0.9, "y": 0.1, "rotate": 0, "size": 2, "图标": "mdi-human-handsdown"},
+        {"x": 0.9, "y": 0.1, "rotate": 0, "size": 2, "图标": "mdi-human-greeting"},
+        {"x": 0.45, "y": -0.55, "rotate": 25, "size": 0.75, "图标": "mdi-credit-卡片"}
+    ]},
+    {id: 14, instant: true, collection: '热带天堂', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-黄色', icons: [
+        {"x": -0.2, "y": 0.4, "rotate": 0, "size": 2, "图标": "mdi-仙人掌"},
+        {"x": 1, "y": 0, "rotate": 0, "size": 1.75, "图标": "mdi-仙人掌"},
+        {"x": -0.75, "y": -0.4, "rotate": 0, "size": 1.5, "图标": "mdi-仙人掌"},
+        {"x": 0.5, "y": -0.8, "rotate": 0, "size": 1.25, "图标": "mdi-仙人掌"},
+        {"x": 0.25, "y": -0.15, "rotate": 0, "size": 0.75, "图标": "mdi-snake"},
+        {"x": -0.15, "y": -0.85, "rotate": 150, "size": 0.5, "图标": "mdi-蜘蛛"}
+    ]},
+    {id: 15, instant: true, collection: '热带天堂', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '蓝色油漆', icons: [
+        {"x": 0, "y": 0.02, "rotate": 0, "size": 2, "图标": "mdi-ferry"},
+        {"x": -0.9, "y": 0.75, "rotate": 0, "size": 2, "图标": "mdi-波浪"},
+        {"x": 0, "y": 0.75, "rotate": 0, "size": 2, "图标": "mdi-波浪"},
+        {"x": 0.9, "y": 0.75, "rotate": 0, "size": 2, "图标": "mdi-波浪"},
+        {"x": 1, "y": -0.95, "rotate": 0, "size": 1, "图标": "mdi-paragliding"},
+        {"x": 1, "y": -0.65, "rotate": 0, "size": 1, "图标": "mdi-human-handsup"},
+        {"x": 0.8, "y": -0.75, "rotate": -65, "size": 1, "图标": "mdi-minus"},
+        {"x": 0.65, "y": -0.45, "rotate": -65, "size": 1, "图标": "mdi-minus"},
+        {"x": 0.5, "y": -0.15, "rotate": -65, "size": 1, "图标": "mdi-minus"}
+    ]},
+    {id: 16, instant: true, collection: '热带天堂', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '绿色', icons: [
+        {"x": -0.1, "y": -0.4, "rotate": 0, "size": 2.25, "图标": "mdi-棕榈树-tree"},
+        {"x": 0.75, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-棕榈树-tree"},
+        {"x": -0.6, "y": 0.4, "rotate": 0, "size": 1.75, "图标": "mdi-棕榈树-tree"},
+        {"x": -0.9, "y": 0, "rotate": 0, "size": 1, "图标": "mdi-草"},
+        {"x": -0.4, "y": -0.1, "rotate": 0, "size": 0.9, "图标": "mdi-草"},
+        {"x": 0.3, "y": 0.05, "rotate": 0, "size": 1.05, "图标": "mdi-草"},
+        {"x": -0.9, "y": 0.55, "rotate": 0, "size": 1.2, "图标": "mdi-草"},
+        {"x": 0.45, "y": 0.55, "rotate": 0, "size": 1.25, "图标": "mdi-草"},
+        {"x": -0.1, "y": 0.45, "rotate": 0, "size": 0.75, "图标": "mdi-旗帜-三角形"},
+        {"x": 0.8, "y": -0.95, "rotate": 30, "size": 1.6, "图标": "mdi-weather-sunny"}
+    ]},
+    {id: 17, instant: true, collection: '热带天堂', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'lime', icons: [
+        {"x": -0.65, "y": -0.4, "rotate": 0, "size": 2.25, "图标": "mdi-塔楼-海滩"},
+        {"x": 0.15, "y": -0.6, "rotate": 20, "size": 1.2, "图标": "mdi-umbrella-海滩"},
+        {"x": 0.9, "y": -0.6, "rotate": 70, "size": 1.2, "图标": "mdi-umbrella-海滩"},
+        {"x": 0.7, "y": 0.15, "rotate": 0, "size": 1.2, "图标": "mdi-乌龟"},
+        {"x": -0.9, "y": 0.8, "rotate": 0, "size": 2, "图标": "mdi-波浪"},
+        {"x": 0, "y": 0.8, "rotate": 0, "size": 2, "图标": "mdi-波浪"},
+        {"x": 0.9, "y": 0.8, "rotate": 0, "size": 2, "图标": "mdi-波浪"}
+    ]},
+    {id: 18, instant: true, collection: '热带天堂', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色', icons: [
+        {"x": -0.85, "y": 0.3, "rotate": 0, "size": 1.5, "图标": "mdi-pot"},
+        {"x": 0, "y": 0.3, "rotate": 0, "size": 1.5, "图标": "mdi-pot"},
+        {"x": 0.85, "y": 0.3, "rotate": 0, "size": 1.5, "图标": "mdi-pot"},
+        {"x": -0.85, "y": 0, "rotate": 0, "size": 1, "图标": "mdi-仅鲜花"},
+        {"x": 0, "y": 0.15, "rotate": 0, "size": 0.5, "图标": "mdi-sprout"},
+        {"x": 0.85, "y": 0, "rotate": 0, "size": 1, "图标": "mdi-仅鲜花-郁金香"},
+        {"x": -0.3, "y": 1, "rotate": 0, "size": 0.8, "图标": "mdi-watering-can"}
+    ]},
+    {id: 19, instant: true, collection: '热带天堂', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅绿色油漆', icons: [
+        {"x": -0.4, "y": 0, "rotate": 0, "size": 3, "图标": "mdi-显微镜"},
+        {"x": 0, "y": 0.12, "rotate": 35, "size": 0.4, "图标": "mdi-leaf"},
+        {"x": 0.8, "y": 0.45, "rotate": 0, "size": 1.3, "图标": "mdi-pot"},
+        {"x": 0.8, "y": 0.25, "rotate": 0, "size": 1, "图标": "mdi-自然药水"}
+    ]},
+    {id: 20, instant: true, collection: '热带天堂', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'dark-蓝色油漆', icons: [
+        {"x": -0.45, "y": 0.1, "rotate": 0, "size": 3, "图标": "mdi-椭圆形-outline"},
+        {"x": 0.7, "y": -0.1, "rotate": 0, "size": 2, "图标": "mdi-human-handsup"},
+        {"x": 0.3, "y": -0.65, "rotate": -60, "size": 1.25, "图标": "mdi-矛"},
+        {"x": 1, "y": -0.7, "rotate": 0, "size": 0.5, "图标": "mdi-鱼"},
+        {"x": -0.75, "y": 0, "rotate": 0, "size": 0.65, "图标": "mdi-鱼"},
+        {"x": -0.2, "y": 0.1, "rotate": 0, "size": 0.6, "图标": "mdi-鱼"},
+        {"x": -0.55, "y": 0.3, "rotate": 0, "size": 0.75, "图标": "mdi-鱼"}
+    ]},
+    {id: 21, instant: true, collection: '热带天堂', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-红色', icons: [
+        {"x": 0.85, "y": -0.6, "rotate": 0, "size": 1.75, "图标": "mdi-旗帜-checkered"},
+        {"x": -0.9, "y": 0, "rotate": 0, "size": 3, "图标": "mdi-minus"},
+        {"x": 0, "y": 0, "rotate": 0, "size": 3, "图标": "mdi-minus"},
+        {"x": 0.9, "y": 0, "rotate": 0, "size": 3, "图标": "mdi-minus"},
+        {"x": -0.9, "y": 0.9, "rotate": 0, "size": 3, "图标": "mdi-minus"},
+        {"x": 0, "y": 0.9, "rotate": 0, "size": 3, "图标": "mdi-minus"},
+        {"x": 0.9, "y": 0.9, "rotate": 0, "size": 3, "图标": "mdi-minus"},
+        {"x": -0.55, "y": 0.3, "rotate": 0, "size": 0.7, "图标": "mdi-蜗牛"},
+        {"x": 0.25, "y": 0.45, "rotate": 0, "size": 0.75, "图标": "mdi-蜗牛"},
+        {"x": -0.3, "y": 0.6, "rotate": 0, "size": 0.8, "图标": "mdi-蜗牛"},
+        {"x": 0.7, "y": 0.47, "rotate": 90, "size": 1.75, "图标": "mdi-minus"}
+    ]},
+    {id: 22, instant: true, collection: '热带天堂', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'beige', icons: [
+        {"x": 0, "y": -0.4, "rotate": 0, "size": 3, "图标": "mdi-island"},
+        {"x": -0.65, "y": -0.45, "rotate": 20, "size": 1.5, "图标": "mdi-umbrella-海滩"},
+        {"x": -0.85, "y": 0.8, "rotate": 0, "size": 1.75, "图标": "mdi-波浪"},
+        {"x": 0, "y": 0.8, "rotate": 0, "size": 1.75, "图标": "mdi-波浪"},
+        {"x": 0.85, "y": 0.8, "rotate": 0, "size": 1.75, "图标": "mdi-波浪"}
+    ]},
+    {id: 23, instant: true, collection: '热带天堂', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '粉色-紫色', icons: [
+        {"x": -0.9, "y": 0.2, "rotate": 0, "size": 1.25, "图标": "mdi-扬声器"},
+        {"x": 0.9, "y": 0.2, "rotate": 0, "size": 1.25, "图标": "mdi-扬声器"},
+        {"x": -0.95, "y": -0.35, "rotate": 0, "size": 0.75, "图标": "mdi-音乐-笔记"},
+        {"x": -0.75, "y": -0.7, "rotate": 0, "size": 0.6, "图标": "mdi-音乐-笔记"},
+        {"x": 0, "y": 0.25, "rotate": 0, "size": 1, "图标": "mdi-amplifier"},
+        {"x": 0.9, "y": -0.35, "rotate": 0, "size": 0.85, "图标": "mdi-音乐-笔记"},
+        {"x": 0.7, "y": -0.7, "rotate": 0, "size": 0.75, "图标": "mdi-音乐-clef-treble"},
+        {"x": 0.4, "y": -0.9, "rotate": 0, "size": 0.65, "图标": "mdi-音乐-笔记"}
+    ]},
+    {id: 24, instant: true, collection: '寒冷时期', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色-红色', icons: [
+        {"x": 0, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-sofa"},
+        {"x": -0.95, "y": 0.2, "rotate": 0, "size": 1, "图标": "mdi-dresser"},
+        {"x": -0.95, "y": -0.35, "rotate": 0, "size": 1.5, "图标": "mdi-lava-lamp"},
+        {"x": 0.95, "y": 0.1, "rotate": 0, "size": 1.25, "图标": "mdi-壁炉"},
+        {"x": -0.25, "y": 1, "rotate": 0, "size": 2, "图标": "mdi-rug"}
+    ]},
+    {id: 25, instant: true, collection: '寒冷时期', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '光-灰色', icons: [
+        {"x": 0, "y": 0.01, "rotate": 0, "size": 3, "图标": "mdi-image-filter-hdr"},
+        {"x": 0.55, "y": 0, "rotate": 0, "size": 1.9, "图标": "mdi-landslide"},
+        {"x": -0.65, "y": 0, "rotate": 0, "size": 1.9, "图标": "mdi-volcano"}
+    ]},
+    {id: 26, instant: true, collection: '寒冷时期', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-紫色', icons: [
+        {"x": -0.85, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-城市-variant"},
+        {"x": 0.85, "y": 0.05, "rotate": 0, "size": 2, "图标": "mdi-城市"},
+        {"x": -0.3, "y": 0.05, "rotate": 0, "size": 0.65, "图标": "mdi-outdoor-lamp"},
+        {"x": 0.15, "y": 0.3, "rotate": 0, "size": 0.7, "图标": "mdi-sign-pole"},
+        {"x": 0.15, "y": 0.05, "rotate": 0, "size": 0.7, "图标": "mdi-post-lamp"}
+    ]},
+    {id: 27, instant: true, collection: '寒冷时期', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '红色', icons: [
+        {"x": -0.9, "y": 0.3, "rotate": 0, "size": 1.3, "图标": "mdi-cup"},
+        {"x": -0.1, "y": 0.3, "rotate": 0, "size": 1.3, "图标": "mdi-cup"},
+        {"x": -0.9, "y": -0.05, "rotate": 0, "size": 1, "图标": "mdi-烟雾"},
+        {"x": -0.1, "y": -0.05, "rotate": 0, "size": 1, "图标": "mdi-烟雾"},
+        {"x": 0.75, "y": -0.1, "rotate": 0, "size": 3, "图标": "mdi-bottle-soda-classic-outline"},
+        {"x": 0.75, "y": -0.15, "rotate": 0, "size": 0.6, "图标": "mdi-食物-apple"}
+    ]},
+    {id: 28, instant: true, collection: '寒冷时期', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'deep-紫色', icons: [
+        {"x": -0.2, "y": 0.4, "rotate": 0, "size": 3, "图标": "mdi-pot-您使用的是steam版本。 更新是通过 steam 处理的。"},
+        {"x": 0.85, "y": 0.5, "rotate": 0, "size": 2.25, "图标": "mdi-human-greeting"},
+        {"x": 0.3, "y": 0.15, "rotate": 175, "size": 1, "图标": "mdi-silverware-spoon"},
+        {"x": -0.45, "y": 0.25, "rotate": 125, "size": 1, "图标": "mdi-食物-鼓槌"},
+        {"x": 0.6, "y": -0.9, "rotate": 0, "size": 1.5, "图标": "mdi-weather-night"}
+    ]},
+    {id: 29, instant: true, collection: '寒冷时期', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '绿色', icons: [
+        {"x": 0, "y": -0.4, "rotate": 0, "size": 2, "图标": "mdi-森林"},
+        {"x": -0.55, "y": -0.1, "rotate": 0, "size": 2, "图标": "mdi-森林"},
+        {"x": 0.8, "y": 0.1, "rotate": 0, "size": 2, "图标": "mdi-pine-tree"},
+        {"x": 0, "y": 0.3, "rotate": 0, "size": 1, "图标": "mdi-waterfall"},
+        {"x": -0.1, "y": 0.65, "rotate": 0, "size": 1, "图标": "mdi-波浪"},
+        {"x": -0.3, "y": 1, "rotate": 0, "size": 1, "图标": "mdi-波浪"},
+        {"x": 0.35, "y": 0.7, "rotate": 0, "size": 0.5, "图标": "mdi-草"},
+        {"x": 0.2, "y": 1, "rotate": 0, "size": 0.65, "图标": "mdi-草"},
+        {"x": -0.75, "y": 0.85, "rotate": 0, "size": 0.6, "图标": "mdi-草"}
+    ]},
+    {id: 30, instant: true, collection: '寒冷时期', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅蓝色油漆', icons: [
+        {"x": 0.3, "y": 0.2, "rotate": 0, "size": 2, "图标": "mdi-snowman"},
+        {"x": -0.85, "y": 0.3, "rotate": 0, "size": 1.5, "图标": "mdi-human-handsup"},
+        {"x": -0.6, "y": -0.15, "rotate": -50, "size": 0.75, "图标": "mdi-胡萝卜"},
+        {"x": 0, "y": -0.95, "rotate": 0, "size": 1.3, "图标": "mdi-weather-snowy"},
+        {"x": 0.8, "y": -0.5, "rotate": 0, "size": 0.8, "图标": "mdi-雪花"},
+        {"x": -0.35, "y": 0.25, "rotate": 0, "size": 0.6, "图标": "mdi-雪花"}
+    ]},
+    {id: 31, instant: true, collection: '寒冷时期', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'dark-蓝色油漆', icons: [
+        {"x": -0.7, "y": 0.7, "rotate": 0, "size": 2, "图标": "mdi-snowmobile"},
+        {"x": -0.85, "y": 0.45, "rotate": 0, "size": 1.75, "图标": "mdi-walk"},
+        {"x": 0.55, "y": 0.2, "rotate": 0, "size": 1.5, "图标": "mdi-snowshoeing"},
+        {"x": -0.1, "y": -0.45, "rotate": 0, "size": 1, "图标": "mdi-滑雪板"}
+    ]},
+    {id: 32, instant: true, collection: '寒冷时期', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '蓝色油漆-灰色', icons: [
+        {"x": 0, "y": -0.9, "rotate": 0, "size": 2, "图标": "mdi-吊灯"},
+        {"x": 0.8, "y": 0.2, "rotate": 0, "size": 1.5, "图标": "mdi-candelabra-fire"},
+        {"x": -0.2, "y": 0.5, "rotate": 0, "size": 1, "图标": "mdi-candle"},
+        {"x": -0.75, "y": 0.7, "rotate": 0, "size": 2, "图标": "mdi-human-handsdown"},
+        {"x": 0.8, "y": 0.85, "rotate": 0, "size": 1.3, "图标": "mdi-dresser"}
+    ]},
+    {id: 33, instant: true, collection: '寒冷时期', reward, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '黄色', icons: [
+        {"x": 0, "y": 0.2, "rotate": 0, "size": 1.4, "图标": "mdi-灯泡"},
+        {"x": -0.8, "y": 0.2, "rotate": 0, "size": 1.4, "图标": "mdi-灯泡-cfl"},
+        {"x": 0.8, "y": 0.2, "rotate": 0, "size": 1.4, "图标": "mdi-灯泡-cfl-spiral"},
+        {"x": -0.4, "y": -0.6, "rotate": 45, "size": 1.4, "图标": "mdi-灯泡-fluorescent-tube"},
+        {"x": 0.4, "y": -0.6, "rotate": 0, "size": 1.4, "图标": "mdi-灯泡-spot"},
+        {"x": -0.5, "y": 0.6, "rotate": 0, "size": 0.7, "图标": "mdi-tag-仔细观察这些可爱的动物后，你会发现它们不是真的。他们不过是些空话而已!但他们为什么在这里?让你难受?没有时间去想它，你需要战斗来克服这些动物精神"},
+        {"x": 0.3, "y": 0.6, "rotate": 0, "size": 0.7, "图标": "mdi-tag-仔细观察这些可爱的动物后，你会发现它们不是真的。他们不过是些空话而已!但他们为什么在这里?让你难受?没有时间去想它，你需要战斗来克服这些动物精神"},
+        {"x": 1.1, "y": 0.6, "rotate": 0, "size": 0.7, "图标": "mdi-tag-仔细观察这些可爱的动物后，你会发现它们不是真的。他们不过是些空话而已!但他们为什么在这里?让你难受?没有时间去想它，你需要战斗来克服这些动物精神"},
+        {"x": -0.15, "y": -0.2, "rotate": 0, "size": 0.7, "图标": "mdi-tag-仔细观察这些可爱的动物后，你会发现它们不是真的。他们不过是些空话而已!但他们为什么在这里?让你难受?没有时间去想它，你需要战斗来克服这些动物精神"},
+        {"x": 0.7, "y": -0.2, "rotate": 0, "size": 0.7, "图标": "mdi-tag-仔细观察这些可爱的动物后，你会发现它们不是真的。他们不过是些空话而已!但他们为什么在这里?让你难受?没有时间去想它，你需要战斗来克服这些动物精神"}
+    ]},
+];

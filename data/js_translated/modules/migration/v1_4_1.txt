@@ -1,0 +1,7 @@
+function(save) {
+    
+    if (save.达到 {0} {1}.village_offering) {
+        save.达到 {0} {1}.village_offeringAmount = save.达到 {0} {1}.village_offering;
+    }
+    return save;
+}

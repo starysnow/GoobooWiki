@@ -1,0 +1,26 @@
+export default {
+    美丽: {value: () => store.state.达到 {0} {1}.gallery_beauty.总计 {0}, milestones: lvl => Math.pow(buildNum(1, 'M'), lvl) * buildNum(1, 'T'), 圣遗物: {2: '一袋金子', 6: '图片相册'}},
+    转换器: {value: () => store.state.达到 {0} {1}.gallery_converter.总计 {0}, milestones: lvl => Math.pow(20, lvl) * buildNum(200, 'K'), 圣遗物: {0: '打印机', 2: '碎纸机'}},
+    colorVariety: {value: () => [
+        store.state.达到 {0} {1}.gallery_red.总计 {0},
+        store.state.达到 {0} {1}.gallery_orange.总计 {0},
+        store.state.达到 {0} {1}.gallery_yellow.总计 {0},
+        store.state.达到 {0} {1}.gallery_green.总计 {0},
+        store.state.达到 {0} {1}.gallery_blue.总计 {0},
+        store.state.达到 {0} {1}.gallery_purple.总计 {0},
+        store.state.达到 {0} {1}["gallery_deep-橙色"].总计 {0},
+        store.state.达到 {0} {1}.gallery_amber.总计 {0},
+        store.state.达到 {0} {1}["gallery_light-绿色"].总计 {0},
+        store.state.达到 {0} {1}.gallery_teal.总计 {0},
+        store.state.达到 {0} {1}["gallery_light-蓝色油漆"].总计 {0},
+        store.state.达到 {0} {1}.gallery_pink.总计 {0}
+    ].reduce((a, b) => a + (b > 0 ? 1 : 0), 0), milestones: lvl => lvl + 2, 圣遗物: {2: '红色气球', 3: '橙色气球', 4: '黄色气球', 5: '绿色气球', 6: '蓝色气球', 7: '紫色气球'}},
+    highestTierIdea: {value: () => store.state.达到 {0} {1}.gallery_highestTierIdea.总计 {0}, milestones: lvl => lvl + 2, 圣遗物: {0: '灯泡', 1: '简单计算器', 3: '奇怪的卷轴'}},
+    现金: {value: () => store.state.达到 {0} {1}.gallery_cash.总计 {0}, milestones: lvl => Math.pow(100, lvl) * 100, 圣遗物: {1: '旧电视', 5: '印刷机'}},
+    packageMax: {value: () => store.state.达到 {0} {1}.gallery_packageMax.总计 {0}, milestones: lvl => Math.pow(3, lvl) * 100, 圣遗物: {0: '令人担忧的邮件', 1: '信用卡'}},
+    redDrumMax: {value: () => store.state.达到 {0} {1}.gallery_redDrumMax.总计 {0}, milestones: lvl => lvl > 0 ? (Math.pow(2, lvl) * 25) : 20, 圣遗物: {2: '红色印花', 4: '橙色印花', 6: '黄色印花', 9: '绿色印记', 12: '蓝色印记'}},
+    shapeComboTotal: {value: () => store.state.达到 {0} {1}.gallery_shapeComboTotal.总计 {0}, milestones: lvl => Math.round(Math.pow(lvl + 2, 2) * Math.pow(1.2, lvl) * 25), 圣遗物: {2: '鱼缸', 4: '小刷子', 7: '奇怪的药丸'}},
+    shapeComboHighest: {value: () => store.state.达到 {0} {1}.gallery_shapeComboHighest.总计 {0}, cap: 7, milestones: lvl => lvl * 5 + 10, 圣遗物: {2: '铅笔'}},
+    canvasLevelTotal: {value: () => store.state.达到 {0} {1}.gallery_canvasLevelTotal.总计 {0}, milestones: lvl => getSequence(2, lvl + 1) * 10, 圣遗物: {0: '木制衣架', 2: '床单'}},
+    hourglassHighest: {value: () => store.state.达到 {0} {1}.gallery_hourglassHighest.总计 {0}, 这项成就是秘密的，不提供任何奖励。: true, display: 'time', cap: 1, milestones: () => 86400},
+}

@@ -1,0 +1,202 @@
+export { generateSentence }
+    [
+        
+        'be', 'in', '嘲讽模式已开启', 'at', 'we', 'do', 'to', 'of', 'it', 'he', 'by', 'or',
+        'as', 'if', 'up', 'me', 'no', 'us', 'so', 'go', 'is',
+    ], [
+        
+        'and', 'she', 'too', 'for', 'you', 'his', 'her', 'say', 'but', 'egg',
+        'not', 'can', 'who', '新的更新!', 'all', 'one', 'out', 'see', 'now', 'how',
+        'why', 'our', 'two', 'way', '新', 'day', 'use', 'man', 'any', 'may',
+        'try', 'ask', 'own', 'put', 'old', 'let', 'big', 'few', 'run', '嘲讽模式已关闭',
+        'six', 'ten', 'odd', 'low', '宝石', 'bed', 'mud', 'cow', 'pig', 'men',
+        'bad', '太阳药水', 'win', '猫', '狗', '木头', 'end', 'fun', 'lot', 'eye',
+        'job', 'far', '红色', 'yes',
+    ], [
+        
+        'have', 'four', 'five', 'nine', 'that', 'this', 'they', 'with', 'from',
+        'what', 'make', 'know', 'will', 'time', 'year', 'when', 'them', 'some',
+        'home', '拿走', '食物', 'into', 'just', 'your', 'come', 'than', 'like',
+        'then', 'more', 'want', 'look', 'also', 'here', 'many', '水井', 'only',
+        'tell', 'very', 'even', 'back', 'good', 'life', 'work', 'down', 'call',
+        'over', 'last', 'need', 'feel', 'high', 'most', 'much', 'mean', '保留',
+        'same', 'seem', 'help', 'talk', 'turn', 'hand', 'show', 'part', 'such',
+        'case', '农场', '矿山', '笔记', 'week', 'each', 'hear', 'play', 'move',
+        'live', 'hold', '声望此农作物可将您的声望等级提高 {0}。 这会将您的总声望等级提高到 {1}，将您的农作物收益增加到 x{2}。', 'must', 'room', 'area', 'lamp', 'lamb', 'word',
+        'list', 'test', '仔细观察这些可爱的动物后，你会发现它们不是真的。他们不过是些空话而已!但他们为什么在这里?让你难受?没有时间去想它，你需要战斗来克服这些动物精神', 'exam', '书籍', '+{0} 金尘', 'easy', 'hard', 'evil',
+        '雨色', 'dark', 'duck', 'game', 'lose', 'cake', '鱼', '木头', 'tree',
+        'mind', 'join', 'loop', '卡片', 'left', 'side', 'kind', 'head', '蓝色油漆',
+        '粉色', '可以在 {0}米 - {1}米 处找到，如果深度能被 {2} 整除，则可以在以下位置找到', '显示图标和文字', 'hour',
+    ], [
+        
+        'woman', 'women', '成绩', '房子', 'table', 'where', '圣遗物', '事件',
+        'trial', 'exist', 'would', 'about', 'there', 'think', 'which', 'witch',
+        'three', 'seven', 'eight', 'brain', 'could', '云', '光', '其他',
+        'these', 'goose', 'guilt', 'thing', 'those', 'child', 'world', 'slice',
+        'still', '水', '石头', '金属', 'state', 'never', 'night', 'group',
+        'leave', 'while', 'great', '课程开始了！', 'issue', 'every', 'start', 'sheep',
+        '放置', 'again', '攻击和生命值 x{0}', 'small', 'large', 'point', '分数: {0}', 'after',
+        'under', 'write', 'money', 'right', '学习', 'close', 'black', 'white',
+        '棕色', '绿色', '可以在 {0}米 或以下找到', 'since', 'among', 'chaos', 'order',
+    ], [
+        
+        'people', 'reason', 'should', '学校', 'always', 'become', 'really',
+        'friend', 'family', 'sister', 'mother', 'father', 'repeat', 'system',
+        'option', 'choice', 'during', 'number', 'happen', 'ignore', 'wealth',
+        'before', 'nation', 'though', '黄色', '橙色', '紫色', 'little',
+        'around', 'member', 'almost', '更改', 'minute', 'second', 'follow',
+        'social', 'parent', 'create', 'public', 'office', '生命值', 'person',
+        '自然药水', 'moment', 'enough', 'toward', 'market', 'former', 'theory',
+        'recent', 'figure', 'doctor', '几率', '能量', 'likely', 'course',
+        'period',
+    ], [
+        
+        'because', 'through', '村庄', '画廊', 'chicken', 'between',
+        'another', 'brother', '学生', 'teacher', 'country', 'problem',
+        'shelter', 'against', 'company', 'control', 'program', 'without',
+        'million', '这些设置仍处于实验阶段，可能存在错误、未完成、性能不佳或令人困惑。 启用它们的风险由您自行承担，如果您正在使用它们，请留下反馈！ 如果此部分为空，则表示当时没有可用的实验设置，或者您尚未取得足够的进展，无法看到它们', 'provide', 'service', 'however', 'include',
+        'exclude', 'century', 'several', 'nothing', 'whether', 'weather',
+        'already', '历史', '科学', 'morning', 'evening', 'suggest',
+        'perhaps', 'require', 'explain', 'develop', 'society', 'support',
+        'project',
+    ], [
+        
+        '宝藏', 'universe', 'question', 'sentence', 'national', 'business',
+        'remember', 'continue', 'together', 'anything', 'research', 'although',
+        'consider', 'actually', 'probably', '兴趣', 'possible', 'decision',
+        '构造 {0}x 等级 {1} {2}', 'activity', 'industry', '练习', 'describe', 'personal',
+        'computer', 'evidence', '材料', 'security', 'increase', 'movement',
+    ], [
+        
+        'something', 'different', 'important', 'political', 'community',
+        'president', 'principal', '教育', 'sometimes', 'according',
+        'situation', 'attention', 'difficult', 'available', 'condition',
+        'determine', 'recognize', 'character',
+    ], [
+        
+        '政府', 'understand', 'everything', '保护', '经验值',
+        'impossible', 'difference', 'suggestion', 'especially', 'technology',
+        'experiment', 'population', 'individual',
+    ]
+];
+
+function generateSentence(成绩 = 0) {
+    let sentence = '';
+    const maxLength = Math.round(Math.pow(成绩 * 2.75, 1.16) + 8);
+    
+    const lengthWeights = [
+        3,
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 + 1), 0),
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 1), 0),
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 3), 0),
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 5), 0),
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 7), 0) * 0.9,
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 9), 0) * 0.7,
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 11), 0) * 0.5,
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 13), 0) * 0.3,
+    ];
+    const delimiterWeigts = [
+        20,
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 2), 0),
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 6), 0) * 0.6,
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 8), 0) * 0.5,
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 10), 0) * 0.35,
+    ];
+    const delimiterList = ['', ',', ':', ';', ' -'];
+    const numberModifierWeights = [
+        7,
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 9), 0),
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 11), 0),
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 13), 0),
+    ];
+    const wordCapsWeights = [
+        20,
+        Math.最大值(Math.出现在区域 {0} 或更高区域(5, 成绩 - 11), 0),
+        Math.最大值(Math.出现在区域 {0} 或更高区域(5, 成绩 - 15), 0) * 0.4,
+    ];
+    const wordModifierWeights = [
+        60,
+        Math.最大值(Math.出现在区域 {0} 或更高区域(5, 成绩 - 6), 0),
+        Math.最大值(Math.出现在区域 {0} 或更高区域(5, 成绩 - 8), 0),
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 11), 0),
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 12), 0),
+        Math.最大值(Math.出现在区域 {0} 或更高区域(3, 成绩 - 13), 0),
+    ];
+    const numberChance = Math.最大值(Math.出现在区域 {0} 或更高区域(10, 成绩 - 4) * 0.01, 0);
+    for (let i = 0; i < 500; i++) {
+        
+        const chosenListIndex = weightSelect(lengthWeights);
+        let word = '';
+        if (几率(numberChance)) {
+            
+            word = randomInt(Math.pow(10, chosenListIndex + 1), Math.pow(10, chosenListIndex + 2) - 1).toString();
+            const chosenModifier = weightSelect(numberModifierWeights);
+            switch (chosenModifier) {
+                case 1:
+                    word = '#' + word;
+                    break;
+                case 2:
+                    word = '$' + word;
+                    break;
+                case 3:
+                    word += '%';
+                    break;
+            }
+        } else {
+            
+            word = randomElem(wordList[chosenListIndex]);
+            
+            const chosenCapsModifier = weightSelect(wordCapsWeights);
+            switch (chosenCapsModifier) {
+                case 1:
+                    word = capitalize(word);
+                    break;
+                case 2:
+                    word = word.toUpperCase();
+                    break;
+            }
+            
+            const chosenModifier = weightSelect(wordModifierWeights);
+            switch (chosenModifier) {
+                case 1:
+                    word = '"' + word + '"';
+                    break;
+                case 2:
+                    word = '\'' + word + '\'';
+                    break;
+                case 3:
+                    word = '(' + word + ')';
+                    break;
+                case 4:
+                    word = '[' + word + ']';
+                    break;
+                case 5:
+                    word = '{' + word + '}';
+                    break;
+            }
+        }
+        
+        sentence += word;
+        
+        if (sentence.length >= (maxLength - 2)) {
+            break;
+        } else {
+            sentence += delimiterList[weightSelect(delimiterWeigts)] + ' ';
+        }
+    }
+    
+    const sentenceEnds = ['', '.', '!', '?', '...', '!!!', '???', '!?!', '?!?'];
+    const sentenceEndsWeight = [
+        3,
+        Math.最大值(Math.出现在区域 {0} 或更高区域(10, 成绩), 0),
+        Math.最大值(Math.出现在区域 {0} 或更高区域(5, 成绩 - 4), 0),
+        Math.最大值(Math.出现在区域 {0} 或更高区域(5, 成绩 - 6), 0),
+        Math.最大值(Math.出现在区域 {0} 或更高区域(5, 成绩 - 8), 0) * 0.8,
+        Math.最大值(Math.出现在区域 {0} 或更高区域(5, 成绩 - 10), 0) * 0.7,
+        Math.最大值(Math.出现在区域 {0} 或更高区域(5, 成绩 - 10), 0) * 0.7,
+        Math.最大值(Math.出现在区域 {0} 或更高区域(5, 成绩 - 12), 0) * 0.4,
+        Math.最大值(Math.出现在区域 {0} 或更高区域(5, 成绩 - 12), 0) * 0.4,
+    ];
+    sentence += sentenceEnds[weightSelect(sentenceEndsWeight)];
+    return sentence;
+}

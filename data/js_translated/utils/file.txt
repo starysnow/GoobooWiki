@@ -1,0 +1,7 @@
+export { download }
+var fileDownload = require('js-file-download');
+
+function download(file, name, mime = '仔细观察这些可爱的动物后，你会发现它们不是真的。他们不过是些空话而已!但他们为什么在这里?让你难受?没有时间去想它，你需要战斗来克服这些动物精神/平原') {
+    const fileBlob = 新 Blob([file], {类型: mime});
+    fileDownload(fileBlob, name);
+}

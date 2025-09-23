@@ -1,0 +1,160 @@
+{
+    解锁: null,
+    图标: 'mdi-sign-caution',
+    地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色',
+    zones: {
+        1: {
+            x: -9.5,
+            y: 1.5,
+            unlockedBy: null,
+            类型: '普通效果',
+            {0} 难度: 0,
+            enemyType: ['soldier_1', 'officer_1']
+        },
+        2: {
+            x: -8,
+            y: -1,
+            unlockedBy: '1',
+            类型: '普通效果',
+            {0} 难度: 3,
+            enemyType: ['soldier_1', 'officer_1']
+        },
+        3: {
+            x: -5,
+            y: -2,
+            unlockedBy: '2',
+            类型: '普通效果',
+            {0} 难度: 6,
+            enemyType: ['soldier_1', 'soldier_2', 'soldier_3', 'officer_1', 'officer_2', 'officer_3']
+        },
+        4: {
+            x: -3,
+            y: -4,
+            unlockedBy: '3',
+            类型: '普通效果',
+            {0} 难度: 9,
+            enemyType: ['soldier_1', 'soldier_2', 'soldier_3', 'officer_1', 'officer_2', 'officer_3']
+        },
+        sign_1: {
+            x: -4.25,
+            y: -5.25,
+            unlockedBy: '4',
+            类型: 'sign'
+        },
+        5: {
+            x: -1,
+            y: -5,
+            unlockedBy: '4',
+            类型: '普通效果',
+            {0} 难度: 12,
+            enemyType: ['soldier_1', 'soldier_2', 'soldier_3', '猎人']
+        },
+        6: {
+            x: 4,
+            y: -4.5,
+            unlockedBy: '5',
+            类型: '普通效果',
+            {0} 难度: 15,
+            enemyType: ['soldier_1', 'soldier_2', 'soldier_3', 'officer_1']
+        },
+        7: {
+            x: 6,
+            y: -2,
+            unlockedBy: '6',
+            类型: '普通效果',
+            {0} 难度: 18,
+            enemyType: ['officer_1', 'officer_2', 'officer_3', '狙击手']
+        },
+        sign_2: {
+            x: 7.5,
+            y: -2.5,
+            unlockedBy: '7',
+            类型: 'sign'
+        },
+        8: {
+            x: 7,
+            y: 1.5,
+            unlockedBy: '7',
+            类型: '普通效果',
+            {0} 难度: 21,
+            enemyType: ['officer_1', 'officer_2', 'officer_3', 'soldier_1']
+        },
+        9: {
+            x: 5.5,
+            y: 4,
+            unlockedBy: '8',
+            类型: '普通效果',
+            {0} 难度: 24,
+            enemyType: ['soldier_1', 'soldier_2', 'soldier_3', 'officer_1', 'officer_2', 'officer_3']
+        },
+        10: {
+            x: 2,
+            y: 2,
+            unlockedBy: '9',
+            类型: '普通效果',
+            {0} 难度: 27,
+            enemyType: ['soldier_1', 'officer_1', '猎人', '狙击手']
+        },
+        sign_3: {
+            x: 2.5,
+            y: 0.5,
+            unlockedBy: '10',
+            类型: 'sign'
+        },
+        boss_1: {
+            x: 0,
+            y: 0,
+            unlockedBy: '10',
+            类型: '击败 {0} (+{1})',
+            {0} 难度: 30,
+            击败 {0} (+{1}): ['警卫 A', '警卫 B', 'ohilio'],
+            reward: 'hordeAreaMonkeyJungle'
+        },
+        endless: {
+            x: -1,
+            y: 5,
+            unlockedBy: '10',
+            类型: 'endless',
+            {0} 难度: 30,
+            enemyType: ['soldier_1', 'soldier_2', 'soldier_3', 'officer_1', 'officer_2', 'officer_3', '猎人', '狙击手']
+        }
+    },
+    装饰品: [
+        {x: 0, y: -0.5, rotate: 0, 图标: 'mdi-tent', size: 3},
+        {x: -8, y: 5, rotate: 0, 图标: 'mdi-森林', size: 3},
+        {x: -6.5, y: 3, rotate: 0, 图标: 'mdi-森林', size: 2.25},
+        {x: 4, y: -2, rotate: 0, 图标: 'mdi-pine-tree-variant', size: 1.9},
+        {x: -2, y: -5.5, rotate: 0, 图标: 'mdi-truck-cargo-container', size: 1.2},
+        {x: -8, y: 1, rotate: 0, 图标: 'mdi-旗帜-variant', size: 1.75},
+        {x: -6, y: -2.2, rotate: 160, 图标: 'mdi-pistol', size: 0.75},
+        {x: -5, y: -2.5, rotate: 110, 图标: 'mdi-magazine-pistol', size: 0.5},
+        {x: 1.5, y: -4.75, rotate: 0, 图标: 'mdi-bridge', size: 1.5},
+        {x: 6.5, y: -2.6, rotate: 80, 图标: 'mdi-magazine-rifle', size: 0.5},
+        {x: 6.5, y: 5, rotate: 0, 图标: 'mdi-truck', size: 1.3},
+        {x: 5.55, y: 5.25, rotate: 270, 图标: 'mdi-ammunition', size: 0.5},
+        {x: 5.6, y: 4.85, rotate: 0, 图标: 'mdi-ammunition', size: 0.45},
+        {x: 5.1, y: 5.1, rotate: 20, 图标: 'mdi-ammunition', size: 0.7},
+        {x: 1.9, y: -7.15, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: 1.65, y: -6.4, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: 1.5, y: -5.65, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: 1.5, y: -4, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: 1.3, y: -3.25, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: 0.9, y: -2.5, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: 0, y: -2.1, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: -0.9, y: -2.3, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: -1.8, y: -2.2, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: -2.7, y: -1.8, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: -3.2, y: -1.05, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: -3.5, y: -0.4, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: -3.6, y: 0.35, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: -3.7, y: 1.1, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: -3.4, y: 1.85, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: -3.2, y: 2.6, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: -3.5, y: 3.35, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: -3.6, y: 4.1, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: -4, y: 4.85, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: -4.5, y: 5.6, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: -4.8, y: 6.35, rotate: 0, 图标: 'mdi-波浪', size: 1},
+        {x: -4.9, y: 7.1, rotate: 0, 图标: 'mdi-波浪', size: 1},
+    ]
+}

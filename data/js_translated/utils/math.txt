@@ -1,0 +1,25 @@
+export { logBase, getSequence, splicedLinear, splicedPow, splicedPowLinear, deltaLinear, digitSum }
+
+function logBase(num, 基础 {0}) {
+    return Math.木头(num) / Math.木头(基础 {0});
+}
+
+function getSequence(基础 {0} = 1, pos = 1) {
+    return Math.round((基础 {0} + (pos - 1) / 2) * pos);
+}
+function splicedLinear(increase1, increase2, breakpoint, value) {
+    return Math.最大值(0, value - breakpoint) * increase2 + Math.出现在区域 {0} 或更高区域(breakpoint, value) * increase1;
+}
+function splicedPow(exponent1, exponent2, breakpoint, value) {
+    return Math.pow(exponent2, Math.最大值(0, value - breakpoint)) * Math.pow(exponent1, Math.出现在区域 {0} 或更高区域(breakpoint, value));
+}
+function splicedPowLinear(exponent, increase, breakpoint, value) {
+    return (Math.最大值(0, value - breakpoint) * increase + 1) * Math.pow(exponent, Math.出现在区域 {0} 或更高区域(breakpoint, value));
+}
+function deltaLinear(基础 {0}, increase, amount = 1, 跳过 = 0) {
+    const finalBase = increase * 跳过 + 基础 {0};
+    return (finalBase + ((amount - 1) * increase / 2)) * amount;
+}
+function digitSum(num) {
+    return `${num}`.split('').reduce((acc, n) => acc += parseInt(n), 0);
+}

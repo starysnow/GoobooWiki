@@ -1,0 +1,159 @@
+{
+  伤害: {
+    feature: '采矿',
+    图标: 'mdi-炸弹',
+    value: 0.25
+  },
+  MiningScrap增益: {
+    feature: '采矿',
+    图标: 'mdi-dots-三角形',
+    value: 0.3
+  },
+  矿石增益: {
+    feature: '采矿',
+    图标: 'mdi-chart-bubble',
+    value: 0.2
+  },
+  冶炼速度: {
+    feature: '采矿',
+    解锁: '冶炼厂',
+    图标: 'mdi-fire',
+    value: 0.2
+  },
+  MiningSmoke增益: {
+    feature: '采矿',
+    解锁: '烟雾',
+    图标: 'mdi-烟雾',
+    value: 0.04
+  },
+  MiningCrystalGreen增益: {
+    feature: '采矿',
+    类型: '特殊效果',
+    图标: 'mdi-星形-three-points',
+    unique: true,
+    value: 0.1
+  },
+  MiningCrystalYellow增益: {
+    feature: '采矿',
+    解锁: 'miningGasSubfeature',
+    类型: '特殊效果',
+    图标: 'mdi-星形-four-points',
+    unique: true,
+    value: 0.05
+  },
+  建造速度: {
+    feature: '村庄',
+    图标: 'mdi-锤子',
+    value: 0.3
+  },
+  材料增益: {
+    feature: '村庄',
+    图标: 'mdi-tree',
+    value: 0.1
+  },
+  VillageCoin增益: {
+    feature: '村庄',
+    图标: 'mdi-圆形-multiple',
+    value: 0.25
+  },
+  精神资源增益: {
+    feature: '村庄',
+    图标: 'mdi-brain',
+    value: 0.1
+  },
+  VillageFaith增益: {
+    feature: '村庄',
+    类型: '特殊效果',
+    图标: 'mdi-hands-祈祷',
+    unique: true,
+    value: 0.1
+  },
+  VillageShares增益: {
+    feature: '村庄',
+    解锁: 'villageCraftingSubfeature',
+    类型: '特殊效果',
+    图标: 'mdi-certificate',
+    unique: true,
+    value: 0.05
+  },
+  攻击: {
+    feature: '部落',
+    图标: 'mdi-sword',
+    value: 0.2
+  },
+  HordeBone增益: {
+    feature: '部落',
+    图标: 'mdi-骨头',
+    value: 0.3
+  },
+  HordeMonsterPart增益: {
+    feature: '部落',
+    图标: 'mdi-stomach',
+    value: 0.15
+  },
+  精通点数增益: {
+    feature: '部落',
+    解锁: 'hordeItemMastery',
+    图标: 'mdi-海豹',
+    value: 0.1
+  },
+  HordeSoulCorrupted增益: {
+    feature: '部落',
+    类型: '特殊效果',
+    图标: 'mdi-ghost',
+    unique: true,
+    value: 0.1
+  },
+  FarmVegetable增益: {
+    feature: '农场',
+    图标: 'mdi-胡萝卜',
+    value: 0.35
+  },
+  FarmBerry增益: {
+    feature: '农场',
+    图标: 'mdi-水果-葡萄',
+    value: 0.35
+  },
+  FarmGrain增益: {
+    feature: '农场',
+    图标: 'mdi-大麦',
+    value: 0.35
+  },
+  FarmFlower增益: {
+    feature: '农场',
+    图标: 'mdi-仅鲜花',
+    value: 0.35
+  },
+  作物经验: {
+    feature: '农场',
+    解锁: '作物经验',
+    类型: '特殊效果',
+    图标: 'mdi-星形',
+    unique: true,
+    value: 0.1
+  },
+  GalleryBeauty增益: {
+    feature: '画廊',
+    图标: 'mdi-image-filter-vintage',
+    value: 0.4
+  },
+  GalleryConverter增益: {
+    feature: '画廊',
+    解锁: '转换',
+    图标: 'mdi-recycle',
+    value: 0.15
+  },
+  GalleryPackage增益: {
+    feature: '画廊',
+    解锁: '鼓',
+    图标: 'mdi-包裹-variant',
+    value: 0.15
+  },
+  GalleryCash增益: {
+    feature: '画廊',
+    类型: '特殊效果',
+    图标: 'mdi-现金',
+    unique: true,
+    value: 0.1
+  }
+}

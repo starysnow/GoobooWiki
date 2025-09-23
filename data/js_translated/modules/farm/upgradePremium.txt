@@ -1,0 +1,70 @@
+export default {
+    更大的蔬菜: {类型: '高级', price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 80};
+    }, 效果: [
+        {name: 'FarmVegetable增益', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.5 + 1}
+    ]},
+    更大的浆果: {类型: '高级', requirement() {
+        return store.state.升级成本.item.farm_seedBox.达到等级 {0} >= 1;
+    }, price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 80};
+    }, 效果: [
+        {name: 'FarmBerry增益', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.5 + 1}
+    ]},
+    更大的粮食: {类型: '高级', requirement() {
+        return store.state.升级成本.item.farm_seedBox.达到等级 {0} >= 2;
+    }, price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 80};
+    }, 效果: [
+        {name: 'FarmGrain增益', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.5 + 1}
+    ]},
+    更大的鲜花: {类型: '高级', requirement() {
+        return store.state.升级成本.item.farm_seedBox.达到等级 {0} >= 3;
+    }, price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 80};
+    }, 效果: [
+        {name: 'FarmFlower增益', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.5 + 1}
+    ]},
+    更多经验: {类型: '高级', requirement() {
+        return store.state.解锁.作物经验.see;
+    }, price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 120};
+    }, 效果: [
+        {name: '作物经验', 类型: '基础 {0}', value: lvl => lvl * 0.25}
+    ]},
+    高级花园侏儒: {类型: '高级', hasDescription: true, cap: 5, hideCap: true, requirement(lvl) {
+        return store.state.升级成本.item.farm_gardenGnome.达到等级 {0} >= (lvl + 1);
+    }, price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 180};
+    }, 效果: [
+        {name: '花园侏儒', 类型: 'farmBuildingPremium', value: lvl => lvl}
+    ]},
+    高级洒水装置: {类型: '高级', hasDescription: true, cap: 2, hideCap: true, requirement(lvl) {
+        return store.state.升级成本.item.farm_sprinkler.达到等级 {0} >= (lvl + 1);
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 500};
+    }, 效果: [
+        {name: '洒水装置', 类型: 'farmBuildingPremium', value: lvl => lvl}
+    ]},
+    高级讲台: {类型: '高级', hasDescription: true, cap: 2, hideCap: true, requirement(lvl) {
+        return store.state.升级成本.item.farm_lectern.达到等级 {0} >= (lvl + 1);
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 675};
+    }, 效果: [
+        {name: '讲台', 类型: 'farmBuildingPremium', value: lvl => lvl}
+    ]},
+    高级风车: {类型: '高级', hasDescription: true, cap: 1, hideCap: true, requirement(lvl) {
+        return store.state.升级成本.item.farm_pinwheel.达到等级 {0} >= (lvl + 1);
+    }, price(lvl) {
+        return {红宝石: Math.pow(3, lvl) * 1200};
+    }, 效果: [
+        {name: '风车', 类型: 'farmBuildingPremium', value: lvl => lvl}
+    ]},
+    高级旗帜: {类型: '高级', hasDescription: true, cap: 1, hideCap: true, requirement(lvl) {
+        return store.state.升级成本.item.farm_flag.达到等级 {0} >= (lvl + 1);
+    }, price(lvl) {
+        return {红宝石: Math.pow(4, lvl) * 2100};
+    }, 效果: [
+        {name: '旗帜', 类型: 'farmBuildingPremium', value: lvl => lvl}
+    ]}
+}

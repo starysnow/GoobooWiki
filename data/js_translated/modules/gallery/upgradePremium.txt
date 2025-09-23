@@ -1,0 +1,108 @@
+export default {
+    漂亮的颜色: {类型: '高级', price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 100};
+    }, 效果: [
+        {name: 'GalleryBeauty增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
+    ]},
+    漂亮的转换器: {类型: '高级', requirement() {
+        return store.state.解锁.转换.see;
+    }, price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 150};
+    }, 效果: [
+        {name: 'GalleryConverter增益', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.25 + 1},
+        {name: 'GalleryConverter容量', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.25 + 1}
+    ]},
+    漂亮的零钱: {类型: '高级', requirement() {
+        return store.state.解锁.拍卖.see;
+    }, price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 180};
+    }, 效果: [
+        {name: 'GalleryCash增益', 类型: 'mult', value: lvl => lvl * 0.25 + 1}
+    ]},
+    漂亮的形状: {类型: '高级', requirement() {
+        return store.state.解锁.形状.see;
+    }, price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 225};
+    }, 效果: [
+        {name: '形状增益', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.5 + 1}
+    ]},
+    漂亮的画布: {类型: '高级', requirement() {
+        return store.state.解锁.画布.see;
+    }, price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 320};
+    }, 效果: [
+        {name: '画布速度', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.1 + 1}
+    ]},
+    漂亮的红色: {类型: '高级', cap: 1, requirement() {
+        return store.state.达到 {0} {1}.gallery_redDrum.总计 {0} > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 750};
+    }, 效果: [
+        {name: 'GalleryRed增益', 类型: 'mult', value: lvl => Math.pow(4, lvl)},
+        {name: '红色鼓几率', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)},
+        {name: 'GalleryRedDrum容量', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    ]},
+    漂亮的橙色: {类型: '高级', cap: 1, requirement() {
+        return store.state.达到 {0} {1}.gallery_orangeDrum.总计 {0} > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 1050};
+    }, 效果: [
+        {name: 'GalleryOrange增益', 类型: 'mult', value: lvl => Math.pow(4, lvl)},
+        {name: '橙色鼓几率', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)},
+        {name: 'GalleryOrangeDrum容量', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    ]},
+    漂亮的黄色: {类型: '高级', cap: 1, requirement() {
+        return store.state.达到 {0} {1}.gallery_yellowDrum.总计 {0} > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 1400};
+    }, 效果: [
+        {name: 'GalleryYellow增益', 类型: 'mult', value: lvl => Math.pow(4, lvl)},
+        {name: '黄色鼓几率', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)},
+        {name: 'GalleryYellowDrum容量', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    ]},
+    漂亮的绿色: {类型: '高级', cap: 1, requirement() {
+        return store.state.达到 {0} {1}.gallery_greenDrum.总计 {0} > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 2000};
+    }, 效果: [
+        {name: 'GalleryGreen增益', 类型: 'mult', value: lvl => Math.pow(4, lvl)},
+        {name: '绿色鼓几率', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)},
+        {name: 'GalleryGreenDrum容量', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    ]},
+    漂亮的蓝色: {类型: '高级', cap: 1, requirement() {
+        return store.state.达到 {0} {1}.gallery_blueDrum.总计 {0} > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 2875};
+    }, 效果: [
+        {name: 'GalleryBlue增益', 类型: 'mult', value: lvl => Math.pow(4, lvl)},
+        {name: '蓝色鼓几率', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)},
+        {name: 'GalleryBlueDrum容量', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    ]},
+    漂亮的紫色: {类型: '高级', cap: 1, requirement() {
+        return store.state.达到 {0} {1}.gallery_purpleDrum.总计 {0} > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 3900};
+    }, 效果: [
+        {name: 'GalleryPurple增益', 类型: 'mult', value: lvl => Math.pow(4, lvl)},
+        {name: '紫色鼓几率', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)},
+        {name: 'GalleryPurpleDrum容量', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    ]},
+    '漂亮的红橙色': {类型: '高级', cap: 1, requirement() {
+        return store.state.达到 {0} {1}['gallery_deep-橙色鼓'].总计 {0} > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 5200};
+    }, 效果: [
+        {name: 'currencyGalleryDeep-orangeGain', 类型: 'mult', value: lvl => Math.pow(4, lvl)},
+        {name: '橙红鼓几率', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)},
+        {name: 'currencyGalleryDeep-orangeDrumCap', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    ]},
+    漂亮的金色: {类型: '高级', cap: 1, requirement() {
+        return store.state.达到 {0} {1}.gallery_amberDrum.总计 {0} > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 6750};
+    }, 效果: [
+        {name: 'GalleryAmber增益', 类型: 'mult', value: lvl => Math.pow(4, lvl)},
+        {name: '金色鼓几率', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)},
+        {name: 'GalleryAmberDrum容量', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+    ]},
+}

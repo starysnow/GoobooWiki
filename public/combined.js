@@ -345,6 +345,38 @@ export default {
       pool: { bloom: { price: { event_bloomToken: 1 } } },
     },
   },
+  "modules/event/bloom/tick": function (seconds) {
+    let secondsLeft = seconds;
+    let blossoms = 0;
+    while (secondsLeft > 0) {
+      if (store.getters["bloom/hasInventorySpace"]) {
+        let timeToNext = null;
+        store.state.bloom.breeder.forEach((breeder) => {
+          const timeNeeded = store.getters["mult/get"](`bloom${capitalize(breeder.type)}BreedTime`) - breeder.time;
+          if (timeToNext === null || timeNeeded < timeToNext) {
+            timeToNext = timeNeeded;
+          }
+        });
+        if (timeToNext !== null) {
+          if (timeToNext > secondsLeft) {
+            timeToNext = secondsLeft;
+          }
+          blossoms += advanceBreeders(timeToNext);
+          secondsLeft -= timeToNext;
+        } else {
+          // No breeders, skip all
+          secondsLeft = 0;
+        }
+      } else {
+        blossoms += advanceBreeders(secondsLeft);
+        secondsLeft = 0;
+      }
+    }
+    if (blossoms > 0) {
+      store.dispatch("currency/gain", { feature: "event", name: "blossom", amount: blossoms });
+      store.dispatch("note/find", "event_13");
+    }
+  },
   "modules/event/bloom/upgrade": {
     colorfulSeedBag: {
       type: "bloom",
@@ -618,6 +650,497 @@ export default {
     },
     card: cardList,
   },
+  "modules/event/cardList": [
+    {
+      id: 1,
+      instant: true,
+      collection: "weekendTrip",
+      reward,
+      color: "pink",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 2.5, icon: "mdi-ferris-wheel" },
+        { x: -1, y: -0.05, rotate: 0, size: 1.7, icon: "mdi-string-lights" },
+        { x: 1, y: -0.05, rotate: 0, size: 1.7, icon: "mdi-string-lights" },
+        { x: 0.85, y: 0.75, rotate: 0, size: 1, icon: "mdi-candycane" },
+        { x: -0.95, y: 0.95, rotate: 35, size: 0.75, icon: "mdi-candy" },
+        { x: -0.65, y: 0.85, rotate: 80, size: 0.75, icon: "mdi-candy" },
+        { x: -0.9, y: 0.7, rotate: -5, size: 0.75, icon: "mdi-candy" },
+      ],
+    },
+    {
+      id: 2,
+      instant: true,
+      collection: "weekendTrip",
+      reward,
+      color: "light-blue",
+      icons: [
+        { x: -0.6, y: 0.8, rotate: 0, size: 1, icon: "mdi-toy-brick" },
+        { x: -0.15, y: 0.8, rotate: 0, size: 1, icon: "mdi-toy-brick" },
+        { x: -0.6, y: 0.45, rotate: 0, size: 1, icon: "mdi-toy-brick" },
+        { x: -0.15, y: 0.45, rotate: 0, size: 1, icon: "mdi-toy-brick" },
+        { x: -0.15, y: 0.1, rotate: 0, size: 1, icon: "mdi-toy-brick" },
+        { x: -1, y: 0.75, rotate: 0, size: 1, icon: "mdi-human-child" },
+        { x: 0.6, y: 0.8, rotate: 0, size: 1, icon: "mdi-toy-brick" },
+        { x: 0.6, y: 0.45, rotate: 0, size: 1, icon: "mdi-toy-brick" },
+        { x: 1, y: 0.75, rotate: 0, size: 1, icon: "mdi-human-child" },
+      ],
+    },
+    {
+      id: 3,
+      instant: true,
+      collection: "weekendTrip",
+      reward,
+      color: "orange",
+      icons: [
+        { x: -0.9, y: 0.1, rotate: 0, size: 1.75, icon: "mdi-grill" },
+        { x: 0.4, y: 0, rotate: 0, size: 3, icon: "mdi-table-furniture" },
+        { x: 0, y: -0.5, rotate: 90, size: 1, icon: "mdi-food-steak" },
+        { x: 0.75, y: -0.45, rotate: 45, size: 1, icon: "mdi-baguette" },
+      ],
+    },
+    {
+      id: 4,
+      instant: true,
+      collection: "weekendTrip",
+      reward,
+      color: "pale-pink",
+      icons: [
+        { x: -0.25, y: 0.25, rotate: 0, size: 1.5, icon: "mdi-human-male-female" },
+        { x: 0.8, y: 0.5, rotate: 0, size: 1.5, icon: "mdi-human-male-female" },
+        { x: -0.85, y: 0.65, rotate: 0, size: 1.5, icon: "mdi-human-male" },
+        { x: 0.25, y: 0.85, rotate: 0, size: 1.5, icon: "mdi-human-female" },
+        { x: -0.7, y: -0.35, rotate: 0, size: 1, icon: "mdi-party-popper" },
+        { x: 0.65, y: -0.45, rotate: 0, size: 1.5, icon: "mdi-cake-layered" },
+        { x: 0.35, y: -0.5, rotate: 0, size: 1, icon: "mdi-balloon" },
+        { x: 1, y: -0.5, rotate: 0, size: 1, icon: "mdi-balloon" },
+      ],
+    },
+    {
+      id: 5,
+      instant: true,
+      collection: "weekendTrip",
+      reward,
+      color: "light-green",
+      icons: [
+        { x: 0.5, y: -0.2, rotate: 0, size: 2.5, icon: "mdi-home" },
+        { x: -1.15, y: 0, rotate: 0, size: 1, icon: "mdi-fence" },
+        { x: -0.65, y: 0, rotate: 0, size: 1, icon: "mdi-fence" },
+        { x: -0.15, y: 0, rotate: 0, size: 1, icon: "mdi-fence" },
+        { x: 1.15, y: 0, rotate: 0, size: 1, icon: "mdi-fence" },
+        { x: -0.75, y: 0.65, rotate: 0, size: 1.2, icon: "mdi-storefront" },
+        { x: 0.15, y: 1, rotate: 0, size: 1, icon: "mdi-human-male-female-child" },
+      ],
+    },
+    {
+      id: 6,
+      instant: true,
+      collection: "weekendTrip",
+      reward,
+      color: "darker-grey",
+      icons: [
+        { x: 0.6, y: -0.22, rotate: 0, size: 2, icon: "mdi-store" },
+        { x: -0.4, y: -0.15, rotate: 0, size: 1.4, icon: "mdi-storage-tank" },
+        { x: -1, y: 0, rotate: 0, size: 0.7, icon: "mdi-grass" },
+        { x: -0.9, y: 0.7, rotate: 0, size: 1.3, icon: "mdi-gas-station" },
+        { x: 0.4, y: 0.7, rotate: 0, size: 1.3, icon: "mdi-gas-station" },
+        { x: 1, y: 0.75, rotate: 0, size: 1, icon: "mdi-car" },
+      ],
+    },
+    {
+      id: 7,
+      instant: true,
+      collection: "weekendTrip",
+      reward,
+      color: "yellow",
+      icons: [
+        { x: 0, y: 0.15, rotate: 0, size: 1.5, icon: "mdi-scale" },
+        { x: -0.2, y: -0.4, rotate: 20, size: 1, icon: "mdi-carrot" },
+        { x: 0.15, y: -0.4, rotate: 0, size: 1, icon: "mdi-food-apple" },
+        { x: 0.9, y: 0, rotate: 0, size: 2, icon: "mdi-human-greeting" },
+        { x: -0.9, y: 0, rotate: 0, size: 2, icon: "mdi-human-handsdown" },
+        { x: 1.2, y: 0.15, rotate: 0, size: 0.6, icon: "mdi-wallet" },
+      ],
+    },
+    {
+      id: 8,
+      instant: true,
+      collection: "weekendTrip",
+      reward,
+      color: "brown",
+      icons: [
+        { x: -0.75, y: 0.25, rotate: 0, size: 1.5, icon: "mdi-human-walker" },
+        { x: 0, y: 0.25, rotate: 0, size: 1.5, icon: "mdi-human-walker" },
+        { x: 0.8, y: -0.27, rotate: 0, size: 1.1, icon: "mdi-television-classic" },
+        { x: 0.8, y: 0.25, rotate: 0, size: 1.25, icon: "mdi-fireplace-off" },
+        { x: -0.5, y: -0.6, rotate: 0, size: 0.5, icon: "mdi-light-switch" },
+      ],
+    },
+    {
+      id: 9,
+      instant: true,
+      collection: "weekendTrip",
+      reward,
+      color: "purple",
+      icons: [
+        { x: -0.9, y: 0, rotate: 0, size: 1.5, icon: "mdi-slot-machine" },
+        { x: 0, y: 0, rotate: 0, size: 1.5, icon: "mdi-slot-machine" },
+        { x: 1, y: 0.05, rotate: 0, size: 1.25, icon: "mdi-human-greeting" },
+        { x: 0.65, y: -0.3, rotate: 0, size: 0.5, icon: "mdi-poker-chip" },
+      ],
+    },
+    { id: 10, instant: true, collection: "weekendTrip", reward, color: "grey", icons: [] },
+    {
+      id: 11,
+      instant: true,
+      collection: "weekendTrip",
+      reward,
+      color: "pale-light-green",
+      icons: [
+        { x: 0, y: 0.8, rotate: 0, size: 1.75, icon: "mdi-safe-square" },
+        { x: 0, y: -0.5, rotate: 0, size: 3, icon: "mdi-bank" },
+        { x: -1, y: 1.08, rotate: 0, size: 0.8, icon: "mdi-sack" },
+        { x: -0.65, y: 1.05, rotate: 0, size: 1, icon: "mdi-sack" },
+      ],
+    },
+    {
+      id: 12,
+      instant: true,
+      collection: "weekendTrip",
+      reward,
+      color: "pale-blue",
+      icons: [
+        { x: -0.35, y: 0, rotate: 0, size: 2, icon: "mdi-clipboard-outline" },
+        { x: -0.35, y: 0.05, rotate: 0, size: 1, icon: "mdi-finance" },
+        { x: -0.35, y: 0.8, rotate: 0, size: 1.75, icon: "mdi-sign-pole" },
+        { x: 0.65, y: 0.75, rotate: 0, size: 2, icon: "mdi-human-greeting" },
+      ],
+    },
+    {
+      id: 13,
+      instant: true,
+      collection: "weekendTrip",
+      reward,
+      color: "green",
+      icons: [
+        { x: 0, y: -0.1, rotate: 0, size: 1.75, icon: "mdi-cash-register" },
+        { x: -0.9, y: 0.1, rotate: 0, size: 2, icon: "mdi-human-handsdown" },
+        { x: 0.9, y: 0.1, rotate: 0, size: 2, icon: "mdi-human-greeting" },
+        { x: 0.45, y: -0.55, rotate: 25, size: 0.75, icon: "mdi-credit-card" },
+      ],
+    },
+    {
+      id: 14,
+      instant: true,
+      collection: "tropicalParadise",
+      reward,
+      color: "pale-yellow",
+      icons: [
+        { x: -0.2, y: 0.4, rotate: 0, size: 2, icon: "mdi-cactus" },
+        { x: 1, y: 0, rotate: 0, size: 1.75, icon: "mdi-cactus" },
+        { x: -0.75, y: -0.4, rotate: 0, size: 1.5, icon: "mdi-cactus" },
+        { x: 0.5, y: -0.8, rotate: 0, size: 1.25, icon: "mdi-cactus" },
+        { x: 0.25, y: -0.15, rotate: 0, size: 0.75, icon: "mdi-snake" },
+        { x: -0.15, y: -0.85, rotate: 150, size: 0.5, icon: "mdi-spider" },
+      ],
+    },
+    {
+      id: 15,
+      instant: true,
+      collection: "tropicalParadise",
+      reward,
+      color: "blue",
+      icons: [
+        { x: 0, y: 0.02, rotate: 0, size: 2, icon: "mdi-ferry" },
+        { x: -0.9, y: 0.75, rotate: 0, size: 2, icon: "mdi-waves" },
+        { x: 0, y: 0.75, rotate: 0, size: 2, icon: "mdi-waves" },
+        { x: 0.9, y: 0.75, rotate: 0, size: 2, icon: "mdi-waves" },
+        { x: 1, y: -0.95, rotate: 0, size: 1, icon: "mdi-paragliding" },
+        { x: 1, y: -0.65, rotate: 0, size: 1, icon: "mdi-human-handsup" },
+        { x: 0.8, y: -0.75, rotate: -65, size: 1, icon: "mdi-minus" },
+        { x: 0.65, y: -0.45, rotate: -65, size: 1, icon: "mdi-minus" },
+        { x: 0.5, y: -0.15, rotate: -65, size: 1, icon: "mdi-minus" },
+      ],
+    },
+    {
+      id: 16,
+      instant: true,
+      collection: "tropicalParadise",
+      reward,
+      color: "green",
+      icons: [
+        { x: -0.1, y: -0.4, rotate: 0, size: 2.25, icon: "mdi-palm-tree" },
+        { x: 0.75, y: 0, rotate: 0, size: 2, icon: "mdi-palm-tree" },
+        { x: -0.6, y: 0.4, rotate: 0, size: 1.75, icon: "mdi-palm-tree" },
+        { x: -0.9, y: 0, rotate: 0, size: 1, icon: "mdi-grass" },
+        { x: -0.4, y: -0.1, rotate: 0, size: 0.9, icon: "mdi-grass" },
+        { x: 0.3, y: 0.05, rotate: 0, size: 1.05, icon: "mdi-grass" },
+        { x: -0.9, y: 0.55, rotate: 0, size: 1.2, icon: "mdi-grass" },
+        { x: 0.45, y: 0.55, rotate: 0, size: 1.25, icon: "mdi-grass" },
+        { x: -0.1, y: 0.45, rotate: 0, size: 0.75, icon: "mdi-flag-triangle" },
+        { x: 0.8, y: -0.95, rotate: 30, size: 1.6, icon: "mdi-weather-sunny" },
+      ],
+    },
+    {
+      id: 17,
+      instant: true,
+      collection: "tropicalParadise",
+      reward,
+      color: "lime",
+      icons: [
+        { x: -0.65, y: -0.4, rotate: 0, size: 2.25, icon: "mdi-tower-beach" },
+        { x: 0.15, y: -0.6, rotate: 20, size: 1.2, icon: "mdi-umbrella-beach" },
+        { x: 0.9, y: -0.6, rotate: 70, size: 1.2, icon: "mdi-umbrella-beach" },
+        { x: 0.7, y: 0.15, rotate: 0, size: 1.2, icon: "mdi-turtle" },
+        { x: -0.9, y: 0.8, rotate: 0, size: 2, icon: "mdi-waves" },
+        { x: 0, y: 0.8, rotate: 0, size: 2, icon: "mdi-waves" },
+        { x: 0.9, y: 0.8, rotate: 0, size: 2, icon: "mdi-waves" },
+      ],
+    },
+    {
+      id: 18,
+      instant: true,
+      collection: "tropicalParadise",
+      reward,
+      color: "brown",
+      icons: [
+        { x: -0.85, y: 0.3, rotate: 0, size: 1.5, icon: "mdi-pot" },
+        { x: 0, y: 0.3, rotate: 0, size: 1.5, icon: "mdi-pot" },
+        { x: 0.85, y: 0.3, rotate: 0, size: 1.5, icon: "mdi-pot" },
+        { x: -0.85, y: 0, rotate: 0, size: 1, icon: "mdi-flower" },
+        { x: 0, y: 0.15, rotate: 0, size: 0.5, icon: "mdi-sprout" },
+        { x: 0.85, y: 0, rotate: 0, size: 1, icon: "mdi-flower-tulip" },
+        { x: -0.3, y: 1, rotate: 0, size: 0.8, icon: "mdi-watering-can" },
+      ],
+    },
+    {
+      id: 19,
+      instant: true,
+      collection: "tropicalParadise",
+      reward,
+      color: "light-green",
+      icons: [
+        { x: -0.4, y: 0, rotate: 0, size: 3, icon: "mdi-microscope" },
+        { x: 0, y: 0.12, rotate: 35, size: 0.4, icon: "mdi-leaf" },
+        { x: 0.8, y: 0.45, rotate: 0, size: 1.3, icon: "mdi-pot" },
+        { x: 0.8, y: 0.25, rotate: 0, size: 1, icon: "mdi-nature" },
+      ],
+    },
+    {
+      id: 20,
+      instant: true,
+      collection: "tropicalParadise",
+      reward,
+      color: "dark-blue",
+      icons: [
+        { x: -0.45, y: 0.1, rotate: 0, size: 3, icon: "mdi-ellipse-outline" },
+        { x: 0.7, y: -0.1, rotate: 0, size: 2, icon: "mdi-human-handsup" },
+        { x: 0.3, y: -0.65, rotate: -60, size: 1.25, icon: "mdi-spear" },
+        { x: 1, y: -0.7, rotate: 0, size: 0.5, icon: "mdi-fish" },
+        { x: -0.75, y: 0, rotate: 0, size: 0.65, icon: "mdi-fish" },
+        { x: -0.2, y: 0.1, rotate: 0, size: 0.6, icon: "mdi-fish" },
+        { x: -0.55, y: 0.3, rotate: 0, size: 0.75, icon: "mdi-fish" },
+      ],
+    },
+    {
+      id: 21,
+      instant: true,
+      collection: "tropicalParadise",
+      reward,
+      color: "pale-red",
+      icons: [
+        { x: 0.85, y: -0.6, rotate: 0, size: 1.75, icon: "mdi-flag-checkered" },
+        { x: -0.9, y: 0, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: 0, y: 0, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: 0.9, y: 0, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: -0.9, y: 0.9, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: 0, y: 0.9, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: 0.9, y: 0.9, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: -0.55, y: 0.3, rotate: 0, size: 0.7, icon: "mdi-snail" },
+        { x: 0.25, y: 0.45, rotate: 0, size: 0.75, icon: "mdi-snail" },
+        { x: -0.3, y: 0.6, rotate: 0, size: 0.8, icon: "mdi-snail" },
+        { x: 0.7, y: 0.47, rotate: 90, size: 1.75, icon: "mdi-minus" },
+      ],
+    },
+    {
+      id: 22,
+      instant: true,
+      collection: "tropicalParadise",
+      reward,
+      color: "beige",
+      icons: [
+        { x: 0, y: -0.4, rotate: 0, size: 3, icon: "mdi-island" },
+        { x: -0.65, y: -0.45, rotate: 20, size: 1.5, icon: "mdi-umbrella-beach" },
+        { x: -0.85, y: 0.8, rotate: 0, size: 1.75, icon: "mdi-waves" },
+        { x: 0, y: 0.8, rotate: 0, size: 1.75, icon: "mdi-waves" },
+        { x: 0.85, y: 0.8, rotate: 0, size: 1.75, icon: "mdi-waves" },
+      ],
+    },
+    {
+      id: 23,
+      instant: true,
+      collection: "tropicalParadise",
+      reward,
+      color: "pink-purple",
+      icons: [
+        { x: -0.9, y: 0.2, rotate: 0, size: 1.25, icon: "mdi-speaker" },
+        { x: 0.9, y: 0.2, rotate: 0, size: 1.25, icon: "mdi-speaker" },
+        { x: -0.95, y: -0.35, rotate: 0, size: 0.75, icon: "mdi-music-note" },
+        { x: -0.75, y: -0.7, rotate: 0, size: 0.6, icon: "mdi-music-note" },
+        { x: 0, y: 0.25, rotate: 0, size: 1, icon: "mdi-amplifier" },
+        { x: 0.9, y: -0.35, rotate: 0, size: 0.85, icon: "mdi-music-note" },
+        { x: 0.7, y: -0.7, rotate: 0, size: 0.75, icon: "mdi-music-clef-treble" },
+        { x: 0.4, y: -0.9, rotate: 0, size: 0.65, icon: "mdi-music-note" },
+      ],
+    },
+    {
+      id: 24,
+      instant: true,
+      collection: "coldTimes",
+      reward,
+      color: "orange-red",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 2, icon: "mdi-sofa" },
+        { x: -0.95, y: 0.2, rotate: 0, size: 1, icon: "mdi-dresser" },
+        { x: -0.95, y: -0.35, rotate: 0, size: 1.5, icon: "mdi-lava-lamp" },
+        { x: 0.95, y: 0.1, rotate: 0, size: 1.25, icon: "mdi-fireplace" },
+        { x: -0.25, y: 1, rotate: 0, size: 2, icon: "mdi-rug" },
+      ],
+    },
+    {
+      id: 25,
+      instant: true,
+      collection: "coldTimes",
+      reward,
+      color: "light-grey",
+      icons: [
+        { x: 0, y: 0.01, rotate: 0, size: 3, icon: "mdi-image-filter-hdr" },
+        { x: 0.55, y: 0, rotate: 0, size: 1.9, icon: "mdi-landslide" },
+        { x: -0.65, y: 0, rotate: 0, size: 1.9, icon: "mdi-volcano" },
+      ],
+    },
+    {
+      id: 26,
+      instant: true,
+      collection: "coldTimes",
+      reward,
+      color: "pale-purple",
+      icons: [
+        { x: -0.85, y: 0, rotate: 0, size: 2, icon: "mdi-city-variant" },
+        { x: 0.85, y: 0.05, rotate: 0, size: 2, icon: "mdi-city" },
+        { x: -0.3, y: 0.05, rotate: 0, size: 0.65, icon: "mdi-outdoor-lamp" },
+        { x: 0.15, y: 0.3, rotate: 0, size: 0.7, icon: "mdi-sign-pole" },
+        { x: 0.15, y: 0.05, rotate: 0, size: 0.7, icon: "mdi-post-lamp" },
+      ],
+    },
+    {
+      id: 27,
+      instant: true,
+      collection: "coldTimes",
+      reward,
+      color: "red",
+      icons: [
+        { x: -0.9, y: 0.3, rotate: 0, size: 1.3, icon: "mdi-cup" },
+        { x: -0.1, y: 0.3, rotate: 0, size: 1.3, icon: "mdi-cup" },
+        { x: -0.9, y: -0.05, rotate: 0, size: 1, icon: "mdi-smoke" },
+        { x: -0.1, y: -0.05, rotate: 0, size: 1, icon: "mdi-smoke" },
+        { x: 0.75, y: -0.1, rotate: 0, size: 3, icon: "mdi-bottle-soda-classic-outline" },
+        { x: 0.75, y: -0.15, rotate: 0, size: 0.6, icon: "mdi-food-apple" },
+      ],
+    },
+    {
+      id: 28,
+      instant: true,
+      collection: "coldTimes",
+      reward,
+      color: "deep-purple",
+      icons: [
+        { x: -0.2, y: 0.4, rotate: 0, size: 3, icon: "mdi-pot-steam" },
+        { x: 0.85, y: 0.5, rotate: 0, size: 2.25, icon: "mdi-human-greeting" },
+        { x: 0.3, y: 0.15, rotate: 175, size: 1, icon: "mdi-silverware-spoon" },
+        { x: -0.45, y: 0.25, rotate: 125, size: 1, icon: "mdi-food-drumstick" },
+        { x: 0.6, y: -0.9, rotate: 0, size: 1.5, icon: "mdi-weather-night" },
+      ],
+    },
+    {
+      id: 29,
+      instant: true,
+      collection: "coldTimes",
+      reward,
+      color: "green",
+      icons: [
+        { x: 0, y: -0.4, rotate: 0, size: 2, icon: "mdi-forest" },
+        { x: -0.55, y: -0.1, rotate: 0, size: 2, icon: "mdi-forest" },
+        { x: 0.8, y: 0.1, rotate: 0, size: 2, icon: "mdi-pine-tree" },
+        { x: 0, y: 0.3, rotate: 0, size: 1, icon: "mdi-waterfall" },
+        { x: -0.1, y: 0.65, rotate: 0, size: 1, icon: "mdi-waves" },
+        { x: -0.3, y: 1, rotate: 0, size: 1, icon: "mdi-waves" },
+        { x: 0.35, y: 0.7, rotate: 0, size: 0.5, icon: "mdi-grass" },
+        { x: 0.2, y: 1, rotate: 0, size: 0.65, icon: "mdi-grass" },
+        { x: -0.75, y: 0.85, rotate: 0, size: 0.6, icon: "mdi-grass" },
+      ],
+    },
+    {
+      id: 30,
+      instant: true,
+      collection: "coldTimes",
+      reward,
+      color: "light-blue",
+      icons: [
+        { x: 0.3, y: 0.2, rotate: 0, size: 2, icon: "mdi-snowman" },
+        { x: -0.85, y: 0.3, rotate: 0, size: 1.5, icon: "mdi-human-handsup" },
+        { x: -0.6, y: -0.15, rotate: -50, size: 0.75, icon: "mdi-carrot" },
+        { x: 0, y: -0.95, rotate: 0, size: 1.3, icon: "mdi-weather-snowy" },
+        { x: 0.8, y: -0.5, rotate: 0, size: 0.8, icon: "mdi-snowflake" },
+        { x: -0.35, y: 0.25, rotate: 0, size: 0.6, icon: "mdi-snowflake" },
+      ],
+    },
+    {
+      id: 31,
+      instant: true,
+      collection: "coldTimes",
+      reward,
+      color: "dark-blue",
+      icons: [
+        { x: -0.7, y: 0.7, rotate: 0, size: 2, icon: "mdi-snowmobile" },
+        { x: -0.85, y: 0.45, rotate: 0, size: 1.75, icon: "mdi-walk" },
+        { x: 0.55, y: 0.2, rotate: 0, size: 1.5, icon: "mdi-snowshoeing" },
+        { x: -0.1, y: -0.45, rotate: 0, size: 1, icon: "mdi-snowboard" },
+      ],
+    },
+    {
+      id: 32,
+      instant: true,
+      collection: "coldTimes",
+      reward,
+      color: "blue-grey",
+      icons: [
+        { x: 0, y: -0.9, rotate: 0, size: 2, icon: "mdi-chandelier" },
+        { x: 0.8, y: 0.2, rotate: 0, size: 1.5, icon: "mdi-candelabra-fire" },
+        { x: -0.2, y: 0.5, rotate: 0, size: 1, icon: "mdi-candle" },
+        { x: -0.75, y: 0.7, rotate: 0, size: 2, icon: "mdi-human-handsdown" },
+        { x: 0.8, y: 0.85, rotate: 0, size: 1.3, icon: "mdi-dresser" },
+      ],
+    },
+    {
+      id: 33,
+      instant: true,
+      collection: "coldTimes",
+      reward,
+      color: "yellow",
+      icons: [
+        { x: 0, y: 0.2, rotate: 0, size: 1.4, icon: "mdi-lightbulb" },
+        { x: -0.8, y: 0.2, rotate: 0, size: 1.4, icon: "mdi-lightbulb-cfl" },
+        { x: 0.8, y: 0.2, rotate: 0, size: 1.4, icon: "mdi-lightbulb-cfl-spiral" },
+        { x: -0.4, y: -0.6, rotate: 45, size: 1.4, icon: "mdi-lightbulb-fluorescent-tube" },
+        { x: 0.4, y: -0.6, rotate: 0, size: 1.4, icon: "mdi-lightbulb-spot" },
+        { x: -0.5, y: 0.6, rotate: 0, size: 0.7, icon: "mdi-tag-text" },
+        { x: 0.3, y: 0.6, rotate: 0, size: 0.7, icon: "mdi-tag-text" },
+        { x: 1.1, y: 0.6, rotate: 0, size: 0.7, icon: "mdi-tag-text" },
+        { x: -0.15, y: -0.2, rotate: 0, size: 0.7, icon: "mdi-tag-text" },
+        { x: 0.7, y: -0.2, rotate: 0, size: 0.7, icon: "mdi-tag-text" },
+      ],
+    },
+  ],
   "modules/event/cinders/prize": {
     theme_candlelight: {
       type: "theme",
@@ -793,6 +1316,49 @@ export default {
         };
       },
     },
+  },
+  "modules/event/cinders/tick": function (seconds) {
+    const candleDuration = store.state.cinders.activeCandle ? store.state.cinders.activeCandle.duration : 0;
+    const candleTime = Math.min(candleDuration, seconds);
+    const lightGain =
+      store.getters["cinders/totalProduction"] * Math.pow(1.015, store.getters["meta/globalEventLevel"]);
+    let totalLight = lightGain * (seconds - candleTime);
+    if (candleTime > 0) {
+      totalLight +=
+        lightGain *
+        store.getters["mult/get"](
+          "cindersCandlePower",
+          store.state.cinders.candle[store.state.cinders.activeCandle.name].lightMult - 1,
+          1,
+          1,
+        ) *
+        candleTime;
+      const newCandleDuration = candleDuration - candleTime;
+      if (newCandleDuration > 0) {
+        store.commit("cinders/updateCandleKey", { key: "duration", value: newCandleDuration });
+      } else {
+        store.dispatch("currency/gain", {
+          feature: "event",
+          name: "soot",
+          gainMult: true,
+          amount: store.state.cinders.candle[store.state.cinders.activeCandle.name].soot,
+        });
+        store.commit("cinders/updateKey", { key: "activeCandle", value: null });
+      }
+    }
+    if (lightGain > 0) {
+      store.dispatch("currency/gain", { feature: "event", name: "light", gainMult: true, amount: totalLight });
+      store.dispatch("note/find", "event_8");
+      const lightGained = store.state.stat.event_light.value;
+      const totalTokens = Math.floor(
+        store.getters["mult/get"]("currencyEventCindersTokenGain", logBase(lightGained / buildNum(10, "K"), 1.2)),
+      );
+      const collectedTokens = store.state.stat.event_cindersToken.value;
+      if (totalTokens > collectedTokens) {
+        store.dispatch("event/giveTokens", { event: "cinders", amount: totalTokens - collectedTokens });
+        store.dispatch("note/find", "event_10");
+      }
+    }
   },
   "modules/event/cinders/upgrade": {
     moonglow: {
@@ -1553,6 +2119,53 @@ export default {
       },
       pool: { nightHunt: { price: { event_nightHuntToken: 1 } } },
     },
+  },
+  "modules/event/nightHunt/tick": function (seconds) {
+    let magicValue = store.state.currency.event_magic.value / 10;
+    let addAmount = 0;
+    let sackAmount = 0;
+    let secondsLeft = seconds;
+    while (secondsLeft > 0) {
+      const changeAmount =
+        Math.min(20, Math.floor(Math.sqrt(magicValue))) -
+        Object.keys(store.state.nightHunt.changedCurrency).length -
+        addAmount -
+        sackAmount;
+      const percent = 0.002 * changeAmount;
+      const sackPercent = 0.002 * magicValue - 0.2;
+      const secondsNeeded = percent > 0 ? Math.ceil(1 / percent) : Infinity;
+      if (changeAmount <= 0) {
+        secondsLeft = 0;
+      } else if (secondsLeft >= secondsNeeded) {
+        if (chance(sackPercent)) {
+          sackAmount++;
+          magicValue -= 10;
+        } else {
+          addAmount++;
+          magicValue--;
+        }
+        secondsLeft -= secondsNeeded;
+      } else {
+        if (chance(percent)) {
+          if (chance(sackPercent)) {
+            sackAmount++;
+          } else {
+            addAmount++;
+          }
+        }
+        secondsLeft = 0;
+      }
+    }
+    if (addAmount > 0 || sackAmount > 0) {
+      store.dispatch("nightHunt/addChangedCurrency", { random: addAmount, sack: sackAmount });
+      store.dispatch("currency/spend", { feature: "event", name: "magic", amount: addAmount * 10 + sackAmount * 100 });
+    }
+    const essenceGain =
+      store.getters["mult/get"]("currencyEventEssenceGain") *
+      Math.pow(NIGHT_HUNT_GL_BOOST, store.getters["meta/globalEventLevel"]);
+    if (essenceGain > 0) {
+      store.dispatch("currency/gain", { feature: "event", name: "essence", amount: essenceGain * seconds });
+    }
   },
   "modules/event/nightHunt/upgrade": {
     essenceCondenser: {
@@ -2687,6 +3300,14 @@ export default {
       pool: { snowdown: { price: { event_snowdownToken: 1 } } },
     },
   },
+  "modules/event/snowdown/tick": function (seconds) {
+    ["sapling", "yarn", "dough", "snow"].forEach((name) => {
+      const gain = store.getters["mult/get"](store.getters["currency/gainMultName"]("event", name));
+      if (gain > 0) {
+        store.dispatch("currency/gain", { feature: "event", name, amount: gain * seconds });
+      }
+    });
+  },
   "modules/event/snowdown/upgrade": {
     pineTrees: {
       type: "snowdown",
@@ -3088,6 +3709,190 @@ export default {
       pool: { summerFestival: { price: { event_summerFestivalToken: 1 } } },
     },
   },
+  "modules/event/summerFestival/quest": [
+    // #1 - #10
+    [{ type: "currency", name: "event_log", amount: 300 }],
+    [{ type: "building", name: "collector", level: 1, amount: 1 }],
+    [{ type: "currency", name: "event_coconut", amount: 1000 }],
+    [
+      { type: "currency", name: "event_log", amount: 1750 },
+      { type: "currency", name: "event_coconut", amount: 3000 },
+    ],
+    [{ type: "building", name: "mainStage", level: 1, amount: 1 }],
+    [{ type: "currency", name: "event_music", amount: 1300 }],
+    [
+      { type: "currency", name: "event_log", amount: 7000 },
+      { type: "currency", name: "event_coconut", amount: 7000 },
+    ],
+    [{ type: "building", name: "collector", level: 2, amount: 2 }],
+    [{ type: "currency", name: "event_music", amount: buildNum(14, "K") }],
+    [{ type: "building", name: "vegetablePatch", level: 1, amount: 1 }], // #11 - #20
+    [{ type: "building", name: "collector", level: 3, amount: 2 }],
+    [{ type: "currency", name: "event_vegetable", amount: 1500 }],
+    [{ type: "currency", name: "event_music", amount: buildNum(50, "K") }],
+    [{ type: "building", name: "vegetablePatch", level: 2, amount: 1 }],
+    [{ type: "building", name: "collector", level: 3, amount: 4 }],
+    [{ type: "currency", name: "event_stoneBlock", amount: buildNum(900, "K") }],
+    [{ type: "building", name: "sawmill", level: 1, amount: 1 }],
+    [{ type: "currency", name: "event_solidPlate", amount: 10 }],
+    [
+      { type: "currency", name: "event_coconut", amount: buildNum(7, "M") },
+      { type: "currency", name: "event_vegetable", amount: 4000 },
+    ],
+    [{ type: "building", name: "kitchen", level: 1, amount: 1 }], // #21 - #30
+    [{ type: "currency", name: "event_coconutSalad", amount: 25 }],
+    [{ type: "currency", name: "event_music", amount: buildNum(130, "K") }],
+    [{ type: "currency", name: "event_shell", amount: buildNum(16, "M") }],
+    [
+      { type: "currency", name: "event_log", amount: buildNum(150, "M") },
+      { type: "currency", name: "event_coconut", amount: buildNum(200, "M") },
+      { type: "currency", name: "event_stoneBlock", amount: buildNum(80, "M") },
+    ],
+    [{ type: "building", name: "mainStage", level: 2, amount: 1 }],
+    [{ type: "currency", name: "event_music", amount: buildNum(360, "K") }],
+    [{ type: "currency", name: "event_rawMeat", amount: 20 }],
+    [
+      { type: "currency", name: "event_solidPlate", amount: 3000 },
+      { type: "currency", name: "event_coconutSalad", amount: 650 },
+      { type: "currency", name: "event_rawMeat", amount: 80 },
+    ],
+    [{ type: "building", name: "vegetablePatch", level: 3, amount: 2 }],
+    [{ type: "currency", name: "event_sand", amount: buildNum(40, "K") }], // #31 - #40
+    [{ type: "currency", name: "event_sandstone", amount: 600 }],
+    [{ type: "currency", name: "event_coal", amount: 100 }],
+    [{ type: "building", name: "huntingArea", level: 1, amount: 2 }],
+    [{ type: "currency", name: "event_music", amount: buildNum(900, "K") }],
+    [{ type: "currency", name: "event_cookedMeat", amount: 200 }],
+    [{ type: "building", name: "collector", level: 7, amount: 2 }],
+    [{ type: "currency", name: "event_salt", amount: 900 }],
+    [
+      { type: "currency", name: "event_coconutSalad", amount: 3000 },
+      { type: "currency", name: "event_saltyShell", amount: 100 },
+    ],
+    [{ type: "currency", name: "event_music", amount: buildNum(2.5, "M") }],
+    [{ type: "building", name: "mainStage", level: 3, amount: 1 }],
+  ],
+  "modules/event/summerFestival/tick": function (seconds) {
+    // Handle build queue
+    if (store.state.summerFestival.buildQueue.length > 0) {
+      let secondsLeft = seconds;
+      const speed = store.getters["mult/get"]("summerFestivalBuildQueueSpeed");
+      let newQueue = [];
+      store.state.summerFestival.buildQueue.forEach((elem) => {
+        if (secondsLeft > 0) {
+          const key = Math.abs(elem);
+          const building = store.state.summerFestival.placedBuilding[key];
+          const nextTimeLeft = building.timeLeft - secondsLeft * speed;
+          if (nextTimeLeft > 0) {
+            store.commit("summerFestival/updatePlacedBuildingKey", { id: key, key: "timeLeft", value: nextTimeLeft });
+            secondsLeft = 0;
+            newQueue.push(elem);
+          } else {
+            secondsLeft -= Math.ceil(building.timeLeft / speed);
+            if (elem > 0) {
+              store.dispatch("summerFestival/finishBuilding", key);
+            } else {
+              store.dispatch("summerFestival/finishBuildingDeletion", key);
+            }
+          }
+        } else {
+          newQueue.push(elem);
+        }
+      });
+      store.commit("summerFestival/updateKey", { key: "buildQueue", value: newQueue });
+    } // Create random resource drops
+    if (store.state.summerFestival.island !== null) {
+      let allCells = [];
+      store.state.summerFestival.island.forEach((row, y) => {
+        row.forEach((cell, x) => {
+          allCells.push({ ...cell, x, y });
+        });
+      });
+      for (let i = 0, n = randomRound(seconds / 10); i < n; i++) {
+        const chosenCell = randomElem(allCells);
+        const cellType = store.state.summerFestival.cellType[chosenCell.tile];
+        if (
+          chosenCell.unlocked &&
+          !chosenCell.building &&
+          cellType.produces &&
+          chosenCell.drop < store.getters["mult/get"]("summerFestivalMaterialStackCap")
+        ) {
+          if (chosenCell.cacheAutocollect === null) {
+            chosenCell.drop++;
+            store.commit("summerFestival/updateIslandKey", {
+              x: chosenCell.x,
+              y: chosenCell.y,
+              key: "drop",
+              value: chosenCell.drop,
+            });
+          } else {
+            store.dispatch("currency/gain", {
+              feature: "event",
+              name: cellType.produces,
+              amount:
+                chosenCell.cacheAutocollect *
+                store.getters["mult/get"]("summerFestivalMaterialGain") *
+                Math.pow(1.01, store.getters["meta/globalEventLevel"]),
+            });
+          }
+        }
+      }
+    } // Award currency gains
+    [
+      "music",
+      "sand",
+      "freshWater",
+      "coal",
+      "salt",
+      "pepper",
+      "honey",
+      "vegetable",
+      "citrusFruit",
+      "rawFish",
+      "rawMeat",
+    ].forEach((elem) => {
+      const gain = store.getters["mult/get"](`currencyEvent${capitalize(elem)}Gain`);
+      if (gain > 0) {
+        store.dispatch("currency/gain", { feature: "event", name: elem, amount: gain * seconds });
+      }
+    }); // Handle building actions
+    for (const [id, building] of Object.entries(store.state.summerFestival.placedBuilding)) {
+      if (building.timeLeft <= 0 && building.selectedAction !== null) {
+        const action = store.state.summerFestival.building[building.type].action[building.selectedAction];
+        let newTime = building.actionTime + action.speed(building.level - 1) * seconds;
+        if (newTime >= 1) {
+          let maxAfford = Math.floor(newTime);
+          for (const [key, elem] of Object.entries(action.input)) {
+            maxAfford = Math.min(maxAfford, Math.floor(store.state.currency[key].value / elem));
+          }
+          if (maxAfford > 0) {
+            for (const [key, elem] of Object.entries(action.input)) {
+              const split = key.split("_");
+              store.dispatch("currency/spend", { feature: split[0], name: split[1], amount: elem * maxAfford });
+            }
+            for (const [key, elem] of Object.entries(action.output)) {
+              const split = key.split("_");
+              store.dispatch("currency/gain", { feature: split[0], name: split[1], amount: elem * maxAfford });
+            }
+            store.state.summerFestival.building[building.type].effect.forEach((eff) => {
+              if (eff.name === "pearlChance") {
+                const pearlAmount = randomRound(maxAfford * eff.value(building.level - 1));
+                if (pearlAmount > 0) {
+                  store.dispatch("currency/gain", { feature: "event", name: "pearl", amount: pearlAmount });
+                }
+              }
+            });
+            newTime -= maxAfford;
+          }
+        }
+        store.commit("summerFestival/updatePlacedBuildingKey", {
+          id,
+          key: "actionTime",
+          value: Math.max(0, Math.min(newTime, 1)),
+        });
+      }
+    }
+  },
   "modules/event/summerFestival/upgrade": {
     extraBuildingSlot: {
       type: "summerFestival",
@@ -3448,6 +4253,19 @@ export default {
       },
       pool: { weatherChaos: { price: { event_weatherChaosToken: 1 } } },
     },
+  },
+  "modules/event/weatherChaos/tick": function (seconds, oldTime, newTime) {
+    let step = oldTime;
+    while (step < newTime) {
+      const oldStep = step;
+      step = Math.min(Math.floor((step + SECONDS_PER_HOUR) / SECONDS_PER_HOUR) * SECONDS_PER_HOUR, newTime);
+      if (step % SECONDS_PER_HOUR === 0) {
+        store.dispatch("weatherChaos/nextWeatherStep");
+      }
+      if (step > oldStep) {
+        singleTick(step - oldStep);
+      }
+    }
   },
   "modules/event/weatherChaos/upgrade": {
     juicyBait: {
@@ -4467,6 +5285,431 @@ export default {
     },
     card: cardList,
   },
+  "modules/farm/cardList": [
+    {
+      id: 1,
+      group: "berry",
+      collection: "plantsInTheCity",
+      power: 3,
+      color: "red",
+      icons: [
+        { x: -0.4, y: -0.15, rotate: 0, size: 3, icon: "mdi-tree" },
+        { x: -0.37, y: 0.55, rotate: 90, size: 3, icon: "mdi-minus" },
+        { x: -0.65, y: 0.35, rotate: 0, size: 0.6, icon: "mdi-food-apple" },
+        { x: -0.1, y: 0.25, rotate: 0, size: 0.65, icon: "mdi-food-apple" },
+        { x: 0.4, y: 0.2, rotate: 25, size: 0.6, icon: "mdi-food-apple" },
+        { x: 0.05, y: 0.7, rotate: 0, size: 0.5, icon: "mdi-food-apple" },
+        { x: 0.3, y: 0.75, rotate: 0, size: 0.45, icon: "mdi-food-apple" },
+        { x: 0.75, y: 0.67, rotate: 0, size: 1.6, icon: "mdi-human-greeting" },
+        { x: 0.2, y: 0.85, rotate: 0, size: 1, icon: "mdi-basket" },
+      ],
+    },
+    {
+      id: 2,
+      group: "vegetable",
+      collection: "plantsInTheCity",
+      power: 3,
+      color: "orange",
+      icons: [
+        { x: -0.7, y: 0.9, rotate: 0, size: 2, icon: "mdi-train-car-flatbed" },
+        { x: -0.7, y: 0.7, rotate: 0, size: 1.65, icon: "mdi-pumpkin" },
+        { x: 0.5, y: 1, rotate: 0, size: 1.1, icon: "mdi-pumpkin" },
+        { x: 0.05, y: 1.08, rotate: 0, size: 0.7, icon: "mdi-pumpkin" },
+        { x: -0.2, y: -0.3, rotate: 0, size: 1.4, icon: "mdi-human-male-female-child" },
+        { x: 0.8, y: 0.1, rotate: 0, size: 1.3, icon: "mdi-human-greeting" },
+        { x: 0.4, y: -0.15, rotate: 20, size: 0.6, icon: "mdi-trophy" },
+      ],
+    },
+    {
+      id: 3,
+      collection: "plantsInTheCity",
+      power: 2,
+      reward: [{ name: "farmGoldChance", type: "mult", value: 1.15 }],
+      color: "pale-purple",
+      icons: [
+        { x: -0.75, y: 0.65, rotate: 0, size: 1.5, icon: "mdi-pot" },
+        { x: 0, y: 0.65, rotate: 0, size: 1.5, icon: "mdi-pot" },
+        { x: -0.75, y: 0.35, rotate: 0, size: 1, icon: "mdi-flower" },
+        { x: 0, y: 0.35, rotate: 0, size: 1, icon: "mdi-flower-tulip" },
+        { x: 0.8, y: 0.68, rotate: 0, size: 1.35, icon: "mdi-watering-can" },
+        { x: 0.45, y: -0.65, rotate: 0, size: 2, icon: "mdi-cash-register" },
+      ],
+    },
+    {
+      id: 4,
+      group: "flower",
+      collection: "plantsInTheCity",
+      power: 3,
+      color: "pale-blue",
+      icons: [
+        { x: 0, y: 0.25, rotate: 0, size: 2, icon: "mdi-desk" },
+        { x: 0, y: -0.3, rotate: 0, size: 1.5, icon: "mdi-desktop-tower-monitor" },
+        { x: -0.9, y: 0.2, rotate: 0, size: 1.5, icon: "mdi-chair-rolling" },
+        { x: 0.95, y: 0.45, rotate: 0, size: 1.25, icon: "mdi-pot" },
+        { x: 0.95, y: 0.15, rotate: 0, size: 1, icon: "mdi-flower" },
+      ],
+    },
+    {
+      id: 5,
+      group: "grain",
+      collection: "plantsInTheCity",
+      power: 3,
+      color: "pale-yellow",
+      icons: [
+        { x: 0, y: 0.3, rotate: 0, size: 1, icon: "mdi-tshirt-crew" },
+        { x: 0, y: -0.15, rotate: 0, size: 1, icon: "mdi-hat-fedora" },
+        { x: 0, y: 0.65, rotate: 90, size: 1, icon: "mdi-minus-thick" },
+        { x: 0.25, y: 0.3, rotate: 45, size: 1, icon: "mdi-minus" },
+        { x: -0.25, y: 0.3, rotate: -45, size: 1, icon: "mdi-minus" },
+        { x: -0.8, y: 0.5, rotate: 0, size: 1.25, icon: "mdi-barley" },
+        { x: -0.8, y: 0.02, rotate: 0, size: 1.25, icon: "mdi-barley" },
+        { x: 0.75, y: 0.45, rotate: 0, size: 1.4, icon: "mdi-barley" },
+      ],
+    },
+    {
+      id: 6,
+      group: "berry",
+      collection: "supplyAndSupport",
+      power: 1,
+      reward: [{ name: "farmCropGain", type: "mult", value: 1.35 }],
+      color: "light-blue",
+      icons: [
+        { x: 0.05, y: -0.45, rotate: 45, size: 2, icon: "mdi-airplane" },
+        { x: -0.2, y: 0, rotate: 0, size: 0.6, icon: "mdi-water" },
+        { x: 0.4, y: 0.1, rotate: 0, size: 0.6, icon: "mdi-water" },
+        { x: 0.1, y: 0.2, rotate: 0, size: 0.6, icon: "mdi-water" },
+        { x: -0.1, y: 0.35, rotate: 0, size: 0.6, icon: "mdi-water" },
+        { x: 0.3, y: 0.45, rotate: 0, size: 0.6, icon: "mdi-water" },
+        { x: -0.35, y: 0.5, rotate: 0, size: 0.6, icon: "mdi-water" },
+        { x: 0, y: 1, rotate: 0, size: 1.5, icon: "mdi-grass" },
+        { x: -0.65, y: 1.1, rotate: 0, size: 1, icon: "mdi-flower" },
+      ],
+    },
+    {
+      id: 7,
+      group: "vegetable",
+      collection: "supplyAndSupport",
+      power: 1,
+      reward: [{ name: "farmCropGain", type: "mult", value: 1.35 }],
+      color: "blue-grey",
+      icons: [
+        { x: -1.05, y: 0, rotate: 0, size: 1.25, icon: "mdi-train-car-centerbeam-full" },
+        { x: -0.35, y: 0, rotate: 0, size: 1.25, icon: "mdi-train-car-container" },
+        { x: 0.35, y: 0, rotate: 0, size: 1.25, icon: "mdi-train-car-flatbed-tank" },
+        { x: 1.05, y: 0, rotate: 0, size: 1.25, icon: "mdi-train-car-hopper-full" },
+      ],
+    },
+    {
+      id: 8,
+      group: "grain",
+      collection: "supplyAndSupport",
+      power: 1,
+      reward: [{ name: "farmCropGain", type: "mult", value: 1.35 }],
+      color: "beige",
+      icons: [
+        { x: -0.6, y: -0.3, rotate: 0, size: 1.5, icon: "mdi-home-silo" },
+        { x: 0.25, y: -0.3, rotate: 0, size: 1.5, icon: "mdi-silo" },
+        { x: 0.15, y: 0.7, rotate: 0, size: 2, icon: "mdi-car-lifted-pickup" },
+        { x: -0.15, y: 0.5, rotate: 0, size: 0.75, icon: "mdi-land-rows-horizontal" },
+      ],
+    },
+    {
+      id: 9,
+      group: "flower",
+      collection: "supplyAndSupport",
+      power: 1,
+      reward: [{ name: "farmCropGain", type: "mult", value: 1.35 }],
+      color: "deep-orange",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 4.5, icon: "mdi-hoop-house" },
+        { x: 0, y: 0.6, rotate: 0, size: 0.75, icon: "mdi-radiator" },
+        { x: 0, y: -0.4, rotate: 180, size: 0.5, icon: "mdi-lightbulb-on" },
+        { x: -0.65, y: 0.6, rotate: 0, size: 0.75, icon: "mdi-flower" },
+        { x: 0.65, y: 0.6, rotate: 0, size: 0.75, icon: "mdi-flower" },
+      ],
+    },
+    {
+      id: 10,
+      collection: "feedingTheWorld",
+      power: 2,
+      reward: [{ name: "farmCropGain", type: "mult", value: 1.1 }],
+      color: "lime",
+      icons: [
+        { x: 0.2, y: 0, rotate: 0, size: 2.25, icon: "mdi-blender" },
+        { x: 0.95, y: 0.23, rotate: 0, size: 1.3, icon: "mdi-beer" },
+        { x: -0.85, y: 0.32, rotate: 0, size: 1, icon: "mdi-food-apple" },
+        { x: -0.5, y: 0.32, rotate: 0, size: 1, icon: "mdi-fruit-pear" },
+      ],
+    },
+    {
+      id: 11,
+      collection: "feedingTheWorld",
+      power: 0,
+      reward: [{ name: "farmGoldChance", type: "mult", value: 1.25 }],
+      color: "pale-pink",
+      icons: [
+        { x: -0.5, y: 0.6, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: 0.5, y: 0.6, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: -0.5, y: -0.2, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: 0.5, y: -0.2, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: -0.65, y: 0.3, rotate: 0, size: 1, icon: "mdi-baguette" },
+        { x: -0.3, y: 0.3, rotate: 0, size: 1, icon: "mdi-baguette" },
+        { x: 0.05, y: 0.3, rotate: 0, size: 1, icon: "mdi-baguette" },
+        { x: 0.6, y: 0.35, rotate: 0, size: 1, icon: "mdi-food-croissant" },
+        { x: -0.15, y: -0.5, rotate: 0, size: 1, icon: "mdi-cupcake" },
+        { x: 0.45, y: -0.5, rotate: 0, size: 1, icon: "mdi-muffin" },
+      ],
+    },
+    {
+      id: 12,
+      collection: "feedingTheWorld",
+      power: 3,
+      reward: [{ name: "farmExperience", type: "base", value: 0.2 }],
+      color: "pale-blue",
+      icons: [
+        { x: 0, y: 0.25, rotate: 0, size: 2, icon: "mdi-truck" },
+        { x: -0.12, y: -0.4, rotate: 0, size: 1.25, icon: "mdi-ice-cream" },
+        { x: 0.85, y: 0.7, rotate: 0, size: 1, icon: "mdi-human-handsdown" },
+        { x: -0.7, y: 0.9, rotate: 0, size: 0.7, icon: "mdi-human-child" },
+      ],
+    },
+    {
+      id: 13,
+      collection: "feedingTheWorld",
+      power: 3,
+      reward: [{ name: "farmRareDropChance", type: "mult", value: 1.1 }],
+      color: "orange",
+      icons: [
+        { x: -0.3, y: 0.2, rotate: 0, size: 2, icon: "mdi-tray" },
+        { x: 0.55, y: 0.35, rotate: 0, size: 2, icon: "mdi-human-handsdown" },
+        { x: -0.45, y: 0.2, rotate: 0, size: 0.75, icon: "mdi-food" },
+        { x: -0.1, y: 0.25, rotate: 0, size: 0.7, icon: "mdi-french-fries" },
+      ],
+    },
+    {
+      id: 14,
+      collection: "feedingTheWorld",
+      power: 3,
+      reward: [{ name: "farm_grass", type: "addRareDrop", value: 4, chance: 0.2, mult: 0.4 }],
+      color: "brown",
+      icons: [
+        { x: 0, y: 0.5, rotate: 0, size: 3, icon: "mdi-table-furniture" },
+        { x: 0, y: -0.05, rotate: 0, size: 1, icon: "mdi-food-turkey" },
+        { x: -0.45, y: 0, rotate: 0, size: 0.75, icon: "mdi-food-variant" },
+        { x: 0.5, y: -0.05, rotate: 0, size: 0.85, icon: "mdi-bowl" },
+        { x: 0.4, y: -0.05, rotate: -10, size: 0.65, icon: "mdi-carrot" },
+        { x: 0.55, y: -0.1, rotate: 15, size: 0.65, icon: "mdi-carrot" },
+      ],
+    },
+    {
+      id: 15,
+      collection: "feedingTheWorld",
+      power: 3,
+      reward: [
+        { name: "farmCropGain", type: "mult", value: 1.1 },
+        { name: "farmGoldChance", type: "mult", value: 1.1 },
+      ],
+      color: "light-blue",
+      icons: [
+        { x: 0, y: 0.4, rotate: 0, size: 1.7, icon: "mdi-human-handsup" },
+        { x: -0.3, y: -0.05, rotate: 0, size: 0.85, icon: "mdi-candy" },
+        { x: -0.95, y: 0.45, rotate: 0, size: 1.25, icon: "mdi-candycane" },
+        { x: 0.95, y: 0.45, rotate: 0, size: 1.25, icon: "mdi-candycane" },
+        { x: 0.75, y: -0.5, rotate: 0, size: 0.8, icon: "mdi-cake-variant" },
+        { x: -0.3, y: -0.65, rotate: 0, size: 0.55, icon: "mdi-cupcake" },
+        { x: 0.25, y: -0.2, rotate: 0, size: 0.7, icon: "mdi-ice-pop" },
+        { x: -0.85, y: -0.2, rotate: 0, size: 0.8, icon: "mdi-ice-cream" },
+      ],
+    },
+    {
+      id: 16,
+      collection: "feedingTheWorld",
+      power: 3,
+      reward: [
+        { name: "farmRareDropChance", type: "mult", value: 1.05 },
+        { name: "farmExperience", type: "base", value: 0.1 },
+      ],
+      color: "light-green",
+      icons: [
+        { x: -0.9, y: 0.3, rotate: 0, size: 1, icon: "mdi-coffee" },
+        { x: -0.4, y: 0.3, rotate: 0, size: 1, icon: "mdi-coffee" },
+        { x: -0.65, y: -0.15, rotate: 0, size: 1, icon: "mdi-coffee" },
+        { x: 0.3, y: 0.22, rotate: 0, size: 1.2, icon: "mdi-kettle-steam" },
+        { x: 0.95, y: 0.3, rotate: 0, size: 1, icon: "mdi-tea" },
+      ],
+    },
+    {
+      id: 17,
+      group: "flower",
+      collection: "feedingTheWorld",
+      power: 4,
+      reward: [{ name: "farm_petal", type: "addRareDrop", value: 2, chance: 0.1, mult: 0.1 }],
+      color: "cherry",
+      icons: [
+        { x: -0.6, y: 0.15, rotate: 0, size: 2, icon: "mdi-bowl" },
+        { x: -0.4, y: 0.05, rotate: 60, size: 1, icon: "mdi-fruit-grapes" },
+        { x: -0.75, y: 0.1, rotate: -15, size: 1, icon: "mdi-fruit-grapes" },
+        { x: -0.1, y: 0.2, rotate: 0, size: 1, icon: "mdi-faucet" },
+        { x: 0.25, y: 0.3, rotate: 0, size: 1.25, icon: "mdi-bottle-wine" },
+        { x: 0.5, y: 0.3, rotate: 0, size: 1.25, icon: "mdi-bottle-wine" },
+        { x: 0.75, y: 0.3, rotate: 0, size: 1.25, icon: "mdi-bottle-wine" },
+        { x: 1.1, y: 0.37, rotate: 0, size: 1, icon: "mdi-glass-wine" },
+      ],
+    },
+    {
+      id: 18,
+      collection: "feedingTheWorld",
+      power: 0,
+      reward: [
+        { name: "farm_petal", type: "addRareDrop", value: 2, chance: -0.05, mult: 0.02 },
+        { name: "farm_seedHull", type: "addRareDrop", value: 3, chance: -0.05, mult: 0.02 },
+        { name: "farm_bug", type: "addRareDrop", value: 1, chance: -0.05, mult: 0.02 },
+      ],
+      color: "wooden",
+      icons: [
+        { x: -0.55, y: 0, rotate: 0, size: 2, icon: "mdi-coffee-maker" },
+        { x: 0.6, y: 0.2, rotate: 0, size: 1.25, icon: "mdi-coffee" },
+        { x: 0.65, y: -0.2, rotate: 65, size: 1, icon: "mdi-cookie" },
+      ],
+    },
+    {
+      id: 19,
+      group: "grain",
+      collection: "organicDyes",
+      power: 3,
+      reward: [{ name: "farm_seedHull", type: "addRareDrop", value: 6, chance: 0.15, mult: 0.1 }],
+      color: "amber",
+      icons: [
+        { x: -0.6, y: 0.75, rotate: 0, size: 1, icon: "mdi-carrot" },
+        { x: -0.35, y: 0.75, rotate: 0, size: 1, icon: "mdi-carrot" },
+        { x: -0.1, y: 0.75, rotate: 0, size: 1, icon: "mdi-carrot" },
+        { x: 0.2, y: -0.05, rotate: 0, size: 1.8, icon: "mdi-pumpkin" },
+        { x: -0.1, y: -0.65, rotate: 0, size: 1.4, icon: "mdi-circular-saw" },
+      ],
+    },
+    {
+      id: 20,
+      group: "vegetable",
+      collection: "organicDyes",
+      power: 3,
+      reward: [{ name: "farm_bug", type: "addRareDrop", value: 2, chance: 0.1, mult: 0.1 }],
+      color: "orange-red",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 4, icon: "mdi-tray" },
+        { x: -0.45, y: 0.25, rotate: 0, size: 1, icon: "mdi-fruit-cherries" },
+        { x: 0, y: 0.25, rotate: 0, size: 1, icon: "mdi-food-apple" },
+        { x: 0.45, y: 0.25, rotate: 0, size: 1, icon: "mdi-fruit-watermelon" },
+        { x: 0.3, y: -0.1, rotate: 35, size: 1, icon: "mdi-chili-hot" },
+        { x: -0.25, y: -0.15, rotate: -70, size: 1, icon: "mdi-chili-medium" },
+      ],
+    },
+    {
+      id: 21,
+      group: "berry",
+      collection: "organicDyes",
+      power: 3,
+      reward: [{ name: "farm_butterfly", type: "addRareDrop", value: 1, chance: 0, mult: 0.1 }],
+      color: "pale-yellow",
+      icons: [
+        { x: -0.7, y: 0, rotate: 0, size: 1.25, icon: "mdi-flower" },
+        { x: 0.7, y: 0, rotate: 0, size: 1.25, icon: "mdi-flower" },
+        { x: 0, y: -0.2, rotate: 180, size: 1.75, icon: "mdi-flower-pollen" },
+        { x: -0.2, y: 0.5, rotate: 0, size: 1, icon: "mdi-grain" },
+        { x: 0.2, y: 0.5, rotate: 0, size: 1, icon: "mdi-grain" },
+        { x: 0, y: 0.45, rotate: 0, size: 2.25, icon: "mdi-tray" },
+      ],
+    },
+    {
+      id: 22,
+      collection: "organicDyes",
+      power: 6,
+      color: "light-green",
+      icons: [
+        { x: -0.9, y: 0.4, rotate: 0, size: 1.25, icon: "mdi-grass" },
+        { x: -0.3, y: 0.4, rotate: 0, size: 1.25, icon: "mdi-grass" },
+        { x: 0.3, y: 0.4, rotate: 0, size: 1.25, icon: "mdi-grass" },
+        { x: 0.9, y: 0.4, rotate: 0, size: 1.25, icon: "mdi-grass" },
+        { x: 0, y: -0.1, rotate: 0, size: 1.1, icon: "mdi-hops" },
+        { x: -0.45, y: 0.1, rotate: 0, size: 0.8, icon: "mdi-leaf" },
+        { x: -0.8, y: 0.05, rotate: -85, size: 0.8, icon: "mdi-leaf" },
+        { x: -0.55, y: -0.15, rotate: -30, size: 0.8, icon: "mdi-leaf" },
+        { x: 0.65, y: 0.1, rotate: 50, size: 0.9, icon: "mdi-leaf" },
+      ],
+    },
+    {
+      id: 23,
+      collection: "organicDyes",
+      power: 4,
+      reward: [{ name: "farmOvergrow", type: "base", value: 1.75 }],
+      color: "dark-blue",
+      icons: [
+        { x: -0.4, y: 0.2, rotate: 0, size: 2, icon: "mdi-image-filter-drama" },
+        { x: -0.05, y: 0.05, rotate: -75, size: 1, icon: "mdi-fruit-grapes" },
+        { x: -0.7, y: 0.15, rotate: 155, size: 1, icon: "mdi-fruit-grapes" },
+        { x: 0.75, y: 0.15, rotate: 0, size: 1.75, icon: "mdi-human-handsdown" },
+        { x: 1.05, y: 0.3, rotate: 0, size: 0.7, icon: "mdi-fruit-grapes" },
+        { x: 0.45, y: 0.3, rotate: 0, size: 0.7, icon: "mdi-basket" },
+      ],
+    },
+    {
+      id: 24,
+      collection: "organicDyes",
+      power: 5,
+      reward: [{ name: "farmOvergrow", type: "base", value: 0.6 }],
+      color: "purple",
+      icons: [
+        { x: -0.7, y: 0, rotate: 0, size: 3, icon: "mdi-tree" },
+        { x: 0.6, y: -0.4, rotate: 0, size: 2.5, icon: "mdi-pine-tree" },
+        { x: 0.2, y: 0.8, rotate: 0, size: 1, icon: "mdi-mushroom" },
+        { x: -0.4, y: 1, rotate: 0, size: 1.1, icon: "mdi-mushroom" },
+        { x: 1, y: 0.65, rotate: 0, size: 0.9, icon: "mdi-mushroom" },
+        { x: 0.5, y: 0.45, rotate: 0, size: 0.8, icon: "mdi-mushroom" },
+        { x: 0, y: 0.25, rotate: 0, size: 0.7, icon: "mdi-mushroom" },
+      ],
+    },
+    {
+      id: 25,
+      collection: "organicDyes",
+      power: 3,
+      reward: [{ name: "farm_ladybug", type: "addRareDrop", value: 4, chance: -0.05, mult: 0.1 }],
+      color: "brown",
+      icons: [
+        { x: 0, y: 0.1, rotate: 0, size: 2, icon: "mdi-bowl-mix" },
+        { x: -0.25, y: 0, rotate: -15, size: 0.7, icon: "mdi-bug" },
+        { x: 0.3, y: 0.1, rotate: 70, size: 0.7, icon: "mdi-bug" },
+        { x: 0.05, y: 0.05, rotate: 0, size: 0.7, icon: "mdi-ladybug" },
+      ],
+    },
+    {
+      id: 26,
+      collection: "organicDyes",
+      power: 0,
+      reward: [{ name: "farm_spider", type: "addRareDrop", value: 1, chance: -0.15, mult: 0.05 }],
+      color: "lime",
+      icons: [
+        { x: 0.4, y: 0, rotate: -5, size: 1.5, icon: "mdi-fruit-pineapple" },
+        { x: 0.9, y: 0, rotate: 15, size: 1.5, icon: "mdi-fruit-pineapple" },
+        { x: -0.95, y: 0, rotate: 0, size: 1.2, icon: "mdi-corn" },
+        { x: -0.55, y: 0.1, rotate: 45, size: 1.2, icon: "mdi-corn" },
+        { x: -0.2, y: -0.35, rotate: 0, size: 1, icon: "mdi-fruit-citrus" },
+      ],
+    },
+    {
+      id: 27,
+      collection: "organicDyes",
+      power: 5,
+      reward: [{ name: "farm_bee", type: "addRareDrop", value: 10, chance: -0.15, mult: 0.1 }],
+      color: "pink",
+      icons: [
+        { x: 0.55, y: -0.55, rotate: 0, size: 1.5, icon: "mdi-bee-flower" },
+        { x: 0, y: 1, rotate: 0, size: 1.4, icon: "mdi-flower" },
+        { x: -0.7, y: 0.5, rotate: -20, size: 0.9, icon: "mdi-butterfly" },
+        { x: 0.7, y: 0.3, rotate: 70, size: 0.85, icon: "mdi-butterfly" },
+        { x: 0.05, y: -0.05, rotate: 145, size: 0.95, icon: "mdi-butterfly" },
+        { x: -0.65, y: -0.5, rotate: -100, size: 0.7, icon: "mdi-butterfly" },
+      ],
+    },
+  ],
   "modules/farm/crop": {
     carrot: {
       found: true,
@@ -6168,6 +7411,356 @@ export default {
     },
     card: cardList,
   },
+  "modules/gallery/cardList": [
+    {
+      id: 1,
+      collection: "organicDyes",
+      power: 2,
+      reward: [{ name: "currencyGalleryRedGain", type: "mult", value: 1.25 }],
+      color: "red",
+      icons: [
+        { x: 0, y: 0, rotate: 135, size: 1, icon: "mdi-ladybug" },
+        { x: 0.9, y: -0.15, rotate: 40, size: 0.9, icon: "mdi-ladybug" },
+        { x: 0.3, y: -0.7, rotate: -10, size: 1.05, icon: "mdi-ladybug" },
+        { x: 0.5, y: 0.75, rotate: -70, size: 0.75, icon: "mdi-ladybug" },
+        { x: -0.65, y: -0.55, rotate: 135, size: 0.85, icon: "mdi-ladybug" },
+        { x: -0.85, y: 0.1, rotate: -40, size: 1.15, icon: "mdi-ladybug" },
+        { x: -0.8, y: 0.9, rotate: 170, size: 0.95, icon: "mdi-ladybug" },
+        { x: -0.1, y: 0.65, rotate: -120, size: 1, icon: "mdi-ladybug" },
+      ],
+    },
+    {
+      id: 2,
+      collection: "organicDyes",
+      power: 2,
+      reward: [{ name: "currencyGalleryOrangeGain", type: "mult", value: 1.25 }],
+      color: "orange",
+      icons: [
+        { x: -0.7, y: -0.3, rotate: 0, size: 1.2, icon: "mdi-bird" },
+        { x: 0, y: -0.55, rotate: 0, size: 1.2, icon: "mdi-bird" },
+        { x: 0.75, y: -0.45, rotate: 0, size: 1.2, icon: "mdi-bird" },
+        { x: 0.25, y: 0, rotate: 125, size: 0.85, icon: "mdi-feather" },
+        { x: -0.4, y: 0.3, rotate: 160, size: 0.85, icon: "mdi-feather" },
+        { x: 0.65, y: 0.95, rotate: 60, size: 0.85, icon: "mdi-feather" },
+        { x: -0.4, y: 0.9, rotate: -135, size: 0.85, icon: "mdi-feather" },
+      ],
+    },
+    {
+      id: 3,
+      collection: "organicDyes",
+      power: 2,
+      reward: [{ name: "currencyGalleryYellowGain", type: "mult", value: 1.25 }],
+      color: "yellow",
+      icons: [
+        { x: 0, y: 0.35, rotate: 0, size: 2, icon: "mdi-cup" },
+        { x: -0.75, y: 0.5, rotate: 0, size: 1.25, icon: "mdi-fruit-citrus" },
+        { x: 0.5, y: -0.5, rotate: 0, size: 2, icon: "mdi-spoon-sugar" },
+      ],
+    },
+    {
+      id: 4,
+      collection: "organicDyes",
+      power: 2,
+      reward: [{ name: "currencyGalleryGreenGain", type: "mult", value: 1.25 }],
+      color: "green",
+      icons: [
+        { x: -0.55, y: 0.5, rotate: 0, size: 2.75, icon: "mdi-waves" },
+        { x: 0.55, y: 0.5, rotate: 0, size: 2.75, icon: "mdi-waves" },
+        { x: -0.2, y: -0.1, rotate: 0, size: 1.25, icon: "mdi-scent" },
+        { x: 0.25, y: 0, rotate: 0, size: 1.4, icon: "mdi-scent" },
+        { x: 0.7, y: 0, rotate: 0, size: 1.1, icon: "mdi-scent" },
+      ],
+    },
+    {
+      id: 5,
+      collection: "artDisplay",
+      power: 2,
+      reward: [{ name: "currencyGalleryBeautyGain", type: "mult", value: 1.25 }],
+      color: "pale-purple",
+      icons: [
+        { x: -0.9, y: -0.25, rotate: 0, size: 1.25, icon: "mdi-image-filter-black-white" },
+        { x: 0, y: -0.25, rotate: 0, size: 1.35, icon: "mdi-image-area" },
+        { x: 0.9, y: -0.25, rotate: 0, size: 1.25, icon: "mdi-image-broken" },
+        { x: -0.55, y: 0.7, rotate: 0, size: 1.75, icon: "mdi-human-male-female-child" },
+        { x: 0.7, y: 0.75, rotate: 0, size: 1.5, icon: "mdi-human-handsdown" },
+      ],
+    },
+    {
+      id: 6,
+      collection: "artDisplay",
+      power: 1,
+      reward: [{ name: "galleryColorGain", type: "mult", value: 1.1 }],
+      color: "dark-grey",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 3, icon: "mdi-artboard" },
+        { x: 0, y: 0.1, rotate: 0, size: 1.15, icon: "mdi-draw" },
+        { x: 0, y: 1.3, rotate: 45, size: 1, icon: "mdi-pencil" },
+        { x: -0.4, y: 1.2, rotate: 20, size: 1, icon: "mdi-pencil" },
+      ],
+    },
+    {
+      id: 7,
+      collection: "artDisplay",
+      power: 1,
+      reward: [{ name: "galleryInspirationStart", type: "base", value: 5 }],
+      color: "teal",
+      icons: [
+        { x: -0.9, y: 0, rotate: 135, size: 1.5, icon: "mdi-fountain-pen" },
+        { x: -0.45, y: 0, rotate: 135, size: 1.5, icon: "mdi-grease-pencil" },
+        { x: 0, y: 0, rotate: 135, size: 1.5, icon: "mdi-lead-pencil" },
+        { x: 0.45, y: 0, rotate: 135, size: 1.5, icon: "mdi-pen" },
+        { x: 0.9, y: 0, rotate: 135, size: 1.5, icon: "mdi-pencil" },
+      ],
+    },
+    {
+      id: 8,
+      collection: "artDisplay",
+      power: 2,
+      reward: [{ name: "galleryInspirationStart", type: "base", value: 3 }],
+      color: "orange",
+      icons: [
+        { x: -0.25, y: 0, rotate: 0, size: 2, icon: "mdi-gradient-horizontal" },
+        { x: 0.75, y: 0.2, rotate: 0, size: 1.5, icon: "mdi-spray" },
+        { x: -0.6, y: -0.35, rotate: 0, size: 2, icon: "mdi-ruler-square" },
+      ],
+    },
+    {
+      id: 9,
+      collection: "artDisplay",
+      power: 3,
+      color: "pale-pink",
+      icons: [
+        { x: 0, y: -0.35, rotate: 0, size: 2, icon: "mdi-drawing-box" },
+        { x: -0.5, y: 0.9, rotate: 0, size: 1.5, icon: "mdi-palette" },
+        { x: 0.1, y: 0.5, rotate: 0, size: 1, icon: "mdi-brush" },
+        { x: 0.9, y: 0.7, rotate: -90, size: 1.5, icon: "mdi-palette-swatch-variant" },
+      ],
+    },
+    {
+      id: 10,
+      collection: "artDisplay",
+      power: 2,
+      reward: [{ name: "galleryInspirationIncrement", type: "mult", value: 1 / 1.1 }],
+      color: "light-blue",
+      icons: [
+        { x: -0.8, y: -0.9, rotate: 0, size: 2, icon: "mdi-format-line-style" },
+        { x: 0, y: -0.9, rotate: 0, size: 2, icon: "mdi-format-line-style" },
+        { x: 0.8, y: -0.9, rotate: 0, size: 2, icon: "mdi-format-line-style" },
+        { x: 0.7, y: 0, rotate: 0, size: 1.5, icon: "mdi-format-paint" },
+        { x: -0.45, y: 0.6, rotate: -155, size: 1, icon: "mdi-brush-variant" },
+        { x: -0.5, y: 1, rotate: 0, size: 1.25, icon: "mdi-pail" },
+      ],
+    },
+    {
+      id: 11,
+      collection: "artDisplay",
+      power: 2,
+      reward: [
+        { name: "galleryInspirationIncrement", type: "mult", value: 1 / 1.05 },
+        { name: "galleryInspirationStart", type: "base", value: 2 },
+      ],
+      color: "light-green",
+      icons: [
+        { x: 0, y: -0.4, rotate: 0, size: 3, icon: "mdi-image-area" },
+        { x: 0.35, y: 0.65, rotate: -45, size: 1.5, icon: "mdi-tag-outline" },
+        { x: 0.35, y: 0.65, rotate: 0, size: 0.65, icon: "mdi-gesture" },
+        { x: 0.72, y: 0.47, rotate: 0, size: 1, icon: "mdi-fountain-pen" },
+      ],
+    },
+    {
+      id: 12,
+      collection: "artDisplay",
+      power: 1,
+      reward: [
+        { name: "currencyGalleryCashGain", type: "mult", value: 1.1 },
+        { name: "galleryInspirationStart", type: "base", value: 3 },
+      ],
+      color: "red",
+      icons: [
+        { x: -0.1, y: -0.15, rotate: 0, size: 1.25, icon: "mdi-eyedropper" },
+        { x: -0.35, y: 0.35, rotate: 0, size: 0.8, icon: "mdi-water-opacity" },
+        { x: -0.45, y: 0.95, rotate: 0, size: 1.5, icon: "mdi-bucket" },
+        { x: 0.65, y: 0.3, rotate: 90, size: 1.2, icon: "mdi-palette-swatch" },
+      ],
+    },
+    {
+      id: 13,
+      collection: "artDisplay",
+      power: 2,
+      reward: [{ name: "currencyGalleryCashGain", type: "mult", value: 1.2 }],
+      color: "skyblue",
+      icons: [
+        { x: 0, y: -0.61, rotate: 0, size: 0.9, icon: "mdi-shape" },
+        { x: -0.6, y: 1, rotate: 0, size: 1, icon: "mdi-human-greeting" },
+        { x: -0.35, y: 1.1, rotate: 0, size: 0.5, icon: "mdi-sack" },
+        { x: -0.15, y: 1.1, rotate: 0, size: 0.5, icon: "mdi-sack" },
+        { x: 0, y: -0.7, rotate: 0, size: 1.5, icon: "mdi-image-frame" },
+        { x: 0.55, y: 1, rotate: 0, size: 1, icon: "mdi-human-handsdown" },
+        { x: 0, y: 0.1, rotate: 0, size: 0.8, icon: "mdi-gavel" },
+        { x: 0.4, y: 0.13, rotate: 0, size: 0.8, icon: "mdi-cash-register" },
+        { x: -0.3, y: 0.2, rotate: 0, size: 1, icon: "mdi-human-male" },
+      ],
+    },
+    {
+      id: 14,
+      collection: "artDisplay",
+      power: 1,
+      reward: [
+        { name: "currencyGalleryBeautyGain", type: "mult", value: 1.3 },
+        { name: "currencyGalleryCashGain", type: "mult", value: 1.1 },
+      ],
+      color: "yellow",
+      icons: [
+        { x: -0.25, y: 0, rotate: 0, size: 2, icon: "mdi-image-outline" },
+        { x: -0.25, y: -0.05, rotate: 0, size: 1, icon: "mdi-face-woman-shimmer" },
+        { x: 0.1, y: -0.4, rotate: 0, size: 1, icon: "mdi-brush" },
+        { x: 0.8, y: -0.5, rotate: 0, size: 1.5, icon: "mdi-human-female" },
+      ],
+    },
+    {
+      id: 15,
+      collection: "deliveryService",
+      power: 2,
+      reward: [{ name: "currencyGalleryConverterCap", type: "mult", value: 1.3 }],
+      color: "pale-green",
+      icons: [
+        { x: -0.2, y: 0, rotate: 0, size: 2, icon: "mdi-delete-outline" },
+        { x: -0.2, y: 0.1, rotate: 0, size: 0.75, icon: "mdi-recycle" },
+        { x: -0.75, y: 0.22, rotate: 0, size: 0.85, icon: "mdi-shape" },
+        { x: 0.6, y: -0.2, rotate: 0, size: 2.5, icon: "mdi-human-greeting" },
+        { x: -0.05, y: -0.8, rotate: 20, size: 1, icon: "mdi-food-takeout-box" },
+      ],
+    },
+    {
+      id: 16,
+      collection: "deliveryService",
+      power: 2,
+      reward: [{ name: "currencyGalleryConverterGain", type: "mult", value: 1.15 }],
+      color: "orange-red",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 3, icon: "mdi-moped" },
+        { x: 0, y: -0.4, rotate: 0, size: 2, icon: "mdi-walk" },
+        { x: -0.4, y: -0.55, rotate: 60, size: 1, icon: "mdi-pizza" },
+      ],
+    },
+    {
+      id: 17,
+      collection: "deliveryService",
+      power: 2,
+      reward: [{ name: "currencyGalleryPackageCap", type: "mult", value: 1.25 }],
+      color: "brown",
+      icons: [
+        { x: 0.4, y: 0, rotate: 0, size: 2.5, icon: "mdi-truck-flatbed" },
+        { x: -0.1, y: -0.1, rotate: 0, size: 0.75, icon: "mdi-package" },
+        { x: 0.25, y: -0.1, rotate: 0, size: 0.75, icon: "mdi-package" },
+        { x: -0.1, y: -0.4, rotate: 0, size: 0.75, icon: "mdi-package" },
+        { x: 0.25, y: -0.4, rotate: 0, size: 0.75, icon: "mdi-package" },
+        { x: -1, y: 0.35, rotate: 0, size: 0.75, icon: "mdi-package" },
+        { x: -0.65, y: 0.35, rotate: 0, size: 0.75, icon: "mdi-package" },
+        { x: -0.825, y: 0.05, rotate: 0, size: 0.75, icon: "mdi-package" },
+      ],
+    },
+    {
+      id: 18,
+      collection: "deliveryService",
+      power: 2,
+      reward: [{ name: "currencyGalleryPackageGain", type: "mult", value: 1.15 }],
+      color: "red",
+      icons: [
+        { x: -0.85, y: 0, rotate: 0, size: 1.5, icon: "mdi-bus-stop-covered" },
+        { x: 0.3, y: 0.1, rotate: 0, size: 2, icon: "mdi-bus-school" },
+        { x: 0.75, y: -0.8, rotate: 0, size: 1, icon: "mdi-town-hall" },
+      ],
+    },
+    {
+      id: 19,
+      collection: "deliveryService",
+      power: 3,
+      reward: [{ name: "galleryColorDrumCap", type: "base", value: 3 }],
+      color: "dark-blue",
+      icons: [
+        { x: 0.65, y: 0, rotate: 0, size: 2, icon: "mdi-factory" },
+        { x: -0.85, y: 0.75, rotate: 0, size: 1, icon: "mdi-barrel" },
+        { x: -0.35, y: 0.75, rotate: 0, size: 1, icon: "mdi-barrel" },
+        { x: -0.6, y: 0.3, rotate: 0, size: 1, icon: "mdi-barrel" },
+        { x: 0.9, y: -0.75, rotate: 0, size: 1, icon: "mdi-smoke" },
+        { x: -0.3, y: -0.3, rotate: 0, size: 1, icon: "mdi-forklift" },
+        { x: -0.7, y: -0.27, rotate: 0, size: 0.6, icon: "mdi-walk" },
+      ],
+    },
+    {
+      id: 20,
+      collection: "deliveryService",
+      power: 3,
+      reward: [
+        { name: "currencyGalleryConverterGain", type: "mult", value: 1.1 },
+        { name: "currencyGalleryPackageGain", type: "mult", value: 1.1 },
+      ],
+      color: "cyan",
+      icons: [
+        { x: 0.8, y: 0.55, rotate: 0, size: 1.75, icon: "mdi-ferry" },
+        { x: -0.5, y: 0.65, rotate: 0, size: 1, icon: "mdi-shipping-pallet" },
+        { x: -0.1, y: 0.65, rotate: 0, size: 1, icon: "mdi-shipping-pallet" },
+        { x: -1, y: 0.65, rotate: 0, size: 1, icon: "mdi-forklift" },
+        { x: -1.1, y: 1.1, rotate: 0, size: 1.6, icon: "mdi-rectangle" },
+        { x: -0.55, y: 1.1, rotate: 0, size: 1.6, icon: "mdi-rectangle" },
+        { x: -0.05, y: 1.1, rotate: 0, size: 1.6, icon: "mdi-rectangle" },
+      ],
+    },
+    {
+      id: 21,
+      collection: "deliveryService",
+      power: 3,
+      reward: [{ name: "currencyGalleryRedDrumCap", type: "mult", value: 1.2 }],
+      color: "light-grey",
+      icons: [
+        { x: -0.95, y: 0.05, rotate: 0, size: 1.2, icon: "mdi-truck-cargo-container" },
+        { x: -0.2, y: 0.05, rotate: 0, size: 1.2, icon: "mdi-truck-cargo-container" },
+        { x: 0.55, y: 0.05, rotate: 0, size: 1.2, icon: "mdi-truck-cargo-container" },
+        { x: -1.15, y: 0.5, rotate: 90, size: 1, icon: "mdi-road" },
+        { x: -0.7, y: 0.5, rotate: 90, size: 1, icon: "mdi-road" },
+        { x: -0.25, y: 0.5, rotate: 90, size: 1, icon: "mdi-road" },
+        { x: 0.25, y: 0.5, rotate: 90, size: 1, icon: "mdi-road" },
+        { x: 0.7, y: 0.5, rotate: 90, size: 1, icon: "mdi-road" },
+        { x: 1.15, y: 0.5, rotate: 90, size: 1, icon: "mdi-road" },
+        { x: 1.1, y: -0.48, rotate: 0, size: 1, icon: "mdi-traffic-light" },
+        { x: 1.1, y: 0, rotate: 0, size: 1.25, icon: "mdi-sign-pole" },
+      ],
+    },
+    {
+      id: 22,
+      collection: "deliveryService",
+      power: 3,
+      reward: [
+        { name: "galleryInspirationStart", type: "base", value: 2 },
+        { name: "galleryColorDrumCap", type: "base", value: 2 },
+      ],
+      color: "light-blue",
+      icons: [
+        { x: 0, y: -0.55, rotate: 0, size: 1.5, icon: "mdi-quadcopter" },
+        { x: 0, y: 0.4, rotate: 0, size: 1.2, icon: "mdi-parachute" },
+        { x: 0, y: 0.95, rotate: 0, size: 1.4, icon: "mdi-package" },
+        { x: -0.85, y: 0, rotate: 0, size: 1, icon: "mdi-cloud" },
+        { x: 1, y: -0.4, rotate: 0, size: 1, icon: "mdi-clouds" },
+      ],
+    },
+    {
+      id: 23,
+      collection: "deliveryService",
+      power: 3,
+      reward: [
+        { name: "galleryColorDrumCap", type: "base", value: 2 },
+        { name: "currencyGalleryCashGain", type: "mult", value: 1.1 },
+      ],
+      color: "orange",
+      icons: [
+        { x: 0.3, y: 0.05, rotate: 0, size: 1.75, icon: "mdi-tow-truck" },
+        { x: 1.1, y: 0.15, rotate: 0, size: 1, icon: "mdi-traffic-cone" },
+        { x: -1.1, y: 0.15, rotate: 0, size: 1, icon: "mdi-traffic-cone" },
+        { x: -0.5, y: 0.1, rotate: -25, size: 1.25, icon: "mdi-car-side" },
+      ],
+    },
+  ],
   "modules/gallery/idea": {
     // Tier 1
     makeItPretty: {
@@ -8432,6 +10025,106 @@ export default {
     pack: {},
     card: cardList,
   },
+  "modules/gem/cardList": [
+    {
+      id: 1,
+      instant: true,
+      collection: "preciousJewelry",
+      reward: [{ name: "gem_ruby", type: "currency", value: 50 }],
+      color: "red",
+      icons: [
+        { x: 0, y: -0.05, rotate: 0, size: 2, icon: "mdi-train" },
+        { x: 0.15, y: 0.85, rotate: 90, size: 2, icon: "mdi-fence" },
+        { x: 0, y: -0.75, rotate: 0, size: 1, icon: "mdi-rhombus" },
+      ],
+    },
+    {
+      id: 2,
+      instant: true,
+      collection: "preciousJewelry",
+      reward: [{ name: "gem_emerald", type: "currency", value: 50 }],
+      color: "green",
+      icons: [
+        { x: -0.25, y: 0, rotate: 0, size: 3, icon: "mdi-tunnel-outline" },
+        { x: 0.8, y: 0.4, rotate: 105, size: 1.5, icon: "mdi-pickaxe" },
+        { x: -0.4, y: 0.35, rotate: 0, size: 0.5, icon: "mdi-hexagon" },
+        { x: 0, y: 0.25, rotate: 0, size: 0.5, icon: "mdi-hexagon" },
+        { x: -0.25, y: -0.25, rotate: 0, size: 0.5, icon: "mdi-hexagon" },
+      ],
+    },
+    {
+      id: 3,
+      instant: true,
+      collection: "preciousJewelry",
+      reward: [{ name: "gem_sapphire", type: "currency", value: 50 }],
+      color: "indigo",
+      icons: [
+        { x: -0.15, y: 1.1, rotate: 0, size: 1.5, icon: "mdi-sail-boat-sink" },
+        { x: 0.2, y: 1.15, rotate: 0, size: 0.65, icon: "mdi-treasure-chest" },
+        { x: 0, y: -0.26, rotate: 0, size: 1.5, icon: "mdi-ferry" },
+        { x: -0.65, y: 0.3, rotate: 0, size: 1.5, icon: "mdi-waves" },
+        { x: 0, y: 0.3, rotate: 0, size: 1.5, icon: "mdi-waves" },
+        { x: 0.65, y: 0.3, rotate: 0, size: 1.5, icon: "mdi-waves" },
+        { x: 0.25, y: 0.95, rotate: 0, size: 0.4, icon: "mdi-pentagon" },
+      ],
+    },
+    {
+      id: 4,
+      instant: true,
+      collection: "preciousJewelry",
+      reward: [{ name: "gem_amethyst", type: "currency", value: 50 }],
+      color: "purple",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 4, icon: "mdi-watch-variant" },
+        { x: 0, y: -0.15, rotate: 90, size: 1, icon: "mdi-minus" },
+        { x: -0.3, y: -0.3, rotate: -45, size: 0.65, icon: "mdi-cards-diamond" },
+        { x: 0.3, y: -0.3, rotate: 45, size: 0.65, icon: "mdi-cards-diamond" },
+        { x: 0.3, y: 0.3, rotate: -45, size: 0.65, icon: "mdi-cards-diamond" },
+        { x: -0.3, y: 0.3, rotate: 45, size: 0.65, icon: "mdi-cards-diamond" },
+        { x: -0.1, y: 0.05, rotate: -20, size: 0.6, icon: "mdi-minus-thick" },
+      ],
+    },
+    {
+      id: 5,
+      instant: true,
+      collection: "preciousJewelry",
+      reward: [{ name: "gem_topaz", type: "currency", value: 50 }],
+      color: "amber",
+      icons: [
+        { x: 0, y: -0.6, rotate: 0, size: 2, icon: "mdi-triangle-outline" },
+        { x: -0.7, y: 0.6, rotate: 0, size: 2, icon: "mdi-triangle" },
+        { x: 0.7, y: 0.6, rotate: 0, size: 2, icon: "mdi-triangle" },
+        { x: 0, y: -0.5, rotate: 0, size: 1.15, icon: "mdi-emoticon-angry" },
+      ],
+    },
+    {
+      id: 6,
+      instant: true,
+      collection: "preciousJewelry",
+      reward: [{ name: "gem_diamond", type: "currency", value: 5 }],
+      color: "cyan",
+      icons: [
+        { x: 0, y: 0, rotate: -45, size: 2, icon: "mdi-pickaxe" },
+        { x: 0.7, y: 0.25, rotate: 0, size: 2, icon: "mdi-axe" },
+        { x: -0.7, y: 0.3, rotate: 95, size: 2, icon: "mdi-shovel" },
+        { x: -0.5, y: -0.7, rotate: 0, size: 0.75, icon: "mdi-diamond" },
+        { x: 0.5, y: -0.7, rotate: 0, size: 0.75, icon: "mdi-diamond" },
+      ],
+    },
+    {
+      id: 7,
+      instant: true,
+      collection: "preciousJewelry",
+      reward: [{ name: "gem_onyx", type: "currency", value: 1 }],
+      color: "deep-purple",
+      icons: [
+        { x: 0, y: 0.15, rotate: 0, size: 0.75, icon: "mdi-octagon" },
+        { x: 0, y: 0, rotate: 90, size: 2, icon: "mdi-mirror-rectangle" },
+        { x: 0, y: 0.85, rotate: 0, size: 2.5, icon: "mdi-dresser" },
+        { x: 1.1, y: -0.8, rotate: 0, size: 1.25, icon: "mdi-cctv" },
+      ],
+    },
+  ],
   "modules/gem": {
     name: "gem",
     tickspeed: 1,
@@ -9752,6 +11445,629 @@ export default {
     },
     card: cardList,
   },
+  "modules/horde/cardList": [
+    {
+      id: 1,
+      collection: "dangersInTheDark",
+      power: 3,
+      color: "green",
+      icons: [
+        { x: -0.1, y: 0.1, rotate: -20, size: 2.5, icon: "mdi-chart-bubble" },
+        { x: 0.85, y: 0.1, rotate: 0, size: 1.5, icon: "mdi-snake" },
+        { x: -0.85, y: 0.05, rotate: 0, size: 2, icon: "mdi-human-handsdown" },
+      ],
+    },
+    {
+      id: 2,
+      collection: "dangersInTheDark",
+      power: 2,
+      reward: [{ name: "hordeBossRequirement", type: "base", value: -5 }],
+      color: "darker-grey",
+      icons: [
+        { x: 0, y: 0.1, rotate: 0, size: 3, icon: "mdi-ellipse-outline" },
+        { x: -0.85, y: 0.9, rotate: 0, size: 1.4, icon: "mdi-grass" },
+        { x: 0.85, y: 0.75, rotate: 0, size: 1.2, icon: "mdi-grass" },
+        { x: 0.85, y: -0.8, rotate: 0, size: 1, icon: "mdi-grass" },
+        { x: 0, y: -1, rotate: 0, size: 0.9, icon: "mdi-grass" },
+      ],
+    },
+    {
+      id: 3,
+      collection: "dangersInTheDark",
+      power: 1,
+      reward: [
+        { name: "currencyHordeBoneGain", type: "mult", value: 1.2 },
+        { name: "currencyHordeBoneCap", type: "mult", value: 1.35 },
+      ],
+      color: "orange-red",
+      icons: [
+        { x: 0, y: 0.8, rotate: 0, size: 3, icon: "mdi-image-filter-hdr" },
+        { x: 0.15, y: 0.55, rotate: 0, size: 1, icon: "mdi-fountain" },
+        { x: 0.55, y: -0.2, rotate: -60, size: 0.7, icon: "mdi-motion" },
+        { x: -0.6, y: -0.15, rotate: -140, size: 0.95, icon: "mdi-motion" },
+        { x: -0.1, y: -0.75, rotate: -100, size: 1.15, icon: "mdi-motion" },
+      ],
+    },
+    {
+      id: 4,
+      collection: "dangersInTheDark",
+      power: 2,
+      reward: [{ name: "currencyHordeMonsterPartCap", type: "base", value: 50 }],
+      color: "deep-purple",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 2, icon: "mdi-human-handsdown" },
+        { x: -0.3, y: -0.7, rotate: -30, size: 0.75, icon: "mdi-help" },
+        { x: 0.55, y: -0.3, rotate: 0, size: 1, icon: "mdi-map-legend" },
+        { x: -0.7, y: 0.85, rotate: 75, size: 1.75, icon: "mdi-chart-bubble" },
+      ],
+    },
+    {
+      id: 5,
+      collection: "dangersInTheDark",
+      power: 2,
+      reward: [{ name: "currencyHordeBoneGain", type: "mult", value: 1.25 }],
+      color: "cyan",
+      icons: [
+        { x: 0.6, y: 0.2, rotate: 0, size: 2.5, icon: "mdi-mirror-rectangle" },
+        { x: 0.65, y: 0.5, rotate: 0, size: 1, icon: "mdi-human-greeting" },
+        { x: 0.65, y: 0.25, rotate: 0, size: 0.5, icon: "mdi-skull" },
+        { x: -0.4, y: 0.65, rotate: 0, size: 1.1, icon: "mdi-human-handsdown" },
+        { x: -0.3, y: 0.05, rotate: 15, size: 0.75, icon: "mdi-exclamation-thick" },
+      ],
+    },
+    {
+      id: 6,
+      collection: "dangersInTheDark",
+      power: 2,
+      reward: [{ name: "hordeDivisionShield", type: "base", value: 4 }],
+      color: "red",
+      icons: [
+        { x: -0.95, y: 0.8, rotate: 0, size: 1.5, icon: "mdi-waves" },
+        { x: -0.3, y: 0.8, rotate: 0, size: 1.5, icon: "mdi-waves" },
+        { x: 0.3, y: 0.8, rotate: 0, size: 1.5, icon: "mdi-waves" },
+        { x: 0.95, y: 0.8, rotate: 0, size: 1.5, icon: "mdi-waves" },
+        { x: 0, y: 0.46, rotate: 0, size: 1, icon: "mdi-swim" },
+        { x: -0.7, y: -0.15, rotate: 0, size: 1.8, icon: "mdi-scent" },
+        { x: 0.7, y: -0.55, rotate: 0, size: 1.9, icon: "mdi-scent" },
+        { x: -0.05, y: 0.1, rotate: -20, size: 0.8, icon: "mdi-fire" },
+      ],
+    },
+    {
+      id: 7,
+      collection: "maintainingSafety",
+      power: 2,
+      reward: [{ name: "hordeItemChance", type: "mult", value: 1.6 }],
+      color: "pale-yellow",
+      icons: [
+        { x: 0, y: 1, rotate: 90, size: 2, icon: "mdi-rectangle" },
+        { x: 0, y: 0.35, rotate: 0, size: 1, icon: "mdi-bag-personal" },
+        { x: 0.55, y: 0.75, rotate: 0, size: 1.6, icon: "mdi-human-greeting" },
+        { x: -0.9, y: 0.75, rotate: 0, size: 1.55, icon: "mdi-human-handsdown" },
+      ],
+    },
+    {
+      id: 8,
+      collection: "maintainingSafety",
+      power: 2,
+      reward: [
+        { name: "currencyHordeBoneCap", type: "mult", value: 1.2 },
+        { name: "currencyHordeMonsterPartCap", type: "base", value: 30 },
+      ],
+      color: "cherry",
+      icons: [
+        { x: -0.1, y: 0.55, rotate: 0, size: 1.25, icon: "mdi-wall" },
+        { x: 0.45, y: 0.55, rotate: 0, size: 1.25, icon: "mdi-wall" },
+        { x: 1, y: 0.55, rotate: 0, size: 1.25, icon: "mdi-wall" },
+        { x: -0.5, y: 0.2, rotate: -15, size: 0.8, icon: "mdi-hammer" },
+        { x: -0.85, y: 0.45, rotate: 0, size: 1.6, icon: "mdi-walk" },
+      ],
+    },
+    {
+      id: 9,
+      collection: "maintainingSafety",
+      power: 2,
+      reward: [{ name: "hordeHealth", type: "mult", value: 1.3 }],
+      color: "indigo",
+      icons: [
+        { x: -0.7, y: 0, rotate: 0, size: 2.5, icon: "mdi-home" },
+        { x: 0.7, y: 0, rotate: 0, size: 2.5, icon: "mdi-home" },
+        { x: 0.3, y: -0.5, rotate: 0, size: 1, icon: "mdi-cctv" },
+      ],
+    },
+    {
+      id: 10,
+      collection: "maintainingSafety",
+      power: 2,
+      reward: [{ name: "hordeRevive", type: "base", value: 1 }],
+      color: "green",
+      icons: [
+        { x: -0.75, y: 0, rotate: 20, size: 0.75, icon: "mdi-leaf" },
+        { x: 0.85, y: 0.5, rotate: -45, size: 0.8, icon: "mdi-leaf" },
+        { x: -0.4, y: -0.05, rotate: -105, size: 0.85, icon: "mdi-leaf" },
+        { x: 0.3, y: -0.6, rotate: 0, size: 1.25, icon: "mdi-mushroom" },
+        { x: -0.3, y: 0.7, rotate: 0, size: 2, icon: "mdi-book-open-page-variant-outline" },
+        { x: -0.55, y: 0.7, rotate: 0, size: 0.6, icon: "mdi-mushroom-off" },
+      ],
+    },
+    {
+      id: 11,
+      collection: "maintainingSafety",
+      power: 2,
+      reward: [{ name: "hordeRespawn", type: "base", value: -60 }],
+      color: "yellow",
+      icons: [
+        { x: 0, y: 0.24, rotate: 0, size: 1.55, icon: "mdi-fence-electric" },
+        { x: -0.75, y: 0.24, rotate: 0, size: 1.5, icon: "mdi-fence" },
+        { x: 0.75, y: 0.24, rotate: 0, size: 1.5, icon: "mdi-fence" },
+        { x: 0.7, y: -0.35, rotate: 0, size: 1.25, icon: "mdi-horse" },
+        { x: -0.55, y: -0.45, rotate: 0, size: 1.25, icon: "mdi-donkey" },
+        { x: 0.3, y: -1, rotate: 0, size: 0.9, icon: "mdi-dog-side" },
+      ],
+    },
+    {
+      id: 12,
+      collection: "dangerousWeapons",
+      power: 2,
+      reward: [
+        { name: "hordeCritChance", type: "base", value: 0.05 },
+        { name: "hordeCritMult", type: "base", value: 0.1 },
+      ],
+      color: "deep-orange",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 3, icon: "mdi-bomb" },
+        { x: -0.55, y: -0.4, rotate: -25, size: 1.25, icon: "mdi-bomb" },
+        { x: -0.8, y: 0.2, rotate: -140, size: 1.25, icon: "mdi-bomb" },
+        { x: -0.65, y: 0.65, rotate: -125, size: 1.25, icon: "mdi-bomb" },
+        { x: -0.1, y: 0.95, rotate: 135, size: 1.25, icon: "mdi-bomb" },
+        { x: 0.45, y: 0.85, rotate: 95, size: 1.25, icon: "mdi-bomb" },
+        { x: 0.75, y: 0.3, rotate: 20, size: 1.25, icon: "mdi-bomb" },
+      ],
+    },
+    {
+      id: 13,
+      collection: "dangerousWeapons",
+      power: 1,
+      reward: [
+        { name: "hordeAttack", type: "mult", value: 1.15 },
+        { name: "hordeCritMult", type: "base", value: 0.35 },
+      ],
+      color: "purple",
+      icons: [
+        { x: -0.5, y: 0.6, rotate: 0, size: 1.65, icon: "mdi-triangle" },
+        { x: 0, y: 0.25, rotate: 15, size: 2.1, icon: "mdi-firework" },
+        { x: 0.1, y: 0.7, rotate: 0, size: 1, icon: "mdi-human-handsup" },
+      ],
+    },
+    {
+      id: 14,
+      collection: "dangerousWeapons",
+      power: 2,
+      reward: [
+        { name: "hordeAttack", type: "mult", value: 1.05 },
+        { name: "hordeBossRequirement", type: "base", value: -3 },
+      ],
+      color: "light-blue",
+      icons: [
+        { x: 0, y: 0, rotate: 15, size: 2.75, icon: "mdi-sword" },
+        { x: -0.45, y: -0.2, rotate: -70, size: 1, icon: "mdi-rectangle" },
+        { x: -0.55, y: 0.15, rotate: -70, size: 1, icon: "mdi-rectangle" },
+        { x: -0.68, y: 0.48, rotate: -160, size: 0.6, icon: "mdi-triangle" },
+      ],
+    },
+    {
+      id: 15,
+      collection: "dangerousWeapons",
+      power: 3,
+      reward: [{ name: "hordeToxic", type: "base", value: 0.01 }],
+      color: "green",
+      icons: [
+        { x: -0.85, y: 0.45, rotate: 0, size: 1.25, icon: "mdi-bottle-tonic-skull" },
+        { x: 0.3, y: 0, rotate: 0, size: 2.1, icon: "mdi-bow-arrow" },
+        { x: 0.8, y: -0.1, rotate: 0, size: 0.65, icon: "mdi-water" },
+      ],
+    },
+    {
+      id: 16,
+      collection: "dangerousWeapons",
+      power: 3,
+      reward: [{ name: "hordeFirstStrike", type: "base", value: 0.8 }],
+      color: "pink",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 1.75, icon: "mdi-rocket-launch" },
+        { x: -0.5, y: -0.5, rotate: 0, size: 1, icon: "mdi-rocket-launch" },
+        { x: 0.5, y: 0.5, rotate: 0, size: 1, icon: "mdi-rocket-launch" },
+        { x: -0.2, y: -0.4, rotate: 45, size: 1.25, icon: "mdi-minus-thick" },
+        { x: 0.4, y: 0.2, rotate: 45, size: 1, icon: "mdi-minus-thick" },
+      ],
+    },
+    {
+      id: 17,
+      collection: "dangerousWeapons",
+      power: 2,
+      reward: [{ name: "hordeAttack", type: "mult", value: 1.35 }],
+      color: "red",
+      icons: [
+        { x: 0, y: 0.55, rotate: 0, size: 2.75, icon: "mdi-human-handsup" },
+        { x: -0.35, y: -0.3, rotate: 0, size: 1.25, icon: "mdi-axe-battle" },
+        { x: -0.6, y: 0, rotate: 180, size: 1.25, icon: "mdi-axe-battle" },
+        { x: 0.35, y: -0.3, rotate: 270, size: 1.25, icon: "mdi-axe-battle" },
+        { x: 0.65, y: 0, rotate: 90, size: 1.25, icon: "mdi-axe-battle" },
+      ],
+    },
+    {
+      id: 18,
+      collection: "dangerousWeapons",
+      power: 3,
+      reward: [
+        { name: "hordeCritChance", type: "base", value: 0.1 },
+        { name: "hordeItemChance", type: "mult", value: 1.25 },
+      ],
+      color: "pale-yellow",
+      icons: [
+        { x: 0, y: 0.65, rotate: 0, size: 2, icon: "mdi-book-open-variant" },
+        { x: -0.2, y: -0.3, rotate: 20, size: 1.65, icon: "mdi-hand-front-left" },
+        { x: 0.4, y: -0.4, rotate: -60, size: 2, icon: "mdi-pen" },
+      ],
+    },
+    {
+      id: 19,
+      collection: "dangerousWeapons",
+      power: 3,
+      reward: [
+        { name: "hordeBossRequirement", type: "base", value: -2 },
+        { name: "currencyHordeSoulCorruptedGain", type: "mult", value: 1.12 },
+      ],
+      color: "brown",
+      icons: [
+        { x: -0.7, y: 0, rotate: 0, size: 1, icon: "mdi-bowl" },
+        { x: -0.2, y: 0.15, rotate: 0, size: 2, icon: "mdi-minus" },
+        { x: 0.45, y: 0.15, rotate: 0, size: 2, icon: "mdi-minus" },
+        { x: 0.2, y: -0.4, rotate: 90, size: 1, icon: "mdi-rectangle" },
+        { x: 0.2, y: -0.05, rotate: 90, size: 1, icon: "mdi-rectangle" },
+        { x: 0.2, y: 0.1, rotate: 90, size: 1, icon: "mdi-rectangle" },
+        { x: -0.1, y: 0.3, rotate: 0, size: 0.5, icon: "mdi-circle" },
+        { x: 0.45, y: 0.3, rotate: 0, size: 0.5, icon: "mdi-circle" },
+        { x: -0.7, y: -0.2, rotate: 0, size: 1, icon: "mdi-circle" },
+      ],
+    },
+    {
+      id: 20,
+      collection: "dangerousWeapons",
+      power: 3,
+      reward: [
+        { name: "hordeItemChance", type: "mult", value: 1.25 },
+        { name: "currencyHordeSoulCorruptedCap", type: "mult", value: 1.15 },
+      ],
+      color: "pale-pink",
+      icons: [
+        { x: -0.15, y: 0.2, rotate: 0, size: 2, icon: "mdi-human" },
+        { x: 0.4, y: 0, rotate: 0, size: 1, icon: "mdi-pistol" },
+        { x: 0.42, y: -0.2, rotate: 45, size: 1, icon: "mdi-knife-military" },
+      ],
+    },
+    {
+      id: 21,
+      collection: "dangerousWeapons",
+      power: 2,
+      reward: [
+        { name: "currencyHordeMonsterPartGain", type: "mult", value: 1.3 },
+        { name: "currencyHordeSoulCorruptedGain", type: "mult", value: 1.2 },
+      ],
+      color: "amber",
+      icons: [
+        { x: 0.3, y: -0.85, rotate: 0, size: 1.45, icon: "mdi-white-balance-sunny" },
+        { x: -0.3, y: -0.25, rotate: -45, size: 2, icon: "mdi-minus" },
+        { x: -0.75, y: 0.1, rotate: 0, size: 1, icon: "mdi-mirror" },
+        { x: -0.3, y: 0.45, rotate: 45, size: 2, icon: "mdi-minus" },
+        { x: 0.2, y: 0.55, rotate: 10, size: 1, icon: "mdi-fire" },
+      ],
+    },
+    {
+      id: 22,
+      collection: "dangerousWeapons",
+      power: 2,
+      reward: [
+        { name: "currencyHordeSoulCorruptedGain", type: "mult", value: 1.22 },
+        { name: "currencyHordeSoulCorruptedCap", type: "mult", value: 1.22 },
+      ],
+      color: "cherry",
+      icons: [
+        { x: -0.85, y: 0, rotate: 0, size: 1.5, icon: "mdi-logout" },
+        { x: 0, y: 0, rotate: 0, size: 1.25, icon: "mdi-saw-blade" },
+        { x: 0.9, y: 0, rotate: 25, size: 1.25, icon: "mdi-saw-blade" },
+      ],
+    },
+    {
+      id: 23,
+      collection: "dangerousWeapons",
+      power: 0,
+      reward: [{ name: "hordeToxic", type: "base", value: 0.025 }],
+      color: "lime",
+      icons: [
+        { x: 0, y: -0.2, rotate: 0, size: 2.5, icon: "mdi-flask-empty" },
+        { x: 0.05, y: 0.45, rotate: -90, size: 1.25, icon: "mdi-motion" },
+        { x: -0.3, y: 0.45, rotate: -90, size: 1, icon: "mdi-motion" },
+        { x: 0.35, y: 0.45, rotate: -90, size: 0.75, icon: "mdi-motion" },
+      ],
+    },
+    {
+      id: 24,
+      collection: "supplyAndSupport",
+      power: 3,
+      reward: [{ name: "hordePhysicTaken", type: "mult", value: 1 / 1.25 }],
+      color: "wooden",
+      icons: [
+        { x: 0, y: -0.2, rotate: 0, size: 3, icon: "mdi-tree" },
+        { x: 0.03, y: 0.5, rotate: 90, size: 3, icon: "mdi-minus" },
+        { x: -0.2, y: 0.55, rotate: 0, size: 1.25, icon: "mdi-hiking" },
+        { x: -0.65, y: 1.2, rotate: -150, size: 0.8, icon: "mdi-arrow-projectile" },
+      ],
+    },
+    {
+      id: 25,
+      collection: "supplyAndSupport",
+      power: 5,
+      reward: [{ name: "hordeItemMasteryGain", type: "mult", value: 1.2 }],
+      color: "green",
+      icons: [
+        { x: 0.1, y: -0.15, rotate: 0, size: 1.25, icon: "mdi-meditation" },
+        { x: 0.85, y: 0.15, rotate: 0, size: 1.95, icon: "mdi-tree" },
+        { x: -0.3, y: -0.75, rotate: 0, size: 1.5, icon: "mdi-tree" },
+        { x: -0.7, y: 0.05, rotate: 0, size: 1.8, icon: "mdi-pine-tree" },
+        { x: 0.5, y: -0.75, rotate: 0, size: 0.6, icon: "mdi-grass" },
+        { x: -0.35, y: 0.85, rotate: 0, size: 0.8, icon: "mdi-grass" },
+        { x: 0.4, y: 0.75, rotate: 0, size: 0.75, icon: "mdi-grass" },
+      ],
+    },
+    {
+      id: 26,
+      collection: "supplyAndSupport",
+      power: 3,
+      reward: [
+        { name: "currencyHordeSoulCorruptedCap", type: "mult", value: 1.1 },
+        { name: "currencyHordeBoneCap", type: "mult", value: 1.15 },
+      ],
+      color: "light-grey",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 2, icon: "mdi-human-handsdown" },
+        { x: 0.4, y: 0.1, rotate: 80, size: 1.75, icon: "mdi-minus" },
+        { x: 0.5, y: 0.45, rotate: 0, size: 1, icon: "mdi-minus-thick" },
+        { x: 0.6, y: 0.3, rotate: 0, size: 0.4, icon: "mdi-alarm-light" },
+        { x: 0.6, y: -0.05, rotate: 0, size: 0.75, icon: "mdi-exclamation-thick" },
+        { x: -0.45, y: 0.95, rotate: 0, size: 0.75, icon: "mdi-mine" },
+      ],
+    },
+    {
+      id: 27,
+      collection: "supplyAndSupport",
+      power: 4,
+      reward: [{ name: "hordeNostalgia", type: "base", value: 20 }],
+      color: "dark-blue",
+      icons: [
+        { x: -0.65, y: 0.25, rotate: 0, size: 1.55, icon: "mdi-walk" },
+        { x: -0.2, y: 0.1, rotate: -10, size: 1, icon: "mdi-shield" },
+        { x: 0.6, y: -0.15, rotate: 160, size: 1, icon: "mdi-motion" },
+      ],
+    },
+    {
+      id: 28,
+      collection: "supplyAndSupport",
+      power: 4,
+      reward: [{ name: "hordeHeirloomChance", type: "base", value: 0.03 }],
+      color: "yellow",
+      icons: [
+        { x: 0, y: 0.25, rotate: 180, size: 5, icon: "mdi-dome-light" },
+        { x: -0.2, y: 0.15, rotate: 0, size: 1.25, icon: "mdi-human-handsdown" },
+        { x: 0.3, y: 0.2, rotate: 0, size: 1.15, icon: "mdi-human-greeting" },
+      ],
+    },
+    {
+      id: 29,
+      collection: "supplyAndSupport",
+      power: 4,
+      reward: [
+        { name: "hordeCritMult", type: "base", value: 0.25 },
+        { name: "hordeItemMasteryGain", type: "mult", value: 1.3 },
+      ],
+      color: "pink-purple",
+      icons: [
+        { x: 0, y: 0.4, rotate: 0, size: 3, icon: "mdi-desktop-classic" },
+        { x: 0, y: 0.12, rotate: 20, size: 1, icon: "mdi-radar" },
+        { x: 0.25, y: -0.6, rotate: 0, size: 1.25, icon: "mdi-antenna" },
+      ],
+    },
+    {
+      id: 30,
+      collection: "supplyAndSupport",
+      power: 3,
+      reward: [
+        { name: "currencyHordeSoulCorruptedGain", type: "mult", value: 1.15 },
+        { name: "hordeHeirloomChance", type: "base", value: 0.04 },
+      ],
+      color: "dark-grey",
+      icons: [
+        { x: -0.15, y: 0.5, rotate: 0, size: 2.5, icon: "mdi-human-handsdown" },
+        { x: -0.15, y: -0.2, rotate: 0, size: 1.75, icon: "mdi-incognito" },
+        { x: 0.5, y: 0.55, rotate: 15, size: 1.2, icon: "mdi-binoculars" },
+      ],
+    },
+    {
+      id: 31,
+      collection: "againstTheCorruption",
+      power: 5,
+      reward: [{ name: "hordeCorruption", type: "mult", value: 1 / 1.1 }],
+      color: "red",
+      icons: [
+        { x: 0, y: 0.6, rotate: 0, size: 2.5, icon: "mdi-sign-pole" },
+        { x: 0, y: -0.5, rotate: -20, size: 1.3, icon: "mdi-liquid-spot" },
+        { x: 0, y: -0.5, rotate: 0, size: 2.5, icon: "mdi-cancel" },
+      ],
+    },
+    {
+      id: 32,
+      collection: "againstTheCorruption",
+      power: 5,
+      reward: [
+        { name: "currencyHordeSoulCorruptedGain", type: "mult", value: 1.1 },
+        { name: "hordeCorruption", type: "mult", value: 1 / 1.05 },
+      ],
+      color: "pale-green",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 2, icon: "mdi-filter" },
+        { x: 0, y: -0.55, rotate: -85, size: 1.25, icon: "mdi-liquid-spot" },
+        { x: 0, y: 0.7, rotate: 0, size: 1, icon: "mdi-dots-vertical" },
+      ],
+    },
+    {
+      id: 33,
+      collection: "againstTheCorruption",
+      power: 5,
+      reward: [
+        { name: "hordeItemChance", type: "mult", value: 2.5 },
+        { name: "hordeItemMasteryGain", type: "mult", value: 1.75 },
+        { name: "hordeCorruption", type: "mult", value: 1.15 },
+      ],
+      color: "skyblue",
+      icons: [
+        { x: -0.5, y: 0.4, rotate: 0, size: 1.75, icon: "mdi-washing-machine" },
+        { x: 0.5, y: 0.4, rotate: 0, size: 1.75, icon: "mdi-tumble-dryer" },
+        { x: -0.5, y: -0.25, rotate: 0, size: 1, icon: "mdi-basket" },
+        { x: -0.5, y: -0.4, rotate: 20, size: 1, icon: "mdi-liquid-spot" },
+        { x: 0.5, y: -0.2, rotate: 0, size: 1, icon: "mdi-tray-full" },
+      ],
+    },
+    {
+      id: 34,
+      collection: "againstTheCorruption",
+      power: 5,
+      reward: [
+        { name: "hordeAttack", type: "mult", value: 1.25 },
+        { name: "hordeCritChance", type: "base", value: 0.15 },
+        { name: "hordeCritMult", type: "base", value: 0.4 },
+        { name: "hordeCorruption", type: "mult", value: 1.15 },
+      ],
+      color: "orange",
+      icons: [
+        { x: 0, y: 0.5, rotate: 30, size: 1.5, icon: "mdi-liquid-spot" },
+        { x: 0.4, y: 0.5, rotate: -45, size: 1.5, icon: "mdi-liquid-spot" },
+        { x: 0.2, y: 0.05, rotate: 0, size: 1.75, icon: "mdi-ghost" },
+        { x: -0.25, y: -0.5, rotate: -20, size: 1.2, icon: "mdi-fire" },
+        { x: -0.6, y: 0.25, rotate: 30, size: 1.95, icon: "mdi-torch" },
+      ],
+    },
+    {
+      id: 35,
+      collection: "againstTheCorruption",
+      power: 5,
+      reward: [
+        { name: "currencyHordeSoulCorruptedGain", type: "mult", value: 1.4 },
+        { name: "currencyHordeSoulCorruptedCap", type: "mult", value: 1.4 },
+        { name: "hordeCorruption", type: "mult", value: 1.15 },
+      ],
+      color: "pink",
+      icons: [
+        { x: -0.65, y: 0.4, rotate: 180, size: 3, icon: "mdi-alpha-t" },
+        { x: -0.45, y: 0, rotate: 120, size: 2, icon: "mdi-flashlight" },
+        { x: 0.35, y: 0.4, rotate: 30, size: 2, icon: "mdi-minus" },
+        { x: 0.65, y: 0.55, rotate: 0, size: 1, icon: "mdi-liquid-spot" },
+      ],
+    },
+    {
+      id: 36,
+      collection: "againstTheCorruption",
+      power: 5,
+      reward: [
+        { name: "hordeHealth", type: "mult", value: 2 },
+        { name: "hordeDivisionShield", type: "base", value: 10 },
+        { name: "hordeRevive", type: "base", value: 1 },
+        { name: "hordeCorruption", type: "mult", value: 1.15 },
+      ],
+      color: "pale-purple",
+      icons: [
+        { x: 0, y: -0.9, rotate: 0, size: 1.5, icon: "mdi-arrow-collapse-down" },
+        { x: 0, y: 0.15, rotate: 15, size: 1.25, icon: "mdi-liquid-spot" },
+        { x: -0.5, y: 0.5, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: 0.5, y: 0.5, rotate: 0, size: 3, icon: "mdi-minus" },
+      ],
+    },
+    {
+      id: 37,
+      collection: "againstTheCorruption",
+      power: 7,
+      reward: [{ name: "hordeCorruption", type: "mult", value: 1.15 }],
+      color: "brown",
+      icons: [
+        { x: 0.25, y: -0.6, rotate: 0, size: 1.75, icon: "mdi-truck-cargo-container" },
+        { x: -0.7, y: 0.45, rotate: 0, size: 1.5, icon: "mdi-trash-can" },
+        { x: -0.15, y: 0.45, rotate: 0, size: 1.5, icon: "mdi-delete-empty" },
+        { x: 0.45, y: 0.6, rotate: 0, size: 0.8, icon: "mdi-sack" },
+        { x: 0.85, y: 0.6, rotate: 0, size: 0.8, icon: "mdi-sack" },
+      ],
+    },
+    {
+      id: 38,
+      collection: "againstTheCorruption",
+      power: 0,
+      reward: [{ name: "hordeCorruption", type: "mult", value: 2 }],
+      color: "purple",
+      icons: [
+        { x: -0.39, y: 0, rotate: 0, size: 3, icon: "mdi-pot-mix" },
+        { x: -0.39, y: 0.65, rotate: 0, size: 2.35, icon: "mdi-square-rounded" },
+        { x: -0.4, y: -0.3, rotate: -20, size: 1, icon: "mdi-mushroom" },
+        { x: -0.75, y: -0.1, rotate: -45, size: 1, icon: "mdi-feather" },
+        { x: 0.8, y: 0, rotate: 0, size: 2, icon: "mdi-candle" },
+      ],
+    },
+    {
+      id: 39,
+      collection: "againstTheCorruption",
+      power: 5,
+      reward: [
+        { name: "hordeFirstStrike", type: "base", value: 6.75 },
+        { name: "hordeBossRequirement", type: "base", value: -25 },
+        { name: "hordeRespawn", type: "mult", value: 0.2 },
+        { name: "hordeCorruption", type: "mult", value: 1.15 },
+      ],
+      color: "cyan",
+      icons: [
+        { x: 0.3, y: -0.1, rotate: 0, size: 2, icon: "mdi-vacuum" },
+        { x: -0.5, y: -0.1, rotate: 0, size: 2, icon: "mdi-walk" },
+        { x: 0.85, y: 0.55, rotate: 25, size: 1, icon: "mdi-liquid-spot" },
+        { x: 0.6, y: 0.65, rotate: 150, size: 1, icon: "mdi-liquid-spot" },
+      ],
+    },
+    {
+      id: 40,
+      collection: "againstTheCorruption",
+      power: 5,
+      reward: [
+        { name: "hordeHeirloomChance", type: "base", value: 0.1 },
+        { name: "hordeNostalgia", type: "mult", value: 2 },
+        { name: "hordeCorruption", type: "mult", value: 1.15 },
+      ],
+      color: "light-green",
+      icons: [
+        { x: -0.2, y: -0.6, rotate: 125, size: 2.5, icon: "mdi-flask-round-bottom-empty" },
+        { x: 0.25, y: -0.05, rotate: 0, size: 0.8, icon: "mdi-water" },
+        { x: 0.25, y: 0.4, rotate: 0, size: 0.6, icon: "mdi-water" },
+        { x: 0.45, y: 0.9, rotate: 50, size: 1, icon: "mdi-liquid-spot" },
+        { x: 0.25, y: 0.9, rotate: -65, size: 1, icon: "mdi-liquid-spot" },
+        { x: 0, y: 0.9, rotate: 20, size: 1, icon: "mdi-liquid-spot" },
+      ],
+    },
+    {
+      id: 41,
+      collection: "againstTheCorruption",
+      power: 0,
+      reward: [{ name: "hordeCorruption", type: "mult", value: 5 }],
+      color: "orange-red",
+      icons: [
+        { x: 0, y: 0.2, rotate: 0, size: 3, icon: "mdi-microwave" },
+        { x: -0.25, y: 0.4, rotate: -170, size: 1, icon: "mdi-liquid-spot" },
+        { x: 0, y: -0.5, rotate: 0, size: 1, icon: "mdi-alert" },
+      ],
+    },
+  ],
   "modules/horde/enemyType": {
     // warzone
     soldier_1: { attack: 1.75, health: 50, sigil: { rifle_gun: 1 } },
@@ -17507,6 +19823,575 @@ export default {
       }
     },
   },
+  "modules/migration/v1_1_0": function (save) {
+    // Convert old grades to new ones
+    if (save.school) {
+      for (const [key, elem] of Object.entries(save.school)) {
+        const oldGradeBase = Math.max(elem.elo, elem.grade) * 0.6;
+        const newGrade = Math.floor(oldGradeBase / 100);
+        save.school[key] = { grade: newGrade, currentGrade: newGrade, progress: oldGradeBase / 100 - newGrade };
+      }
+    } // Adjust know-it-all achievement
+    if (save.stat?.school_highestGrade) {
+      save.stat.school_highestGrade.value = Math.floor(save.stat.school_highestGrade.value * 0.006);
+      save.stat.school_highestGrade.total = Math.floor(save.stat.school_highestGrade.total * 0.006);
+    } // Award lost exam passes
+    if (save.globalLevel) {
+      let totalLevel = 0;
+      for (const [, elem] of Object.entries(save.globalLevel)) {
+        totalLevel += elem;
+      }
+      if (totalLevel >= 25) {
+        save = addCurrencyToSave(save, "school_examPass", Math.floor(totalLevel / 10));
+      }
+    }
+    return save;
+  },
+  "modules/migration/v1_1_2": function (save) {
+    save = raiseUpgradeLevel(save, "mining_moreDamage", 2);
+    save = raiseUpgradeLevel(save, "mining_moreScrap", 2);
+    save = raiseUpgradeLevel(save, "village_overtime", 1);
+    save = raiseUpgradeLevel(save, "village_goldenThrone", 1);
+    save = raiseUpgradeLevel(save, "school_student", 4);
+    return save;
+  },
+  "modules/migration/v1_3_0": function (save) {
+    if (save.horde) {
+      // Convert boss status
+      if (save.horde.bossFight !== undefined) {
+        save.horde.bossFight = save.horde.bossFight ? 2 : 0;
+      } // Convert enemy status
+      if (save.horde.enemy !== undefined) {
+        save.horde.enemy.silence = 0;
+        save.horde.enemy.active = {};
+      } // Convert player status
+      if (save.horde.player !== undefined) {
+        save.horde.player.silence = 0;
+      } // Unequip all items
+      if (save.horde.items) {
+        for (const [, elem] of Object.entries(save.horde.items)) {
+          elem.equipped = false;
+        }
+      } // Convert permanent equipment effects
+      if (save.horde.itemAttackMult !== undefined || save.horde.itemHealthMult !== undefined) {
+        save.horde.itemStatMult = {};
+        if (save.horde.itemAttackMult !== undefined) {
+          save.horde.itemStatMult.hordeAttack = save.horde.itemAttackMult;
+        }
+        if (save.horde.itemHealthMult !== undefined) {
+          save.horde.itemStatMult.hordeHealth = save.horde.itemHealthMult;
+        }
+      }
+      [
+        // Regular upgrades
+        "attack",
+        "health",
+        "training",
+        "resilience",
+        "boneBag",
+        "anger",
+        "rest",
+        "monsterSoup",
+        "monsterBag",
+        "luckyStrike",
+        "hoarding",
+        "thickSkin",
+        "stabbingGuide",
+        "plunderSecret",
+        "dodgingGuide",
+        "survivalGuide",
+        "looting",
+        "whitePaint",
+        "targetDummy",
+        "grossBag",
+        "milestone",
+        "carving", // Prestige upgrades
+        "wrath",
+        "peace",
+        "milk",
+        "butcher",
+        "beginnerLuck",
+        "balance",
+        "advancedLuck",
+        "offenseBook",
+        "defenseBook",
+        "ashCircle",
+        "lastWill",
+        "candleCircle",
+        "containmentChamber",
+        "mausoleum",
+        "combatStudies",
+      ].forEach((name) => {
+        save = removeUpgrade(save, "horde_" + name);
+      });
+      save = removeCurrency(save, "horde_bone");
+      if (save.currency.horde_soulEmpowered !== undefined && save.stat.horde_soulEmpowered !== undefined) {
+        save.currency.horde_soulEmpowered = save.stat.horde_soulEmpowered.total;
+      } // Multiply all souls by 1000 to match the new increased gains
+      if (save.currency.horde_soulCorrupted !== undefined) {
+        save.currency.horde_soulCorrupted *= 1000;
+      }
+      if (save.currency.horde_soulEmpowered !== undefined) {
+        save.currency.horde_soulEmpowered *= 1000;
+      } // Adjust zone to be about the same power as the old one
+      const oldZone = save.horde.zone ?? 1;
+      const newZone = oldZone > 40 ? Math.round(((oldZone - 40) * 2) / 3 + 40) : oldZone; // Get 1000 times the current zone loot as bones
+      const newBones = store.getters["horde/enemyBone"](newZone, 0) * 1000;
+      save.currency.horde_bone = newBones;
+      save.stat.horde_bone = { value: newBones, total: newBones }; // Adjust heirloom amounts
+      if (save.horde.heirloom) {
+        for (const [key, elem] of Object.entries(save.horde.heirloom)) {
+          save.horde.heirloom[key] = Math.ceil((elem > 100 ? ((elem - 100) * 2) / 3 + 100 : elem) / 2);
+        }
+      } // Then reset zone
+      save.horde.zone = 1;
+      if (save.stat.horde_maxZone) {
+        save.stat.horde_maxZone.value = newZone;
+        save.stat.horde_maxZone.total = newZone;
+      }
+    } // Remove all horde relics (they are automatically re-awarded based on achievement levels)
+    [
+      "forgottenShield",
+      "burningSkull",
+      "energyDrink",
+      "luckyDice",
+      "dumbbell",
+      "bandage",
+      "newBackpack",
+      "crackedSafe",
+      "ultimateGuide",
+    ].forEach((name) => {
+      save = removeRelic(save, name);
+    }); // Renamed the treasure effect
+    save = replaceTreasureEffect(save, "hordeSoulGain", "currencyHordeSoulCorruptedGain");
+    return save;
+  },
+  "modules/migration/v1_3_4": function (save) {
+    // Delete all rng prerolls because of the new seeded rng
+    save.rng = {}; // New unlock format
+    for (const [key, elem] of Object.entries(save.unlock)) {
+      save.unlock[key] = elem.use;
+    } // New stat format
+    for (const [key, elem] of Object.entries(save.stat)) {
+      save.stat[key] = [elem.value, elem.total];
+    } // New upgrade format
+    for (const [key, elem] of Object.entries(save.upgrade)) {
+      save.upgrade[key] =
+        elem.bought === undefined
+          ? [elem.collapse, elem.level, elem.highestLevel]
+          : [elem.collapse, elem.level, elem.highestLevel, elem.bought, elem.timeProgress];
+    }
+    return save;
+  },
+  "modules/migration/v1_3_5": function (save) {
+    if (save.horde && save.horde.loadout) {
+      save.horde.loadout = save.horde.loadout.map((elem) => {
+        return { name: encodeURIComponent(elem.name), content: elem.content };
+      });
+    }
+    return save;
+  },
+  "modules/migration/v1_4_0": function (save) {
+    if (save.farm?.field) {
+      let newField = {};
+      save.farm.field.forEach((cell) => {
+        let content = { ...cell.content };
+        if (content.type === "crop") {
+          content.grow = 0;
+          content.time = 0;
+          content.buildingEffect = {};
+        }
+        newField[cell.y * 7 + cell.x] = content;
+      });
+      save.farm.field = newField;
+    }
+    if (save.farm?.crop) {
+      for (const [, elem] of Object.entries(save.farm.crop)) {
+        elem.dna = deltaLinear(14, 4, elem.level);
+        elem.genes = [];
+        elem.genesBlocked = [];
+        elem.cardSelected = [];
+        elem.cardEquipped = [];
+        elem.upgrades = {};
+      }
+    } // Update dweller cap stats
+    if (save.stat.mining_depthDweller0) {
+      save.stat.mining_depthDwellerCap0 = save.stat.mining_depthDweller0;
+    }
+    if (save.stat.mining_depthDweller1) {
+      save.stat.mining_depthDwellerCap1 = save.stat.mining_depthDweller1;
+    }
+    if (save.achievement?.mining_depthDweller0) {
+      save.achievement.mining_depthDwellerCap0 = save.achievement.mining_depthDweller0;
+    }
+    if (save.achievement?.mining_depthDweller1) {
+      save.achievement.mining_depthDwellerCap1 = save.achievement.mining_depthDweller1;
+    }
+    return save;
+  },
+  "modules/migration/v1_4_1": function (save) {
+    // Update offering stats
+    if (save.stat.village_offering) {
+      save.stat.village_offeringAmount = save.stat.village_offering;
+    }
+    return save;
+  },
+  "modules/migration/v1_5_0": function (save) {
+    // Add anticheat variables
+    save.cheaterSelfMark = 0;
+    save.cheatDetected = {}; // Lower upgrade levels to new cap
+    save = lowerUpgradeLevel(save, "mining_crystalRefinery", 50);
+    save = lowerUpgradeLevel(save, "mining_crystalSalt", 50);
+    save = lowerUpgradeLevel(save, "mining_crystalSmeltery", 100);
+    save = lowerUpgradeLevel(save, "mining_crystalEnhancer", 25);
+    save = lowerUpgradeLevel(save, "horde_beginnerLuck", 120);
+    save = lowerUpgradeLevel(save, "horde_boneTrader", 150);
+    save = lowerUpgradeLevel(save, "horde_soulCage", 80);
+    save = lowerUpgradeLevel(save, "horde_mausoleum", 80);
+    save = lowerUpgradeLevel(save, "farm_goldenTools", 5); // Rename best prestige stats
+    if (save.stat.village_bestPrestige !== undefined) {
+      save.stat.village_bestPrestige0 = save.stat.village_bestPrestige;
+      delete save.stat.village_bestPrestige;
+    }
+    if (save.stat.horde_bestPrestige !== undefined) {
+      save.stat.horde_bestPrestige0 = save.stat.horde_bestPrestige;
+      delete save.stat.horde_bestPrestige;
+    } // Respec tier 4 offerings
+    if (
+      save.village &&
+      save.village.offering &&
+      (save.village.offering.knowledge !== undefined ||
+        save.village.offering.science !== undefined ||
+        save.village.offering.joy !== undefined)
+    ) {
+      let spent = 0;
+      ["plantFiber", "wood", "stone"].forEach((elem) => {
+        if (save.village.offering[elem] !== undefined) {
+          spent += save.village.offering[elem].upgradeBought;
+        }
+      });
+      ["coin", "metal", "water"].forEach((elem) => {
+        if (save.village.offering[elem] !== undefined) {
+          spent += save.village.offering[elem].upgradeBought * 3;
+        }
+      });
+      ["glass", "hardwood", "gem"].forEach((elem) => {
+        if (save.village.offering[elem] !== undefined) {
+          spent += save.village.offering[elem].upgradeBought * 8;
+        }
+      });
+      save.currency.village_offering = save.stat.village_offering[1] - spent;
+      if (save.village.offering.knowledge !== undefined) {
+        save.village.offering.knowledge.upgradeBought = 0;
+      }
+      if (save.village.offering.science !== undefined) {
+        save.village.offering.science.upgradeBought = 0;
+      }
+      if (save.village.offering.joy !== undefined) {
+        save.village.offering.joy.upgradeBought = 0;
+      }
+    }
+    if (save.horde) {
+      // Convert enemy status
+      if (save.horde.enemy !== undefined) {
+        save.horde.enemy.defense = 0;
+        save.horde.enemy.execute = 0;
+      } // Convert item stat multipliers
+      if (save.horde.itemStatMult !== undefined) {
+        let newObj = {};
+        for (const [key, elem] of Object.entries(save.horde.itemStatMult)) {
+          newObj[key + "_mult"] = elem;
+        }
+        save.horde.itemStatMult = newObj;
+      }
+      if (save.horde.items?.starShield) {
+        save.horde.items.starShield.level = 1;
+      } // Unequip all equipment
+      if (save.horde.items) {
+        for (const [, elem] of Object.entries(save.horde.items)) {
+          if (elem.equipped) {
+            elem.equipped = false;
+          }
+        }
+      }
+    }
+    if (save.farm?.crop) {
+      for (const [, elem] of Object.entries(save.farm.crop)) {
+        if (elem.rareDrop) {
+          let newDrop = {};
+          elem.rareDrop.forEach((key) => {
+            newDrop[key] = 0;
+          });
+          elem.rareDrop = newDrop;
+        }
+      }
+    } // Rename fruit to berries
+    if (save.currency.farm_fruit !== undefined) {
+      save.currency.farm_berry = save.currency.farm_fruit;
+    }
+    if (save.stat.farm_fruit !== undefined) {
+      save.stat.farm_berry = save.stat.farm_fruit;
+    }
+    save = removeCurrency(save, "farm_fruit");
+    save = replaceTreasureEffect(save, "currencyFarmFruitGain", "currencyFarmBerryGain");
+    if (save.upgrade.farm_biggerFruits !== undefined) {
+      save.upgrade.farm_biggerBerries = save.upgrade.farm_biggerFruits;
+      save = removeUpgrade(save, "farm_biggerFruits");
+    } // Remove excess gold
+    if (save.currency.farm_gold !== undefined && save.currency.farm_gold > 1000) {
+      save.currency.farm_gold = 1000;
+    }
+    if (save.stat.farm_gold !== undefined && save.stat.farm_gold[0] > 20759) {
+      save.stat.farm_gold = [20759, 20759];
+    } // Remove excess mystery stones
+    if (save.currency.farm_mysteryStone !== undefined) {
+      const newAmount = Math.ceil(save.currency.farm_mysteryStone / 100);
+      save.currency.farm_mysteryStone = newAmount;
+      save.stat.farm_mysteryStone = [newAmount, newAmount];
+    } // Give increased amount of event fertilizer
+    if (save.consumable) {
+      [
+        "farm_sunshine",
+        "farm_superFlower",
+        "farm_smellyMud",
+        "farm_tropicalWater",
+        "farm_fieldBlessing",
+        "farm_cinnamonBag",
+      ].forEach((elem) => {
+        if (save.consumable[elem] !== undefined && save.consumable[elem] > 0) {
+          save.consumable[elem] *= 4;
+        }
+      });
+    } // Respec gallery prestige upgrades
+    [
+      "artAcademy",
+      "redCrayon",
+      "rainbowJar",
+      "trashContainer",
+      "orangeCrayon",
+      "headstart",
+      "forklift",
+      "redCrate",
+      "yellowCrayon",
+      "inspiringBooks",
+      "expressDelivery",
+      "orangeCrate",
+      "greenCrayon",
+      "sortingSystem",
+      "redTruck",
+      "yellowCrate",
+      "blueCrayon",
+      "orangeTruck",
+      "greenCrate",
+      "purpleCrayon",
+    ].forEach((name) => {
+      save = removeUpgrade(save, "gallery_" + name);
+    });
+    save = refundCurrency(save, "gallery_cash"); // Remove 1 tier from event treasure
+    save = applyTreasureFilter(save, (treasure) => {
+      if (treasure.type === "empowered" && treasure.tier > 0) {
+        treasure.tier--;
+      }
+      return treasure;
+    }); // Update horde soul stats to prevent false positives from the anticheat
+    if (
+      save.currency.horde_soulCorrupted !== undefined &&
+      save.stat.horde_soulCorrupted !== undefined &&
+      save.currency.horde_soulCorrupted > save.stat.horde_soulCorrupted[1]
+    ) {
+      save.stat.horde_soulCorrupted[1] = save.currency.horde_soulCorrupted;
+    }
+    if (
+      save.currency.horde_soulEmpowered !== undefined &&
+      save.stat.horde_soulEmpowered !== undefined &&
+      save.currency.horde_soulEmpowered > save.stat.horde_soulEmpowered[1]
+    ) {
+      save.stat.horde_soulEmpowered[1] = save.currency.horde_soulEmpowered;
+    } // Remove duplicate cards
+    if (save.card) {
+      for (const [key, elem] of Object.entries(save.card.feature)) {
+        save.card.feature[key].cardSelected = filterUnique(elem.cardSelected);
+        save.card.feature[key].cardEquipped = filterUnique(elem.cardEquipped);
+      }
+    } // Award event highscores
+    if (save.stat.event_cindersToken !== undefined) {
+      save.stat.event_cindersHighscore = [0, save.stat.event_cindersToken[1]];
+    }
+    if (save.stat.event_bloomToken !== undefined) {
+      save.stat.event_bloomHighscore = [0, save.stat.event_bloomToken[1]];
+    }
+    if (save.stat.event_weatherChaosToken !== undefined) {
+      save.stat.event_weatherChaosHighscore = [0, save.stat.event_weatherChaosToken[1]];
+    }
+    if (save.stat.event_summerFestivalToken !== undefined) {
+      save.stat.event_summerFestivalHighscore = [0, Math.min(save.stat.event_summerFestivalToken[1], 492)];
+    }
+    if (save.stat.event_nightHuntToken !== undefined) {
+      save.stat.event_nightHuntHighscore = [0, save.stat.event_nightHuntToken[1]];
+    }
+    if (save.stat.event_snowdownToken !== undefined) {
+      save.stat.event_snowdownHighscore = [0, save.stat.event_snowdownToken[1]];
+    }
+    return save;
+  },
+  "modules/migration/v1_5_1": function (save) {
+    // Use new school subject format
+    if (save.school) {
+      for (const [key, elem] of Object.entries(save.school)) {
+        save.school[key] = [elem.grade, elem.currentGrade, elem.progress];
+      }
+    } // Use new smeltery format
+    if (save.mining && save.mining.smeltery) {
+      for (const [key, elem] of Object.entries(save.mining.smeltery)) {
+        save.mining.smeltery[key] = [elem.progress, elem.stored, elem.total];
+      }
+    } // Use new offering format
+    if (save.village && save.village.offering) {
+      for (const [key, elem] of Object.entries(save.village.offering)) {
+        save.village.offering[key] = [elem.offeringBought, elem.upgradeBought];
+      }
+    }
+    return save;
+  },
+  "modules/migration/v1_5_3": function (save) {
+    // Repeat offering respec for bugged savefiles
+    if (save.village && save.village.offering) {
+      let spent = 0;
+      let spentWithoutT4 = 0;
+      ["plantFiber", "wood", "stone"].forEach((elem) => {
+        if (save.village.offering[elem] !== undefined) {
+          spent += save.village.offering[elem][1];
+          spentWithoutT4 += save.village.offering[elem][1];
+        }
+      });
+      ["coin", "metal", "water"].forEach((elem) => {
+        if (save.village.offering[elem] !== undefined) {
+          spent += save.village.offering[elem][1] * 3;
+          spentWithoutT4 += save.village.offering[elem][1] * 3;
+        }
+      });
+      ["glass", "hardwood", "gem"].forEach((elem) => {
+        if (save.village.offering[elem] !== undefined) {
+          spent += save.village.offering[elem][1] * 8;
+          spentWithoutT4 += save.village.offering[elem][1] * 8;
+        }
+      });
+      ["knowledge", "science", "joy"].forEach((elem) => {
+        if (save.village.offering[elem] !== undefined) {
+          spent += deltaLinear(20, 1, save.village.offering[elem][1]);
+        }
+      });
+      let missing = save.stat.village_offering[1] - spent;
+      if (missing < 0) {
+        // Reset T4 offerings only if you do not have enough offerings to pay for them
+        if (save.village.offering.knowledge !== undefined) {
+          save.village.offering.knowledge[1] = 0;
+        }
+        if (save.village.offering.science !== undefined) {
+          save.village.offering.science[1] = 0;
+        }
+        if (save.village.offering.joy !== undefined) {
+          save.village.offering.joy[1] = 0;
+        }
+        missing = save.stat.village_offering[1] - spentWithoutT4;
+      }
+      save.currency.village_offering = missing;
+    } // Fix event shops selling old treasure effect
+    if (save.event && save.event.shop_merchant) {
+      for (const [key, elem] of Object.entries(save.event.shop_merchant)) {
+        if (elem.data && elem.data.effect) {
+          const index = elem.data.effect.indexOf("currencyFarmFruitGain");
+          if (index !== -1) {
+            save.event.shop_merchant[key].data.effect[index] = "currencyFarmBerryGain";
+          }
+        }
+      }
+    }
+    if (save.event && save.event.shop_big) {
+      for (const [key, elem] of Object.entries(save.event.shop_big)) {
+        if (elem.data && elem.data.effect) {
+          const index = elem.data.effect.indexOf("currencyFarmFruitGain");
+          if (index !== -1) {
+            save.event.shop_big[key].data.effect[index] = "currencyFarmBerryGain";
+          }
+        }
+      }
+    }
+    save = replaceTreasureEffect(save, "currencyFarmFruitGain", "currencyFarmBerryGain");
+    return save;
+  },
+  "modules/migration/v1_5_4": function (save) {
+    // Remove snowballs to prevent old version players from getting a massive advantage
+    if (save.currency.event_snowball !== undefined) {
+      delete save.currency.event_snowball;
+    }
+    if (save.event) {
+      // Convert tokens from the old to the new formula
+      let tokensExpected = 0;
+      const fights = save.event.snowdown_fight ?? 0;
+      for (let i = 0; i < fights; i++) {
+        tokensExpected += Math.floor(Math.pow(i * 0.35 + 1, 0.75) + 3);
+      }
+      if (save.stat.event_snowdownToken && save.currency.event_snowdownToken !== undefined) {
+        const tokenDiff = tokensExpected - save.stat.event_snowdownToken[0];
+        if (tokenDiff !== 0) {
+          save.currency.event_snowdownToken += tokenDiff;
+          if (tokenDiff > 0) {
+            save.stat.event_snowdownToken = [
+              save.stat.event_snowdownToken[0] + tokenDiff,
+              save.stat.event_snowdownToken[1] + tokenDiff,
+            ];
+          }
+        }
+      } // Convert removed producers
+      if (save.event.snowdown_item !== undefined) {
+        if (save.event.snowdown_item.spiceJar) {
+          save.event.snowdown_item.shepherd =
+            (save.event.snowdown_item.shepherd ?? 0) + save.event.snowdown_item.spiceJar;
+          delete save.event.snowdown_item.spiceJar;
+        }
+        if (save.event.snowdown_item.tap) {
+          save.event.snowdown_item.forest = (save.event.snowdown_item.forest ?? 0) + save.event.snowdown_item.tap;
+          delete save.event.snowdown_item.tap;
+        }
+      }
+    } // Convert levels of the well drawn ellipse upgrade
+    if (save.upgrade.gallery_wellDrawnEllipse) {
+      const newLvl = Math.ceil(save.upgrade.gallery_wellDrawnEllipse[1] / 2);
+      save.upgrade.gallery_wellDrawnEllipse[1] = newLvl;
+      save.upgrade.gallery_wellDrawnEllipse[2] = newLvl;
+    }
+    return save;
+  },
+  "modules/migration/v1_5_6": function (save) {
+    // Fix event token values
+    if (save.stat.event_bloomToken !== undefined) {
+      save.stat.event_bloomToken[0] = 0;
+    }
+    if (save.stat.event_weatherChaosToken !== undefined) {
+      save.stat.event_weatherChaosToken[0] = 0;
+    }
+    if (save.stat.event_summerFestivalToken !== undefined) {
+      save.stat.event_summerFestivalToken[0] = 0;
+    }
+    if (save.stat.event_nightHuntToken !== undefined) {
+      save.stat.event_nightHuntToken[0] = 0;
+    }
+    if (save.stat.event_snowdownToken !== undefined) {
+      save.stat.event_snowdownToken[0] = 0;
+    } // Give missing cinders tokens
+    if (
+      save.stat.event_cindersToken !== undefined &&
+      save.stat.event_cindersHighscore !== undefined &&
+      save.stat.event_cindersHighscore[1] > save.stat.event_cindersHighscore[0]
+    ) {
+      const missingTokens = save.stat.event_cindersToken[1] - save.stat.event_cindersHighscore[0];
+      if (missingTokens > 0) {
+        save.stat.event_cindersToken[0] -= missingTokens;
+      }
+    }
+    return save;
+  },
   "modules/mining/achievement": {
     maxDepth0: { value: () => store.state.stat.mining_maxDepth0.total, default: 1, milestones: (lvl) => lvl * 25 + 25 },
     maxDepth1: { value: () => store.state.stat.mining_maxDepth1.total, default: 1, milestones: (lvl) => lvl * 10 + 10 },
@@ -17759,6 +20644,568 @@ export default {
     },
     card: cardList,
   },
+  "modules/mining/cardList": [
+    {
+      id: 1,
+      collection: "minersAndEquipment",
+      power: 3,
+      color: "amber",
+      icons: [
+        { x: 0, y: -0.7, rotate: 0, size: 1.6, icon: "mdi-hard-hat" },
+        { x: -0.55, y: 0.35, rotate: -20, size: 2.5, icon: "mdi-torch" },
+        { x: 0.45, y: 0.35, rotate: -30, size: 2, icon: "mdi-pickaxe" },
+      ],
+    },
+    {
+      id: 2,
+      collection: "minersAndEquipment",
+      power: 2,
+      reward: [{ name: "miningPickaxeCraftingQuality", type: "mult", value: 1.5 }],
+      color: "brown",
+      icons: [
+        { x: -0.3, y: 0.05, rotate: 0, size: 1, icon: "mdi-archive" },
+        { x: -0.55, y: 0.5, rotate: 0, size: 1, icon: "mdi-archive" },
+        { x: -0.05, y: 0.5, rotate: 0, size: 1, icon: "mdi-archive" },
+        { x: 0.45, y: 0.15, rotate: 90, size: 2.25, icon: "mdi-pickaxe" },
+      ],
+    },
+    {
+      id: 3,
+      collection: "minersAndEquipment",
+      power: 2,
+      reward: [{ name: "miningPickaxeCraftingSlots", type: "base", value: 1 }],
+      color: "pale-blue",
+      icons: [
+        { x: -0.25, y: -0.35, rotate: -50, size: 1.75, icon: "mdi-pickaxe" },
+        { x: 0.2, y: -0.1, rotate: -20, size: 1.75, icon: "mdi-pickaxe" },
+        { x: 0, y: 0.25, rotate: 0, size: 2, icon: "mdi-package" },
+      ],
+    },
+    {
+      id: 4,
+      collection: "minersAndEquipment",
+      power: 2,
+      reward: [{ name: "miningToughness", type: "mult", value: 0.8 }],
+      color: "orange-red",
+      icons: [
+        { x: -0.55, y: 0, rotate: 0, size: 1.75, icon: "mdi-bomb" },
+        { x: 0.4, y: 0.15, rotate: -35, size: 2.5, icon: "mdi-torch" },
+      ],
+    },
+    {
+      id: 5,
+      collection: "minersAndEquipment",
+      power: 2,
+      reward: [{ name: "currencyMiningScrapGain", type: "mult", value: 1.2 }],
+      color: "pale-green",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 4, icon: "mdi-elevator-down" },
+        { x: -0.25, y: 0.65, rotate: 0, size: 1, icon: "mdi-account-hard-hat" },
+        { x: 0.2, y: 0.6, rotate: 0, size: 1.1, icon: "mdi-account-hard-hat" },
+      ],
+    },
+    {
+      id: 6,
+      collection: "minersAndEquipment",
+      power: 2,
+      reward: [{ name: "miningOreGain", type: "mult", value: 1.2 }],
+      color: "orange",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 4, icon: "mdi-cupboard" },
+        { x: -0.25, y: -0.6, rotate: 0, size: 0.8, icon: "mdi-hard-hat" },
+        { x: 0.25, y: -0.6, rotate: 0, size: 0.8, icon: "mdi-hard-hat" },
+        { x: -0.1, y: -0.1, rotate: 0, size: 0.8, icon: "mdi-hard-hat" },
+      ],
+    },
+    {
+      id: 7,
+      collection: "minersAndEquipment",
+      power: 1,
+      reward: [{ name: "miningToughness", type: "mult", value: 1 / 1.5 }],
+      color: "red",
+      icons: [
+        { x: -0.35, y: 0.1, rotate: -95, size: 1.5, icon: "mdi-bomb" },
+        { x: 0.35, y: 0, rotate: 30, size: 1.5, icon: "mdi-bomb" },
+        { x: -0.05, y: -0.45, rotate: -15, size: 1.5, icon: "mdi-bomb" },
+        { x: 0, y: 0.9, rotate: 0, size: 2, icon: "mdi-sign-caution" },
+      ],
+    },
+    {
+      id: 8,
+      collection: "minersAndEquipment",
+      power: 2,
+      reward: [{ name: "miningDamage", type: "mult", value: 1.15 }],
+      color: "purple",
+      icons: [
+        { x: 0.85, y: 0.5, rotate: 0, size: 2, icon: "mdi-human-greeting" },
+        { x: 0.25, y: -0.2, rotate: -90, size: 1.25, icon: "mdi-pickaxe" },
+        { x: -0.8, y: 0.8, rotate: -20, size: 2, icon: "mdi-chart-bubble" },
+        { x: 0, y: 0.9, rotate: 220, size: 1.8, icon: "mdi-chart-bubble" },
+        { x: -0.35, y: 0.3, rotate: 0, size: 1.6, icon: "mdi-chart-bubble" },
+      ],
+    },
+    {
+      id: 9,
+      collection: "minersAndEquipment",
+      power: 1,
+      reward: [{ name: "currencyMiningScrapGain", type: "mult", value: 1.35 }],
+      color: "teal",
+      icons: [
+        { x: 0.6, y: 0.3, rotate: -10, size: 2, icon: "mdi-pickaxe" },
+        { x: -0.6, y: 0.35, rotate: 100, size: 2, icon: "mdi-shovel" },
+        { x: 0, y: -0.5, rotate: 0, size: 1.5, icon: "mdi-help" },
+        { x: 0.8, y: -0.8, rotate: 80, size: 1.1, icon: "mdi-chart-bubble" },
+      ],
+    },
+    {
+      id: 10,
+      collection: "minersAndEquipment",
+      power: 2,
+      reward: [{ name: "miningOreQuality", type: "mult", value: 1.75 }],
+      color: "pink",
+      icons: [
+        { x: -0.4, y: 0.4, rotate: 0, size: 3, icon: "mdi-cupboard" },
+        { x: -0.3, y: -0.55, rotate: 25, size: 1.4, icon: "mdi-pickaxe" },
+        { x: 0.7, y: 0.65, rotate: 0, size: 2, icon: "mdi-human-greeting" },
+      ],
+    },
+    {
+      id: 11,
+      collection: "minersAndEquipment",
+      power: 1,
+      reward: [
+        { name: "miningDamage", type: "mult", value: 1.1 },
+        { name: "currencyMiningOreAluminiumGain", type: "mult", value: 1.6 },
+      ],
+      color: "pale-red",
+      icons: [
+        { x: 0, y: 0.5, rotate: 0, size: 3, icon: "mdi-human-handsup" },
+        { x: -0.4, y: -0.45, rotate: -30, size: 1.5, icon: "mdi-pickaxe" },
+        { x: 0.35, y: -0.55, rotate: -60, size: 1.5, icon: "mdi-pickaxe" },
+      ],
+    },
+    {
+      id: 12,
+      collection: "minersAndEquipment",
+      power: 1,
+      reward: [
+        { name: "currencyMiningScrapGain", type: "mult", value: 1.15 },
+        { name: "currencyMiningOreCopperGain", type: "mult", value: 1.6 },
+      ],
+      color: "light-blue",
+      icons: [
+        { x: 0.4, y: 0.5, rotate: 0, size: 2.5, icon: "mdi-walk" },
+        { x: -0.8, y: 1, rotate: -125, size: 0.8, icon: "mdi-hard-hat" },
+        { x: 0.5, y: -1, rotate: 90, size: 1, icon: "mdi-motion" },
+      ],
+    },
+    {
+      id: 13,
+      collection: "scrapLogistics",
+      power: 2,
+      reward: [{ name: "currencyMiningScrapCap", type: "mult", value: 1.4 }],
+      color: "beige",
+      icons: [
+        { x: -1, y: 0.65, rotate: 0, size: 1, icon: "mdi-archive" },
+        { x: -0.5, y: 0.65, rotate: 0, size: 1, icon: "mdi-archive" },
+        { x: 0, y: 0.65, rotate: 0, size: 1, icon: "mdi-archive" },
+        { x: 0.5, y: 0.65, rotate: 0, size: 1, icon: "mdi-archive" },
+        { x: -0.75, y: 0.2, rotate: 0, size: 1, icon: "mdi-archive" },
+        { x: -0.25, y: 0.2, rotate: 0, size: 1, icon: "mdi-archive" },
+        { x: 0.25, y: 0.2, rotate: 0, size: 1, icon: "mdi-archive" },
+        { x: -0.5, y: -0.25, rotate: 0, size: 1, icon: "mdi-archive" },
+        { x: -0.5, y: -0.7, rotate: 0, size: 1, icon: "mdi-archive" },
+        { x: 1, y: 0.65, rotate: 0, size: 1, icon: "mdi-dots-triangle" },
+        { x: 0.1, y: -0.1, rotate: 0, size: 1, icon: "mdi-dots-horizontal" },
+      ],
+    },
+    {
+      id: 14,
+      collection: "scrapLogistics",
+      power: 2,
+      reward: [
+        { name: "currencyMiningScrapGain", type: "mult", value: 1.12 },
+        { name: "currencyMiningScrapCap", type: "mult", value: 1.25 },
+      ],
+      color: "wooden",
+      icons: [
+        { x: 0, y: 0.4, rotate: 0, size: 2.5, icon: "mdi-package" },
+        { x: 0, y: -0.4, rotate: 0, size: 1.75, icon: "mdi-dots-triangle" },
+        { x: 0.7, y: 0.8, rotate: 0, size: 1.75, icon: "mdi-circle-small" },
+        { x: -0.85, y: 0.8, rotate: 0, size: 1.75, icon: "mdi-circle-small" },
+      ],
+    },
+    {
+      id: 15,
+      collection: "scrapLogistics",
+      power: 2,
+      reward: [
+        { name: "currencyMiningOreAluminiumCap", type: "base", value: 80 },
+        { name: "currencyMiningOreCopperCap", type: "base", value: 24 },
+      ],
+      color: "green",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 4, icon: "mdi-elevator-up" },
+        { x: -0.3, y: 0.65, rotate: 0, size: 0.6, icon: "mdi-archive" },
+        { x: 0, y: 0.65, rotate: 0, size: 0.6, icon: "mdi-archive" },
+        { x: 0.3, y: 0.65, rotate: 0, size: 0.6, icon: "mdi-package" },
+        { x: 0.3, y: 0.45, rotate: 0, size: 0.5, icon: "mdi-dots-triangle" },
+      ],
+    },
+    {
+      id: 16,
+      collection: "scrapLogistics",
+      power: 1,
+      reward: [
+        { name: "currencyMiningScrapGain", type: "mult", value: 1.14 },
+        { name: "currencyMiningOreAluminiumCap", type: "mult", value: 2 },
+      ],
+      color: "pale-orange",
+      icons: [
+        { x: 0.4, y: 0, rotate: 0, size: 3, icon: "mdi-excavator" },
+        { x: 0, y: -0.1, rotate: 0, size: 1.75, icon: "mdi-circle-small" },
+        { x: -0.8, y: 0.4, rotate: 0, size: 1.75, icon: "mdi-dots-triangle" },
+      ],
+    },
+    {
+      id: 17,
+      collection: "scrapLogistics",
+      power: 1,
+      reward: [
+        { name: "currencyMiningScrapCap", type: "mult", value: 1.3 },
+        { name: "currencyMiningOreCopperCap", type: "mult", value: 2 },
+      ],
+      color: "lime",
+      icons: [
+        { x: 0.5, y: 0.5, rotate: 0, size: 2.5, icon: "mdi-truck-flatbed" },
+        { x: 0.2, y: 0.25, rotate: 0, size: 1.5, icon: "mdi-dots-triangle" },
+        { x: -1, y: 0.65, rotate: 0, size: 1.5, icon: "mdi-dots-triangle" },
+        { x: -0.6, y: 0.65, rotate: -70, size: 1.25, icon: "mdi-shovel" },
+      ],
+    },
+    {
+      id: 18,
+      collection: "scrapLogistics",
+      power: 2,
+      reward: [
+        { name: "miningDamage", type: "mult", value: 1.1 },
+        { name: "currencyMiningScrapCap", type: "mult", value: 1.2 },
+      ],
+      color: "skyblue",
+      icons: [
+        { x: 0.6, y: 0.35, rotate: 0, size: 2, icon: "mdi-human-handsdown" },
+        { x: -0.7, y: 0.5, rotate: 0, size: 1.6, icon: "mdi-package" },
+        { x: -0.7, y: 0, rotate: 0, size: 1.3, icon: "mdi-dots-triangle" },
+        { x: 0.15, y: 0.4, rotate: -10, size: 1, icon: "mdi-clipboard-text" },
+        { x: 1, y: 0.35, rotate: -20, size: 0.8, icon: "mdi-pencil" },
+      ],
+    },
+    {
+      id: 19,
+      collection: "scrapLogistics",
+      power: 3,
+      reward: [{ name: "miningDepthDwellerSpeed", type: "mult", value: 1.4 }],
+      color: "yellow",
+      icons: [
+        { x: 0.5, y: -0.1, rotate: 0, size: 2.5, icon: "mdi-factory" },
+        { x: -0.6, y: 0.75, rotate: 0, size: 1.75, icon: "mdi-truck-flatbed" },
+        { x: -1, y: 0.65, rotate: 0, size: 0.6, icon: "mdi-archive" },
+        { x: -0.7, y: 0.65, rotate: 0, size: 0.6, icon: "mdi-archive" },
+      ],
+    },
+    {
+      id: 20,
+      collection: "scrapLogistics",
+      power: 3,
+      reward: [{ name: "currencyMiningCrystalGreenGain", type: "mult", value: 1.15 }],
+      color: "grey",
+      icons: [
+        { x: 0, y: -1, rotate: 0, size: 1.5, icon: "mdi-arrow-collapse-down" },
+        { x: 0, y: 0.8, rotate: 0, size: 2, icon: "mdi-square" },
+        { x: 0, y: 0, rotate: 0, size: 1.5, icon: "mdi-dots-triangle" },
+      ],
+    },
+    {
+      id: 21,
+      collection: "scrapLogistics",
+      power: 2,
+      reward: [
+        { name: "miningDepthDwellerSpeed", type: "mult", value: 1.5 },
+        { name: "currencyMiningCrystalGreenGain", type: "mult", value: 1.2 },
+      ],
+      color: "red",
+      icons: [
+        { x: 0, y: 0, rotate: 90, size: 1.5, icon: "mdi-dots-hexagon" },
+        { x: 0, y: -0.9, rotate: 180, size: 1.25, icon: "mdi-magnet-on" },
+        { x: 0, y: 0.9, rotate: 0, size: 1.25, icon: "mdi-magnet-on" },
+        { x: -0.65, y: 0, rotate: 0, size: 1.5, icon: "mdi-dots-horizontal" },
+        { x: 0.65, y: 0, rotate: 0, size: 1.5, icon: "mdi-dots-horizontal" },
+      ],
+    },
+    {
+      id: 22,
+      collection: "scrapLogistics",
+      power: 3,
+      reward: [{ name: "miningDamage", type: "mult", value: 1.12 }],
+      color: "indigo",
+      icons: [
+        { x: -0.5, y: 0.1, rotate: 0, size: 2, icon: "mdi-robot-industrial" },
+        { x: 0.7, y: 0.25, rotate: -20, size: 1.5, icon: "mdi-robot" },
+        { x: 0, y: -0.2, rotate: 0, size: 1.5, icon: "mdi-circle-small" },
+      ],
+    },
+    {
+      id: 23,
+      collection: "caveLocations",
+      power: 3,
+      reward: [{ name: "miningPickaxeCraftingQuality", type: "mult", value: 1.25 }],
+      color: "light-blue",
+      icons: [
+        { x: -0.15, y: 0.2, rotate: 90, size: 1.8, icon: "mdi-chart-bubble" },
+        { x: 0.15, y: 0.3, rotate: 225, size: 2, icon: "mdi-chart-bubble" },
+        { x: -0.1, y: -0.3, rotate: 80, size: 1.25, icon: "mdi-pickaxe" },
+      ],
+    },
+    {
+      id: 24,
+      collection: "caveLocations",
+      power: 3,
+      reward: [{ name: "miningPickaxeCraftingSlots", type: "base", value: 1 }],
+      color: "pale-green",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 2.75, icon: "mdi-tunnel" },
+        { x: -0.7, y: 0.9, rotate: 0, size: 1, icon: "mdi-grass" },
+        { x: -1, y: 0, rotate: 0, size: 0.75, icon: "mdi-torch" },
+        { x: 1, y: 0, rotate: 0, size: 0.75, icon: "mdi-torch" },
+      ],
+    },
+    {
+      id: 25,
+      collection: "caveLocations",
+      power: 2,
+      reward: [
+        { name: "miningDepthDwellerSpeed", type: "mult", value: 1.1 },
+        { name: "currencyMiningOreTinCap", type: "mult", value: 2 },
+      ],
+      color: "red",
+      icons: [
+        { x: -0.65, y: 0.5, rotate: 0, size: 1.6, icon: "mdi-chart-bubble" },
+        { x: -0.35, y: -0.1, rotate: 60, size: 1.8, icon: "mdi-chart-bubble" },
+        { x: 0.65, y: 0.5, rotate: 120, size: 2, icon: "mdi-chart-bubble" },
+        { x: 0.35, y: -0.1, rotate: 180, size: 2.2, icon: "mdi-chart-bubble" },
+        { x: 0.1, y: -0.6, rotate: 240, size: 2.4, icon: "mdi-chart-bubble" },
+        { x: 0, y: 1, rotate: 0, size: 1.25, icon: "mdi-bomb" },
+      ],
+    },
+    {
+      id: 26,
+      collection: "caveLocations",
+      power: 2,
+      reward: [
+        { name: "miningPickaxeCraftingSlots", type: "base", value: 1 },
+        { name: "currencyMiningOreTinGain", type: "mult", value: 1.6 },
+      ],
+      color: "yellow",
+      icons: [
+        { x: -0.25, y: -0.35, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: 0.25, y: -0.35, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: -0.55, y: 0.25, rotate: 90, size: 3, icon: "mdi-minus" },
+        { x: 0.55, y: 0.25, rotate: 90, size: 3, icon: "mdi-minus" },
+        { x: -0.4, y: 0.1, rotate: 15, size: 1, icon: "mdi-torch" },
+        { x: 0.1, y: -0.7, rotate: 70, size: 1.65, icon: "mdi-chart-bubble" },
+      ],
+    },
+    {
+      id: 27,
+      collection: "caveLocations",
+      power: 2,
+      reward: [
+        { name: "miningDamage", type: "mult", value: 1.2 },
+        { name: "currencyMiningScrapGain", type: "mult", value: 1.1 },
+      ],
+      color: "light-green",
+      icons: [
+        { x: 0, y: 0, rotate: 225, size: 2.25, icon: "mdi-chart-bubble" },
+        { x: -0.65, y: 0.7, rotate: 0, size: 1.55, icon: "mdi-grass" },
+        { x: 0.5, y: 0.45, rotate: 0, size: 1.25, icon: "mdi-grass" },
+        { x: -0.55, y: -0.4, rotate: 0, size: 1.15, icon: "mdi-grass" },
+        { x: 0.85, y: -0.6, rotate: 0, size: 1, icon: "mdi-grass" },
+        { x: 0.15, y: -0.85, rotate: 0, size: 0.9, icon: "mdi-grass" },
+      ],
+    },
+    {
+      id: 28,
+      collection: "caveLocations",
+      power: 3,
+      reward: [
+        { name: "currencyMiningCrystalGreenGain", type: "mult", value: 1.05 },
+        { name: "currencyMiningOreIronCap", type: "mult", value: 2 },
+      ],
+      color: "dark-grey",
+      icons: [
+        { x: -0.5, y: 0.85, rotate: 5, size: 2, icon: "mdi-torch" },
+        { x: 0.95, y: -0.9, rotate: 65, size: 1.5, icon: "mdi-spider-web" },
+        { x: -0.85, y: -0.45, rotate: -15, size: 1.2, icon: "mdi-bat" },
+        { x: 0.05, y: -0.9, rotate: 10, size: 1, icon: "mdi-bat" },
+        { x: 0.6, y: -0.1, rotate: 30, size: 1.1, icon: "mdi-bat" },
+        { x: -0.2, y: 0, rotate: 5, size: 1, icon: "mdi-bat" },
+        { x: 0.5, y: 0.65, rotate: 45, size: 1.4, icon: "mdi-bat" },
+      ],
+    },
+    {
+      id: 29,
+      collection: "caveLocations",
+      power: 3,
+      reward: [
+        { name: "miningSmelterySpeed", type: "mult", value: 1.15 },
+        { name: "currencyMiningOreIronGain", type: "mult", value: 1.6 },
+      ],
+      color: "light-grey",
+      icons: [
+        { x: -0.65, y: 0.9, rotate: -20, size: 2, icon: "mdi-chart-bubble" },
+        { x: 0.9, y: -0.95, rotate: 20, size: 1.5, icon: "mdi-spider-web" },
+        { x: 0.1, y: -1, rotate: 40, size: 1.2, icon: "mdi-spider-web" },
+        { x: -1, y: 0.3, rotate: 15, size: 1.1, icon: "mdi-spider-web" },
+        { x: 0.1, y: -0.1, rotate: 0, size: 1, icon: "mdi-spider-thread" },
+        { x: 0.1, y: -0.5, rotate: 90, size: 1, icon: "mdi-minus" },
+      ],
+    },
+    {
+      id: 30,
+      collection: "caveLocations",
+      power: 3,
+      reward: [{ name: "miningOreGain", type: "mult", value: 1.4 }],
+      color: "cyan",
+      icons: [
+        { x: 0.4, y: 0.6, rotate: 30, size: 2, icon: "mdi-chart-bubble" },
+        { x: -0.25, y: -0.2, rotate: -10, size: 2.2, icon: "mdi-chart-bubble" },
+        { x: -0.6, y: 0.75, rotate: 75, size: 2.4, icon: "mdi-chart-bubble" },
+        { x: -0.3, y: 0.35, rotate: 10, size: 0.75, icon: "mdi-flare" },
+      ],
+    },
+    {
+      id: 31,
+      collection: "caveLocations",
+      power: 5,
+      color: "dark-blue",
+      icons: [
+        { x: 0, y: 0.25, rotate: 0, size: 3, icon: "mdi-ellipse-outline" },
+        { x: 0, y: 0.25, rotate: 0, size: 1.5, icon: "mdi-waves" },
+        { x: -0.9, y: 0.9, rotate: -20, size: 1.5, icon: "mdi-chart-bubble" },
+        { x: 0.2, y: -0.75, rotate: 75, size: 1.2, icon: "mdi-chart-bubble" },
+        { x: 0.9, y: -0.45, rotate: -135, size: 1, icon: "mdi-chart-bubble" },
+      ],
+    },
+    {
+      id: 32,
+      collection: "dangersInTheDark",
+      power: 4,
+      reward: [{ name: "miningSmelterySpeed", type: "mult", value: 1.35 }],
+      color: "orange",
+      icons: [
+        { x: -0.45, y: 0.6, rotate: -125, size: 1.8, icon: "mdi-liquid-spot" },
+        { x: 0.45, y: 0.6, rotate: 70, size: 2, icon: "mdi-liquid-spot" },
+        { x: 0, y: 0.6, rotate: 0, size: 2.2, icon: "mdi-liquid-spot" },
+        { x: 0, y: -0.5, rotate: 0, size: 3, icon: "mdi-fire" },
+      ],
+    },
+    {
+      id: 33,
+      collection: "dangersInTheDark",
+      power: 4,
+      reward: [
+        { name: "miningResinMax", type: "base", value: 1 },
+        { name: "currencyMiningOreTitaniumCap", type: "mult", value: 2 },
+      ],
+      color: "cherry",
+      icons: [
+        { x: -0.1, y: 0.9, rotate: 0, size: 1, icon: "mdi-skull" },
+        { x: 0.5, y: 0.95, rotate: 65, size: 1, icon: "mdi-skull" },
+        { x: 0.25, y: 0.55, rotate: 100, size: 1, icon: "mdi-skull" },
+        { x: -1, y: 0.95, rotate: -65, size: 1, icon: "mdi-skull" },
+        { x: -0.55, y: 1, rotate: 0, size: 0.65, icon: "mdi-bone" },
+        { x: -0.25, y: 0.6, rotate: -30, size: 0.65, icon: "mdi-bone" },
+      ],
+    },
+    {
+      id: 34,
+      collection: "dangersInTheDark",
+      power: 4,
+      reward: [
+        { name: "miningSmelterySpeed", type: "mult", value: 1.1 },
+        { name: "currencyMiningOreTitaniumGain", type: "mult", value: 1.6 },
+      ],
+      color: "pale-purple",
+      icons: [
+        { x: -0.25, y: 0, rotate: -135, size: 2, icon: "mdi-chart-bubble" },
+        { x: 0.4, y: 0.7, rotate: 75, size: 2.25, icon: "mdi-chart-bubble" },
+        { x: -0.5, y: 0.7, rotate: 0, size: 1.5, icon: "mdi-spider" },
+      ],
+    },
+    {
+      id: 35,
+      collection: "dangersInTheDark",
+      power: 5,
+      reward: [{ name: "miningResinMax", type: "base", value: 1 }],
+      color: "brown",
+      icons: [
+        { x: -1, y: 0.75, rotate: 0, size: 1.5, icon: "mdi-square" },
+        { x: 1, y: 0.75, rotate: 0, size: 1.5, icon: "mdi-square" },
+        { x: 0, y: 0.3, rotate: 0, size: 2.5, icon: "mdi-bridge" },
+        { x: 0, y: 0.1, rotate: 0, size: 1.25, icon: "mdi-circle" },
+      ],
+    },
+    {
+      id: 36,
+      collection: "dangersInTheDark",
+      power: 4,
+      reward: [
+        { name: "miningDamage", type: "mult", value: 1.25 },
+        { name: "miningResinMax", type: "base", value: 1 },
+      ],
+      color: "blue-grey",
+      icons: [
+        { x: 0, y: 0.8, rotate: 0, size: 1.75, icon: "mdi-human-handsdown" },
+        { x: -1, y: -0.35, rotate: 90, size: 1, icon: "mdi-motion" },
+        { x: 0.35, y: -0.1, rotate: 90, size: 1.05, icon: "mdi-motion" },
+        { x: 0.9, y: -0.5, rotate: 90, size: 1.1, icon: "mdi-motion" },
+        { x: -0.2, y: -0.65, rotate: 90, size: 1.15, icon: "mdi-motion" },
+        { x: -0.55, y: 0.75, rotate: 90, size: 1.2, icon: "mdi-motion" },
+      ],
+    },
+    {
+      id: 37,
+      collection: "dangersInTheDark",
+      power: 5,
+      reward: [{ name: "currencyMiningEmberGain", type: "mult", value: 1.25 }],
+      color: "light-green",
+      icons: [
+        { x: 0, y: 1, rotate: 90, size: 3, icon: "mdi-human-cane" },
+        { x: -0.6, y: -0.3, rotate: 0, size: 1.2, icon: "mdi-cloud" },
+        { x: 0.4, y: -0.75, rotate: 0, size: 1.4, icon: "mdi-cloud" },
+        { x: 0.7, y: 0, rotate: 0, size: 1.6, icon: "mdi-cloud" },
+      ],
+    },
+    {
+      id: 38,
+      collection: "dangersInTheDark",
+      power: 4,
+      reward: [
+        { name: "miningSmelterySpeed", type: "mult", value: 1.25 },
+        { name: "currencyMiningEmberGain", type: "base", value: 0.1 },
+        { name: "miningResinMax", type: "base", value: 1 },
+      ],
+      color: "pale-pink",
+      icons: [
+        { x: -0.85, y: 0.8, rotate: 90, size: 3, icon: "mdi-rectangle" },
+        { x: 0, y: -0.05, rotate: 20, size: 1.75, icon: "mdi-run-fast" },
+        { x: 0.45, y: 0.8, rotate: 150, size: 1, icon: "mdi-nail" },
+        { x: 0.6, y: 0.7, rotate: 170, size: 1, icon: "mdi-nail" },
+        { x: 0.8, y: 0.7, rotate: 190, size: 1, icon: "mdi-nail" },
+        { x: 0.7, y: 1, rotate: 0, size: 1.25, icon: "mdi-ellipse" },
+      ],
+    },
+  ],
   "modules/mining/enhancement": {
     barAluminium: {
       effect: [
@@ -24002,6 +27449,620 @@ export default {
     },
     card: cardList,
   },
+  "modules/village/cardList": [
+    {
+      id: 1,
+      collection: "caveLocations",
+      power: 2,
+      reward: [
+        { name: "currencyVillageStoneGain", type: "mult", value: 1.2 },
+        { name: "currencyVillageStoneCap", type: "mult", value: 1.1 },
+      ],
+      color: "teal",
+      icons: [
+        { x: 0.9, y: 0.7, rotate: 0, size: 0.5, icon: "mdi-human-handsdown" },
+        { x: -1, y: 0, rotate: 10, size: 1.8, icon: "mdi-chart-bubble" },
+        { x: -0.6, y: 0.5, rotate: -15, size: 2, icon: "mdi-chart-bubble" },
+        { x: -0.1, y: -0.15, rotate: -115, size: 2.2, icon: "mdi-chart-bubble" },
+        { x: 0, y: 0.5, rotate: 75, size: 2.3, icon: "mdi-chart-bubble" },
+        { x: -1.2, y: 0.6, rotate: 0, size: 0.8, icon: "mdi-circle" },
+      ],
+    },
+    {
+      id: 2,
+      collection: "caveLocations",
+      power: 3,
+      reward: [
+        { name: "currencyVillageGemGain", type: "mult", value: 1.2 },
+        { name: "currencyVillageGemCap", type: "mult", value: 1.1 },
+      ],
+      color: "pink-purple",
+      icons: [
+        { x: -0.9, y: 0.65, rotate: -20, size: 1.8, icon: "mdi-chart-bubble" },
+        { x: -0.4, y: -0.2, rotate: -30, size: 2, icon: "mdi-chart-bubble" },
+        { x: -0.05, y: 0.75, rotate: -135, size: 2.1, icon: "mdi-chart-bubble" },
+        { x: -0.3, y: 0.3, rotate: 65, size: 0.75, icon: "mdi-diamond-stone" },
+        { x: 0.85, y: 0.55, rotate: 0, size: 1.75, icon: "mdi-human-handsdown" },
+      ],
+    },
+    {
+      id: 3,
+      collection: "caveLocations",
+      power: 2,
+      reward: [
+        { name: "currencyVillageWaterGain", type: "mult", value: 1.2 },
+        { name: "currencyVillageWaterCap", type: "mult", value: 1.1 },
+      ],
+      color: "blue-grey",
+      icons: [
+        { x: -0.4, y: -0.95, rotate: 0, size: 2, icon: "mdi-nail" },
+        { x: 0.65, y: -1.05, rotate: 0, size: 1.6, icon: "mdi-nail" },
+        { x: 0, y: 1.2, rotate: 0, size: 1, icon: "mdi-triangle" },
+        { x: 0.65, y: 0, rotate: 0, size: 0.8, icon: "mdi-water" },
+      ],
+    },
+    {
+      id: 4,
+      collection: "caveLocations",
+      power: 2,
+      reward: [
+        { name: "currencyVillageMetalGain", type: "mult", value: 1.2 },
+        { name: "currencyVillageMetalCap", type: "mult", value: 1.1 },
+      ],
+      color: "cherry",
+      icons: [
+        { x: -0.8, y: 0.8, rotate: 75, size: 2.75, icon: "mdi-chart-bubble" },
+        { x: 0.75, y: 0.85, rotate: 40, size: 2.2, icon: "mdi-chart-bubble" },
+        { x: -0.1, y: -0.35, rotate: -25, size: 1.55, icon: "mdi-chart-bubble" },
+        { x: -0.55, y: -0.85, rotate: 20, size: 2.15, icon: "mdi-chart-bubble" },
+        { x: 0.5, y: -0.8, rotate: -95, size: 2.75, icon: "mdi-chart-bubble" },
+      ],
+    },
+    {
+      id: 5,
+      collection: "caveLocations",
+      power: 2,
+      reward: [
+        { name: "currencyVillagePlantFiberGain", type: "mult", value: 1.2 },
+        { name: "currencyVillagePlantFiberCap", type: "mult", value: 1.1 },
+      ],
+      color: "green",
+      icons: [
+        { x: 0.4, y: 0.7, rotate: -25, size: 2.15, icon: "mdi-chart-bubble" },
+        { x: -0.45, y: 0.5, rotate: 40, size: 2.55, icon: "mdi-chart-bubble" },
+        { x: -0.05, y: -0.15, rotate: 230, size: 2.15, icon: "mdi-chart-bubble" },
+        { x: -0.2, y: -0.65, rotate: -15, size: 0.75, icon: "mdi-flower" },
+        { x: 0.4, y: -0.4, rotate: 45, size: 0.65, icon: "mdi-flower" },
+      ],
+    },
+    {
+      id: 6,
+      collection: "neighborhood",
+      power: 2,
+      reward: [{ name: "villageWorker", type: "base", value: 8 }],
+      color: "green",
+      icons: [
+        { x: 0, y: -0.2, rotate: 0, size: 2.5, icon: "mdi-tent" },
+        { x: 0.8, y: -0.3, rotate: 0, size: 1, icon: "mdi-grass" },
+        { x: -0.75, y: 0.7, rotate: 0, size: 1.2, icon: "mdi-grass" },
+        { x: 0.2, y: 0.8, rotate: 0, size: 1.3, icon: "mdi-grass" },
+      ],
+    },
+    {
+      id: 7,
+      collection: "neighborhood",
+      power: 2,
+      reward: [{ name: "villageTaxRate", type: "mult", value: 1.25 }],
+      color: "pale-yellow",
+      icons: [
+        { x: -0.75, y: -0.2, rotate: 0, size: 1.75, icon: "mdi-slide" },
+        { x: 0.75, y: 0, rotate: 0, size: 1.75, icon: "mdi-seesaw" },
+        { x: -0.25, y: 0.85, rotate: 0, size: 1.5, icon: "mdi-layers-outline" },
+        { x: 0.25, y: 0.95, rotate: 0, size: 1, icon: "mdi-human-child" },
+        { x: -0.65, y: -0.25, rotate: -30, size: 1, icon: "mdi-human-child" },
+      ],
+    },
+    {
+      id: 8,
+      collection: "neighborhood",
+      power: 2,
+      reward: [
+        { name: "currencyVillageWoodGain", type: "mult", value: 1.2 },
+        { name: "currencyVillageStoneGain", type: "mult", value: 1.2 },
+        { name: "currencyVillagePlantFiberGain", type: "mult", value: 1.2 },
+      ],
+      color: "skyblue",
+      icons: [
+        { x: -0.8, y: -0.3, rotate: 0, size: 1.75, icon: "mdi-home" },
+        { x: 0.8, y: -0.3, rotate: 0, size: 1.75, icon: "mdi-home" },
+        { x: -0.05, y: -0.3, rotate: 0, size: 1.5, icon: "mdi-tree" },
+        { x: -0.7, y: 0.6, rotate: 90, size: 1.5, icon: "mdi-road" },
+        { x: 0, y: 0.6, rotate: 90, size: 1.5, icon: "mdi-road" },
+        { x: 0.7, y: 0.6, rotate: 90, size: 1.5, icon: "mdi-road" },
+      ],
+    },
+    {
+      id: 9,
+      collection: "neighborhood",
+      power: 3,
+      reward: [{ name: "villageMentalGain", type: "mult", value: 1.1 }],
+      color: "red",
+      icons: [
+        { x: -0.85, y: 0, rotate: 0, size: 1.7, icon: "mdi-fence" },
+        { x: 0, y: 0, rotate: 0, size: 1.7, icon: "mdi-fence" },
+        { x: 0.85, y: 0, rotate: 0, size: 1.7, icon: "mdi-fence" },
+        { x: -0.35, y: 0.15, rotate: 0, size: 2, icon: "mdi-human-greeting" },
+        { x: 0.65, y: -0.2, rotate: 0, size: 1.8, icon: "mdi-human-handsdown" },
+        { x: -0.6, y: -0.6, rotate: -20, size: 1, icon: "mdi-exclamation-thick" },
+        { x: -0.35, y: -0.65, rotate: 0, size: 1, icon: "mdi-exclamation-thick" },
+        { x: -0.1, y: -0.6, rotate: 20, size: 1, icon: "mdi-exclamation-thick" },
+        { x: 0.65, y: -1, rotate: 0, size: 1, icon: "mdi-help" },
+        { x: 0.35, y: 0.85, rotate: 0, size: 1, icon: "mdi-football" },
+      ],
+    },
+    {
+      id: 10,
+      collection: "neighborhood",
+      power: 2,
+      reward: [
+        { name: "currencyVillageWoodCap", type: "mult", value: 1.1 },
+        { name: "currencyVillageStoneCap", type: "mult", value: 1.1 },
+        { name: "currencyVillagePlantFiberCap", type: "mult", value: 1.1 },
+      ],
+      color: "lime",
+      icons: [
+        { x: -0.7, y: -0.1, rotate: 0, size: 2.5, icon: "mdi-home" },
+        { x: 0, y: 0.2, rotate: 0, size: 1, icon: "mdi-fence" },
+        { x: 0.5, y: 0.2, rotate: 0, size: 1, icon: "mdi-gate" },
+        { x: 1, y: 0.2, rotate: 0, size: 1, icon: "mdi-fence" },
+        { x: 0.75, y: 0.75, rotate: 0, size: 1, icon: "mdi-flower" },
+        { x: -0.8, y: 0.9, rotate: 0, size: 2, icon: "mdi-tree" },
+      ],
+    },
+    {
+      id: 11,
+      collection: "neighborhood",
+      power: 2,
+      reward: [{ name: "queueSpeedVillageBuilding", type: "mult", value: 1.2 }],
+      color: "cherry",
+      icons: [
+        { x: 0, y: -0.65, rotate: 0, size: 4, icon: "mdi-home-roof" },
+        { x: -0.75, y: 0.25, rotate: 90, size: 3, icon: "mdi-minus" },
+        { x: 0.75, y: 0.25, rotate: 90, size: 3, icon: "mdi-minus" },
+        { x: -0.35, y: -0.2, rotate: 0, size: 1, icon: "mdi-track-light" },
+        { x: 0.3, y: 0.9, rotate: 0, size: 2, icon: "mdi-tow-truck" },
+        { x: -0.6, y: 1, rotate: 0, size: 1, icon: "mdi-wall" },
+      ],
+    },
+    {
+      id: 12,
+      collection: "neighborhood",
+      power: 3,
+      color: "pale-green",
+      icons: [
+        { x: -0.5, y: 0, rotate: 0, size: 1.75, icon: "mdi-rv-truck" },
+        { x: 0.15, y: 0.6, rotate: 0, size: 1.25, icon: "mdi-campfire" },
+        { x: -0.8, y: 0.9, rotate: 0, size: 1.4, icon: "mdi-tree" },
+        { x: -0.3, y: -0.7, rotate: 0, size: 1.25, icon: "mdi-tree" },
+        { x: 0.85, y: 0.5, rotate: 0, size: 1.6, icon: "mdi-tree" },
+        { x: 0.4, y: -0.25, rotate: 0, size: 1.1, icon: "mdi-pine-tree" },
+        { x: 0.9, y: -0.6, rotate: 0, size: 1.5, icon: "mdi-pine-tree" },
+      ],
+    },
+    {
+      id: 13,
+      collection: "neighborhood",
+      power: 4,
+      reward: [
+        { name: "villageWorker", type: "base", value: 6 },
+        { name: "villageHappiness", type: "base", value: 0.01 },
+      ],
+      color: "deep-purple",
+      icons: [
+        { x: -0.3, y: -0.85, rotate: 0, size: 1.25, icon: "mdi-window-open" },
+        { x: 0.1, y: 0, rotate: 0, size: 1.5, icon: "mdi-sofa" },
+        { x: 0.9, y: -0.4, rotate: 0, size: 1, icon: "mdi-television-classic" },
+        { x: -0.85, y: -0.1, rotate: 0, size: 1.75, icon: "mdi-lamps" },
+        { x: 0, y: 0.8, rotate: 0, size: 2, icon: "mdi-rug" },
+        { x: 0.9, y: 0.1, rotate: 0, size: 1, icon: "mdi-dresser" },
+      ],
+    },
+    {
+      id: 14,
+      collection: "neighborhood",
+      power: 2,
+      reward: [{ name: "villageFoodGain", type: "mult", value: 1.2 }],
+      color: "light-green",
+      icons: [
+        { x: -0.55, y: 0, rotate: 0, size: 2.5, icon: "mdi-home" },
+        { x: -0.05, y: 0.8, rotate: 0, size: 1.4, icon: "mdi-dog-side" },
+        { x: 0.8, y: 0.4, rotate: 0, size: 0.75, icon: "mdi-soccer" },
+        { x: 0.4, y: 0.2, rotate: 0, size: 0.5, icon: "mdi-tennis-ball" },
+      ],
+    },
+    {
+      id: 15,
+      collection: "plantsInTheCity",
+      power: 2,
+      reward: [{ name: "currencyVillageGrainGain", type: "mult", value: 1.6 }],
+      color: "light-blue",
+      icons: [
+        { x: 0, y: 0.4, rotate: 0, size: 3, icon: "mdi-home-city" },
+        { x: 0, y: -0.55, rotate: 0, size: 1, icon: "mdi-flower" },
+        { x: 0.7, y: -0.55, rotate: 0, size: 1, icon: "mdi-flower-tulip" },
+        { x: 0.35, y: -1, rotate: 0, size: 1.3, icon: "mdi-tree" },
+        { x: 0.38, y: -0.5, rotate: 90, size: 1.3, icon: "mdi-minus" },
+      ],
+    },
+    {
+      id: 16,
+      collection: "plantsInTheCity",
+      power: 2,
+      reward: [
+        { name: "currencyVillageWoodGain", type: "mult", value: 1.2 },
+        { name: "currencyVillageWoodCap", type: "mult", value: 1.1 },
+      ],
+      color: "beige",
+      icons: [
+        { x: 0, y: -0.1, rotate: 0, size: 4, icon: "mdi-tree" },
+        { x: 0, y: 0.8, rotate: 0, size: 1, icon: "mdi-triangle" },
+        { x: 0.45, y: 0.85, rotate: 0, size: 0.5, icon: "mdi-sign-text" },
+        { x: -0.8, y: 0.8, rotate: 0, size: 0.75, icon: "mdi-human-male-female-child" },
+      ],
+    },
+    {
+      id: 17,
+      collection: "plantsInTheCity",
+      power: 2,
+      reward: [{ name: "villageResourceGain", type: "mult", value: 1.1 }],
+      color: "cherry",
+      icons: [
+        { x: 0.45, y: 0.15, rotate: 0, size: 3, icon: "mdi-truck-flatbed" },
+        { x: 0.1, y: -0.1, rotate: -50, size: 2, icon: "mdi-tree" },
+        { x: -0.85, y: 0.45, rotate: 0, size: 1.25, icon: "mdi-human-handsup" },
+        { x: -0.6, y: 0.05, rotate: -55, size: 1, icon: "mdi-axe" },
+      ],
+    },
+    {
+      id: 18,
+      collection: "plantsInTheCity",
+      power: 2,
+      reward: [{ name: "currencyVillageFruitGain", type: "mult", value: 1.6 }],
+      color: "green",
+      icons: [
+        { x: -0.65, y: 0.65, rotate: 0, size: 2, icon: "mdi-layers-outline" },
+        { x: -0.65, y: 0.25, rotate: 0, size: 1.25, icon: "mdi-flower" },
+        { x: 0.65, y: 0.65, rotate: 0, size: 2, icon: "mdi-layers-outline" },
+        { x: 0.65, y: 0.1, rotate: 0, size: 2, icon: "mdi-tree" },
+        { x: 0, y: -0.4, rotate: 0, size: 2, icon: "mdi-layers-outline" },
+        { x: 0, y: -0.8, rotate: 0, size: 1.25, icon: "mdi-flower-tulip" },
+      ],
+    },
+    {
+      id: 19,
+      collection: "plantsInTheCity",
+      power: 1,
+      reward: [{ name: "currencyVillagePlantFiberGain", type: "mult", value: 1.75 }],
+      color: "light-green",
+      icons: [
+        { x: -0.7, y: 0, rotate: 0, size: 2, icon: "mdi-human-handsdown" },
+        { x: -0.3, y: 0.15, rotate: -60, size: 1.2, icon: "mdi-shovel" },
+        { x: 0.3, y: 0.3, rotate: 0, size: 0.8, icon: "mdi-sprout" },
+        { x: 0.9, y: 0.3, rotate: 0, size: 0.8, icon: "mdi-sprout" },
+      ],
+    },
+    {
+      id: 20,
+      collection: "industrialRevolution",
+      power: 3,
+      reward: [
+        { name: "currencyVillageHardwoodGain", type: "mult", value: 1.2 },
+        { name: "currencyVillageHardwoodCap", type: "mult", value: 1.1 },
+      ],
+      color: "cherry",
+      icons: [
+        { x: 0.6, y: 0.4, rotate: 55, size: 3, icon: "mdi-tree" },
+        { x: -0.3, y: 0.8, rotate: 90, size: 0.5, icon: "mdi-rectangle" },
+        { x: -0.95, y: 0.5, rotate: 0, size: 1.5, icon: "mdi-human-handsdown" },
+        { x: -0.55, y: 0.5, rotate: 0, size: 0.9, icon: "mdi-axe" },
+      ],
+    },
+    {
+      id: 21,
+      collection: "industrialRevolution",
+      power: 3,
+      reward: [
+        { name: "currencyVillageWoodCap", type: "mult", value: 1.15 },
+        { name: "currencyVillageHardwoodCap", type: "mult", value: 1.15 },
+      ],
+      color: "brown",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 4, icon: "mdi-truck-flatbed" },
+        { x: -0.85, y: -0.1, rotate: 0, size: 1, icon: "mdi-rectangle" },
+        { x: -0.5, y: -0.1, rotate: 0, size: 1, icon: "mdi-rectangle" },
+        { x: -0.15, y: -0.1, rotate: 0, size: 1, icon: "mdi-rectangle" },
+        { x: -0.85, y: -0.5, rotate: 0, size: 1, icon: "mdi-rectangle" },
+        { x: -0.5, y: -0.5, rotate: 0, size: 1, icon: "mdi-rectangle" },
+        { x: -0.15, y: -0.5, rotate: 0, size: 1, icon: "mdi-rectangle" },
+        { x: -0.85, y: -0.9, rotate: 0, size: 1, icon: "mdi-rectangle" },
+        { x: -0.5, y: -0.9, rotate: 0, size: 1, icon: "mdi-rectangle" },
+        { x: -0.15, y: -0.9, rotate: 0, size: 1, icon: "mdi-rectangle" },
+      ],
+    },
+    {
+      id: 22,
+      collection: "industrialRevolution",
+      power: 3,
+      reward: [{ name: "currencyVillageKnowledgeCap", type: "mult", value: 1.1 }],
+      color: "pale-purple",
+      icons: [
+        { x: -0.5, y: -0.3, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: 0.5, y: -0.3, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: -0.5, y: 0.6, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: 0.5, y: 0.6, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: 0.3, y: 0.35, rotate: 0, size: 1, icon: "mdi-beaker" },
+        { x: -0.45, y: -0.6, rotate: 0, size: 1, icon: "mdi-flask" },
+        { x: 0.2, y: -0.6, rotate: 0, size: 1, icon: "mdi-bottle-tonic" },
+        { x: 0.55, y: -0.6, rotate: 0, size: 1, icon: "mdi-bottle-tonic" },
+        { x: -0.2, y: 0.5, rotate: 45, size: 0.5, icon: "mdi-pencil" },
+      ],
+    },
+    {
+      id: 23,
+      collection: "industrialRevolution",
+      power: 4,
+      reward: [{ name: "currencyVillageScienceGain", type: "mult", value: 1.3 }],
+      color: "cyan",
+      icons: [
+        { x: -0.3, y: 0.3, rotate: 0, size: 1, icon: "mdi-test-tube" },
+        { x: 0, y: 0.3, rotate: 0, size: 1, icon: "mdi-test-tube-empty" },
+        { x: 0.3, y: 0.3, rotate: 0, size: 1, icon: "mdi-test-tube-empty" },
+        { x: -0.1, y: -0.3, rotate: 0, size: 1, icon: "mdi-eyedropper" },
+      ],
+    },
+    {
+      id: 24,
+      collection: "industrialRevolution",
+      power: 2,
+      reward: [
+        { name: "currencyVillageGlassGain", type: "mult", value: 1.2 },
+        { name: "currencyVillageGlassCap", type: "mult", value: 1.1 },
+      ],
+      color: "lime",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 4, icon: "mdi-microscope" },
+        { x: 0.4, y: 0, rotate: -90, size: 0.7, icon: "mdi-bacteria" },
+        { x: 0.75, y: 0, rotate: 0, size: 0.7, icon: "mdi-virus" },
+      ],
+    },
+    {
+      id: 25,
+      collection: "industrialRevolution",
+      power: 2,
+      reward: [{ name: "currencyVillageCoinCap", type: "mult", value: 1.18 }],
+      color: "amber",
+      icons: [
+        { x: -0.4, y: -0.05, rotate: 70, size: 2, icon: "mdi-bowl-mix" },
+        { x: 0.5, y: 0.5, rotate: 0, size: 2, icon: "mdi-gold" },
+      ],
+    },
+    {
+      id: 26,
+      collection: "industrialRevolution",
+      power: 3,
+      reward: [{ name: "currencyVillageFaithGain", type: "mult", value: 1.2 }],
+      color: "light-grey",
+      icons: [
+        { x: -0.5, y: 0.35, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: 0.5, y: 0.35, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: 0, y: -0.1, rotate: 0, size: 1, icon: "mdi-arrow-collapse-down" },
+        { x: 0, y: -1, rotate: 90, size: 1, icon: "mdi-minus" },
+        { x: 0, y: -0.7, rotate: 90, size: 1, icon: "mdi-minus" },
+        { x: 0, y: -0.4, rotate: 90, size: 1, icon: "mdi-minus" },
+        { x: -0.65, y: 0.05, rotate: 0, size: 1, icon: "mdi-gold" },
+        { x: 0.15, y: 0.2, rotate: 80, size: 1, icon: "mdi-nail" },
+        { x: 0.8, y: 0.05, rotate: 180, size: 1, icon: "mdi-nail" },
+      ],
+    },
+    {
+      id: 27,
+      collection: "industrialRevolution",
+      power: 2,
+      reward: [{ name: "currencyVillageKnowledgeGain", type: "mult", value: 1.3 }],
+      color: "pale-orange",
+      icons: [
+        { x: -0.55, y: 0, rotate: 0, size: 1.5, icon: "mdi-bookshelf" },
+        { x: -0.05, y: 0, rotate: 0, size: 1.5, icon: "mdi-bookshelf" },
+        { x: 0.55, y: 0, rotate: 0, size: 1.5, icon: "mdi-bookshelf" },
+        { x: -0.55, y: 0.75, rotate: 0, size: 1.5, icon: "mdi-bookshelf" },
+        { x: 0.05, y: 0.75, rotate: 0, size: 1.5, icon: "mdi-bookshelf" },
+        { x: 0.55, y: 0.75, rotate: 0, size: 1.5, icon: "mdi-bookshelf" },
+        { x: 0.5, y: -0.85, rotate: 0, size: 1.25, icon: "mdi-book" },
+        { x: -0.2, y: -0.8, rotate: 0, size: 1, icon: "mdi-candle" },
+      ],
+    },
+    {
+      id: 28,
+      collection: "industrialRevolution",
+      power: 3,
+      reward: [{ name: "currencyVillageFaithCap", type: "mult", value: 1.25 }],
+      color: "blue-grey",
+      icons: [
+        { x: 0, y: 0, rotate: 0, size: 1.75, icon: "mdi-cog" },
+        { x: -0.7, y: -0.25, rotate: 10, size: 1.5, icon: "mdi-cog" },
+        { x: -1, y: 0.35, rotate: 0, size: 1.25, icon: "mdi-cog" },
+        { x: 0.8, y: 0, rotate: 30, size: 1.6, icon: "mdi-cog" },
+      ],
+    },
+    {
+      id: 29,
+      collection: "industrialRevolution",
+      power: 3,
+      reward: [{ name: "currencyVillageFishGain", type: "mult", value: 1.6 }],
+      color: "pale-blue",
+      icons: [
+        { x: 0.6, y: 0.6, rotate: 0, size: 2, icon: "mdi-stove" },
+        { x: 0.4, y: -0.1, rotate: 0, size: 1, icon: "mdi-pot-mix" },
+        { x: -0.4, y: -0.25, rotate: 0, size: 2, icon: "mdi-robot-industrial" },
+        { x: -0.35, y: 0.3, rotate: 0, size: 3, icon: "mdi-minus" },
+        { x: 0.15, y: -0.55, rotate: 40, size: 0.75, icon: "mdi-food-apple" },
+      ],
+    },
+    {
+      id: 30,
+      collection: "industrialRevolution",
+      power: 2,
+      reward: [
+        { name: "currencyVillageFaithGain", type: "mult", value: 1.25 },
+        { name: "currencyVillageFaithCap", type: "mult", value: 1.3 },
+      ],
+      color: "grey",
+      icons: [
+        { x: 0, y: -0.6, rotate: 0, size: 3, icon: "mdi-garage-open" },
+        { x: -0.15, y: 0.65, rotate: 0, size: 2, icon: "mdi-human-handsdown" },
+        { x: 0.3, y: 0.6, rotate: 15, size: 0.75, icon: "mdi-remote" },
+        { x: 0, y: -0.25, rotate: 0, size: 1, icon: "mdi-car" },
+      ],
+    },
+    {
+      id: 31,
+      collection: "industrialRevolution",
+      power: 3,
+      reward: [
+        { name: "currencyVillageFaithGain", type: "mult", value: 1.12 },
+        { name: "villageResourceGain", type: "mult", value: 1.05 },
+      ],
+      color: "pale-red",
+      icons: [
+        { x: 0, y: 0.5, rotate: 0, size: 3.5, icon: "mdi-square-outline" },
+        { x: 0, y: 0.85, rotate: 0, size: 1, icon: "mdi-power-socket" },
+        { x: 0, y: 0.05, rotate: 0, size: 2.25, icon: "mdi-engine" },
+        { x: 0.45, y: -0.9, rotate: -65, size: 1.5, icon: "mdi-fuel" },
+        { x: -0.05, y: -0.55, rotate: 0, size: 0.4, icon: "mdi-water" },
+      ],
+    },
+    {
+      id: 32,
+      collection: "industrialRevolution",
+      power: 4,
+      reward: [{ name: "currencyVillageVegetableGain", type: "mult", value: 1.6 }],
+      color: "yellow",
+      icons: [
+        { x: 0, y: 0.25, rotate: 0, size: 3, icon: "mdi-home" },
+        { x: 0.3, y: -0.5, rotate: 45, size: 1, icon: "mdi-solar-panel" },
+        { x: 0.7, y: -0.1, rotate: 45, size: 1, icon: "mdi-solar-panel" },
+        { x: -0.85, y: 1, rotate: 0, size: 2, icon: "mdi-chart-line-variant" },
+      ],
+    },
+    {
+      id: 33,
+      collection: "industrialRevolution",
+      power: 4,
+      reward: [{ name: "currencyVillageJoyGain", type: "mult", value: 1.3 }],
+      color: "indigo",
+      icons: [
+        { x: 0, y: 0.2, rotate: 0, size: 4, icon: "mdi-car-side" },
+        { x: 0.2, y: -0.1, rotate: 0, size: 0.5, icon: "mdi-robot" },
+        { x: 0, y: -0.6, rotate: 0, size: 1, icon: "mdi-antenna" },
+      ],
+    },
+    {
+      id: 34,
+      collection: "maintainingSafety",
+      power: 2,
+      reward: [{ name: "villageWorker", type: "mult", value: 1.1 }],
+      color: "orange",
+      icons: [
+        { x: 0.6, y: 0.2, rotate: 0, size: 2.5, icon: "mdi-home" },
+        { x: 0.85, y: -0.4, rotate: 20, size: 1, icon: "mdi-fire" },
+        { x: 1.15, y: -0.15, rotate: 20, size: 1, icon: "mdi-fire" },
+        { x: 0.15, y: -0.4, rotate: 0, size: 1.4, icon: "mdi-smoke" },
+        { x: -0.65, y: 0.6, rotate: 0, size: 2, icon: "mdi-fire-truck" },
+      ],
+    },
+    {
+      id: 35,
+      collection: "maintainingSafety",
+      power: 4,
+      reward: [
+        { name: "currencyVillageHardwoodCap", type: "mult", value: 1.15 },
+        { name: "currencyVillageGemCap", type: "mult", value: 1.15 },
+      ],
+      color: "dark-blue",
+      icons: [
+        { x: 0.5, y: -0.4, rotate: 0, size: 2, icon: "mdi-police-station" },
+        { x: -0.6, y: -0.05, rotate: 0, size: 1.25, icon: "mdi-car-emergency" },
+        { x: 0.05, y: 0.65, rotate: 0, size: 1.25, icon: "mdi-horse-human" },
+      ],
+    },
+    {
+      id: 36,
+      collection: "maintainingSafety",
+      power: 4,
+      reward: [{ name: "currencyVillageWaterCap", type: "mult", value: 1.2 }],
+      color: "cyan",
+      icons: [
+        { x: 0.75, y: 0.8, rotate: 35, size: 2.3, icon: "mdi-chart-bubble" },
+        { x: 0.75, y: 0, rotate: 45, size: 2.5, icon: "mdi-chart-bubble" },
+        { x: 0, y: 0.5, rotate: 10, size: 1.9, icon: "mdi-chart-bubble" },
+        { x: -0.15, y: 1, rotate: -65, size: 1.4, icon: "mdi-chart-bubble" },
+        { x: 0.65, y: -0.65, rotate: 0, size: 2, icon: "mdi-lighthouse-on" },
+        { x: -0.85, y: 1, rotate: 0, size: 1.75, icon: "mdi-waves" },
+        { x: -0.85, y: 0.1, rotate: 0, size: 1.75, icon: "mdi-ferry" },
+      ],
+    },
+    {
+      id: 37,
+      collection: "maintainingSafety",
+      power: 4,
+      reward: [
+        { name: "currencyVillageStoneCap", type: "mult", value: 1.18 },
+        { name: "currencyVillageMetalCap", type: "mult", value: 1.12 },
+      ],
+      color: "wooden",
+      icons: [
+        { x: 0, y: -0.4, rotate: 0, size: 3, icon: "mdi-tree" },
+        { x: 0.025, y: 0.75, rotate: 90, size: 3, icon: "mdi-minus" },
+        { x: -0.15, y: 0.5, rotate: 20, size: 1.3, icon: "mdi-minus" },
+        { x: 0.45, y: 0.4, rotate: -5, size: 2.45, icon: "mdi-minus" },
+        { x: 0.6, y: 0.15, rotate: -5, size: 0.75, icon: "mdi-dog-side" },
+        { x: -0.8, y: 0.85, rotate: 0, size: 1.3, icon: "mdi-fire-truck" },
+        { x: 0.55, y: 1, rotate: 0, size: 0.9, icon: "mdi-human-handsup" },
+      ],
+    },
+    {
+      id: 38,
+      collection: "maintainingSafety",
+      power: 4,
+      reward: [
+        { name: "villageTaxRate", type: "mult", value: 1.15 },
+        { name: "currencyVillageCoinCap", type: "mult", value: 1.1 },
+      ],
+      color: "red",
+      icons: [
+        { x: 0.5, y: 0, rotate: 0, size: 2, icon: "mdi-ambulance" },
+        { x: -0.1, y: -0.05, rotate: 0, size: 1.35, icon: "mdi-human-baby-changing-table" },
+        { x: -0.7, y: 0.75, rotate: 0, size: 1.35, icon: "mdi-human-male-female-child" },
+      ],
+    },
+    {
+      id: 39,
+      collection: "maintainingSafety",
+      power: 3,
+      reward: [
+        { name: "currencyVillageMetalCap", type: "mult", value: 1.15 },
+        { name: "currencyVillageGlassCap", type: "mult", value: 1.25 },
+      ],
+      color: "beige",
+      icons: [
+        { x: -0.7, y: 0.2, rotate: 0, size: 2, icon: "mdi-tower-beach" },
+        { x: -0.8, y: 0.95, rotate: 0, size: 1.9, icon: "mdi-ellipse" },
+        { x: -0.15, y: 1, rotate: 0, size: 1.8, icon: "mdi-ellipse" },
+        { x: 0.6, y: 0.9, rotate: 0, size: 1, icon: "mdi-waves" },
+        { x: 1, y: 0.9, rotate: 0, size: 1, icon: "mdi-waves" },
+      ],
+    },
+  ],
   "modules/village/craftingRecipe": {
     // Base recipes
     rope: {
@@ -26547,6 +30608,7 @@ export default {
       ...filterColorObject(colors, colorFilter),
     },
   },
+  "theme/colors": obj,
   "theme/cyan": {
     price: 1000,
     light: { primary: "#19D2D2", secondary: "#424242", accent: "#82FFFF" },

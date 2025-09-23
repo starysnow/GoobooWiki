@@ -1,0 +1,50 @@
+export default {
+    萤火虫: {类型: 'cindersProducer', 图标: 'mdi-蜜蜂', price(lvl) {
+        return lvl > 0 ? {event_light: store.getters['mult/新的更新!']('非第一生产者成本', 1000 * Math.pow(1.15, lvl))} : {};
+    }},
+    发光蘑菇: {类型: 'cindersProducer', 图标: 'mdi-mushroom', requirement() {
+        return store.state.升级成本.item.event_firefly.达到等级 {0} > 0;
+    }, price(lvl) {
+        return {event_light: store.getters['mult/新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', buildNum(50, 'M') * Math.pow(1.16, lvl))};
+    }},
+    发光鱼: {类型: 'cindersProducer', 图标: 'mdi-鱼', requirement() {
+        return store.state.升级成本.item.event_glowshroom.达到等级 {0} > 0;
+    }, price(lvl) {
+        return {event_light: store.getters['mult/新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', buildNum(3, 'T') * Math.pow(1.17, lvl))};
+    }},
+    灯: {类型: 'cindersProducer', 图标: 'mdi-lamp', requirement() {
+        return store.state.升级成本.item.event_glowfish.达到等级 {0} > 0;
+    }, price(lvl) {
+        return {event_light: store.getters['mult/新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', buildNum(240, 'Qa') * Math.pow(1.18, lvl))};
+    }},
+    营火: {类型: 'cindersProducer', 图标: 'mdi-营火', requirement() {
+        return store.state.升级成本.item.event_lantern.达到等级 {0} > 0;
+    }, price(lvl) {
+        return {event_light: store.getters['mult/新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', buildNum(24, 'Sx') * Math.pow(1.19, lvl))};
+    }},
+    珊瑚: {类型: 'cindersProducer', 图标: 'mdi-spa', requirement() {
+        return store.state.升级成本.item.event_campfire.达到等级 {0} > 0;
+    }, price(lvl) {
+        return {event_light: store.getters['mult/新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', buildNum(3.6, 'O') * Math.pow(1.2, lvl))};
+    }},
+    海蜇: {类型: 'cindersProducer', 图标: 'mdi-海蜇', requirement() {
+        return store.state.升级成本.item.event_coral.达到等级 {0} > 0;
+    }, price(lvl) {
+        return {event_light: store.getters['mult/新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', buildNum(720, 'N') * Math.pow(1.25, lvl))};
+    }},
+    夜花: {类型: 'cindersProducer', 图标: 'mdi-仅鲜花', requirement() {
+        return store.state.升级成本.item.event_jellyfish.达到等级 {0} > 0;
+    }, price(lvl) {
+        return {event_light: store.getters['mult/新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', buildNum(180, 'UD') * Math.pow(1.3, lvl))};
+    }},
+    霓虹灯: {类型: 'cindersProducer', 图标: 'mdi-ruler', requirement() {
+        return store.state.升级成本.item.event_nightbloom.达到等级 {0} > 0;
+    }, price(lvl) {
+        return {event_light: store.getters['mult/新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', buildNum(54, 'TD') * Math.pow(1.35, lvl))};
+    }},
+    太阳药水: {类型: 'cindersProducer', 图标: 'mdi-white-平衡-sunny', requirement() {
+        return store.state.升级成本.item.event_neonlight.达到等级 {0} > 0;
+    }, price(lvl) {
+        return {event_light: store.getters['mult/新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', buildNum(27, 'QiD') * Math.pow(1.5, lvl))};
+    }}
+}

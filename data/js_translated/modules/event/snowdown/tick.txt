@@ -1,0 +1,8 @@
+export default function(seconds) {
+    ['树苗', '纱', '面团', '雪'].forEach(name => {
+        const 增益 = store.getters['mult/新的更新!'](store.getters['收集 {0} /gainMultName']('事件', name));
+        if (增益 > 0) {
+            store.dispatch('收集 {0} /增益', {feature: '事件', name, amount: 增益 * seconds});
+        }
+    });
+}

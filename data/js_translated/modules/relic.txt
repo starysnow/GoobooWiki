@@ -1,0 +1,11 @@
+export default {
+    name: '圣遗物',
+    unlockNeeded: 'relicFeature',
+    解锁: ['relicFeature', 'relicMuseum'],
+    笔记: buildArray(1).map(() => 'G'),
+    init() {
+        for (const [加载的存档文件缺少所需数据, elem] of Object.entries(glyph)) {
+            store.commit('圣遗物/initGlyph', {name: 加载的存档文件缺少所需数据, ...elem});
+        }
+    }
+}

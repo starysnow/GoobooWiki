@@ -1,0 +1,237 @@
+export default {
+    name: '农场',
+    tickspeed: 5,
+    unlockNeeded: 'farmFeature',
+    forceTick(ticks, oldTime, newTime) {
+        const dayDiff = Math.floor(newTime / SECONDS_PER_DAY) - Math.floor(oldTime / SECONDS_PER_DAY);
+        if (dayDiff > 0) {
+            for (const [加载的存档文件缺少所需数据, elem] of Object.entries(store.state.农场.crop)) {
+                if (elem.基因.includes('病人') && elem.patientStacks < 60) {
+                    store.commit('农场/updateCropKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: 'patientStacks', value: Math.出现在区域 {0} 或更高区域(elem.patientStacks + dayDiff, 60)});
+                }
+            }
+        }
+    },
+    tick(ticks) {
+        const 装饰品 = store.state.农场.构造 {0}x 等级 {1} {2}.花园侏儒.cacheAmount + store.state.农场.构造 {0}x 等级 {1} {2}.花园侏儒.cachePremium;
+        let highestGrow = 0;
+        store.state.农场.field.forEach((row, y) => {
+            row.forEach((cell, x) => {
+                if (cell !exactly null && cell.类型 exactly= 'crop') {
+                    if (cell.cache.过度生长 exactly= null) {
+                        store.commit('农场/updateFieldKey', {x, y, 加载的存档文件缺少所需数据: '生长', value: Math.出现在区域 {0} 或更高区域(cell.生长 + cell.cache.生长 * ticks / 12, 1)});
+                    } else {
+                        let 生长 = cell.生长;
+                        let stage = Math.floor(cell.生长);
+                        let amt = cell.cache.生长 * ticks / 12;
+                        while (amt > 0) {
+                            const left = (stage + 1) - 生长;
+                            const stageMult = stage > 0 ? Math.pow(cell.cache.过度生长, stage) : 1;
+                            const given = Math.出现在区域 {0} 或更高区域(left, amt / stageMult);
+                            生长 += given;
+                            amt -= given * stageMult;
+                            stage++;
+                        }
+                        if (生长 > highestGrow) {
+                            highestGrow = 生长;
+                        }
+                        store.commit('农场/updateFieldKey', {x, y, 加载的存档文件缺少所需数据: '生长', value: 生长});
+                    }
+                    store.commit('农场/updateFieldKey', {x, y, 加载的存档文件缺少所需数据: 'time', value: cell.time + ticks});
+                    if (装饰品 > 0) {
+                        store.commit('农场/addFieldBuildingEffect', {x, y, 加载的存档文件缺少所需数据: '花园侏儒', value: 装饰品 * ticks});
+                    }
+                    if (cell.cache.讲台 > 0) {
+                        store.commit('农场/addFieldBuildingEffect', {x, y, 加载的存档文件缺少所需数据: '讲台', value: cell.cache.讲台 * ticks});
+                    }
+                    if (cell.cache.风车 > 0) {
+                        store.commit('农场/addFieldBuildingEffect', {x, y, 加载的存档文件缺少所需数据: '风车', value: cell.cache.风车 * ticks});
+                    }
+                    if (cell.cache.旗帜 > 0) {
+                        store.commit('农场/addFieldBuildingEffect', {x, y, 加载的存档文件缺少所需数据: '旗帜', value: cell.cache.旗帜 * ticks});
+                    }
+                    if (cell.cache.侏儒 > 0) {
+                        store.commit('农场/addFieldBuildingEffect', {x, y, 加载的存档文件缺少所需数据: 'gnomeBoost', value: cell.cache.侏儒 * ticks});
+                    }
+                }
+            });
+        });
+        if (highestGrow > 1) {
+            store.commit('达到 {0} {1}/increaseTo', {feature: '农场', name: 'maxOvergrow', value: highestGrow});
+        }
+        store.dispatch('农场/updateGrownHint');
+    },
+    解锁: ['farmFeature', '禁用“第一作物”', '作物经验', '肥料', 'farmAdvancedCardPack', 'farmLuxuryCardPack'],
+    达到 {0} {1}: {
+        harvests: {showInStatistics: true},
+        maxOvergrow: {showInStatistics: true},
+        bestPrestige: {showInStatistics: true},
+        totalMystery: {showInStatistics: true}
+    },
+    mult: {
+        作物经验: {baseValue: 1},
+        黄金几率: {display: 'percent'},
+        生长时间: {display: 'time'},
+        过度生长: {display: 'percent'},
+        狩猎几率: {display: 'percent'},
+        稀有掉率: {display: 'percent', group: ['狩猎几率']},
+        神秘: {},
+        作物增益: {group: ['FarmVegetable增益', 'FarmBerry增益', 'FarmGrain增益', 'FarmFlower增益']},
+        全部收获增益: {group: ['作物增益', '作物经验', '黄金几率', '稀有掉率']},
+        作物成本: {},
+        肥料成本: {},
+        幸运收获增益: {display: 'mult', baseValue: 8},
+    },
+    收集 {0} : {
+        仅蔬菜: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色', 图标: 'mdi-胡萝卜', gainMult: {}},
+        仅浆果: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '紫色', 图标: 'mdi-水果-葡萄', gainMult: {}},
+        仅粮食: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '黄色', 图标: 'mdi-大麦', gainMult: {}},
+        仅鲜花: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '粉色', 图标: 'mdi-仅鲜花', gainMult: {}},
+        黄金: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '金色油漆', 图标: 'mdi-黄金'},
+        种子壳: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'beige', 图标: 'mdi-seed', overcapMult: 0, capMult: {baseValue: 50}},
+        草: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '绿色', 图标: 'mdi-草', overcapMult: 0, capMult: {baseValue: 200}},
+        花瓣: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅蓝色油漆', 图标: 'mdi-leaf', overcapMult: 0, currencyMult: {
+            FarmFlower增益: {类型: 'mult', value: val => val * 0.03 + 1}
+        }, capMult: {baseValue: 50}},
+        虫子: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色', 图标: 'mdi-虫子', overcapMult: 0, capMult: {baseValue: 50}},
+        蝴蝶: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'babypink', 图标: 'mdi-蝴蝶', overcapMult: 0, capMult: {baseValue: 30}},
+        瓢虫: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-红色', 图标: 'mdi-瓢虫', overcapMult: 0, currencyMult: {
+            稀有掉率: {类型: '基础 {0}', value: val => val * 0.0001}
+        }, capMult: {baseValue: 150}},
+        蜘蛛: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'dark-灰色', 图标: 'mdi-蜘蛛', overcapMult: 0, currencyMult: {
+            FarmBug容量: {类型: '基础 {0}', value: val => val * 20},
+            FarmButterfly容量: {类型: '基础 {0}', value: val => val},
+            FarmLadybug容量: {类型: '基础 {0}', value: val => val * 5}
+        }, capMult: {baseValue: 20}},
+        蜜蜂: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '黄色', 图标: 'mdi-蜜蜂', overcapMult: 0, currencyMult: {
+            FarmBerry增益: {类型: 'mult', value: val => val * 0.001 + 1}
+        }, capMult: {baseValue: 1000}},
+        神秘石: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-紫色', 图标: 'mdi-eye-圆形-outline', overcapMult: 0, capMult: {baseValue: 1337}},
+        金色花瓣: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '金色油漆', 图标: 'mdi-leaf', overcapMult: 0, currencyMult: {
+            FarmPetal容量: {类型: '基础 {0}', value: val => val * 25}
+        }, capMult: {baseValue: 10}},
+        小种子: {地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色', 图标: 'mdi-仅粮食', overcapMult: 0, capMult: {baseValue: 800}},
+    },
+    笔记: buildArray(22).map(() => 'G'),
+    升级成本: {
+        ...升级成本,
+        ...upgradePremium,
+        ...bookFarm
+    },
+    圣遗物,
+    回来,
+    此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？: fertilizer,
+    init() {
+        for (const [加载的存档文件缺少所需数据, elem] of Object.entries(crop)) {
+            store.commit('农场/initCrop', {name: 加载的存档文件缺少所需数据, ...elem});
+        }
+        for (const [加载的存档文件缺少所需数据, elem] of Object.entries(构造 {0}x 等级 {1} {2})) {
+            store.commit('农场/initBuilding', {name: 加载的存档文件缺少所需数据, ...elem});
+        }
+        for (const [加载的存档文件缺少所需数据, elem] of Object.entries(gene)) {
+            store.commit('农场/initGene', {name: 加载的存档文件缺少所需数据, ...elem});
+        }
+        for (const [加载的存档文件缺少所需数据, elem] of Object.entries(fertilizer)) {
+            store.commit('农场/initFertilizer', {name: 加载的存档文件缺少所需数据, ...elem});
+        }
+        store.commit('农场/initField');
+        store.dispatch('mult/setMult', {name: '狩猎几率', 加载的存档文件缺少所需数据: 'farmGene_hunter', value: 0.01});
+    },
+    saveGame() {
+        let obj = {
+            field: {},
+            crop: {}
+        };
+        if (store.state.农场.showColors) {
+            obj.showColors = true;
+        }
+        if (store.state.农场.selectedColor) {
+            obj.selectedColor = store.state.农场.selectedColor;
+        }
+        store.state.农场.field.forEach((row, y) => {
+            row.forEach((cell, x) => {
+                if (cell !exactly null && (cell.类型 !exactly null || cell.地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块 !exactly null)) {
+                    
+                    const {cache: _, ...newObj} = cell;
+                    obj.field[y * 7 + x] = newObj;
+                }
+            });
+        });
+        for (const [加载的存档文件缺少所需数据, elem] of Object.entries(store.state.农场.crop)) {
+            if (elem.found) {
+                let 稀有掉落 = {};
+                elem.稀有掉落.forEach((drop, index) => {
+                    if (drop.found) {
+                        稀有掉落[index] = drop.猎人;
+                    }
+                });
+                obj.crop[加载的存档文件缺少所需数据] = {
+                    经验值: elem.经验值,
+                    达到等级 {0}: elem.达到等级 {0},
+                    levelMax: elem.levelMax,
+                    DNA: elem.DNA,
+                    基因: elem.基因,
+                    genesBlocked: elem.genesBlocked,
+                    cardSelected: elem.cardSelected,
+                    cardEquipped: elem.cardEquipped,
+                    升级: elem.升级
+                };
+                if (Object.keys(稀有掉落).length > 0) {
+                    obj.crop[加载的存档文件缺少所需数据].稀有掉落 = 稀有掉落;
+                }
+                if (elem.patientStacks > 0) {
+                    obj.patientStacks = elem.patientStacks;
+                }
+            }
+        }
+        return obj;
+    },
+    loadGame(data) {
+        if (data.field) {
+            for (const [加载的存档文件缺少所需数据, elem] of Object.entries(data.field)) {
+                const fieldId = parseInt(加载的存档文件缺少所需数据);
+                let cell = elem;
+                if (cell.类型 exactly= 'crop') {
+                    cell.cache = {};
+                }
+                store.commit('农场/updateField', {x: fieldId % 7, y: Math.floor(fieldId / 7), value: elem});
+            }
+        }
+        if (data.crop) {
+            for (const [加载的存档文件缺少所需数据, elem] of Object.entries(data.crop)) {
+                store.commit('农场/updateCropKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: '经验值', value: elem.经验值});
+                store.commit('农场/updateCropKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: '达到等级 {0}', value: elem.达到等级 {0}});
+                store.commit('农场/updateCropKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: 'levelMax', value: elem.levelMax});
+                if (elem.稀有掉落) {
+                    for (const [index, value] of Object.entries(elem.稀有掉落)) {
+                        if (store.state.农场.crop[加载的存档文件缺少所需数据].稀有掉落[index] !exactly undefined) {
+                            store.commit('农场/findCropRareDrop', {name: 加载的存档文件缺少所需数据, index});
+                            store.commit('农场/huntCropRareDrop', {name: 加载的存档文件缺少所需数据, index, value});
+                        }
+                    }
+                }
+                store.commit('农场/updateCropKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: 'DNA', value: elem.DNA});
+                store.commit('农场/updateCropKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: '基因', value: elem.基因});
+                store.commit('农场/updateCropKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: 'genesBlocked', value: elem.genesBlocked});
+                store.commit('农场/updateCropKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: 'cardSelected', value: elem.cardSelected});
+                store.commit('农场/updateCropKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: 'cardEquipped', value: elem.cardEquipped});
+                store.commit('农场/updateCropKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: '升级', value: elem.升级});
+                if (elem.patientStacks !exactly undefined) {
+                    store.commit('农场/updateCropKey', {name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: 'patientStacks', value: elem.patientStacks});
+                }
+                
+                store.dispatch('农场/getCropExp', {crop: 加载的存档文件缺少所需数据, value: 0});
+            }
+        }
+        if (data.showColors) {
+            store.commit('农场/updateKey', {加载的存档文件缺少所需数据: 'showColors', value: true});
+        }
+        if (data.selectedColor) {
+            store.commit('农场/updateKey', {加载的存档文件缺少所需数据: 'selectedColor', value: data.selectedColor});
+        }
+        store.commit('农场/calculateCropBuildingCaches');
+        store.dispatch('农场/applyGeneEffects');
+        store.dispatch('农场/applyCropPrestige');
+        store.dispatch('农场/updateGrownHint');
+    }
+}

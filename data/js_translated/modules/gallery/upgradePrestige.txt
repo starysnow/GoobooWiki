@@ -1,0 +1,274 @@
+export default {
+    艺术学院: {类型: '声望', price(lvl) {
+        return {gallery_cash: Math.pow(lvl * 0.01 + 1.65, lvl) * 2};
+    }, 效果: [
+        {name: 'GalleryBeauty增益', 类型: 'mult', value: lvl => Math.pow(1.3, lvl)}
+    ]},
+    红色蜡笔: {类型: '声望', cap: 15, requirement() {
+        return store.state.达到 {0} {1}.gallery_orange.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(lvl * 0.02 + 1.5, lvl) * 8};
+    }, 效果: [
+        {name: 'GalleryRed增益', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    彩虹罐: {类型: '声望', cap: 11, price(lvl) {
+        return {gallery_cash: fallbackArray([10, 100], Math.pow(1000, lvl - 1) * 10, lvl)};
+    }, 效果: [
+        {name: '雕刻南瓜', 类型: 'galleryIdea', value: lvl => lvl >= 1},
+        {name: '制作柠檬水', 类型: 'galleryIdea', value: lvl => lvl >= 2},
+        {name: '种一棵树', 类型: 'galleryIdea', value: lvl => lvl >= 3},
+        {name: '画海洋', 类型: 'galleryIdea', value: lvl => lvl >= 4},
+        {name: '酿酒', 类型: 'galleryIdea', value: lvl => lvl >= 5},
+        {name: '收获橙子', 类型: 'galleryIdea', value: lvl => lvl >= 6},
+        {name: '粉碎黄金', 类型: 'galleryIdea', value: lvl => lvl >= 7},
+        {name: '割草', 类型: 'galleryIdea', value: lvl => lvl >= 8},
+        {name: '形状粘土', 类型: 'galleryIdea', value: lvl => lvl >= 9},
+        {name: '看看天空', 类型: 'galleryIdea', value: lvl => lvl >= 10},
+        {name: '嚼泡泡糖', 类型: 'galleryIdea', value: lvl => lvl >= 11},
+    ]},
+    垃圾箱: {类型: '声望', cap: 8, price(lvl) {
+        return {gallery_cash: Math.pow(2, lvl) * 25};
+    }, 效果: [
+        {name: 'GalleryConverter容量', 类型: '基础 {0}', value: lvl => lvl * 500}
+    ]},
+    橙色蜡笔: {类型: '声望', cap: 20, requirement() {
+        return store.state.达到 {0} {1}.gallery_yellow.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(lvl * 0.02 + 1.5, lvl) * 30};
+    }, 效果: [
+        {name: 'GalleryOrange增益', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    形状: {类型: '声望', cap: 10, requirement() {
+        return store.state.达到 {0} {1}.gallery_yellow.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(3 + lvl, lvl) * 150};
+    }, 效果: [
+        {name: '形状', 类型: '解锁', value: lvl => lvl >= 1},
+        {name: '矩形', 类型: '形状', value: lvl => lvl >= 2},
+        {name: '三角形', 类型: '形状', value: lvl => lvl >= 3},
+        {name: '星形', 类型: '形状', value: lvl => lvl >= 4},
+        {name: '椭圆形', 类型: '形状', value: lvl => lvl >= 5},
+        {name: '心形', 类型: '形状', value: lvl => lvl >= 6},
+        {name: '正方形', 类型: '形状', value: lvl => lvl >= 7},
+        {name: '八边形', 类型: '形状', value: lvl => lvl >= 8},
+        {name: '五边形', 类型: '形状', value: lvl => lvl >= 9},
+        {name: '六边形', 类型: '形状', value: lvl => lvl >= 10},
+    ]},
+    叉车: {类型: '声望', cap: 9, requirement() {
+        return store.state.解锁.鼓.see;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(3, lvl) * 150};
+    }, 效果: [
+        {name: 'GalleryPackage容量', 类型: '基础 {0}', value: lvl => lvl * 10}
+    ]},
+    红色箱子: {类型: '声望', cap: 9, requirement() {
+        return store.state.解锁.鼓.see;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(2.5 + 0.2 * lvl, lvl) * 360};
+    }, 效果: [
+        {name: 'GalleryRedDrum容量', 类型: '基础 {0}', value: lvl => lvl * 10}
+    ]},
+    黄色蜡笔: {类型: '声望', cap: 25, requirement() {
+        return store.state.达到 {0} {1}.gallery_green.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(lvl * 0.02 + 1.5, lvl) * 725};
+    }, 效果: [
+        {name: 'GalleryYellow增益', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    励志书籍: {类型: '声望', requirement() {
+        return store.state.达到 {0} {1}.gallery_green.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(2 + 0.25 * lvl, lvl) * 1400};
+    }, 效果: [
+        {name: '灵感时间基数', 类型: 'mult', value: lvl => Math.pow(0.8, lvl)},
+        {name: '灵感时间增量', 类型: 'mult', value: lvl => Math.pow(0.95, lvl)}
+    ]},
+    快递: {类型: '声望', cap: 20, requirement() {
+        return store.state.达到 {0} {1}.gallery_green.总计 {0} > 0 && store.state.解锁.鼓.see;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(2.5 + 0.25 * lvl, lvl) * 3000};
+    }, 效果: [
+        {name: 'GalleryPackage增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1}
+    ]},
+    橙色箱子: {类型: '声望', cap: 9, requirement() {
+        return store.state.达到 {0} {1}.gallery_green.总计 {0} > 0 && store.state.解锁.鼓.see;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(2.5 + 0.2 * lvl, lvl) * buildNum(13.5, 'K')};
+    }, 效果: [
+        {name: 'GalleryOrangeDrum容量', 类型: '基础 {0}', value: lvl => lvl * 10}
+    ]},
+    更大的形状: {类型: '声望', requirement() {
+        return store.state.达到 {0} {1}.gallery_green.总计 {0} > 0 && store.state.解锁.形状.see;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(lvl * 0.05 + 1.75, lvl) * buildNum(35.5, 'K')};
+    }, 效果: [
+        {name: '形状增益', 类型: 'mult', value: lvl => Math.pow(1.45, lvl)}
+    ]},
+    绿色蜡笔: {类型: '声望', cap: 30, requirement() {
+        return store.state.达到 {0} {1}.gallery_blue.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(lvl * 0.02 + 1.5, lvl) * buildNum(110, 'K')};
+    }, 效果: [
+        {name: 'GalleryGreen增益', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    分拣系统: {类型: '声望', cap: 15, requirement() {
+        return store.state.达到 {0} {1}.gallery_blue.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(2.2, lvl) * buildNum(275, 'K')};
+    }, 效果: [
+        {name: 'GalleryConverter容量', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
+        {name: 'GalleryPackage容量', 类型: 'mult', value: lvl => lvl * 0.2 + 1}
+    ]},
+    红色卡车: {类型: '声望', cap: 5, requirement() {
+        return store.state.达到 {0} {1}.gallery_blue.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(4 + 2 * lvl, lvl) * buildNum(880, 'K')};
+    }, 效果: [
+        {name: 'GalleryRedDrum容量', 类型: 'mult', value: lvl => lvl * 0.2 + 1}
+    ]},
+    黄色箱子: {类型: '声望', cap: 9, requirement() {
+        return store.state.达到 {0} {1}.gallery_blue.总计 {0} > 0 && store.state.解锁.鼓.see;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(2.5 + 0.2 * lvl, lvl) * buildNum(2.4, 'M')};
+    }, 效果: [
+        {name: 'GalleryYellowDrum容量', 类型: '基础 {0}', value: lvl => lvl * 10}
+    ]},
+    蓝色蜡笔: {类型: '声望', cap: 35, requirement() {
+        return store.state.达到 {0} {1}.gallery_purple.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(lvl * 0.02 + 1.5, lvl) * buildNum(130, 'M')};
+    }, 效果: [
+        {name: 'GalleryBlue增益', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    橙色卡车: {类型: '声望', cap: 5, requirement() {
+        return store.state.达到 {0} {1}.gallery_purple.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(4 + 2 * lvl, lvl) * buildNum(550, 'M')};
+    }, 效果: [
+        {name: 'GalleryOrangeDrum容量', 类型: 'mult', value: lvl => lvl * 0.2 + 1}
+    ]},
+    绿色箱子: {类型: '声望', cap: 9, requirement() {
+        return store.state.达到 {0} {1}.gallery_purple.总计 {0} > 0 && store.state.解锁.鼓.see;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(2.5 + 0.2 * lvl, lvl) * buildNum(2.3, 'B')};
+    }, 效果: [
+        {name: 'GalleryGreenDrum容量', 类型: '基础 {0}', value: lvl => lvl * 10}
+    ]},
+    投资: {类型: '声望', requirement() {
+        return store.state.达到 {0} {1}.gallery_purple.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(1.75 + 0.08 * lvl, lvl) * buildNum(12, 'B')};
+    }, 效果: [
+        {name: 'GalleryCash增益', 类型: 'mult', value: lvl => Math.pow(1.15, lvl)}
+    ]},
+    紫色蜡笔: {类型: '声望', cap: 40, requirement() {
+        return store.state.达到 {0} {1}['gallery_deep-橙色'].总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(lvl * 0.02 + 1.5, lvl) * buildNum(140, 'B')};
+    }, 效果: [
+        {name: 'GalleryPurple增益', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    黄色卡车: {类型: '声望', cap: 5, requirement() {
+        return store.state.达到 {0} {1}['gallery_deep-橙色'].总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(4 + 2 * lvl, lvl) * buildNum(790, 'B')};
+    }, 效果: [
+        {name: 'GalleryYellowDrum容量', 类型: 'mult', value: lvl => lvl * 0.2 + 1}
+    ]},
+    蓝色箱子: {类型: '声望', cap: 9, requirement() {
+        return store.state.达到 {0} {1}['gallery_deep-橙色'].总计 {0} > 0 && store.state.解锁.鼓.see;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(2.5 + 0.2 * lvl, lvl) * buildNum(3.75, 'T')};
+    }, 效果: [
+        {name: 'GalleryBlueDrum容量', 类型: '基础 {0}', value: lvl => lvl * 10}
+    ]},
+    美术课: {类型: '声望', requirement() {
+        return store.state.解锁.画布.see;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(1.5 + 0.1 * lvl, lvl) * buildNum(40, 'T')};
+    }, 效果: [
+        {name: '画布速度', 类型: 'mult', value: lvl => Math.pow(1.15, lvl)}
+    ]},
+    准备工作: {类型: '声望', requirement() {
+        return store.state.解锁.画布.see;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(2.5, getSequence(1, lvl)) * buildNum(500, 'T')};
+    }, 效果: [
+        {name: '灵感的开始', 类型: '基础 {0}', value: lvl => lvl},
+        {name: '画布大小', 类型: '基础 {0}', value: lvl => lvl}
+    ]},
+    红橙色蜡笔: {类型: '声望', cap: 45, requirement() {
+        return store.state.达到 {0} {1}.gallery_amber.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(lvl * 0.02 + 1.5, lvl) * buildNum(6.25, 'Qa')};
+    }, 效果: [
+        {name: 'currencyGalleryDeep-orangeGain', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    绿色卡车: {类型: '声望', cap: 5, requirement() {
+        return store.state.达到 {0} {1}.gallery_amber.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(4 + 2 * lvl, lvl) * buildNum(70, 'Qa')};
+    }, 效果: [
+        {name: 'GalleryGreenDrum容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+    ]},
+    紫色箱子: {类型: '声望', cap: 9, requirement() {
+        return store.state.达到 {0} {1}.gallery_amber.总计 {0} > 0 && store.state.解锁.鼓.see;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(2.5 + 0.2 * lvl, lvl) * buildNum(420, 'Qa')};
+    }, 效果: [
+        {name: 'GalleryPurpleDrum容量', 类型: '基础 {0}', value: lvl => lvl * 10}
+    ]},
+    金色蜡笔: {类型: '声望', cap: 50, requirement() {
+        return store.state.达到 {0} {1}['gallery_light-绿色'].总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(lvl * 0.02 + 1.5, lvl) * buildNum(2, 'Qi')};
+    }, 效果: [
+        {name: 'GalleryAmber增益', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    卡车车队: {类型: '声望', requirement() {
+        return store.state.达到 {0} {1}['gallery_light-绿色'].总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(1.2 + 0.1 * lvl, lvl) * buildNum(750, 'Qa')};
+    }, 效果: [
+        {name: 'GalleryRedDrum容量', 类型: 'mult', value: lvl => Math.出现在区域 {0} 或更高区域(lvl * 0.1 + 1, 3)},
+        {name: 'GalleryOrangeDrum容量', 类型: 'mult', value: lvl => lvl > 5 ? Math.出现在区域 {0} 或更高区域((lvl - 5) * 0.1 + 1, 3) : null},
+        {name: 'GalleryYellowDrum容量', 类型: 'mult', value: lvl => lvl > 10 ? Math.出现在区域 {0} 或更高区域((lvl - 10) * 0.1 + 1, 3) : null},
+        {name: 'GalleryGreenDrum容量', 类型: 'mult', value: lvl => lvl > 15 ? Math.出现在区域 {0} 或更高区域((lvl - 15) * 0.1 + 1, 3) : null},
+        {name: 'GalleryBlueDrum容量', 类型: 'mult', value: lvl => lvl > 20 ? Math.出现在区域 {0} 或更高区域((lvl - 20) * 0.1 + 1, 3) : null},
+        {name: 'GalleryPurpleDrum容量', 类型: 'mult', value: lvl => lvl > 25 ? Math.出现在区域 {0} 或更高区域((lvl - 25) * 0.1 + 1, 3) : null},
+        {name: 'currencyGalleryDeep-orangeDrumCap', 类型: 'mult', value: lvl => lvl > 30 ? Math.出现在区域 {0} 或更高区域((lvl - 30) * 0.1 + 1, 3) : null},
+        {name: 'GalleryAmberDrum容量', 类型: 'mult', value: lvl => lvl > 35 ? Math.出现在区域 {0} 或更高区域((lvl - 35) * 0.1 + 1, 3) : null},
+        {name: 'currencyGalleryLight-greenDrumCap', 类型: 'mult', value: lvl => lvl > 40 ? Math.出现在区域 {0} 或更高区域((lvl - 40) * 0.1 + 1, 3) : null},
+        {name: 'GalleryTealDrum容量', 类型: 'mult', value: lvl => lvl > 45 ? Math.出现在区域 {0} 或更高区域((lvl - 45) * 0.1 + 1, 3) : null},
+        {name: 'currencyGalleryLight-blueDrumCap', 类型: 'mult', value: lvl => lvl > 50 ? Math.出现在区域 {0} 或更高区域((lvl - 50) * 0.1 + 1, 3) : null},
+        {name: 'GalleryPinkDrum容量', 类型: 'mult', value: lvl => lvl > 55 ? Math.出现在区域 {0} 或更高区域((lvl - 55) * 0.1 + 1, 3) : null},
+    ]},
+    淡绿色蜡笔: {类型: '声望', cap: 55, requirement() {
+        return store.state.达到 {0} {1}.gallery_teal.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(lvl * 0.02 + 1.5, lvl) * buildNum(2, 'Sx')};
+    }, 效果: [
+        {name: 'currencyGalleryLight-greenGain', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    青色蜡笔: {类型: '声望', cap: 60, requirement() {
+        return store.state.达到 {0} {1}['gallery_light-蓝色油漆'].总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(lvl * 0.02 + 1.5, lvl) * buildNum(2, 'Sp')};
+    }, 效果: [
+        {name: 'GalleryTeal增益', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    淡蓝色蜡笔: {类型: '声望', cap: 65, requirement() {
+        return store.state.达到 {0} {1}.gallery_pink.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(lvl * 0.02 + 1.5, lvl) * buildNum(2, 'O')};
+    }, 效果: [
+        {name: 'currencyGalleryLight-blueGain', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    粉色蜡笔: {类型: '声望', cap: 70, requirement() {
+        return store.state.达到 {0} {1}.gallery_brown.总计 {0} > 0;
+    }, price(lvl) {
+        return {gallery_cash: Math.pow(lvl * 0.02 + 1.5, lvl) * buildNum(2, 'N')};
+    }, 效果: [
+        {name: 'GalleryPink增益', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+}

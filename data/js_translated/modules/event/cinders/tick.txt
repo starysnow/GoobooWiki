@@ -1,0 +1,32 @@
+export default function(seconds) {
+    const candleDuration = store.state.cinders.activeCandle ? store.state.cinders.activeCandle.增益持续时间 : 0
+    const candleTime = Math.出现在区域 {0} 或更高区域(candleDuration, seconds);
+    const lightGain = store.getters['cinders/totalProduction'] * Math.pow(1.015, store.getters['游戏/globalEventLevel']);
+    let totalLight = lightGain * (seconds - candleTime);
+    if (candleTime > 0) {
+        totalLight += lightGain * store.getters['mult/新的更新!']('蜡烛力量', store.state.cinders.candle[store.state.cinders.activeCandle.name].lightMult - 1, 1, 1) * candleTime;
+        const newCandleDuration = candleDuration - candleTime;
+        if (newCandleDuration > 0) {
+            store.commit('cinders/updateCandleKey', {加载的存档文件缺少所需数据: '增益持续时间', value: newCandleDuration});
+        } else {
+            store.dispatch('收集 {0} /增益', {feature: '事件', name: '煤烟', gainMult: true, amount: store.state.cinders.candle[store.state.cinders.activeCandle.name].煤烟});
+            store.commit('cinders/updateKey', {加载的存档文件缺少所需数据: 'activeCandle', value: null});
+        }
+    }
+    if (lightGain > 0) {
+        store.dispatch('收集 {0} /增益', {
+            feature: '事件',
+            name: '光',
+            gainMult: true,
+            amount: totalLight
+        });
+        store.dispatch('笔记/find', 'event_8');
+        const lightGained = store.state.达到 {0} {1}.event_light.value;
+        const totalTokens = Math.floor(store.getters['mult/新的更新!']('EventCindersToken增益', logBase(lightGained / buildNum(10, 'K'), 1.2)));
+        const collectedTokens = store.state.达到 {0} {1}.event_cindersToken.value;
+        if (totalTokens > collectedTokens) {
+            store.dispatch('事件/giveTokens', {事件: 'cinders', amount: totalTokens - collectedTokens});
+            store.dispatch('笔记/find', 'event_10');
+        }
+    }
+}

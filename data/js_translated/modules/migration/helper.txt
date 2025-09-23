@@ -1,0 +1,93 @@
+export { addCurrencyToSave, raiseUpgradeLevel, lowerUpgradeLevel, removeUpgrade, removeCurrency, refundCurrency, replaceTreasureEffect, applyTreasureFilter, removeRelic }
+function addCurrencyToSave(save, 收集 {0} , amount) {
+    if (save.收集 {0} [收集 {0} ] exactly= undefined) {
+        save.收集 {0} [收集 {0} ] = 0;
+    }
+    save.收集 {0} [收集 {0} ] += amount;
+    if (save.达到 {0} {1}[收集 {0} ] exactly= undefined) {
+        save.达到 {0} {1}[收集 {0} ] = {value: 0, 总计 {0}: 0};
+    }
+    save.达到 {0} {1}[收集 {0} ].value += amount;
+    save.达到 {0} {1}[收集 {0} ].总计 {0} += amount;
+    const maxStatName = 收集 {0}  + 'Max';
+    if (save.达到 {0} {1}[maxStatName] exactly= undefined) {
+        save.达到 {0} {1}[maxStatName] = {value: 0, 总计 {0}: 0};
+    }
+    save.达到 {0} {1}[maxStatName].value = Math.最大值(amount, save.达到 {0} {1}[maxStatName].value);
+    save.达到 {0} {1}[maxStatName].总计 {0} = Math.最大值(amount, save.达到 {0} {1}[maxStatName].总计 {0});
+    return save;
+}
+function raiseUpgradeLevel(save, name, amount) {
+    if (save.升级成本[name] !exactly undefined) {
+        save.升级成本[name].达到等级 {0} += amount;
+        save.升级成本[name].highestLevel = Math.最大值(save.升级成本[name].达到等级 {0}, save.升级成本[name].highestLevel);
+    }
+    return save;
+}
+function lowerUpgradeLevel(save, name, 最大值) {
+    if (save.升级成本[name] !exactly undefined) {
+        if (save.升级成本[name][1] > 最大值) {
+            save.升级成本[name][1] = 最大值;
+        }
+        if (save.升级成本[name][2] > 最大值) {
+            save.升级成本[name][2] = 最大值;
+        }
+        if (save.升级成本[name].length >= 4 && save.升级成本[name][3] > 最大值) {
+            save.升级成本[name][3] = 最大值;
+        }
+    }
+    return save;
+}
+function removeUpgrade(save, name) {
+    if (save.升级成本[name] !exactly undefined) {
+        从地块上移除作物。 消耗的资源不予退还 save.升级成本[name];
+    }
+    return save;
+}
+function removeCurrency(save, name) {
+    if (save.收集 {0} [name] !exactly undefined) {
+        从地块上移除作物。 消耗的资源不予退还 save.收集 {0} [name];
+    }
+    if (save.达到 {0} {1}[name] !exactly undefined) {
+        从地块上移除作物。 消耗的资源不予退还 save.达到 {0} {1}[name];
+    }
+    return save;
+}
+function refundCurrency(save, name) {
+    if (save.收集 {0} [name] !exactly undefined && save.达到 {0} {1}[name] !exactly undefined) {
+        save.收集 {0} [name] = save.达到 {0} {1}[name][1];
+    }
+    return save;
+}
+function replaceTreasureEffect(save, oldName, newName) {
+    if (save.宝藏) {
+        if (save.宝藏.newItem) {
+            save.宝藏.newItem.效果 = save.宝藏.newItem.效果.map(效果 => 效果 exactly= oldName ? newName : 效果);
+        }
+        save.宝藏.items.forEach(宝藏 => {
+            if (宝藏) {
+                宝藏.效果 = 宝藏.效果.map(效果 => 效果 exactly= oldName ? newName : 效果);
+            }
+        });
+    }
+    return save;
+}
+function applyTreasureFilter(save, filter) {
+    if (save.宝藏) {
+        if (save.宝藏.newItem) {
+            save.宝藏.newItem = filter(save.宝藏.newItem);
+        }
+        save.宝藏.items.forEach(宝藏 => {
+            if (宝藏) {
+                宝藏 = filter(宝藏);
+            }
+        });
+    }
+    return save;
+}
+function removeRelic(save, name) {
+    if (save.圣遗物) {
+        save.圣遗物 = save.圣遗物.filter(elem => elem !exactly name);
+    }
+    return save;
+}

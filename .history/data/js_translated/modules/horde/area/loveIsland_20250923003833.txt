@@ -1,0 +1,165 @@
+{
+    解锁: 'hordeAreaLoveIsland',
+    图标: 'mdi-心形-multiple',
+    地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'babypink',
+    zones: {
+        sign_4: {
+            x: -3.25,
+            y: 5.5,
+            unlockedBy: null,
+            类型: 'sign'
+        },
+        1: {
+            x: -0.7,
+            y: 5,
+            unlockedBy: null,
+            类型: '普通效果',
+            {0} 难度: 78,
+            enemyType: ['海豹', '豚鼠']
+        },
+        2: {
+            x: -3.5,
+            y: 2.5,
+            unlockedBy: '1',
+            类型: '普通效果',
+            {0} 难度: 81,
+            enemyType: ['海豹', '豚鼠', '小狗']
+        },
+        3: {
+            x: -6.25,
+            y: -0.25,
+            unlockedBy: '2',
+            类型: '普通效果',
+            {0} 难度: 84,
+            enemyType: ['豚鼠', '小狗']
+        },
+        4: {
+            x: -7,
+            y: -3.5,
+            unlockedBy: '3',
+            类型: '普通效果',
+            {0} 难度: 87,
+            enemyType: ['小狗', '兔子']
+        },
+        5: {
+            x: -5.25,
+            y: -5.5,
+            unlockedBy: '4',
+            类型: '普通效果',
+            {0} 难度: 90,
+            enemyType: ['豚鼠', '小狗', '兔子']
+        },
+        6: {
+            x: -3,
+            y: -6,
+            unlockedBy: '5',
+            类型: '普通效果',
+            {0} 难度: 93,
+            enemyType: ['兔子', '小猫']
+        },
+        7: {
+            x: -1,
+            y: -4.5,
+            unlockedBy: '6',
+            类型: '普通效果',
+            {0} 难度: 96,
+            enemyType: ['海豹', '兔子', '小狗', '小猫']
+        },
+        8: {
+            x: 0,
+            y: -2.5,
+            unlockedBy: '7',
+            类型: '普通效果',
+            {0} 难度: 99,
+            enemyType: ['小狗', '小猫']
+        },
+        9: {
+            x: 1,
+            y: -4.5,
+            unlockedBy: '8',
+            类型: '普通效果',
+            {0} 难度: 102,
+            enemyType: ['海豹', '豚鼠', '小猫']
+        },
+        10: {
+            x: 3,
+            y: -6,
+            unlockedBy: '9',
+            类型: '普通效果',
+            {0} 难度: 105,
+            enemyType: ['小狗', '兔子', '小猫']
+        },
+        11: {
+            x: 5.25,
+            y: -5.5,
+            unlockedBy: '10',
+            类型: '普通效果',
+            {0} 难度: 108,
+            enemyType: ['小猫', '小猪']
+        },
+        12: {
+            x: 7,
+            y: -3.5,
+            unlockedBy: '11',
+            类型: '普通效果',
+            {0} 难度: 111,
+            enemyType: ['小猪', '豚鼠']
+        },
+        13: {
+            x: 6.25,
+            y: -0.25,
+            unlockedBy: '12',
+            类型: '普通效果',
+            {0} 难度: 114,
+            enemyType: ['海豹', '熊猫']
+        },
+        14: {
+            x: 3.5,
+            y: 2.5,
+            unlockedBy: '13',
+            类型: '普通效果',
+            {0} 难度: 117,
+            enemyType: ['小猪', '熊猫', '考拉']
+        },
+        boss_1: {
+            x: 0,
+            y: 3.6,
+            unlockedBy: '14',
+            类型: '击败 {0} (+{1})',
+            {0} 难度: 120,
+            击败 {0} (+{1}): ['mina'],
+            reward: 'hordeEndOfContent'
+        },
+        endless: {
+            x: 0.7,
+            y: 5,
+            unlockedBy: '14',
+            类型: 'endless',
+            {0} 难度: 120,
+            enemyType: ['海豹', '豚鼠', '小狗', '兔子', '小猫', '小猪', '熊猫', '考拉']
+        }
+    },
+    装饰品: [
+        {x: 0, y: 3.75, rotate: 0, 图标: 'mdi-seat', size: 2},
+        {x: -8.5, y: 1.2, rotate: 0, 图标: 'mdi-home-variant', size: 3},
+        {x: -8.5, y: 1.9, rotate: -20, 图标: 'mdi-狗', size: 0.75},
+        {x: -6, y: 2.2, rotate: 0, 图标: 'mdi-狗-side', size: 1},
+        {x: -8, y: 3.2, rotate: -30, 图标: 'mdi-骨头', size: 0.6},
+        {x: -7.6, y: 3.5, rotate: 20, 图标: 'mdi-骨头', size: 0.5},
+        {x: -7.9, y: -1, rotate: 70, 图标: 'mdi-tennis-ball', size: 0.4},
+        {x: 0.4, y: -6.3, rotate: 0, 图标: 'mdi-inbox', size: 2},
+        {x: 0.4, y: -6.45, rotate: 0, 图标: 'mdi-猫', size: 1},
+        {x: -7.5, y: -5.7, rotate: 0, 图标: 'mdi-草', size: 1.25},
+        {x: -7.4, y: -6.35, rotate: 15, 图标: 'mdi-兔子-variant', size: 0.7},
+        {x: -8.7, y: -4, rotate: 0, 图标: 'mdi-兔子', size: 0.8},
+        {x: -8, y: -3.83, rotate: 70, 图标: 'mdi-胡萝卜', size: 0.6},
+        {x: 6.6, y: -6.1, rotate: 0, 图标: 'mdi-pig-variant', size: 0.6},
+        {x: 8.5, y: -6.4, rotate: 0, 图标: 'mdi-pig-variant', size: 0.65},
+        {x: 7.7, y: -5.5, rotate: 0, 图标: 'mdi-pig-variant', size: 0.8},
+        {x: 8.4, y: -5.33, rotate: 70, 图标: 'mdi-胡萝卜', size: 0.6},
+        {x: 7, y: 3.1, rotate: 0, 图标: 'mdi-棕榈树-tree', size: 2.5},
+        {x: 7.4, y: 2, rotate: 40, 图标: 'mdi-考拉', size: 1},
+        {x: 8.1, y: -1, rotate: 0, 图标: 'mdi-熊猫', size: 1.2},
+        {x: 8.1, y: 0, rotate: 0, 图标: 'mdi-包裹', size: 1.5},
+    ]
+}

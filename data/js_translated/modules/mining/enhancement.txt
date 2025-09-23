@@ -1,0 +1,41 @@
+export default {
+    轻量: {
+        效果: [
+            {name: '制作纯度', 类型: 'mult', value: lvl => lvl * 0.5 + 1},
+            {name: '矿石品质', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
+        ]
+    },
+    坚固: {
+        效果: [
+            {name: '矿石增益', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)},
+            {name: '稀土增益', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+        ]
+    },
+    锋利: {
+        效果: [
+            {name: '伤害', 类型: 'mult', value: lvl => lvl * 0.35 + 1},
+            {name: '韧性', 类型: 'mult', value: lvl => Math.pow(1 / 1.5, lvl)}
+        ]
+    },
+    挖掘机: {
+        效果: [
+            {name: 'MiningScrap增益', 类型: 'mult', value: lvl => getSequence(2, lvl) + 1}
+        ]
+    },
+    丰富: {
+        效果: [
+            {name: '深度居民速度', 类型: 'mult', value: lvl => Math.pow(1.35, lvl)},
+            {name: 'MiningCrystalGreen增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1}
+        ]
+    },
+    熔岩: {
+        效果: [
+            {name: 'MiningEmber增益', 类型: 'mult', value: lvl => lvl + 1}
+        ]
+    },
+    虚空: {
+        效果: [
+            {name: 'MiningScrap容量', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.5 + 1}
+        ]
+    }
+}

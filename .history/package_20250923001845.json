@@ -1,0 +1,36 @@
+{
+  "name": "gooboowiki",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "node toolscript/build-data-index.js && vitepress dev",
+    "docs:build": "node toolscript/build-data-index.js && vitepress build",
+    "docs:preview": "vitepress preview",
+    "convert": "node convert.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "vitepress": "^1.6.3"
+  },
+  "dependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/generator": "^7.28.3",
+    "@babel/parser": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/register": "^7.28.3",
+    "@babel/traverse": "^7.28.4",
+    "@vercel/analytics": "^1.5.0",
+    "csvtojson": "^2.0.10",
+    "esbuild": "^0.25.10",
+    "fs-extra": "^11.3.2",
+    "glob": "^11.0.3",
+    "path": "^0.12.7",
+    "prettier": "^3.6.2"
+  }
+}

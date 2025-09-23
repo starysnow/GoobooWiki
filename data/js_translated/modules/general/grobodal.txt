@@ -1,0 +1,141 @@
+export default {
+    quests: {
+        挖掘得更深: {
+            reward: '火炬',
+            stages: [
+                {笔记: 'general_1', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'mining_timeSpent', operator: '<=', value: 1800},
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'mining_oreAluminium', operator: '>=', value: 25}
+                ]},
+                {笔记: 'general_2', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'village_maxBuilding', operator: '>=', value: 200}
+                ]},
+                {笔记: 'general_3', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'mining_depthDwellerCap0', operator: '>=', value: 5}
+                ]},
+                {笔记: 'general_4', tasks: [
+                    {类型: '升级成本', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'village_school', operator: '>=', value: 1}
+                ]},
+                {笔记: 'general_5', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'mining_timeSpent', operator: '<=', value: 900},
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'mining_scrap', operator: '>=', value: buildNum(10, 'B')}
+                ]},
+            ]
+        },
+        战斗训练: {
+            reward: '紫心勋章',
+            stages: [
+                {笔记: 'general_6', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'horde_maxZone', operator: '>=', value: 35}
+                ]},
+                {笔记: 'general_7', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'horde_totalDamage', operator: '>=', value: buildNum(5, 'B')},
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'horde_maxZone', operator: '<=', value: 1}
+                ]},
+                {笔记: 'general_8', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'mining_maxDepth0', operator: '>=', value: 40},
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'mining_craftingCount', operator: '<=', value: 0}
+                ]},
+                {笔记: 'general_9', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'horde_maxZone', operator: '>=', value: 48}
+                ]},
+                {笔记: 'general_10', tasks: [
+                    {类型: '解锁', name: '层 4 建筑', feature: '村庄'}
+                ]},
+                {笔记: 'general_11', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'horde_soulCorrupted', operator: '>=', value: buildNum(10, 'M')}
+                ]},
+            ]
+        },
+        园艺: {
+            reward: '腐烂的叶子',
+            解锁: '作物经验',
+            stages: [
+                {笔记: 'general_12', tasks: [
+                    {类型: 'cropLevel', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: '土豆', operator: '>=', value: 1}
+                ]},
+                {笔记: 'general_13', tasks: [
+                    {类型: '升级成本', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'village_garden', operator: '>=', value: 20}
+                ]},
+                {笔记: 'general_14', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'farm_bestPrestige', operator: '>=', value: 7}
+                ]},
+                {笔记: 'general_15', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'farm_maxOvergrow', operator: '>=', value: 7}
+                ]},
+                {笔记: 'general_16', tasks: [
+                    {类型: '升级成本', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'farm_seedBox', operator: '>=', value: 7}
+                ]},
+            ]
+        },
+        漆黑一片: {
+            reward: '雪国列车',
+            解锁: '冶炼厂',
+            stages: [
+                {笔记: 'general_17', tasks: [
+                    {类型: '升级成本', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'mining_graniteHardening', operator: '>=', value: 6}
+                ]},
+                {笔记: 'general_18', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'mining_maxDepth0', operator: '>=', value: 95},
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'mining_craftingCount', operator: '<=', value: 5}
+                ]},
+                {笔记: 'general_19', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'village_timeSpent', operator: '<=', value: 900},
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'village_stone', operator: '>=', value: buildNum(500, 'K')}
+                ]},
+                {笔记: 'general_20', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'mining_coalMax', operator: '>=', value: 30}
+                ]},
+            ]
+        },
+        系统大师: {
+            reward: '安慰奖',
+            解锁: 'hordeItemMastery',
+            stages: [
+                {笔记: 'general_21', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '总计 {0}', name: 'horde_maxMastery', operator: '>=', value: 2},
+                    {类型: '达到 {0} {1}', subtype: '总计 {0}', name: 'horde_totalMastery', operator: '>=', value: 18}
+                ]},
+                {笔记: 'general_22', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'farm_maxOvergrow', operator: '>=', value: 15}
+                ]},
+                {笔记: 'general_23', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'village_maxBuilding', operator: '>=', value: 575}
+                ]},
+                {笔记: 'general_24', tasks: [
+                    {类型: 'equipmentMastery', name: '一杯牛奶', operator: '>=', value: 3},
+                    {类型: 'equipmentMastery', name: '腐败的眼睛', operator: '>=', value: 2},
+                    {类型: 'equipmentMastery', name: '幸运符', operator: '>=', value: 1}
+                ]},
+                {笔记: 'general_25', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '总计 {0}', name: 'village_offeringMax', operator: '>=', value: 4500}
+                ]},
+                {笔记: 'general_26', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'horde_maxZone', operator: '>=', value: 110},
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'horde_maxItems', operator: '<=', value: 1}
+                ]},
+            ]
+        },
+        想一想，玩家，想一想!: {
+            reward: '漂亮的灯',
+            解锁: '拍卖',
+            stages: [
+                {笔记: 'general_27', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'gallery_inspirationMax', operator: '>=', value: 12}
+                ]},
+                {笔记: 'general_28', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'gallery_greenMax', operator: '>=', value: buildNum(10, 'K')}
+                ]},
+                {笔记: 'general_29', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'gallery_redDrumMax', operator: '>=', value: 250}
+                ]},
+                {笔记: 'general_30', tasks: [
+                    {类型: '升级成本', subtype: '您当前的声望等级为 {0}，将所有农作物收益乘以 x{1}。', name: 'village_theater', operator: '>=', value: 12}
+                ]},
+                {笔记: 'general_31', tasks: [
+                    {类型: '达到 {0} {1}', subtype: '总计 {0}', name: 'gallery_bestPrestige', operator: '>=', value: buildNum(100, 'K')}
+                ]},
+            ]
+        }
+    }
+}

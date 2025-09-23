@@ -1,0 +1,94 @@
+export default {
+    收银机: {子功能: 1, price(lvl) {
+        return {village_copperCoin: Math.pow(lvl * 0.25 + 2, lvl) * 2000};
+    }, 效果: [
+        {name: '柜台', 类型: '基础 {0}', value: lvl => lvl},
+        {name: 'VillageCopperCoin容量', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
+    ]},
+    装饰品: {子功能: 1, price(lvl) {
+        return {village_copperCoin: Math.pow(1.75, lvl) * 900};
+    }, 效果: [
+        {name: 'VillageCopperCoin增益', 类型: 'mult', value: lvl => Math.pow(1.175, lvl)}
+    ]},
+    植物纤维仓: {子功能: 1, price(lvl) {
+        if (lvl exactly= 0) {
+            return {};
+        }
+        return {village_copperCoin: Math.pow(3, lvl) * 100};
+    }, 效果: [
+        {name: 'VillagePlantFiber增益', 类型: '基础 {0}', value: lvl => getSequence(1, lvl) * 0.1},
+        {name: '绳子', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    ]},
+    木仓: {子功能: 1, requirement() {
+        return store.state.升级成本.item.village_plantFiberBin.highestLevel >= 1;
+    }, price(lvl) {
+        return {village_copperCoin: Math.pow(3, lvl) * 200};
+    }, 效果: [
+        {name: 'VillageWood增益', 类型: '基础 {0}', value: lvl => getSequence(1, lvl) * 0.1},
+        {name: '木板', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    ]},
+    石仓: {子功能: 1, requirement() {
+        return store.state.升级成本.item.village_woodBin.highestLevel >= 1;
+    }, price(lvl) {
+        return {village_copperCoin: Math.pow(3, lvl) * 500};
+    }, 效果: [
+        {name: 'VillageStone增益', 类型: '基础 {0}', value: lvl => getSequence(1, lvl) * 0.1},
+        {name: '砖块', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    ]},
+    金属仓: {子功能: 1, requirement() {
+        return store.state.升级成本.item.village_stoneBin.highestLevel >= 1;
+    }, price(lvl) {
+        return {village_copperCoin: Math.pow(3, lvl) * buildNum(50, 'K')};
+    }, 效果: [
+        {name: 'VillageMetal增益', 类型: '基础 {0}', value: lvl => getSequence(1, lvl) * 0.075},
+        {name: '螺丝', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    ]},
+    水仓: {子功能: 1, requirement() {
+        return store.state.升级成本.item.village_metalBin.highestLevel >= 1;
+    }, price(lvl) {
+        return {village_copperCoin: Math.pow(3, lvl) * buildNum(600, 'K')};
+    }, 效果: [
+        {name: 'VillageWater增益', 类型: '基础 {0}', value: lvl => getSequence(1, lvl) * 0.06},
+        {name: '水瓶', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    ]},
+    玻璃仓: {子功能: 1, requirement() {
+        return store.state.升级成本.item.village_waterBin.highestLevel >= 1;
+    }, price(lvl) {
+        return {village_copperCoin: Math.pow(3, lvl) * buildNum(14.5, 'M')};
+    }, 效果: [
+        {name: 'VillageGlass增益', 类型: '基础 {0}', value: lvl => getSequence(1, lvl) * 0.05},
+        {name: '鸡尾酒杯', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    ]},
+    硬木仓: {子功能: 1, requirement() {
+        return store.state.升级成本.item.village_glassBin.highestLevel >= 1;
+    }, price(lvl) {
+        return {village_copperCoin: Math.pow(3, lvl) * buildNum(900, 'M')};
+    }, 效果: [
+        {name: 'VillageHardwood增益', 类型: '基础 {0}', value: lvl => getSequence(1, lvl) * 0.025},
+        {name: '回旋镖', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    ]},
+    宝石仓: {子功能: 1, requirement() {
+        return store.state.升级成本.item.village_hardwoodBin.highestLevel >= 1;
+    }, price(lvl) {
+        return {village_copperCoin: Math.pow(3, lvl) * buildNum(85, 'B')};
+    }, 效果: [
+        {name: 'VillageGem增益', 类型: '基础 {0}', value: lvl => getSequence(1, lvl) * 0.025},
+        {name: '抛光宝石', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    ]},
+    油仓: {子功能: 1, requirement() {
+        return store.state.升级成本.item.village_gemBin.highestLevel >= 1;
+    }, price(lvl) {
+        return {village_copperCoin: Math.pow(3, lvl) * buildNum(9.6, 'T')};
+    }, 效果: [
+        {name: 'VillageOil增益', 类型: '基础 {0}', value: lvl => getSequence(1, lvl) * 0.015},
+        {name: '油灯', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    ]},
+    大理石仓: {子功能: 1, requirement() {
+        return store.state.升级成本.item.village_oilBin.highestLevel >= 1;
+    }, price(lvl) {
+        return {village_copperCoin: Math.pow(3, lvl) * buildNum(1.44, 'Qa')};
+    }, 效果: [
+        {name: 'VillageMarble增益', 类型: '基础 {0}', value: lvl => getSequence(1, lvl) * 0.01},
+        {name: '淋浴', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    ]},
+}

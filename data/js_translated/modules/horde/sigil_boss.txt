@@ -1,0 +1,368 @@
+export default {
+    
+    pistol_gun: {
+        minZone: Infinity,
+        图标: 'mdi-pistol',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '蓝色油漆',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'damagePhysic', value: 3.35}
+                ];
+            },
+            cooldown: () => 4,
+            startCooldown: () => 4,
+            uses: lvl => lvl * 4
+        }
+    },
+    rifle_gun: {
+        minZone: Infinity,
+        图标: 'mdi-pistol',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'damagePhysic', value: 2},
+                    {类型: 'damageMagic', value: 0.75}
+                ];
+            },
+            cooldown: () => 2,
+            startCooldown: () => 2,
+            uses: lvl => lvl * 6
+        }
+    },
+    shotgun_gun: {
+        minZone: Infinity,
+        图标: 'mdi-pistol',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '绿色',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'damagePhysic', value: 2.6},
+                    {类型: 'damageMagic', value: 2.6},
+                    {类型: 'damageBio', value: 2.6}
+                ];
+            },
+            cooldown: () => 13,
+            startCooldown: () => 13,
+            uses: lvl => lvl * 2
+        }
+    },
+    sniper_gun: {
+        minZone: Infinity,
+        图标: 'mdi-目标',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '紫色',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'damagePhysic', value: 11.5, 能以{0}%的效率暴击: 8}
+                ];
+            },
+            cooldown: () => 25,
+            startCooldown: () => 25,
+            uses: lvl => lvl * 1
+        }
+    },
+    war_grenade: {
+        minZone: Infinity,
+        图标: 'mdi-炸弹',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-绿色',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'damageMagic', value: 2.75},
+                    {类型: 'stun', value: 2},
+                    {类型: '沉默药水', value: 8}
+                ];
+            },
+            cooldown: () => 12,
+            startCooldown: () => 6,
+            uses: lvl => lvl
+        }
+    },
+    war_bandage: {
+        minZone: Infinity,
+        图标: 'mdi-绷带',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-橙色',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'heal', value: 0.4}
+                ];
+            },
+            cooldown: () => 8,
+            startCooldown: () => 4,
+            uses: lvl => lvl
+        }
+    },
+    monkey_dart: {
+        minZone: Infinity,
+        图标: 'mdi-arrow-projectile',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色',
+        激活的卡片: {
+            效果(lvl) {
+                return [
+                    {类型: 'damagePhysic', value: lvl * 0.5 + 2.25},
+                ];
+            },
+            cooldown: () => 5,
+            startCooldown: () => 3,
+            uses: () => null
+        }
+    },
+    monkey_fire: {
+        minZone: Infinity,
+        图标: 'mdi-fire',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'damageMagic', value: 4.5},
+                ];
+            },
+            cooldown: () => 8,
+            startCooldown: () => 4,
+            uses: lvl => lvl * 4
+        }
+    },
+    monkey_ice: {
+        minZone: Infinity,
+        图标: 'mdi-雪花',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '青色',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'damageMagic', value: 6.75},
+                    {类型: 'stun', value: 3},
+                ];
+            },
+            cooldown: () => 14,
+            startCooldown: () => 7,
+            uses: lvl => lvl * 2
+        }
+    },
+    monkey_lightning: {
+        minZone: Infinity,
+        图标: 'mdi-flash',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '黄色',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'damageMagic', value: 5.1},
+                    {类型: '沉默药水', value: 3},
+                ];
+            },
+            cooldown: () => 10,
+            startCooldown: () => 5,
+            uses: lvl => lvl * 3
+        }
+    },
+    cute_ram: {
+        minZone: Infinity,
+        图标: 'mdi-arrow-collapse-right',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '红色',
+        激活的卡片: {
+            效果(lvl) {
+                return [
+                    {类型: 'damageBio', value: lvl + 3.5},
+                    {类型: 'stun', value: 3},
+                    {类型: 'gainStat', 达到 {0} {1}: 'bioAttack_mult', value: 1.2},
+                ];
+            },
+            cooldown: () => 12,
+            startCooldown: () => 8,
+            uses: lvl => lvl * 3
+        }
+    },
+    cute_eatCarrot: {
+        minZone: Infinity,
+        图标: 'mdi-胡萝卜',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色',
+        激活的卡片: {
+            效果(lvl) {
+                return [
+                    {类型: 'heal', value: lvl * 0.05 + 0.4},
+                    {类型: 'gainStat', 达到 {0} {1}: 'attack_mult', value: 1.1},
+                ];
+            },
+            cooldown: () => 16,
+            startCooldown: () => 12,
+            uses: lvl => lvl * 2
+        }
+    },
+    cute_bark: {
+        minZone: Infinity,
+        图标: 'mdi-volume-high',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '青色',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'maxdamageBio', value: 0.06},
+                    {类型: 'removeDivisionShield', value: 1},
+                ];
+            },
+            cooldown: () => 11,
+            startCooldown: () => 6,
+            uses: lvl => lvl
+        }
+    },
+    cute_bite: {
+        minZone: Infinity,
+        图标: 'mdi-tooth',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '棕色',
+        激活的卡片: {
+            效果(lvl) {
+                return [
+                    {类型: 'damageBio', value: lvl * 1.5 + 5},
+                ];
+            },
+            cooldown: () => 22,
+            startCooldown: () => 8,
+            uses: () => null
+        }
+    },
+    cute_kick: {
+        minZone: Infinity,
+        图标: 'mdi-seat-legroom-extra',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '金色油漆',
+        激活的卡片: {
+            效果(lvl) {
+                return [
+                    {类型: 'damageBio', value: lvl * 0.3 + 2.5},
+                    {类型: '沉默药水', value: 2},
+                ];
+            },
+            cooldown: () => 6,
+            startCooldown: () => 0,
+            uses: lvl => lvl * 8
+        }
+    },
+    cute_claws: {
+        minZone: Infinity,
+        图标: 'mdi-nail',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅绿色油漆',
+        激活的卡片: {
+            效果(lvl) {
+                return [
+                    {类型: 'maxdamageBio', value: 0.1},
+                    {类型: 'damageBio', value: lvl * 1.3 + 4.5},
+                ];
+            },
+            cooldown: () => 15,
+            startCooldown: () => 10,
+            uses: lvl => lvl * 3
+        }
+    },
+    
+    ohilio_megagun: {
+        minZone: Infinity,
+        图标: 'mdi-pistol',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色-红色',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'damagePhysic', value: buildNum(1, 'M')},
+                    {类型: 'damageMagic', value: buildNum(1, 'M')},
+                    {类型: 'damageBio', value: buildNum(1, 'M')}
+                ];
+            },
+            cooldown: () => 5,
+            startCooldown: () => 5,
+            uses: () => null
+        }
+    },
+    chriz_magicMissile: {
+        minZone: Infinity,
+        图标: 'mdi-motion',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'indigo',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'damageMagic', value: 3},
+                ];
+            },
+            cooldown: () => 6,
+            startCooldown: () => 0,
+            uses: () => 25
+        }
+    },
+    chriz_fireball: {
+        minZone: Infinity,
+        图标: 'mdi-fire',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'damageMagic', value: 11.5},
+                ];
+            },
+            cooldown: () => 22,
+            startCooldown: () => 4,
+            uses: () => null
+        }
+    },
+    chriz_iceBlast: {
+        minZone: Infinity,
+        图标: 'mdi-雪花',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '青色',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'damageMagic', value: 6},
+                    {类型: 'stun', value: 8},
+                ];
+            },
+            cooldown: () => 30,
+            startCooldown: () => 10,
+            uses: () => null
+        }
+    },
+    chriz_lightningStrike: {
+        minZone: Infinity,
+        图标: 'mdi-flash',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '黄色',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'damageMagic', value: 7.25},
+                    {类型: '沉默药水', value: 5},
+                ];
+            },
+            cooldown: () => 15,
+            startCooldown: () => 15,
+            uses: () => null
+        }
+    },
+    chriz_heal: {
+        minZone: Infinity,
+        图标: 'mdi-medical-bag',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅绿色油漆',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: 'heal', value: 0.4},
+                ];
+            },
+            cooldown: () => 45,
+            startCooldown: () => 45,
+            uses: () => 3
+        }
+    },
+    mina_charm: {
+        minZone: Infinity,
+        图标: 'mdi-心形',
+        地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '粉色',
+        激活的卡片: {
+            效果() {
+                return [
+                    {类型: '沉默药水', value: 5},
+                    {类型: 'gainStat', 达到 {0} {1}: 'bioAttack_mult', value: 1.6},
+                    {类型: 'gainStat', 达到 {0} {1}: 'execute_base', value: 0.05},
+                ];
+            },
+            cooldown: () => 30,
+            startCooldown: () => 15,
+            uses: () => null
+        }
+    },
+}

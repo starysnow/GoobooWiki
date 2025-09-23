@@ -1,0 +1,160 @@
+export default {
+    大圆: {类型: 'shape', price(lvl) {
+        return {gallery_circle: Math.pow(lvl * 0.01 + 1.35, lvl) * 100};
+    }, 效果: [
+        {name: '形状增益', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+    ]},
+    画得很好的圆: {类型: 'shape', price(lvl) {
+        return {gallery_circle: Math.pow(lvl * 0.05 + 2.25, lvl) * 5000};
+    }, 效果: [
+        {name: 'GalleryRed增益', 类型: 'mult', value: lvl => lvl * 0.02 + 1}
+    ]},
+    大矩形: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.矩形.unlocked;
+    }, price(lvl) {
+        return {gallery_rectangle: Math.pow(lvl * 0.1 + 1.75, lvl) * 1000};
+    }, 效果: [
+        {name: 'GalleryMotivation容量', 类型: '基础 {0}', value: lvl => lvl}
+    ]},
+    画得很好的矩形: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.矩形.unlocked;
+    }, price(lvl) {
+        return {gallery_rectangle: Math.pow(lvl * 0.05 + 2.25, lvl) * 6500};
+    }, 效果: [
+        {name: 'GalleryConverter容量', 类型: '基础 {0}', value: lvl => lvl * 40}
+    ]},
+    创意药水: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.三角形.unlocked;
+    }, price(lvl) {
+        return fallbackArray([
+            {gallery_triangle: buildNum(10, 'K'), gallery_circle: 4000},
+            {gallery_triangle: buildNum(100, 'K'), gallery_rectangle: buildNum(40, 'K')},
+            {gallery_triangle: buildNum(10, 'M'), gallery_star: buildNum(4, 'M')},
+            {gallery_triangle: buildNum(10, 'B'), gallery_ellipse: buildNum(3, 'B'), gallery_heart: buildNum(3, 'B')},
+            {gallery_triangle: buildNum(100, 'T'), gallery_square: buildNum(30, 'Sx'), gallery_octagon: buildNum(30, 'T')},
+            {gallery_triangle: buildNum(10, 'Qi'), gallery_pentagon: buildNum(300, 'Qa'), gallery_hexagon: buildNum(300, 'Qa')}
+        ], {gallery_triangle: Math.pow(10, getSequence(1, lvl)) * buildNum(10, 'K')}, lvl);
+    }, 效果: [
+        {name: '炸弹', 类型: '形状', value: lvl => lvl >= 1},
+        {name: 'dice', 类型: '形状', value: lvl => lvl >= 2},
+        {name: 'accelerator', 类型: '形状', value: lvl => lvl >= 3},
+        {name: 'sparkles', 类型: '形状', value: lvl => lvl >= 4},
+        {name: '沙漏', 类型: '形状', value: lvl => lvl >= 5},
+        {name: 'chest', 类型: '形状', value: lvl => lvl >= 6},
+        {name: 'GalleryMotivation增益', 类型: '基础 {0}', value: lvl => lvl >= 7 ? ((lvl - 6) * 0.005) : null}
+    ]},
+    画得很好的三角形: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.三角形.unlocked;
+    }, price(lvl) {
+        return {gallery_triangle: Math.pow(lvl * 0.05 + 2.25, lvl) * 8500};
+    }, 效果: [
+        {name: 'GalleryCash增益', 类型: 'mult', value: lvl => lvl * 0.01 + 1}
+    ]},
+    大星形: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.星形.unlocked;
+    }, price(lvl) {
+        return {gallery_star: Math.pow(lvl * 0.4 + 2.35, lvl) * buildNum(75, 'K')};
+    }, 效果: [
+        {name: '特殊形状几率', 类型: '基础 {0}', value: lvl => lvl * 0.0008}
+    ]},
+    画得很好的星形: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.星形.unlocked;
+    }, price(lvl) {
+        return {gallery_star: Math.pow(lvl * 0.05 + 2.25, lvl) * buildNum(24, 'K')};
+    }, 效果: [
+        {name: 'GalleryRedDrum容量', 类型: '基础 {0}', value: lvl => lvl * 3}
+    ]},
+    大椭圆: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.椭圆形.unlocked;
+    }, price(lvl) {
+        return {gallery_ellipse: Math.pow(lvl * 0.4 + 2.35, lvl) * buildNum(400, 'K')};
+    }, 效果: [
+        {name: '特殊形状乘数', 类型: '基础 {0}', value: lvl => lvl * 0.25}
+    ]},
+    画得很好的椭圆: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.椭圆形.unlocked;
+    }, price(lvl) {
+        return {gallery_ellipse: Math.pow(lvl * 0.3 + 12.5, lvl) * buildNum(850, 'K')};
+    }, 效果: [
+        {name: '所有鼓上限', 类型: '基础 {0}', value: lvl => lvl}
+    ]},
+    大心形: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.心形.unlocked;
+    }, price(lvl) {
+        return {gallery_heart: Math.pow(lvl + 8, lvl) * buildNum(2, 'M')};
+    }, 效果: [
+        {name: '形状增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
+        {name: 'GalleryMotivation容量', 类型: '基础 {0}', value: lvl => lvl * 2}
+    ]},
+    画得很好的心形: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.心形.unlocked;
+    }, price(lvl) {
+        return {gallery_heart: Math.pow(lvl * 0.05 + 2.25, lvl) * buildNum(600, 'K')};
+    }, 效果: [
+        {name: '所有颜色增益', 类型: 'mult', value: lvl => lvl * 0.005 + 1}
+    ]},
+    大正方形: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.正方形.unlocked;
+    }, price(lvl) {
+        return {gallery_square: Math.pow(lvl * 0.002 + 1.35, lvl) * buildNum(15, 'M')};
+    }, 效果: [
+        {name: 'GallerySquare增益', 类型: 'mult', value: lvl => Math.pow(1.3, lvl)}
+    ]},
+    画得很好的正方形: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.正方形.unlocked;
+    }, price(lvl) {
+        return {gallery_square: Math.pow(lvl * 0.15 + 3.5, lvl) * buildNum(3.75, 'M')};
+    }, 效果: [
+        {name: 'GalleryOrangeDrum容量', 类型: '基础 {0}', value: lvl => lvl * 3},
+        {name: 'GalleryYellowDrum容量', 类型: '基础 {0}', value: lvl => lvl * 2},
+        {name: 'GalleryGreenDrum容量', 类型: '基础 {0}', value: lvl => lvl}
+    ]},
+    大八边形: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.八边形.unlocked;
+    }, price(lvl) {
+        return {gallery_octagon: Math.pow(lvl * 0.01 + 1.45, lvl) * buildNum(1, 'B')};
+    }, 效果: [
+        {name: 'GalleryCircle增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
+        {name: 'GalleryRectangle增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
+        {name: 'GalleryTriangle增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)}
+    ]},
+    画得很好的八边形: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.八边形.unlocked;
+    }, price(lvl) {
+        return {gallery_octagon: Math.pow(lvl * 0.2 + 2.25, lvl) * buildNum(225, 'M')};
+    }, 效果: [
+        {name: '灵感时间基数', 类型: 'mult', value: lvl => 1 / (0.01 * lvl + 1)}
+    ]},
+    大五边形: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.五边形.unlocked;
+    }, price(lvl) {
+        return {gallery_pentagon: Math.pow(lvl * 0.01 + 1.45, lvl) * buildNum(75, 'B')};
+    }, 效果: [
+        {name: 'GalleryStar增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
+        {name: 'GalleryEllipse增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
+        {name: 'GalleryHeart增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)}
+    ]},
+    画得很好的五边形: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.五边形.unlocked;
+    }, price(lvl) {
+        return {gallery_pentagon: Math.pow(lvl * 0.1 + 2.25, lvl) * buildNum(13.5, 'B')};
+    }, 效果: [
+        {name: 'GalleryPackage容量', 类型: '基础 {0}', value: lvl => lvl * 2}
+    ]},
+    大六边形: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.六边形.unlocked;
+    }, price(lvl) {
+        return {gallery_hexagon: Math.pow(lvl * 0.01 + 1.45, lvl) * buildNum(11, 'T')};
+    }, 效果: [
+        {name: 'GalleryOctagon增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
+        {name: 'GalleryPentagon增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
+        {name: 'GalleryHexagon增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)}
+    ]},
+    画得很好的六边形: {类型: 'shape', requirement() {
+        return store.state.画廊.shape.六边形.unlocked;
+    }, price(lvl) {
+        return {gallery_hexagon: Math.pow(lvl * 0.1 + 2.25, lvl) * buildNum(2, 'T')};
+    }, 效果: [
+        {name: '画布速度', 类型: 'mult', value: lvl => lvl * 0.01 + 1}
+    ]},
+}

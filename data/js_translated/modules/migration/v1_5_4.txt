@@ -1,0 +1,41 @@
+function(save) {
+    
+    if (save.收集 {0} .event_snowball !exactly undefined) {
+        从地块上移除作物。 消耗的资源不予退还 save.收集 {0} .event_snowball;
+    }
+    if (save.事件) {
+        
+        let tokensExpected = 0;
+        const fights = save.事件.snowdown_fight ?? 0;
+        for (let i = 0; i < fights; i++) {
+            tokensExpected += Math.floor(Math.pow(i * 0.35 + 1, 0.75) + 3);
+        }
+        if (save.达到 {0} {1}.event_snowdownToken && save.收集 {0} .event_snowdownToken !exactly undefined) {
+            const tokenDiff = tokensExpected - save.达到 {0} {1}.event_snowdownToken[0];
+            if (tokenDiff !exactly 0) {
+                save.收集 {0} .event_snowdownToken += tokenDiff;
+                if (tokenDiff > 0) {
+                    save.达到 {0} {1}.event_snowdownToken = [save.达到 {0} {1}.event_snowdownToken[0] + tokenDiff, save.达到 {0} {1}.event_snowdownToken[1] + tokenDiff];
+                }
+            }
+        }
+        
+        if (save.事件.snowdown_item !exactly undefined) {
+            if (save.事件.snowdown_item.spiceJar) {
+                save.事件.snowdown_item.牧羊人 = (save.事件.snowdown_item.牧羊人 ?? 0) + save.事件.snowdown_item.spiceJar;
+                从地块上移除作物。 消耗的资源不予退还 save.事件.snowdown_item.spiceJar;
+            }
+            if (save.事件.snowdown_item.tap) {
+                save.事件.snowdown_item.森林 = (save.事件.snowdown_item.森林 ?? 0) + save.事件.snowdown_item.tap;
+                从地块上移除作物。 消耗的资源不予退还 save.事件.snowdown_item.tap;
+            }
+        }
+    }
+    
+    if (save.升级成本.gallery_wellDrawnEllipse) {
+        const newLvl = Math.ceil(save.升级成本.gallery_wellDrawnEllipse[1] / 2);
+        save.升级成本.gallery_wellDrawnEllipse[1] = newLvl;
+        save.升级成本.gallery_wellDrawnEllipse[2] = newLvl;
+    }
+    return save;
+}

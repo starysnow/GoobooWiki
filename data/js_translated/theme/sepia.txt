@@ -1,0 +1,24 @@
+export default {
+    price: 3000,
+    自定义调色板: true,
+    光: {
+        primary: filterColor(sepiaBase, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块 => 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块.desaturate(0.4)),
+        secondary: '#424242',
+        accent: filterColor(sepiaBase, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块 => 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块.desaturate(0.7).lighten(0.5)),
+        自动保存失败: filterColor(_default.光.自动保存失败, sepiaFilter),
+        信息: filterColor(_default.光.信息, sepiaFilter),
+        游戏已保存: filterColor(_default.光.游戏已保存, sepiaFilter),
+        这些设置仍处于实验阶段，可能存在错误、未完成、性能不佳或令人困惑。 启用它们的风险由您自行承担，如果您正在使用它们，请留下反馈！ 如果此部分为空，则表示当时没有可用的实验设置，或者您尚未取得足够的进展，无法看到它们: filterColor(_default.光.这些设置仍处于实验阶段，可能存在错误、未完成、性能不佳或令人困惑。 启用它们的风险由您自行承担，如果您正在使用它们，请留下反馈！ 如果此部分为空，则表示当时没有可用的实验设置，或者您尚未取得足够的进展，无法看到它们, sepiaFilter),
+        ...filterColorObject(colors, sepiaFilter)
+    },
+    dark: {
+        primary: filterColor(sepiaBase, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块 => 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块.desaturate(0.4)),
+        secondary: '#424242',
+        accent: filterColor(sepiaBase, 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块 => 地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块.desaturate(0.7).lighten(0.5)),
+        自动保存失败: filterColor(_default.dark.自动保存失败, sepiaFilter),
+        信息: filterColor(_default.dark.信息, sepiaFilter),
+        游戏已保存: filterColor(_default.dark.游戏已保存, sepiaFilter),
+        这些设置仍处于实验阶段，可能存在错误、未完成、性能不佳或令人困惑。 启用它们的风险由您自行承担，如果您正在使用它们，请留下反馈！ 如果此部分为空，则表示当时没有可用的实验设置，或者您尚未取得足够的进展，无法看到它们: filterColor(_default.dark.这些设置仍处于实验阶段，可能存在错误、未完成、性能不佳或令人困惑。 启用它们的风险由您自行承担，如果您正在使用它们，请留下反馈！ 如果此部分为空，则表示当时没有可用的实验设置，或者您尚未取得足够的进展，无法看到它们, sepiaFilter),
+        ...filterColorObject(colors, sepiaFilter)
+    }
+}

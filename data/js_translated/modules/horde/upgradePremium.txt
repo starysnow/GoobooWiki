@@ -1,0 +1,106 @@
+export default {
+    更多力量: {类型: '高级', price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 100};
+    }, 效果: [
+        {name: '攻击', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.3 + 1},
+        {name: '生命值', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.3 + 1}
+    ]},
+    更多骨头: {类型: '高级', price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 75};
+    }, 效果: [
+        {name: 'HordeBone增益', 类型: 'mult', value: lvl => getSequence(1, lvl) + 1},
+        {name: 'HordeBone容量', 类型: 'mult', value: lvl => getSequence(1, lvl) + 1}
+    ]},
+    更多怪物零件: {类型: '高级', requirement() {
+        return store.state.达到 {0} {1}.horde_monsterPart.总计 {0} > 0;
+    }, price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 90};
+    }, 效果: [
+        {name: 'HordeMonsterPart增益', 类型: 'mult', value: lvl => lvl * 0.5 + 1}
+    ]},
+    更多灵魂: {类型: '高级', requirement() {
+        return store.state.达到 {0} {1}.horde_maxZone.总计 {0} > 19;
+    }, price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 110};
+    }, 效果: [
+        {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: lvl => lvl * 0.25 + 1},
+        {name: 'HordeSoulCorrupted容量', 类型: 'mult', value: lvl => lvl * 0.25 + 1}
+    ]},
+    更多精通: {类型: '高级', requirement() {
+        return store.state.达到 {0} {1}.horde_maxZone.总计 {0} > 75;
+    }, price(lvl) {
+        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 125};
+    }, 效果: [
+        {name: '精通点数增益', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.25 + 1}
+    ]},
+    古老的力量: {类型: '高级', cap: 1, requirement() {
+        return store.state.部落.传家宝.攻击和生命值 x{0}.amount > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 300};
+    }, 效果: [
+        {name: '力量效果', 类型: 'mult', value: lvl => getSequence(1, lvl + 1)}
+    ]},
+    古老的坚韧: {类型: '高级', cap: 1, requirement() {
+        return store.state.部落.传家宝.fortitude.amount > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 300};
+    }, 效果: [
+        {name: '韧效果', 类型: 'mult', value: lvl => getSequence(1, lvl + 1)}
+    ]},
+    古老的财富: {类型: '高级', cap: 1, requirement() {
+        return store.state.部落.传家宝.wealth.amount > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 300};
+    }, 效果: [
+        {name: '财富效果', 类型: 'mult', value: lvl => getSequence(1, lvl + 1)}
+    ]},
+    古老的精神: {类型: '高级', cap: 1, requirement() {
+        return store.state.部落.传家宝.spirit.amount > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 450};
+    }, 效果: [
+        {name: '精神效果', 类型: 'mult', value: lvl => getSequence(1, lvl + 1)}
+    ]},
+    古老的锐视: {类型: '高级', cap: 1, requirement() {
+        return store.state.部落.传家宝.sharpsight.amount > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 600};
+    }, 效果: [
+        {name: '锐视效果', 类型: 'mult', value: lvl => getSequence(1, lvl + 1)}
+    ]},
+    古老的收割: {类型: '高级', cap: 1, requirement() {
+        return store.state.部落.传家宝.reaping.amount > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 750};
+    }, 效果: [
+        {name: '收割效果', 类型: 'mult', value: lvl => getSequence(1, lvl + 1)}
+    ]},
+    古老的回忆: {类型: '高级', cap: 1, requirement() {
+        return store.state.部落.传家宝.remembrance.amount > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 750};
+    }, 效果: [
+        {name: '纪念效果', 类型: 'mult', value: lvl => getSequence(1, lvl + 1)}
+    ]},
+    古老的保持: {类型: '高级', cap: 1, requirement() {
+        return store.state.部落.传家宝.holding.amount > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 975};
+    }, 效果: [
+        {name: '保持效果', 类型: 'mult', value: lvl => getSequence(1, lvl + 1)}
+    ]},
+    古老的经验: {类型: '高级', cap: 1, requirement() {
+        return store.state.部落.传家宝.expertise.amount > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 1300};
+    }, 效果: [
+        {name: '专长效果', 类型: 'mult', value: lvl => getSequence(1, lvl + 1)}
+    ]},
+    古老的精通: {类型: '高级', cap: 1, requirement() {
+        return store.state.部落.传家宝.神秘.amount > 0;
+    }, price(lvl) {
+        return {红宝石: Math.pow(2, lvl) * 1800};
+    }, 效果: [
+        {name: '神秘效果', 类型: 'mult', value: lvl => getSequence(1, lvl + 1)}
+    ]}
+}

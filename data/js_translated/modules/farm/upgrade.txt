@@ -1,0 +1,280 @@
+export default {
+    种子箱: {cap: 24, hideCap: true, price(lvl) {
+        return [
+            {farm_vegetable: 70},
+            {farm_berry: 150},
+            {farm_grain: 260},
+            {farm_flower: 800, farm_gold: 1},
+            {farm_vegetable: 4600},
+            {farm_berry: buildNum(50, 'K')},
+            {farm_grain: buildNum(335, 'K')},
+            {farm_flower: buildNum(2, 'M')},
+            {farm_vegetable: buildNum(17.5, 'M')},
+            {farm_berry: buildNum(120, 'M')},
+            {farm_grain: buildNum(900, 'M')},
+            {farm_flower: buildNum(7.2, 'B')},
+            {farm_vegetable: buildNum(54, 'B')},
+            {farm_berry: buildNum(370, 'B')},
+            {farm_grain: buildNum(2.2, 'T')},
+            {farm_flower: buildNum(35, 'T')},
+            {farm_vegetable: buildNum(875, 'T')},
+            {farm_berry: buildNum(3.1, 'Qa')},
+            {farm_grain: buildNum(130, 'Qa')},
+            {farm_flower: buildNum(8.5, 'Qi')},
+            {farm_vegetable: buildNum(500, 'Qi')},
+            {farm_berry: buildNum(35, 'Sx')},
+            {farm_grain: buildNum(3, 'Sp')},
+            {farm_flower: buildNum(320, 'Sp')},
+        ][lvl];
+    }, 效果: [
+        {name: '蓝莓', 类型: 'farmSeed', value: lvl => lvl >= 1},
+        {name: '小麦', 类型: 'farmSeed', value: lvl => lvl >= 2},
+        {name: '郁金香', 类型: 'farmSeed', value: lvl => lvl >= 3},
+        {name: '土豆', 类型: 'farmSeed', value: lvl => lvl >= 4},
+        {name: '覆盆子', 类型: 'farmSeed', value: lvl => lvl >= 5},
+        {name: '大麦', 类型: 'farmSeed', value: lvl => lvl >= 6},
+        {name: '蒲公英', 类型: 'farmSeed', value: lvl => lvl >= 7},
+        {name: '玉米', 类型: 'farmSeed', value: lvl => lvl >= 8},
+        {name: '西瓜', 类型: 'farmSeed', value: lvl => lvl >= 9},
+        {name: '大米', 类型: 'farmSeed', value: lvl => lvl >= 10},
+        {name: '玫瑰', 类型: 'farmSeed', value: lvl => lvl >= 11},
+        {name: '韭菜', 类型: 'farmSeed', value: lvl => lvl >= 12},
+        {name: '蜜瓜', 类型: 'farmSeed', value: lvl => lvl >= 13},
+        {name: '黑麦', 类型: 'farmSeed', value: lvl => lvl >= 14},
+        {name: '雏菊', 类型: 'farmSeed', value: lvl => lvl >= 15},
+        {name: '黄瓜', 类型: 'farmSeed', value: lvl => lvl >= 16},
+        {name: '葡萄', 类型: 'farmSeed', value: lvl => lvl >= 17},
+        {name: '啤酒花', 类型: 'farmSeed', value: lvl => lvl >= 18},
+        {name: '紫罗兰', 类型: 'farmSeed', value: lvl => lvl >= 19},
+        {name: '红薯', 类型: 'farmSeed', value: lvl => lvl >= 20},
+        {name: '草莓', 类型: 'farmSeed', value: lvl => lvl >= 21},
+        {name: '芝麻', 类型: 'farmSeed', value: lvl => lvl >= 22},
+        {name: '向日葵', 类型: 'farmSeed', value: lvl => lvl >= 23},
+        {name: '菠菜', 类型: 'farmSeed', value: lvl => lvl >= 24},
+    ]},
+    繁殖力: {requirementBase, requirementStat, requirementValue: 1, price(lvl) {
+        return {farm_vegetable: 50 * Math.pow(lvl * 0.005 + 1.3, lvl), farm_berry: 50 * Math.pow(lvl * 0.005 + 1.3, lvl)};
+    }, 效果: [
+        {name: '作物增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)}
+    ]},
+    过度生长: {cap: 9, requirementBase, requirementStat, requirementValue: 1, price(lvl) {
+        return fallbackArray([
+            {farm_berry: 200},
+            {farm_grain: 850, farm_flower: 1300},
+        ], {farm_flower: 240 * Math.pow(5 + lvl, lvl)}, lvl);
+    }, 效果: [
+        {name: '过度生长', 类型: '基础 {0}', value: lvl => lvl >= 1 ? (lvl * 0.05 + 0.05) : null}
+    ], onBuy() {
+        store.dispatch('农场/updateFieldCaches');
+    }},
+    扩张: {cap: 45, requirementBase, requirementStat, requirementValue: 2, price(lvl) {
+        return {farm_grain: 300 * Math.pow(lvl * 0.05 + 2, lvl)};
+    }, 效果: [
+        {name: '农场地块', 类型: 'farmTile', value: lvl => lvl}
+    ]},
+    花园侏儒: {cap: 5, hasDescription: true, requirementBase, requirementStat, requirementValue: 3, price(lvl) {
+        return {farm_vegetable: 500 * Math.pow(96, lvl), farm_berry: 500 * Math.pow(96, lvl), farm_flower: 1000 * Math.pow(128, lvl)};
+    }, 效果: [
+        {name: '花园侏儒', 类型: 'farmBuilding', value: lvl => lvl},
+        {name: '禁用“第一作物”', 类型: '解锁', value: lvl => lvl >= 1}
+    ], onBuy() {
+        store.dispatch('农场/applyEarlyGameBuff');
+    }},
+    学习: {cap: 1, hasDescription: true, requirementBase, requirementStat, requirementValue: 4, price() {
+        return {farm_gold: 1};
+    }, 效果: [
+        {name: '作物经验', 类型: '解锁', value: lvl => lvl >= 1}
+    ]},
+    肥料: {cap: 1, requirement() {
+        return store.state.升级成本.item.farm_learning.达到等级 {0} >= 1;
+    }, price() {
+        return {farm_gold: 5};
+    }, 效果: [
+        {name: '肥料', 类型: '解锁', value: lvl => lvl >= 1}
+    ]},
+    磨碎种子: {requirementBase, requirementStat, requirementValue: 5, price(lvl) {
+        return {farm_flower: 6000 * Math.pow(1.75, lvl), farm_seedHull: Math.round(4 * lvl * Math.pow(1.1, Math.最大值(0, lvl - 10)) + 10)};
+    }, 效果: [
+        {name: 'FarmGrain增益', 类型: 'mult', value: lvl => lvl * 0.15 + 1},
+        {name: '过度生长', 类型: '基础 {0}', value: lvl => lvl * 0.01}
+    ], onBuy() {
+        store.dispatch('农场/updateFieldCaches');
+    }},
+    烤种子: {cap: 5, requirementBase, requirementStat, requirementValue: 5, price(lvl) {
+        return {farm_seedHull: Math.round(Math.pow(1.8, lvl) * 4)};
+    }, 效果: [
+        {name: '作物经验', 类型: '基础 {0}', value: lvl => lvl * 0.1}
+    ]},
+    干草捆: {requirementBase, requirementStat, requirementValue: 5, price(lvl) {
+        return {farm_grass: lvl * 125 + 75};
+    }, 效果: [
+        {name: 'FarmGrass容量', 类型: '基础 {0}', value: lvl => lvl * 100}
+    ]},
+    小箱子: {cap: 7, capMult: true, requirementBase, requirementStat, requirementValue: 6, price(lvl) {
+        return {farm_berry: buildNum(24.5, 'K') * Math.pow(1.9, lvl)};
+    }, 效果: [
+        {name: 'FarmSeedHull容量', 类型: '基础 {0}', value: lvl => lvl * 10}
+    ]},
+    洒水装置: {cap: 2, hasDescription: true, 笔记: 'farm_8', requirementBase, requirementStat, requirementValue: 6, price(lvl) {
+        return {farm_vegetable: buildNum(120, 'K') * Math.pow(buildNum(4, 'M'), lvl), farm_seedHull: 50 * Math.pow(10, lvl)};
+    }, 效果: [
+        {name: '洒水装置', 类型: 'farmBuilding', value: lvl => lvl}
+    ]},
+    放大镜: {cap: 20, requirementBase, requirementStat, requirementValue: 7, price(lvl) {
+        return {farm_grain: buildNum(54, 'K') * Math.pow(lvl * 0.1 + 2, lvl), farm_flower: buildNum(33, 'K') * Math.pow(lvl * 0.1 + 2, lvl)};
+    }, 效果: [
+        {name: '作物经验', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+    ]},
+    稻草人: {cap: 10, capMult: true, requirementBase, requirementStat, requirementValue: 7, price(lvl) {
+        return {farm_grain: buildNum(110, 'K') * Math.pow(1.8, lvl), farm_petal: Math.round(Math.pow(1.4, lvl) * 3), farm_gold: 6 + lvl};
+    }, 效果: [
+        {name: '作物增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
+        {name: 'FarmPetal容量', 类型: '基础 {0}', value: lvl => lvl * 3}
+    ]},
+    蚁丘: {requirementBase, requirementStat, requirementValue: 7, price(lvl) {
+        return {farm_grass: getSequence(3, lvl) * 50 + 200};
+    }, 效果: [
+        {name: '稀有掉率', 类型: '基础 {0}', value: lvl => lvl * 0.015}
+    ]},
+    虫粉: {requirementBase, requirementStat, requirementValue: 8, price(lvl) {
+        return {farm_grain: buildNum(675, 'K') * Math.pow(1.75, lvl), farm_bug: Math.round(5 * lvl * Math.pow(1.1, Math.最大值(0, lvl - 10)) + 10)};
+    }, 效果: [
+        {name: 'FarmVegetable增益', 类型: 'mult', value: lvl => lvl * 0.15 + 1}
+    ]},
+    棚子: {cap: 10, capMult: true, requirementBase, requirementStat, requirementValue: 8, price(lvl) {
+        return {farm_seedHull: 5 * getSequence(3, lvl) + 35, farm_bug: 5 * getSequence(3, lvl) + 35, farm_petal: 4 * getSequence(1, lvl) + 10};
+    }, 效果: [
+        {name: 'FarmSeedHull容量', 类型: '基础 {0}', value: lvl => lvl * 20},
+        {name: 'FarmBug容量', 类型: '基础 {0}', value: lvl => lvl * 20},
+        {name: 'FarmPetal容量', 类型: '基础 {0}', value: lvl => lvl * 10}
+    ]},
+    讲台: {cap: 2, hasDescription: true, 笔记: 'farm_12', requirementBase, requirementStat, requirementValue: 9, price(lvl) {
+        return {farm_flower: buildNum(3.5, 'M') * Math.pow(buildNum(3, 'M'), lvl), farm_petal: 75 * Math.pow(5, lvl)};
+    }, 效果: [
+        {name: '讲台', 类型: 'farmBuilding', value: lvl => lvl}
+    ]},
+    香水: {cap: 25, 笔记: 'farm_13', requirementBase, requirementStat, requirementValue: 9, price(lvl) {
+        return {farm_bug: Math.round(5 * lvl * Math.pow(1.1, Math.最大值(0, lvl - 10)) + 10), farm_butterfly: Math.round(lvl * Math.pow(1.1, Math.最大值(0, lvl - 10)) + 2)};
+    }, 效果: [
+        {name: 'FarmBerry增益', 类型: 'mult', value: lvl => lvl * 0.15 + 1},
+        {name: '稀有掉率', 类型: '基础 {0}', value: lvl => lvl * 0.01}
+    ]},
+    中箱子: {cap: 8, capMult: true, requirementBase, requirementStat, requirementValue: 10, price(lvl) {
+        return {farm_vegetable: buildNum(90, 'M') * Math.pow(1.75, lvl), farm_grain: buildNum(54, 'M') * Math.pow(2.1, lvl)};
+    }, 效果: [
+        {name: 'FarmSeedHull容量', 类型: '基础 {0}', value: lvl => lvl * 25},
+        {name: 'FarmGrass容量', 类型: '基础 {0}', value: lvl => lvl * 40}
+    ]},
+    踩碎种子: {requirementBase, requirementStat, requirementValue: 10, price(lvl) {
+        return {farm_seedHull: Math.round(Math.pow(1.15, lvl) * 150)};
+    }, 效果: [
+        {name: '作物增益', 类型: 'mult', value: lvl => Math.pow(1.12, lvl)}
+    ]},
+    昆虫天堂: {cap: 6, capMult: true, requirementBase, requirementStat, requirementValue: 11, price(lvl) {
+        return {farm_berry: buildNum(750, 'M') * Math.pow(2.4, lvl), farm_petal: Math.round(Math.pow(1.75, lvl) * 11)};
+    }, 效果: [
+        {name: 'FarmBug容量', 类型: '基础 {0}', value: lvl => lvl * 40},
+        {name: 'FarmButterfly容量', 类型: '基础 {0}', value: lvl => lvl * 5},
+        {name: 'FarmLadybug容量', 类型: '基础 {0}', value: lvl => lvl * 30}
+    ]},
+    黄金工具: {requirementBase, requirementStat, requirementValue: 11, price(lvl) {
+        return {farm_gold: Math.round(Math.pow(1.25, lvl) * 350)};
+    }, 效果: [
+        {name: '作物增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+    ]},
+    蝴蝶翅膀: {cap: 6, requirementBase, requirementStat, requirementValue: 12, price(lvl) {
+        return {farm_butterfly: Math.round(Math.pow(1.35, lvl) * 14)};
+    }, 效果: [
+        {name: 'FarmPetal容量', 类型: '基础 {0}', value: lvl => lvl * 15}
+    ]},
+    肥沃之地: {requirementBase, requirementStat, requirementValue: 12, price(lvl) {
+        return {farm_berry: buildNum(4, 'B') * Math.pow(2.25, lvl), farm_flower: buildNum(3.3, 'B') * Math.pow(2.25, lvl)};
+    }, 效果: [
+        {name: 'FarmVegetable增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+    ]},
+    风车: {cap: 1, hasDescription: true, 笔记: 'farm_17', requirementBase, requirementStat, requirementValue: 13, price() {
+        return {farm_flower: buildNum(250, 'B'), farm_petal: 150, farm_ladybug: 50};
+    }, 效果: [
+        {name: '风车', 类型: 'farmBuilding', value: lvl => lvl}
+    ]},
+    神秘之地: {requirementBase, requirementStat, requirementValue: 13, price(lvl) {
+        return {farm_vegetable: buildNum(37.5, 'B') * Math.pow(2.25, lvl), farm_ladybug: Math.round(Math.pow(1.12, lvl) * 10)};
+    }, 效果: [
+        {name: 'FarmGrain增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
+        {name: 'FarmLadybug容量', 类型: '基础 {0}', value: lvl => lvl * 20}
+    ]},
+    化肥袋: {cap: 1, requirementBase, requirementStat, requirementValue: 14, price() {
+        return {farm_gold: 700};
+    }, 效果: [
+        {name: 'farm_weedKiller', 类型: 'findConsumable', value: lvl => lvl >= 1},
+        {name: 'farm_turboGrow', 类型: 'findConsumable', value: lvl => lvl >= 1},
+        {name: 'farm_premium', 类型: 'findConsumable', value: lvl => lvl >= 1}
+    ]},
+    大箱子: {cap: 10, capMult: true, requirementBase, requirementStat, requirementValue: 14, price(lvl) {
+        return {farm_berry: buildNum(190, 'B') * Math.pow(1.85, lvl), farm_grain: buildNum(240, 'B') * Math.pow(1.85, lvl)};
+    }, 效果: [
+        {name: 'FarmSeedHull容量', 类型: '基础 {0}', value: lvl => lvl * 60},
+        {name: 'FarmGrass容量', 类型: '基础 {0}', value: lvl => lvl * 80},
+        {name: 'FarmPetal容量', 类型: '基础 {0}', value: lvl => lvl * 25}
+    ]},
+    人造网: {cap: 3, requirementBase, requirementStat, requirementValue: 15, price(lvl) {
+        return {farm_flower: buildNum(1, 'T') * Math.pow(9, lvl), farm_ladybug: Math.round(Math.pow(1.5, lvl) * 100)};
+    }, 效果: [
+        {name: 'FarmSpider容量', 类型: '基础 {0}', value: lvl => lvl * 4}
+    ]},
+    研究昆虫: {cap: 10, requirementBase, requirementStat, requirementValue: 15, price(lvl) {
+        return {farm_berry: buildNum(1.35, 'T') * Math.pow(2.65, lvl), farm_butterfly: Math.round(Math.pow(1.25, lvl) * 28)};
+    }, 效果: [
+        {name: '作物经验', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+    ]},
+    蜂窝: {cap: 20, requirementBase, requirementStat, requirementValue: 16, price(lvl) {
+        return {farm_flower: buildNum(22.5, 'T') * Math.pow(1.4, lvl), farm_seedHull: Math.round(Math.pow(1.14, lvl) * 280), farm_bug: Math.round(Math.pow(1.16, lvl) * 160)};
+    }, 效果: [
+        {name: 'FarmSpider容量', 类型: '基础 {0}', value: lvl => lvl},
+        {name: 'FarmBee容量', 类型: '基础 {0}', value: lvl => lvl * 200}
+    ]},
+    黑暗角落: {cap: 10, requirementBase, requirementStat, requirementValue: 17, price(lvl) {
+        return {farm_vegetable: buildNum(175, 'T') * Math.pow(1.75, lvl), farm_grain: buildNum(300, 'T') * Math.pow(1.6, lvl), farm_bug: Math.round(Math.pow(1.24, lvl) * 230)};
+    }, 效果: [
+        {name: 'FarmSpider容量', 类型: '基础 {0}', value: lvl => lvl * 2},
+        {name: '稀有掉率', 类型: '基础 {0}', value: lvl => lvl * 0.01}
+    ]},
+    旗帜: {cap: 1, hasDescription: true, 笔记: 'farm_20', requirementBase, requirementStat, requirementValue: 18, price() {
+        return {farm_spider: 50, farm_bee: 2500, farm_goldenPetal: 10};
+    }, 效果: [
+        {name: '旗帜', 类型: 'farmBuilding', value: lvl => lvl}
+    ]},
+    虫饵: {requirementBase, requirementStat, requirementValue: 19, price(lvl) {
+        return {farm_grass: Math.round(Math.pow(1.22, lvl) * 1350), farm_petal: Math.round(Math.pow(1.16, lvl) * 175), farm_butterfly: Math.round(Math.pow(1.16, lvl) * 50)};
+    }, 效果: [
+        {name: 'FarmVegetable增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
+        {name: 'FarmBug容量', 类型: '基础 {0}', value: lvl => lvl * 20},
+        {name: 'FarmLadybug容量', 类型: '基础 {0}', value: lvl => lvl * 35},
+    ]},
+    闪亮的土壤: {requirementBase, requirementStat, requirementValue: 20, price(lvl) {
+        return {farm_bee: Math.round(Math.pow(1.16, lvl) * 4000), farm_goldenPetal: Math.round(lvl * 0.3 + 5)};
+    }, 效果: [
+        {name: 'FarmBerry增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
+        {name: 'FarmButterfly容量', 类型: '基础 {0}', value: lvl => lvl * 4},
+    ]},
+    大肥料袋: {cap: 1, requirementBase, requirementStat, requirementValue: 21, price() {
+        return {farm_gold: 2000};
+    }, 效果: [
+        {name: 'farm_analyzing', 类型: 'findConsumable', value: lvl => lvl >= 1},
+        {name: 'farm_superJuicy', 类型: 'findConsumable', value: lvl => lvl >= 1},
+        {name: 'farm_pellets', 类型: 'findConsumable', value: lvl => lvl >= 1}
+    ]},
+    芝麻开门: {requirementBase, requirementStat, requirementValue: 22, price(lvl) {
+        return {farm_flower: buildNum(870, 'Sx') * Math.pow(1.6, lvl), farm_smallSeed: Math.round(Math.pow(1.28, lvl) * 225)};
+    }, 效果: [
+        {name: 'FarmGrain增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
+        {name: 'FarmSeedHull容量', 类型: '基础 {0}', value: lvl => lvl * 50},
+        {name: 'FarmSmallSeed容量', 类型: '基础 {0}', value: lvl => lvl * 150},
+    ]},
+    花卉绘画: {requirementBase, requirementStat, requirementValue: 23, price(lvl) {
+        return {farm_berry: buildNum(92, 'Sp') * Math.pow(1.6, lvl), farm_bee: Math.round(Math.pow(1.28, lvl) * 6000)};
+    }, 效果: [
+        {name: 'FarmFlower增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
+        {name: 'FarmBee容量', 类型: '基础 {0}', value: lvl => lvl * 150},
+    ]},
+}

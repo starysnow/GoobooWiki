@@ -1,0 +1,224 @@
+export default {
+    解锁: '射手职业',
+    图标: 'mdi-bow-arrow',
+    baseStats: {
+        攻击 +: 7,
+        生命值: 325,
+        能量: 150,
+        energyRegen: 1.25
+    },
+    经验值: {
+        基础 {0}: 720,
+        increment: 1.22
+    },
+    courageMult: 2,
+    skills: {
+        critMult: {类型: '达到 {0} {1}', 最大值: 1, 效果: [
+            {name: '暴击伤害', 类型: '基础 {0}', value: lvl => lvl * 1.75}
+        ]},
+        energyOnCrit: {
+            类型: '被动: {0}%',
+            地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '金色油漆',
+            图标: 'mdi-lightning-bolt',
+            最大值: 1,
+            效果: [
+                {name: '暴击时 +{0} 能量', 类型: 'tag', value: lvl => [lvl * 10]}
+            ]
+        },
+        longshot: {
+            类型: '激活的卡片',
+            地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'skyblue',
+            图标: 'mdi-arrow-projectile',
+            最大值: 1,
+            cooldown: () => 30,
+            activeCost: () => {return {能量: 70};},
+            激活的卡片() {
+                return [
+                    {类型: 'damagePhysic', value: 4.25, str: 0.65, 能以{0}%的效率暴击: 0.75}
+                ];
+            },
+            activeType: 'combat'
+        },
+        eagleEye: {
+            类型: '激活的卡片',
+            地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅绿色油漆',
+            图标: 'mdi-eye',
+            最大值: 5,
+            cost: 20,
+            cooldown: () => 45,
+            activeCost: () => {return {能量: 50};},
+            激活的卡片(lvl) {
+                return [
+                    {类型: 'buff', value: 12, 效果: [
+                        {类型: '基础 {0}', name: '暴击率', value: lvl * 0.05 + 0.05}
+                    ]}
+                ];
+            },
+            activeType: 'combat'
+        },
+        力量: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
+            {name: '力量', 类型: '基础 {0}', value: lvl => lvl * 1.3}
+        ]},
+        critMult_2: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
+            {name: '暴击伤害', 类型: '基础 {0}', value: lvl => lvl * 0.1}
+        ]},
+        fireArrows: {
+            类型: '激活的卡片',
+            地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色-红色',
+            图标: 'mdi-fire',
+            最大值: 5,
+            cost: 20,
+            cooldown: () => 90,
+            activeCost: () => {return {能量: 110};},
+            激活的卡片(lvl) {
+                return [
+                    {类型: 'buff', value: 30, 效果: [
+                        {类型: 'mult', name: '攻击', value: lvl * 0.05 + 1.25},
+                        {类型: '基础 {0}', name: '魔法伤害转换', value: 1.75}
+                    ]}
+                ];
+            },
+            activeType: 'combat'
+        },
+        poisonArrow: {
+            类型: '激活的卡片',
+            地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'lime',
+            图标: 'mdi-bottle-tonic-skull',
+            最大值: 5,
+            cost: 20,
+            cooldown: () => 16,
+            activeCost: () => {return {能量: 50};},
+            激活的卡片(lvl) {
+                return [
+                    {类型: '毒药药水', value: lvl * 0.05 + 0.25, int: 0.01}
+                ];
+            },
+            activeType: 'combat'
+        },
+        critChance: {类型: '达到 {0} {1}', 最大值: 5, cost: 20, 效果: [
+            {name: '暴击率', 类型: '基础 {0}', value: lvl => lvl * 0.03}
+        ]},
+        intelligence: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
+            {name: '智力', 类型: '基础 {0}', value: lvl => lvl * 1.75}
+        ]},
+        healOnCrit: {
+            类型: '被动: {0}%',
+            地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '浅绿色油漆',
+            图标: 'mdi-心形-plus',
+            最大值: 1,
+            cost: 50,
+            效果: [
+                {name: '暴击时治愈 {0} 最大生命值', 类型: 'tag', value: lvl => [lvl * 0.03]}
+            ]
+        },
+        生命值: {类型: '达到 {0} {1}', 最大值: 15, cost: 10, 效果: [
+            {name: '生命值', 类型: '基础 {0}', value: lvl => lvl * 65}
+        ]},
+        reduceCooldownOnCrit: {
+            类型: '被动: {0}%',
+            地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: 'pale-橙色',
+            图标: 'mdi-timer-沙子-paused',
+            最大值: 1,
+            cost: 50,
+            效果: [
+                {name: '暴击时减少冷却 {0}', 类型: 'tag', value: lvl => [lvl]}
+            ]
+        },
+        急速: {类型: '达到 {0} {1}', 最大值: 15, cost: 10, 效果: [
+            {name: '急速', 类型: '基础 {0}', value: lvl => lvl * 4}
+        ]},
+        bloodOnCrit: {
+            类型: '被动: {0}%',
+            地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '樱桃色',
+            图标: 'mdi-diabetes',
+            最大值: 1,
+            cost: 50,
+            效果: [
+                {name: '暴击时获得 {0} 敌人血液', 类型: 'tag', value: lvl => [lvl * 0.15]}
+            ]
+        },
+        血液: {类型: '达到 {0} {1}', 最大值: 15, cost: 10, 效果: [
+            {name: 'HordeBlood容量', 类型: 'mult', value: lvl => lvl * 0.13 + 1}
+        ]},
+        critChance_2: {类型: '达到 {0} {1}', 最大值: 5, cost: 20, 效果: [
+            {name: '暴击率', 类型: '基础 {0}', value: lvl => lvl * 0.03}
+        ]},
+        能量: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
+            {name: '能量', 类型: '基础 {0}', value: lvl => lvl * 30}
+        ]},
+        health_2: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
+            {name: '生命值', 类型: '基础 {0}', value: lvl => lvl * 60}
+        ]},
+        sharpArrow: {
+            类型: '激活的卡片',
+            地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '红色',
+            图标: 'mdi-arrow-projectile-multiple',
+            最大值: 5,
+            cost: 20,
+            cooldown: () => 7,
+            activeCost: () => {return {能量: 25};},
+            激活的卡片(lvl) {
+                return [
+                    {类型: 'damagePhysic', value: lvl * 0.4 + 1.2, str: 0.2},
+                    {类型: 'removeDivisionShield', value: 1}
+                ];
+            },
+            activeType: 'combat'
+        },
+        strength_2: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
+            {name: '力量', 类型: '基础 {0}', value: lvl => lvl * 1.3}
+        ]},
+        sharpMind: {
+            类型: '激活的卡片',
+            地块可以着色，以便更轻松地管理大片土地。 选择一种颜色并单击地块来绘制它。 当您选择颜色时，批量操作仅影响相同颜色的地块: '橙色-红色',
+            图标: 'mdi-motion',
+            最大值: 5,
+            cost: 20,
+            cooldown: () => 22 * SECONDS_PER_HOUR,
+            activeCost: () => {return {};},
+            激活的卡片(lvl) {
+                return [
+                    {类型: 'permanentStat', 达到 {0} {1}: 'hordeCritMult_base', value: lvl * 0.02 + 0.02}
+                ];
+            },
+            activeType: 'utility'
+        },
+        critChance_3: {类型: '达到 {0} {1}', 最大值: 5, cost: 20, 效果: [
+            {name: '暴击率', 类型: '基础 {0}', value: lvl => lvl * 0.03}
+        ]},
+        勇敢: {类型: '达到 {0} {1}', 最大值: 10, cost: 15, 效果: [
+            {name: 'HordeCourage增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
+        ]},
+    },
+    skillTree: [
+        {isInnate: true, 达到等级 {0}: 0, items: ['critMult', 'energyOnCrit', 'longshot']},
+        {达到等级 {0}: 1, items: ['eagleEye', '力量', 'critMult_2']},
+        {达到等级 {0}: 10, items: ['fireArrows', 'poisonArrow', 'critChance', 'intelligence']},
+        {isChoice: true, 达到等级 {0}: 20, items: [['healOnCrit', '生命值'], ['reduceCooldownOnCrit', '急速'], ['bloodOnCrit', '血液']]},
+        {达到等级 {0}: 30, items: ['critChance_2', '能量', 'health_2']},
+        {达到等级 {0}: 40, items: ['sharpArrow', 'sharpMind', 'strength_2']},
+        {达到等级 {0}: 50, items: ['critChance_3', '勇敢']},
+    ],
+    quests: {
+        达到 {0} {1}: [
+            {达到 {0} {1}: '智力', 类型: '总计 {0}', value: 10},
+            {达到 {0} {1}: '急速', 类型: '总计 {0}', value: 80},
+            {达到 {0} {1}: '暴击率', 类型: '总计 {0}', value: 0.5},
+        ],
+        区域 {0}: [
+            {area: '战场', 区域 {0}: '4'},
+            {area: '战场', 区域 {0}: '8'},
+            {area: '猴子丛林', 区域 {0}: '5'},
+            {area: '猴子丛林', 区域 {0}: '12'},
+            {area: '猴子丛林', 区域 {0}: '16'},
+            {area: '爱岛', 区域 {0}: '3'},
+            {area: '爱岛', 区域 {0}: '11'},
+        ],
+        达到等级 {0}: [10, 20, 35, 50, 70, 95, 120, 145, 170, 195],
+        击败 {0} (+{1}): [
+            {击败 {0} (+{1}): 'ohilio', {0} 难度: 7},
+            {击败 {0} (+{1}): 'Chriz', {0} 难度: 10},
+            {击败 {0} (+{1}): 'mina', {0} 难度: 10},
+        ]
+    }
+}

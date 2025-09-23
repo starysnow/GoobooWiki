@@ -1,0 +1,72 @@
+{
+    警卫 A: {
+        攻击 +: 0.15,
+        生命值: 150,
+        textShadow: '1px 1px 2px palevioletred, 0 0 25px lightpink, 0 0 5px 粉色',
+        印记 +{0}: {
+            shotgun_gun: 3,
+            war_bandage: 3,
+        },
+        stats: {}
+    },
+    警卫 B: {
+        攻击 +: 0.6125,
+        生命值: 45,
+        textShadow: '1px 1px 2px palevioletred, 0 0 25px lightpink, 0 0 5px 粉色',
+        印记 +{0}: {
+            rifle_gun: 3,
+            war_grenade: 2,
+        },
+        stats: {}
+    },
+    ohilio: {
+        攻击 +: 0.01,
+        生命值: 0.01,
+        textShadow: '1px 1px 2px palevioletred, 0 0 25px lightpink, 0 0 5px 粉色',
+        印记 +{0}: {
+            ohilio_megagun: 1,
+        },
+        stats: {}
+    },
+    mina: {
+        攻击 +: 0.5,
+        生命值: 87.5,
+        textShadow: '1px 1px 2px palevioletred, 0 0 25px lightpink, 0 0 5px 粉色',
+        印记 +{0}: {
+            mina_charm: 1,
+        },
+        stats: {
+            toxic_base: 0.03,
+            execute_base: 0.2
+        }
+    },
+    Chriz: {
+        攻击 +: 0.375,
+        生命值: 42.5,
+        textShadow: '1px 1px 2px 蓝色油漆',
+        印记 +{0}: {
+            chriz_magicMissile: 1,
+            chriz_fireball: 1,
+            chriz_iceBlast: 1,
+            chriz_lightningStrike: 1,
+            chriz_heal: 1,
+        },
+        stats: {
+            magicConversion_base: 4,
+            physicTaken_mult: 0.01,
+            magicTaken_mult: 1.75,
+        }
+    },
+    Chriz: {
+        攻击 +: 0.5,
+        生命值: 50,
+        textShadow: '1px 1px 2px 红色',
+        印记 +{0}: {},
+        stats: {
+            critChance_base: 0.35,
+            critMult_base: 3,
+            physicTaken_mult: 1.75,
+            magicTaken_mult: 0.01,
+        }
+    }
+}

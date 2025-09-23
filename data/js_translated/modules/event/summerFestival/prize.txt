@@ -1,0 +1,47 @@
+export default {
+    theme_waves: {
+        类型: 'theme',
+        item: '波浪',
+        pool: {
+            summerFestival: {price: {event_summerFestivalToken: 240}}
+        }
+    },
+    relic_tropicalTent: {
+        类型: '圣遗物',
+        item: '热带帐篷',
+        requirement() {
+            return store.state.解锁.villageFeature.see;
+        },
+        pool: {
+            summerFestival: {price: {event_summerFestivalToken: 150}}
+        }
+    },
+    relic_fruitBasket: {
+        类型: '圣遗物',
+        item: '水果篮',
+        requirement() {
+            return store.state.解锁.farmFeature.see;
+        },
+        pool: {
+            summerFestival: {price: {event_summerFestivalToken: 170}}
+        }
+    },
+    cardPack_charmingShip: {
+        类型: '卡包',
+        item: '迷人的船',
+        pool: {
+            summerFestival: {price: {event_summerFestivalToken: 30}}
+        }
+    },
+    farm_tropicalWater: {
+        类型: '此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？',
+        item: 'farm_tropicalWater',
+        amount: 20,
+        requirement() {
+            return store.state.解锁.肥料.see;
+        },
+        pool: {
+            summerFestival: {price: {event_summerFestivalToken: 1}}
+        }
+    }
+}

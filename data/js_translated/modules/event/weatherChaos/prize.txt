@@ -1,0 +1,44 @@
+export default {
+    theme_rain: {
+        类型: 'theme',
+        item: '雨色',
+        pool: {
+            weatherChaos: {price: {event_weatherChaosToken: 260}}
+        }
+    },
+    relic_trashCan: {
+        类型: '圣遗物',
+        item: '垃圾箱',
+        pool: {
+            weatherChaos: {price: {event_weatherChaosToken: 130}}
+        }
+    },
+    relic_suitcase: {
+        类型: '圣遗物',
+        item: '手提箱',
+        requirement() {
+            return store.state.解锁.hordeHeirlooms.see;
+        },
+        pool: {
+            weatherChaos: {price: {event_weatherChaosToken: 155}}
+        }
+    },
+    cardPack_fishingForFun: {
+        类型: '卡包',
+        item: '钓鱼为乐',
+        pool: {
+            weatherChaos: {price: {event_weatherChaosToken: 30}}
+        }
+    },
+    farm_smellyMud: {
+        类型: '此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？',
+        item: 'farm_smellyMud',
+        amount: 20,
+        requirement() {
+            return store.state.解锁.肥料.see;
+        },
+        pool: {
+            weatherChaos: {price: {event_weatherChaosToken: 1}}
+        }
+    }
+}

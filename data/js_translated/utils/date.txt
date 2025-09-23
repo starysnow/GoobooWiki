@@ -1,0 +1,12 @@
+export { getDay, getWeek }
+
+function getDay(date = 新 Date()) {
+    return applyOffset(date).toISOString().substring(0, 10);
+}
+
+function getWeek(date = 新 Date()) {
+    return Math.floor((applyOffset(date).getTime() + 3 * 86400000) / 604800000);
+}
+function applyOffset(date = 新 Date()) {
+    return 新 Date(date.getTime() - (date.getTimezoneOffset() * 60000));
+}

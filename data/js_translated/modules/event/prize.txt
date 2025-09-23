@@ -1,0 +1,710 @@
+BINGO!: {amount: 50},
+    双倍 BINGO!: {amount: 200},
+    三倍 BINGO!: {amount: 750},
+    bingo4: {amount: 3000},
+    wheelOfFortune1: {amount: 50},
+    wheelOfFortune2: {amount: 200},
+    wheelOfFortune3: {amount: 750},
+    wheelOfFortune4: {amount: 3000}
+};
+function bigEvents(data, tokenPrice = null) {
+    let obj = {};
+    for (const [加载的存档文件缺少所需数据, elem] of Object.entries(big)) {
+        let price = {};
+        price[`event_${ elem.token }`] = tokenPrice;
+        obj[加载的存档文件缺少所需数据] = tokenPrice !exactly null ? {...data, price} : data;
+    }
+    return obj;
+}
+export default {
+    
+    cardPack_goodDeal: {
+        类型: '卡包',
+        item: '好交易',
+        哑铃: 5,
+        cap: 10,
+        pool: {
+            merchant: {price: {gem_topaz: 75}}
+        }
+    },
+    cardPack_connectedLine: {
+        类型: '卡包',
+        item: '连接线',
+        哑铃: 2,
+        pool: {
+            双倍 BINGO!: {amount: 2},
+            三倍 BINGO!: {amount: 6},
+            bingo4: {amount: 15, 哑铃: 0.75}
+        }
+    },
+    cardPack_feelingLucky: {
+        类型: '卡包',
+        item: '感觉很幸运',
+        哑铃: 2,
+        pool: {
+            wheelOfFortune2: {amount: 2},
+            wheelOfFortune3: {amount: 6},
+            wheelOfFortune4: {amount: 15, 哑铃: 0.75}
+        }
+    },
+    
+    treasure_empoweredN5: {
+        类型: '宝藏',
+        item: 'empowered',
+        bonusTier: -10,
+        requirement() {
+            return store.state.解锁.treasureFeature.see;
+        },
+        pool: {
+            merchant: {哑铃: 0.45, price: {gem_topaz: 160}},
+            BINGO!: {哑铃: 0.4},
+            wheelOfFortune1: {哑铃: 0.4}
+        }
+    },
+    treasure_empoweredN4: {
+        类型: '宝藏',
+        item: 'empowered',
+        bonusTier: -9,
+        requirement() {
+            return store.state.解锁.treasureFeature.see;
+        },
+        pool: {
+            merchant: {哑铃: 0.4, price: {gem_topaz: 195}},
+            BINGO!: {哑铃: 0.8},
+            wheelOfFortune1: {哑铃: 0.8}
+        }
+    },
+    treasure_empoweredN3: {
+        类型: '宝藏',
+        item: 'empowered',
+        bonusTier: -8,
+        requirement() {
+            return store.state.解锁.treasureFeature.see;
+        },
+        pool: {
+            merchant: {哑铃: 0.35, price: {gem_topaz: 230}},
+            BINGO!: {哑铃: 0.4},
+            双倍 BINGO!: {哑铃: 0.4},
+            wheelOfFortune1: {哑铃: 0.4},
+            wheelOfFortune2: {哑铃: 0.4}
+        }
+    },
+    treasure_empoweredN2: {
+        类型: '宝藏',
+        item: 'empowered',
+        bonusTier: -7,
+        requirement() {
+            return store.state.解锁.treasureFeature.see;
+        },
+        pool: {
+            merchant: {哑铃: 0.3, price: {gem_topaz: 270}},
+            双倍 BINGO!: {哑铃: 0.8},
+            wheelOfFortune2: {哑铃: 0.8}
+        }
+    },
+    treasure_empoweredN1: {
+        类型: '宝藏',
+        item: 'empowered',
+        bonusTier: -6,
+        requirement() {
+            return store.state.解锁.treasureFeature.see;
+        },
+        pool: {
+            merchant: {哑铃: 0.25, price: {gem_topaz: 310}},
+            双倍 BINGO!: {哑铃: 0.4},
+            三倍 BINGO!: {哑铃: 0.4},
+            wheelOfFortune2: {哑铃: 0.4},
+            wheelOfFortune3: {哑铃: 0.4},
+            ...bigEvents({哑铃: 0.2}, 80)
+        }
+    },
+    treasure_empowered: {
+        类型: '宝藏',
+        item: 'empowered',
+        bonusTier: -5,
+        requirement() {
+            return store.state.解锁.treasureFeature.see;
+        },
+        pool: {
+            merchant: {哑铃: 0.2, price: {gem_topaz: 355}},
+            三倍 BINGO!: {哑铃: 0.8},
+            wheelOfFortune3: {哑铃: 0.8},
+            ...bigEvents({哑铃: 0.3}, 95)
+        }
+    },
+    treasure_empoweredP1: {
+        类型: '宝藏',
+        item: 'empowered',
+        bonusTier: -4,
+        requirement() {
+            return store.state.解锁.treasureFeature.see;
+        },
+        pool: {
+            merchant: {哑铃: 0.15, price: {gem_topaz: 400}},
+            三倍 BINGO!: {哑铃: 0.4},
+            bingo4: {哑铃: 0.4},
+            wheelOfFortune3: {哑铃: 0.4},
+            wheelOfFortune4: {哑铃: 0.4},
+            ...bigEvents({哑铃: 0.4}, 110)
+        }
+    },
+    treasure_empoweredP2: {
+        类型: '宝藏',
+        item: 'empowered',
+        bonusTier: -3,
+        requirement() {
+            return store.state.解锁.treasureFeature.see;
+        },
+        pool: {
+            merchant: {哑铃: 0.1, price: {gem_topaz: 450}},
+            bingo4: {哑铃: 0.8},
+            wheelOfFortune4: {哑铃: 0.8},
+            ...bigEvents({哑铃: 0.5}, 130)
+        }
+    },
+    treasure_empoweredP3: {
+        类型: '宝藏',
+        item: 'empowered',
+        bonusTier: -2,
+        requirement() {
+            return store.state.解锁.treasureFeature.see;
+        },
+        pool: {
+            merchant: {哑铃: 0.05, price: {gem_topaz: 500}},
+            bingo4: {哑铃: 0.4},
+            wheelOfFortune4: {哑铃: 0.4},
+            ...bigEvents({哑铃: 0.4}, 150)
+        }
+    },
+    treasure_empoweredP4: {
+        类型: '宝藏',
+        item: 'empowered',
+        bonusTier: -1,
+        requirement() {
+            return store.state.解锁.treasureFeature.see;
+        },
+        pool: {
+            ...bigEvents({哑铃: 0.3}, 175)
+        }
+    },
+    treasure_empoweredP5: {
+        类型: '宝藏',
+        item: 'empowered',
+        requirement() {
+            return store.state.解锁.treasureFeature.see;
+        },
+        pool: {
+            ...bigEvents({哑铃: 0.2}, 200)
+        }
+    },
+    
+    relic_hundredDollarBill: {
+        类型: '圣遗物',
+        item: '100 美元钞票',
+        哑铃: 1,
+        requirement() {
+            return store.state.解锁.villageFeature.see;
+        },
+        pool: {
+            merchant: {price: {gem_topaz: 800}}
+        }
+    },
+    relic_hotAirBalloon: {
+        类型: '圣遗物',
+        item: '热气球',
+        哑铃: 1,
+        requirement() {
+            return store.state.解锁.冶炼厂.see;
+        },
+        pool: {
+            merchant: {price: {gem_topaz: 800}}
+        }
+    },
+    relic_largeClover: {
+        类型: '圣遗物',
+        item: '大三叶草',
+        哑铃: 1,
+        requirement() {
+            return store.state.解锁.hordeItems.see;
+        },
+        pool: {
+            bingo4: {}
+        }
+    },
+    relic_eightBall: {
+        类型: '圣遗物',
+        item: '8球',
+        哑铃: 1,
+        pool: {
+            bingo4: {}
+        }
+    },
+    relic_youngPig: {
+        类型: '圣遗物',
+        item: '年轻的猪',
+        哑铃: 1,
+        requirement() {
+            return store.state.解锁.hordeHeirlooms.see;
+        },
+        pool: {
+            wheelOfFortune4: {}
+        }
+    },
+    relic_silverHorseshoe: {
+        类型: '圣遗物',
+        item: '银色马蹄铁',
+        哑铃: 1,
+        requirement() {
+            return store.state.解锁.作物经验.see;
+        },
+        pool: {
+            wheelOfFortune4: {}
+        }
+    },
+    
+    relic_tinfoilHat: {
+        类型: '圣遗物',
+        item: '锡纸帽',
+        哑铃: 0.5,
+        requirement() {
+            return store.state.达到 {0} {1}.mining_maxDepth0.总计 {0} >= store.state.采矿.ingredient.铝矿石.minDepth;
+        },
+        pool: {
+            merchant: {price: {gem_topaz: 600}},
+            bingo4: {},
+            wheelOfFortune4: {}
+        }
+    },
+    relic_cupOfWater: {
+        类型: '圣遗物',
+        item: '一杯水',
+        哑铃: 0.5,
+        requirement() {
+            return store.state.升级成本.item.village_glassBlowery.highestLevel >= 1;
+        },
+        pool: {
+            merchant: {price: {gem_topaz: 600}},
+            bingo4: {},
+            wheelOfFortune4: {}
+        }
+    },
+    relic_combatStrategy: {
+        类型: '圣遗物',
+        item: '作战策略',
+        哑铃: 0.5,
+        requirement() {
+            return store.state.解锁.hordeItemMastery.see;
+        },
+        pool: {
+            merchant: {price: {gem_topaz: 600}},
+            bingo4: {},
+            wheelOfFortune4: {}
+        }
+    },
+    relic_bronzeTools: {
+        类型: '圣遗物',
+        item: '青铜工具',
+        哑铃: 0.5,
+        requirement() {
+            return store.state.达到 {0} {1}.mining_maxDepth0.总计 {0} >= store.state.采矿.ingredient.锡矿石.minDepth;
+        },
+        pool: {
+            ...bigEvents({}, 70)
+        }
+    },
+    relic_minersHat: {
+        类型: '圣遗物',
+        item: '矿工帽',
+        哑铃: 0.5,
+        requirement() {
+            return store.state.达到 {0} {1}.mining_maxDepth0.总计 {0} >= store.state.采矿.ingredient.钛矿石.minDepth;
+        },
+        pool: {
+            ...bigEvents({}, 100)
+        }
+    },
+    relic_dictionary: {
+        类型: '圣遗物',
+        item: '字典',
+        哑铃: 0.5,
+        requirement() {
+            return store.state.升级成本.item.village_library.highestLevel >= 1;
+        },
+        pool: {
+            ...bigEvents({}, 75)
+        }
+    },
+    relic_expertTools: {
+        类型: '圣遗物',
+        item: '专业工具',
+        哑铃: 0.5,
+        requirement() {
+            return store.state.升级成本.item.village_deepMine.highestLevel >= 1;
+        },
+        pool: {
+            ...bigEvents({}, 90)
+        }
+    },
+    relic_bloodBag: {
+        类型: '圣遗物',
+        item: '血袋',
+        哑铃: 0.5,
+        requirement() {
+            return store.state.达到 {0} {1}.gallery_red.总计 {0} > 0;
+        },
+        pool: {
+            ...bigEvents({}, 115)
+        }
+    },
+    
+    mining_scrap: {
+        类型: '收集 {0} ',
+        item: 'mining_scrap',
+        哑铃: 1,
+        amountMult: () => store.getters['采矿/depthScrap'](store.state.达到 {0} {1}[`mining_maxDepth${ store.state.system.功能.采矿.currentSubfeature }`].value),
+        pool: {
+            bingo0: {amount: 500},
+            wheelOfFortune0: {amount: 500}
+        }
+    },
+    mining_ember: {
+        类型: '收集 {0} ',
+        item: 'mining_ember',
+        哑铃: 1,
+        requirement() {
+            return store.state.达到 {0} {1}.mining_ember.总计 {0} > 0;
+        },
+        roundAmount: true,
+        amountMult: () => store.getters['mult/新的更新!']('MiningEmber容量'),
+        pool: {
+            bingo0: {amount: 0.01},
+            BINGO!: {amount: 0.04},
+            双倍 BINGO!: {amount: 0.15},
+            wheelOfFortune0: {amount: 0.01},
+            wheelOfFortune1: {amount: 0.04},
+            wheelOfFortune2: {amount: 0.15}
+        }
+    },
+    mining_resin: {
+        类型: '收集 {0} ',
+        item: 'mining_resin',
+        哑铃: 1,
+        requirement() {
+            return store.state.达到 {0} {1}.mining_resin.总计 {0} > 0;
+        },
+        pool: {
+            bingo0: {amount: 2},
+            BINGO!: {amount: 10},
+            wheelOfFortune0: {amount: 2},
+            wheelOfFortune1: {amount: 10}
+        }
+    },
+    village_offering: {
+        类型: '收集 {0} ',
+        item: 'village_offering',
+        哑铃: 1,
+        requirement() {
+            return store.state.解锁.供品.see;
+        },
+        roundAmount: true,
+        amountMult: () => store.getters['村庄/offeringScore'],
+        pool: {
+            bingo0: {amount: 0.15},
+            BINGO!: {amount: 0.5},
+            双倍 BINGO!: {amount: 1.75},
+            wheelOfFortune0: {amount: 0.15},
+            wheelOfFortune1: {amount: 0.5},
+            wheelOfFortune2: {amount: 1.75}
+        }
+    },
+    horde_bone: {
+        类型: '收集 {0} ',
+        item: 'horde_bone',
+        哑铃: 1,
+        requirement() {
+            return store.state.解锁.hordeFeature.see;
+        },
+        amountMult: () => store.getters['mult/新的更新!']('HordeBone增益', store.getters['部落/enemyBone'](store.state.达到 {0} {1}.horde_maxZone.value)),
+        pool: {
+            bingo0: {amount: 500},
+            wheelOfFortune0: {amount: 500}
+        }
+    },
+    gallery_beauty: {
+        类型: '收集 {0} ',
+        item: 'gallery_beauty',
+        哑铃: 1,
+        requirement() {
+            return store.state.解锁.galleryFeature.see;
+        },
+        amountMult: () => store.getters['mult/新的更新!']('GalleryBeauty增益'),
+        pool: {
+            bingo0: {amount: 500},
+            wheelOfFortune0: {amount: 500}
+        }
+    },
+    
+    红宝石: {
+        类型: '收集 {0} ',
+        item: '红宝石',
+        哑铃: 0.5,
+        requirement() {
+            return store.state.解锁.gemFeature.see;
+        },
+        pool: gemPool
+    },
+    翡翠: {
+        类型: '收集 {0} ',
+        item: '翡翠',
+        哑铃: 0.5,
+        requirement() {
+            return store.state.解锁.gemFeature.see;
+        },
+        pool: gemPool
+    },
+    蓝宝石: {
+        类型: '收集 {0} ',
+        item: '蓝宝石',
+        哑铃: 0.5,
+        requirement() {
+            return store.state.解锁.gemFeature.see;
+        },
+        pool: gemPool
+    },
+    紫水晶: {
+        类型: '收集 {0} ',
+        item: '紫水晶',
+        哑铃: 0.5,
+        requirement() {
+            return store.state.解锁.gemFeature.see;
+        },
+        pool: gemPool
+    },
+    school_examPass: {
+        类型: '收集 {0} ',
+        item: 'school_examPass',
+        哑铃: 1,
+        requirement() {
+            return store.state.解锁.schoolFeature.see;
+        },
+        roundAmount: true,
+        pool: {
+            merchant: {cap: 5, price: {gem_topaz: 90}},
+            BINGO!: {amount: 2},
+            双倍 BINGO!: {amount: 8},
+            wheelOfFortune1: {amount: 2},
+            wheelOfFortune2: {amount: 8}
+        }
+    },
+    treasure_fragment: {
+        类型: '收集 {0} ',
+        item: 'treasure_fragment',
+        哑铃: 1,
+        requirement() {
+            return store.state.解锁.treasureFeature.see;
+        },
+        roundAmount: true,
+        amountMult: () => store.getters['宝藏/averageFragments'],
+        pool: {
+            bingo0: {},
+            BINGO!: {amount: 4},
+            wheelOfFortune0: {},
+            wheelOfFortune1: {amount: 4}
+        }
+    },
+    horde_towerKey: {
+        类型: '收集 {0} ',
+        item: 'horde_towerKey',
+        requirement() {
+            return store.state.解锁.hordeBrickTower.see;
+        },
+        roundAmount: true,
+        pool: {
+            merchant: {cap: 3, price: {gem_topaz: 450}},
+            双倍 BINGO!: {amount: 1},
+            三倍 BINGO!: {amount: 4},
+            bingo4: {amount: 20},
+            wheelOfFortune2: {amount: 1},
+            wheelOfFortune3: {amount: 4},
+            wheelOfFortune4: {amount: 20}
+        }
+    },
+    
+    mining_goldenHammer: {
+        类型: '此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？',
+        item: 'mining_goldenHammer',
+        哑铃: 1,
+        requirement() {
+            return store.state.解锁.镐制作.see;
+        },
+        pool: {
+            merchant: {price: {gem_topaz: 60}},
+            BINGO!: {},
+            双倍 BINGO!: {amount: 4},
+            wheelOfFortune1: {},
+            wheelOfFortune2: {amount: 4}
+        }
+    },
+    gem_prestigeStone: {
+        类型: '此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？',
+        item: 'gem_prestigeStone',
+        哑铃: 0.25,
+        pool: {
+            merchant: {price: {gem_topaz: 1000}},
+            双倍 BINGO!: {},
+            三倍 BINGO!: {哑铃: 0.5, amount: 3},
+            bingo4: {哑铃: 1, amount: 10},
+            wheelOfFortune2: {},
+            wheelOfFortune3: {哑铃: 0.5, amount: 3},
+            wheelOfFortune4: {哑铃: 1, amount: 10}
+        }
+    },
+    farm_speedGrow: {
+        类型: '此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？',
+        item: 'farm_speedGrow',
+        哑铃: 1,
+        requirement() {
+            return store.state.此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？.farm_speedGrow.found;
+        },
+        pool: {
+            merchant: {amount: 25, price: {gem_topaz: 50}},
+            BINGO!: {amount: 25},
+            双倍 BINGO!: {amount: 100},
+            wheelOfFortune1: {amount: 25},
+            wheelOfFortune2: {amount: 100}
+        }
+    },
+    farm_richSoil: {
+        类型: '此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？',
+        item: 'farm_richSoil',
+        哑铃: 1,
+        requirement() {
+            return store.state.此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？.farm_richSoil.found;
+        },
+        pool: {
+            merchant: {amount: 25, price: {gem_topaz: 50}},
+            BINGO!: {amount: 25},
+            双倍 BINGO!: {amount: 100},
+            wheelOfFortune1: {amount: 25},
+            wheelOfFortune2: {amount: 100}
+        }
+    },
+    farm_shiny: {
+        类型: '此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？',
+        item: 'farm_shiny',
+        哑铃: 1,
+        requirement() {
+            return store.state.此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？.farm_shiny.found;
+        },
+        pool: {
+            merchant: {amount: 25, price: {gem_topaz: 50}},
+            BINGO!: {amount: 25},
+            双倍 BINGO!: {amount: 100},
+            wheelOfFortune1: {amount: 25},
+            wheelOfFortune2: {amount: 100}
+        }
+    },
+    farm_turboGrow: {
+        类型: '此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？',
+        item: 'farm_turboGrow',
+        哑铃: 1,
+        requirement() {
+            return store.state.此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？.farm_turboGrow.found;
+        },
+        pool: {
+            merchant: {amount: 25, price: {gem_topaz: 50}},
+            BINGO!: {amount: 25},
+            双倍 BINGO!: {amount: 100},
+            wheelOfFortune1: {amount: 25},
+            wheelOfFortune2: {amount: 100}
+        }
+    },
+    farm_premium: {
+        类型: '此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？',
+        item: 'farm_premium',
+        哑铃: 1,
+        requirement() {
+            return store.state.此操作需要您没有的消耗品。 您想用稀有货币购买这些吗？.farm_premium.found;
+        },
+        pool: {
+            merchant: {amount: 20, price: {gem_topaz: 80}},
+            双倍 BINGO!: {amount: 50},
+            wheelOfFortune2: {amount: 50}
+        }
+    },
+    
+    mining_prestige: {
+        类型: '收集 {0} ',
+        item: 'mining_crystalGreen',
+        哑铃: 1,
+        requirement() {
+            return store.state.达到 {0} {1}.mining_prestigeCount.总计 {0} >= 1;
+        },
+        amountMult: () => store.state.达到 {0} {1}.mining_bestPrestige0.总计 {0},
+        pool: {
+            BINGO!: {amount: 0.1},
+            双倍 BINGO!: {amount: 0.4},
+            三倍 BINGO!: {amount: 2.5},
+            wheelOfFortune1: {amount: 0.1},
+            wheelOfFortune2: {amount: 0.4},
+            wheelOfFortune3: {amount: 2.5}
+        }
+    },
+    village_prestige: {
+        类型: '收集 {0} ',
+        item: 'village_blessing',
+        哑铃: 1,
+        requirement() {
+            return store.state.达到 {0} {1}.village_prestigeCount.总计 {0} >= 1;
+        },
+        amountMult: () => store.state.达到 {0} {1}.village_bestPrestige0.总计 {0},
+        pool: {
+            BINGO!: {amount: 0.1},
+            双倍 BINGO!: {amount: 0.4},
+            三倍 BINGO!: {amount: 2.5},
+            wheelOfFortune1: {amount: 0.1},
+            wheelOfFortune2: {amount: 0.4},
+            wheelOfFortune3: {amount: 2.5}
+        }
+    },
+    horde_prestige: {
+        类型: '收集 {0} ',
+        item: 'horde_soulEmpowered',
+        哑铃: 1,
+        requirement() {
+            return store.state.达到 {0} {1}.horde_prestigeCount.总计 {0} >= 1;
+        },
+        amountMult: () => store.state.达到 {0} {1}.horde_bestPrestige0.总计 {0},
+        pool: {
+            BINGO!: {amount: 0.1},
+            双倍 BINGO!: {amount: 0.4},
+            三倍 BINGO!: {amount: 2.5},
+            wheelOfFortune1: {amount: 0.1},
+            wheelOfFortune2: {amount: 0.4},
+            wheelOfFortune3: {amount: 2.5}
+        }
+    },
+    gallery_prestige: {
+        类型: '收集 {0} ',
+        item: 'gallery_cash',
+        哑铃: 1,
+        requirement() {
+            return store.state.达到 {0} {1}.gallery_prestigeCount.总计 {0} >= 1;
+        },
+        amountMult: () => store.state.达到 {0} {1}.gallery_bestPrestige.总计 {0},
+        pool: {
+            BINGO!: {amount: 0.1},
+            双倍 BINGO!: {amount: 0.4},
+            三倍 BINGO!: {amount: 2.5},
+            wheelOfFortune1: {amount: 0.1},
+            wheelOfFortune2: {amount: 0.4},
+            wheelOfFortune3: {amount: 2.5}
+        }
+    },
+    ...cindersPrize,
+    ...bloomPrize,
+    ...weatherChaosPrize,
+    ...summerFestivalPrize,
+    ...nightHuntPrize,
+    ...snowdownPrize
+}

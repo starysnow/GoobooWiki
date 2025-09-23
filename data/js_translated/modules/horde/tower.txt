@@ -1,0 +1,187 @@
+{
+  砖块: {
+    解锁: 'hordeBrickTower',
+    sigils: ['猛击', '韧性', '力量', '生长', '暴怒'],
+    statBase: 140,
+    statScaling: 0.25,
+    crowns: 1,
+    heirlooms: ['砖块'],
+    reward: {
+      50: {
+        类型: '解锁',
+        name: '皇家盔甲升级',
+        value: true
+      },
+      100: {
+        类型: 'mult',
+        name: '生命值',
+        value: 1.5
+      },
+      150: {
+        类型: 'mult',
+        name: 'HordeMonsterPart容量',
+        value: 1.35
+      },
+      200: {
+        类型: '基础 {0}',
+        name: '怀旧之情',
+        value: 50
+      },
+      300: {
+        类型: '解锁',
+        name: '皇家屠夫升级',
+        value: true
+      },
+      400: {
+        类型: '基础 {0}',
+        name: '怀旧之情',
+        value: 50
+      },
+      500: {
+        类型: 'mult',
+        name: 'HordeBone容量',
+        value: 1.5
+      }
+    }
+  },
+  fire: {
+    解锁: 'hordeFireTower',
+    sigils: ['魔法箭', '火球', '火花', '智慧', '狂暴'],
+    statBase: 170,
+    statScaling: 0.3,
+    crowns: 2,
+    heirlooms: ['heat'],
+    reward: {
+      50: {
+        类型: '解锁',
+        name: '皇家存储升级',
+        value: true
+      },
+      100: {
+        类型: '基础 {0}',
+        name: '装备容量',
+        value: 1
+      },
+      150: {
+        类型: 'mult',
+        name: '攻击',
+        value: 1.35
+      },
+      200: {
+        类型: '基础 {0}',
+        name: '暴击伤害',
+        value: 0.2
+      },
+      300: {
+        类型: 'mult',
+        name: 'HordeBone容量',
+        value: 1.5
+      },
+      400: {
+        类型: 'mult',
+        name: 'HordeMonsterPart容量',
+        value: 1.35
+      }
+    }
+  },
+  ice: {
+    解锁: 'hordeIceTower',
+    sigils: ['生命值', '抵抗', '寒冷', '天使', '冰巨人'],
+    statBase: 200,
+    statScaling: 0.35,
+    crowns: 3,
+    heirlooms: ['ice'],
+    reward: {
+      50: {
+        类型: 'mult',
+        name: 'HordeBone增益',
+        value: 1.5
+      },
+      100: {
+        类型: '解锁',
+        name: '皇家地窖升级',
+        value: true
+      },
+      150: {
+        类型: 'mult',
+        name: 'HordeSoulCorrupted增益',
+        value: 1.2
+      },
+      200: {
+        类型: '基础 {0}',
+        name: '最大牺牲',
+        value: 1
+      },
+      300: {
+        类型: 'mult',
+        name: '生命值',
+        value: 1.5
+      }
+    }
+  },
+  danger: {
+    解锁: 'hordeDangerTower',
+    sigils: ['处决', '聚焦', '核弹', '精确', '攻击和生命值 x{0}'],
+    statBase: 245,
+    statScaling: 0.4,
+    crowns: 5,
+    heirlooms: ['crystal'],
+    reward: {
+      50: {
+        类型: '解锁',
+        name: '皇家秘密升级',
+        value: true
+      },
+      100: {
+        类型: 'mult',
+        name: '攻击',
+        value: 1.5
+      },
+      150: {
+        类型: '基础 {0}',
+        name: 'HordeMysticalShard容量',
+        value: 5
+      },
+      200: {
+        类型: 'mult',
+        name: '攻击',
+        value: 1.5
+      },
+      300: {
+        类型: '基础 {0}',
+        name: 'HordeMysticalShard容量',
+        value: 5
+      }
+    }
+  },
+  有毒: {
+    解锁: 'hordeToxicTower',
+    sigils: ['有毒', '口臭', '流失', '喷吐', '尖锐'],
+    statBase: 290,
+    statScaling: 0.45,
+    crowns: 8,
+    heirlooms: ['活力'],
+    reward: {
+      50: {
+        类型: '基础 {0}',
+        name: '最大牺牲',
+        value: 1
+      },
+      100: {
+        类型: 'mult',
+        name: '生命值',
+        value: 1.5
+      },
+      150: {
+        类型: 'mult',
+        name: '治疗',
+        value: 1.2
+      },
+      200: {
+        类型: 'mult',
+        name: '攻击',
+        value: 1.5
+      }
+    }
+  }
+}

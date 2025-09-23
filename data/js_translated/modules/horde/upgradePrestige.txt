@@ -1,0 +1,233 @@
+export default {
+    愤怒: {类型: '声望', cap: 10, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(1.55, lvl) * 60};
+    }, 效果: [
+        {name: '攻击', 类型: 'mult', value: lvl => lvl * 0.25 + 1},
+        {name: '暴击率', 类型: '基础 {0}', value: lvl => lvl * 0.01}
+    ]},
+    和平: {类型: '声望', cap: 10, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(1.55, lvl) * 60};
+    }, 效果: [
+        {name: '生命值', 类型: 'mult', value: lvl => lvl * 0.25 + 1},
+        {name: '重生时间', 类型: '基础 {0}', value: lvl => lvl * -5}
+    ]},
+    牛奶: {类型: '声望', cap: 45, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(1.65, lvl) * 80};
+    }, 效果: [
+        {name: 'HordeBone增益', 类型: '基础 {0}', value: lvl => Math.pow(2, lvl) * 50},
+        {name: 'HordeBone增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
+        {name: 'HordeBone容量', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)}
+    ]},
+    屠夫: {类型: '声望', cap: 10, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(1.75, lvl) * 100};
+    }, 效果: [
+        {name: 'HordeMonsterPart增益', 类型: '基础 {0}', value: lvl => lvl * 0.05},
+        {name: 'HordeMonsterPart容量', 类型: '基础 {0}', value: lvl => lvl * 30}
+    ]},
+    新手运气: {类型: '声望', cap: 120, requirementBase, requirementStat, requirementValue: 26, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(1.9, lvl) * 375};
+    }, 效果: [
+        {name: '装备几率', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
+        {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: lvl => lvl * 0.08 + 1}
+    ]},
+    平衡: {类型: '声望', requirementBase, requirementStat, requirementValue: 31, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(1.55, lvl) * 1100};
+    }, 效果: [
+        {name: '攻击', 类型: 'mult', value: lvl => Math.pow(1.12, lvl)},
+        {name: '生命值', 类型: 'mult', value: lvl => Math.pow(1.12, lvl)}
+    ]},
+    进阶运气: {类型: '声望', requirementBase, requirementStat, requirementValue: 36, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(1.9, lvl) * 4250};
+    }, 效果: [
+        {name: '传家宝几率', 类型: '基础 {0}', value: lvl => Math.出现在区域 {0} 或更高区域(lvl * 0.0025, 0.1)},
+        {name: '怀旧之情', 类型: '基础 {0}', value: lvl => lvl * 5}
+    ]},
+    骨头商人: {类型: '声望', cap: 150, requirementBase, requirementStat, requirementValue: 41, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(1.65, lvl) * buildNum(18.5, 'K')};
+    }, 效果: [
+        {name: 'HordeBone增益', 类型: 'mult', value: lvl => Math.pow(1.3, lvl)},
+        {name: 'HordeMonsterPart容量', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)}
+    ]},
+    灵魂牢笼: {类型: '声望', cap: 80, requirementBase, requirementStat, requirementValue: 46, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(2.35, lvl) * buildNum(65, 'K')};
+    }, 效果: [
+        {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
+        {name: 'HordeSoulCorrupted容量', 类型: 'mult', value: lvl => Math.pow(1.4, lvl)}
+    ]},
+    进攻之书: {类型: '声望', cap: 50, requirementBase, requirementStat, requirementValue: 51, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(1.3, lvl) * buildNum(350, 'K')};
+    }, 效果: [
+        {name: '力量效果', 类型: 'mult', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.15 + 1)}
+    ]},
+    防御之书: {类型: '声望', cap: 50, requirementBase, requirementStat, requirementValue: 56, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(1.3, lvl) * buildNum(1.25, 'M')};
+    }, 效果: [
+        {name: '韧效果', 类型: 'mult', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.15 + 1)}
+    ]},
+    灰圈: {类型: '声望', requirementBase, requirementStat, requirementValue: 61, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(lvl * 0.02 + 1.25, lvl) * buildNum(9, 'M')};
+    }, 效果: [
+        {name: '腐败', 类型: '基础 {0}', value: lvl => lvl * -0.12}
+    ]},
+    遗愿: {类型: '声望', cap: 15, requirementBase, requirementStat, requirementValue: 66, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(lvl * 0.5 + 3, lvl) * buildNum(75, 'M')};
+    }, 效果: [
+        {name: '最大传家宝增益', 类型: '基础 {0}', value: lvl => lvl}
+    ]},
+    蜡烛圈: {类型: '声望', requirementBase, requirementStat, requirementValue: 71, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(lvl * 0.002 + 1.3, lvl) * buildNum(1.7, 'B')};
+    }, 效果: [
+        {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: lvl => Math.pow(1.03, lvl)},
+        {name: '重生时间', 类型: '基础 {0}', value: lvl => lvl * -5}
+    ]},
+    收容室: {类型: '声望', cap: 100, requirementBase, requirementStat, requirementValue: 81, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(1.3 + lvl * 0.01, lvl) * buildNum(100, 'B')};
+    }, 效果: [
+        {name: 'HordeBone容量', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)},
+        {name: '传家宝效果', 类型: 'mult', value: lvl => lvl * 0.03 + 1}
+    ]},
+    陵墓: {类型: '声望', cap: 80, requirementBase, requirementStat, requirementValue: 91, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(lvl * 0.005 + 1.4, lvl) * buildNum(2.4, 'T')};
+    }, 效果: [
+        {name: 'HordeBone增益', 类型: 'mult', value: lvl => Math.pow(1.3, lvl)},
+        {name: 'HordeMonsterPart增益', 类型: 'mult', value: lvl => Math.pow(1.15, lvl)},
+        {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: lvl => Math.pow(1.075, lvl)}
+    ]},
+    战斗研究: {类型: '声望', requirementBase, requirementStat, requirementValue: 111, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(1.45 + lvl * 0.025, lvl) * buildNum(85, 'Qa')};
+    }, 效果: [
+        {name: '精通点数增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.1 + 1)}
+    ]},
+    骨室: {类型: '声望', requirementBase, requirementStat, requirementValue: 131, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(2.7 + lvl * 0.05, lvl) * buildNum(275, 'Qi')};
+    }, 效果: [
+        {name: 'HordeBone容量', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
+    ]},
+    深仇大恨: {类型: '声望', cap: 30, requirementBase, requirementStat, requirementValue: 151, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(lvl * 0.02 + 1.6, lvl) * buildNum(2.25, 'Sx')};
+    }, 效果: [
+        {name: '攻击', 类型: 'mult', value: lvl => Math.pow(1.06, lvl) * (lvl * 0.1 + 1)},
+        {name: '生命值', 类型: 'mult', value: lvl => Math.pow(1.03, lvl) * (lvl * 0.05 + 1)}
+    ]},
+    精神诱惑: {类型: '声望', cap: 50, requirementBase, requirementStat, requirementValue: 181, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(1.25, lvl) * buildNum(333, 'Sp')};
+    }, 效果: [
+        {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: lvl => lvl * 0.08 + 1}
+    ]},
+    神秘的电容器: {类型: '声望', requirementBase, requirementStat, requirementValue: 211, price(lvl) {
+        return {horde_soulEmpowered: Math.pow(lvl * 0.1 + 2, lvl) * buildNum(15, 'N')};
+    }, 效果: [
+        {name: 'HordeMysticalShard容量', 类型: '基础 {0}', value: lvl => lvl}
+    ]},
+    
+    皇家宝剑: {类型: '声望', requirementBase, requirementStat, requirementValue: 140, price(lvl) {
+        return {horde_crown: Math.round(Math.pow(1.08, lvl) * (lvl + 1) * 10)};
+    }, 效果: [
+        {name: '攻击', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (0.1 * lvl + 1)}
+    ]},
+    皇家盔甲: {类型: '声望', requirement() {
+        return store.state.解锁.皇家盔甲升级.use;
+    }, price(lvl) {
+        return {horde_crown: Math.round(Math.pow(1.08, lvl) * (lvl + 1) * 14)};
+    }, 效果: [
+        {name: '生命值', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (0.1 * lvl + 1)}
+    ]},
+    皇家存储: {类型: '声望', requirement() {
+        return store.state.解锁.皇家存储升级.use;
+    }, price(lvl) {
+        return {horde_crown: Math.round(Math.pow(1.08, lvl) * (lvl + 1) * 28)};
+    }, 效果: [
+        {name: 'HordeBone增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (0.1 * lvl + 1)},
+        {name: 'HordeBone容量', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (0.1 * lvl + 1)}
+    ]},
+    皇家屠夫: {类型: '声望', requirement() {
+        return store.state.解锁.皇家屠夫升级.use;
+    }, price(lvl) {
+        return {horde_crown: Math.round(Math.pow(1.08, lvl) * (lvl + 1) * 55)};
+    }, 效果: [
+        {name: 'HordeMonsterPart增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (0.05 * lvl + 1)}
+    ]},
+    皇家墓穴: {类型: '声望', requirement() {
+        return store.state.解锁.皇家地窖升级.use;
+    }, price(lvl) {
+        return {horde_crown: Math.round(Math.pow(1.08, lvl) * (lvl + 1) * 111)};
+    }, 效果: [
+        {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: lvl => getSequence(5, lvl) * 0.01 + 1},
+        {name: 'HordeSoulCorrupted容量', 类型: 'mult', value: lvl => getSequence(5, lvl) * 0.01 + 1}
+    ]},
+    皇家秘密: {类型: '声望', requirement() {
+        return store.state.解锁.皇家秘密升级.use;
+    }, price(lvl) {
+        return {horde_crown: Math.round(Math.pow(1.08, lvl) * (lvl + 1) * 222)};
+    }, 效果: [
+        {name: 'HordeMysticalShard容量', 类型: '基础 {0}', value: lvl => lvl}
+    ]},
+    精确: {类型: '声望', requirement() {
+        return store.state.解锁.hordeClassesSubfeature.see;
+    }, price(lvl) {
+        return {horde_courage: Math.pow(lvl * 0.01 + 1.55, lvl) * 1000};
+    }, 效果: [
+        {name: '攻击', 类型: 'mult', value: lvl => Math.pow(1.15, lvl)}
+    ]},
+    解救: {类型: '声望', requirement() {
+        return store.state.解锁.hordeClassesSubfeature.see;
+    }, price(lvl) {
+        return {horde_courage: Math.pow(lvl * 0.01 + 1.55, lvl) * 1250};
+    }, 效果: [
+        {name: '生命值', 类型: 'mult', value: lvl => Math.pow(1.15, lvl)}
+    ]},
+    决心: {类型: '声望', requirementBase: requirementBase2, requirementValue: 7, price(lvl) {
+        return {horde_courage: Math.pow(lvl * 0.02 + 2.35, lvl) * 6000};
+    }, 效果: [
+        {name: 'HordeSoulCorrupted增益', 类型: 'mult', value: lvl => Math.pow(1.08, lvl)},
+        {name: 'HordeCourage增益', 类型: 'mult', value: lvl => Math.pow(1.08, lvl)}
+    ]},
+    教育: {类型: '声望', requirementBase: requirementBase2, requirementValue: 10, price(lvl) {
+        return {horde_courage: Math.pow(lvl * 0.01 + 1.6, lvl) * buildNum(11, 'K')};
+    }, 效果: [
+        {name: '等级时间', 类型: 'mult', value: lvl => Math.pow(1 / 1.1, lvl)}
+    ]},
+    血室: {类型: '声望', requirementBase: requirementBase2, requirementValue: 12, price(lvl) {
+        return {horde_courage: Math.pow(lvl * 0.05 + 2.5, lvl) * buildNum(16, 'K')};
+    }, 效果: [
+        {name: 'HordeBone容量', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)},
+        {name: 'HordeBlood容量', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    石肤: {类型: '声望', requirementBase: requirementBase2, requirementValue: 16, price(lvl) {
+        return {horde_courage: Math.pow(lvl + 5, lvl) * buildNum(70, 'K')};
+    }, 效果: [
+        {name: '生命值', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)},
+        {name: '治疗', 类型: 'mult', value: lvl => Math.pow(1 / 1.2, lvl)}
+    ]},
+    大学: {类型: '声望', requirementBase: requirementBase2, requirementValue: 20, price(lvl) {
+        return {horde_courage: Math.pow(lvl * 0.01 + 1.85, lvl) * buildNum(250, 'K')};
+    }, 效果: [
+        {name: '等级增量', 类型: 'mult', value: lvl => Math.pow(1 / 1.1, lvl)}
+    ]},
+    发现: {类型: '声望', requirementBase: requirementBase2, requirementValue: 27, price(lvl) {
+        return {horde_courage: Math.pow(lvl * 0.25 + 4, lvl) * buildNum(5, 'M')};
+    }, 效果: [
+        {name: '最大传家宝增益', 类型: '基础 {0}', value: lvl => lvl},
+        {name: '饰品最大增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+    ]},
+    心灵专注: {类型: '声望', requirementBase: requirementBase2, requirementValue: 33, price(lvl) {
+        return {horde_courage: Math.pow(lvl * 0.5 + 2, lvl) * buildNum(28, 'M')};
+    }, 效果: [
+        {name: '治疗', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)}
+    ]},
+    清洗: {类型: '声望', requirementBase: requirementBase2, requirementValue: 45, price(lvl) {
+        return {horde_courage: Math.pow(lvl * 0.015 + 1.25, lvl) * buildNum(150, 'B')};
+    }, 效果: [
+        {name: '腐败', 类型: '基础 {0}', value: lvl => lvl * -0.09}
+    ]},
+    混沌箱: {类型: '声望', cap: 10, requirementBase: requirementBase2, requirementValue: 65, price(lvl) {
+        return {horde_courage: Math.pow(10, lvl) * buildNum(1, 'Qa')};
+    }, 效果: [
+        {name: '攻击', 类型: 'mult', value: lvl => Math.pow(1.35, lvl)},
+        {name: '装备几率', 类型: 'mult', value: lvl => lvl >= 1 ? (Math.floor((lvl + 4) / 5) * 0.5 + 1) : null},
+        {name: '最大传家宝增益', 类型: '基础 {0}', value: lvl => lvl >= 2 ? (Math.floor((lvl + 3) / 5) * 5) : null},
+        {name: '精通点数增益', 类型: 'mult', value: lvl => lvl >= 3 ? (Math.floor((lvl + 2) / 5) * 0.5 + 1) : null},
+        {name: 'HordeMysticalShard容量', 类型: '基础 {0}', value: lvl => lvl >= 4 ? (Math.floor((lvl + 1) / 5) * 10) : null},
+        {name: '级技能点数', 类型: '基础 {0}', value: lvl => lvl >= 5 ? Math.floor(lvl / 5) : null},
+    ]},
+}

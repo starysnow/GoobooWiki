@@ -1,0 +1,74 @@
+export default {
+    烟雾: {子功能: 1, price(lvl) {
+        return {mining_scrap: Math.ceil(Math.pow(lvl * 0.012 + 1.24, lvl) * buildNum(750, 'K'))};
+    }, 效果: [
+        {name: '伤害', 类型: 'mult', value: lvl => Math.pow(1.12, lvl) * Math.pow(lvl * 0.2 + 1, 2)}
+    ]},
+    巨型陨石坑: {子功能: 1, requirementBase, requirementStat, requirementValue: 5, price(lvl) {
+        return {mining_scrap: Math.ceil(Math.pow(lvl * 2 + 8, lvl) * buildNum(2.5, 'M'))};
+    }, 效果: [
+        {name: 'MiningScrap容量', 类型: 'mult', value: lvl => Math.pow(7, lvl)}
+    ]},
+    更大的压力: {子功能: 1, requirementBase, requirementStat, requirementValue: 10, price(lvl) {
+        return {mining_scrap: Math.ceil(Math.pow(lvl * 0.025 + 1.75, lvl) * buildNum(400, 'M'))};
+    }, 效果: [
+        {name: '伤害', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)},
+        {name: 'MiningScrap增益', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+    ]},
+    燃气居民: {子功能: 1, cap: 1, 保留: true, requirementBase, requirementStat, requirementValue: 15, price() {
+        return {mining_helium: 250};
+    }, 效果: [
+        {name: '深度居民', 类型: '解锁', value: lvl => lvl >= 1},
+        {name: '深度居民速度', 类型: 'mult', value: lvl => Math.pow(3, lvl)}
+    ]},
+    活塞: {子功能: 1, requirementBase, requirementStat, requirementValue: 20, price(lvl) {
+        return {mining_helium: Math.round(Math.pow(1.35, lvl) * 50)};
+    }, 效果: [
+        {name: '伤害', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.2 + 1)}
+    ]},
+    污染: {子功能: 1, cap: 1, 保留: true, requirementBase, requirementStat, requirementValue: 25, price() {
+        return {mining_helium: 1000};
+    }, 效果: [
+        {name: '烟雾', 类型: '解锁', value: lvl => lvl >= 1}
+    ]},
+    颗粒过滤器: {子功能: 1, requirement() {
+        return store.state.解锁.烟雾.use;
+    }, price(lvl) {
+        return {mining_scrap: Math.ceil(Math.pow(1.4, lvl) * buildNum(1, 'T'))};
+    }, 效果: [
+        {name: '制作力量', 类型: 'mult', value: lvl => Math.pow(1.15, lvl)}
+    ]},
+    热气球: {子功能: 1, cap: 8, requirementBase, requirementStat, requirementValue: 30, price(lvl) {
+        return {mining_scrap: Math.ceil(Math.pow(3.75, lvl) * buildNum(2.2, 'T'))};
+    }, 效果: [
+        {name: 'MiningScrap容量', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)},
+        {name: 'MiningSmoke容量', 类型: 'mult', value: lvl => lvl * 0.5 + 1}
+    ]},
+    通风口: {子功能: 1, cap: 20, requirementBase, requirementStat, requirementValue: 40, price(lvl) {
+        return {mining_scrap: Math.ceil(Math.pow(1.65, lvl) * buildNum(40, 'T'))};
+    }, 效果: [
+        {name: '伤害', 类型: 'mult', value: lvl => Math.pow(1.05, lvl)},
+        {name: 'MiningScrap增益', 类型: 'mult', value: lvl => Math.pow(1.3, lvl)}
+    ]},
+    收割机: {子功能: 1, requirementBase, requirementStat, requirementValue: 50, price(lvl) {
+        return {mining_neon: Math.round(Math.pow(1.35, lvl) * 50)};
+    }, 效果: [
+        {name: 'MiningScrap增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.3 + 1)}
+    ]},
+    石墨棒: {子功能: 1, cap: 40, requirementBase, requirementStat, requirementValue: 75, price(lvl) {
+        return {mining_scrap: Math.ceil(Math.pow(1.85, lvl) * buildNum(1, 'Qi'))};
+    }, 效果: [
+        {name: '制作力量', 类型: 'mult', value: lvl => Math.pow(1.12, lvl)},
+        {name: 'MiningSmoke容量', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)}
+    ]},
+    浓缩水晶: {子功能: 1, requirementBase, requirementStat, requirementValue: 100, price(lvl) {
+        return {mining_argon: Math.round(Math.pow(1.35, lvl) * 50)};
+    }, 效果: [
+        {name: 'MiningCrystalYellow增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
+    ]},
+    吸烟者: {子功能: 1, requirementBase, requirementStat, requirementValue: 160, price(lvl) {
+        return {mining_krypton: Math.round(Math.pow(1.35, lvl) * 50)};
+    }, 效果: [
+        {name: 'MiningSmoke增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.2 + 1)}
+    ]},
+}

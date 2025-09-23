@@ -1,0 +1,83 @@
+{
+  松树: {
+    类型: 'snowdown',
+    price(lvl) {
+      return {
+        event_sapling: 250 * Math.pow(lvl * 0.5 + 1, 2) * Math.pow(2, lvl)
+      };
+    },
+    效果: [{
+      name: '全部攻击',
+      类型: 'mult',
+      value: "(1.02^{lvl} \\cdot ((lvl \\cdot 0.05) + 1))"
+    }]
+  },
+  羊毛帽: {
+    类型: 'snowdown',
+    price(lvl) {
+      return {
+        event_yarn: 250 * Math.pow(lvl * 0.5 + 1, 2) * Math.pow(2, lvl)
+      };
+    },
+    效果: [{
+      name: '全部生命值',
+      类型: 'mult',
+      value: "(1.02^{lvl} \\cdot ((lvl \\cdot 0.05) + 1))"
+    }, {
+      name: '全部防御',
+      类型: 'mult',
+      value: "(1.02^{lvl} \\cdot ((lvl \\cdot 0.05) + 1))"
+    }]
+  },
+  饼干: {
+    类型: 'snowdown',
+    price(lvl) {
+      return {
+        event_dough: 250 * Math.pow(lvl * 0.5 + 1, 2) * Math.pow(2, lvl)
+      };
+    },
+    效果: [{
+      name: '复仇统计',
+      类型: '基础 {0}',
+      value: "(lvl \\cdot 0.0005)"
+    }, {
+      name: '复仇暴击率',
+      类型: '基础 {0}',
+      value: "(lvl \\cdot 0.06)"
+    }, {
+      name: '复仇格挡率',
+      类型: '基础 {0}',
+      value: "(lvl \\cdot 0.04)"
+    }]
+  },
+  攻击提升: {
+    类型: 'snowdown',
+    price(lvl) {
+      return {
+        gem_topaz: lvl * 50 + 150
+      };
+    },
+    效果: [{
+      name: '全部攻击',
+      类型: 'mult',
+      value: "((lvl \\cdot 0.5) + 1)"
+    }]
+  },
+  生命值提升: {
+    类型: 'snowdown',
+    price(lvl) {
+      return {
+        gem_topaz: lvl * 40 + 100
+      };
+    },
+    效果: [{
+      name: '全部生命值',
+      类型: 'mult',
+      value: "((lvl \\cdot 0.5) + 1)"
+    }, {
+      name: '全部防御',
+      类型: 'mult',
+      value: "((lvl \\cdot 0.5) + 1)"
+    }]
+  }
+}

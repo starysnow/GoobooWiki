@@ -1,5 +1,5 @@
 {
-    卡片力量: {color: '红色', 图标: 'mdi-sword', 效果: [
+    力量: {color: '红色', 图标: 'mdi-sword', 效果: [
         {name: '攻击', 类型: '*', value: lvl => lvl * 0.2 + 1}
     ]},
     fortitude: {color: '绿色', 图标: 'mdi-heart', 效果: [

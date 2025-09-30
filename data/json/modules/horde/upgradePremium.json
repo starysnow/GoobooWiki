@@ -44,7 +44,7 @@
     "类型": "高级",
     "消耗": "${ 红宝石: {(2)}^{lvl}  \\cdot  300 }$",
     "效果": "力量效果*｛$getSequence(1, lvl + 1)$｝",
-    "requirement": "$store.state.部落.传家宝.卡片力量.amount > 0$",
+    "requirement": "$store.state.部落.传家宝.力量.amount > 0$",
     "上限": "1"
   },
   {

@@ -80,86 +80,86 @@
     }, 效果: [
         {name: '铅矿石容量', 类型: '*', value: lvl => lvl * 0.25 + 1}
     ]},
-    水晶钻: {类型: '声望', 上限: 90, requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 5, 消耗(lvl) {
+    水晶钻: {类型: '声望', 上限: 90, requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 5, 消耗(lvl) {
         return {绿水晶: Math.pow(lvl * 0.01 + 1.5, lvl) * 30};
     }, 效果: [
         {name: '尽可能高的居民深度', 类型: '*', value: lvl => lvl * 0.1 + 1}
     ], onBuy() {
         store.dispatch('采矿/updateDwellerStat');
     }},
-    水晶检测器: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 10, 消耗(lvl) {
+    水晶检测器: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 10, 消耗(lvl) {
         return {绿水晶: Math.pow(1.4, lvl) * 40};
     }, 效果: [
         {name: '稀土增益', 类型: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    水晶保藏室: {类型: '声望', 上限: 3, requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 15, 消耗(lvl) {
+    水晶保藏室: {类型: '声望', 上限: 3, requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 15, 消耗(lvl) {
         return {绿水晶: Math.pow(4, lvl) * 250};
     }, 效果: [
         {name: '废料容量plus', 类型: '保留', value: lvl => lvl >= 1},
         {name: '废料增益plus', 类型: '保留', value: lvl => lvl >= 2},
         {name: '伤害plus', 类型: '保留', value: lvl => lvl >= 3}
     ]},
-    水晶工具: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 16, 消耗(lvl) {
+    水晶工具: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 16, 消耗(lvl) {
         return {绿水晶: Math.pow(lvl * 0.02 + 1.4, lvl) * 120};
     }, 效果: [
         {name: '废料增益', 类型: '*', value: lvl => Math.pow(1.11, lvl)},
         {name: '伤害', 类型: '*', value: lvl => Math.pow(1.08, lvl)}
     ]},
-    水晶炸药: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 20, 消耗(lvl) {
+    水晶炸药: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 20, 消耗(lvl) {
         return {绿水晶: Math.pow(1.15, lvl) * 200};
     }, 效果: [
         {name: '韧性', 类型: '*', value: lvl => Math.pow(1 / 1.2, lvl)}
     ]},
-    水晶精炼厂: {类型: '声望', 上限: 50, requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 25, 消耗(lvl) {
+    水晶精炼厂: {类型: '声望', 上限: 50, requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 25, 消耗(lvl) {
         return {绿水晶: Math.pow(1.4, lvl) * 650};
     }, 效果: [
         {name: '矿石增益', 类型: '*', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.1 + 1)},
         {name: '稀土增益', 类型: '*', value: lvl => Math.pow(1.05, lvl)},
         {name: '矿石品质', 类型: '*', value: lvl => lvl * 0.05 + 1}
     ]},
-    水晶冶炼厂: {类型: '声望', 上限: 100, requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 30, 消耗(lvl) {
+    水晶冶炼厂: {类型: '声望', 上限: 100, requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 30, 消耗(lvl) {
         return {绿水晶: Math.pow(1.4, lvl) * 3300};
     }, 效果: [
         {name: '冶炼温度', 类型: '+', value: lvl => 10 * lvl},
         {name: '冶炼速度', 类型: '*', value: lvl => Math.pow(1.02, lvl) * (lvl * 0.08 + 1)}
     ]},
-    水晶强化: {类型: '声望', 上限: 25, requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 35, 消耗(lvl) {
+    水晶强化: {类型: '声望', 上限: 25, requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 35, 消耗(lvl) {
         return {绿水晶: Math.pow(1.4, lvl) * buildNum(20, 'K')};
     }, 效果: [
         {name: '金属锭增量', 类型: '*', value: lvl => Math.pow(1 / 1.01, lvl)},
         {name: '增强增量', 类型: '*', value: lvl => Math.pow(1 / 1.05, lvl)}
     ]},
-    水晶树梢: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 40, 消耗(lvl) {
+    水晶树梢: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 40, 消耗(lvl) {
         return {绿水晶: Math.pow(1.4, lvl) * buildNum(75, 'K')};
     }, 效果: [
         {name: '树脂增益', 类型: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    水晶盐: {类型: '声望', 上限: 50, requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 50, 消耗(lvl) {
+    水晶盐: {类型: '声望', 上限: 50, requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 50, 消耗(lvl) {
         return {绿水晶: Math.pow(1.4, lvl) * buildNum(1.1, 'M')};
     }, 效果: [
         {name: '盐增益', 类型: '*', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.2 + 1)}
     ]},
-    水晶瓶: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 60, 消耗(lvl) {
+    水晶瓶: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 60, 消耗(lvl) {
         return {绿水晶: Math.pow(1.4, lvl) * buildNum(12.5, 'M')};
     }, 效果: [
         {name: '树脂容量', 类型: '+', value: lvl => lvl}
     ]},
-    水晶引擎: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 75, 消耗(lvl) {
+    水晶引擎: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 75, 消耗(lvl) {
         return {绿水晶: Math.pow(1.4, lvl) * buildNum(230, 'M')};
     }, 效果: [
         {name: '伤害', 类型: '*', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.25 + 1)}
     ]},
-    水晶煤: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 100, 消耗(lvl) {
+    水晶煤: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 100, 消耗(lvl) {
         return {绿水晶: Math.pow(lvl * 0.02 + 1.4, lvl) * buildNum(27, 'B')};
     }, 效果: [
         {name: '煤增益', 类型: '*', value: lvl => lvl * 0.05 + 1}
     ]},
-    水晶卡车: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 125, 消耗(lvl) {
+    水晶卡车: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 125, 消耗(lvl) {
         return {绿水晶: Math.pow(10, lvl) * buildNum(1, 'T')};
     }, 效果: [
         {name: '废料容量', 类型: '*', value: lvl => Math.pow(1.5, lvl) * (lvl * 0.5 + 1)}
     ]},
-    水晶扩张: {类型: '声望', 上限: 9, requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 150, 消耗(lvl) {
+    水晶扩张: {类型: '声望', 上限: 9, requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 150, 消耗(lvl) {
         return {绿水晶: Math.pow(10, lvl) * Math.pow(1000, Math.max(0, lvl - 6)) * buildNum(25, 'T')};
     }, 效果: [
         {name: '铝矿石容量', 类型: '*', value: lvl => lvl >= 1 ? 1000 : null},
@@ -172,12 +172,12 @@
         {name: '锇矿石容量', 类型: '*', value: lvl => lvl >= 8 ? 1000 : null},
         {name: '铅矿石容量', 类型: '*', value: lvl => lvl >= 9 ? 1000 : null}
     ]},
-    水晶TNT: {上限: 25, 类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 175, 消耗(lvl) {
+    水晶TNT: {上限: 25, 类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 175, 消耗(lvl) {
         return {绿水晶: Math.pow(10, lvl) * buildNum(6, 'Qa')};
     }, 效果: [
         {name: '韧性', 类型: '*', value: lvl => Math.pow(0.5, lvl)}
     ]},
-    水晶信标: {类型: '声望', 上限: 4, requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 200, 消耗(lvl) {
+    水晶信标: {类型: '声望', 上限: 4, requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 200, 消耗(lvl) {
         return {绿水晶: Math.pow(buildNum(1, 'M'), lvl) * buildNum(1, 'Sx')};
     }, 效果: [
         {name: '穿刺信标', 类型: '+', value: lvl => lvl >= 1 ? 1 : null},
@@ -185,18 +185,18 @@
         {name: '奇观信标', 类型: '+', value: lvl => lvl >= 3 ? 1 : null},
         {name: '希望信标', 类型: '+', value: lvl => lvl >= 4 ? 1 : null},
     ]},
-    水晶硝石: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 225, 消耗(lvl) {
+    水晶硝石: {类型: '声望', requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 225, 消耗(lvl) {
         return {绿水晶: Math.pow(lvl * 0.02 + 1.4, lvl) * buildNum(3, 'Sx')};
     }, 效果: [
         {name: '硝增益', 类型: '*', value: lvl => lvl * 0.05 + 1}
     ]},
-    水晶燃料舱: {类型: '声望', 上限: 20, requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 250, 消耗(lvl) {
+    水晶燃料舱: {类型: '声望', 上限: 20, requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 250, 消耗(lvl) {
         return {绿水晶: Math.pow(4.5, lvl) * buildNum(65, 'Sx')};
     }, 效果: [
         {name: '废料容量', 类型: '*', value: lvl => Math.pow(1.2, lvl) * (lvl * 0.4 + 1)},
         {name: '矿石容量', 类型: '*', value: lvl => lvl * 0.2 + 1},
     ]},
-    水晶矿石袋: {类型: '声望', 上限: 40, requirementBase: requirementBase0, requirementStat: requirementStat0, requirementValue: 300, 消耗(lvl) {
+    水晶矿石袋: {类型: '声望', 上限: 40, requirementBase: requirementBase0, requirementStat: requirementStat0, 解锁层数: 300, 消耗(lvl) {
         return {绿水晶: Math.pow(1.2, lvl) * buildNum(1, 'Sp')};
     }, 效果: [
         {name: '矿石容量', 类型: '+', value: lvl => lvl}
@@ -215,50 +215,50 @@
     }, 效果: [
         {name: '深度居民速度', 类型: '*', value: lvl => lvl * 0.125 + 1}
     ]},
-    氦储备: {类型: '声望', 上限: 8, requirementBase: requirementBase1, requirementStat: requirementStat1, requirementValue: 5, 消耗(lvl) {
+    氦储备: {类型: '声望', 上限: 8, requirementBase: requirementBase1, requirementStat: requirementStat1, 解锁层数: 5, 消耗(lvl) {
         return {黄水晶: Math.pow(lvl * 0.5 + 2, lvl) * 100};
     }, 效果: [
         {name: '氦增量', 类型: '+', value: lvl => lvl * 0.01}
     ]},
-    水晶烟雾: {类型: '声望', requirementBase: requirementBase1, requirementStat: requirementStat1, requirementValue: 10, 消耗(lvl) {
+    水晶烟雾: {类型: '声望', requirementBase: requirementBase1, requirementStat: requirementStat1, 解锁层数: 10, 消耗(lvl) {
         return {黄水晶: Math.pow(1.65, lvl) * 250};
     }, 效果: [
         {name: '烟雾增益', 类型: '*', value: lvl => Math.pow(1.2, lvl)},
         {name: '烟雾容量', 类型: '*', value: lvl => Math.pow(1.3, lvl)}
     ]},
-    氖储备: {类型: '声望', 上限: 8, requirementBase: requirementBase1, requirementStat: requirementStat1, requirementValue: 15, 消耗(lvl) {
+    氖储备: {类型: '声望', 上限: 8, requirementBase: requirementBase1, requirementStat: requirementStat1, 解锁层数: 15, 消耗(lvl) {
         return {黄水晶: Math.pow(lvl * 0.5 + 2, lvl) * 1000};
     }, 效果: [
         {name: '氖增量', 类型: '+', value: lvl => lvl * 0.005}
     ]},
-    水晶融合: {类型: '声望', requirementBase: requirementBase1, requirementStat: requirementStat1, requirementValue: 20, 消耗(lvl) {
+    水晶融合: {类型: '声望', requirementBase: requirementBase1, requirementStat: requirementStat1, 解锁层数: 20, 消耗(lvl) {
         return {黄水晶: Math.pow(1.75, lvl) * 2300};
     }, 效果: [
         {name: '绿水晶增益', 类型: '*', value: lvl => Math.pow(1.15, lvl)},
         {name: '黄水晶增益', 类型: '*', value: lvl => Math.pow(1.05, lvl)}
     ]},
-    水晶避难所: {类型: '声望', 上限: 2, requirementBase: requirementBase1, requirementStat: requirementStat1, requirementValue: 30, 消耗(lvl) {
+    水晶避难所: {类型: '声望', 上限: 2, requirementBase: requirementBase1, requirementStat: requirementStat1, 解锁层数: 30, 消耗(lvl) {
         return {黄水晶: Math.pow(4, lvl) * buildNum(25, 'K')};
     }, 效果: [
         {name: '活塞', 类型: '保留', value: lvl => lvl >= 1},
         {name: '收割机', 类型: '保留', value: lvl => lvl >= 2}
     ]},
-    氩储备: {类型: '声望', 上限: 8, requirementBase: requirementBase1, requirementStat: requirementStat1, requirementValue: 40, 消耗(lvl) {
+    氩储备: {类型: '声望', 上限: 8, requirementBase: requirementBase1, requirementStat: requirementStat1, 解锁层数: 40, 消耗(lvl) {
         return {黄水晶: Math.pow(lvl * 0.5 + 2, lvl) * buildNum(450, 'K')};
     }, 效果: [
         {name: '氩增量', 类型: '+', value: lvl => lvl * 0.003}
     ]},
-    水晶隧道: {类型: '声望', requirementBase: requirementBase1, requirementStat: requirementStat1, requirementValue: 60, 消耗(lvl) {
+    水晶隧道: {类型: '声望', requirementBase: requirementBase1, requirementStat: requirementStat1, 解锁层数: 60, 消耗(lvl) {
         return {黄水晶: Math.pow(1.65, lvl) * buildNum(8, 'M')};
     }, 效果: [
         {name: '废料容量', 类型: '*', value: lvl => Math.pow(1.2, lvl) * (lvl * 0.3 + 1)}
     ]},
-    水晶尘: {类型: '声望', requirementBase: requirementBase1, requirementStat: requirementStat1, requirementValue: 80, 消耗(lvl) {
+    水晶尘: {类型: '声望', requirementBase: requirementBase1, requirementStat: requirementStat1, 解锁层数: 80, 消耗(lvl) {
         return {黄水晶: Math.pow(1.65, lvl) * buildNum(120, 'M')};
     }, 效果: [
         {name: '烟雾增益', 类型: '*', value: lvl => Math.pow(1.15, lvl) * (lvl * 0.35 + 1)}
     ]},
-    氪储备: {类型: '声望', 上限: 8, requirementBase: requirementBase1, requirementStat: requirementStat1, requirementValue: 100, 消耗(lvl) {
+    氪储备: {类型: '声望', 上限: 8, requirementBase: requirementBase1, requirementStat: requirementStat1, 解锁层数: 100, 消耗(lvl) {
         return {黄水晶: Math.pow(lvl * 0.5 + 2, lvl) * buildNum(3.3, 'B')};
     }, 效果: [
         {name: '氪增量', 类型: '+', value: lvl => lvl * 0.002}

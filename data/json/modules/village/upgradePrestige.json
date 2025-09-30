@@ -8,9 +8,7 @@
     "feature": "",
     "上限": "",
     "requirement": "",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "圣草",
@@ -21,9 +19,7 @@
     "feature": "",
     "上限": "",
     "requirement": "",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "圣树",
@@ -34,9 +30,7 @@
     "feature": "",
     "上限": "",
     "requirement": "",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "圣石",
@@ -47,9 +41,7 @@
     "feature": "",
     "上限": "",
     "requirement": "",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "神圣金属",
@@ -60,9 +52,7 @@
     "feature": "",
     "上限": "",
     "requirement": "",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "教会税",
@@ -73,9 +63,7 @@
     "feature": "",
     "上限": "",
     "requirement": "",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "圣水",
@@ -86,9 +74,7 @@
     "feature": "村庄",
     "上限": "",
     "requirement": "",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "神圣玻璃",
@@ -99,9 +85,7 @@
     "feature": "",
     "上限": "",
     "requirement": "",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "圣鹤",
@@ -112,9 +96,7 @@
     "feature": "",
     "上限": "",
     "requirement": "",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "僧侣",
@@ -125,9 +107,7 @@
     "feature": "",
     "上限": "",
     "requirement": "",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "神圣的存钱罐",
@@ -138,9 +118,7 @@
     "feature": "",
     "上限": "",
     "requirement": "",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "深深的崇拜",
@@ -151,9 +129,7 @@
     "feature": "",
     "上限": "",
     "requirement": "",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "城市规划",
@@ -164,9 +140,7 @@
     "feature": "",
     "上限": "5",
     "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "经理人",
@@ -177,9 +151,7 @@
     "feature": "",
     "上限": "5",
     "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "仓库",
@@ -190,9 +162,7 @@
     "feature": "",
     "上限": "6",
     "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "砂岩",
@@ -203,9 +173,7 @@
     "feature": "",
     "上限": "10",
     "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": "方尖碑",
-    "笔记": "village_22",
-    "onBuy": ""
+    "raiseOtherCap": "方尖碑"
   },
   {
     "名称": "神圣森林",
@@ -216,9 +184,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "神圣宝石",
@@ -229,9 +195,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "更深层次的敬拜",
@@ -242,9 +206,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "神圣实验室",
@@ -255,9 +217,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "慈善机构",
@@ -268,9 +228,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "圣油",
@@ -281,9 +239,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "神圣大理石",
@@ -294,9 +250,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "平静的演讲",
@@ -307,9 +261,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "神圣战利品",
@@ -320,9 +272,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "神圣凿子",
@@ -333,9 +283,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "雇佣工匠",
@@ -346,9 +294,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.解锁.villageCraftingSubfeature.see$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "雇佣工人",
@@ -359,9 +305,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.解锁.villageCraftingSubfeature.see$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "雇佣会计师",
@@ -372,9 +316,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.解锁.villageCraftingSubfeature.see$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "配方书",
@@ -385,9 +327,7 @@
     "feature": "",
     "上限": "6",
     "requirement": "$store.state.解锁.villageCraftingSubfeature.see$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "广告活动",
@@ -398,9 +338,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.解锁.villageCraftingSubfeature.see$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "雇佣探险家",
@@ -411,9 +349,7 @@
     "feature": "",
     "上限": "4",
     "requirement": "$store.state.解锁.villageCraftingSubfeature.see$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": "${ store.dispatch('consumable/增益', { name: '配料箱', amount: 3 }); }$"
+    "raiseOtherCap": ""
   },
   {
     "名称": "雇佣园丁",
@@ -424,9 +360,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.升级成本.item.木仓.highestLevel >= 1$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "雇佣矿工",
@@ -437,9 +371,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.升级成本.item.金属仓.highestLevel >= 1$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "雇佣调酒师",
@@ -450,9 +382,7 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.升级成本.item.玻璃仓.highestLevel >= 1$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   },
   {
     "名称": "雇佣专家",
@@ -463,8 +393,6 @@
     "feature": "",
     "上限": "",
     "requirement": "$store.state.升级成本.item.宝石仓.highestLevel >= 1$",
-    "raiseOtherCap": "",
-    "笔记": "",
-    "onBuy": ""
+    "raiseOtherCap": ""
   }
 ]

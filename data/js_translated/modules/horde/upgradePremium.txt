@@ -34,7 +34,7 @@
         {name: '精通点数增益', 类型: '*', value: lvl => getSequence(2, lvl) * 0.25 + 1}
     ]},
     古老的力量: {类型: '高级', 上限: 1, requirement() {
-        return store.state.部落.传家宝.卡片力量.amount > 0;
+        return store.state.部落.传家宝.力量.amount > 0;
     }, 消耗(lvl) {
         return {红宝石: Math.pow(2, lvl) * 300};
     }, 效果: [

@@ -4,7 +4,7 @@
 更多怪物零件,高级,${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  90 }$,怪物零件增益*｛$lvl  \cdot  0.5 + 1$｝,$store.state.stat.怪物零件.总计 > 0$,
 更多灵魂,高级,${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  110 }$,腐败的灵魂增益*｛$lvl  \cdot  0.25 + 1$｝; 腐败的灵魂容量*｛$lvl  \cdot  0.25 + 1$｝,$store.state.stat.horde_maxZone.总计 > 19$,
 更多精通,高级,${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  125 }$,"精通点数增益*｛$getSequence(2, lvl)  \cdot  0.25 + 1$｝",$store.state.stat.horde_maxZone.总计 > 75$,
-古老的力量,高级,${ 红宝石: {(2)}^{lvl}  \cdot  300 }$,"力量效果*｛$getSequence(1, lvl + 1)$｝",$store.state.部落.传家宝.卡片力量.amount > 0$,1
+古老的力量,高级,${ 红宝石: {(2)}^{lvl}  \cdot  300 }$,"力量效果*｛$getSequence(1, lvl + 1)$｝",$store.state.部落.传家宝.力量.amount > 0$,1
 古老的坚韧,高级,${ 红宝石: {(2)}^{lvl}  \cdot  300 }$,"韧效果*｛$getSequence(1, lvl + 1)$｝",$store.state.部落.传家宝.fortitude.amount > 0$,1
 古老的财富,高级,${ 红宝石: {(2)}^{lvl}  \cdot  300 }$,"财富效果*｛$getSequence(1, lvl + 1)$｝",$store.state.部落.传家宝.wealth.amount > 0$,1
 古老的精神,高级,${ 红宝石: {(2)}^{lvl}  \cdot  450 }$,"精神效果*｛$getSequence(1, lvl + 1)$｝",$store.state.部落.传家宝.spirit.amount > 0$,1

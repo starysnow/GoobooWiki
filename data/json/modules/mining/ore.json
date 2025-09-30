@@ -1,7 +1,7 @@
 [
   {
     "名称": "铝矿石",
-    "卡片力量": "15",
+    "力量": "15",
     "杂质": "1.5",
     "minDepth": "15",
     "maxDepth": "45",
@@ -11,7 +11,7 @@
   },
   {
     "名称": "铜矿石",
-    "卡片力量": "50",
+    "力量": "50",
     "杂质": "2",
     "minDepth": "30",
     "maxDepth": "68",
@@ -21,7 +21,7 @@
   },
   {
     "名称": "锡矿石",
-    "卡片力量": "240",
+    "力量": "240",
     "杂质": "2.5",
     "minDepth": "50",
     "maxDepth": "100",
@@ -31,7 +31,7 @@
   },
   {
     "名称": "铁矿石",
-    "卡片力量": "1300",
+    "力量": "1300",
     "杂质": "3",
     "minDepth": "80",
     "maxDepth": "140",
@@ -41,7 +41,7 @@
   },
   {
     "名称": "钛矿石",
-    "卡片力量": "7000",
+    "力量": "7000",
     "杂质": "3.5",
     "minDepth": "120",
     "maxDepth": "200",
@@ -51,7 +51,7 @@
   },
   {
     "名称": "铂矿石",
-    "卡片力量": "[Unsupported Node: CallExpression]",
+    "力量": "[Unsupported Node: CallExpression]",
     "杂质": "4",
     "minDepth": "175",
     "maxDepth": "295",
@@ -61,7 +61,7 @@
   },
   {
     "名称": "铱矿石",
-    "卡片力量": "[Unsupported Node: CallExpression]",
+    "力量": "[Unsupported Node: CallExpression]",
     "杂质": "5",
     "minDepth": "260",
     "maxDepth": "420",
@@ -71,7 +71,7 @@
   },
   {
     "名称": "锇矿石",
-    "卡片力量": "[Unsupported Node: CallExpression]",
+    "力量": "[Unsupported Node: CallExpression]",
     "杂质": "6",
     "minDepth": "350",
     "maxDepth": "525",
@@ -81,7 +81,7 @@
   },
   {
     "名称": "铅矿石",
-    "卡片力量": "[Unsupported Node: CallExpression]",
+    "力量": "[Unsupported Node: CallExpression]",
     "杂质": "7.5",
     "minDepth": "450",
     "maxDepth": "650",

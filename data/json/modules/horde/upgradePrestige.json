@@ -5,9 +5,7 @@
     "上限": "10",
     "消耗": "${ 强大的灵魂: {(1.55)}^{lvl}  \\cdot  60 }$",
     "效果": "攻击*｛$lvl  \\cdot  0.25 + 1$｝; 暴击率+｛$lvl  \\cdot  0.01$｝",
-    "requirementBase": "",
-    "requirementStat": "",
-    "requirementValue": "",
+    "解锁层数": "",
     "requirement": ""
   },
   {
@@ -16,9 +14,7 @@
     "上限": "10",
     "消耗": "${ 强大的灵魂: {(1.55)}^{lvl}  \\cdot  60 }$",
     "效果": "生命值*｛$lvl  \\cdot  0.25 + 1$｝; 重生时间+｛$lvl  \\cdot  -5$｝",
-    "requirementBase": "",
-    "requirementStat": "",
-    "requirementValue": "",
+    "解锁层数": "",
     "requirement": ""
   },
   {
@@ -27,9 +23,7 @@
     "上限": "45",
     "消耗": "${ 强大的灵魂: {(1.65)}^{lvl}  \\cdot  80 }$",
     "效果": "骨头增益+｛${(2)}^{lvl}  \\cdot  50$｝; 骨头增益*｛$lvl  \\cdot  0.2 + 1$｝; 骨头容量*｛${(1.75)}^{lvl}$｝",
-    "requirementBase": "",
-    "requirementStat": "",
-    "requirementValue": "",
+    "解锁层数": "",
     "requirement": ""
   },
   {
@@ -38,9 +32,7 @@
     "上限": "10",
     "消耗": "${ 强大的灵魂: {(1.75)}^{lvl}  \\cdot  100 }$",
     "效果": "怪物零件增益+｛$lvl  \\cdot  0.05$｝; 怪物零件容量+｛$lvl  \\cdot  30$｝",
-    "requirementBase": "",
-    "requirementStat": "",
-    "requirementValue": "",
+    "解锁层数": "",
     "requirement": ""
   },
   {
@@ -49,9 +41,7 @@
     "上限": "120",
     "消耗": "${ 强大的灵魂: {(1.9)}^{lvl}  \\cdot  375 }$",
     "效果": "装备几率*｛$lvl  \\cdot  0.2 + 1$｝; 腐败的灵魂增益*｛$lvl  \\cdot  0.08 + 1$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "26",
+    "解锁层数": "26",
     "requirement": ""
   },
   {
@@ -60,9 +50,7 @@
     "上限": "",
     "消耗": "${ 强大的灵魂: {(1.55)}^{lvl}  \\cdot  1100 }$",
     "效果": "攻击*｛${(1.12)}^{lvl}$｝; 生命值*｛${(1.12)}^{lvl}$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "31",
+    "解锁层数": "31",
     "requirement": ""
   },
   {
@@ -71,9 +59,7 @@
     "上限": "",
     "消耗": "${ 强大的灵魂: {(1.9)}^{lvl}  \\cdot  4250 }$",
     "效果": "传家宝几率+｛$Math.min(lvl  \\cdot  0.0025, 0.1)$｝; 怀旧之情+｛$lvl  \\cdot  5$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "36",
+    "解锁层数": "36",
     "requirement": ""
   },
   {
@@ -82,9 +68,7 @@
     "上限": "150",
     "消耗": "${ 强大的灵魂: {(1.65)}^{lvl}  \\cdot  18.5K }$",
     "效果": "骨头增益*｛${(1.3)}^{lvl}$｝; 怪物零件容量*｛${(1.1)}^{lvl}$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "41",
+    "解锁层数": "41",
     "requirement": ""
   },
   {
@@ -93,9 +77,7 @@
     "上限": "80",
     "消耗": "${ 强大的灵魂: {(2.35)}^{lvl}  \\cdot  65K }$",
     "效果": "腐败的灵魂增益*｛$lvl  \\cdot  0.05 + 1$｝; 腐败的灵魂容量*｛${(1.4)}^{lvl}$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "46",
+    "解锁层数": "46",
     "requirement": ""
   },
   {
@@ -104,9 +86,7 @@
     "上限": "50",
     "消耗": "${ 强大的灵魂: {(1.3)}^{lvl}  \\cdot  350K }$",
     "效果": "力量效果*｛${(1.1)}^{lvl}  \\cdot  (lvl  \\cdot  0.15 + 1)$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "51",
+    "解锁层数": "51",
     "requirement": ""
   },
   {
@@ -115,9 +95,7 @@
     "上限": "50",
     "消耗": "${ 强大的灵魂: {(1.3)}^{lvl}  \\cdot  1.25M }$",
     "效果": "韧效果*｛${(1.1)}^{lvl}  \\cdot  (lvl  \\cdot  0.15 + 1)$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "56",
+    "解锁层数": "56",
     "requirement": ""
   },
   {
@@ -126,9 +104,7 @@
     "上限": "",
     "消耗": "${ 强大的灵魂: {(lvl  \\cdot  0.02 + 1.25)}^{lvl}  \\cdot  9M }$",
     "效果": "腐败+｛$lvl  \\cdot  -0.12$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "61",
+    "解锁层数": "61",
     "requirement": ""
   },
   {
@@ -137,9 +113,7 @@
     "上限": "15",
     "消耗": "${ 强大的灵魂: {(lvl  \\cdot  0.5 + 3)}^{lvl}  \\cdot  75M }$",
     "效果": "最大传家宝增益+｛$lvl$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "66",
+    "解锁层数": "66",
     "requirement": ""
   },
   {
@@ -148,9 +122,7 @@
     "上限": "",
     "消耗": "${ 强大的灵魂: {(lvl  \\cdot  0.002 + 1.3)}^{lvl}  \\cdot  1.7B }$",
     "效果": "腐败的灵魂增益*｛${(1.03)}^{lvl}$｝; 重生时间+｛$lvl  \\cdot  -5$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "71",
+    "解锁层数": "71",
     "requirement": ""
   },
   {
@@ -159,9 +131,7 @@
     "上限": "100",
     "消耗": "${ 强大的灵魂: {(1.3 + lvl  \\cdot  0.01)}^{lvl}  \\cdot  100B }$",
     "效果": "骨头容量*｛${(1.2)}^{lvl}$｝; 传家宝效果*｛$lvl  \\cdot  0.03 + 1$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "81",
+    "解锁层数": "81",
     "requirement": ""
   },
   {
@@ -170,9 +140,7 @@
     "上限": "80",
     "消耗": "${ 强大的灵魂: {(lvl  \\cdot  0.005 + 1.4)}^{lvl}  \\cdot  2.4T }$",
     "效果": "骨头增益*｛${(1.3)}^{lvl}$｝; 怪物零件增益*｛${(1.15)}^{lvl}$｝; 腐败的灵魂增益*｛${(1.075)}^{lvl}$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "91",
+    "解锁层数": "91",
     "requirement": ""
   },
   {
@@ -181,9 +149,7 @@
     "上限": "",
     "消耗": "${ 强大的灵魂: {(1.45 + lvl  \\cdot  0.025)}^{lvl}  \\cdot  85Qa }$",
     "效果": "精通点数增益*｛${(1.1)}^{lvl}  \\cdot  (lvl  \\cdot  0.1 + 1)$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "111",
+    "解锁层数": "111",
     "requirement": ""
   },
   {
@@ -192,9 +158,7 @@
     "上限": "",
     "消耗": "${ 强大的灵魂: {(2.7 + lvl  \\cdot  0.05)}^{lvl}  \\cdot  275Qi }$",
     "效果": "骨头容量*｛${(2)}^{lvl}$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "131",
+    "解锁层数": "131",
     "requirement": ""
   },
   {
@@ -203,9 +167,7 @@
     "上限": "30",
     "消耗": "${ 强大的灵魂: {(lvl  \\cdot  0.02 + 1.6)}^{lvl}  \\cdot  2.25Sx }$",
     "效果": "攻击*｛${(1.06)}^{lvl}  \\cdot  (lvl  \\cdot  0.1 + 1)$｝; 生命值*｛${(1.03)}^{lvl}  \\cdot  (lvl  \\cdot  0.05 + 1)$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "151",
+    "解锁层数": "151",
     "requirement": ""
   },
   {
@@ -214,9 +176,7 @@
     "上限": "50",
     "消耗": "${ 强大的灵魂: {(1.25)}^{lvl}  \\cdot  333Sp }$",
     "效果": "腐败的灵魂增益*｛$lvl  \\cdot  0.08 + 1$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "181",
+    "解锁层数": "181",
     "requirement": ""
   },
   {
@@ -225,9 +185,7 @@
     "上限": "",
     "消耗": "${ 强大的灵魂: {(lvl  \\cdot  0.1 + 2)}^{lvl}  \\cdot  15N }$",
     "效果": "神秘碎片容量+｛$lvl$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "211",
+    "解锁层数": "211",
     "requirement": ""
   },
   {
@@ -236,9 +194,7 @@
     "上限": "",
     "消耗": "${ 王冠: \\text{四舍五入}({(1.08)}^{lvl}  \\cdot  (lvl + 1)  \\cdot  10) }$",
     "效果": "攻击*｛${(1.05)}^{lvl}  \\cdot  (0.1  \\cdot  lvl + 1)$｝",
-    "requirementBase": "requirementBase",
-    "requirementStat": "requirementStat",
-    "requirementValue": "140",
+    "解锁层数": "140",
     "requirement": ""
   },
   {
@@ -247,9 +203,7 @@
     "上限": "",
     "消耗": "${ 王冠: \\text{四舍五入}({(1.08)}^{lvl}  \\cdot  (lvl + 1)  \\cdot  14) }$",
     "效果": "生命值*｛${(1.05)}^{lvl}  \\cdot  (0.1  \\cdot  lvl + 1)$｝",
-    "requirementBase": "",
-    "requirementStat": "",
-    "requirementValue": "",
+    "解锁层数": "",
     "requirement": "$store.state.解锁.皇家盔甲升级.use$"
   },
   {
@@ -258,9 +212,7 @@
     "上限": "",
     "消耗": "${ 王冠: \\text{四舍五入}({(1.08)}^{lvl}  \\cdot  (lvl + 1)  \\cdot  28) }$",
     "效果": "骨头增益*｛${(1.05)}^{lvl}  \\cdot  (0.1  \\cdot  lvl + 1)$｝; 骨头容量*｛${(1.05)}^{lvl}  \\cdot  (0.1  \\cdot  lvl + 1)$｝",
-    "requirementBase": "",
-    "requirementStat": "",
-    "requirementValue": "",
+    "解锁层数": "",
     "requirement": "$store.state.解锁.皇家存储升级.use$"
   },
   {
@@ -269,9 +221,7 @@
     "上限": "",
     "消耗": "${ 王冠: \\text{四舍五入}({(1.08)}^{lvl}  \\cdot  (lvl + 1)  \\cdot  55) }$",
     "效果": "怪物零件增益*｛${(1.05)}^{lvl}  \\cdot  (0.05  \\cdot  lvl + 1)$｝",
-    "requirementBase": "",
-    "requirementStat": "",
-    "requirementValue": "",
+    "解锁层数": "",
     "requirement": "$store.state.解锁.皇家屠夫升级.use$"
   },
   {
@@ -280,9 +230,7 @@
     "上限": "",
     "消耗": "${ 王冠: \\text{四舍五入}({(1.08)}^{lvl}  \\cdot  (lvl + 1)  \\cdot  111) }$",
     "效果": "腐败的灵魂增益*｛$getSequence(5, lvl)  \\cdot  0.01 + 1$｝; 腐败的灵魂容量*｛$getSequence(5, lvl)  \\cdot  0.01 + 1$｝",
-    "requirementBase": "",
-    "requirementStat": "",
-    "requirementValue": "",
+    "解锁层数": "",
     "requirement": "$store.state.解锁.皇家地窖升级.use$"
   },
   {
@@ -291,9 +239,7 @@
     "上限": "",
     "消耗": "${ 王冠: \\text{四舍五入}({(1.08)}^{lvl}  \\cdot  (lvl + 1)  \\cdot  222) }$",
     "效果": "神秘碎片容量+｛$lvl$｝",
-    "requirementBase": "",
-    "requirementStat": "",
-    "requirementValue": "",
+    "解锁层数": "",
     "requirement": "$store.state.解锁.皇家秘密升级.use$"
   },
   {
@@ -302,9 +248,7 @@
     "上限": "",
     "消耗": "${ 勇敢: {(lvl  \\cdot  0.01 + 1.55)}^{lvl}  \\cdot  1000 }$",
     "效果": "攻击*｛${(1.15)}^{lvl}$｝",
-    "requirementBase": "",
-    "requirementStat": "",
-    "requirementValue": "",
+    "解锁层数": "",
     "requirement": "$store.state.解锁.hordeClassesSubfeature.see$"
   },
   {
@@ -313,9 +257,7 @@
     "上限": "",
     "消耗": "${ 勇敢: {(lvl  \\cdot  0.01 + 1.55)}^{lvl}  \\cdot  1250 }$",
     "效果": "生命值*｛${(1.15)}^{lvl}$｝",
-    "requirementBase": "",
-    "requirementStat": "",
-    "requirementValue": "",
+    "解锁层数": "",
     "requirement": "$store.state.解锁.hordeClassesSubfeature.see$"
   },
   {
@@ -324,9 +266,7 @@
     "上限": "",
     "消耗": "${ 勇敢: {(lvl  \\cdot  0.02 + 2.35)}^{lvl}  \\cdot  6000 }$",
     "效果": "腐败的灵魂增益*｛${(1.08)}^{lvl}$｝; 勇敢增益*｛${(1.08)}^{lvl}$｝",
-    "requirementBase": "requirementBase2",
-    "requirementStat": "",
-    "requirementValue": "7",
+    "解锁层数": "7",
     "requirement": ""
   },
   {
@@ -335,9 +275,7 @@
     "上限": "",
     "消耗": "${ 勇敢: {(lvl  \\cdot  0.01 + 1.6)}^{lvl}  \\cdot  11K }$",
     "效果": "等级时间*｛${(1 / 1.1)}^{lvl}$｝",
-    "requirementBase": "requirementBase2",
-    "requirementStat": "",
-    "requirementValue": "10",
+    "解锁层数": "10",
     "requirement": ""
   },
   {
@@ -346,9 +284,7 @@
     "上限": "",
     "消耗": "${ 勇敢: {(lvl  \\cdot  0.05 + 2.5)}^{lvl}  \\cdot  16K }$",
     "效果": "骨头容量*｛${(1.75)}^{lvl}$｝; 血液容量*｛${(1.5)}^{lvl}$｝",
-    "requirementBase": "requirementBase2",
-    "requirementStat": "",
-    "requirementValue": "12",
+    "解锁层数": "12",
     "requirement": ""
   },
   {
@@ -357,9 +293,7 @@
     "上限": "",
     "消耗": "${ 勇敢: {(lvl + 5)}^{lvl}  \\cdot  70K }$",
     "效果": "生命值*｛${(1.5)}^{lvl}$｝; 治疗*｛${(1 / 1.2)}^{lvl}$｝",
-    "requirementBase": "requirementBase2",
-    "requirementStat": "",
-    "requirementValue": "16",
+    "解锁层数": "16",
     "requirement": ""
   },
   {
@@ -368,9 +302,7 @@
     "上限": "",
     "消耗": "${ 勇敢: {(lvl  \\cdot  0.01 + 1.85)}^{lvl}  \\cdot  250K }$",
     "效果": "等级增量*｛${(1 / 1.1)}^{lvl}$｝",
-    "requirementBase": "requirementBase2",
-    "requirementStat": "",
-    "requirementValue": "20",
+    "解锁层数": "20",
     "requirement": ""
   },
   {
@@ -379,9 +311,7 @@
     "上限": "",
     "消耗": "${ 勇敢: {(lvl  \\cdot  0.25 + 4)}^{lvl}  \\cdot  5M }$",
     "效果": "最大传家宝增益+｛$lvl$｝; 饰品最大增益*｛$lvl  \\cdot  0.1 + 1$｝",
-    "requirementBase": "requirementBase2",
-    "requirementStat": "",
-    "requirementValue": "27",
+    "解锁层数": "27",
     "requirement": ""
   },
   {
@@ -390,9 +320,7 @@
     "上限": "",
     "消耗": "${ 勇敢: {(lvl  \\cdot  0.5 + 2)}^{lvl}  \\cdot  28M }$",
     "效果": "治疗*｛${(1.1)}^{lvl}$｝",
-    "requirementBase": "requirementBase2",
-    "requirementStat": "",
-    "requirementValue": "33",
+    "解锁层数": "33",
     "requirement": ""
   },
   {
@@ -401,9 +329,7 @@
     "上限": "",
     "消耗": "${ 勇敢: {(lvl  \\cdot  0.015 + 1.25)}^{lvl}  \\cdot  150B }$",
     "效果": "腐败+｛$lvl  \\cdot  -0.09$｝",
-    "requirementBase": "requirementBase2",
-    "requirementStat": "",
-    "requirementValue": "45",
+    "解锁层数": "45",
     "requirement": ""
   },
   {
@@ -412,9 +338,7 @@
     "上限": "10",
     "消耗": "${ 勇敢: {(10)}^{lvl}  \\cdot  1Qa }$",
     "效果": "攻击*｛${(1.35)}^{lvl}$｝; 装备几率*｛$lvl >= 1 ? \\text{向下取整}((lvl + 4) / 5)  \\cdot  0.5 + 1 : null$｝; 最大传家宝增益+｛$lvl >= 2 ? \\text{向下取整}((lvl + 3) / 5)  \\cdot  5 : null$｝; 精通点数增益*｛$lvl >= 3 ? \\text{向下取整}((lvl + 2) / 5)  \\cdot  0.5 + 1 : null$｝; 神秘碎片容量+｛$lvl >= 4 ? \\text{向下取整}((lvl + 1) / 5)  \\cdot  10 : null$｝; 级技能点数+｛$lvl >= 5 ? \\text{向下取整}(lvl / 5) : null$｝",
-    "requirementBase": "requirementBase2",
-    "requirementStat": "",
-    "requirementValue": "65",
+    "解锁层数": "65",
     "requirement": ""
   }
 ]

@@ -1,39 +1,39 @@
 {
-    轻量: {
+    铝锭: {
         效果: [
             {name: '制作纯度', 类型: '*', value: lvl => lvl * 0.5 + 1},
             {name: '矿石品质', 类型: '*', value: lvl => Math.pow(2, lvl)}
         ]
     },
-    坚固: {
+    青铜锭: {
         效果: [
             {name: '矿石增益', 类型: '*', value: lvl => Math.pow(1.5, lvl)},
             {name: '稀土增益', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
         ]
     },
-    锋利: {
+    钢锭: {
         效果: [
             {name: '伤害', 类型: '*', value: lvl => lvl * 0.35 + 1},
             {name: '韧性', 类型: '*', value: lvl => Math.pow(1 / 1.5, lvl)}
         ]
     },
-    挖掘机: {
+    钛锭: {
         效果: [
             {name: '废料增益', 类型: '*', value: lvl => getSequence(2, lvl) + 1}
         ]
     },
-    丰富: {
+    闪亮的金属锭: {
         效果: [
             {name: '深度居民速度', 类型: '*', value: lvl => Math.pow(1.35, lvl)},
             {name: '绿水晶增益', 类型: '*', value: lvl => lvl * 0.2 + 1}
         ]
     },
-    熔岩: {
+    铱锭: {
         效果: [
             {name: '余烬增益', 类型: '*', value: lvl => lvl + 1}
         ]
     },
-    虚空: {
+    黑铁锭: {
         效果: [
             {name: '废料容量', 类型: '*', value: lvl => getSequence(2, lvl) * 0.5 + 1}
         ]

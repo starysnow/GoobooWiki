@@ -2,7 +2,7 @@ function bossTimeMult(bossFight = 0) {
     return bossFight === 2 ? 5 : (bossFight === 1 ? 2 : 1);
 }
 export default {
-    卡片力量: {
+    力量: {
         图标: 'mdi-dumbbell',
         color: 'deep-橙色',
         stats: lvl => {

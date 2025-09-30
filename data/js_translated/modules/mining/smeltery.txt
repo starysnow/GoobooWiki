@@ -4,7 +4,7 @@
             铝矿石: {+: 1000, increment: 50},
             花岗岩: {+: 800, increment: 800}
         },
-        output: '轻量',
+        output: '铝锭',
         制作时间: 300,
         minTemperature: 100
     },
@@ -14,7 +14,7 @@
             锡矿石: {+: 100, increment: 5},
             盐: {+: 150, increment: 50}
         },
-        output: '坚固',
+        output: '青铜锭',
         制作时间: SECONDS_PER_HOUR,
         minTemperature: 275
     },
@@ -23,7 +23,7 @@
             铁矿石: {+: 1000, increment: 50},
             煤: {+: 2, increment: 0}
         },
-        output: '锋利',
+        output: '钢锭',
         制作时间: 8 * SECONDS_PER_HOUR,
         minTemperature: 500
     },
@@ -33,7 +33,7 @@
             硫: {+: 200, increment: 10},
             硝: {+: 50, increment: 0}
         },
-        output: '挖掘机',
+        output: '钛锭',
         制作时间: 3 * SECONDS_PER_DAY,
         minTemperature: 800
     },
@@ -42,7 +42,7 @@
             铂矿石: {+: 1000, increment: 50},
             黑曜石: {+: buildNum(2, 'M'), increment: buildNum(100, 'K')}
         },
-        output: '丰富',
+        output: '闪亮的金属锭',
         制作时间: 30 * SECONDS_PER_DAY,
         minTemperature: 1200
     },
@@ -51,7 +51,7 @@
             铱矿石: {+: 1000, increment: 50},
             氦: {+: buildNum(10, 'K'), increment: 2500}
         },
-        output: '熔岩',
+        output: '铱锭',
         制作时间: 365 * SECONDS_PER_DAY,
         minTemperature: 1750
     },
@@ -62,7 +62,7 @@
             深岩: {+: buildNum(100, 'M'), increment: buildNum(25, 'M')},
             氖: {+: buildNum(10, 'K'), increment: 2500}
         },
-        output: '虚空',
+        output: '黑铁锭',
         制作时间: 5000 * SECONDS_PER_DAY,
         minTemperature: 2500
     },

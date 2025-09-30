@@ -5,9 +5,7 @@
     "消耗": "${ 红宝石:   \\cdot  {(2)}^{\\text{向下取整}(lvl / 2})  \\cdot  80 }$",
     "效果": "仅蔬菜增益*｛$getSequence(2, lvl)  \\cdot  0.5 + 1$｝",
     "requirement": "",
-    "hasDescription": "",
-    "上限": "",
-    "hideCap": ""
+    "上限": ""
   },
   {
     "名称": "更大的浆果",
@@ -15,9 +13,7 @@
     "消耗": "${ 红宝石:   \\cdot  {(2)}^{\\text{向下取整}(lvl / 2})  \\cdot  80 }$",
     "效果": "仅浆果增益*｛$getSequence(2, lvl)  \\cdot  0.5 + 1$｝",
     "requirement": "$store.state.升级成本.item.种子箱.达到等级 >= 1$",
-    "hasDescription": "",
-    "上限": "",
-    "hideCap": ""
+    "上限": ""
   },
   {
     "名称": "更大的粮食",
@@ -25,9 +21,7 @@
     "消耗": "${ 红宝石:   \\cdot  {(2)}^{\\text{向下取整}(lvl / 2})  \\cdot  80 }$",
     "效果": "仅粮食增益*｛$getSequence(2, lvl)  \\cdot  0.5 + 1$｝",
     "requirement": "$store.state.升级成本.item.种子箱.达到等级 >= 2$",
-    "hasDescription": "",
-    "上限": "",
-    "hideCap": ""
+    "上限": ""
   },
   {
     "名称": "更大的鲜花",
@@ -35,9 +29,7 @@
     "消耗": "${ 红宝石:   \\cdot  {(2)}^{\\text{向下取整}(lvl / 2})  \\cdot  80 }$",
     "效果": "仅鲜花增益*｛$getSequence(2, lvl)  \\cdot  0.5 + 1$｝",
     "requirement": "$store.state.升级成本.item.种子箱.达到等级 >= 3$",
-    "hasDescription": "",
-    "上限": "",
-    "hideCap": ""
+    "上限": ""
   },
   {
     "名称": "更多经验",
@@ -45,9 +37,7 @@
     "消耗": "${ 红宝石:   \\cdot  {(2)}^{\\text{向下取整}(lvl / 2})  \\cdot  120 }$",
     "效果": "作物经验+｛$lvl  \\cdot  0.25$｝",
     "requirement": "$store.state.解锁.作物经验.see$",
-    "hasDescription": "",
-    "上限": "",
-    "hideCap": ""
+    "上限": ""
   },
   {
     "名称": "高级花园侏儒",
@@ -55,9 +45,7 @@
     "消耗": "${ 红宝石:   \\cdot  {(2)}^{\\text{向下取整}(lvl / 2})  \\cdot  180 }$",
     "效果": "花园侏儒farmBuildingPremium｛$lvl$｝",
     "requirement": "$store.state.升级成本.item.花园侏儒.达到等级 >= lvl + 1$",
-    "hasDescription": "true",
-    "上限": "5",
-    "hideCap": "true"
+    "上限": "5"
   },
   {
     "名称": "高级洒水装置",
@@ -65,9 +53,7 @@
     "消耗": "${ 红宝石: {(2)}^{lvl}  \\cdot  500 }$",
     "效果": "洒水装置farmBuildingPremium｛$lvl$｝",
     "requirement": "$store.state.升级成本.item.洒水装置.达到等级 >= lvl + 1$",
-    "hasDescription": "true",
-    "上限": "2",
-    "hideCap": "true"
+    "上限": "2"
   },
   {
     "名称": "高级讲台",
@@ -75,9 +61,7 @@
     "消耗": "${ 红宝石: {(2)}^{lvl}  \\cdot  675 }$",
     "效果": "讲台farmBuildingPremium｛$lvl$｝",
     "requirement": "$store.state.升级成本.item.讲台.达到等级 >= lvl + 1$",
-    "hasDescription": "true",
-    "上限": "2",
-    "hideCap": "true"
+    "上限": "2"
   },
   {
     "名称": "高级风车",
@@ -85,9 +69,7 @@
     "消耗": "${ 红宝石: {(3)}^{lvl}  \\cdot  1200 }$",
     "效果": "风车farmBuildingPremium｛$lvl$｝",
     "requirement": "$store.state.升级成本.item.风车.达到等级 >= lvl + 1$",
-    "hasDescription": "true",
-    "上限": "1",
-    "hideCap": "true"
+    "上限": "1"
   },
   {
     "名称": "高级旗帜",
@@ -95,8 +77,6 @@
     "消耗": "${ 红宝石: {(4)}^{lvl}  \\cdot  2100 }$",
     "效果": "旗帜farmBuildingPremium｛$lvl$｝",
     "requirement": "$store.state.升级成本.item.旗帜.达到等级 >= lvl + 1$",
-    "hasDescription": "true",
-    "上限": "1",
-    "hideCap": "true"
+    "上限": "1"
   }
 ]

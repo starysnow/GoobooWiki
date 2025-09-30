@@ -1,10 +1,10 @@
 [
-    {id: 1, collection: '黑暗中的危险', 卡片力量: 3, color: '绿色', icons: [
+    {id: 1, collection: '黑暗中的危险', 力量: 3, color: '绿色', icons: [
         {"x": -0.1, "y": 0.1, "rotate": -20, "size": 2.5, "图标": "mdi-chart-bubble"},
         {"x": 0.85, "y": 0.1, "rotate": 0, "size": 1.5, "图标": "mdi-snake"},
         {"x": -0.85, "y": 0.05, "rotate": 0, "size": 2, "图标": "mdi-human-handsdown"}
     ]},
-    {id: 2, collection: '黑暗中的危险', 卡片力量: 2, reward: [
+    {id: 2, collection: '黑暗中的危险', 力量: 2, reward: [
         {name: '击败 (0) (+(1))要求', 类型: '+', value: -5}
     ], color: 'darker-灰色', icons: [
         {"x": 0, "y": 0.1, "rotate": 0, "size": 3, "图标": "mdi-ellipse-outline"},
@@ -13,7 +13,7 @@
         {"x": 0.85, "y": -0.8, "rotate": 0, "size": 1, "图标": "mdi-grass"},
         {"x": 0, "y": -1, "rotate": 0, "size": 0.9, "图标": "mdi-grass"}
     ]},
-    {id: 3, collection: '黑暗中的危险', 卡片力量: 1, reward: [
+    {id: 3, collection: '黑暗中的危险', 力量: 1, reward: [
         {name: '骨头增益', 类型: '*', value: 1.2},
         {name: '骨头容量', 类型: '*', value: 1.35}
     ], color: '橙色-红色', icons: [
@@ -23,7 +23,7 @@
         {"x": -0.6, "y": -0.15, "rotate": -140, "size": 0.95, "图标": "mdi-motion"},
         {"x": -0.1, "y": -0.75, "rotate": -100, "size": 1.15, "图标": "mdi-motion"}
     ]},
-    {id: 4, collection: '黑暗中的危险', 卡片力量: 2, reward: [
+    {id: 4, collection: '黑暗中的危险', 力量: 2, reward: [
         {name: '怪物零件容量', 类型: '+', value: 50}
     ], color: 'deep-紫色', icons: [
         {"x": 0, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-human-handsdown"},
@@ -31,7 +31,7 @@
         {"x": 0.55, "y": -0.3, "rotate": 0, "size": 1, "图标": "mdi-map-legend"},
         {"x": -0.7, "y": 0.85, "rotate": 75, "size": 1.75, "图标": "mdi-chart-bubble"}
     ]},
-    {id: 5, collection: '黑暗中的危险', 卡片力量: 2, reward: [
+    {id: 5, collection: '黑暗中的危险', 力量: 2, reward: [
         {name: '骨头增益', 类型: '*', value: 1.25}
     ], color: '青色', icons: [
         {"x": 0.6, "y": 0.2, "rotate": 0, "size": 2.5, "图标": "mdi-mirror-rectangle"},
@@ -40,7 +40,7 @@
         {"x": -0.4, "y": 0.65, "rotate": 0, "size": 1.1, "图标": "mdi-human-handsdown"},
         {"x": -0.3, "y": 0.05, "rotate": 15, "size": 0.75, "图标": "mdi-exclamation-thick"}
     ]},
-    {id: 6, collection: '黑暗中的危险', 卡片力量: 2, reward: [
+    {id: 6, collection: '黑暗中的危险', 力量: 2, reward: [
         {name: '分裂盾', 类型: '+', value: 4}
     ], color: '红色', icons: [
         {"x": -0.95, "y": 0.8, "rotate": 0, "size": 1.5, "图标": "mdi-waves"},
@@ -52,7 +52,7 @@
         {"x": 0.7, "y": -0.55, "rotate": 0, "size": 1.9, "图标": "mdi-scent"},
         {"x": -0.05, "y": 0.1, "rotate": -20, "size": 0.8, "图标": "mdi-fire"}
     ]},
-    {id: 7, collection: '维护安全', 卡片力量: 2, reward: [
+    {id: 7, collection: '维护安全', 力量: 2, reward: [
         {name: '装备几率', 类型: '*', value: 1.6}
     ], color: 'pale-黄色', icons: [
         {"x": 0, "y": 1, "rotate": 90, "size": 2, "图标": "mdi-rectangle"},
@@ -60,7 +60,7 @@
         {"x": 0.55, "y": 0.75, "rotate": 0, "size": 1.6, "图标": "mdi-human-greeting"},
         {"x": -0.9, "y": 0.75, "rotate": 0, "size": 1.55, "图标": "mdi-human-handsdown"}
     ]},
-    {id: 8, collection: '维护安全', 卡片力量: 2, reward: [
+    {id: 8, collection: '维护安全', 力量: 2, reward: [
         {name: '骨头容量', 类型: '*', value: 1.2},
         {name: '怪物零件容量', 类型: '+', value: 30}
     ], color: '樱桃色', icons: [
@@ -70,14 +70,14 @@
         {"x": -0.5, "y": 0.2, "rotate": -15, "size": 0.8, "图标": "mdi-hammer"},
         {"x": -0.85, "y": 0.45, "rotate": 0, "size": 1.6, "图标": "mdi-walk"}
     ]},
-    {id: 9, collection: '维护安全', 卡片力量: 2, reward: [
+    {id: 9, collection: '维护安全', 力量: 2, reward: [
         {name: '生命值', 类型: '*', value: 1.3}
     ], color: 'indigo', icons: [
         {"x": -0.7, "y": 0, "rotate": 0, "size": 2.5, "图标": "mdi-home"},
         {"x": 0.7, "y": 0, "rotate": 0, "size": 2.5, "图标": "mdi-home"},
         {"x": 0.3, "y": -0.5, "rotate": 0, "size": 1, "图标": "mdi-cctv"}
     ]},
-    {id: 10, collection: '维护安全', 卡片力量: 2, reward: [
+    {id: 10, collection: '维护安全', 力量: 2, reward: [
         {name: '复活', 类型: '+', value: 1}
     ], color: '绿色', icons: [
         {"x": -0.75, "y": 0, "rotate": 20, "size": 0.75, "图标": "mdi-leaf"},
@@ -87,7 +87,7 @@
         {"x": -0.3, "y": 0.7, "rotate": 0, "size": 2, "图标": "mdi-book-open-page-variant-outline"},
         {"x": -0.55, "y": 0.7, "rotate": 0, "size": 0.6, "图标": "mdi-mushroom-off"}
     ]},
-    {id: 11, collection: '维护安全', 卡片力量: 2, reward: [
+    {id: 11, collection: '维护安全', 力量: 2, reward: [
         {name: '重生时间', 类型: '+', value: -60}
     ], color: '黄色', icons: [
         {"x": 0, "y": 0.24, "rotate": 0, "size": 1.55, "图标": "mdi-fence-electric"},
@@ -97,7 +97,7 @@
         {"x": -0.55, "y": -0.45, "rotate": 0, "size": 1.25, "图标": "mdi-donkey"},
         {"x": 0.3, "y": -1, "rotate": 0, "size": 0.9, "图标": "mdi-dog-side"}
     ]},
-    {id: 12, collection: '危险武器', 卡片力量: 2, reward: [
+    {id: 12, collection: '危险武器', 力量: 2, reward: [
         {name: '暴击率', 类型: '+', value: 0.05},
         {name: '暴击伤害', 类型: '+', value: 0.1}
     ], color: 'deep-橙色', icons: [
@@ -109,7 +109,7 @@
         {"x": 0.45, "y": 0.85, "rotate": 95, "size": 1.25, "图标": "mdi-bomb"},
         {"x": 0.75, "y": 0.3, "rotate": 20, "size": 1.25, "图标": "mdi-bomb"}
     ]},
-    {id: 13, collection: '危险武器', 卡片力量: 1, reward: [
+    {id: 13, collection: '危险武器', 力量: 1, reward: [
         {name: '攻击', 类型: '*', value: 1.15},
         {name: '暴击伤害', 类型: '+', value: 0.35}
     ], color: '紫色', icons: [
@@ -117,7 +117,7 @@
         {"x": 0, "y": 0.25, "rotate": 15, "size": 2.1, "图标": "mdi-firework"},
         {"x": 0.1, "y": 0.7, "rotate": 0, "size": 1, "图标": "mdi-human-handsup"}
     ]},
-    {id: 14, collection: '危险武器', 卡片力量: 2, reward: [
+    {id: 14, collection: '危险武器', 力量: 2, reward: [
         {name: '攻击', 类型: '*', value: 1.05},
         {name: '击败 (0) (+(1))要求', 类型: '+', value: -3}
     ], color: '光-blue', icons: [
@@ -126,14 +126,14 @@
         {"x": -0.55, "y": 0.15, "rotate": -70, "size": 1, "图标": "mdi-rectangle"},
         {"x": -0.68, "y": 0.48, "rotate": -160, "size": 0.6, "图标": "mdi-triangle"}
     ]},
-    {id: 15, collection: '危险武器', 卡片力量: 3, reward: [
+    {id: 15, collection: '危险武器', 力量: 3, reward: [
         {name: '中毒', 类型: '+', value: 0.01}
     ], color: '绿色', icons: [
         {"x": -0.85, "y": 0.45, "rotate": 0, "size": 1.25, "图标": "mdi-bottle-tonic-skull"},
         {"x": 0.3, "y": 0, "rotate": 0, "size": 2.1, "图标": "mdi-bow-arrow"},
         {"x": 0.8, "y": -0.1, "rotate": 0, "size": 0.65, "图标": "mdi-water"}
     ]},
-    {id: 16, collection: '危险武器', 卡片力量: 3, reward: [
+    {id: 16, collection: '危险武器', 力量: 3, reward: [
         {name: '先发制人', 类型: '+', value: 0.8},
     ], color: '粉色', icons: [
         {"x": 0, "y": 0, "rotate": 0, "size": 1.75, "图标": "mdi-rocket-launch"},
@@ -142,7 +142,7 @@
         {"x": -0.2, "y": -0.4, "rotate": 45, "size": 1.25, "图标": "mdi-minus-thick"},
         {"x": 0.4, "y": 0.2, "rotate": 45, "size": 1, "图标": "mdi-minus-thick"}
     ]},
-    {id: 17, collection: '危险武器', 卡片力量: 2, reward: [
+    {id: 17, collection: '危险武器', 力量: 2, reward: [
         {name: '攻击', 类型: '*', value: 1.35}
     ], color: '红色', icons: [
         {"x": 0, "y": 0.55, "rotate": 0, "size": 2.75, "图标": "mdi-human-handsup"},
@@ -151,7 +151,7 @@
         {"x": 0.35, "y": -0.3, "rotate": 270, "size": 1.25, "图标": "mdi-axe-battle"},
         {"x": 0.65, "y": 0, "rotate": 90, "size": 1.25, "图标": "mdi-axe-battle"}
     ]},
-    {id: 18, collection: '危险武器', 卡片力量: 3, reward: [
+    {id: 18, collection: '危险武器', 力量: 3, reward: [
         {name: '暴击率', 类型: '+', value: 0.1},
         {name: '装备几率', 类型: '*', value: 1.25}
     ], color: 'pale-黄色', icons: [
@@ -159,7 +159,7 @@
         {"x": -0.2, "y": -0.3, "rotate": 20, "size": 1.65, "图标": "mdi-hand-front-left"},
         {"x": 0.4, "y": -0.4, "rotate": -60, "size": 2, "图标": "mdi-pen"}
     ]},
-    {id: 19, collection: '危险武器', 卡片力量: 3, reward: [
+    {id: 19, collection: '危险武器', 力量: 3, reward: [
         {name: '击败 (0) (+(1))要求', 类型: '+', value: -2},
         {name: '腐败的灵魂增益', 类型: '*', value: 1.12}
     ], color: '棕色', icons: [
@@ -173,7 +173,7 @@
         {"x": 0.45, "y": 0.3, "rotate": 0, "size": 0.5, "图标": "mdi-circle"},
         {"x": -0.7, "y": -0.2, "rotate": 0, "size": 1, "图标": "mdi-circle"}
     ]},
-    {id: 20, collection: '危险武器', 卡片力量: 3, reward: [
+    {id: 20, collection: '危险武器', 力量: 3, reward: [
         {name: '装备几率', 类型: '*', value: 1.25},
         {name: '腐败的灵魂容量', 类型: '*', value: 1.15}
     ], color: 'pale-粉色', icons: [
@@ -181,7 +181,7 @@
         {"x": 0.4, "y": 0, "rotate": 0, "size": 1, "图标": "mdi-pistol"},
         {"x": 0.42, "y": -0.2, "rotate": 45, "size": 1, "图标": "mdi-knife-military"}
     ]},
-    {id: 21, collection: '危险武器', 卡片力量: 2, reward: [
+    {id: 21, collection: '危险武器', 力量: 2, reward: [
         {name: '怪物零件增益', 类型: '*', value: 1.3},
         {name: '腐败的灵魂增益', 类型: '*', value: 1.2}
     ], color: '金色', icons: [
@@ -191,7 +191,7 @@
         {"x": -0.3, "y": 0.45, "rotate": 45, "size": 2, "图标": "mdi-minus"},
         {"x": 0.2, "y": 0.55, "rotate": 10, "size": 1, "图标": "mdi-fire"}
     ]},
-    {id: 22, collection: '危险武器', 卡片力量: 2, reward: [
+    {id: 22, collection: '危险武器', 力量: 2, reward: [
         {name: '腐败的灵魂增益', 类型: '*', value: 1.22},
         {name: '腐败的灵魂容量', 类型: '*', value: 1.22}
     ], color: '樱桃色', icons: [
@@ -199,7 +199,7 @@
         {"x": 0, "y": 0, "rotate": 0, "size": 1.25, "图标": "mdi-saw-blade"},
         {"x": 0.9, "y": 0, "rotate": 25, "size": 1.25, "图标": "mdi-saw-blade"}
     ]},
-    {id: 23, collection: '危险武器', 卡片力量: 0, reward: [
+    {id: 23, collection: '危险武器', 力量: 0, reward: [
         {name: '中毒', 类型: '+', value: 0.025}
     ], color: 'lime', icons: [
         {"x": 0, "y": -0.2, "rotate": 0, "size": 2.5, "图标": "mdi-flask-empty"},
@@ -207,7 +207,7 @@
         {"x": -0.3, "y": 0.45, "rotate": -90, "size": 1, "图标": "mdi-motion"},
         {"x": 0.35, "y": 0.45, "rotate": -90, "size": 0.75, "图标": "mdi-motion"}
     ]},
-    {id: 24, collection: '供应与支持', 卡片力量: 3, reward: [
+    {id: 24, collection: '供应与支持', 力量: 3, reward: [
         {name: '受到的物理伤害', 类型: '*', value: 1 / 1.25}
     ], color: 'wooden', icons: [
         {"x": 0, "y": -0.2, "rotate": 0, "size": 3, "图标": "mdi-tree"},
@@ -215,7 +215,7 @@
         {"x": -0.2, "y": 0.55, "rotate": 0, "size": 1.25, "图标": "mdi-hiking"},
         {"x": -0.65, "y": 1.2, "rotate": -150, "size": 0.8, "图标": "mdi-arrow-projectile"}
     ]},
-    {id: 25, collection: '供应与支持', 卡片力量: 5, reward: [
+    {id: 25, collection: '供应与支持', 力量: 5, reward: [
         {name: '精通点数增益', 类型: '*', value: 1.2}
     ], color: '绿色', icons: [
         {"x": 0.1, "y": -0.15, "rotate": 0, "size": 1.25, "图标": "mdi-meditation"},
@@ -226,7 +226,7 @@
         {"x": -0.35, "y": 0.85, "rotate": 0, "size": 0.8, "图标": "mdi-grass"},
         {"x": 0.4, "y": 0.75, "rotate": 0, "size": 0.75, "图标": "mdi-grass"}
     ]},
-    {id: 26, collection: '供应与支持', 卡片力量: 3, reward: [
+    {id: 26, collection: '供应与支持', 力量: 3, reward: [
         {name: '腐败的灵魂容量', 类型: '*', value: 1.1},
         {name: '骨头容量', 类型: '*', value: 1.15}
     ], color: '光-灰色', icons: [
@@ -237,21 +237,21 @@
         {"x": 0.6, "y": -0.05, "rotate": 0, "size": 0.75, "图标": "mdi-exclamation-thick"},
         {"x": -0.45, "y": 0.95, "rotate": 0, "size": 0.75, "图标": "mdi-mine"}
     ]},
-    {id: 27, collection: '供应与支持', 卡片力量: 4, reward: [
+    {id: 27, collection: '供应与支持', 力量: 4, reward: [
         {name: '怀旧之情', 类型: '+', value: 20}
     ], color: 'dark-blue', icons: [
         {"x": -0.65, "y": 0.25, "rotate": 0, "size": 1.55, "图标": "mdi-walk"},
         {"x": -0.2, "y": 0.1, "rotate": -10, "size": 1, "图标": "mdi-shield"},
         {"x": 0.6, "y": -0.15, "rotate": 160, "size": 1, "图标": "mdi-motion"}
     ]},
-    {id: 28, collection: '供应与支持', 卡片力量: 4, reward: [
+    {id: 28, collection: '供应与支持', 力量: 4, reward: [
         {name: '传家宝几率', 类型: '+', value: 0.03}
     ], color: '黄色', icons: [
         {"x": 0, "y": 0.25, "rotate": 180, "size": 5, "图标": "mdi-dome-light"},
         {"x": -0.2, "y": 0.15, "rotate": 0, "size": 1.25, "图标": "mdi-human-handsdown"},
         {"x": 0.3, "y": 0.2, "rotate": 0, "size": 1.15, "图标": "mdi-human-greeting"}
     ]},
-    {id: 29, collection: '供应与支持', 卡片力量: 4, reward: [
+    {id: 29, collection: '供应与支持', 力量: 4, reward: [
         {name: '暴击伤害', 类型: '+', value: 0.25},
         {name: '精通点数增益', 类型: '*', value: 1.3}
     ], color: '粉色-紫色', icons: [
@@ -259,7 +259,7 @@
         {"x": 0, "y": 0.12, "rotate": 20, "size": 1, "图标": "mdi-radar"},
         {"x": 0.25, "y": -0.6, "rotate": 0, "size": 1.25, "图标": "mdi-antenna"}
     ]},
-    {id: 30, collection: '供应与支持', 卡片力量: 3, reward: [
+    {id: 30, collection: '供应与支持', 力量: 3, reward: [
         {name: '腐败的灵魂增益', 类型: '*', value: 1.15},
         {name: '传家宝几率', 类型: '+', value: 0.04}
     ], color: 'dark-灰色', icons: [
@@ -267,14 +267,14 @@
         {"x": -0.15, "y": -0.2, "rotate": 0, "size": 1.75, "图标": "mdi-incognito"},
         {"x": 0.5, "y": 0.55, "rotate": 15, "size": 1.2, "图标": "mdi-binoculars"}
     ]},
-    {id: 31, collection: '反对腐败', 卡片力量: 5, reward: [
+    {id: 31, collection: '反对腐败', 力量: 5, reward: [
         {name: '腐败', 类型: '*', value: 1 / 1.1}
     ], color: '红色', icons: [
         {"x": 0, "y": 0.6, "rotate": 0, "size": 2.5, "图标": "mdi-sign-pole"},
         {"x": 0, "y": -0.5, "rotate": -20, "size": 1.3, "图标": "mdi-liquid-spot"},
         {"x": 0, "y": -0.5, "rotate": 0, "size": 2.5, "图标": "mdi-cancel"}
     ]},
-    {id: 32, collection: '反对腐败', 卡片力量: 5, reward: [
+    {id: 32, collection: '反对腐败', 力量: 5, reward: [
         {name: '腐败的灵魂增益', 类型: '*', value: 1.1},
         {name: '腐败', 类型: '*', value: 1 / 1.05}
     ], color: 'pale-绿色', icons: [
@@ -282,7 +282,7 @@
         {"x": 0, "y": -0.55, "rotate": -85, "size": 1.25, "图标": "mdi-liquid-spot"},
         {"x": 0, "y": 0.7, "rotate": 0, "size": 1, "图标": "mdi-dots-vertical"}
     ]},
-    {id: 33, collection: '反对腐败', 卡片力量: 5, reward: [
+    {id: 33, collection: '反对腐败', 力量: 5, reward: [
         {name: '装备几率', 类型: '*', value: 2.5},
         {name: '精通点数增益', 类型: '*', value: 1.75},
         {name: '腐败', 类型: '*', value: 1.15}
@@ -293,7 +293,7 @@
         {"x": -0.5, "y": -0.4, "rotate": 20, "size": 1, "图标": "mdi-liquid-spot"},
         {"x": 0.5, "y": -0.2, "rotate": 0, "size": 1, "图标": "mdi-tray-full"}
     ]},
-    {id: 34, collection: '反对腐败', 卡片力量: 5, reward: [
+    {id: 34, collection: '反对腐败', 力量: 5, reward: [
         {name: '攻击', 类型: '*', value: 1.25},
         {name: '暴击率', 类型: '+', value: 0.15},
         {name: '暴击伤害', 类型: '+', value: 0.4},
@@ -305,7 +305,7 @@
         {"x": -0.25, "y": -0.5, "rotate": -20, "size": 1.2, "图标": "mdi-fire"},
         {"x": -0.6, "y": 0.25, "rotate": 30, "size": 1.95, "图标": "mdi-torch"}
     ]},
-    {id: 35, collection: '反对腐败', 卡片力量: 5, reward: [
+    {id: 35, collection: '反对腐败', 力量: 5, reward: [
         {name: '腐败的灵魂增益', 类型: '*', value: 1.4},
         {name: '腐败的灵魂容量', 类型: '*', value: 1.4},
         {name: '腐败', 类型: '*', value: 1.15}
@@ -315,7 +315,7 @@
         {"x": 0.35, "y": 0.4, "rotate": 30, "size": 2, "图标": "mdi-minus"},
         {"x": 0.65, "y": 0.55, "rotate": 0, "size": 1, "图标": "mdi-liquid-spot"}
     ]},
-    {id: 36, collection: '反对腐败', 卡片力量: 5, reward: [
+    {id: 36, collection: '反对腐败', 力量: 5, reward: [
         {name: '生命值', 类型: '*', value: 2},
         {name: '分裂盾', 类型: '+', value: 10},
         {name: '复活', 类型: '+', value: 1},
@@ -326,7 +326,7 @@
         {"x": -0.5, "y": 0.5, "rotate": 0, "size": 3, "图标": "mdi-minus"},
         {"x": 0.5, "y": 0.5, "rotate": 0, "size": 3, "图标": "mdi-minus"}
     ]},
-    {id: 37, collection: '反对腐败', 卡片力量: 7, reward: [
+    {id: 37, collection: '反对腐败', 力量: 7, reward: [
         {name: '腐败', 类型: '*', value: 1.15}
     ], color: '棕色', icons: [
         {"x": 0.25, "y": -0.6, "rotate": 0, "size": 1.75, "图标": "mdi-truck-cargo-container"},
@@ -335,7 +335,7 @@
         {"x": 0.45, "y": 0.6, "rotate": 0, "size": 0.8, "图标": "mdi-sack"},
         {"x": 0.85, "y": 0.6, "rotate": 0, "size": 0.8, "图标": "mdi-sack"}
     ]},
-    {id: 38, collection: '反对腐败', 卡片力量: 0, reward: [
+    {id: 38, collection: '反对腐败', 力量: 0, reward: [
         {name: '腐败', 类型: '*', value: 2}
     ], color: '紫色', icons: [
         {"x": -0.39, "y": 0, "rotate": 0, "size": 3, "图标": "mdi-pot-mix"},
@@ -344,7 +344,7 @@
         {"x": -0.75, "y": -0.1, "rotate": -45, "size": 1, "图标": "mdi-feather"},
         {"x": 0.8, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-candle"}
     ]},
-    {id: 39, collection: '反对腐败', 卡片力量: 5, reward: [
+    {id: 39, collection: '反对腐败', 力量: 5, reward: [
         {name: '先发制人', 类型: '+', value: 6.75},
         {name: '击败 (0) (+(1))要求', 类型: '+', value: -25},
         {name: '重生时间', 类型: '*', value: 0.2},
@@ -355,7 +355,7 @@
         {"x": 0.85, "y": 0.55, "rotate": 25, "size": 1, "图标": "mdi-liquid-spot"},
         {"x": 0.6, "y": 0.65, "rotate": 150, "size": 1, "图标": "mdi-liquid-spot"}
     ]},
-    {id: 40, collection: '反对腐败', 卡片力量: 5, reward: [
+    {id: 40, collection: '反对腐败', 力量: 5, reward: [
         {name: '传家宝几率', 类型: '+', value: 0.1},
         {name: '怀旧之情', 类型: '*', value: 2},
         {name: '腐败', 类型: '*', value: 1.15}
@@ -367,7 +367,7 @@
         {"x": 0.25, "y": 0.9, "rotate": -65, "size": 1, "图标": "mdi-liquid-spot"},
         {"x": 0, "y": 0.9, "rotate": 20, "size": 1, "图标": "mdi-liquid-spot"}
     ]},
-    {id: 41, collection: '反对腐败', 卡片力量: 0, reward: [
+    {id: 41, collection: '反对腐败', 力量: 0, reward: [
         {name: '腐败', 类型: '*', value: 5}
     ], color: '橙色-红色', icons: [
         {"x": 0, "y": 0.2, "rotate": 0, "size": 3, "图标": "mdi-microwave"},

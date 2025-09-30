@@ -4,8 +4,6 @@
     "上限": "10",
     "消耗": "${ 美丽: {(2.1 + 0.05  \\cdot  lvl)}^{lvl}  \\cdot  15 }$",
     "效果": "美丽增益+｛${(2)}^{lvl} - 1$｝",
-    "capMult": "",
-    "requirement": "",
     "保留": ""
   },
   {
@@ -13,8 +11,6 @@
     "上限": "1",
     "消耗": "${ 美丽: 2000 }$",
     "效果": "转换解锁｛$lvl >= 1$｝",
-    "capMult": "",
-    "requirement": "",
     "保留": ""
   },
   {
@@ -22,8 +18,6 @@
     "上限": "15",
     "消耗": "${ 红色: {(2.5)}^{lvl}  \\cdot  2 }$",
     "效果": "美丽增益*｛$\\text{分段线性}(1.25, 0.1, 15, lvl)$｝",
-    "capMult": "true",
-    "requirement": "$store.state.stat.红色.总计 > 0$",
     "保留": ""
   },
   {
@@ -31,8 +25,6 @@
     "上限": "10",
     "消耗": "${ 美丽: {(5)}^{lvl}  \\cdot  20K }$",
     "效果": "红色转换*｛${(2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.红色.总计 > 0$",
     "保留": ""
   },
   {
@@ -40,8 +32,6 @@
     "上限": "",
     "消耗": "${ 美丽: {(4.8)}^{lvl}  \\cdot  1M }$",
     "效果": "转换器增益*｛${(1.2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.红色.总计 > 0$",
     "保留": ""
   },
   {
@@ -49,8 +39,6 @@
     "上限": "15",
     "消耗": "${ 橙色: {(2.5)}^{lvl}  \\cdot  2 }$",
     "效果": "红色增益*｛$\\text{分段线性}(1.25, 0.1, 15, lvl)$｝",
-    "capMult": "true",
-    "requirement": "$store.state.stat.橙色.总计 > 0$",
     "保留": ""
   },
   {
@@ -58,8 +46,6 @@
     "上限": "40",
     "消耗": "${ 橙色: {(3 + 0.1  \\cdot  lvl)}^{lvl}  \\cdot  1M }$",
     "效果": "红色鼓几率+｛$lvl  \\cdot  0.02$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.橙色.总计 > 0 && store.state.解锁.鼓.see$",
     "保留": ""
   },
   {
@@ -67,8 +53,6 @@
     "上限": "1",
     "消耗": "${ 美丽: 17.5M }$",
     "效果": "灵感解锁｛$lvl >= 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.橙色.总计 > 0$",
     "保留": ""
   },
   {
@@ -76,8 +60,6 @@
     "上限": "",
     "消耗": "${ 美丽: {(15)}^{lvl}  \\cdot  350M }$",
     "效果": "转换器容量*｛${(1.9)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.橙色.总计 > 0$",
     "保留": ""
   },
   {
@@ -85,8 +67,6 @@
     "上限": "10",
     "消耗": "${ 美丽: {(10)}^{lvl}  \\cdot  500M }$",
     "效果": "橙色转换*｛${(2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.橙色.总计 > 0$",
     "保留": ""
   },
   {
@@ -94,8 +74,6 @@
     "上限": "",
     "消耗": "${ 美丽: {(8 + lvl  \\cdot  0.5)}^{lvl}  \\cdot  7B }$",
     "效果": "所有颜色增益*｛${(1.1)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.橙色.总计 > 0$",
     "保留": ""
   },
   {
@@ -103,8 +81,6 @@
     "上限": "1",
     "消耗": "${ 美丽: 1T }$",
     "效果": "拍卖解锁｛$lvl >= 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.橙色.总计 > 0$",
     "保留": "true"
   },
   {
@@ -112,8 +88,6 @@
     "上限": "15",
     "消耗": "${ 黄色: {(2.5)}^{lvl}  \\cdot  2 }$",
     "效果": "橙色增益*｛$\\text{分段线性}(1.25, 0.1, 15, lvl)$｝",
-    "capMult": "true",
-    "requirement": "$store.state.stat.黄色.总计 > 0$",
     "保留": ""
   },
   {
@@ -121,8 +95,6 @@
     "上限": "40",
     "消耗": "${ 黄色: {(3 + 0.1  \\cdot  lvl)}^{lvl}  \\cdot  1M }$",
     "效果": "橙色鼓几率+｛$lvl  \\cdot  0.02$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.黄色.总计 > 0 && store.state.解锁.鼓.see$",
     "保留": ""
   },
   {
@@ -130,8 +102,6 @@
     "上限": "10",
     "消耗": "${ 美丽: {(15)}^{lvl}  \\cdot  12T }$",
     "效果": "黄色转换*｛${(2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.黄色.总计 > 0$",
     "保留": ""
   },
   {
@@ -139,8 +109,6 @@
     "上限": "1",
     "消耗": "${ 美丽: 250T }$",
     "效果": "鼓解锁｛$lvl >= 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.黄色.总计 > 0$",
     "保留": ""
   },
   {
@@ -148,8 +116,6 @@
     "上限": "15",
     "消耗": "${ 绿色: {(2.5)}^{lvl}  \\cdot  2 }$",
     "效果": "黄色增益*｛$\\text{分段线性}(1.25, 0.1, 15, lvl)$｝",
-    "capMult": "true",
-    "requirement": "$store.state.stat.绿色.总计 > 0$",
     "保留": ""
   },
   {
@@ -157,8 +123,6 @@
     "上限": "40",
     "消耗": "${ 绿色: {(3 + 0.1  \\cdot  lvl)}^{lvl}  \\cdot  1M }$",
     "效果": "黄色鼓几率+｛$lvl  \\cdot  0.02$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.绿色.总计 > 0 && store.state.解锁.鼓.see$",
     "保留": ""
   },
   {
@@ -166,8 +130,6 @@
     "上限": "10",
     "消耗": "${ 美丽: {(20)}^{lvl}  \\cdot  1.35Qi }$",
     "效果": "绿色转换*｛${(2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.绿色.总计 > 0$",
     "保留": ""
   },
   {
@@ -175,8 +137,6 @@
     "上限": "40",
     "消耗": "${ 红色: {(2.75 + 0.1  \\cdot  lvl)}^{lvl}  \\cdot  100T }$",
     "效果": "美丽增益*｛${(1.1)}^{lvl}$｝; 红色鼓容量+｛$lvl  \\cdot  2$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.绿色.总计 > 0 && store.state.解锁.鼓.see$",
     "保留": ""
   },
   {
@@ -184,8 +144,6 @@
     "上限": "15",
     "消耗": "${ gallery_blue: {(2.5)}^{lvl}  \\cdot  2 }$",
     "效果": "绿色增益*｛$\\text{分段线性}(1.25, 0.1, 15, lvl)$｝",
-    "capMult": "true",
-    "requirement": "$store.state.stat.gallery_blue.总计 > 0$",
     "保留": ""
   },
   {
@@ -193,8 +151,6 @@
     "上限": "40",
     "消耗": "${ gallery_blue: {(3 + 0.1  \\cdot  lvl)}^{lvl}  \\cdot  1M }$",
     "效果": "绿色鼓几率+｛$lvl  \\cdot  0.02$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.gallery_blue.总计 > 0 && store.state.解锁.鼓.see$",
     "保留": ""
   },
   {
@@ -202,8 +158,6 @@
     "上限": "10",
     "消耗": "${ 美丽: {(25)}^{lvl}  \\cdot  35Sx }$",
     "效果": "蓝色转换*｛${(2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.gallery_blue.总计 > 0$",
     "保留": ""
   },
   {
@@ -211,8 +165,6 @@
     "上限": "15",
     "消耗": "${ 紫色: {(2.5)}^{lvl}  \\cdot  2 }$",
     "效果": "currencyGalleryBlueGain*｛$\\text{分段线性}(1.25, 0.1, 15, lvl)$｝",
-    "capMult": "true",
-    "requirement": "$store.state.stat.紫色.总计 > 0$",
     "保留": ""
   },
   {
@@ -220,8 +172,6 @@
     "上限": "40",
     "消耗": "${ 紫色: {(3 + 0.1  \\cdot  lvl)}^{lvl}  \\cdot  1M }$",
     "效果": "蓝色鼓几率+｛$lvl  \\cdot  0.02$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.紫色.总计 > 0 && store.state.解锁.鼓.see$",
     "保留": ""
   },
   {
@@ -229,8 +179,6 @@
     "上限": "10",
     "消耗": "${ 美丽: {(30)}^{lvl}  \\cdot  9.4N }$",
     "效果": "紫色转换*｛${(2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.紫色.总计 > 0$",
     "保留": ""
   },
   {
@@ -238,8 +186,6 @@
     "上限": "15",
     "消耗": "${ 'gallery_deep-橙色': {(2.5)}^{lvl}  \\cdot  4 }$",
     "效果": "紫色增益*｛$\\text{分段线性}(1.25, 0.1, 15, lvl)$｝",
-    "capMult": "true",
-    "requirement": "$store.state.stat['gallery_deep-橙色'].总计 > 0$",
     "保留": ""
   },
   {
@@ -247,8 +193,6 @@
     "上限": "40",
     "消耗": "${ 'gallery_deep-橙色': {(3 + 0.1  \\cdot  lvl)}^{lvl}  \\cdot  3M }$",
     "效果": "紫色鼓几率+｛$lvl  \\cdot  0.02$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat['gallery_deep-橙色'].总计 > 0 && store.state.解锁.鼓.see$",
     "保留": ""
   },
   {
@@ -256,8 +200,6 @@
     "上限": "10",
     "消耗": "${ 美丽: {(35)}^{lvl}  \\cdot  11UD }$",
     "效果": "橙红转换*｛${(2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat['gallery_deep-橙色'].总计 > 0$",
     "保留": ""
   },
   {
@@ -265,8 +207,6 @@
     "上限": "1",
     "消耗": "${ 美丽: 40UD, 'gallery_deep-橙色': 10 }$",
     "效果": "画布解锁｛$lvl >= 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat['gallery_deep-橙色'].总计 > 0$",
     "保留": ""
   },
   {
@@ -274,8 +214,6 @@
     "上限": "",
     "消耗": "${ 美丽: {(1000)}^{lvl}  \\cdot  1DD }$",
     "效果": "画布大小+｛$lvl$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.画布.use$",
     "保留": ""
   },
   {
@@ -283,8 +221,6 @@
     "上限": "15",
     "消耗": "${ 金色: {(2.5)}^{lvl}  \\cdot  8 }$",
     "效果": "currencyGalleryDeep-orangeGain*｛$\\text{分段线性}(1.25, 0.1, 15, lvl)$｝",
-    "capMult": "true",
-    "requirement": "$store.state.stat.金色.总计 > 0$",
     "保留": ""
   },
   {
@@ -292,8 +228,6 @@
     "上限": "40",
     "消耗": "${ 金色: {(3 + 0.1  \\cdot  lvl)}^{lvl}  \\cdot  9M }$",
     "效果": "橙红鼓几率+｛$lvl  \\cdot  0.02$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.金色.总计 > 0 && store.state.解锁.鼓.see$",
     "保留": ""
   },
   {
@@ -301,8 +235,6 @@
     "上限": "10",
     "消耗": "${ 美丽: {(50)}^{lvl}  \\cdot  555QiD }$",
     "效果": "金色转换*｛${(2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.金色.总计 > 0$",
     "保留": ""
   },
   {
@@ -310,8 +242,6 @@
     "上限": "15",
     "消耗": "${ '光-绿色': {(2.5)}^{lvl}  \\cdot  16 }$",
     "效果": "金色增益*｛$\\text{分段线性}(1.25, 0.1, 15, lvl)$｝",
-    "capMult": "true",
-    "requirement": "$store.state.stat['光-绿色'].总计 > 0$",
     "保留": ""
   },
   {
@@ -319,8 +249,6 @@
     "上限": "40",
     "消耗": "${ '光-绿色': {(3 + 0.1  \\cdot  lvl)}^{lvl}  \\cdot  27M }$",
     "效果": "金色鼓几率+｛$lvl  \\cdot  0.02$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat['光-绿色'].总计 > 0 && store.state.解锁.鼓.see$",
     "保留": ""
   },
   {
@@ -328,8 +256,6 @@
     "上限": "10",
     "消耗": "${ 美丽: {(60)}^{lvl}  \\cdot  90ND }$",
     "效果": "浅绿色转换*｛${(2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat['光-绿色'].总计 > 0$",
     "保留": ""
   },
   {
@@ -337,8 +263,6 @@
     "上限": "15",
     "消耗": "${ gallery_teal: {(2.5)}^{lvl}  \\cdot  32 }$",
     "效果": "currencyGalleryLight-greenGain*｛$\\text{分段线性}(1.25, 0.1, 15, lvl)$｝",
-    "capMult": "true",
-    "requirement": "$store.state.stat.gallery_teal.总计 > 0$",
     "保留": ""
   },
   {
@@ -346,8 +270,6 @@
     "上限": "40",
     "消耗": "${ gallery_teal: {(3 + 0.1  \\cdot  lvl)}^{lvl}  \\cdot  81M }$",
     "效果": "浅绿色鼓几率+｛$lvl  \\cdot  0.02$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.gallery_teal.总计 > 0 && store.state.解锁.鼓.see$",
     "保留": ""
   },
   {
@@ -355,8 +277,6 @@
     "上限": "10",
     "消耗": "${ 美丽: {(80)}^{lvl}  \\cdot  750DV }$",
     "效果": "青色转换*｛${(2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.gallery_teal.总计 > 0$",
     "保留": ""
   },
   {
@@ -364,8 +284,6 @@
     "上限": "15",
     "消耗": "${ '光-blue': {(2.5)}^{lvl}  \\cdot  64 }$",
     "效果": "currencyGalleryTealGain*｛$\\text{分段线性}(1.25, 0.1, 15, lvl)$｝",
-    "capMult": "true",
-    "requirement": "$store.state.stat['光-blue'].总计 > 0$",
     "保留": ""
   },
   {
@@ -373,8 +291,6 @@
     "上限": "40",
     "消耗": "${ '光-blue': {(3 + 0.1  \\cdot  lvl)}^{lvl}  \\cdot  243M }$",
     "效果": "青色鼓几率+｛$lvl  \\cdot  0.02$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat['光-blue'].总计 > 0 && store.state.解锁.鼓.see$",
     "保留": ""
   },
   {
@@ -382,8 +298,6 @@
     "上限": "10",
     "消耗": "${ 美丽: {(100)}^{lvl}  \\cdot  38SxV }$",
     "效果": "浅蓝色转换*｛${(2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat['光-blue'].总计 > 0$",
     "保留": ""
   },
   {
@@ -391,8 +305,6 @@
     "上限": "15",
     "消耗": "${ 粉色: {(2.5)}^{lvl}  \\cdot  128 }$",
     "效果": "currencyGalleryLight-blueGain*｛$\\text{分段线性}(1.25, 0.1, 15, lvl)$｝",
-    "capMult": "true",
-    "requirement": "$store.state.stat.粉色.总计 > 0$",
     "保留": ""
   },
   {
@@ -400,8 +312,6 @@
     "上限": "40",
     "消耗": "${ 粉色: {(3 + 0.1  \\cdot  lvl)}^{lvl}  \\cdot  729M }$",
     "效果": "浅蓝色鼓几率+｛$lvl  \\cdot  0.02$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.粉色.总计 > 0 && store.state.解锁.鼓.see$",
     "保留": ""
   },
   {
@@ -409,8 +319,6 @@
     "上限": "10",
     "消耗": "${ 美丽: {(125)}^{lvl}  \\cdot  5Tg }$",
     "效果": "粉色转换*｛${(2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.stat.粉色.总计 > 0$",
     "保留": ""
   }
 ]

@@ -2,127 +2,106 @@
   {
     "名称": "友好的蝙蝠",
     "图标": "<i class=\"mdi mdi-bat\"></i>",
-    "color": "dark-灰色",
     "效果": "废料增益*｛1.25｝"
   },
   {
     "名称": "锤子",
     "图标": "<i class=\"mdi mdi-hammer\"></i>",
-    "color": "棕色",
     "效果": "制作站保留｛true｝"
   },
   {
     "名称": "铝砖",
     "图标": "<i class=\"mdi mdi-wall\"></i>",
-    "color": "blue-灰色",
     "效果": "铝存储保留｛true｝; 铝淬火保留｛true｝"
   },
   {
     "名称": "铜砖",
     "图标": "<i class=\"mdi mdi-wall\"></i>",
-    "color": "橙色",
     "效果": "铜存储保留｛true｝"
   },
   {
     "名称": "铝堆",
     "图标": "<i class=\"mdi mdi-dots-triangle\"></i>",
-    "color": "blue-灰色",
     "效果": "铝罐保留｛true｝; 铝砧保留｛true｝"
   },
   {
     "名称": "炸弹",
     "图标": "<i class=\"mdi mdi-bomb\"></i>",
-    "color": "红色",
     "效果": "破壳者保留｛true｝"
   },
   {
     "名称": "铜堆",
     "图标": "<i class=\"mdi mdi-dots-triangle\"></i>",
-    "color": "橙色",
     "效果": "铜罐保留｛true｝"
   },
   {
     "名称": "雷达",
     "图标": "<i class=\"mdi mdi-radar\"></i>",
-    "color": "光-绿色",
     "效果": "深度居民保留｛true｝"
   },
   {
     "名称": "报刊",
     "图标": "<i class=\"mdi mdi-download\"></i>",
-    "color": "deep-紫色",
     "效果": "压缩机保留｛true｝"
   },
   {
     "名称": "橱柜",
     "图标": "<i class=\"mdi mdi-cupboard\"></i>",
-    "color": "棕色",
     "效果": "矿石槽位保留｛true｝"
   },
   {
     "名称": "催化剂",
     "图标": "<i class=\"mdi mdi-flask\"></i>",
-    "color": "teal",
     "效果": "精炼厂保留｛true｝"
   },
   {
     "名称": "跳绳",
     "图标": "<i class=\"mdi mdi-jump-rope\"></i>",
-    "color": "棕色",
     "效果": "铝扩张保留｛true｝; 铜扩张保留｛true｝"
   },
   {
     "名称": "青铜镐",
     "图标": "<i class=\"mdi mdi-pickaxe\"></i>",
-    "color": "金色",
     "效果": "花岗岩硬化保留｛true｝"
   },
   {
     "名称": "矿石架",
     "图标": "<i class=\"mdi mdi-window-closed\"></i>",
-    "color": "棕色",
     "效果": "矿石架保留｛true｝; 锡存储保留｛true｝"
   },
   {
     "名称": "煤砖",
     "图标": "<i class=\"mdi mdi-wall\"></i>",
-    "color": "dark-灰色",
     "效果": "熔炉保留｛true｝"
   },
   {
     "名称": "洗衣机",
     "图标": "<i class=\"mdi mdi-washing-machine\"></i>",
-    "color": "skyblue",
     "效果": "矿石洗选保留｛true｝"
   },
   {
     "名称": "打开的礼物",
     "图标": "<i class=\"mdi mdi-gift-open\"></i>",
-    "color": "blue",
     "效果": "青铜存储保留｛true｝; 铁存储保留｛true｝"
   },
   {
     "名称": "磁铁",
     "图标": "<i class=\"mdi mdi-magnet\"></i>",
-    "color": "红色",
     "效果": "铁扩张保留｛true｝; 铁淬火保留｛true｝; 铁过滤器保留｛true｝"
   },
   {
     "名称": "铜镐",
     "图标": "<i class=\"mdi mdi-pickaxe\"></i>",
-    "color": "橙色",
     "效果": "磁铁保留｛true｝; 仓库保留｛true｝"
   },
   {
     "名称": "锡桶",
     "图标": "<i class=\"mdi mdi-pail\"></i>",
-    "color": "灰色",
     "效果": "钛扩张保留｛true｝; 钛存储保留｛true｝"
   },
   {
     "名称": "一罐蜂蜜",
     "图标": "<i class=\"mdi mdi-pot\"></i>",
-    "color": "金色",
     "效果": "最大树脂+｛1｝"
   }
 ]

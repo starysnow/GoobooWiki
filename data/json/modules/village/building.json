@@ -6,10 +6,7 @@
     "图标": "<i class=\"mdi mdi-campfire\"></i>",
     "消耗": "${ 木头: 5, 石头: 5 }$",
     "制作时间": "$5$",
-    "效果": "层 1 建筑解锁｛$lvl >= 1$｝",
-    "capMult": "",
-    "requirement": "",
-    "subtype": ""
+    "效果": "层 1 建筑解锁｛$lvl >= 1$｝"
   },
   {
     "名称": "棚子",
@@ -18,10 +15,7 @@
     "图标": "<i class=\"mdi mdi-home-analytics\"></i>",
     "消耗": "${ 木头: {(1.8)}^{lvl}  \\cdot  14.5K, 石头: {(2.05)}^{lvl}  \\cdot  9000, 金属: {(1.7)}^{lvl}  \\cdot  5200 }$",
     "制作时间": "$\\text{向上取整}({(1.75)}^{lvl}  \\cdot  1600)$",
-    "效果": "水容量*｛$lvl  \\cdot  0.2 + 1$｝; 镰刀升级解锁｛$lvl >= 1$｝; 斧头升级解锁｛$lvl >= 2$｝; 镐子升级解锁｛$lvl >= 3$｝; 浇水器可以升级解锁｛$lvl >= 4$｝; 投资升级解锁｛$lvl >= 5$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "水容量*｛$lvl  \\cdot  0.2 + 1$｝; 镰刀升级解锁｛$lvl >= 1$｝; 斧头升级解锁｛$lvl >= 2$｝; 镐子升级解锁｛$lvl >= 3$｝; 浇水器可以升级解锁｛$lvl >= 4$｝; 投资升级解锁｛$lvl >= 5$｝"
   },
   {
     "名称": "农场",
@@ -30,10 +24,7 @@
     "图标": "<i class=\"mdi mdi-tractor\"></i>",
     "消耗": "${ 木头: {(1.65)}^{lvl}  \\cdot  200, 石头: {(1.65)}^{lvl}  \\cdot  400 }$",
     "制作时间": "$\\text{向上取整}({(1.33)}^{lvl}  \\cdot  40)$",
-    "效果": "农夫villageJob｛$lvl$｝; 植物纤维容量+｛$lvl > 1 ? 250  \\cdot  (lvl - 1) : null$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "这座建筑算作一个工作站"
+    "效果": "农夫villageJob｛$lvl$｝; 植物纤维容量+｛$lvl > 1 ? 250  \\cdot  (lvl - 1) : null$｝"
   },
   {
     "名称": "种植园",
@@ -42,10 +33,7 @@
     "图标": "<i class=\"mdi mdi-forest\"></i>",
     "消耗": "${ 植物纤维: {(1.65)}^{lvl}  \\cdot  750, 石头: {(1.65)}^{lvl}  \\cdot  430 }$",
     "制作时间": "$\\text{向上取整}({(1.33)}^{lvl}  \\cdot  50)$",
-    "效果": "收割机villageJob｛$lvl$｝; 木头容量+｛$lvl > 1 ? 250  \\cdot  (lvl - 1) : null$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "这座建筑算作一个工作站"
+    "效果": "收割机villageJob｛$lvl$｝; 木头容量+｛$lvl > 1 ? 250  \\cdot  (lvl - 1) : null$｝"
   },
   {
     "名称": "矿山",
@@ -54,10 +42,7 @@
     "图标": "<i class=\"mdi mdi-tunnel\"></i>",
     "消耗": "${ 木头: {(1.65)}^{lvl}  \\cdot  1150 }$",
     "制作时间": "$\\text{向上取整}({(1.33)}^{lvl}  \\cdot  60)$",
-    "效果": "矿工villageJob｛$lvl$｝; 石头容量+｛$lvl > 1 ? 250  \\cdot  (lvl - 1) : null$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "这座建筑算作一个工作站"
+    "效果": "矿工villageJob｛$lvl$｝; 石头容量+｛$lvl > 1 ? 250  \\cdot  (lvl - 1) : null$｝"
   },
   {
     "名称": "社区中心",
@@ -66,10 +51,7 @@
     "图标": "<i class=\"mdi mdi-home-account\"></i>",
     "消耗": "${ 木头: 1800, 石头: 1650, 金属: 100 }$",
     "制作时间": "$750$",
-    "效果": "层 2 建筑解锁｛$lvl >= 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "层 2 建筑解锁｛$lvl >= 1$｝"
   },
   {
     "名称": "小房子",
@@ -78,10 +60,7 @@
     "图标": "<i class=\"mdi mdi-home-variant\"></i>",
     "消耗": "${ 木头: {(1.35)}^{lvl}  \\cdot  2750, 金属: {(1.35)}^{lvl}  \\cdot  250, 水: {(1.5)}^{lvl}  \\cdot  400 }$",
     "制作时间": "$\\text{向上取整}({(1.25)}^{lvl}  \\cdot  210)$",
-    "效果": "工人+｛$lvl$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "该建筑算作住房，可提高前 25 栋建筑的全局等级"
+    "效果": "工人+｛$lvl$｝"
   },
   {
     "名称": "起重机",
@@ -90,10 +69,7 @@
     "图标": "<i class=\"mdi mdi-crane\"></i>",
     "消耗": "${ 木头: {(1.5)}^{lvl}  \\cdot  580, 金属: {(1.35)}^{lvl}  \\cdot  275 }$",
     "制作时间": "$\\text{向上取整}({(1.2)}^{lvl}  \\cdot  45)$",
-    "效果": "建造速度+｛$lvl$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "建造速度+｛$lvl$｝"
   },
   {
     "名称": "财政部",
@@ -102,10 +78,7 @@
     "图标": "<i class=\"mdi mdi-treasure-chest\"></i>",
     "消耗": "${ let obj = { 植物纤维: {(1.25)}^{Math.max(0, lvl - 9})  \\cdot  {(1.5)}^{lvl}  \\cdot  2600 }; if (lvl <= 0) { obj.水果 = 325; obj.仅粮食 = 550; } return obj; }$",
     "制作时间": "$\\text{向上取整}({(1.4)}^{lvl}  \\cdot  240)$",
-    "效果": "金币升级解锁｛$lvl >= 1$｝; 税率+｛$splicedLinear(0.025, 0.01, 10, lvl)$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "金币升级解锁｛$lvl >= 1$｝; 税率+｛$splicedLinear(0.025, 0.01, 10, lvl)$｝"
   },
   {
     "名称": "存储",
@@ -114,10 +87,7 @@
     "图标": "<i class=\"mdi mdi-database\"></i>",
     "消耗": "${ let obj = { 植物纤维: {(lvl  \\cdot  0.02 + 1.15)}^{lvl}  \\cdot  900, 木头: {(lvl  \\cdot  0.02 + 1.15)}^{lvl}  \\cdot  900, 石头: {(lvl  \\cdot  0.02 + 1.18)}^{lvl}  \\cdot  1400 }; if (lvl <= 0) { obj.金币 = 50; } return obj; }$",
     "制作时间": "$\\text{向上取整}({(1.15)}^{lvl}  \\cdot  225)$",
-    "效果": "木头容量*｛$\\text{分段线性}(1.2, 0.1, 20, lvl)$｝; 植物纤维容量*｛$\\text{分段线性}(1.2, 0.1, 20, lvl)$｝; 石头容量*｛$\\text{分段线性}(1.2, 0.1, 20, lvl)$｝; 金属容量*｛$lvl > 5 ? \\text{分段线性}(1.2, 0.1, 15, lvl - 5) : null$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "木头容量*｛$\\text{分段线性}(1.2, 0.1, 20, lvl)$｝; 植物纤维容量*｛$\\text{分段线性}(1.2, 0.1, 20, lvl)$｝; 石头容量*｛$\\text{分段线性}(1.2, 0.1, 20, lvl)$｝; 金属容量*｛$lvl > 5 ? \\text{分段线性}(1.2, 0.1, 15, lvl - 5) : null$｝"
   },
   {
     "名称": "锻造",
@@ -126,10 +96,7 @@
     "图标": "<i class=\"mdi mdi-anvil\"></i>",
     "消耗": "${ 石头: {(lvl  \\cdot  0.02 + 1.25)}^{lvl}  \\cdot  2750, 金属: {(lvl  \\cdot  0.02 + 1.18)}^{lvl}  \\cdot  250 }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  180)$",
-    "效果": "金属增益*｛$lvl  \\cdot  0.1 + 1$｝; 金属容量+｛$lvl  \\cdot  200$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "金属增益*｛$lvl  \\cdot  0.1 + 1$｝; 金属容量+｛$lvl  \\cdot  200$｝"
   },
   {
     "名称": "保险箱",
@@ -138,10 +105,7 @@
     "图标": "<i class=\"mdi mdi-safe\"></i>",
     "消耗": "${ 金属: {(lvl  \\cdot  0.02 + 1.2)}^{lvl}  \\cdot  900, 金币: {(lvl  \\cdot  0.02 + 1.18)}^{lvl}  \\cdot  150 }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  270)$",
-    "效果": "金币容量+｛$lvl  \\cdot  100$｝; 金币容量*｛${(1.2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "金币容量+｛$lvl  \\cdot  100$｝; 金币容量*｛${(1.2)}^{lvl}$｝"
   },
   {
     "名称": "水井",
@@ -150,10 +114,7 @@
     "图标": "<i class=\"mdi mdi-water-well\"></i>",
     "消耗": "${ 植物纤维: {(1.65)}^{lvl}  \\cdot  6800, 木头: {(1.65)}^{lvl}  \\cdot  4500, 石头: {(1.65)}^{lvl}  \\cdot  5000 }$",
     "制作时间": "$\\text{向上取整}({(1.33)}^{lvl}  \\cdot  300)$",
-    "效果": "井工villageJob｛$lvl$｝; 水容量+｛$lvl > 1 ? 1000  \\cdot  Math.min(lvl - 1, 9) : null$｝; 水容量*｛$lvl > 1 ? {(1.5)}^{Math.min(lvl - 1, 9}) : null$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "这座建筑算作一个工作站"
+    "效果": "井工villageJob｛$lvl$｝; 水容量+｛$lvl > 1 ? 1000  \\cdot  Math.min(lvl - 1, 9) : null$｝; 水容量*｛$lvl > 1 ? {(1.5)}^{Math.min(lvl - 1, 9}) : null$｝"
   },
   {
     "名称": "花园",
@@ -162,10 +123,7 @@
     "图标": "<i class=\"mdi mdi-flower\"></i>",
     "消耗": "${ 植物纤维: {(1.25)}^{lvl}  \\cdot  8750, 水: {(1.33)}^{lvl}  \\cdot  500 }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  480)$",
-    "效果": "植物纤维容量*｛$lvl  \\cdot  0.15 + 1$｝; 金币容量+｛$lvl  \\cdot  50$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "植物纤维容量*｛$lvl  \\cdot  0.15 + 1$｝; 金币容量+｛$lvl  \\cdot  50$｝"
   },
   {
     "名称": "市政厅",
@@ -174,10 +132,7 @@
     "图标": "<i class=\"mdi mdi-town-hall\"></i>",
     "消耗": "${ 木头: 12.8K, 石头: 10.5K, 金属: 3150, 水: 2900 }$",
     "制作时间": "$14.4K$",
-    "效果": "层 3 建筑解锁｛$lvl >= 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "层 3 建筑解锁｛$lvl >= 1$｝"
   },
   {
     "名称": "房子",
@@ -186,10 +141,7 @@
     "图标": "<i class=\"mdi mdi-home\"></i>",
     "消耗": "${ 植物纤维: {(1.35)}^{lvl}  \\cdot  17.8K, 木头: {(1.35)}^{lvl}  \\cdot  16K, 金属: {(1.35)}^{lvl}  \\cdot  2600, 知识: lvl  \\cdot  5 + 75 }$",
     "制作时间": "$\\text{向上取整}({(1.25)}^{lvl}  \\cdot  900)$",
-    "效果": "工人+｛$lvl$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "该建筑算作住房，可提高前 25 栋建筑的全局等级"
+    "效果": "工人+｛$lvl$｝"
   },
   {
     "名称": "隧道",
@@ -198,10 +150,7 @@
     "图标": "<i class=\"mdi mdi-tunnel\"></i>",
     "消耗": "${ 植物纤维: {(1.35)}^{lvl}  \\cdot  12K, 水: {(1.5)}^{lvl}  \\cdot  850 }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  1350)$",
-    "效果": "石头增益*｛$lvl  \\cdot  0.1 + 1$｝; 石头容量*｛$lvl  \\cdot  0.2 + 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "石头增益*｛$lvl  \\cdot  0.1 + 1$｝; 石头容量*｛$lvl  \\cdot  0.2 + 1$｝"
   },
   {
     "名称": "锯木厂",
@@ -210,10 +159,7 @@
     "图标": "<i class=\"mdi mdi-saw-blade\"></i>",
     "消耗": "${ 金属: {(1.3)}^{lvl}  \\cdot  3200, 水: {(1.5)}^{lvl}  \\cdot  1150 }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  1500)$",
-    "效果": "木头增益*｛$lvl  \\cdot  0.1 + 1$｝; 木头容量*｛$lvl  \\cdot  0.2 + 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "木头增益*｛$lvl  \\cdot  0.1 + 1$｝; 木头容量*｛$lvl  \\cdot  0.2 + 1$｝"
   },
   {
     "名称": "图书馆",
@@ -222,10 +168,7 @@
     "图标": "<i class=\"mdi mdi-book\"></i>",
     "消耗": "${ 木头: {(1.65)}^{lvl}  \\cdot  15K, 水: {(1.85)}^{lvl}  \\cdot  6100 }$",
     "制作时间": "$\\text{向上取整}({(1.33)}^{lvl}  \\cdot  2100)$",
-    "效果": "图书管理员villageJob｛$lvl$｝; 知识容量+｛$lvl > 1 ? 5  \\cdot  (lvl - 1) : null$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "这座建筑算作一个工作站"
+    "效果": "图书管理员villageJob｛$lvl$｝; 知识容量+｛$lvl > 1 ? 5  \\cdot  (lvl - 1) : null$｝"
   },
   {
     "名称": "水族馆",
@@ -234,10 +177,7 @@
     "图标": "<i class=\"mdi mdi-fishbowl\"></i>",
     "消耗": "${ 水: {(1.5)}^{lvl}  \\cdot  4400, 知识: lvl  \\cdot  10 + 35 }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  2400)$",
-    "效果": "金属容量*｛$lvl  \\cdot  0.15 + 1$｝; 金币容量*｛$lvl  \\cdot  0.15 + 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "金属容量*｛$lvl  \\cdot  0.15 + 1$｝; 金币容量*｛$lvl  \\cdot  0.15 + 1$｝"
   },
   {
     "名称": "玻璃吹制厂",
@@ -246,10 +186,7 @@
     "图标": "<i class=\"mdi mdi-glass-wine\"></i>",
     "消耗": "${ 金属: {(1.65)}^{lvl}  \\cdot  12K, 水: {(1.85)}^{lvl}  \\cdot  24K }$",
     "制作时间": "$\\text{向上取整}({(1.33)}^{lvl}  \\cdot  3000)$",
-    "效果": "玻璃吹制工villageJob｛$lvl$｝; 玻璃容量+｛$lvl > 1 ? 250  \\cdot  (lvl - 1) : null$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "这座建筑算作一个工作站"
+    "效果": "玻璃吹制工villageJob｛$lvl$｝; 玻璃容量+｛$lvl > 1 ? 250  \\cdot  (lvl - 1) : null$｝"
   },
   {
     "名称": "知识塔",
@@ -258,10 +195,7 @@
     "图标": "<i class=\"mdi mdi-wizard-hat\"></i>",
     "消耗": "${ 植物纤维: {(1.5)}^{lvl}  \\cdot  44K, 石头: {(1.5)}^{lvl}  \\cdot  35K, 玻璃: {(1.5)}^{lvl}  \\cdot  450, 知识: \\text{向上取整}(lvl  \\cdot  8  \\cdot  {(1.05)}^{lvl} + 50) }$",
     "制作时间": "$\\text{向上取整}({(1.24)}^{lvl}  \\cdot  3300)$",
-    "效果": "玻璃容量+｛$lvl  \\cdot  250$｝; 水容量*｛$lvl  \\cdot  0.2 + 1$｝; 知识容量+｛$lvl  \\cdot  3$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "玻璃容量+｛$lvl  \\cdot  250$｝; 水容量*｛$lvl  \\cdot  0.2 + 1$｝; 知识容量+｛$lvl  \\cdot  3$｝"
   },
   {
     "名称": "微型铁匠",
@@ -270,10 +204,7 @@
     "图标": "<i class=\"mdi mdi-fireplace\"></i>",
     "消耗": "${ 木头: {(1.65)}^{lvl}  \\cdot  60K, 石头: {(1.65)}^{lvl}  \\cdot  35K, 玻璃: {(1.4)}^{lvl}  \\cdot  600 }$",
     "制作时间": "$\\text{向上取整}({(1.25)}^{lvl}  \\cdot  2500)$",
-    "效果": "金属增益*｛$lvl  \\cdot  0.1 + 1$｝; 工人+｛$lvl > 4 ? \\text{向下取整}(lvl / 5) : null$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "该建筑算作住房，可提高前 25 栋建筑的全局等级"
+    "效果": "金属增益*｛$lvl  \\cdot  0.1 + 1$｝; 工人+｛$lvl > 4 ? \\text{向下取整}(lvl / 5) : null$｝"
   },
   {
     "名称": "教堂",
@@ -282,10 +213,7 @@
     "图标": "<i class=\"mdi mdi-church\"></i>",
     "消耗": "${ 木头: {(1.65)}^{lvl}  \\cdot  65K, 石头: {(1.65)}^{lvl}  \\cdot  85K, 玻璃: {(1.5)}^{lvl}  \\cdot  1700 }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  4800)$",
-    "效果": "信仰增益+｛$getSequence(1, lvl)  \\cdot  0.02$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "信仰增益+｛$getSequence(1, lvl)  \\cdot  0.02$｝"
   },
   {
     "名称": "学校",
@@ -294,10 +222,7 @@
     "图标": "<i class=\"mdi mdi-school\"></i>",
     "消耗": "${ 植物纤维: {(2.25)}^{lvl}  \\cdot  400K, 金属: {(2.25)}^{lvl}  \\cdot  45K, 玻璃: {(2.1)}^{lvl}  \\cdot  4800, 金币: {(1.85)}^{lvl}  \\cdot  70K }$",
     "制作时间": "$\\text{向上取整}({(1.6)}^{lvl}  \\cdot  3600)$",
-    "效果": "知识容量+｛$lvl  \\cdot  5$｝; 基础升级解锁｛$lvl >= 1$｝; 加工升级解锁｛$lvl >= 2$｝; 水泵升级解锁｛$lvl >= 3$｝; 沙子升级解锁｛$lvl >= 4$｝; 书籍升级解锁｛$lvl >= 5$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "知识容量+｛$lvl  \\cdot  5$｝; 基础升级解锁｛$lvl >= 1$｝; 加工升级解锁｛$lvl >= 2$｝; 水泵升级解锁｛$lvl >= 3$｝; 沙子升级解锁｛$lvl >= 4$｝; 书籍升级解锁｛$lvl >= 5$｝"
   },
   {
     "名称": "地方政府",
@@ -306,10 +231,7 @@
     "图标": "<i class=\"mdi mdi-city-variant\"></i>",
     "消耗": "${ 植物纤维: 1.02M, 木头: 975K, 玻璃: 16K, 金币: 280K }$",
     "制作时间": "$240K$",
-    "效果": "层 4 建筑解锁｛$lvl >= 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "层 4 建筑解锁｛$lvl >= 1$｝"
   },
   {
     "名称": "公寓",
@@ -318,10 +240,7 @@
     "图标": "<i class=\"mdi mdi-home-city\"></i>",
     "消耗": "${ 木头: {(1.65)}^{lvl}  \\cdot  20M, 玻璃: {(1.65)}^{lvl}  \\cdot  29.5K, 硬木: {(1.3)}^{lvl}  \\cdot  1500, 宝石: {(1.35)}^{lvl}  \\cdot  600 }$",
     "制作时间": "$\\text{向上取整}({(1.25)}^{lvl}  \\cdot  7200)$",
-    "效果": "工人+｛$lvl  \\cdot  2$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "该建筑算作住房，可提高前 25 栋建筑的全局等级"
+    "效果": "工人+｛$lvl  \\cdot  2$｝"
   },
   {
     "名称": "寺庙",
@@ -330,10 +249,7 @@
     "图标": "<i class=\"mdi mdi-temple-hindu\"></i>",
     "消耗": "${ 玻璃: {(1.25)}^{lvl}  \\cdot  8000, 水: {(1.5)}^{lvl}  \\cdot  2M, 金币: {(1.45)}^{lvl}  \\cdot  100K, 知识: 15  \\cdot  lvl + 125 }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  62.5K)$",
-    "效果": "信仰容量*｛${(1.2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "信仰容量*｛${(1.2)}^{lvl}$｝"
   },
   {
     "名称": "方尖碑",
@@ -342,10 +258,7 @@
     "图标": "<i class=\"mdi mdi-tower-fire\"></i>",
     "消耗": "${ 金币: {(4.5)}^{lvl}  \\cdot  50K }$",
     "制作时间": "$\\text{向上取整}({(1.45)}^{lvl}  \\cdot  50K)$",
-    "效果": "金币容量*｛${(2)}^{lvl}$｝; 材料容量*｛${(1.2)}^{lvl}$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "金币容量*｛${(2)}^{lvl}$｝; 材料容量*｛${(1.2)}^{lvl}$｝"
   },
   {
     "名称": "供奉底座",
@@ -354,10 +267,7 @@
     "图标": "<i class=\"mdi mdi-table-furniture\"></i>",
     "消耗": "$[{ 植物纤维: 2M, 木头: 2M, 石头: 2M }, { 金币: 10M, 金属: 3M, 水: 5M }, { 玻璃: 120K, 硬木: 40K, 宝石: 40K }, { 知识: 600, 科学: 200, 快乐: 750 }][lvl]$",
     "制作时间": "$\\text{向上取整}({(3)}^{lvl}  \\cdot  32.5K)$",
-    "效果": "供品解锁｛$lvl >= 1$｝; 层 2 供品解锁｛$lvl >= 2$｝; 层 3 供品解锁｛$lvl >= 3$｝; 层 4 供品解锁｛$lvl >= 4$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "供品解锁｛$lvl >= 1$｝; 层 2 供品解锁｛$lvl >= 2$｝; 层 3 供品解锁｛$lvl >= 3$｝; 层 4 供品解锁｛$lvl >= 4$｝"
   },
   {
     "名称": "剧院",
@@ -366,10 +276,7 @@
     "图标": "<i class=\"mdi mdi-drama-masks\"></i>",
     "消耗": "${ let obj = { 石头: {(2.15)}^{lvl}  \\cdot  3M, 玻璃: {(1.8)}^{lvl}  \\cdot  14.8K }; if (lvl >= 1) { obj.硬木 = {(1.75)}^{lvl - 1}  \\cdot  2000; } if (lvl >= 2) { obj.宝石 = {(1.75)}^{lvl - 2}  \\cdot  2750; } return obj; }$",
     "制作时间": "$\\text{向上取整}({(1.33)}^{lvl}  \\cdot  60K)$",
-    "效果": "艺人villageJob｛$lvl$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "这座建筑算作一个工作站"
+    "效果": "艺人villageJob｛$lvl$｝"
   },
   {
     "名称": "伐木工小屋",
@@ -378,10 +285,7 @@
     "图标": "<i class=\"mdi mdi-axe\"></i>",
     "消耗": "${ 植物纤维: {(1.85)}^{lvl}  \\cdot  7.7M, 金属: {(1.85)}^{lvl}  \\cdot  1.35M }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  10K)$",
-    "效果": "伐木工villageJob｛$lvl$｝; 硬木容量+｛$lvl > 1 ? 200  \\cdot  (lvl - 1) : null$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "这座建筑算作一个工作站"
+    "效果": "伐木工villageJob｛$lvl$｝; 硬木容量+｛$lvl > 1 ? 200  \\cdot  (lvl - 1) : null$｝"
   },
   {
     "名称": "深矿井",
@@ -390,10 +294,7 @@
     "图标": "<i class=\"mdi mdi-tunnel\"></i>",
     "消耗": "${ 木头: {(1.85)}^{lvl}  \\cdot  13M, 知识: lvl  \\cdot  10 + 165, 硬木: {(1.65)}^{lvl}  \\cdot  500 }$",
     "制作时间": "$\\text{向上取整}({(1.33)}^{lvl}  \\cdot  12K)$",
-    "效果": "爆破矿工villageJob｛$lvl$｝; 宝石容量+｛$lvl > 1 ? 200  \\cdot  (lvl - 1) : null$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "这座建筑算作一个工作站"
+    "效果": "爆破矿工villageJob｛$lvl$｝; 宝石容量+｛$lvl > 1 ? 200  \\cdot  (lvl - 1) : null$｝"
   },
   {
     "名称": "大存储空间",
@@ -402,10 +303,7 @@
     "图标": "<i class=\"mdi mdi-database-settings\"></i>",
     "消耗": "${ 硬木: {(lvl  \\cdot  0.03 + 1.25)}^{lvl}  \\cdot  900, 宝石: {(lvl  \\cdot  0.03 + 1.25)}^{lvl}  \\cdot  900 }$",
     "制作时间": "$\\text{向上取整}({(1.15)}^{lvl}  \\cdot  15K)$",
-    "效果": "水容量*｛$\\text{分段线性}(1.25, 0.2, 20, lvl)$｝; 硬木容量*｛$\\text{分段线性}(1.2, 0.1, 20, lvl)$｝; 宝石容量*｛$\\text{分段线性}(1.2, 0.1, 20, lvl)$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "水容量*｛$\\text{分段线性}(1.25, 0.2, 20, lvl)$｝; 硬木容量*｛$\\text{分段线性}(1.2, 0.1, 20, lvl)$｝; 宝石容量*｛$\\text{分段线性}(1.2, 0.1, 20, lvl)$｝"
   },
   {
     "名称": "豪宅",
@@ -414,10 +312,7 @@
     "图标": "<i class=\"mdi mdi-bank\"></i>",
     "消耗": "${ 金属: {(1.65)}^{lvl}  \\cdot  7M, 硬木: {(1.35)}^{lvl}  \\cdot  4000, 宝石: {(1.3)}^{lvl}  \\cdot  9200, 金币: {(2.15)}^{lvl}  \\cdot  25M }$",
     "制作时间": "$\\text{向上取整}({(1.25)}^{lvl}  \\cdot  18K)$",
-    "效果": "工人+｛$lvl$｝; 幸福+｛$lvl  \\cdot  0.002$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "该建筑算作住房，可提高前 25 栋建筑的全局等级"
+    "效果": "工人+｛$lvl$｝; 幸福+｛$lvl  \\cdot  0.002$｝"
   },
   {
     "名称": "湖泊",
@@ -426,10 +321,7 @@
     "图标": "<i class=\"mdi mdi-waves\"></i>",
     "消耗": "${ 水: {(2.25)}^{lvl}  \\cdot  50M, 玻璃: {(1.65)}^{lvl}  \\cdot  60K, 宝石: {(1.65)}^{lvl}  \\cdot  11K }$",
     "制作时间": "$\\text{向上取整}({(1.33)}^{lvl}  \\cdot  20K)$",
-    "效果": "渔夫villageJob｛$lvl$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "这座建筑算作一个工作站"
+    "效果": "渔夫villageJob｛$lvl$｝"
   },
   {
     "名称": "宝石锯片",
@@ -438,10 +330,7 @@
     "图标": "<i class=\"mdi mdi-saw-blade\"></i>",
     "消耗": "${ 石头: {(1.85)}^{lvl}  \\cdot  75M, 宝石: \\text{向上取整}({(1.5)}^{lvl}  \\cdot  15K) }$",
     "制作时间": "$\\text{向上取整}({(1.15)}^{lvl}  \\cdot  30K)$",
-    "效果": "建造速度*｛${(1.2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "建造速度*｛${(1.2)}^{lvl}$｝"
   },
   {
     "名称": "微型冰淇淋店",
@@ -450,10 +339,7 @@
     "图标": "<i class=\"mdi mdi-glass-tulip\"></i>",
     "消耗": "${ 植物纤维: {(1.5)}^{lvl}  \\cdot  125M, 水: {(1.85)}^{lvl}  \\cdot  120M, 硬木: {(1.3)}^{lvl}  \\cdot  12.5K }$",
     "制作时间": "$\\text{向上取整}({(1.25)}^{lvl}  \\cdot  14K)$",
-    "效果": "玻璃增益*｛$lvl  \\cdot  0.1 + 1$｝; 工人+｛$lvl > 4 ? \\text{向下取整}(lvl / 5) : null$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "该建筑算作住房，可提高前 25 栋建筑的全局等级"
+    "效果": "玻璃增益*｛$lvl  \\cdot  0.1 + 1$｝; 工人+｛$lvl > 4 ? \\text{向下取整}(lvl / 5) : null$｝"
   },
   {
     "名称": "丢失的页面",
@@ -462,10 +348,7 @@
     "图标": "<i class=\"mdi mdi-script-text\"></i>",
     "消耗": "${ 植物纤维: {(1.85)}^{lvl}  \\cdot  185M, 木头: {(1.85)}^{lvl}  \\cdot  140M, 知识: lvl  \\cdot  15 + 220, 硬木: {(1.65)}^{lvl}  \\cdot  22K }$",
     "制作时间": "$\\text{向上取整}({(1.5)}^{lvl}  \\cdot  80K)$",
-    "效果": "知识容量+｛$lvl  \\cdot  8$｝; 信仰容量+｛$lvl  \\cdot  20$｝; 斧子升级解锁｛$lvl >= 2$｝; 炸弹升级解锁｛$lvl >= 4$｝; 收费升级解锁｛$lvl >= 6$｝; 鱼竿升级解锁｛$lvl >= 8$｝; 圣书升级解锁｛$lvl >= 10$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "知识容量+｛$lvl  \\cdot  8$｝; 信仰容量+｛$lvl  \\cdot  20$｝; 斧子升级解锁｛$lvl >= 2$｝; 炸弹升级解锁｛$lvl >= 4$｝; 收费升级解锁｛$lvl >= 6$｝; 鱼竿升级解锁｛$lvl >= 8$｝; 圣书升级解锁｛$lvl >= 10$｝"
   },
   {
     "名称": "操场",
@@ -474,10 +357,7 @@
     "图标": "<i class=\"mdi mdi-slide\"></i>",
     "消耗": "${ 水: {(4)}^{lvl}  \\cdot  250M, 金币: {(3)}^{lvl}  \\cdot  50M }$",
     "制作时间": "$\\text{向上取整}({(1.15)}^{lvl}  \\cdot  140K)$",
-    "效果": "幸福+｛$lvl  \\cdot  0.01$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "幸福+｛$lvl  \\cdot  0.01$｝"
   },
   {
     "名称": "政府",
@@ -486,10 +366,7 @@
     "图标": "<i class=\"mdi mdi-city\"></i>",
     "消耗": "${ 硬木: 50K, 宝石: 50K, 金币: 150M, 知识: 260 }$",
     "制作时间": "$1.5M$",
-    "效果": "层 5 建筑解锁｛$lvl >= 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "层 5 建筑解锁｛$lvl >= 1$｝"
   },
   {
     "名称": "现代住宅",
@@ -498,10 +375,7 @@
     "图标": "<i class=\"mdi mdi-home-modern\"></i>",
     "消耗": "${ 木头: {(1.65)}^{lvl}  \\cdot  330M, 玻璃: {(1.65)}^{lvl}  \\cdot  240K, 硬木: {(1.3)}^{lvl}  \\cdot  77.5K, 宝石: {(1.35)}^{lvl}  \\cdot  18K }$",
     "制作时间": "$\\text{向上取整}({(1.25)}^{lvl}  \\cdot  200K)$",
-    "效果": "工人+｛$lvl  \\cdot  3$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "该建筑算作住房，可提高前 25 栋建筑的全局等级"
+    "效果": "工人+｛$lvl  \\cdot  3$｝"
   },
   {
     "名称": "喷泉",
@@ -510,10 +384,7 @@
     "图标": "<i class=\"mdi mdi-fountain\"></i>",
     "消耗": "${ 植物纤维: {(1.65)}^{lvl}  \\cdot  1.7B, 石头: {(1.65)}^{lvl}  \\cdot  1.35B, 金属: {(1.65)}^{lvl}  \\cdot  290M, 金币: {(1.85)}^{lvl}  \\cdot  650M }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  275K)$",
-    "效果": "水增益*｛${(1.4)}^{lvl}$｝; 水容量*｛${(2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "水增益*｛${(1.4)}^{lvl}$｝; 水容量*｛${(2)}^{lvl}$｝"
   },
   {
     "名称": "实验室",
@@ -522,10 +393,7 @@
     "图标": "<i class=\"mdi mdi-flask\"></i>",
     "消耗": "${ 金属: {(1.85)}^{lvl}  \\cdot  70M, 玻璃: {(1.85)}^{lvl}  \\cdot  475K, 宝石: {(1.85)}^{lvl}  \\cdot  140K }$",
     "制作时间": "$\\text{向上取整}({(1.33)}^{lvl}  \\cdot  300K)$",
-    "效果": "科学家villageJob｛$lvl$｝; 科学容量+｛$lvl > 2 ? (lvl - 2)  \\cdot  5 : null$｝; 突破升级解锁｛$lvl >= 2$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "这座建筑算作一个工作站"
+    "效果": "科学家villageJob｛$lvl$｝; 科学容量+｛$lvl > 2 ? (lvl - 2)  \\cdot  5 : null$｝; 突破升级解锁｛$lvl >= 2$｝"
   },
   {
     "名称": "法庭",
@@ -534,10 +402,7 @@
     "图标": "<i class=\"mdi mdi-gavel\"></i>",
     "消耗": "${ 硬木: {(1.85)}^{lvl}  \\cdot  280K, 知识: \\text{四舍五入}({(1.15)}^{lvl}  \\cdot  290), 科学: lvl  \\cdot  20 + 30 }$",
     "制作时间": "$\\text{向上取整}({(1.5)}^{lvl}  \\cdot  480K)$",
-    "效果": "税收政策+｛$lvl >= 1 ? 1 : null$｝; 移民政策+｛$lvl >= 2 ? 1 : null$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "税收政策+｛$lvl >= 1 ? 1 : null$｝; 移民政策+｛$lvl >= 2 ? 1 : null$｝"
   },
   {
     "名称": "温室",
@@ -546,10 +411,7 @@
     "图标": "<i class=\"mdi mdi-greenhouse\"></i>",
     "消耗": "${ 植物纤维: {(1.85)}^{lvl}  \\cdot  1.15B, 玻璃: {(1.85)}^{lvl}  \\cdot  900K }$",
     "制作时间": "$\\text{向上取整}({(1.33)}^{lvl}  \\cdot  550K)$",
-    "效果": "园丁villageJob｛$lvl$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "这座建筑算作一个工作站"
+    "效果": "园丁villageJob｛$lvl$｝"
   },
   {
     "名称": "满篮",
@@ -558,10 +420,7 @@
     "图标": "<i class=\"mdi mdi-basket\"></i>",
     "消耗": "${ 植物纤维: {(2.4)}^{lvl}  \\cdot  2.4B, 快乐: \\text{向上取整}({(1.35)}^{lvl}  \\cdot  70) }$",
     "制作时间": "$\\text{向上取整}({(1.75)}^{lvl}  \\cdot  1.5M)$",
-    "效果": "食物增益*｛${(1.2)}^{lvl}  \\cdot  (lvl  \\cdot  0.25 + 1)$｝; 信仰容量+｛$lvl  \\cdot  32$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "食物增益*｛${(1.2)}^{lvl}  \\cdot  (lvl  \\cdot  0.25 + 1)$｝; 信仰容量+｛$lvl  \\cdot  32$｝"
   },
   {
     "名称": "储藏室",
@@ -570,10 +429,7 @@
     "图标": "<i class=\"mdi mdi-warehouse\"></i>",
     "消耗": "${ 木头: {(1.85)}^{lvl}  \\cdot  4.5B, 金属: {(1.65)}^{lvl}  \\cdot  360M, 硬木: {(1.5)}^{lvl}  \\cdot  575K }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  700K)$",
-    "效果": "木头容量*｛${(1.5)}^{lvl}$｝; 植物纤维容量*｛${(1.5)}^{lvl}$｝; 石头容量*｛${(1.5)}^{lvl}$｝; 科学容量+｛$lvl  \\cdot  8$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "木头容量*｛${(1.5)}^{lvl}$｝; 植物纤维容量*｛${(1.5)}^{lvl}$｝; 石头容量*｛${(1.5)}^{lvl}$｝; 科学容量+｛$lvl  \\cdot  8$｝"
   },
   {
     "名称": "生物实验室",
@@ -582,10 +438,7 @@
     "图标": "<i class=\"mdi mdi-dna\"></i>",
     "消耗": "${ 金属: {(2.3)}^{lvl}  \\cdot  580M, 宝石: {(1.85)}^{lvl}  \\cdot  695K }$",
     "制作时间": "$\\text{向上取整}({(1.75)}^{lvl}  \\cdot  1M)$",
-    "效果": "玻璃容量*｛${(1.5)}^{lvl}$｝; 改造植物升级解锁｛$lvl >= 1$｝; 多巴胺升级解锁｛$lvl >= 3$｝; 肾上腺素升级解锁｛$lvl >= 5$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "玻璃容量*｛${(1.5)}^{lvl}$｝; 改造植物升级解锁｛$lvl >= 1$｝; 多巴胺升级解锁｛$lvl >= 3$｝; 肾上腺素升级解锁｛$lvl >= 5$｝"
   },
   {
     "名称": "税务局",
@@ -594,10 +447,7 @@
     "图标": "<i class=\"mdi mdi-office-building\"></i>",
     "消耗": "${ 石头: {(6)}^{lvl}  \\cdot  10.5B, 水: {(15)}^{lvl}  \\cdot  75B, 知识: lvl  \\cdot  75 + 350, 金币: {(3.5)}^{lvl}  \\cdot  6B }$",
     "制作时间": "$\\text{向上取整}({(2.5)}^{lvl}  \\cdot  1.2M)$",
-    "效果": "税收政策+｛$lvl$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "税收政策+｛$lvl$｝"
   },
   {
     "名称": "节日",
@@ -606,10 +456,7 @@
     "图标": "<i class=\"mdi mdi-party-popper\"></i>",
     "消耗": "${ 快乐: \\text{向上取整}({(1.15)}^{lvl}  \\cdot  100) }$",
     "制作时间": "$\\text{向上取整}({(1.35)}^{lvl}  \\cdot  750K)$",
-    "效果": "幸福+｛$lvl  \\cdot  0.003$｝; 税率*｛$lvl  \\cdot  0.05 + 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "幸福+｛$lvl  \\cdot  0.003$｝; 税率*｛$lvl  \\cdot  0.05 + 1$｝"
   },
   {
     "名称": "墓地",
@@ -618,10 +465,7 @@
     "图标": "<i class=\"mdi mdi-grave-stone\"></i>",
     "消耗": "${ 木头: {(lvl  \\cdot  0.1 + 1.85)}^{lvl}  \\cdot  20B, 石头: {(lvl  \\cdot  0.1 + 1.85)}^{lvl}  \\cdot  27.5B }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  1.5M)$",
-    "效果": "供品力量*｛$lvl  \\cdot  0.5 + 1$｝; 信仰容量+｛$lvl  \\cdot  32$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "供品力量*｛$lvl  \\cdot  0.5 + 1$｝; 信仰容量+｛$lvl  \\cdot  32$｝"
   },
   {
     "名称": "清真寺",
@@ -630,10 +474,7 @@
     "图标": "<i class=\"mdi mdi-mosque\"></i>",
     "消耗": "${ 石头: {(2.12)}^{lvl}  \\cdot  155B, 玻璃: {(1.9)}^{lvl}  \\cdot  40M, 宝石: {(1.55)}^{lvl}  \\cdot  17M }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  3.2M)$",
-    "效果": "信仰增益+｛$getSequence(2, lvl)$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "信仰增益+｛$getSequence(2, lvl)$｝"
   },
   {
     "名称": "水塔",
@@ -642,10 +483,7 @@
     "图标": "<i class=\"mdi mdi-tower-beach\"></i>",
     "消耗": "${ 植物纤维: {(2.45)}^{lvl}  \\cdot  260B, 知识: lvl  \\cdot  125 + 700 }$",
     "制作时间": "$\\text{向上取整}({(1.65)}^{lvl}  \\cdot  8M)$",
-    "效果": "水增益*｛${(1.2)}^{lvl}  \\cdot  (lvl  \\cdot  0.5 + 1)$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "水增益*｛${(1.2)}^{lvl}  \\cdot  (lvl  \\cdot  0.5 + 1)$｝"
   },
   {
     "名称": "室外泵",
@@ -654,10 +492,7 @@
     "图标": "<i class=\"mdi mdi-water-pump\"></i>",
     "消耗": "${ 水: {(3.3)}^{lvl}  \\cdot  1.6T, 快乐: lvl  \\cdot  180 + 720 }$",
     "制作时间": "$\\text{向上取整}({(1.65)}^{lvl}  \\cdot  18.5M)$",
-    "效果": "植物纤维增益*｛$lvl  \\cdot  0.4 + 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "植物纤维增益*｛$lvl  \\cdot  0.4 + 1$｝"
   },
   {
     "名称": "银行金库",
@@ -666,10 +501,7 @@
     "图标": "<i class=\"mdi mdi-safe-square\"></i>",
     "消耗": "${ 金属: {(1.85)}^{lvl}  \\cdot  7.35B, 科学: lvl  \\cdot  45 + 270 }$",
     "制作时间": "$\\text{向上取整}({(1.65)}^{lvl}  \\cdot  40M)$",
-    "效果": "金币容量*｛${(1.6)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "金币容量*｛${(1.6)}^{lvl}$｝"
   },
   {
     "名称": "蒸汽机",
@@ -678,10 +510,7 @@
     "图标": "<i class=\"mdi mdi-turbine\"></i>",
     "消耗": "${ 金属: 27.6B, 水: 45T, 硬木: 175M, 金币: 3.5T, 科学: 440, 快乐: 1500 }$",
     "制作时间": "$600M$",
-    "效果": "层 6 建筑解锁｛$lvl >= 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "层 6 建筑解锁｛$lvl >= 1$｝"
   },
   {
     "名称": "高级公寓",
@@ -690,10 +519,7 @@
     "图标": "<i class=\"mdi mdi-balcony\"></i>",
     "消耗": "${ 植物纤维: {(1.65)}^{lvl}  \\cdot  63T, 大理石: {(1.35)}^{lvl}  \\cdot  600 }$",
     "制作时间": "$\\text{向上取整}({(1.25)}^{lvl}  \\cdot  140M)$",
-    "效果": "工人+｛$lvl  \\cdot  4$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "该建筑算作住房，可提高前 25 栋建筑的全局等级"
+    "效果": "工人+｛$lvl  \\cdot  4$｝"
   },
   {
     "名称": "石油钻机",
@@ -702,10 +528,7 @@
     "图标": "<i class=\"mdi mdi-tower-fire\"></i>",
     "消耗": "${ 石头: {(2.35)}^{lvl}  \\cdot  1.32T, 水: {(4.1)}^{lvl}  \\cdot  90T, 知识: lvl  \\cdot  500 + 1500 }$",
     "制作时间": "$\\text{向上取整}({(1.33)}^{lvl}  \\cdot  320M)$",
-    "效果": "石油工人villageJob｛$lvl$｝; 油容量+｛$lvl > 1 ? (lvl - 1)  \\cdot  400 : null$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "这座建筑算作一个工作站"
+    "效果": "石油工人villageJob｛$lvl$｝; 油容量+｛$lvl > 1 ? (lvl - 1)  \\cdot  400 : null$｝"
   },
   {
     "名称": "发电机",
@@ -714,10 +537,7 @@
     "图标": "<i class=\"mdi mdi-engine\"></i>",
     "消耗": "${ 木头: {(1.45)}^{lvl}  \\cdot  1.93T, 金属: {(1.2)}^{lvl}  \\cdot  84B, 油: {(1.25)}^{lvl}  \\cdot  1400 }$",
     "制作时间": "$\\text{向上取整}({(1.2)}^{lvl}  \\cdot  550M)$",
-    "效果": "力量+｛$lvl  \\cdot  3$｝; 污染+｛$lvl  \\cdot  2$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "力量+｛$lvl  \\cdot  3$｝; 污染+｛$lvl  \\cdot  2$｝"
   },
   {
     "名称": "灯塔",
@@ -726,10 +546,7 @@
     "图标": "<i class=\"mdi mdi-lighthouse\"></i>",
     "消耗": "${ 植物纤维: {(lvl  \\cdot  0.06 + 1.6)}^{lvl}  \\cdot  3.68T, 宝石: {(lvl  \\cdot  0.04 + 1.4)}^{lvl}  \\cdot  480M, 油: {(lvl  \\cdot  0.05 + 1.5)}^{lvl}  \\cdot  2800 }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  650M)$",
-    "效果": "信仰增益*｛${(1.225)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "信仰增益*｛${(1.225)}^{lvl}$｝"
   },
   {
     "名称": "大堂",
@@ -738,10 +555,7 @@
     "图标": "<i class=\"mdi mdi-account-group\"></i>",
     "消耗": "${ 金币: {(lvl  \\cdot  0.05 + 1.35)}^{lvl}  \\cdot  13.5T }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  750M)$",
-    "效果": "污染耐受性+｛$lvl$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "污染耐受性+｛$lvl$｝"
   },
   {
     "名称": "油存储",
@@ -750,10 +564,7 @@
     "图标": "<i class=\"mdi mdi-barrel\"></i>",
     "消耗": "${ 硬木: {(1.55)}^{lvl}  \\cdot  1.05B, 玻璃: {(1.6)}^{lvl}  \\cdot  2.25B }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  1.1B)$",
-    "效果": "金属增益*｛${(1.1)}^{lvl}$｝; 金属容量*｛${(1.4)}^{lvl}$｝; 油容量*｛${(1.4)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "金属增益*｛${(1.1)}^{lvl}$｝; 金属容量*｛${(1.4)}^{lvl}$｝; 油容量*｛${(1.4)}^{lvl}$｝"
   },
   {
     "名称": "美术馆",
@@ -762,10 +573,7 @@
     "图标": "<i class=\"mdi mdi-palette-advanced\"></i>",
     "消耗": "${ 植物纤维: {(2.9)}^{lvl}  \\cdot  198T, 油: {(2.2)}^{lvl}  \\cdot  264K, 快乐: lvl  \\cdot  400 + 2200 }$",
     "制作时间": "$\\text{向上取整}({(1.33)}^{lvl}  \\cdot  1.6B)$",
-    "效果": "雕塑家villageJob｛$lvl$｝; 大理石容量+｛$lvl > 1 ? (lvl - 1)  \\cdot  100 : null$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "这座建筑算作一个工作站"
+    "效果": "雕塑家villageJob｛$lvl$｝; 大理石容量+｛$lvl > 1 ? (lvl - 1)  \\cdot  100 : null$｝"
   },
   {
     "名称": "挖掘机",
@@ -774,10 +582,7 @@
     "图标": "<i class=\"mdi mdi-excavator\"></i>",
     "消耗": "${ 硬木: {(1.35)}^{lvl}  \\cdot  5.28B, 油: {(1.6)}^{lvl}  \\cdot  360K }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  2.2B)$",
-    "效果": "木头增益*｛${(1.25)}^{lvl}  \\cdot  (0.25  \\cdot  lvl + 1)$｝; 植物纤维增益*｛${(1.25)}^{lvl}  \\cdot  (0.25  \\cdot  lvl + 1)$｝; 石头增益*｛${(1.25)}^{lvl}  \\cdot  (0.25  \\cdot  lvl + 1)$｝; 污染+｛$lvl$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "木头增益*｛${(1.25)}^{lvl}  \\cdot  (0.25  \\cdot  lvl + 1)$｝; 植物纤维增益*｛${(1.25)}^{lvl}  \\cdot  (0.25  \\cdot  lvl + 1)$｝; 石头增益*｛${(1.25)}^{lvl}  \\cdot  (0.25  \\cdot  lvl + 1)$｝; 污染+｛$lvl$｝"
   },
   {
     "名称": "油车",
@@ -786,10 +591,7 @@
     "图标": "<i class=\"mdi mdi-tanker-truck\"></i>",
     "消耗": "${ 宝石: {(1.45)}^{lvl}  \\cdot  7.8B }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  3B)$",
-    "效果": "油容量*｛${(2)}^{lvl}$｝; 污染+｛$lvl$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "油容量*｛${(2)}^{lvl}$｝; 污染+｛$lvl$｝"
   },
   {
     "名称": "老图书馆",
@@ -798,10 +600,7 @@
     "图标": "<i class=\"mdi mdi-book-clock\"></i>",
     "消耗": "${ 木头: {(7.1)}^{lvl}  \\cdot  1.68Qa, 大理石: {(4.5)}^{lvl}  \\cdot  7500, 知识: lvl  \\cdot  600 + 2800 }$",
     "制作时间": "$\\text{向上取整}({(10)}^{lvl}  \\cdot  4B)$",
-    "效果": "科学容量+｛$lvl  \\cdot  20$｝; 喷头升级解锁｛$lvl >= 1$｝; 贪婪升级解锁｛$lvl >= 2$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "科学容量+｛$lvl  \\cdot  20$｝; 喷头升级解锁｛$lvl >= 1$｝; 贪婪升级解锁｛$lvl >= 2$｝"
   },
   {
     "名称": "移民局",
@@ -810,10 +609,7 @@
     "图标": "<i class=\"mdi mdi-office-building\"></i>",
     "消耗": "${ 知识: lvl  \\cdot  2000 + 4500, 科学: lvl  \\cdot  750 + 1500, 金币: {(10)}^{lvl}  \\cdot  1.5Qa }$",
     "制作时间": "$\\text{向上取整}({(8)}^{lvl}  \\cdot  5B)$",
-    "效果": "移民政策+｛$lvl$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "移民政策+｛$lvl$｝"
   },
   {
     "名称": "大理石雕像",
@@ -822,10 +618,7 @@
     "图标": "<i class=\"mdi mdi-human-female-dance\"></i>",
     "消耗": "${ 大理石: {(1.65)}^{lvl}  \\cdot  2250 }$",
     "制作时间": "$\\text{向上取整}({(1.75)}^{lvl}  \\cdot  120B)$",
-    "效果": "幸福+｛$lvl  \\cdot  0.004$｝; 大理石容量*｛${(1.2)}^{lvl}$｝; 知识容量*｛$lvl  \\cdot  0.1 + 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "幸福+｛$lvl  \\cdot  0.004$｝; 大理石容量*｛${(1.2)}^{lvl}$｝; 知识容量*｛$lvl  \\cdot  0.1 + 1$｝"
   },
   {
     "名称": "黑暗教派",
@@ -834,10 +627,7 @@
     "图标": "<i class=\"mdi mdi-pentagram\"></i>",
     "消耗": "${ 宝石: {(6.25)}^{lvl}  \\cdot  82B, 油: {(5.5)}^{lvl}  \\cdot  55M, 大理石: {(2.5)}^{lvl}  \\cdot  50K }$",
     "制作时间": "$\\text{向上取整}({(6)}^{lvl}  \\cdot  11B)$",
-    "效果": "宗教政策+｛$lvl$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "宗教政策+｛$lvl$｝"
   },
   {
     "名称": "屠宰场",
@@ -846,10 +636,7 @@
     "图标": "<i class=\"mdi mdi-cow\"></i>",
     "消耗": "${ 植物纤维: {(1.5)}^{lvl}  \\cdot  15.4Qa, 木头: {(1.5)}^{lvl}  \\cdot  12Qa, 硬木: {(1.35)}^{lvl}  \\cdot  140B, 水: {(1.9)}^{lvl}  \\cdot  9.5Qi }$",
     "制作时间": "$\\text{向上取整}({(1.25)}^{lvl}  \\cdot  16B)$",
-    "效果": "肉增益+｛$getSequence(4, lvl)  \\cdot  100$｝; 污染+｛$lvl$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "肉增益+｛$getSequence(4, lvl)  \\cdot  100$｝; 污染+｛$lvl$｝"
   },
   {
     "名称": "生态委员会",
@@ -858,10 +645,7 @@
     "图标": "<i class=\"mdi mdi-earth\"></i>",
     "消耗": "${ 油: 96M, 大理石: 500K, 金币: 14Qa, 科学: 2000, 快乐: 6000 }$",
     "制作时间": "$250B$",
-    "效果": "层 7 建筑解锁｛$lvl >= 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "层 7 建筑解锁｛$lvl >= 1$｝"
   },
   {
     "名称": "树屋",
@@ -870,10 +654,7 @@
     "图标": "<i class=\"mdi mdi-tree-outline\"></i>",
     "消耗": "${ 硬木: {(1.45)}^{lvl}  \\cdot  162.5B, 常见战利品: \\text{向上取整}({(1.2)}^{lvl}  \\cdot  5) }$",
     "制作时间": "$\\text{向上取整}({(1.25)}^{lvl}  \\cdot  45B)$",
-    "效果": "工人+｛$lvl  \\cdot  6$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "该建筑算作住房，可提高前 25 栋建筑的全局等级"
+    "效果": "工人+｛$lvl  \\cdot  6$｝"
   },
   {
     "名称": "雨林",
@@ -882,10 +663,7 @@
     "图标": "<i class=\"mdi mdi-forest\"></i>",
     "消耗": "${ 硬木: {(1.35)}^{lvl}  \\cdot  185B, 水: {(1.9)}^{lvl}  \\cdot  12.5Qi }$",
     "制作时间": "$\\text{向上取整}({(1.25)}^{lvl}  \\cdot  250B)$",
-    "效果": "污染+｛$lvl  \\cdot  -1$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "污染+｛$lvl  \\cdot  -1$｝"
   },
   {
     "名称": "豪华储物空间",
@@ -894,10 +672,7 @@
     "图标": "<i class=\"mdi mdi-warehouse\"></i>",
     "消耗": "${ 木头: {(1.85)}^{lvl}  \\cdot  121Qa, 石头: {(1.85)}^{lvl}  \\cdot  143Qa, 油: {(1.6)}^{lvl}  \\cdot  234M }$",
     "制作时间": "$\\text{向上取整}({(1.3)}^{lvl}  \\cdot  60B)$",
-    "效果": "金属容量*｛${(1.3)}^{lvl}$｝; 玻璃容量*｛${(1.4)}^{lvl}$｝; 硬木容量*｛${(1.25)}^{lvl}$｝; 宝石容量*｛${(1.25)}^{lvl}$｝; 大理石容量*｛${(1.25)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "金属容量*｛${(1.3)}^{lvl}$｝; 玻璃容量*｛${(1.4)}^{lvl}$｝; 硬木容量*｛${(1.25)}^{lvl}$｝; 宝石容量*｛${(1.25)}^{lvl}$｝; 大理石容量*｛${(1.25)}^{lvl}$｝"
   },
   {
     "名称": "金字塔",
@@ -906,10 +681,7 @@
     "图标": "<i class=\"mdi mdi-pyramid\"></i>",
     "消耗": "${ 石头: {(3.75)}^{lvl}  \\cdot  375Qa, 大理石: {(2.45)}^{lvl}  \\cdot  2.85M, 快乐: lvl  \\cdot  4000 + 15.5K }$",
     "制作时间": "$\\text{向上取整}({(1.45)}^{lvl}  \\cdot  100B)$",
-    "效果": "探险家villageJob｛$lvl$｝; 战利品品质+｛$lvl > 1 ? (lvl - 1)  \\cdot  2 : null$｝",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": "这座建筑算作一个工作站"
+    "效果": "探险家villageJob｛$lvl$｝; 战利品品质+｛$lvl > 1 ? (lvl - 1)  \\cdot  2 : null$｝"
   },
   {
     "名称": "奖杯柜",
@@ -918,10 +690,7 @@
     "图标": "<i class=\"mdi mdi-gradient-vertical\"></i>",
     "消耗": "${ let obj = {}; obj[`掠夺${lvl}`] = 1; return obj; }$",
     "制作时间": "$\\text{向上取整}({(2.5)}^{lvl}  \\cdot  150B)$",
-    "效果": "材料增益*｛${(1.4)}^{lvl}$｝; 材料容量*｛${(1.2)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "材料增益*｛${(1.4)}^{lvl}$｝; 材料容量*｛${(1.2)}^{lvl}$｝"
   },
   {
     "名称": "古玩",
@@ -930,10 +699,7 @@
     "图标": "<i class=\"mdi mdi-store\"></i>",
     "消耗": "${ let obj = { 金币: {(2.5)}^{lvl}  \\cdot  32.5Qa }; obj[`掠夺${\\text{向下取整}(lvl / 2)}`] = {(10)}^{lvl \\pmod{2}}  \\cdot  10; return obj; }$",
     "制作时间": "$\\text{向上取整}({(3)}^{lvl}  \\cdot  200B)$",
-    "效果": "金币容量*｛${(1.3)}^{lvl}$｝; 野心升级解锁｛$lvl >= 1$｝; 认知升级解锁｛$lvl >= 2$｝; 好奇心升级解锁｛$lvl >= 3$｝; 崇拜升级解锁｛$lvl >= 4$｝; 易货升级解锁｛$lvl >= 5$｝; 火花升级解锁｛$lvl >= 6$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "金币容量*｛${(1.3)}^{lvl}$｝; 野心升级解锁｛$lvl >= 1$｝; 认知升级解锁｛$lvl >= 2$｝; 好奇心升级解锁｛$lvl >= 3$｝; 崇拜升级解锁｛$lvl >= 4$｝; 易货升级解锁｛$lvl >= 5$｝; 火花升级解锁｛$lvl >= 6$｝"
   },
   {
     "名称": "风力发电机",
@@ -942,10 +708,7 @@
     "图标": "<i class=\"mdi mdi-wind-turbine\"></i>",
     "消耗": "${ 金属: {(1.65)}^{lvl}  \\cdot  1.25Qa, 罕见的战利品: \\text{向上取整}({(1.15)}^{lvl}  \\cdot  (3 + lvl)) }$",
     "制作时间": "$\\text{向上取整}({(1.25)}^{lvl}  \\cdot  240B)$",
-    "效果": "力量+｛$lvl$｝; 战利品增益*｛$lvl  \\cdot  0.05 + 1$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "力量+｛$lvl$｝; 战利品增益*｛$lvl  \\cdot  0.05 + 1$｝"
   },
   {
     "名称": "雷达",
@@ -954,10 +717,7 @@
     "图标": "<i class=\"mdi mdi-satellite-uplink\"></i>",
     "消耗": "${ 金属: {(3.15)}^{lvl}  \\cdot  6.57Qa, 大理石: {(2.4)}^{lvl}  \\cdot  41.5M, 科学: lvl  \\cdot  650 + 3500 }$",
     "制作时间": "$\\text{向上取整}({(3)}^{lvl}  \\cdot  333B)$",
-    "效果": "扫描政策+｛$lvl$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "扫描政策+｛$lvl$｝"
   },
   {
     "名称": "水力涡轮",
@@ -966,10 +726,7 @@
     "图标": "<i class=\"mdi mdi-hydro-power\"></i>",
     "消耗": "${ 水: {(2.2)}^{lvl}  \\cdot  200Qi, 玻璃: {(1.65)}^{lvl}  \\cdot  6.8T, 稀有战利品: \\text{向上取整}({(1.14)}^{lvl}  \\cdot  (2 + lvl)) }$",
     "制作时间": "$\\text{向上取整}({(1.25)}^{lvl}  \\cdot  420B)$",
-    "效果": "力量+｛$lvl$｝; 水增益*｛${(1.15)}^{lvl}$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "力量+｛$lvl$｝; 水增益*｛${(1.15)}^{lvl}$｝"
   },
   {
     "名称": "太阳能板",
@@ -978,9 +735,6 @@
     "图标": "<i class=\"mdi mdi-solar-panel\"></i>",
     "消耗": "${ 宝石: {(1.55)}^{lvl}  \\cdot  9T, 油: {(1.8)}^{lvl}  \\cdot  30.4B, 史诗战利品: \\text{向上取整}({(1.13)}^{lvl}  \\cdot  (1 + lvl)) }$",
     "制作时间": "$\\text{向上取整}({(1.25)}^{lvl}  \\cdot  550B)$",
-    "效果": "力量+｛$lvl  \\cdot  2$｝",
-    "capMult": "",
-    "requirement": "$store.state.解锁.层$",
-    "subtype": ""
+    "效果": "力量+｛$lvl  \\cdot  2$｝"
   }
 ]

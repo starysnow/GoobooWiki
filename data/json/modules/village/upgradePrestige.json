@@ -4,395 +4,251 @@
     "类型": "声望",
     "消耗": "${ 祝福: {(1.35)}^{lvl}  \\cdot  50 }$",
     "效果": "工人+｛$lvl  \\cdot  2$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "圣草",
     "类型": "声望",
     "消耗": "${ 祝福: {(1.65)}^{lvl}  \\cdot  50 }$",
     "效果": "植物纤维增益*｛$lvl  \\cdot  0.2 + 1$｝; 植物纤维容量*｛${(1.25)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "圣树",
     "类型": "声望",
     "消耗": "${ 祝福: {(1.65)}^{lvl}  \\cdot  50 }$",
     "效果": "木头增益*｛$lvl  \\cdot  0.2 + 1$｝; 木头容量*｛${(1.25)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "圣石",
     "类型": "声望",
     "消耗": "${ 祝福: {(1.65)}^{lvl}  \\cdot  50 }$",
     "效果": "石头增益*｛$lvl  \\cdot  0.2 + 1$｝; 石头容量*｛${(1.25)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "神圣金属",
     "类型": "声望",
     "消耗": "${ 祝福: {(1.65)}^{lvl}  \\cdot  70 }$",
     "效果": "金属增益*｛$lvl  \\cdot  0.2 + 1$｝; 金属容量*｛${(1.25)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "教会税",
     "类型": "声望",
     "消耗": "${ 祝福: {(1.85)}^{lvl}  \\cdot  80 }$",
     "效果": "税率*｛${(1.1)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "圣水",
     "类型": "声望",
     "消耗": "${ 祝福: {(1.65)}^{lvl}  \\cdot  90 }$",
     "效果": "水增益*｛$lvl  \\cdot  0.2 + 1$｝; 水容量*｛${(1.25)}^{lvl}$｝",
-    "name": "圣水",
-    "feature": "村庄",
-    "上限": "",
-    "requirement": "",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "神圣玻璃",
     "类型": "声望",
     "消耗": "${ 祝福: {(1.65)}^{lvl}  \\cdot  100 }$",
     "效果": "玻璃增益*｛$lvl  \\cdot  0.2 + 1$｝; 玻璃容量*｛${(1.25)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "圣鹤",
     "类型": "声望",
     "消耗": "${ 祝福: {(2.15)}^{lvl}  \\cdot  125 }$",
     "效果": "建造速度+｛$lvl$｝; 建造速度*｛${(1.25)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "僧侣",
     "类型": "声望",
     "消耗": "${ 祝福: {(1.85)}^{lvl}  \\cdot  150 }$",
     "效果": "知识增益*｛$lvl  \\cdot  0.2 + 1$｝; 知识容量+｛$lvl  \\cdot  10$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "神圣的存钱罐",
     "类型": "声望",
     "消耗": "${ 祝福: {(2.3)}^{lvl}  \\cdot  200 }$",
     "效果": "金币容量*｛${(1.25)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "深深的崇拜",
     "类型": "声望",
     "消耗": "${ 祝福: {(2.75)}^{lvl}  \\cdot  250 }$",
     "效果": "信仰容量*｛${(1.5)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "城市规划",
     "类型": "声望",
     "消耗": "${ 祝福: {(3.2)}^{lvl}  \\cdot  1750 }$",
     "效果": "住房最高等级+｛$lvl  \\cdot  5$｝",
-    "name": "",
-    "feature": "",
-    "上限": "5",
-    "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": ""
+    "上限": "5"
   },
   {
     "名称": "经理人",
     "类型": "声望",
     "消耗": "${ 祝福: {(3.2)}^{lvl}  \\cdot  2100 }$",
     "效果": "工作站最高等级+｛$lvl  \\cdot  2$｝",
-    "name": "",
-    "feature": "",
-    "上限": "5",
-    "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": ""
+    "上限": "5"
   },
   {
     "名称": "仓库",
     "类型": "声望",
     "消耗": "${ 祝福: {(3.3)}^{lvl}  \\cdot  1300 }$",
     "效果": "存储保留｛$lvl >= 1$｝; 锻造保留｛$lvl >= 2$｝; 保险箱保留｛$lvl >= 3$｝; 水族馆保留｛$lvl >= 4$｝; 知识塔保留｛$lvl >= 5$｝; 大存储空间保留｛$lvl >= 6$｝",
-    "name": "",
-    "feature": "",
-    "上限": "6",
-    "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": ""
+    "上限": "6"
   },
   {
     "名称": "砂岩",
     "类型": "声望",
     "消耗": "${ 祝福: {(2.25)}^{lvl}  \\cdot  1500 }$",
     "效果": "upgradeVillageObeliskCap+｛$lvl$｝",
-    "name": "",
-    "feature": "",
-    "上限": "10",
-    "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": "方尖碑"
+    "上限": "10"
   },
   {
     "名称": "神圣森林",
     "类型": "声望",
     "消耗": "${ 祝福: {(1.65)}^{lvl}  \\cdot  1800 }$",
     "效果": "硬木增益*｛$lvl  \\cdot  0.2 + 1$｝; 硬木容量*｛${(1.25)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "神圣宝石",
     "类型": "声望",
     "消耗": "${ 祝福: {(1.65)}^{lvl}  \\cdot  1800 }$",
     "效果": "宝石增益*｛$lvl  \\cdot  0.2 + 1$｝; 宝石容量*｛${(1.25)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "更深层次的敬拜",
     "类型": "声望",
     "消耗": "${ 祝福: {(lvl  \\cdot  0.15 + 1.75)}^{lvl}  \\cdot  40K }$",
     "效果": "信仰容量+｛$lvl  \\cdot  20$｝; 信仰容量*｛${(1.3)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "神圣实验室",
     "类型": "声望",
     "消耗": "${ 祝福: {(1.85)}^{lvl}  \\cdot  70K }$",
     "效果": "科学增益*｛$lvl  \\cdot  0.2 + 1$｝; 科学容量+｛$lvl  \\cdot  10$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "慈善机构",
     "类型": "声望",
     "消耗": "${ 祝福: {(2.35)}^{lvl}  \\cdot  120K }$",
     "效果": "快乐增益*｛$lvl  \\cdot  0.2 + 1$｝; 幸福+｛$lvl  \\cdot  0.01$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "圣油",
     "类型": "声望",
     "消耗": "${ 祝福: {(1.65)}^{lvl}  \\cdot  75M }$",
     "效果": "油增益*｛$lvl  \\cdot  0.2 + 1$｝; 油容量*｛${(1.25)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "神圣大理石",
     "类型": "声望",
     "消耗": "${ 祝福: {(1.65)}^{lvl}  \\cdot  110M }$",
     "效果": "大理石增益*｛$lvl  \\cdot  0.2 + 1$｝; 大理石容量*｛${(1.25)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "平静的演讲",
     "类型": "声望",
     "消耗": "${ 祝福: {(0.08  \\cdot  lvl + 1.8)}^{lvl}  \\cdot  150M }$",
     "效果": "污染耐受性+｛$lvl$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "神圣战利品",
     "类型": "声望",
     "消耗": "${ 祝福: {(1.65)}^{lvl}  \\cdot  800M }$",
     "效果": "战利品增益*｛${(1.05)}^{lvl}  \\cdot  (lvl  \\cdot  0.1 + 1)$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "神圣凿子",
     "类型": "声望",
     "消耗": "${ 祝福: {(0.05  \\cdot  lvl + 1.5)}^{lvl}  \\cdot  2.5B }$",
     "效果": "战利品品质+｛$lvl  \\cdot  2$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.解锁.层$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "雇佣工匠",
     "类型": "声望",
     "消耗": "${ 股票: {(10)}^{getSequence(1, lvl})  \\cdot  10 }$",
     "效果": "工匠+｛$lvl$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.解锁.villageCraftingSubfeature.see$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "雇佣工人",
     "类型": "声望",
     "消耗": "${ 股票: {(lvl  \\cdot  0.02 + 1.65)}^{lvl}  \\cdot  5 }$",
     "效果": "材料增益*｛${(1.05)}^{lvl}  \\cdot  (lvl  \\cdot  0.05 + 1)$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.解锁.villageCraftingSubfeature.see$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "雇佣会计师",
     "类型": "声望",
     "消耗": "${ 股票: {(1.9)}^{lvl}  \\cdot  8 }$",
     "效果": "铜币容量*｛${(1.75)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.解锁.villageCraftingSubfeature.see$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "配方书",
     "类型": "声望",
     "消耗": "${ 股票: {(2.5)}^{lvl}  \\cdot  60 }$",
     "效果": "箭头villageCraft｛$lvl >= 1$｝; 碗villageCraft｛$lvl >= 2$｝; 小宝箱villageCraft｛$lvl >= 3$｝; 链villageCraft｛$lvl >= 4$｝; 矛villageCraft｛$lvl >= 5$｝; 金戒指villageCraft｛$lvl >= 6$｝",
-    "name": "",
-    "feature": "",
-    "上限": "6",
-    "requirement": "$store.state.解锁.villageCraftingSubfeature.see$",
-    "raiseOtherCap": ""
+    "上限": "6"
   },
   {
     "名称": "广告活动",
     "类型": "声望",
     "消耗": "${ 股票: {(lvl  \\cdot  0.05 + 1.9)}^{lvl}  \\cdot  80 }$",
     "效果": "铜币增益*｛${(1.1)}^{lvl}  \\cdot  (lvl  \\cdot  0.2 + 1)$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.解锁.villageCraftingSubfeature.see$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "雇佣探险家",
     "类型": "声望",
     "消耗": "${ 股票: {(15)}^{getSequence(1, lvl})  \\cdot  575 }$",
     "效果": "特殊成分解锁｛$lvl >= 1$｝; 可找到的成分+｛$lvl > 1 ? lvl - 1 : null$｝; 成分每个箱子+｛$lvl > 1 ? 4  \\cdot  (lvl - 1) : null$｝; 毒箭villageCraft｛$lvl >= 1$｝; 冰霜长矛villageCraft｛$lvl >= 2$｝; 麻辣汤villageCraft｛$lvl >= 3$｝; 秒表villageCraft｛$lvl >= 4$｝; 收到3成分盒子text｛$lvl$｝",
-    "name": "",
-    "feature": "",
-    "上限": "4",
-    "requirement": "$store.state.解锁.villageCraftingSubfeature.see$",
-    "raiseOtherCap": ""
+    "上限": "4"
   },
   {
     "名称": "雇佣园丁",
     "类型": "声望",
     "消耗": "${ 股票: {(1.75)}^{lvl}  \\cdot  140 }$",
     "效果": "植物纤维增益*｛$lvl  \\cdot  0.1 + 1$｝; 木头增益*｛$lvl  \\cdot  0.1 + 1$｝; 植物纤维容量*｛${(1.2)}^{lvl}$｝; 木头容量*｛${(1.2)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.升级成本.item.木仓.highestLevel >= 1$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "雇佣矿工",
     "类型": "声望",
     "消耗": "${ 股票: {(1.75)}^{lvl}  \\cdot  220 }$",
     "效果": "石头增益*｛$lvl  \\cdot  0.1 + 1$｝; 金属增益*｛$lvl  \\cdot  0.1 + 1$｝; 石头容量*｛${(1.2)}^{lvl}$｝; 金属容量*｛${(1.2)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.升级成本.item.金属仓.highestLevel >= 1$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "雇佣调酒师",
     "类型": "声望",
     "消耗": "${ 股票: {(1.75)}^{lvl}  \\cdot  335 }$",
     "效果": "水增益*｛$lvl  \\cdot  0.1 + 1$｝; 玻璃增益*｛$lvl  \\cdot  0.1 + 1$｝; 水容量*｛${(1.2)}^{lvl}$｝; 玻璃容量*｛${(1.2)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.升级成本.item.玻璃仓.highestLevel >= 1$",
-    "raiseOtherCap": ""
+    "上限": ""
   },
   {
     "名称": "雇佣专家",
     "类型": "声望",
     "消耗": "${ 股票: {(1.75)}^{lvl}  \\cdot  520 }$",
     "效果": "硬木增益*｛$lvl  \\cdot  0.1 + 1$｝; 宝石增益*｛$lvl  \\cdot  0.1 + 1$｝; 硬木容量*｛${(1.2)}^{lvl}$｝; 宝石容量*｛${(1.2)}^{lvl}$｝",
-    "name": "",
-    "feature": "",
-    "上限": "",
-    "requirement": "$store.state.升级成本.item.宝石仓.highestLevel >= 1$",
-    "raiseOtherCap": ""
+    "上限": ""
   }
 ]

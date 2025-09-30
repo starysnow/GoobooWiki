@@ -2,55 +2,46 @@
   {
     "名称": "被遗忘的盾牌",
     "图标": "<i class=\"mdi mdi-shield-sun\"></i>",
-    "color": "pale-光-blue",
     "效果": "弹力保留｛true｝; 休息保留｛true｝"
   },
   {
     "名称": "燃烧的头骨",
     "图标": "<i class=\"mdi mdi-skull\"></i>",
-    "color": "橙色-红色",
     "效果": "骨袋保留｛true｝; 愤怒保留｛true｝"
   },
   {
     "名称": "能量饮料",
     "图标": "<i class=\"mdi mdi-bottle-soda\"></i>",
-    "color": "黄色",
     "效果": "怪物零件增益+｛0.5｝; 怪物汤保留｛true｝"
   },
   {
     "名称": "幸运骰子",
     "图标": "<i class=\"mdi mdi-dice-6\"></i>",
-    "color": "光-绿色",
     "效果": "幸运一击保留｛true｝"
   },
   {
     "名称": "哑铃",
     "图标": "<i class=\"mdi mdi-dumbbell\"></i>",
-    "color": "indigo",
     "效果": "训练保留｛true｝"
   },
   {
     "名称": "绷带",
     "图标": "<i class=\"mdi mdi-bandage\"></i>",
-    "color": "pale-粉色",
     "效果": "厚脸皮保留｛true｝"
   },
   {
     "名称": "新背包",
     "图标": "<i class=\"mdi mdi-bag-personal\"></i>",
-    "color": "pale-橙色",
     "效果": "囤积保留｛true｝; 掠夺秘密保留｛true｝"
   },
   {
     "名称": "终极指南",
     "图标": "<i class=\"mdi mdi-book-multiple\"></i>",
-    "color": "棕色",
     "效果": "刺击指南保留｛true｝; 闪避指南保留｛true｝"
   },
   {
     "名称": "破裂的保险箱",
     "图标": "<i class=\"mdi mdi-safe-square\"></i>",
-    "color": "darker-灰色",
     "效果": "掠夺保留｛true｝"
   }
 ]

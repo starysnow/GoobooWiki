@@ -3,112 +3,96 @@
     "名称": "圆形",
     "unlocked": "true",
     "图标": "<i class=\"mdi mdi-circle\"></i>",
-    "color": "橙色",
     "isSpecial": ""
   },
   {
     "名称": "矩形",
     "unlocked": "",
     "图标": "<i class=\"mdi mdi-rectangle\"></i>",
-    "color": "indigo",
     "isSpecial": ""
   },
   {
     "名称": "三角形",
     "unlocked": "",
     "图标": "<i class=\"mdi mdi-triangle\"></i>",
-    "color": "光-绿色",
     "isSpecial": ""
   },
   {
     "名称": "星形",
     "unlocked": "",
     "图标": "<i class=\"mdi mdi-star\"></i>",
-    "color": "金色",
     "isSpecial": ""
   },
   {
     "名称": "椭圆形",
     "unlocked": "",
     "图标": "<i class=\"mdi mdi-ellipse\"></i>",
-    "color": "紫色",
     "isSpecial": ""
   },
   {
     "名称": "心形",
     "unlocked": "",
     "图标": "<i class=\"mdi mdi-heart\"></i>",
-    "color": "红色",
     "isSpecial": ""
   },
   {
     "名称": "正方形",
     "unlocked": "",
     "图标": "<i class=\"mdi mdi-square\"></i>",
-    "color": "光-blue",
     "isSpecial": ""
   },
   {
     "名称": "八边形",
     "unlocked": "",
     "图标": "<i class=\"mdi mdi-octagon\"></i>",
-    "color": "babypink",
     "isSpecial": ""
   },
   {
     "名称": "五边形",
     "unlocked": "",
     "图标": "<i class=\"mdi mdi-pentagon\"></i>",
-    "color": "aqua",
     "isSpecial": ""
   },
   {
     "名称": "六边形",
     "unlocked": "",
     "图标": "<i class=\"mdi mdi-hexagon\"></i>",
-    "color": "棕色",
     "isSpecial": ""
   },
   {
     "名称": "炸弹",
     "unlocked": "",
     "图标": "<i class=\"mdi mdi-bomb\"></i>",
-    "color": "pale-红色",
     "isSpecial": "true"
   },
   {
     "名称": "dice",
     "unlocked": "",
     "图标": "<i class=\"mdi mdi-dice-multiple\"></i>",
-    "color": "pale-粉色",
     "isSpecial": "true"
   },
   {
     "名称": "accelerator",
     "unlocked": "",
     "图标": "<i class=\"mdi mdi-rotate-orbit\"></i>",
-    "color": "pale-紫色",
     "isSpecial": "true"
   },
   {
     "名称": "sparkles",
     "unlocked": "",
     "图标": "<i class=\"mdi mdi-shimmer\"></i>",
-    "color": "pale-绿色",
     "isSpecial": "true"
   },
   {
     "名称": "沙漏",
     "unlocked": "",
     "图标": "<i class=\"mdi mdi-timer-sand\"></i>",
-    "color": "pale-黄色",
     "isSpecial": "true"
   },
   {
     "名称": "chest",
     "unlocked": "",
     "图标": "<i class=\"mdi mdi-treasure-chest\"></i>",
-    "color": "pale-blue",
     "isSpecial": "true"
   }
 ]

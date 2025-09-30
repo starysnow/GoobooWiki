@@ -1,18 +1,18 @@
-| 名称  | unlocked | 图标  | color | isSpecial |
-| --- | -------- | --- | ----- | --------- |
-| 圆形 | true | <i class="mdi mdi-circle"></i> | 橙色 |  |
-| 矩形 |  | <i class="mdi mdi-rectangle"></i> | indigo |  |
-| 三角形 |  | <i class="mdi mdi-triangle"></i> | 光-绿色 |  |
-| 星形 |  | <i class="mdi mdi-star"></i> | 金色 |  |
-| 椭圆形 |  | <i class="mdi mdi-ellipse"></i> | 紫色 |  |
-| 心形 |  | <i class="mdi mdi-heart"></i> | 红色 |  |
-| 正方形 |  | <i class="mdi mdi-square"></i> | 光-blue |  |
-| 八边形 |  | <i class="mdi mdi-octagon"></i> | babypink |  |
-| 五边形 |  | <i class="mdi mdi-pentagon"></i> | aqua |  |
-| 六边形 |  | <i class="mdi mdi-hexagon"></i> | 棕色 |  |
-| 炸弹 |  | <i class="mdi mdi-bomb"></i> | pale-红色 | true |
-| dice |  | <i class="mdi mdi-dice-multiple"></i> | pale-粉色 | true |
-| accelerator |  | <i class="mdi mdi-rotate-orbit"></i> | pale-紫色 | true |
-| sparkles |  | <i class="mdi mdi-shimmer"></i> | pale-绿色 | true |
-| 沙漏 |  | <i class="mdi mdi-timer-sand"></i> | pale-黄色 | true |
-| chest |  | <i class="mdi mdi-treasure-chest"></i> | pale-blue | true |
+| 名称  | unlocked | 图标  | isSpecial |
+| --- | -------- | --- | --------- |
+| 圆形 | true | <i class="mdi mdi-circle"></i> |  |
+| 矩形 |  | <i class="mdi mdi-rectangle"></i> |  |
+| 三角形 |  | <i class="mdi mdi-triangle"></i> |  |
+| 星形 |  | <i class="mdi mdi-star"></i> |  |
+| 椭圆形 |  | <i class="mdi mdi-ellipse"></i> |  |
+| 心形 |  | <i class="mdi mdi-heart"></i> |  |
+| 正方形 |  | <i class="mdi mdi-square"></i> |  |
+| 八边形 |  | <i class="mdi mdi-octagon"></i> |  |
+| 五边形 |  | <i class="mdi mdi-pentagon"></i> |  |
+| 六边形 |  | <i class="mdi mdi-hexagon"></i> |  |
+| 炸弹 |  | <i class="mdi mdi-bomb"></i> | true |
+| dice |  | <i class="mdi mdi-dice-multiple"></i> | true |
+| accelerator |  | <i class="mdi mdi-rotate-orbit"></i> | true |
+| sparkles |  | <i class="mdi mdi-shimmer"></i> | true |
+| 沙漏 |  | <i class="mdi mdi-timer-sand"></i> | true |
+| chest |  | <i class="mdi mdi-treasure-chest"></i> | true |

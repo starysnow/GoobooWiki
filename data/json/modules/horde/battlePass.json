@@ -2,67 +2,56 @@
   {
     "名称": "2",
     "图标": "<i class=\"mdi mdi-bow-arrow\"></i>",
-    "color": "光-绿色",
     "效果": "射手职业解锁｛true｝"
   },
   {
     "名称": "5",
     "图标": "<i class=\"mdi mdi-wizard-hat\"></i>",
-    "color": "deep-紫色",
     "效果": "法师职业解锁｛true｝"
   },
   {
     "名称": "15",
     "图标": "<i class=\"mdi mdi-shield\"></i>",
-    "color": "blue-灰色",
     "效果": "骑士职业解锁｛true｝"
   },
   {
     "名称": "25",
     "图标": "<i class=\"mdi mdi-cached\"></i>",
-    "color": "粉色",
     "效果": "自动释放槽位+｛1｝"
   },
   {
     "名称": "30",
     "图标": "<i class=\"mdi mdi-necklace\"></i>",
-    "color": "青色",
     "效果": "最大传家宝增益*｛2｝"
   },
   {
     "名称": "35",
     "图标": "<i class=\"mdi mdi-pirate\"></i>",
-    "color": "橙色",
     "效果": "海盗职业解锁｛true｝"
   },
   {
     "名称": "40",
     "图标": "<i class=\"mdi mdi-star\"></i>",
-    "color": "光-blue",
     "效果": "级技能点数+｛1｝"
   },
   {
     "名称": "50",
     "图标": "<i class=\"mdi mdi-treasure-chest\"></i>",
-    "color": "红色",
     "效果": "饰品容量+｛1｝"
   },
   {
     "名称": "60",
     "图标": "<i class=\"mdi mdi-billiards-rack\"></i>",
-    "color": "teal",
     "效果": "神秘碎片几率*｛3｝"
   },
   {
     "名称": "75",
     "图标": "<i class=\"mdi mdi-treasure-chest\"></i>",
-    "color": "wooden",
     "效果": "装备容量+｛1｝"
   },
   {
     "名称": "80",
     "图标": "<i class=\"mdi mdi-star\"></i>",
-    "color": "光-blue",
     "效果": "级技能点数+｛1｝"
   }
 ]

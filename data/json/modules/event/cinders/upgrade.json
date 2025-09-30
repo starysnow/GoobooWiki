@@ -4,7 +4,6 @@
     "类型": "cinders",
     "消耗": "${ 光: store.getters[' \\cdot /新的更新!']('升级光成本', {(1000)}^{lvl}  \\cdot  1M) }$",
     "效果": "光增益*｛${(3)}^{lvl}$｝",
-    "requirement": "",
     "上限": ""
   },
   {
@@ -12,7 +11,6 @@
     "类型": "cinders",
     "消耗": "${ 光: store.getters[' \\cdot /新的更新!']('升级光成本', {(1.15)}^{lvl >= 1 ? lvl  \\cdot  50 : 25}  \\cdot  5000) }$",
     "效果": "光增益 (萤火虫)+｛$lvl < 2 ?  : 4$｝; 光增益 (萤火虫)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝",
-    "requirement": "$store.state.升级成本.item.萤火虫.达到等级 >= store.getters[' \\cdot /新的更新!']('升级生产者要求', lvl >= 1 ? lvl  \\cdot  50 : 25)$",
     "上限": ""
   },
   {
@@ -20,7 +18,6 @@
     "类型": "cinders",
     "消耗": "${ 光: store.getters[' \\cdot /新的更新!']('升级光成本', {(1.16)}^{lvl >= 1 ? lvl  \\cdot  50 : 25}  \\cdot  250M) }$",
     "效果": "光增益 (发光蘑菇)+｛$lvl < 2 ?  : 225$｝; 光增益 (发光蘑菇)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝",
-    "requirement": "$store.state.升级成本.item.发光蘑菇.达到等级 >= store.getters[' \\cdot /新的更新!']('升级生产者要求', lvl >= 1 ? lvl  \\cdot  50 : 25)$",
     "上限": ""
   },
   {
@@ -28,7 +25,6 @@
     "类型": "cinders",
     "消耗": "${ 光: store.getters[' \\cdot /新的更新!']('升级光成本', {(1.17)}^{lvl >= 1 ? lvl  \\cdot  50 : 25}  \\cdot  15T) }$",
     "效果": "光增益 (发光鱼)+｛$lvl < 2 ?  : 14K$｝; 光增益 (发光鱼)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝",
-    "requirement": "$store.state.升级成本.item.发光鱼.达到等级 >= store.getters[' \\cdot /新的更新!']('升级生产者要求', lvl >= 1 ? lvl  \\cdot  50 : 25)$",
     "上限": ""
   },
   {
@@ -36,7 +32,6 @@
     "类型": "cinders",
     "消耗": "${ 光: store.getters[' \\cdot /新的更新!']('升级光成本', {(1.18)}^{lvl >= 1 ? lvl  \\cdot  50 : 25}  \\cdot  1.2Qi) }$",
     "效果": "光增益 (灯)+｛$lvl < 2 ? [0, 150K][lvl] : 600K$｝; 光增益 (灯)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝",
-    "requirement": "$store.state.升级成本.item.灯.达到等级 >= store.getters[' \\cdot /新的更新!']('升级生产者要求', lvl >= 1 ? lvl  \\cdot  50 : 25)$",
     "上限": ""
   },
   {
@@ -44,7 +39,6 @@
     "类型": "cinders",
     "消耗": "${ 光: store.getters[' \\cdot /新的更新!']('升级光成本', {(1.19)}^{lvl >= 1 ? lvl  \\cdot  50 : 25}  \\cdot  120Sx) }$",
     "效果": "光增益 (营火)+｛$lvl < 2 ? [0, 10M][lvl] : 40M$｝; 光增益 (营火)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝",
-    "requirement": "$store.state.升级成本.item.营火.达到等级 >= store.getters[' \\cdot /新的更新!']('升级生产者要求', lvl >= 1 ? lvl  \\cdot  50 : 25)$",
     "上限": ""
   },
   {
@@ -52,7 +46,6 @@
     "类型": "cinders",
     "消耗": "${ 光: store.getters[' \\cdot /新的更新!']('升级光成本', {(1.2)}^{lvl >= 1 ? lvl  \\cdot  50 : 25}  \\cdot  18O) }$",
     "效果": "光增益 (珊瑚)+｛$lvl < 2 ? [0, 700M][lvl] : 2.2B$｝; 光增益 (珊瑚)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝",
-    "requirement": "$store.state.升级成本.item.珊瑚.达到等级 >= store.getters[' \\cdot /新的更新!']('升级生产者要求', lvl >= 1 ? lvl  \\cdot  50 : 25)$",
     "上限": ""
   },
   {
@@ -60,7 +53,6 @@
     "类型": "cinders",
     "消耗": "${ 光: store.getters[' \\cdot /新的更新!']('升级光成本', {(1.25)}^{lvl >= 1 ? lvl  \\cdot  50 : 25}  \\cdot  3.6D) }$",
     "效果": "光增益 (海蜇)+｛$lvl < 2 ? [0, 30B][lvl] : 120B$｝; 光增益 (海蜇)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝",
-    "requirement": "$store.state.升级成本.item.海蜇.达到等级 >= store.getters[' \\cdot /新的更新!']('升级生产者要求', lvl >= 1 ? lvl  \\cdot  50 : 25)$",
     "上限": ""
   },
   {
@@ -68,7 +60,6 @@
     "类型": "cinders",
     "消耗": "${ 光: store.getters[' \\cdot /新的更新!']('升级光成本', {(1.3)}^{lvl >= 1 ? lvl  \\cdot  50 : 25}  \\cdot  900UD) }$",
     "效果": "光增益 (夜花)+｛$lvl < 2 ? [0, 1.1T][lvl] : 4.5T$｝; 光增益 (夜花)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝",
-    "requirement": "$store.state.升级成本.item.夜花.达到等级 >= store.getters[' \\cdot /新的更新!']('升级生产者要求', lvl >= 1 ? lvl  \\cdot  50 : 25)$",
     "上限": ""
   },
   {
@@ -76,7 +67,6 @@
     "类型": "cinders",
     "消耗": "${ 光: store.getters[' \\cdot /新的更新!']('升级光成本', {(1.35)}^{lvl >= 1 ? lvl  \\cdot  50 : 25}  \\cdot  270TD) }$",
     "效果": "光增益 (霓虹灯)+｛$lvl < 2 ? [0, 30T][lvl] : 110T$｝; 光增益 (霓虹灯)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝",
-    "requirement": "$store.state.升级成本.item.霓虹灯.达到等级 >= store.getters[' \\cdot /新的更新!']('升级生产者要求', lvl >= 1 ? lvl  \\cdot  50 : 25)$",
     "上限": ""
   },
   {
@@ -84,7 +74,6 @@
     "类型": "cinders",
     "消耗": "${ 光: store.getters[' \\cdot /新的更新!']('升级光成本', {(1.5)}^{lvl >= 1 ? lvl  \\cdot  50 : 25}  \\cdot  135QiD) }$",
     "效果": "光增益 (太阳)+｛$lvl < 2 ? [0, 1Qa][lvl] : 4Qa$｝; 光增益 (太阳)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝",
-    "requirement": "$store.state.升级成本.item.太阳药水.达到等级 >= store.getters[' \\cdot /新的更新!']('升级生产者要求', lvl >= 1 ? lvl  \\cdot  50 : 25)$",
     "上限": ""
   },
   {
@@ -92,7 +81,6 @@
     "类型": "cinders",
     "消耗": "${ 煤烟: lvl  \\cdot  4 + 20 }$",
     "效果": "光增益 (萤火虫)+｛$lvl  \\cdot  2$｝",
-    "requirement": "$store.state.升级成本.item.萤火虫.达到等级 > 0$",
     "上限": "6"
   },
   {
@@ -100,7 +88,6 @@
     "类型": "cinders",
     "消耗": "${ 煤烟: lvl  \\cdot  5 + 25 }$",
     "效果": "光增益 (发光蘑菇)+｛$lvl  \\cdot  60$｝",
-    "requirement": "$store.state.升级成本.item.发光蘑菇.达到等级 > 0$",
     "上限": "6"
   },
   {
@@ -108,7 +95,6 @@
     "类型": "cinders",
     "消耗": "${ 煤烟: lvl  \\cdot  6 + 30 }$",
     "效果": "光增益 (发光鱼)+｛$lvl  \\cdot  4300$｝",
-    "requirement": "$store.state.升级成本.item.发光鱼.达到等级 > 0$",
     "上限": "6"
   },
   {
@@ -116,7 +102,6 @@
     "类型": "cinders",
     "消耗": "${ 煤烟: lvl  \\cdot  7 + 35 }$",
     "效果": "光增益 (灯)+｛$lvl  \\cdot  160K$｝",
-    "requirement": "$store.state.升级成本.item.灯.达到等级 > 0$",
     "上限": "6"
   },
   {
@@ -124,7 +109,6 @@
     "类型": "cinders",
     "消耗": "${ 煤烟: lvl  \\cdot  8 + 40 }$",
     "效果": "光增益 (营火)+｛$lvl  \\cdot  10.4M$｝",
-    "requirement": "$store.state.升级成本.item.营火.达到等级 > 0$",
     "上限": "6"
   },
   {
@@ -132,7 +116,6 @@
     "类型": "cinders",
     "消耗": "${ 煤烟: lvl  \\cdot  9 + 45 }$",
     "效果": "光增益 (珊瑚)+｛$lvl  \\cdot  600M$｝",
-    "requirement": "$store.state.升级成本.item.珊瑚.达到等级 > 0$",
     "上限": "6"
   },
   {
@@ -140,7 +123,6 @@
     "类型": "cinders",
     "消耗": "${ 煤烟: lvl  \\cdot  10 + 50 }$",
     "效果": "光增益 (海蜇)+｛$lvl  \\cdot  31B$｝",
-    "requirement": "$store.state.升级成本.item.海蜇.达到等级 > 0$",
     "上限": "6"
   },
   {
@@ -148,7 +130,6 @@
     "类型": "cinders",
     "消耗": "${ 煤烟: lvl  \\cdot  11 + 55 }$",
     "效果": "光增益 (夜花)+｛$lvl  \\cdot  1.2T$｝",
-    "requirement": "$store.state.升级成本.item.夜花.达到等级 > 0$",
     "上限": "6"
   },
   {
@@ -156,7 +137,6 @@
     "类型": "cinders",
     "消耗": "${ 煤烟: lvl  \\cdot  12 + 60 }$",
     "效果": "光增益 (霓虹灯)+｛$lvl  \\cdot  30T$｝",
-    "requirement": "$store.state.升级成本.item.霓虹灯.达到等级 > 0$",
     "上限": "6"
   },
   {
@@ -164,7 +144,6 @@
     "类型": "cinders",
     "消耗": "${ 煤烟: lvl  \\cdot  13 + 65 }$",
     "效果": "光增益 (太阳)+｛$lvl  \\cdot  1Qa$｝",
-    "requirement": "$store.state.升级成本.item.太阳药水.达到等级 > 0$",
     "上限": "6"
   },
   {
@@ -172,7 +151,6 @@
     "类型": "cinders",
     "消耗": "${ gem_topaz: 400 }$",
     "效果": "光增益 (萤火虫)*｛$lvl >= 1 ? 10 : null$｝",
-    "requirement": "$store.state.升级成本.item.萤火虫.达到等级 > 0$",
     "上限": "1"
   },
   {
@@ -180,7 +158,6 @@
     "类型": "cinders",
     "消耗": "${ gem_topaz: 500 }$",
     "效果": "光增益*｛$lvl >= 1 ? 1.5 : null$｝",
-    "requirement": "$store.state.升级成本.item.发光蘑菇.达到等级 > 0$",
     "上限": "1"
   },
   {
@@ -188,7 +165,6 @@
     "类型": "cinders",
     "消耗": "${ gem_topaz: 600 }$",
     "效果": "第一生产者成本*｛$lvl >= 1 ? 0.25 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝",
-    "requirement": "$store.state.升级成本.item.发光鱼.达到等级 > 0$",
     "上限": "1"
   },
   {
@@ -196,7 +172,6 @@
     "类型": "cinders",
     "消耗": "${ gem_topaz: 700 }$",
     "效果": "煤烟增益*｛$lvl >= 1 ? 2 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝",
-    "requirement": "$store.state.升级成本.item.灯.达到等级 > 0$",
     "上限": "1"
   },
   {
@@ -204,7 +179,6 @@
     "类型": "cinders",
     "消耗": "${ gem_topaz: 800 }$",
     "效果": "煤渣代币增益*｛$lvl >= 1 ? 1.05 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝",
-    "requirement": "$store.state.升级成本.item.营火.达到等级 > 0$",
     "上限": "1"
   },
   {
@@ -212,7 +186,6 @@
     "类型": "cinders",
     "消耗": "${ gem_topaz: 900 }$",
     "效果": "升级生产者要求+｛$lvl >= 1 ? -10 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝",
-    "requirement": "$store.state.升级成本.item.珊瑚.达到等级 > 0$",
     "上限": "1"
   },
   {
@@ -220,7 +193,6 @@
     "类型": "cinders",
     "消耗": "${ gem_topaz: 1000 }$",
     "效果": "蜡烛力量*｛$lvl >= 1 ? 2 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝",
-    "requirement": "$store.state.升级成本.item.海蜇.达到等级 > 0$",
     "上限": "1"
   },
   {
@@ -228,7 +200,6 @@
     "类型": "cinders",
     "消耗": "${ gem_topaz: 1100 }$",
     "效果": "非第一生产者成本*｛$lvl >= 1 ? 0.5 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝",
-    "requirement": "$store.state.升级成本.item.夜花.达到等级 > 0$",
     "上限": "1"
   },
   {
@@ -236,7 +207,6 @@
     "类型": "cinders",
     "消耗": "${ gem_topaz: 1200 }$",
     "效果": "升级光成本*｛$lvl >= 1 ? 0.5 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝",
-    "requirement": "$store.state.升级成本.item.霓虹灯.达到等级 > 0$",
     "上限": "1"
   },
   {
@@ -244,7 +214,6 @@
     "类型": "cinders",
     "消耗": "${ gem_topaz: 1300 }$",
     "效果": "光增益 (萤火虫)*｛$lvl >= 1 ? 2 : null$｝; 光增益 (发光蘑菇)*｛$lvl >= 1 ? 1.9 : null$｝; 光增益 (发光鱼)*｛$lvl >= 1 ? 1.8 : null$｝; 光增益 (灯)*｛$lvl >= 1 ? 1.7 : null$｝; 光增益 (营火)*｛$lvl >= 1 ? 1.6 : null$｝; 光增益 (珊瑚)*｛$lvl >= 1 ? 1.5 : null$｝; 光增益 (海蜇)*｛$lvl >= 1 ? 1.4 : null$｝; 光增益 (夜花)*｛$lvl >= 1 ? 1.3 : null$｝; 光增益 (霓虹灯)*｛$lvl >= 1 ? 1.2 : null$｝; 光增益 (太阳)*｛$lvl >= 1 ? 1.1 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝",
-    "requirement": "$store.state.升级成本.item.太阳药水.达到等级 > 0$",
     "上限": "1"
   }
 ]

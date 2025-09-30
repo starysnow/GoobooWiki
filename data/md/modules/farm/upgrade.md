@@ -1,41 +1,41 @@
-| 名称  | 上限  | 消耗  | 效果  | 解锁层数 | requirement | capMult |
-| --- | --- | --- | --- | ---- | ----------- | ------- |
-| 种子箱 | 24 | $[{ 仅蔬菜: 70 }, { 仅浆果: 150 }, { 仅粮食: 260 }, { 仅鲜花: 800, 黄金: 1 }, { 仅蔬菜: 4600 }, { 仅浆果: 50K }, { 仅粮食: 335K }, { 仅鲜花: 2M }, { 仅蔬菜: 17.5M }, { 仅浆果: 120M }, { 仅粮食: 900M }, { 仅鲜花: 7.2B }, { 仅蔬菜: 54B }, { 仅浆果: 370B }, { 仅粮食: 2.2T }, { 仅鲜花: 35T }, { 仅蔬菜: 875T }, { 仅浆果: 3.1Qa }, { 仅粮食: 130Qa }, { 仅鲜花: 8.5Qi }, { 仅蔬菜: 500Qi }, { 仅浆果: 35Sx }, { 仅粮食: 3Sp }, { 仅鲜花: 320Sp }][lvl]$ | 蓝莓farmSeed｛$lvl >= 1$｝; 小麦farmSeed｛$lvl >= 2$｝; 郁金香farmSeed｛$lvl >= 3$｝; 土豆farmSeed｛$lvl >= 4$｝; 覆盆子farmSeed｛$lvl >= 5$｝; 大麦farmSeed｛$lvl >= 6$｝; 蒲公英farmSeed｛$lvl >= 7$｝; 玉米farmSeed｛$lvl >= 8$｝; 西瓜farmSeed｛$lvl >= 9$｝; 大米farmSeed｛$lvl >= 10$｝; 玫瑰farmSeed｛$lvl >= 11$｝; 韭菜farmSeed｛$lvl >= 12$｝; 蜜瓜farmSeed｛$lvl >= 13$｝; 黑麦farmSeed｛$lvl >= 14$｝; 雏菊farmSeed｛$lvl >= 15$｝; 黄瓜farmSeed｛$lvl >= 16$｝; 葡萄farmSeed｛$lvl >= 17$｝; 啤酒花farmSeed｛$lvl >= 18$｝; 紫罗兰farmSeed｛$lvl >= 19$｝; 红薯farmSeed｛$lvl >= 20$｝; 草莓farmSeed｛$lvl >= 21$｝; 芝麻farmSeed｛$lvl >= 22$｝; 向日葵farmSeed｛$lvl >= 23$｝; 菠菜farmSeed｛$lvl >= 24$｝ |  |  |  |
-| 繁殖力 |  | ${ 仅蔬菜: 50  \cdot  {(lvl  \cdot  0.005 + 1.3)}^{lvl}, 仅浆果: 50  \cdot  {(lvl  \cdot  0.005 + 1.3)}^{lvl} }$ | 作物增益*｛${(1.1)}^{lvl}$｝ | 1 |  |  |
-| 过度生长 | 9 | $fallbackArray([{ 仅浆果: 200 }, { 仅粮食: 850, 仅鲜花: 1300 }], { 仅鲜花: 240  \cdot  {(5 + lvl)}^{lvl} }, lvl)$ | 过度生长+｛$lvl >= 1 ? lvl  \cdot  0.05 + 0.05 : null$｝ | 1 |  |  |
-| 扩张 | 45 | ${ 仅粮食: 300  \cdot  {(lvl  \cdot  0.05 + 2)}^{lvl} }$ | 农场地块farmTile｛$lvl$｝ | 2 |  |  |
-| 花园侏儒 | 5 | ${ 仅蔬菜: 500  \cdot  {(96)}^{lvl}, 仅浆果: 500  \cdot  {(96)}^{lvl}, 仅鲜花: 1000  \cdot  {(128)}^{lvl} }$ | 花园侏儒farmBuilding｛$lvl$｝; 禁用“第一作物”解锁｛$lvl >= 1$｝ | 3 |  |  |
-| 学习 | 1 | ${ 黄金: 1 }$ | 作物经验解锁｛$lvl >= 1$｝ | 4 |  |  |
-| 肥料 | 1 | ${ 黄金: 5 }$ | 肥料解锁｛$lvl >= 1$｝ |  | $store.state.升级成本.item.学习.达到等级 >= 1$ |  |
-| 磨碎种子 |  | ${ 仅鲜花: 6000  \cdot  {(1.75)}^{lvl}, 种子壳: \text{四舍五入}(4  \cdot  lvl  \cdot  {(1.1)}^{Math.max(0, lvl - 10}) + 10) }$ | 仅粮食增益*｛$lvl  \cdot  0.15 + 1$｝; 过度生长+｛$lvl  \cdot  0.01$｝ | 5 |  |  |
-| 烤种子 | 5 | ${ 种子壳: \text{四舍五入}({(1.8)}^{lvl}  \cdot  4) }$ | 作物经验+｛$lvl  \cdot  0.1$｝ | 5 |  |  |
-| 干草捆 |  | ${ 草: lvl  \cdot  125 + 75 }$ | 草容量+｛$lvl  \cdot  100$｝ | 5 |  |  |
-| 小箱子 | 7 | ${ 仅浆果: 24.5K  \cdot  {(1.9)}^{lvl} }$ | 种子壳容量+｛$lvl  \cdot  10$｝ | 6 |  | true |
-| 洒水装置 | 2 | ${ 仅蔬菜: 120K  \cdot  {(4M)}^{lvl}, 种子壳: 50  \cdot  {(10)}^{lvl} }$ | 洒水装置farmBuilding｛$lvl$｝ | 6 |  |  |
-| 放大镜 | 20 | ${ 仅粮食: 54K  \cdot  {(lvl  \cdot  0.1 + 2)}^{lvl}, 仅鲜花: 33K  \cdot  {(lvl  \cdot  0.1 + 2)}^{lvl} }$ | 作物经验*｛$lvl  \cdot  0.1 + 1$｝ | 7 |  |  |
-| 稻草人 | 10 | ${ 仅粮食: 110K  \cdot  {(1.8)}^{lvl}, 花瓣: \text{四舍五入}({(1.4)}^{lvl}  \cdot  3), 黄金: 6 + lvl }$ | 作物增益*｛$lvl  \cdot  0.1 + 1$｝; 花瓣容量+｛$lvl  \cdot  3$｝ | 7 |  | true |
-| 蚁丘 |  | ${ 草: getSequence(3, lvl)  \cdot  50 + 200 }$ | 稀有掉率+｛$lvl  \cdot  0.015$｝ | 7 |  |  |
-| 虫粉 |  | ${ 仅粮食: 675K  \cdot  {(1.75)}^{lvl}, 虫子: \text{四舍五入}(5  \cdot  lvl  \cdot  {(1.1)}^{Math.max(0, lvl - 10}) + 10) }$ | 仅蔬菜增益*｛$lvl  \cdot  0.15 + 1$｝ | 8 |  |  |
-| 棚子 | 10 | ${ 种子壳: 5  \cdot  getSequence(3, lvl) + 35, 虫子: 5  \cdot  getSequence(3, lvl) + 35, 花瓣: 4  \cdot  getSequence(1, lvl) + 10 }$ | 种子壳容量+｛$lvl  \cdot  20$｝; 虫子容量+｛$lvl  \cdot  20$｝; 花瓣容量+｛$lvl  \cdot  10$｝ | 8 |  | true |
-| 讲台 | 2 | ${ 仅鲜花: 3.5M  \cdot  {(3M)}^{lvl}, 花瓣: 75  \cdot  {(5)}^{lvl} }$ | 讲台farmBuilding｛$lvl$｝ | 9 |  |  |
-| 香水 | 25 | ${ 虫子: \text{四舍五入}(5  \cdot  lvl  \cdot  {(1.1)}^{Math.max(0, lvl - 10}) + 10), 蝴蝶: \text{四舍五入}(lvl  \cdot  {(1.1)}^{Math.max(0, lvl - 10}) + 2) }$ | 仅浆果增益*｛$lvl  \cdot  0.15 + 1$｝; 稀有掉率+｛$lvl  \cdot  0.01$｝ | 9 |  |  |
-| 中箱子 | 8 | ${ 仅蔬菜: 90M  \cdot  {(1.75)}^{lvl}, 仅粮食: 54M  \cdot  {(2.1)}^{lvl} }$ | 种子壳容量+｛$lvl  \cdot  25$｝; 草容量+｛$lvl  \cdot  40$｝ | 10 |  | true |
-| 踩碎种子 |  | ${ 种子壳: \text{四舍五入}({(1.15)}^{lvl}  \cdot  150) }$ | 作物增益*｛${(1.12)}^{lvl}$｝ | 10 |  |  |
-| 昆虫天堂 | 6 | ${ 仅浆果: 750M  \cdot  {(2.4)}^{lvl}, 花瓣: \text{四舍五入}({(1.75)}^{lvl}  \cdot  11) }$ | 虫子容量+｛$lvl  \cdot  40$｝; 蝴蝶容量+｛$lvl  \cdot  5$｝; 瓢虫容量+｛$lvl  \cdot  30$｝ | 11 |  | true |
-| 黄金工具 |  | ${ 黄金: \text{四舍五入}({(1.25)}^{lvl}  \cdot  350) }$ | 作物增益*｛$lvl  \cdot  0.1 + 1$｝ | 11 |  |  |
-| 蝴蝶翅膀 | 6 | ${ 蝴蝶: \text{四舍五入}({(1.35)}^{lvl}  \cdot  14) }$ | 花瓣容量+｛$lvl  \cdot  15$｝ | 12 |  |  |
-| 肥沃之地 |  | ${ 仅浆果: 4B  \cdot  {(2.25)}^{lvl}, 仅鲜花: 3.3B  \cdot  {(2.25)}^{lvl} }$ | 仅蔬菜增益*｛$lvl  \cdot  0.1 + 1$｝ | 12 |  |  |
-| 风车 | 1 | ${ 仅鲜花: 250B, 花瓣: 150, 瓢虫: 50 }$ | 风车farmBuilding｛$lvl$｝ | 13 |  |  |
-| 神秘之地 |  | ${ 仅蔬菜: 37.5B  \cdot  {(2.25)}^{lvl}, 瓢虫: \text{四舍五入}({(1.12)}^{lvl}  \cdot  10) }$ | 仅粮食增益*｛$lvl  \cdot  0.1 + 1$｝; 瓢虫容量+｛$lvl  \cdot  20$｝ | 13 |  |  |
-| 化肥袋 | 1 | ${ 黄金: 700 }$ | 除草剂findConsumable｛$lvl >= 1$｝; 涡轮生长findConsumable｛$lvl >= 1$｝; 高级findConsumable｛$lvl >= 1$｝ | 14 |  |  |
-| 大箱子 | 10 | ${ 仅浆果: 190B  \cdot  {(1.85)}^{lvl}, 仅粮食: 240B  \cdot  {(1.85)}^{lvl} }$ | 种子壳容量+｛$lvl  \cdot  60$｝; 草容量+｛$lvl  \cdot  80$｝; 花瓣容量+｛$lvl  \cdot  25$｝ | 14 |  | true |
-| 人造网 | 3 | ${ 仅鲜花: 1T  \cdot  {(9)}^{lvl}, 瓢虫: \text{四舍五入}({(1.5)}^{lvl}  \cdot  100) }$ | 蜘蛛容量+｛$lvl  \cdot  4$｝ | 15 |  |  |
-| 研究昆虫 | 10 | ${ 仅浆果: 1.35T  \cdot  {(2.65)}^{lvl}, 蝴蝶: \text{四舍五入}({(1.25)}^{lvl}  \cdot  28) }$ | 作物经验*｛$lvl  \cdot  0.1 + 1$｝ | 15 |  |  |
-| 蜂窝 | 20 | ${ 仅鲜花: 22.5T  \cdot  {(1.4)}^{lvl}, 种子壳: \text{四舍五入}({(1.14)}^{lvl}  \cdot  280), 虫子: \text{四舍五入}({(1.16)}^{lvl}  \cdot  160) }$ | 蜘蛛容量+｛$lvl$｝; 蜜蜂容量+｛$lvl  \cdot  200$｝ | 16 |  |  |
-| 黑暗角落 | 10 | ${ 仅蔬菜: 175T  \cdot  {(1.75)}^{lvl}, 仅粮食: 300T  \cdot  {(1.6)}^{lvl}, 虫子: \text{四舍五入}({(1.24)}^{lvl}  \cdot  230) }$ | 蜘蛛容量+｛$lvl  \cdot  2$｝; 稀有掉率+｛$lvl  \cdot  0.01$｝ | 17 |  |  |
-| 旗帜 | 1 | ${ 蜘蛛: 50, 蜜蜂: 2500, 金色花瓣: 10 }$ | 旗帜farmBuilding｛$lvl$｝ | 18 |  |  |
-| 虫饵 |  | ${ 草: \text{四舍五入}({(1.22)}^{lvl}  \cdot  1350), 花瓣: \text{四舍五入}({(1.16)}^{lvl}  \cdot  175), 蝴蝶: \text{四舍五入}({(1.16)}^{lvl}  \cdot  50) }$ | 仅蔬菜增益*｛$lvl  \cdot  0.05 + 1$｝; 虫子容量+｛$lvl  \cdot  20$｝; 瓢虫容量+｛$lvl  \cdot  35$｝ | 19 |  |  |
-| 闪亮的土壤 |  | ${ 蜜蜂: \text{四舍五入}({(1.16)}^{lvl}  \cdot  4000), 金色花瓣: \text{四舍五入}(lvl  \cdot  0.3 + 5) }$ | 仅浆果增益*｛$lvl  \cdot  0.05 + 1$｝; 蝴蝶容量+｛$lvl  \cdot  4$｝ | 20 |  |  |
-| 大肥料袋 | 1 | ${ 黄金: 2000 }$ | 分析肥料findConsumable｛$lvl >= 1$｝; 超级多汁findConsumable｛$lvl >= 1$｝; 颗粒findConsumable｛$lvl >= 1$｝ | 21 |  |  |
-| 芝麻开门 |  | ${ 仅鲜花: 870Sx  \cdot  {(1.6)}^{lvl}, 小种子: \text{四舍五入}({(1.28)}^{lvl}  \cdot  225) }$ | 仅粮食增益*｛$lvl  \cdot  0.05 + 1$｝; 种子壳容量+｛$lvl  \cdot  50$｝; 小种子容量+｛$lvl  \cdot  150$｝ | 22 |  |  |
-| 花卉绘画 |  | ${ 仅浆果: 92Sp  \cdot  {(1.6)}^{lvl}, 蜜蜂: \text{四舍五入}({(1.28)}^{lvl}  \cdot  6000) }$ | 仅鲜花增益*｛$lvl  \cdot  0.05 + 1$｝; 蜜蜂容量+｛$lvl  \cdot  150$｝ | 23 |  |  |
+| 名称  | 上限  | 消耗  | 效果  | 解锁层数 |
+| --- | --- | --- | --- | ---- |
+| 种子箱 | 24 | $[{ 仅蔬菜: 70 }, { 仅浆果: 150 }, { 仅粮食: 260 }, { 仅鲜花: 800, 黄金: 1 }, { 仅蔬菜: 4600 }, { 仅浆果: 50K }, { 仅粮食: 335K }, { 仅鲜花: 2M }, { 仅蔬菜: 17.5M }, { 仅浆果: 120M }, { 仅粮食: 900M }, { 仅鲜花: 7.2B }, { 仅蔬菜: 54B }, { 仅浆果: 370B }, { 仅粮食: 2.2T }, { 仅鲜花: 35T }, { 仅蔬菜: 875T }, { 仅浆果: 3.1Qa }, { 仅粮食: 130Qa }, { 仅鲜花: 8.5Qi }, { 仅蔬菜: 500Qi }, { 仅浆果: 35Sx }, { 仅粮食: 3Sp }, { 仅鲜花: 320Sp }][lvl]$ | 蓝莓farmSeed｛$lvl >= 1$｝; 小麦farmSeed｛$lvl >= 2$｝; 郁金香farmSeed｛$lvl >= 3$｝; 土豆farmSeed｛$lvl >= 4$｝; 覆盆子farmSeed｛$lvl >= 5$｝; 大麦farmSeed｛$lvl >= 6$｝; 蒲公英farmSeed｛$lvl >= 7$｝; 玉米farmSeed｛$lvl >= 8$｝; 西瓜farmSeed｛$lvl >= 9$｝; 大米farmSeed｛$lvl >= 10$｝; 玫瑰farmSeed｛$lvl >= 11$｝; 韭菜farmSeed｛$lvl >= 12$｝; 蜜瓜farmSeed｛$lvl >= 13$｝; 黑麦farmSeed｛$lvl >= 14$｝; 雏菊farmSeed｛$lvl >= 15$｝; 黄瓜farmSeed｛$lvl >= 16$｝; 葡萄farmSeed｛$lvl >= 17$｝; 啤酒花farmSeed｛$lvl >= 18$｝; 紫罗兰farmSeed｛$lvl >= 19$｝; 红薯farmSeed｛$lvl >= 20$｝; 草莓farmSeed｛$lvl >= 21$｝; 芝麻farmSeed｛$lvl >= 22$｝; 向日葵farmSeed｛$lvl >= 23$｝; 菠菜farmSeed｛$lvl >= 24$｝ |  |
+| 繁殖力 |  | ${ 仅蔬菜: 50  \cdot  {(lvl  \cdot  0.005 + 1.3)}^{lvl}, 仅浆果: 50  \cdot  {(lvl  \cdot  0.005 + 1.3)}^{lvl} }$ | 作物增益*｛${(1.1)}^{lvl}$｝ | 1 |
+| 过度生长 | 9 | $fallbackArray([{ 仅浆果: 200 }, { 仅粮食: 850, 仅鲜花: 1300 }], { 仅鲜花: 240  \cdot  {(5 + lvl)}^{lvl} }, lvl)$ | 过度生长+｛$lvl >= 1 ? lvl  \cdot  0.05 + 0.05 : null$｝ | 1 |
+| 扩张 | 45 | ${ 仅粮食: 300  \cdot  {(lvl  \cdot  0.05 + 2)}^{lvl} }$ | 农场地块farmTile｛$lvl$｝ | 2 |
+| 花园侏儒 | 5 | ${ 仅蔬菜: 500  \cdot  {(96)}^{lvl}, 仅浆果: 500  \cdot  {(96)}^{lvl}, 仅鲜花: 1000  \cdot  {(128)}^{lvl} }$ | 花园侏儒farmBuilding｛$lvl$｝; 禁用“第一作物”解锁｛$lvl >= 1$｝ | 3 |
+| 学习 | 1 | ${ 黄金: 1 }$ | 作物经验解锁｛$lvl >= 1$｝ | 4 |
+| 肥料 | 1 | ${ 黄金: 5 }$ | 肥料解锁｛$lvl >= 1$｝ |  |
+| 磨碎种子 |  | ${ 仅鲜花: 6000  \cdot  {(1.75)}^{lvl}, 种子壳: \text{四舍五入}(4  \cdot  lvl  \cdot  {(1.1)}^{Math.max(0, lvl - 10}) + 10) }$ | 仅粮食增益*｛$lvl  \cdot  0.15 + 1$｝; 过度生长+｛$lvl  \cdot  0.01$｝ | 5 |
+| 烤种子 | 5 | ${ 种子壳: \text{四舍五入}({(1.8)}^{lvl}  \cdot  4) }$ | 作物经验+｛$lvl  \cdot  0.1$｝ | 5 |
+| 干草捆 |  | ${ 草: lvl  \cdot  125 + 75 }$ | 草容量+｛$lvl  \cdot  100$｝ | 5 |
+| 小箱子 | 7 | ${ 仅浆果: 24.5K  \cdot  {(1.9)}^{lvl} }$ | 种子壳容量+｛$lvl  \cdot  10$｝ | 6 |
+| 洒水装置 | 2 | ${ 仅蔬菜: 120K  \cdot  {(4M)}^{lvl}, 种子壳: 50  \cdot  {(10)}^{lvl} }$ | 洒水装置farmBuilding｛$lvl$｝ | 6 |
+| 放大镜 | 20 | ${ 仅粮食: 54K  \cdot  {(lvl  \cdot  0.1 + 2)}^{lvl}, 仅鲜花: 33K  \cdot  {(lvl  \cdot  0.1 + 2)}^{lvl} }$ | 作物经验*｛$lvl  \cdot  0.1 + 1$｝ | 7 |
+| 稻草人 | 10 | ${ 仅粮食: 110K  \cdot  {(1.8)}^{lvl}, 花瓣: \text{四舍五入}({(1.4)}^{lvl}  \cdot  3), 黄金: 6 + lvl }$ | 作物增益*｛$lvl  \cdot  0.1 + 1$｝; 花瓣容量+｛$lvl  \cdot  3$｝ | 7 |
+| 蚁丘 |  | ${ 草: getSequence(3, lvl)  \cdot  50 + 200 }$ | 稀有掉率+｛$lvl  \cdot  0.015$｝ | 7 |
+| 虫粉 |  | ${ 仅粮食: 675K  \cdot  {(1.75)}^{lvl}, 虫子: \text{四舍五入}(5  \cdot  lvl  \cdot  {(1.1)}^{Math.max(0, lvl - 10}) + 10) }$ | 仅蔬菜增益*｛$lvl  \cdot  0.15 + 1$｝ | 8 |
+| 棚子 | 10 | ${ 种子壳: 5  \cdot  getSequence(3, lvl) + 35, 虫子: 5  \cdot  getSequence(3, lvl) + 35, 花瓣: 4  \cdot  getSequence(1, lvl) + 10 }$ | 种子壳容量+｛$lvl  \cdot  20$｝; 虫子容量+｛$lvl  \cdot  20$｝; 花瓣容量+｛$lvl  \cdot  10$｝ | 8 |
+| 讲台 | 2 | ${ 仅鲜花: 3.5M  \cdot  {(3M)}^{lvl}, 花瓣: 75  \cdot  {(5)}^{lvl} }$ | 讲台farmBuilding｛$lvl$｝ | 9 |
+| 香水 | 25 | ${ 虫子: \text{四舍五入}(5  \cdot  lvl  \cdot  {(1.1)}^{Math.max(0, lvl - 10}) + 10), 蝴蝶: \text{四舍五入}(lvl  \cdot  {(1.1)}^{Math.max(0, lvl - 10}) + 2) }$ | 仅浆果增益*｛$lvl  \cdot  0.15 + 1$｝; 稀有掉率+｛$lvl  \cdot  0.01$｝ | 9 |
+| 中箱子 | 8 | ${ 仅蔬菜: 90M  \cdot  {(1.75)}^{lvl}, 仅粮食: 54M  \cdot  {(2.1)}^{lvl} }$ | 种子壳容量+｛$lvl  \cdot  25$｝; 草容量+｛$lvl  \cdot  40$｝ | 10 |
+| 踩碎种子 |  | ${ 种子壳: \text{四舍五入}({(1.15)}^{lvl}  \cdot  150) }$ | 作物增益*｛${(1.12)}^{lvl}$｝ | 10 |
+| 昆虫天堂 | 6 | ${ 仅浆果: 750M  \cdot  {(2.4)}^{lvl}, 花瓣: \text{四舍五入}({(1.75)}^{lvl}  \cdot  11) }$ | 虫子容量+｛$lvl  \cdot  40$｝; 蝴蝶容量+｛$lvl  \cdot  5$｝; 瓢虫容量+｛$lvl  \cdot  30$｝ | 11 |
+| 黄金工具 |  | ${ 黄金: \text{四舍五入}({(1.25)}^{lvl}  \cdot  350) }$ | 作物增益*｛$lvl  \cdot  0.1 + 1$｝ | 11 |
+| 蝴蝶翅膀 | 6 | ${ 蝴蝶: \text{四舍五入}({(1.35)}^{lvl}  \cdot  14) }$ | 花瓣容量+｛$lvl  \cdot  15$｝ | 12 |
+| 肥沃之地 |  | ${ 仅浆果: 4B  \cdot  {(2.25)}^{lvl}, 仅鲜花: 3.3B  \cdot  {(2.25)}^{lvl} }$ | 仅蔬菜增益*｛$lvl  \cdot  0.1 + 1$｝ | 12 |
+| 风车 | 1 | ${ 仅鲜花: 250B, 花瓣: 150, 瓢虫: 50 }$ | 风车farmBuilding｛$lvl$｝ | 13 |
+| 神秘之地 |  | ${ 仅蔬菜: 37.5B  \cdot  {(2.25)}^{lvl}, 瓢虫: \text{四舍五入}({(1.12)}^{lvl}  \cdot  10) }$ | 仅粮食增益*｛$lvl  \cdot  0.1 + 1$｝; 瓢虫容量+｛$lvl  \cdot  20$｝ | 13 |
+| 化肥袋 | 1 | ${ 黄金: 700 }$ | 除草剂findConsumable｛$lvl >= 1$｝; 涡轮生长findConsumable｛$lvl >= 1$｝; 高级findConsumable｛$lvl >= 1$｝ | 14 |
+| 大箱子 | 10 | ${ 仅浆果: 190B  \cdot  {(1.85)}^{lvl}, 仅粮食: 240B  \cdot  {(1.85)}^{lvl} }$ | 种子壳容量+｛$lvl  \cdot  60$｝; 草容量+｛$lvl  \cdot  80$｝; 花瓣容量+｛$lvl  \cdot  25$｝ | 14 |
+| 人造网 | 3 | ${ 仅鲜花: 1T  \cdot  {(9)}^{lvl}, 瓢虫: \text{四舍五入}({(1.5)}^{lvl}  \cdot  100) }$ | 蜘蛛容量+｛$lvl  \cdot  4$｝ | 15 |
+| 研究昆虫 | 10 | ${ 仅浆果: 1.35T  \cdot  {(2.65)}^{lvl}, 蝴蝶: \text{四舍五入}({(1.25)}^{lvl}  \cdot  28) }$ | 作物经验*｛$lvl  \cdot  0.1 + 1$｝ | 15 |
+| 蜂窝 | 20 | ${ 仅鲜花: 22.5T  \cdot  {(1.4)}^{lvl}, 种子壳: \text{四舍五入}({(1.14)}^{lvl}  \cdot  280), 虫子: \text{四舍五入}({(1.16)}^{lvl}  \cdot  160) }$ | 蜘蛛容量+｛$lvl$｝; 蜜蜂容量+｛$lvl  \cdot  200$｝ | 16 |
+| 黑暗角落 | 10 | ${ 仅蔬菜: 175T  \cdot  {(1.75)}^{lvl}, 仅粮食: 300T  \cdot  {(1.6)}^{lvl}, 虫子: \text{四舍五入}({(1.24)}^{lvl}  \cdot  230) }$ | 蜘蛛容量+｛$lvl  \cdot  2$｝; 稀有掉率+｛$lvl  \cdot  0.01$｝ | 17 |
+| 旗帜 | 1 | ${ 蜘蛛: 50, 蜜蜂: 2500, 金色花瓣: 10 }$ | 旗帜farmBuilding｛$lvl$｝ | 18 |
+| 虫饵 |  | ${ 草: \text{四舍五入}({(1.22)}^{lvl}  \cdot  1350), 花瓣: \text{四舍五入}({(1.16)}^{lvl}  \cdot  175), 蝴蝶: \text{四舍五入}({(1.16)}^{lvl}  \cdot  50) }$ | 仅蔬菜增益*｛$lvl  \cdot  0.05 + 1$｝; 虫子容量+｛$lvl  \cdot  20$｝; 瓢虫容量+｛$lvl  \cdot  35$｝ | 19 |
+| 闪亮的土壤 |  | ${ 蜜蜂: \text{四舍五入}({(1.16)}^{lvl}  \cdot  4000), 金色花瓣: \text{四舍五入}(lvl  \cdot  0.3 + 5) }$ | 仅浆果增益*｛$lvl  \cdot  0.05 + 1$｝; 蝴蝶容量+｛$lvl  \cdot  4$｝ | 20 |
+| 大肥料袋 | 1 | ${ 黄金: 2000 }$ | 分析肥料findConsumable｛$lvl >= 1$｝; 超级多汁findConsumable｛$lvl >= 1$｝; 颗粒findConsumable｛$lvl >= 1$｝ | 21 |
+| 芝麻开门 |  | ${ 仅鲜花: 870Sx  \cdot  {(1.6)}^{lvl}, 小种子: \text{四舍五入}({(1.28)}^{lvl}  \cdot  225) }$ | 仅粮食增益*｛$lvl  \cdot  0.05 + 1$｝; 种子壳容量+｛$lvl  \cdot  50$｝; 小种子容量+｛$lvl  \cdot  150$｝ | 22 |
+| 花卉绘画 |  | ${ 仅浆果: 92Sp  \cdot  {(1.6)}^{lvl}, 蜜蜂: \text{四舍五入}({(1.28)}^{lvl}  \cdot  6000) }$ | 仅鲜花增益*｛$lvl  \cdot  0.05 + 1$｝; 蜜蜂容量+｛$lvl  \cdot  150$｝ | 23 |

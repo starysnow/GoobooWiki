@@ -1,7 +1,6 @@
 [
   {
     "名称": "活力",
-    "color": "绿色",
     "图标": "<i class=\"mdi mdi-heart\"></i>",
     "效果": "生命值+｛$lvl  \\cdot  70 + 30$｝",
     "needsEnergy": "",
@@ -17,7 +16,6 @@
   },
   {
     "名称": "能量",
-    "color": "金色",
     "图标": "<i class=\"mdi mdi-lightning-bolt\"></i>",
     "效果": "能量+｛$lvl  \\cdot  35 + 20$｝",
     "needsEnergy": "needsEnergy",
@@ -33,7 +31,6 @@
   },
   {
     "名称": "魔法",
-    "color": "blue",
     "图标": "<i class=\"mdi mdi-water\"></i>",
     "效果": "法力+｛$lvl  \\cdot  25 + 15$｝",
     "needsEnergy": "",
@@ -49,7 +46,6 @@
   },
   {
     "名称": "拳头",
-    "color": "橙色-红色",
     "图标": "<i class=\"mdi mdi-arm-flex\"></i>",
     "效果": "",
     "needsEnergy": "needsEnergy",
@@ -65,7 +61,6 @@
   },
   {
     "名称": "火花",
-    "color": "光-blue",
     "图标": "<i class=\"mdi mdi-shimmer\"></i>",
     "效果": "",
     "needsEnergy": "",
@@ -81,7 +76,6 @@
   },
   {
     "名称": "急速",
-    "color": "pale-黄色",
     "图标": "<i class=\"mdi mdi-timer-sand\"></i>",
     "效果": "急速+｛$lvl  \\cdot  4 + 8$｝",
     "needsEnergy": "",
@@ -97,7 +91,6 @@
   },
   {
     "名称": "精确",
-    "color": "橙色",
     "图标": "<i class=\"mdi mdi-bullseye\"></i>",
     "效果": "暴击率+｛$lvl  \\cdot  0.03 + 0.07$｝",
     "needsEnergy": "",
@@ -113,7 +106,6 @@
   },
   {
     "名称": "愤怒",
-    "color": "橙色-红色",
     "图标": "<i class=\"mdi mdi-emoticon-angry\"></i>",
     "效果": "暴击伤害+｛$lvl  \\cdot  0.08 + 0.3$｝",
     "needsEnergy": "",
@@ -129,7 +121,6 @@
   },
   {
     "名称": "力量",
-    "color": "红色",
     "图标": "<i class=\"mdi mdi-arm-flex\"></i>",
     "效果": "力量+｛$lvl  \\cdot  3 + 5$｝",
     "needsEnergy": "",
@@ -145,7 +136,6 @@
   },
   {
     "名称": "毒素",
-    "color": "光-绿色",
     "图标": "<i class=\"mdi mdi-clouds\"></i>",
     "效果": "",
     "needsEnergy": "",
@@ -161,7 +151,6 @@
   },
   {
     "名称": "智慧",
-    "color": "indigo",
     "图标": "<i class=\"mdi mdi-lightbulb-on\"></i>",
     "效果": "智力+｛$lvl  \\cdot  3 + 5$｝",
     "needsEnergy": "",
@@ -177,7 +166,6 @@
   },
   {
     "名称": "提取",
-    "color": "红色",
     "图标": "<i class=\"mdi mdi-water\"></i>",
     "效果": "血液增益*｛$lvl  \\cdot  0.04 + 1.16$｝",
     "needsEnergy": "",
@@ -193,7 +181,6 @@
   },
   {
     "名称": "学习",
-    "color": "deep-紫色",
     "图标": "<i class=\"mdi mdi-school\"></i>",
     "效果": "级技能点数+｛$1$｝",
     "needsEnergy": "",
@@ -209,7 +196,6 @@
   },
   {
     "名称": "维持",
-    "color": "红色",
     "图标": "<i class=\"mdi mdi-iv-bag\"></i>",
     "效果": "血液容量*｛$lvl  \\cdot  0.06 + 1.24$｝",
     "needsEnergy": "",
@@ -225,7 +211,6 @@
   },
   {
     "名称": "激励",
-    "color": "金色",
     "图标": "<i class=\"mdi mdi-battery\"></i>",
     "效果": "",
     "needsEnergy": "needsEnergy",
@@ -241,7 +226,6 @@
   },
   {
     "名称": "自动化",
-    "color": "dark-灰色",
     "图标": "<i class=\"mdi mdi-cogs\"></i>",
     "效果": "自动释放槽位+｛$1$｝",
     "needsEnergy": "",
@@ -257,7 +241,6 @@
   },
   {
     "名称": "治愈",
-    "color": "teal",
     "图标": "<i class=\"mdi mdi-heart\"></i>",
     "效果": "",
     "needsEnergy": "",
@@ -273,7 +256,6 @@
   },
   {
     "名称": "二元性",
-    "color": "紫色",
     "图标": "<i class=\"mdi mdi-call-split\"></i>",
     "效果": "力量+｛$lvl  \\cdot  2 + 4$｝; 智力+｛$lvl  \\cdot  2 + 4$｝",
     "needsEnergy": "",
@@ -289,7 +271,6 @@
   },
   {
     "名称": "爱",
-    "color": "babypink",
     "图标": "<i class=\"mdi mdi-heart-multiple\"></i>",
     "效果": "",
     "needsEnergy": "",

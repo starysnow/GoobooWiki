@@ -2,240 +2,180 @@
   {
     "名称": "钱包",
     "上限": "12",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.金币升级.use$",
     "消耗": "${ 金币: \\text{向上取整}({(1.3)}^{lvl}  \\cdot  200) }$",
     "效果": "金币容量+｛$lvl  \\cdot  150$｝"
   },
   {
     "名称": "资源包",
     "上限": "10",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.金币升级.use$",
     "消耗": "${ 金币: \\text{向上取整}({(1.4)}^{lvl}  \\cdot  200) }$",
     "效果": "植物纤维容量+｛$lvl  \\cdot  200$｝; 木头容量+｛$lvl  \\cdot  200$｝; 石头容量+｛$lvl  \\cdot  200$｝"
   },
   {
     "名称": "金属包",
     "上限": "5",
-    "capMult": "true",
-    "requirement": "$store.state.解锁.金币升级.use$",
     "消耗": "${ 金币: \\text{向上取整}({(1.7)}^{lvl}  \\cdot  300) }$",
     "效果": "金属容量+｛$lvl  \\cdot  400$｝"
   },
   {
     "名称": "镰刀",
     "上限": "20",
-    "capMult": "",
-    "requirement": "$store.state.解锁.镰刀升级.use$",
     "消耗": "${ 金币: \\text{向上取整}({(1.55)}^{lvl}  \\cdot  2500) }$",
     "效果": "植物纤维增益*｛${(1.05)}^{lvl}  \\cdot  (lvl  \\cdot  0.05 + 1)$｝; 仅粮食增益*｛${(1.08)}^{lvl}$｝"
   },
   {
     "名称": "柴刀",
     "上限": "20",
-    "capMult": "",
-    "requirement": "$store.state.解锁.斧头升级.use$",
     "消耗": "${ 金币: \\text{向上取整}({(1.55)}^{lvl}  \\cdot  5000) }$",
     "效果": "木头增益*｛${(1.05)}^{lvl}  \\cdot  (lvl  \\cdot  0.05 + 1)$｝; 水果增益*｛${(1.08)}^{lvl}$｝"
   },
   {
     "名称": "镐子",
     "上限": "20",
-    "capMult": "",
-    "requirement": "$store.state.解锁.镐子升级.use$",
     "消耗": "${ 金币: \\text{向上取整}({(1.55)}^{lvl}  \\cdot  7500) }$",
     "效果": "石头增益*｛${(1.05)}^{lvl}  \\cdot  (lvl  \\cdot  0.05 + 1)$｝; 金属增益*｛${(1.04)}^{lvl}  \\cdot  (lvl  \\cdot  0.04 + 1)$｝"
   },
   {
     "名称": "喷壶",
     "上限": "20",
-    "capMult": "",
-    "requirement": "$store.state.解锁.浇水器可以升级.use$",
     "消耗": "${ 金币: \\text{向上取整}({(1.55)}^{lvl}  \\cdot  10K) }$",
     "效果": "仅粮食增益*｛${(1.05)}^{lvl}$｝; 水果增益*｛${(1.05)}^{lvl}$｝; 水增益*｛${(1.22)}^{lvl}$｝"
   },
   {
     "名称": "投资",
     "上限": "50",
-    "capMult": "",
-    "requirement": "$store.state.解锁.投资升级.use$",
     "消耗": "${ 金币: \\text{向上取整}({(1.35)}^{lvl}  \\cdot  12.5K) }$",
     "效果": "税率*｛${(1.05)}^{lvl}$｝; 金币增益*｛${(1.11)}^{lvl}$｝"
   },
   {
     "名称": "基础",
     "上限": "20",
-    "capMult": "",
-    "requirement": "$store.state.解锁.基础升级.use$",
     "消耗": "${ 知识: 12  \\cdot  lvl + 80 }$",
     "效果": "植物纤维增益*｛${(1.05)}^{lvl}  \\cdot  (lvl  \\cdot  0.15 + 1)$｝; 木头增益*｛${(1.05)}^{lvl}  \\cdot  (lvl  \\cdot  0.05 + 1)$｝; 石头增益*｛${(1.05)}^{lvl}  \\cdot  (lvl  \\cdot  0.05 + 1)$｝"
   },
   {
     "名称": "加工",
     "上限": "20",
-    "capMult": "",
-    "requirement": "$store.state.解锁.加工升级.use$",
     "消耗": "${ 知识: 12  \\cdot  lvl + 120 }$",
     "效果": "食物增益*｛${(1.07)}^{lvl}$｝; 金属增益*｛${(1.05)}^{lvl}  \\cdot  (lvl  \\cdot  0.05 + 1)$｝"
   },
   {
     "名称": "水泵",
     "上限": "20",
-    "capMult": "",
-    "requirement": "$store.state.解锁.水泵升级.use$",
     "消耗": "${ 知识: 12  \\cdot  lvl + 160 }$",
     "效果": "水增益*｛${(1.2)}^{lvl}  \\cdot  (lvl  \\cdot  0.04 + 1)$｝"
   },
   {
     "名称": "沙子",
     "上限": "20",
-    "capMult": "",
-    "requirement": "$store.state.解锁.沙子升级.use$",
     "消耗": "${ 知识: 12  \\cdot  lvl + 200 }$",
     "效果": "玻璃增益*｛${(1.08)}^{lvl}  \\cdot  (lvl  \\cdot  0.08 + 1)$｝"
   },
   {
     "名称": "书籍",
     "上限": "20",
-    "capMult": "",
-    "requirement": "$store.state.解锁.书籍升级.use$",
     "消耗": "${ 知识: 12  \\cdot  lvl + 240 }$",
     "效果": "知识增益*｛$lvl  \\cdot  0.04 + 1$｝"
   },
   {
     "名称": "斧子",
     "上限": "40",
-    "capMult": "",
-    "requirement": "$store.state.解锁.斧子升级.use$",
     "消耗": "${ 金币: \\text{向上取整}({(1.3)}^{lvl}  \\cdot  500K) }$",
     "效果": "木头增益*｛$lvl  \\cdot  0.05 + 1$｝; 硬木增益*｛$lvl  \\cdot  0.05 + 1$｝"
   },
   {
     "名称": "炸弹",
     "上限": "40",
-    "capMult": "",
-    "requirement": "$store.state.解锁.炸弹升级.use$",
     "消耗": "${ 金币: \\text{向上取整}({(1.3)}^{lvl}  \\cdot  1.5M) }$",
     "效果": "石头增益*｛$lvl  \\cdot  0.05 + 1$｝; 宝石增益*｛$lvl  \\cdot  0.05 + 1$｝"
   },
   {
     "名称": "收费",
     "上限": "40",
-    "capMult": "",
-    "requirement": "$store.state.解锁.收费升级.use$",
     "消耗": "${ 金币: \\text{向上取整}({(1.3)}^{lvl}  \\cdot  4M) }$",
     "效果": "税率*｛$lvl  \\cdot  0.05 + 1$｝"
   },
   {
     "名称": "鱼竿",
     "上限": "40",
-    "capMult": "",
-    "requirement": "$store.state.解锁.鱼竿升级.use$",
     "消耗": "${ 金币: \\text{向上取整}({(1.3)}^{lvl}  \\cdot  10M) }$",
     "效果": "鱼增益*｛$lvl  \\cdot  0.1 + 1$｝"
   },
   {
     "名称": "圣书",
     "上限": "40",
-    "capMult": "",
-    "requirement": "$store.state.解锁.圣书升级.use$",
     "消耗": "${ 金币: \\text{向上取整}({(1.45)}^{lvl}  \\cdot  22.5M) }$",
     "效果": "信仰容量+｛$lvl  \\cdot  8$｝"
   },
   {
     "名称": "突破",
     "上限": "50",
-    "capMult": "",
-    "requirement": "$store.state.解锁.突破升级.use$",
     "消耗": "${ 科学: \\text{四舍五入}({(1.05)}^{Math.max(lvl - 25, 0})  \\cdot  lvl  \\cdot  10 + 20) }$",
     "效果": "知识容量+｛$lvl  \\cdot  5$｝; 科学容量+｛$lvl  \\cdot  2$｝"
   },
   {
     "名称": "改良植物",
     "上限": "10",
-    "capMult": "",
-    "requirement": "$store.state.解锁.改造植物升级.use$",
     "消耗": "${ 科学: lvl  \\cdot  15 + 30 }$",
     "效果": "植物纤维增益*｛$lvl  \\cdot  0.1 + 1$｝; 仅粮食增益*｛$lvl  \\cdot  0.05 + 1$｝; 水果增益*｛$lvl  \\cdot  0.05 + 1$｝; 仅蔬菜增益*｛$lvl  \\cdot  0.05 + 1$｝"
   },
   {
     "名称": "多巴胺",
     "上限": "15",
-    "capMult": "",
-    "requirement": "$store.state.解锁.多巴胺升级.use$",
     "消耗": "${ 科学: lvl  \\cdot  15 + 40 }$",
     "效果": "幸福+｛$lvl  \\cdot  0.002$｝; 快乐容量+｛$lvl  \\cdot  50$｝"
   },
   {
     "名称": "肾上腺素",
     "上限": "15",
-    "capMult": "",
-    "requirement": "$store.state.解锁.肾上腺素升级.use$",
     "消耗": "${ 科学: lvl  \\cdot  15 + 50 }$",
     "效果": "硬木增益*｛$lvl  \\cdot  0.05 + 1$｝; 宝石增益*｛$lvl  \\cdot  0.05 + 1$｝; 鱼增益*｛$lvl  \\cdot  0.05 + 1$｝"
   },
   {
     "名称": "洒水装置",
     "上限": "15",
-    "capMult": "",
-    "requirement": "$store.state.解锁.喷头升级.use$",
     "消耗": "${ 金币: \\text{向上取整}({(1.65)}^{lvl}  \\cdot  2T) }$",
     "效果": "植物纤维增益*｛$lvl  \\cdot  0.05 + 1$｝; 仅粮食增益*｛${(1.2)}^{lvl}$｝; 水果增益*｛${(1.2)}^{lvl}$｝; 仅蔬菜增益*｛${(1.1)}^{lvl}$｝"
   },
   {
     "名称": "贪婪",
     "上限": "15",
-    "capMult": "",
-    "requirement": "$store.state.解锁.贪婪升级.use$",
     "消耗": "${ 知识: lvl  \\cdot  160 + 2200, 科学: lvl  \\cdot  45 + 500 }$",
     "效果": "税率*｛${(1.4)}^{lvl}$｝; 金币增益*｛${(1.1)}^{lvl}$｝; 污染+｛$lvl$｝"
   },
   {
     "名称": "野心",
     "上限": "",
-    "capMult": "",
-    "requirement": "$store.state.解锁.野心升级.use$",
     "消耗": "${ 常见战利品: \\text{向上取整}({(1.15)}^{lvl}  \\cdot  (lvl  \\cdot  2 + 6)) }$",
     "效果": "战利品增益*｛$lvl  \\cdot  0.01 + 1$｝; 战利品品质+｛$lvl  \\cdot  3$｝"
   },
   {
     "名称": "理解",
     "上限": "20",
-    "capMult": "",
-    "requirement": "$store.state.解锁.认知升级.use$",
     "消耗": "${ 常见战利品: \\text{向上取整}({(1.2)}^{lvl}  \\cdot  55) }$",
     "效果": "知识容量*｛$lvl  \\cdot  0.1 + 1$｝; 科学容量*｛$lvl  \\cdot  0.05 + 1$｝"
   },
   {
     "名称": "好奇心",
     "上限": "",
-    "capMult": "",
-    "requirement": "$store.state.解锁.好奇心升级.use$",
     "消耗": "${ 罕见的战利品: \\text{向上取整}({(1.15)}^{lvl}  \\cdot  (lvl + 4)) }$",
     "效果": "战利品增益*｛$lvl  \\cdot  0.1 + 1$｝"
   },
   {
     "名称": "崇拜",
     "上限": "20",
-    "capMult": "",
-    "requirement": "$store.state.解锁.崇拜升级.use$",
     "消耗": "${ 罕见的战利品: \\text{向上取整}({(1.18)}^{lvl}  \\cdot  55) }$",
     "效果": "信仰容量*｛$getSequence(2, lvl)  \\cdot  0.1 + 1$｝"
   },
   {
     "名称": "物物交换",
     "上限": "",
-    "capMult": "",
-    "requirement": "$store.state.解锁.易货升级.use$",
     "消耗": "${ 稀有战利品: \\text{向上取整}({(1.15)}^{lvl}  \\cdot  (lvl + 2.5)) }$",
     "效果": "战利品品质+｛$lvl$｝; 金币增益*｛${(1.08)}^{lvl}$｝"
   },
   {
     "名称": "火花",
     "上限": "20",
-    "capMult": "",
-    "requirement": "$store.state.解锁.火花升级.use$",
     "消耗": "${ 稀有战利品: \\text{向上取整}({(1.16)}^{lvl}  \\cdot  55) }$",
     "效果": "力量+｛$lvl$｝"
   }

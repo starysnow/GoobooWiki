@@ -1,21 +1,21 @@
-名称,类型,消耗,效果,requirement
-大圆,shape,${ 圆形: {(lvl  \cdot  0.01 + 1.35)}^{lvl}  \cdot  100 }$,形状增益*｛${(1.25)}^{lvl}$｝,
-画得很好的圆,shape,${ 圆形: {(lvl  \cdot  0.05 + 2.25)}^{lvl}  \cdot  5000 }$,红色增益*｛$lvl  \cdot  0.02 + 1$｝,
-大矩形,shape,${ 矩形: {(lvl  \cdot  0.1 + 1.75)}^{lvl}  \cdot  1000 }$,动机容量+｛$lvl$｝,$store.state.画廊.shape.矩形.unlocked$
-画得很好的矩形,shape,${ 矩形: {(lvl  \cdot  0.05 + 2.25)}^{lvl}  \cdot  6500 }$,转换器容量+｛$lvl  \cdot  40$｝,$store.state.画廊.shape.矩形.unlocked$
-创意药水,shape,"$fallbackArray([{ 三角形: 10K, 圆形: 4000 }, { 三角形: 100K, 矩形: 40K }, { 三角形: 10M, 星形: 4M }, { 三角形: 10B, 椭圆形: 3B, 心形: 3B }, { 三角形: 100T, 正方形: 30Sx, 八边形: 30T }, { 三角形: 10Qi, 五边形: 300Qa, 六边形: 300Qa }], { 三角形: {(10)}^{getSequence(1, lvl})  \cdot  10K }, lvl)$",炸弹形状｛$lvl >= 1$｝; dice形状｛$lvl >= 2$｝; accelerator形状｛$lvl >= 3$｝; sparkles形状｛$lvl >= 4$｝; 沙漏形状｛$lvl >= 5$｝; chest形状｛$lvl >= 6$｝; 动机增益+｛$lvl >= 7 ? (lvl - 6)  \cdot  0.005 : null$｝,$store.state.画廊.shape.三角形.unlocked$
-画得很好的三角形,shape,${ 三角形: {(lvl  \cdot  0.05 + 2.25)}^{lvl}  \cdot  8500 }$,现金增益*｛$lvl  \cdot  0.01 + 1$｝,$store.state.画廊.shape.三角形.unlocked$
-大星形,shape,${ 星形: {(lvl  \cdot  0.4 + 2.35)}^{lvl}  \cdot  75K }$,特殊形状几率+｛$lvl  \cdot  0.0008$｝,$store.state.画廊.shape.星形.unlocked$
-画得很好的星形,shape,${ 星形: {(lvl  \cdot  0.05 + 2.25)}^{lvl}  \cdot  24K }$,红色鼓容量+｛$lvl  \cdot  3$｝,$store.state.画廊.shape.星形.unlocked$
-大椭圆,shape,${ 椭圆形: {(lvl  \cdot  0.4 + 2.35)}^{lvl}  \cdot  400K }$,特殊形状乘数+｛$lvl  \cdot  0.25$｝,$store.state.画廊.shape.椭圆形.unlocked$
-画得很好的椭圆,shape,${ 椭圆形: {(lvl  \cdot  0.3 + 12.5)}^{lvl}  \cdot  850K }$,所有鼓上限+｛$lvl$｝,$store.state.画廊.shape.椭圆形.unlocked$
-大心形,shape,${ 心形: {(lvl + 8)}^{lvl}  \cdot  2M }$,形状增益*｛${(2)}^{lvl}$｝; 动机容量+｛$lvl  \cdot  2$｝,$store.state.画廊.shape.心形.unlocked$
-画得很好的心形,shape,${ 心形: {(lvl  \cdot  0.05 + 2.25)}^{lvl}  \cdot  600K }$,所有颜色增益*｛$lvl  \cdot  0.005 + 1$｝,$store.state.画廊.shape.心形.unlocked$
-大正方形,shape,${ 正方形: {(lvl  \cdot  0.002 + 1.35)}^{lvl}  \cdot  15M }$,正方形增益*｛${(1.3)}^{lvl}$｝,$store.state.画廊.shape.正方形.unlocked$
-画得很好的正方形,shape,${ 正方形: {(lvl  \cdot  0.15 + 3.5)}^{lvl}  \cdot  3.75M }$,橙色鼓容量+｛$lvl  \cdot  3$｝; 黄色鼓容量+｛$lvl  \cdot  2$｝; 绿色鼓容量+｛$lvl$｝,$store.state.画廊.shape.正方形.unlocked$
-大八边形,shape,${ 八边形: {(lvl  \cdot  0.01 + 1.45)}^{lvl}  \cdot  1B }$,圆形增益*｛${(1.1)}^{lvl}$｝; 矩形增益*｛${(1.1)}^{lvl}$｝; 三角形增益*｛${(1.1)}^{lvl}$｝,$store.state.画廊.shape.八边形.unlocked$
-画得很好的八边形,shape,${ 八边形: {(lvl  \cdot  0.2 + 2.25)}^{lvl}  \cdot  225M }$,灵感时间基数*｛$1 / (0.01  \cdot  lvl + 1)$｝,$store.state.画廊.shape.八边形.unlocked$
-大五边形,shape,${ 五边形: {(lvl  \cdot  0.01 + 1.45)}^{lvl}  \cdot  75B }$,星形增益*｛${(1.1)}^{lvl}$｝; 椭圆形增益*｛${(1.1)}^{lvl}$｝; 心形增益*｛${(1.1)}^{lvl}$｝,$store.state.画廊.shape.五边形.unlocked$
-画得很好的五边形,shape,${ 五边形: {(lvl  \cdot  0.1 + 2.25)}^{lvl}  \cdot  13.5B }$,包裹容量+｛$lvl  \cdot  2$｝,$store.state.画廊.shape.五边形.unlocked$
-大六边形,shape,${ 六边形: {(lvl  \cdot  0.01 + 1.45)}^{lvl}  \cdot  11T }$,八边形增益*｛${(1.1)}^{lvl}$｝; 五边形增益*｛${(1.1)}^{lvl}$｝; 六边形增益*｛${(1.1)}^{lvl}$｝,$store.state.画廊.shape.六边形.unlocked$
-画得很好的六边形,shape,${ 六边形: {(lvl  \cdot  0.1 + 2.25)}^{lvl}  \cdot  2T }$,画布速度*｛$lvl  \cdot  0.01 + 1$｝,$store.state.画廊.shape.六边形.unlocked$
+名称,类型,消耗,效果
+大圆,shape,${ 圆形: {(lvl  \cdot  0.01 + 1.35)}^{lvl}  \cdot  100 }$,形状增益*｛${(1.25)}^{lvl}$｝
+画得很好的圆,shape,${ 圆形: {(lvl  \cdot  0.05 + 2.25)}^{lvl}  \cdot  5000 }$,红色增益*｛$lvl  \cdot  0.02 + 1$｝
+大矩形,shape,${ 矩形: {(lvl  \cdot  0.1 + 1.75)}^{lvl}  \cdot  1000 }$,动机容量+｛$lvl$｝
+画得很好的矩形,shape,${ 矩形: {(lvl  \cdot  0.05 + 2.25)}^{lvl}  \cdot  6500 }$,转换器容量+｛$lvl  \cdot  40$｝
+创意药水,shape,"$fallbackArray([{ 三角形: 10K, 圆形: 4000 }, { 三角形: 100K, 矩形: 40K }, { 三角形: 10M, 星形: 4M }, { 三角形: 10B, 椭圆形: 3B, 心形: 3B }, { 三角形: 100T, 正方形: 30Sx, 八边形: 30T }, { 三角形: 10Qi, 五边形: 300Qa, 六边形: 300Qa }], { 三角形: {(10)}^{getSequence(1, lvl})  \cdot  10K }, lvl)$",炸弹形状｛$lvl >= 1$｝; dice形状｛$lvl >= 2$｝; accelerator形状｛$lvl >= 3$｝; sparkles形状｛$lvl >= 4$｝; 沙漏形状｛$lvl >= 5$｝; chest形状｛$lvl >= 6$｝; 动机增益+｛$lvl >= 7 ? (lvl - 6)  \cdot  0.005 : null$｝
+画得很好的三角形,shape,${ 三角形: {(lvl  \cdot  0.05 + 2.25)}^{lvl}  \cdot  8500 }$,现金增益*｛$lvl  \cdot  0.01 + 1$｝
+大星形,shape,${ 星形: {(lvl  \cdot  0.4 + 2.35)}^{lvl}  \cdot  75K }$,特殊形状几率+｛$lvl  \cdot  0.0008$｝
+画得很好的星形,shape,${ 星形: {(lvl  \cdot  0.05 + 2.25)}^{lvl}  \cdot  24K }$,红色鼓容量+｛$lvl  \cdot  3$｝
+大椭圆,shape,${ 椭圆形: {(lvl  \cdot  0.4 + 2.35)}^{lvl}  \cdot  400K }$,特殊形状乘数+｛$lvl  \cdot  0.25$｝
+画得很好的椭圆,shape,${ 椭圆形: {(lvl  \cdot  0.3 + 12.5)}^{lvl}  \cdot  850K }$,所有鼓上限+｛$lvl$｝
+大心形,shape,${ 心形: {(lvl + 8)}^{lvl}  \cdot  2M }$,形状增益*｛${(2)}^{lvl}$｝; 动机容量+｛$lvl  \cdot  2$｝
+画得很好的心形,shape,${ 心形: {(lvl  \cdot  0.05 + 2.25)}^{lvl}  \cdot  600K }$,所有颜色增益*｛$lvl  \cdot  0.005 + 1$｝
+大正方形,shape,${ 正方形: {(lvl  \cdot  0.002 + 1.35)}^{lvl}  \cdot  15M }$,正方形增益*｛${(1.3)}^{lvl}$｝
+画得很好的正方形,shape,${ 正方形: {(lvl  \cdot  0.15 + 3.5)}^{lvl}  \cdot  3.75M }$,橙色鼓容量+｛$lvl  \cdot  3$｝; 黄色鼓容量+｛$lvl  \cdot  2$｝; 绿色鼓容量+｛$lvl$｝
+大八边形,shape,${ 八边形: {(lvl  \cdot  0.01 + 1.45)}^{lvl}  \cdot  1B }$,圆形增益*｛${(1.1)}^{lvl}$｝; 矩形增益*｛${(1.1)}^{lvl}$｝; 三角形增益*｛${(1.1)}^{lvl}$｝
+画得很好的八边形,shape,${ 八边形: {(lvl  \cdot  0.2 + 2.25)}^{lvl}  \cdot  225M }$,灵感时间基数*｛$1 / (0.01  \cdot  lvl + 1)$｝
+大五边形,shape,${ 五边形: {(lvl  \cdot  0.01 + 1.45)}^{lvl}  \cdot  75B }$,星形增益*｛${(1.1)}^{lvl}$｝; 椭圆形增益*｛${(1.1)}^{lvl}$｝; 心形增益*｛${(1.1)}^{lvl}$｝
+画得很好的五边形,shape,${ 五边形: {(lvl  \cdot  0.1 + 2.25)}^{lvl}  \cdot  13.5B }$,包裹容量+｛$lvl  \cdot  2$｝
+大六边形,shape,${ 六边形: {(lvl  \cdot  0.01 + 1.45)}^{lvl}  \cdot  11T }$,八边形增益*｛${(1.1)}^{lvl}$｝; 五边形增益*｛${(1.1)}^{lvl}$｝; 六边形增益*｛${(1.1)}^{lvl}$｝
+画得很好的六边形,shape,${ 六边形: {(lvl  \cdot  0.1 + 2.25)}^{lvl}  \cdot  2T }$,画布速度*｛$lvl  \cdot  0.01 + 1$｝

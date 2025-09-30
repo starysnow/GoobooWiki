@@ -2,56 +2,42 @@
   {
     "名称": "书籍铝淬火",
     "类型": "书籍",
-    "raiseOtherCap": "铝淬火",
-    "requirement": "$store.state.升级成本.item.铝淬火.highestLevel >= 6$",
     "消耗": "${ 书籍: \\text{四舍五入}({(1.15)}^{lvl}  \\cdot  (lvl + 5)  \\cdot  7) }$",
     "效果": "upgradeMiningAluminiumHardeningCap+｛$lvl$｝"
   },
   {
     "名称": "书籍铝罐",
     "类型": "书籍",
-    "raiseOtherCap": "铝罐",
-    "requirement": "$store.state.升级成本.item.铝罐.highestLevel >= 8$",
     "消耗": "${ 书籍: \\text{四舍五入}({(1.15)}^{lvl}  \\cdot  (lvl + 5)  \\cdot  5) }$",
     "效果": "upgradeMiningAluminiumTanksCap+｛$lvl$｝"
   },
   {
     "名称": "书籍炼油厂",
     "类型": "书籍",
-    "raiseOtherCap": "精炼厂",
-    "requirement": "$store.state.升级成本.item.精炼厂.highestLevel >= 5$",
     "消耗": "${ 书籍: \\text{四舍五入}({(1.15)}^{lvl}  \\cdot  (lvl + 5)  \\cdot  40) }$",
     "效果": "upgradeMiningRefineryCap+｛$lvl$｝"
   },
   {
     "名称": "书籍熔炉",
     "类型": "书籍",
-    "raiseOtherCap": "熔炉",
-    "requirement": "$store.state.升级成本.item.熔炉.highestLevel >= 25$",
     "消耗": "${ 书籍: \\text{四舍五入}({(1.15)}^{lvl}  \\cdot  (lvl + 5)  \\cdot  60) }$",
     "效果": "upgradeMiningFurnaceCap+｛$lvl$｝"
   },
   {
     "名称": "书籍铁扩张",
     "类型": "书籍",
-    "raiseOtherCap": "铁扩张",
-    "requirement": "$store.state.升级成本.item.铁扩张.highestLevel >= 3$",
     "消耗": "${ 书籍: \\text{四舍五入}({(1.15)}^{lvl}  \\cdot  (lvl + 5)  \\cdot  120) }$",
     "效果": "upgradeMiningIronExpansionCap+｛$lvl$｝"
   },
   {
     "名称": "书籍磁铁",
     "类型": "书籍",
-    "raiseOtherCap": "磁铁",
-    "requirement": "$store.state.升级成本.item.磁铁.highestLevel >= 10$",
     "消耗": "${ 书籍: \\text{四舍五入}({(1.15)}^{lvl}  \\cdot  (lvl + 5)  \\cdot  160) }$",
     "效果": "upgradeMiningMagnetCap+｛$lvl$｝"
   },
   {
     "名称": "书籍金属探测器",
     "类型": "书籍",
-    "raiseOtherCap": "金属探测器",
-    "requirement": "$store.state.升级成本.item.金属探测器.highestLevel >= 12$",
     "消耗": "${ 书籍: \\text{四舍五入}({(1.15)}^{lvl}  \\cdot  (lvl + 5)  \\cdot  250) }$",
     "效果": "upgradeMiningMetalDetectorCap+｛$lvl$｝"
   }

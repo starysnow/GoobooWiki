@@ -3,84 +3,72 @@
     "名称": "收银机",
     "子功能": "1",
     "消耗": "${ 铜币: {(lvl  \\cdot  0.25 + 2)}^{lvl}  \\cdot  2000 }$",
-    "效果": "柜台+｛$lvl$｝; 铜币容量*｛${(2)}^{lvl}$｝",
-    "requirement": ""
+    "效果": "柜台+｛$lvl$｝; 铜币容量*｛${(2)}^{lvl}$｝"
   },
   {
     "名称": "装饰品",
     "子功能": "1",
     "消耗": "${ 铜币: {(1.75)}^{lvl}  \\cdot  900 }$",
-    "效果": "铜币增益*｛${(1.175)}^{lvl}$｝",
-    "requirement": ""
+    "效果": "铜币增益*｛${(1.175)}^{lvl}$｝"
   },
   {
     "名称": "植物纤维仓",
     "子功能": "1",
     "消耗": "${ if (lvl === 0) { return {}; } return { 铜币: {(3)}^{lvl}  \\cdot  100 }; }$",
-    "效果": "植物纤维增益+｛$getSequence(1, lvl)  \\cdot  0.1$｝; 绳子villageCraft｛$lvl >= 1$｝",
-    "requirement": ""
+    "效果": "植物纤维增益+｛$getSequence(1, lvl)  \\cdot  0.1$｝; 绳子villageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "木仓",
     "子功能": "1",
     "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  200 }$",
-    "效果": "木头增益+｛$getSequence(1, lvl)  \\cdot  0.1$｝; 木板villageCraft｛$lvl >= 1$｝",
-    "requirement": "$store.state.升级成本.item.植物纤维仓.highestLevel >= 1$"
+    "效果": "木头增益+｛$getSequence(1, lvl)  \\cdot  0.1$｝; 木板villageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "石仓",
     "子功能": "1",
     "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  500 }$",
-    "效果": "石头增益+｛$getSequence(1, lvl)  \\cdot  0.1$｝; 砖块villageCraft｛$lvl >= 1$｝",
-    "requirement": "$store.state.升级成本.item.木仓.highestLevel >= 1$"
+    "效果": "石头增益+｛$getSequence(1, lvl)  \\cdot  0.1$｝; 砖块villageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "金属仓",
     "子功能": "1",
     "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  50K }$",
-    "效果": "金属增益+｛$getSequence(1, lvl)  \\cdot  0.075$｝; 螺丝villageCraft｛$lvl >= 1$｝",
-    "requirement": "$store.state.升级成本.item.石仓.highestLevel >= 1$"
+    "效果": "金属增益+｛$getSequence(1, lvl)  \\cdot  0.075$｝; 螺丝villageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "水仓",
     "子功能": "1",
     "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  600K }$",
-    "效果": "水增益+｛$getSequence(1, lvl)  \\cdot  0.06$｝; 水瓶villageCraft｛$lvl >= 1$｝",
-    "requirement": "$store.state.升级成本.item.金属仓.highestLevel >= 1$"
+    "效果": "水增益+｛$getSequence(1, lvl)  \\cdot  0.06$｝; 水瓶villageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "玻璃仓",
     "子功能": "1",
     "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  14.5M }$",
-    "效果": "玻璃增益+｛$getSequence(1, lvl)  \\cdot  0.05$｝; 鸡尾酒杯villageCraft｛$lvl >= 1$｝",
-    "requirement": "$store.state.升级成本.item.水仓.highestLevel >= 1$"
+    "效果": "玻璃增益+｛$getSequence(1, lvl)  \\cdot  0.05$｝; 鸡尾酒杯villageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "硬木仓",
     "子功能": "1",
     "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  900M }$",
-    "效果": "硬木增益+｛$getSequence(1, lvl)  \\cdot  0.025$｝; 回旋镖villageCraft｛$lvl >= 1$｝",
-    "requirement": "$store.state.升级成本.item.玻璃仓.highestLevel >= 1$"
+    "效果": "硬木增益+｛$getSequence(1, lvl)  \\cdot  0.025$｝; 回旋镖villageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "宝石仓",
     "子功能": "1",
     "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  85B }$",
-    "效果": "宝石增益+｛$getSequence(1, lvl)  \\cdot  0.025$｝; 抛光宝石villageCraft｛$lvl >= 1$｝",
-    "requirement": "$store.state.升级成本.item.硬木仓.highestLevel >= 1$"
+    "效果": "宝石增益+｛$getSequence(1, lvl)  \\cdot  0.025$｝; 抛光宝石villageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "油仓",
     "子功能": "1",
     "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  9.6T }$",
-    "效果": "油增益+｛$getSequence(1, lvl)  \\cdot  0.015$｝; 油灯villageCraft｛$lvl >= 1$｝",
-    "requirement": "$store.state.升级成本.item.宝石仓.highestLevel >= 1$"
+    "效果": "油增益+｛$getSequence(1, lvl)  \\cdot  0.015$｝; 油灯villageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "大理石仓",
     "子功能": "1",
     "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  1.44Qa }$",
-    "效果": "大理石增益+｛$getSequence(1, lvl)  \\cdot  0.01$｝; 淋浴villageCraft｛$lvl >= 1$｝",
-    "requirement": "$store.state.升级成本.item.油仓.highestLevel >= 1$"
+    "效果": "大理石增益+｛$getSequence(1, lvl)  \\cdot  0.01$｝; 淋浴villageCraft｛$lvl >= 1$｝"
   }
 ]

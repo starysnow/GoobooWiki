@@ -2,55 +2,46 @@
   {
     "名称": "泥砖",
     "图标": "<i class=\"mdi mdi-wall\"></i>",
-    "color": "棕色",
     "效果": "棚子保留｛true｝; 水增益*｛1.5｝"
   },
   {
     "名称": "树苗",
     "图标": "<i class=\"mdi mdi-sprout\"></i>",
-    "color": "光-绿色",
     "效果": "棚子保留｛true｝; 植物纤维增益*｛1.5｝"
   },
   {
     "名称": "钥匙链",
     "图标": "<i class=\"mdi mdi-key-chain\"></i>",
-    "color": "光-灰色",
     "效果": "小房子保留｛true｝; 木头增益*｛1.5｝"
   },
   {
     "名称": "宝箱",
     "图标": "<i class=\"mdi mdi-treasure-chest\"></i>",
-    "color": "金色",
     "效果": "财政部保留｛true｝; 钱包保留｛true｝; 资源包保留｛true｝; 金属包保留｛true｝"
   },
   {
     "名称": "螺丝刀",
     "图标": "<i class=\"mdi mdi-screwdriver\"></i>",
-    "color": "indigo",
     "效果": "起重机保留｛true｝; 石头增益*｛1.5｝"
   },
   {
     "名称": "玫瑰",
     "图标": "<i class=\"mdi mdi-flower\"></i>",
-    "color": "红色",
     "效果": "花园保留｛true｝; 水井保留｛true｝"
   },
   {
     "名称": "金钥匙",
     "图标": "<i class=\"mdi mdi-key-chain\"></i>",
-    "color": "金色",
     "效果": "房子保留｛true｝; 微型铁匠保留｛true｝"
   },
   {
     "名称": "导师",
     "图标": "<i class=\"mdi mdi-account-tie\"></i>",
-    "color": "indigo",
     "效果": "锯木厂保留｛true｝; 隧道保留｛true｝"
   },
   {
     "名称": "地球仪",
     "图标": "<i class=\"mdi mdi-globe-model\"></i>",
-    "color": "绿色",
     "效果": "图书馆保留｛true｝; 玻璃吹制厂保留｛true｝"
   }
 ]

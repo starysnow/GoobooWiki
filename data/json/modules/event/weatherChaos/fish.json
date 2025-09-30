@@ -2,7 +2,6 @@
   {
     "名称": "青铜鱼",
     "iconSize": "1.1",
-    "color": "pale-红色",
     "location": "池塘",
     "size": "4.5",
     "哑铃": "1.25",
@@ -17,7 +16,6 @@
   {
     "名称": "蜗牛",
     "iconSize": "0.6",
-    "color": "绿色",
     "location": "池塘",
     "size": "2.7",
     "哑铃": "3.7",
@@ -32,7 +30,6 @@
   {
     "名称": "Cablebiter",
     "iconSize": "0.75",
-    "color": "dark-灰色",
     "location": "池塘",
     "size": "6",
     "哑铃": "2.8",
@@ -47,7 +44,6 @@
   {
     "名称": "Blueshimmer",
     "iconSize": "1",
-    "color": "pale-blue",
     "location": "池塘",
     "size": "7.8",
     "哑铃": "2.2",
@@ -62,7 +58,6 @@
   {
     "名称": "Introvero",
     "iconSize": "0.6",
-    "color": "skyblue",
     "location": "池塘",
     "size": "6.2",
     "哑铃": "0.1",
@@ -77,7 +72,6 @@
   {
     "名称": "Zapling",
     "iconSize": "0.7",
-    "color": "黄色",
     "location": "池塘",
     "size": "4.1",
     "哑铃": "1.6",
@@ -92,7 +86,6 @@
   {
     "名称": "Starcone",
     "iconSize": "0.7",
-    "color": "棕色",
     "location": "池塘",
     "size": "2.4",
     "哑铃": "3.1",
@@ -107,7 +100,6 @@
   {
     "名称": "Phelaria",
     "iconSize": "1.7",
-    "color": "橙色",
     "location": "池塘",
     "size": "6.4",
     "哑铃": "0.55",
@@ -122,7 +114,6 @@
   {
     "名称": "Coldgil",
     "iconSize": "0.9",
-    "color": "teal",
     "location": "池塘",
     "size": "3.7",
     "哑铃": "0.8",
@@ -137,7 +128,6 @@
   {
     "名称": "Silverbrass",
     "iconSize": "1.15",
-    "color": "光-灰色",
     "location": "湖泊",
     "size": "7.1",
     "哑铃": "1.35",
@@ -152,7 +142,6 @@
   {
     "名称": "Circlejelly",
     "iconSize": "0.85",
-    "color": "光-blue",
     "location": "湖泊",
     "size": "5.5",
     "哑铃": "1.1",
@@ -167,7 +156,6 @@
   {
     "名称": "Woodcrawler",
     "iconSize": "0.7",
-    "color": "wooden",
     "location": "湖泊",
     "size": "2.8",
     "哑铃": "2.3",
@@ -182,7 +170,6 @@
   {
     "名称": "Longdano",
     "iconSize": "1.1",
-    "color": "光-绿色",
     "location": "湖泊",
     "size": "4",
     "哑铃": "1.9",
@@ -197,7 +184,6 @@
   {
     "名称": "Legabara",
     "iconSize": "1.8",
-    "color": "dark-blue",
     "location": "湖泊",
     "size": "9.2",
     "哑铃": "0.05",
@@ -212,7 +198,6 @@
   {
     "名称": "Biggiesnail",
     "iconSize": "1.25",
-    "color": "pale-紫色",
     "location": "湖泊",
     "size": "4.7",
     "哑铃": "0.9",
@@ -227,7 +212,6 @@
   {
     "名称": "Sunshine",
     "iconSize": "1",
-    "color": "橙色",
     "location": "湖泊",
     "size": "5.1",
     "哑铃": "0.2",
@@ -242,7 +226,6 @@
   {
     "名称": "Platiglob",
     "iconSize": "1.2",
-    "color": "blue-灰色",
     "location": "河流",
     "size": "10.3",
     "哑铃": "1.45",
@@ -257,7 +240,6 @@
   {
     "名称": "Stormdazer",
     "iconSize": "0.9",
-    "color": "黄色",
     "location": "河流",
     "size": "9.3",
     "哑铃": "2.2",
@@ -272,7 +254,6 @@
   {
     "名称": "河龟",
     "iconSize": "1.15",
-    "color": "pale-绿色",
     "location": "河流",
     "size": "12",
     "哑铃": "1.1",
@@ -287,7 +268,6 @@
   {
     "名称": "溪流蜗牛",
     "iconSize": "0.8",
-    "color": "lime",
     "location": "河流",
     "size": "7.2",
     "哑铃": "1.1",
@@ -302,7 +282,6 @@
   {
     "名称": "Ralmon",
     "iconSize": "1.5",
-    "color": "红色",
     "location": "河流",
     "size": "11.6",
     "哑铃": "2.15",
@@ -317,7 +296,6 @@
   {
     "名称": "Wonelle",
     "iconSize": "1.3",
-    "color": "光-灰色",
     "location": "河流",
     "size": "10.8",
     "哑铃": "1.4",
@@ -332,7 +310,6 @@
   {
     "名称": "Grillgil",
     "iconSize": "0.95",
-    "color": "darker-灰色",
     "location": "河流",
     "size": "10",
     "哑铃": "1.6",
@@ -347,7 +324,6 @@
   {
     "名称": "Sleepysoo",
     "iconSize": "0.7",
-    "color": "樱桃色",
     "location": "河流",
     "size": "8.5",
     "哑铃": "0.8",
@@ -362,7 +338,6 @@
   {
     "名称": "Oozior",
     "iconSize": "1.8",
-    "color": "紫色",
     "location": "河流",
     "size": "14",
     "哑铃": "0.1",
@@ -377,7 +352,6 @@
   {
     "名称": "Paleblob",
     "iconSize": "1.25",
-    "color": "lighter-灰色",
     "location": "海洋",
     "size": "14.6",
     "哑铃": "1.55",
@@ -392,7 +366,6 @@
   {
     "名称": "Crystakin",
     "iconSize": "1.3",
-    "color": "光-blue",
     "location": "高山",
     "size": "18.1",
     "哑铃": "1.65",
@@ -407,7 +380,6 @@
   {
     "名称": "Shadowbiter",
     "iconSize": "1.35",
-    "color": "darker-灰色",
     "location": "洞穴",
     "size": "24.5",
     "哑铃": "1.75",

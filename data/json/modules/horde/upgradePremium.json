@@ -4,7 +4,6 @@
     "类型": "高级",
     "消耗": "${ 红宝石:   \\cdot  {(2)}^{\\text{向下取整}(lvl / 2})  \\cdot  100 }$",
     "效果": "攻击*｛$getSequence(2, lvl)  \\cdot  0.3 + 1$｝; 生命值*｛$getSequence(2, lvl)  \\cdot  0.3 + 1$｝",
-    "requirement": "",
     "上限": ""
   },
   {
@@ -12,7 +11,6 @@
     "类型": "高级",
     "消耗": "${ 红宝石:   \\cdot  {(2)}^{\\text{向下取整}(lvl / 2})  \\cdot  75 }$",
     "效果": "骨头增益*｛$getSequence(1, lvl) + 1$｝; 骨头容量*｛$getSequence(1, lvl) + 1$｝",
-    "requirement": "",
     "上限": ""
   },
   {
@@ -20,7 +18,6 @@
     "类型": "高级",
     "消耗": "${ 红宝石:   \\cdot  {(2)}^{\\text{向下取整}(lvl / 2})  \\cdot  90 }$",
     "效果": "怪物零件增益*｛$lvl  \\cdot  0.5 + 1$｝",
-    "requirement": "$store.state.stat.怪物零件.总计 > 0$",
     "上限": ""
   },
   {
@@ -28,7 +25,6 @@
     "类型": "高级",
     "消耗": "${ 红宝石:   \\cdot  {(2)}^{\\text{向下取整}(lvl / 2})  \\cdot  110 }$",
     "效果": "腐败的灵魂增益*｛$lvl  \\cdot  0.25 + 1$｝; 腐败的灵魂容量*｛$lvl  \\cdot  0.25 + 1$｝",
-    "requirement": "$store.state.stat.horde_maxZone.总计 > 19$",
     "上限": ""
   },
   {
@@ -36,7 +32,6 @@
     "类型": "高级",
     "消耗": "${ 红宝石:   \\cdot  {(2)}^{\\text{向下取整}(lvl / 2})  \\cdot  125 }$",
     "效果": "精通点数增益*｛$getSequence(2, lvl)  \\cdot  0.25 + 1$｝",
-    "requirement": "$store.state.stat.horde_maxZone.总计 > 75$",
     "上限": ""
   },
   {
@@ -44,7 +39,6 @@
     "类型": "高级",
     "消耗": "${ 红宝石: {(2)}^{lvl}  \\cdot  300 }$",
     "效果": "力量效果*｛$getSequence(1, lvl + 1)$｝",
-    "requirement": "$store.state.部落.传家宝.力量.amount > 0$",
     "上限": "1"
   },
   {
@@ -52,7 +46,6 @@
     "类型": "高级",
     "消耗": "${ 红宝石: {(2)}^{lvl}  \\cdot  300 }$",
     "效果": "韧效果*｛$getSequence(1, lvl + 1)$｝",
-    "requirement": "$store.state.部落.传家宝.fortitude.amount > 0$",
     "上限": "1"
   },
   {
@@ -60,7 +53,6 @@
     "类型": "高级",
     "消耗": "${ 红宝石: {(2)}^{lvl}  \\cdot  300 }$",
     "效果": "财富效果*｛$getSequence(1, lvl + 1)$｝",
-    "requirement": "$store.state.部落.传家宝.wealth.amount > 0$",
     "上限": "1"
   },
   {
@@ -68,7 +60,6 @@
     "类型": "高级",
     "消耗": "${ 红宝石: {(2)}^{lvl}  \\cdot  450 }$",
     "效果": "精神效果*｛$getSequence(1, lvl + 1)$｝",
-    "requirement": "$store.state.部落.传家宝.spirit.amount > 0$",
     "上限": "1"
   },
   {
@@ -76,7 +67,6 @@
     "类型": "高级",
     "消耗": "${ 红宝石: {(2)}^{lvl}  \\cdot  600 }$",
     "效果": "锐视效果*｛$getSequence(1, lvl + 1)$｝",
-    "requirement": "$store.state.部落.传家宝.sharpsight.amount > 0$",
     "上限": "1"
   },
   {
@@ -84,7 +74,6 @@
     "类型": "高级",
     "消耗": "${ 红宝石: {(2)}^{lvl}  \\cdot  750 }$",
     "效果": "收割效果*｛$getSequence(1, lvl + 1)$｝",
-    "requirement": "$store.state.部落.传家宝.reaping.amount > 0$",
     "上限": "1"
   },
   {
@@ -92,7 +81,6 @@
     "类型": "高级",
     "消耗": "${ 红宝石: {(2)}^{lvl}  \\cdot  750 }$",
     "效果": "纪念效果*｛$getSequence(1, lvl + 1)$｝",
-    "requirement": "$store.state.部落.传家宝.remembrance.amount > 0$",
     "上限": "1"
   },
   {
@@ -100,7 +88,6 @@
     "类型": "高级",
     "消耗": "${ 红宝石: {(2)}^{lvl}  \\cdot  975 }$",
     "效果": "保持效果*｛$getSequence(1, lvl + 1)$｝",
-    "requirement": "$store.state.部落.传家宝.holding.amount > 0$",
     "上限": "1"
   },
   {
@@ -108,7 +95,6 @@
     "类型": "高级",
     "消耗": "${ 红宝石: {(2)}^{lvl}  \\cdot  1300 }$",
     "效果": "专长效果*｛$getSequence(1, lvl + 1)$｝",
-    "requirement": "$store.state.部落.传家宝.expertise.amount > 0$",
     "上限": "1"
   },
   {
@@ -116,7 +102,6 @@
     "类型": "高级",
     "消耗": "${ 红宝石: {(2)}^{lvl}  \\cdot  1800 }$",
     "效果": "神秘效果*｛$getSequence(1, lvl + 1)$｝",
-    "requirement": "$store.state.部落.传家宝.神秘.amount > 0$",
     "上限": "1"
   }
 ]

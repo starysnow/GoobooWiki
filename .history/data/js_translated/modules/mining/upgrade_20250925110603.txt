@@ -1,0 +1,424 @@
+{
+    伤害: {price(lvl) {
+        return {废料: Math.ceil(Math.pow(lvl * 0.012 + 1.24, lvl) * 120)};
+    }, 效果: [
+        {name: '伤害', 类型: '*', value: lvl => Math.pow(1.12, lvl) * Math.pow(lvl * 0.2 + 1, 2)}
+    ]},
+    废料增益+: {requirementBase, requirementStat, requirementValue: 5, price(lvl) {
+        return {废料: Math.ceil(Math.pow(lvl * 0.1 + 2.5, lvl) * 1250)};
+    }, 效果: [
+        {name: '废料增益', 类型: '*', value: lvl => Math.pow(1.2, lvl)}
+    ]},
+    废料容量+: {cap: 50, requirementBase, requirementStat, requirementValue: 10, price(lvl) {
+        return {废料: Math.ceil(Math.pow(3.3, lvl) * 3000)};
+    }, 效果: [
+        {name: '废料容量', 类型: '*', value: lvl => Math.pow(3, lvl)}
+    ]},
+    铝存储: {cap: 10, requirementBase, requirementStat, requirementValue: 15, price(lvl) {
+        return {铝矿石: Math.round(3 * (lvl + 1))};
+    }, 效果: [
+        {name: '废料容量', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '铝矿石容量', 类型: '+', value: lvl => 2 * lvl}
+    ]},
+    铝淬火: {cap: 6, capMult: true, requirementBase, requirementStat, requirementValue: 15, price(lvl) {
+        return {铝矿石: Math.round(Math.pow(1.5, Math.最大值(0, lvl - 5)) * 4 * lvl + 2)};
+    }, 效果: [
+        {name: '伤害', 类型: '*', value: lvl => (lvl + 1) * Math.pow(1.5, Math.出现在区域 (0) 或更高区域(6, lvl))}
+    ]},
+    制作站: {cap: 1, hasDescription: true, requirementBase, requirementStat, requirementValue: 20, price() {
+        return {废料: buildNum(1.8, '分钟')};
+    }, 效果: [
+        {name: '镐制作', 类型: '解锁', value: lvl => lvl >= 1}
+    ]},
+    锻造: {requirement() {
+        return store.state.解锁.镐制作.use;
+    }, price(lvl) {
+        return {废料: Math.ceil(Math.pow(1.35, lvl) * buildNum(2.5, '分钟'))};
+    }, 效果: [
+        {name: '制作力量', 类型: '*', value: lvl => Math.pow(1.2, lvl)}
+    ]},
+    矿石槽位: {cap: 10, hideCap: true, requirementBase, requirementStat, requirementValue: 25, requirement(lvl) {
+        return store.state.达到 (0) (1).mining_maxDepth0.总计 >= [25, 25, 30, 50, 80, 120, 175, 260, 350, 450][lvl];
+    }, price(lvl) {
+        return [
+            {铝矿石: 10},
+            {铝矿石: 30},
+            {铜矿石: 20},
+            {锡矿石: 15},
+            {铁矿石: 12},
+            {钛矿石: 10},
+            {铂矿石: 8},
+            {铱矿石: 6},
+            {锇矿石: 5},
+            {铅矿石: 4}
+        ][lvl];
+    }, 效果: [
+        {name: '制作插槽', 类型: '+', value: lvl => lvl}
+    ]},
+    压缩机: {cap: 9, hasDescription: true, hideCap: true, requirementBase, requirementStat, requirementValue: 25, requirement(lvl) {
+        return store.state.达到 (0) (1).mining_maxDepth0.总计 >= [25, 35, 60, 95, 140, 200, 280, 375, 480][lvl];
+    }, price(lvl) {
+        return [
+            {铝矿石: 20},
+            {铝矿石: 80},
+            {铝矿石: buildNum(10, 'K')},
+            {铝矿石: buildNum(30, 'K')},
+            {铝矿石: buildNum(750, 'K')},
+            {铝矿石: buildNum(1, 'B')},
+            {铝矿石: buildNum(100, 'T')},
+            {铝矿石: buildNum(100, 'Qi')},
+            {铝矿石: buildNum(1, 'O')}
+        ][lvl];
+    }, 效果: [
+        {name: '铝压缩', 类型: '解锁', value: lvl => lvl >= 1},
+        {name: '铜压缩', 类型: '解锁', value: lvl => lvl >= 2},
+        {name: '锡压缩', 类型: '解锁', value: lvl => lvl >= 3},
+        {name: '铁压缩', 类型: '解锁', value: lvl => lvl >= 4},
+        {name: '钛压缩', 类型: '解锁', value: lvl => lvl >= 5},
+        {name: '铂压缩', 类型: '解锁', value: lvl => lvl >= 6},
+        {name: '铱压缩', 类型: '解锁', value: lvl => lvl >= 7},
+        {name: '锇压缩', 类型: '解锁', value: lvl => lvl >= 8},
+        {name: '铅压缩', 类型: '解锁', value: lvl => lvl >= 9}
+    ]},
+    铜存储: {cap: 8, requirementBase, requirementStat, requirementValue: 30, price(lvl) {
+        return {铜矿石: Math.round(lvl + 3)};
+    }, 效果: [
+        {name: '铝矿石容量', 类型: '+', value: lvl => 2 * lvl},
+        {name: '铜矿石容量', 类型: '+', value: lvl => lvl}
+    ]},
+    铝罐: {cap: 8, capMult: true, requirementBase, requirementStat, requirementValue: 30, price(lvl) {
+        return {废料: Math.pow(4.75, lvl) * buildNum(40, '分钟')};
+    }, 效果: [
+        {name: '铝矿石容量', 类型: '+', value: lvl => Math.round(Math.pow(lvl, 1.2) * Math.pow(1.1, Math.出现在区域 (0) 或更高区域(8, lvl)) * 5)}
+    ]},
+    铝砧: {cap: 10, requirementBase, requirementStat, requirementValue: 30, price(lvl) {
+        return {铝矿石: Math.ceil(Math.pow(1.1, lvl) * (lvl + 1) * 10)};
+    }, 效果: [
+        {name: '制作力量', 类型: '*', value: lvl => Math.pow(1.15, lvl)}
+    ]},
+    破壳者: {cap: 10, requirementBase, requirementStat, requirementValue: 35, price(lvl) {
+        return {废料: Math.pow(1.8, lvl) * buildNum(550, '分钟')};
+    }, 效果: [
+        {name: '伤害', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '韧性', 类型: '*', value: lvl => Math.pow(1 / 1.3, lvl)}
+    ]},
+    铜罐: {cap: 5, requirementBase, requirementStat, requirementValue: 40, price(lvl) {
+        return {废料: Math.pow(2.3, lvl) * buildNum(3.5, 'B')};
+    }, 效果: [
+        {name: '铝矿石容量', 类型: '*', value: lvl => Math.pow(1.4, lvl)},
+        {name: '铜矿石容量', 类型: '+', value: lvl => 4 * lvl}
+    ]},
+    深度居民: {cap: 1, hasDescription: true, requirementBase, requirementStat, requirementValue: 40, price() {
+        return {铜矿石: 24};
+    }, 效果: [
+        {name: '深度居民', 类型: '解锁', value: lvl => lvl >= 1}
+    ]},
+    铝扩张: {cap: 5, requirementBase, requirementStat, requirementValue: 45, price(lvl) {
+        return {铝矿石: Math.pow(2.25, lvl) * 150};
+    }, 效果: [
+        {name: '伤害', 类型: '*', value: lvl => Math.pow(1.15, lvl)},
+        {name: '铝矿石容量', 类型: '*', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    精炼厂: {cap: 5, capMult: true, requirementBase, requirementStat, requirementValue: 45, price(lvl) {
+        return {铜矿石: 10 * lvl + 30};
+    }, 效果: [
+        {name: '矿石增益', 类型: '*', value: lvl => splicedLinear(0.1, 0.05, 5, lvl) + 1},
+        {name: '铜矿石容量', 类型: '+', value: lvl => 12 * lvl}
+    ]},
+    铜扩张: {cap: 3, requirementBase, requirementStat, requirementValue: 50, price(lvl) {
+        return {废料: Math.pow(4.2, lvl) * buildNum(90, 'B')};
+    }, 效果: [
+        {name: '伤害', 类型: '*', value: lvl => Math.pow(1.25, lvl)},
+        {name: '铜矿石容量', 类型: '*', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    钻机燃料: {requirementBase, requirementStat, requirementValue: 50, price(lvl) {
+        return {废料: Math.pow(lvl * 0.1 + 2.4, lvl) * buildNum(35, 'B')};
+    }, 效果: [
+        {name: '深度居民速度', 类型: '*', value: lvl => Math.pow(1.02, lvl) * (lvl * 0.05 + 1)}
+    ]},
+    花岗岩硬化: {cap: 6, requirementBase, requirementStat, requirementValue: 55, price(lvl) {
+        return {花岗岩: Math.pow(2.5, lvl) * 1600, 锡矿石: lvl + 2};
+    }, 效果: [
+        {name: '伤害', 类型: '*', value: lvl => Math.pow(1.3, lvl)}
+    ]},
+    冶炼厂: {cap: 1, hasDescription: true, 保留: true, 笔记: 'mining_18', requirementBase, requirementStat, requirementValue: 60, price() {
+        return {花岗岩: buildNum(50, 'K')};
+    }, 效果: [
+        {name: '冶炼厂', 类型: '解锁', value: lvl => lvl >= 1}
+    ]},
+    矿石架: {cap: 4, requirementBase, requirementStat, requirementValue: 60, price(lvl) {
+        return {铜矿石: Math.pow(1.5, lvl) * 160, 轻量: 5};
+    }, 效果: [
+        {name: '锡矿石容量', 类型: '+', value: lvl => lvl}
+    ]},
+    隔热板: {requirementBase, requirementStat, requirementValue: 62, price(lvl) {
+        return {花岗岩: Math.pow(1.55, lvl) * buildNum(20, 'K')};
+    }, 效果: [
+        {name: '冶炼温度', 类型: '+', value: lvl => lvl * 15}
+    ]},
+    锡存储: {cap: 4, requirementBase, requirementStat, requirementValue: 65, price(lvl) {
+        return {废料: Math.pow(5.75, lvl) * buildNum(25, 'T'), 锡矿石: lvl * 2 + 1};
+    }, 效果: [
+        {name: '铜矿石容量', 类型: '+', value: lvl => lvl * 24},
+        {name: '锡矿石容量', 类型: '+', value: lvl => lvl}
+    ]},
+    熔炉: {cap: 25, capMult: true, requirementBase, requirementStat, requirementValue: 70, price(lvl) {
+        let obj = {废料: Math.pow(1.3, lvl) * buildNum(70, 'T'), 锡矿石: Math.floor(lvl * 0.2 * Math.pow(1.15, lvl) + 2)};
+        if (lvl >= 5) {
+            obj.盐 = Math.pow(1.45, lvl - 5) * 60;
+        }
+        return obj;
+    }, 效果: [
+        {name: '制作力量', 类型: '*', value: lvl => splicedPowLinear(1.1, 0.05, 25, lvl)},
+        {name: '矿石增益', 类型: '*', value: lvl => lvl * 0.05 + 1}
+    ]},
+    青铜存储: {cap: 4, requirementBase, requirementStat, requirementValue: 75, price(lvl) {
+        return {盐: Math.pow(4, lvl) * 175, 轻量: 7};
+    }, 效果: [
+        {name: '铜矿石容量', 类型: '*', value: lvl => Math.pow(1.5, lvl)},
+        {name: '锡矿石容量', 类型: '*', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    铁存储: {cap: 3, requirementBase, requirementStat, requirementValue: 80, price(lvl) {
+        return {废料: Math.pow(8.5, lvl) * buildNum(12, 'Qa'), 轻量: 12};
+    }, 效果: [
+        {name: '铁矿石容量', 类型: '+', value: lvl => lvl}
+    ]},
+    矿石洗选: {cap: 15, requirementBase, requirementStat, requirementValue: 82, price(lvl) {
+        return {废料: Math.pow(1.35, lvl) * buildNum(16.5, 'Qa')};
+    }, 效果: [
+        {name: '制作力量', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '矿石品质', 类型: '*', value: lvl => lvl * 0.05 + 1}
+    ]},
+    铁扩张: {cap: 3, capMult: true, requirementBase, requirementStat, requirementValue: 85, price(lvl) {
+        return {铁矿石: Math.pow(1.3, Math.最大值(0, lvl - 2)) * lvl * 3 + 2, 坚固: 4};
+    }, 效果: [
+        {name: '锡矿石容量', 类型: '*', value: lvl => splicedPowLinear(1.5, 0.1, 3, lvl)},
+        {name: '铁矿石容量', 类型: '+', value: lvl => lvl}
+    ]},
+    铁淬火: {cap: 12, requirementBase, requirementStat, requirementValue: 90, price(lvl) {
+        return {铁矿石: Math.floor(Math.pow(1.35, lvl) + 1)};
+    }, 效果: [
+        {name: '伤害', 类型: '*', value: lvl => Math.pow(1.15, lvl)},
+        {name: '锡矿石容量', 类型: '+', value: lvl => lvl * 2}
+    ]},
+    铁过滤器: {cap: 8, requirementBase, requirementStat, requirementValue: 95, price(lvl) {
+        return {铁矿石: Math.floor(Math.pow(1.85, lvl) * 5), 坚固: 5};
+    }, 效果: [
+        {name: '铝矿石容量', 类型: '+', value: lvl => lvl * 36}
+    ]},
+    大师锻造: {requirementBase, requirementStat, requirementValue: 98, price(lvl) {
+        return {煤: lvl * 20 + 80};
+    }, 效果: [
+        {name: '伤害', 类型: '*', value: lvl => lvl * 0.15 + 1}
+    ]},
+    星际锻造: {requirementBase, requirementStat, requirementValue: 98, price(lvl) {
+        return {煤: lvl * 20 + 80};
+    }, 效果: [
+        {name: '绿水晶增益', 类型: '*', value: lvl => lvl * 0.075 + 1}
+    ]},
+    磁铁: {cap: 10, capMult: true, requirementBase, requirementStat, requirementValue: 100, price(lvl) {
+        return {废料: Math.pow(1.55, lvl) * buildNum(440, 'Qa'), 铁矿石: Math.pow(1.2, Math.最大值(0, lvl - 9)) * lvl * 5 + 10, 坚固: 6};
+    }, 效果: [
+        {name: '废料增益', 类型: '*', value: lvl => splicedPowLinear(1.15, 0.15, 10, lvl)},
+        {name: '矿石增益', 类型: '*', value: lvl => splicedLinear(0.1, 0.05, 10, lvl) + 1}
+    ]},
+    增强站: {cap: 1, hasDescription: true, 保留: true, 笔记: 'mining_25', requirementBase, requirementStat, requirementValue: 105, price() {
+        return {煤: 250};
+    }, 效果: [
+        {name: '增强', 类型: '解锁', value: lvl => lvl >= 1}
+    ]},
+    仓库: {cap: 12, requirementBase, requirementStat, requirementValue: 110, price(lvl) {
+        return {废料: Math.pow(6, lvl) * buildNum(6.075, 'Qi'), 轻量: lvl * 5 + 40, 坚固: lvl * 4 + 4};
+    }, 效果: [
+        {name: '铝矿石容量', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '铜矿石容量', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '锡矿石容量', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '铁矿石容量', 类型: '*', value: lvl => Math.pow(2, lvl)},
+    ]},
+    腐蚀性烟雾: {cap: 6, requirementBase, requirementStat, requirementValue: 112, price(lvl) {
+        return {硫: Math.pow(3.5, lvl) * 2000};
+    }, 效果: [
+        {name: '韧性', 类型: '*', value: lvl => Math.pow(1 / 1.2, lvl)}
+    ]},
+    闻盐: {requirementBase, requirementStat, requirementValue: 115, price(lvl) {
+        return {盐: Math.pow(lvl * 0.01 + 1.4, lvl) * buildNum(10, 'K')};
+    }, 效果: [
+        {name: '制作力量', 类型: '*', value: lvl => Math.pow(1.11, lvl)}
+    ]},
+    钛扩张: {cap: 3, requirementBase, requirementStat, requirementValue: 120, price(lvl) {
+        return {铜矿石: Math.pow(2.75, lvl) * buildNum(250, 'K'), 锡矿石: Math.pow(2.1, lvl) * buildNum(40, 'K')};
+    }, 效果: [
+        {name: '铁矿石容量', 类型: '+', value: lvl => lvl * 3},
+        {name: '铁矿石容量', 类型: '*', value: lvl => Math.pow(1.25, lvl)},
+        {name: '钛矿石容量', 类型: '+', value: lvl => lvl}
+    ]},
+    余烬锻造: {hasDescription: true, requirementBase, requirementStat, requirementValue: 125, price(lvl) {
+        return {煤: lvl * 3 + 80};
+    }, 效果: [
+        {name: '余烬增益', 类型: '+', value: lvl => lvl * 0.03}
+    ]},
+    钛存储: {cap: 5, requirementBase, requirementStat, requirementValue: 130, price(lvl) {
+        return {废料: Math.pow(7, lvl) * buildNum(80, 'Sx'), 钛矿石: Math.pow(2, lvl) * 4, 硫: Math.pow(2.2, lvl) * buildNum(45, 'K'), 锋利: 3};
+    }, 效果: [
+        {name: '铜矿石容量', 类型: '*', value: lvl => lvl * 0.4 + 1},
+        {name: '锡矿石容量', 类型: '+', value: lvl => lvl * 10},
+        {name: '铁矿石容量', 类型: '+', value: lvl => lvl * 4},
+        {name: '钛矿石容量', 类型: '+', value: lvl => lvl * 2}
+    ]},
+    巨型锻造: {保留: true, alwaysActive: true, requirementBase, requirementStat, requirementValue: 132, price(lvl) {
+        return {煤: Math.round(Math.pow(1.25, lvl) * 1200)};
+    }, 效果: [
+        {name: '余烬容量', 类型: '+', value: lvl => lvl * 50}
+    ]},
+    火药: {requirementBase, requirementStat, requirementValue: 135, price(lvl) {
+        return {煤: Math.round(Math.pow(1.1, lvl) * (lvl * 20 + 100)), 硫: Math.pow(1.5, lvl) * buildNum(120, 'K'), 硝: Math.round(Math.pow(1.1, lvl) * (lvl * 100 + 500))};
+    }, 效果: [
+        {name: '伤害', 类型: '*', value: lvl => Math.pow(1.15, lvl)},
+        {name: '废料增益', 类型: '*', value: lvl => Math.pow(1.15, lvl)},
+        {name: '韧性', 类型: '*', value: lvl => Math.pow(1 / 1.15, lvl)}
+    ]},
+    硝酸: {保留: true, requirementBase, requirementStat, requirementValue: 138, price(lvl) {
+        return {硝: Math.round(Math.pow(1.05, lvl) * (lvl * 200 + 1000))};
+    }, 效果: [
+        {name: '伤害', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '金属锭增量', 类型: '*', value: lvl => 1 / (lvl * 0.03 + 1)}
+    ]},
+    金属探测器: {cap: 12, capMult: true, requirementBase, requirementStat, requirementValue: 140, price(lvl) {
+        return {废料: Math.pow(3.5, lvl) * buildNum(15, 'Sp'), 锋利: lvl + 11};
+    }, 效果: [
+        {name: '废料增益', 类型: '*', value: lvl => splicedPowLinear(1.1, 0.1, 12, lvl)},
+        {name: '废料容量', 类型: '*', value: lvl => splicedPowLinear(1.3, 0.3, 12, lvl)},
+        {name: '钛矿石容量', 类型: '+', value: lvl => lvl * 2}
+    ]},
+    回收: {保留: true, requirementBase, requirementStat, requirementValue: 145, price(lvl) {
+        return {余烬: Math.round(Math.pow(1.15, lvl) * 50)};
+    }, 效果: [
+        {name: '废料增益', 类型: '*', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.25 + 1)}
+    ]},
+    粘罐子: {cap: 1, hasDescription: true, 保留: true, 笔记: 'mining_30', requirementBase, requirementStat, requirementValue: 150, price() {
+        return {废料: buildNum(4, 'O')};
+    }, 效果: [
+        {name: '树脂', 类型: '解锁', value: lvl => lvl >= 1}
+    ]},
+    扫描: {保留: true, requirementBase, requirementStat, requirementValue: 155, price(lvl) {
+        return {黑曜石: Math.pow(2, lvl) * buildNum(10, 'K')};
+    }, 效果: [
+        {name: '矿石增益', 类型: '*', value: lvl => Math.pow(1.18, lvl)}
+    ]},
+    更大的面积: {cap: 5, requirementBase, requirementStat, requirementValue: 160, price(lvl) {
+        return {废料: Math.pow(4000, lvl) * buildNum(6, 'N')};
+    }, 效果: [
+        {name: '最大树脂', 类型: '+', value: lvl => lvl},
+        {name: '钛矿石容量', 类型: '+', value: lvl => lvl * 12}
+    ]},
+    钛锻造: {cap: 9, requirementBase, requirementStat, requirementValue: 170, price(lvl) {
+        return {轻量: Math.pow(2, lvl) * 500, 坚固: lvl * 250 + 500, 锋利: lvl * 5 + 35};
+    }, 效果: [
+        {name: '制作力量', 类型: '*', value: lvl => Math.pow(1.17, lvl)},
+        {name: '钛矿石容量', 类型: '*', value: lvl => lvl + 1}
+    ]},
+    铂扩张: {cap: 5, requirementBase, requirementStat, requirementValue: 180, price(lvl) {
+        return {铜矿石: Math.pow(1.75, lvl) * buildNum(150, '分钟'), 挖掘机: 4};
+    }, 效果: [
+        {name: '钛矿石容量', 类型: '*', value: lvl => Math.pow(1.5, lvl)},
+        {name: '铂矿石容量', 类型: '+', value: lvl => getSequence(3, lvl)}
+    ]},
+    钛存储: {cap: 6, requirementBase, requirementStat, requirementValue: 190, price(lvl) {
+        return {钛矿石: Math.pow(2, lvl) * 450, 盐: Math.pow(1.85, lvl) * buildNum(60, '分钟'), 硫: Math.pow(2.2, lvl) * buildNum(800, '分钟')};
+    }, 效果: [
+        {name: '废料容量', 类型: '*', value: lvl => lvl * 0.4 + 1},
+        {name: '铂矿石容量', 类型: '*', value: lvl => lvl * 0.5 + 1}
+    ]},
+    巨大的矿石储存: {cap: 1, requirementBase, requirementStat, requirementValue: 200, price() {
+        return {废料: buildNum(10, '天')};
+    }, 效果: [
+        {name: '铝矿石容量', 类型: '*', value: lvl => Math.pow(100, lvl)},
+        {name: '铜矿石容量', 类型: '*', value: lvl => Math.pow(100, lvl)},
+        {name: '锡矿石容量', 类型: '*', value: lvl => Math.pow(100, lvl)},
+        {name: '铁矿石容量', 类型: '*', value: lvl => Math.pow(100, lvl)},
+        {name: '钛矿石容量', 类型: '*', value: lvl => Math.pow(100, lvl)},
+        {name: '铂矿石容量', 类型: '*', value: lvl => Math.pow(100, lvl)}
+    ]},
+    钛炸弹: {cap: 16, requirementBase, requirementStat, requirementValue: 220, price(lvl) {
+        return {锋利: lvl * 8 + 20, 挖掘机: lvl * 4 + 4};
+    }, 效果: [
+        {name: '伤害', 类型: '*', value: lvl => Math.pow(1.2, lvl)}
+    ]},
+    地下雷达: {保留: true, requirementBase, requirementStat, requirementValue: 240, price(lvl) {
+        return {丰富: Math.round(Math.pow(1.15, lvl) * (lvl + 1) * 5)};
+    }, 效果: [
+        {name: '稀土增益', 类型: '*', value: lvl => Math.pow(1.13, lvl)}
+    ]},
+    铱扩张: {保留: true, requirementBase, requirementStat, requirementValue: 260, price(lvl) {
+        return {挖掘机: Math.round(Math.pow(1.22, lvl) * (lvl + 3) * 2)};
+    }, 效果: [
+        {name: '废料容量', 类型: '*', value: lvl => Math.pow(1.11, lvl)},
+        {name: '铱矿石容量', 类型: '+', value: lvl => getSequence(1, lvl)}
+    ]},
+    铱存储: {cap: 4, requirementBase, requirementStat, requirementValue: 270, price(lvl) {
+        return {废料: Math.pow(22.5, lvl) * buildNum(10, 'DD'), 硫: Math.pow(2.45, lvl) * buildNum(13, 'T')};
+    }, 效果: [
+        {name: '钛矿石容量', 类型: '*', value: lvl => lvl * 0.25 + 1},
+        {name: '铂矿石容量', 类型: '*', value: lvl => lvl * 0.5 + 1},
+        {name: '铱矿石容量', 类型: '*', value: lvl => lvl + 1}
+    ]},
+    铱树梢: {保留: true, requirementBase, requirementStat, requirementValue: 280, price(lvl) {
+        return {深岩: Math.pow(lvl + 1, 2) * buildNum(500, '分钟'), 熔岩: Math.round(Math.pow(1.3, lvl) * (lvl + 2))};
+    }, 效果: [
+        {name: '树脂容量', 类型: '+', value: lvl => lvl * 10},
+        {name: '最大树脂', 类型: '+', value: lvl => lvl}
+    ]},
+    大幅削减: {requirementBase, requirementStat, requirementValue: 290, price(lvl) {
+        return {深岩: Math.pow(lvl * 0.01 + 1.5, lvl) * buildNum(2.5, 'B')};
+    }, 效果: [
+        {name: '韧性', 类型: '*', value: lvl => Math.pow(1 / 1.25, lvl)}
+    ]},
+    铱炸弹: {cap: 7, requirementBase, requirementStat, requirementValue: 310, price(lvl) {
+        return {坚固: Math.round(Math.pow(1.4, lvl) * buildNum(30, 'K')), 熔岩: lvl * 8 + 6};
+    }, 效果: [
+        {name: '伤害', 类型: '*', value: lvl => Math.pow(1.23, lvl)}
+    ]},
+    矿石袋: {requirementBase, cap: 12, requirementStat, requirementValue: 330, price(lvl) {
+        return {深岩: Math.pow(1.65, lvl) * buildNum(800, 'B'), 硫: Math.pow(1.9, lvl) * buildNum(450, 'T')};
+    }, 效果: [
+        {name: '锡矿石容量', 类型: '+', value: lvl => lvl * 12},
+        {name: '铁矿石容量', 类型: '+', value: lvl => lvl * 10},
+        {name: '钛矿石容量', 类型: '+', value: lvl => lvl * 4},
+        {name: '铂矿石容量', 类型: '+', value: lvl => lvl * 4},
+    ]},
+    锇扩张: {requirementBase, cap: 9, requirementStat, requirementValue: 350, price(lvl) {
+        return {丰富: Math.round(Math.pow(1.44, lvl) * (lvl + 3) * 25), 熔岩: Math.round(Math.pow(1.22, lvl) * (lvl + 3) * 8)};
+    }, 效果: [
+        {name: '废料容量', 类型: '*', value: lvl => Math.pow(1.4, lvl)},
+        {name: '锇矿石容量', 类型: '+', value: lvl => lvl * 4},
+    ]},
+    锇存储: {cap: 7, requirementBase, requirementStat, requirementValue: 355, price(lvl) {
+        return {废料: Math.pow(6.75, lvl) * buildNum(900, 'SxD'), 深岩: Math.pow(2.1, lvl) * buildNum(42, 'T')};
+    }, 效果: [
+        {name: '锇矿石容量', 类型: '+', value: lvl => lvl * 2},
+        {name: '锇矿石容量', 类型: '*', value: lvl => lvl + 1}
+    ]},
+    黑暗炸弹: {cap: 10, requirementBase, requirementStat, requirementValue: 375, price(lvl) {
+        return {挖掘机: Math.round(Math.pow(1.2, lvl) * 360), 虚空: lvl * 6 + 2};
+    }, 效果: [
+        {name: '伤害', 类型: '*', value: lvl => Math.pow(1.55, lvl)},
+        {name: '废料容量', 类型: '*', value: lvl => Math.pow(1.75, lvl)},
+    ]},
+    巨大的废料仓库: {cap: 1, requirementBase, requirementStat, requirementValue: 400, price() {
+        return {废料: buildNum(1, 'V')};
+    }, 效果: [
+        {name: '废料容量', 类型: '*', value: lvl => Math.pow(buildNum(1, '分钟'), lvl)}
+    ]},
+    溶石剂: {cap: 50, requirementBase, requirementStat, requirementValue: 425, price(lvl) {
+        return {废料: Math.pow(lvl * 0.02 + 1.8, lvl) * buildNum(1, 'UV')};
+    }, 效果: [
+        {name: '伤害', 类型: '*', value: lvl => Math.pow(1.15, lvl)},
+        {name: '韧性', 类型: '*', value: lvl => Math.pow(1 / 1.3, lvl)},
+    ]},
+    铅扩张: {requirementBase, cap: 5, requirementStat, requirementValue: 450, price(lvl) {
+        return {虚空: Math.round(Math.pow(1.4, lvl) * (lvl + 3) * 4)};
+    }, 效果: [
+        {name: '矿石容量', 类型: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '铅矿石容量', 类型: '+', value: lvl => lvl * 7},
+    ]},
+}

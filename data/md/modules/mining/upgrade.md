@@ -1,0 +1,68 @@
+| 名称  | 消耗  | 效果  | requirementBase | requirementStat | requirementValue | 上限  | capMult | hasDescription | requirement | hideCap | 保留  | 笔记  | alwaysActive |
+| --- | --- | --- | --------------- | --------------- | ---------------- | --- | ------- | -------------- | ----------- | ------- | --- | --- | ------------ |
+| 伤害plus | ${ 废料: \text{向上取整}({(lvl  \cdot  0.012 + 1.24)}^{lvl}  \cdot  120) }$ | 伤害*｛${(1.12)}^{lvl}  \cdot  {(lvl  \cdot  0.2 + 1)}^{2}$｝ |  |  |  |  |  |  |  |  |  |  |  |
+| 废料增益plus | ${ 废料: \text{向上取整}({(lvl  \cdot  0.1 + 2.5)}^{lvl}  \cdot  1250) }$ | 废料增益*｛${(1.2)}^{lvl}$｝ | requirementBase | requirementStat | 5 |  |  |  |  |  |  |  |  |
+| 废料容量plus | ${ 废料: \text{向上取整}({(3.3)}^{lvl}  \cdot  3000) }$ | 废料容量*｛${(3)}^{lvl}$｝ | requirementBase | requirementStat | 10 | 50 |  |  |  |  |  |  |  |
+| 铝存储 | ${ 铝矿石: \text{四舍五入}(3  \cdot  (lvl + 1)) }$ | 废料容量*｛${(1.1)}^{lvl}$｝; 铝矿石容量+｛$2  \cdot  lvl$｝ | requirementBase | requirementStat | 15 | 10 |  |  |  |  |  |  |  |
+| 铝淬火 | ${ 铝矿石: \text{四舍五入}({(1.5)}^{Math.max(0, lvl - 5})  \cdot  4  \cdot  lvl + 2) }$ | 伤害*｛$(lvl + 1)  \cdot  {(1.5)}^{Math.min(6, lvl})$｝ | requirementBase | requirementStat | 15 | 6 | true |  |  |  |  |  |  |
+| 制作站 | ${ 废料: 1.8M }$ | 镐制作解锁｛$lvl >= 1$｝ | requirementBase | requirementStat | 20 | 1 |  | true |  |  |  |  |  |
+| 锻造 | ${ 废料: \text{向上取整}({(1.35)}^{lvl}  \cdot  2.5M) }$ | 制作力量*｛${(1.2)}^{lvl}$｝ |  |  |  |  |  |  | $store.state.解锁.镐制作.use$ |  |  |  |  |
+| 矿石槽位 | $[{ 铝矿石: 10 }, { 铝矿石: 30 }, { 铜矿石: 20 }, { 锡矿石: 15 }, { 铁矿石: 12 }, { 钛矿石: 10 }, { 铂矿石: 8 }, { 铱矿石: 6 }, { 锇矿石: 5 }, { 铅矿石: 4 }][lvl]$ | 制作插槽+｛$lvl$｝ | requirementBase | requirementStat | 25 | 10 |  |  | $store.state.stat.mining_maxDepth0.总计 >= $ | true |  |  |  |
+| 压缩机 | $[{ 铝矿石: 20 }, { 铝矿石: 80 }, { 铝矿石: 10K }, { 铝矿石: 30K }, { 铝矿石: 750K }, { 铝矿石: 1B }, { 铝矿石: 100T }, { 铝矿石: 100Qi }, { 铝矿石: 1O }][lvl]$ | 铝压缩解锁｛$lvl >= 1$｝; 铜压缩解锁｛$lvl >= 2$｝; 锡压缩解锁｛$lvl >= 3$｝; 铁压缩解锁｛$lvl >= 4$｝; 钛压缩解锁｛$lvl >= 5$｝; 铂压缩解锁｛$lvl >= 6$｝; 铱压缩解锁｛$lvl >= 7$｝; 锇压缩解锁｛$lvl >= 8$｝; 铅压缩解锁｛$lvl >= 9$｝ | requirementBase | requirementStat | 25 | 9 |  | true | $store.state.stat.mining_maxDepth0.总计 >= $ | true |  |  |  |
+| 铜存储 | ${ 铜矿石: \text{四舍五入}(lvl + 3) }$ | 铝矿石容量+｛$2  \cdot  lvl$｝; 铜矿石容量+｛$lvl$｝ | requirementBase | requirementStat | 30 | 8 |  |  |  |  |  |  |  |
+| 铝罐 | ${ 废料: {(4.75)}^{lvl}  \cdot  40M }$ | 铝矿石容量+｛$\text{四舍五入}({(lvl)}^{1.2}  \cdot  {(1.1)}^{Math.min(8, lvl})  \cdot  5)$｝ | requirementBase | requirementStat | 30 | 8 | true |  |  |  |  |  |  |
+| 铝砧 | ${ 铝矿石: \text{向上取整}({(1.1)}^{lvl}  \cdot  (lvl + 1)  \cdot  10) }$ | 制作力量*｛${(1.15)}^{lvl}$｝ | requirementBase | requirementStat | 30 | 10 |  |  |  |  |  |  |  |
+| 破壳者 | ${ 废料: {(1.8)}^{lvl}  \cdot  550M }$ | 伤害*｛${(1.1)}^{lvl}$｝; 韧性*｛${(1 / 1.3)}^{lvl}$｝ | requirementBase | requirementStat | 35 | 10 |  |  |  |  |  |  |  |
+| 铜罐 | ${ 废料: {(2.3)}^{lvl}  \cdot  3.5B }$ | 铝矿石容量*｛${(1.4)}^{lvl}$｝; 铜矿石容量+｛$4  \cdot  lvl$｝ | requirementBase | requirementStat | 40 | 5 |  |  |  |  |  |  |  |
+| 深度居民 | ${ 铜矿石: 24 }$ | 深度居民解锁｛$lvl >= 1$｝ | requirementBase | requirementStat | 40 | 1 |  | true |  |  |  |  |  |
+| 铝扩张 | ${ 铝矿石: {(2.25)}^{lvl}  \cdot  150 }$ | 伤害*｛${(1.15)}^{lvl}$｝; 铝矿石容量*｛${(1.5)}^{lvl}$｝ | requirementBase | requirementStat | 45 | 5 |  |  |  |  |  |  |  |
+| 精炼厂 | ${ 铜矿石: 10  \cdot  lvl + 30 }$ | 矿石增益*｛$splicedLinear(0.1, 0.05, 5, lvl) + 1$｝; 铜矿石容量+｛$12  \cdot  lvl$｝ | requirementBase | requirementStat | 45 | 5 | true |  |  |  |  |  |  |
+| 铜扩张 | ${ 废料: {(4.2)}^{lvl}  \cdot  90B }$ | 伤害*｛${(1.25)}^{lvl}$｝; 铜矿石容量*｛${(1.5)}^{lvl}$｝ | requirementBase | requirementStat | 50 | 3 |  |  |  |  |  |  |  |
+| 钻机燃料 | ${ 废料: {(lvl  \cdot  0.1 + 2.4)}^{lvl}  \cdot  35B }$ | 深度居民速度*｛${(1.02)}^{lvl}  \cdot  (lvl  \cdot  0.05 + 1)$｝ | requirementBase | requirementStat | 50 |  |  |  |  |  |  |  |  |
+| 花岗岩硬化 | ${ 花岗岩: {(2.5)}^{lvl}  \cdot  1600, 锡矿石: lvl + 2 }$ | 伤害*｛${(1.3)}^{lvl}$｝ | requirementBase | requirementStat | 55 | 6 |  |  |  |  |  |  |  |
+| 冶炼厂 | ${ 花岗岩: 50K }$ | 冶炼厂解锁｛$lvl >= 1$｝ | requirementBase | requirementStat | 60 | 1 |  | true |  |  | true | mining_18 |  |
+| 矿石架 | ${ 铜矿石: {(1.5)}^{lvl}  \cdot  160, 轻量: 5 }$ | 锡矿石容量+｛$lvl$｝ | requirementBase | requirementStat | 60 | 4 |  |  |  |  |  |  |  |
+| 隔热板 | ${ 花岗岩: {(1.55)}^{lvl}  \cdot  20K }$ | 冶炼温度+｛$lvl  \cdot  15$｝ | requirementBase | requirementStat | 62 |  |  |  |  |  |  |  |  |
+| 锡存储 | ${ 废料: {(5.75)}^{lvl}  \cdot  25T, 锡矿石: lvl  \cdot  2 + 1 }$ | 铜矿石容量+｛$lvl  \cdot  24$｝; 锡矿石容量+｛$lvl$｝ | requirementBase | requirementStat | 65 | 4 |  |  |  |  |  |  |  |
+| 熔炉 | ${ let obj = { 废料: {(1.3)}^{lvl}  \cdot  70T, 锡矿石: \text{向下取整}(lvl  \cdot  0.2  \cdot  {(1.15)}^{lvl} + 2) }; if (lvl >= 5) { obj.盐 = {(1.45)}^{lvl - 5}  \cdot  60; } return obj; }$ | 制作力量*｛$\text{分段线性}(1.1, 0.05, 25, lvl)$｝; 矿石增益*｛$lvl  \cdot  0.05 + 1$｝ | requirementBase | requirementStat | 70 | 25 | true |  |  |  |  |  |  |
+| 青铜存储 | ${ 盐: {(4)}^{lvl}  \cdot  175, 轻量: 7 }$ | 铜矿石容量*｛${(1.5)}^{lvl}$｝; 锡矿石容量*｛${(1.5)}^{lvl}$｝ | requirementBase | requirementStat | 75 | 4 |  |  |  |  |  |  |  |
+| 铁存储 | ${ 废料: {(8.5)}^{lvl}  \cdot  12Qa, 轻量: 12 }$ | 铁矿石容量+｛$lvl$｝ | requirementBase | requirementStat | 80 | 3 |  |  |  |  |  |  |  |
+| 矿石洗选 | ${ 废料: {(1.35)}^{lvl}  \cdot  16.5Qa }$ | 制作力量*｛${(1.1)}^{lvl}$｝; 矿石品质*｛$lvl  \cdot  0.05 + 1$｝ | requirementBase | requirementStat | 82 | 15 |  |  |  |  |  |  |  |
+| 铁扩张 | ${ 铁矿石: {(1.3)}^{Math.max(0, lvl - 2})  \cdot  lvl  \cdot  3 + 2, 坚固: 4 }$ | 锡矿石容量*｛$\text{分段线性}(1.5, 0.1, 3, lvl)$｝; 铁矿石容量+｛$lvl$｝ | requirementBase | requirementStat | 85 | 3 | true |  |  |  |  |  |  |
+| 铁淬火 | ${ 铁矿石: \text{向下取整}({(1.35)}^{lvl} + 1) }$ | 伤害*｛${(1.15)}^{lvl}$｝; 锡矿石容量+｛$lvl  \cdot  2$｝ | requirementBase | requirementStat | 90 | 12 |  |  |  |  |  |  |  |
+| 铁过滤器 | ${ 铁矿石: \text{向下取整}({(1.85)}^{lvl}  \cdot  5), 坚固: 5 }$ | 铝矿石容量+｛$lvl  \cdot  36$｝ | requirementBase | requirementStat | 95 | 8 |  |  |  |  |  |  |  |
+| 大师锻造 | ${ 煤: lvl  \cdot  20 + 80 }$ | 伤害*｛$lvl  \cdot  0.15 + 1$｝ | requirementBase | requirementStat | 98 |  |  |  |  |  |  |  |  |
+| 星际锻造 | ${ 煤: lvl  \cdot  20 + 80 }$ | 绿水晶增益*｛$lvl  \cdot  0.075 + 1$｝ | requirementBase | requirementStat | 98 |  |  |  |  |  |  |  |  |
+| 磁铁 | ${ 废料: {(1.55)}^{lvl}  \cdot  440Qa, 铁矿石: {(1.2)}^{Math.max(0, lvl - 9})  \cdot  lvl  \cdot  5 + 10, 坚固: 6 }$ | 废料增益*｛$\text{分段线性}(1.15, 0.15, 10, lvl)$｝; 矿石增益*｛$splicedLinear(0.1, 0.05, 10, lvl) + 1$｝ | requirementBase | requirementStat | 100 | 10 | true |  |  |  |  |  |  |
+| 增强站 | ${ 煤: 250 }$ | 增强解锁｛$lvl >= 1$｝ | requirementBase | requirementStat | 105 | 1 |  | true |  |  | true | mining_25 |  |
+| 仓库 | ${ 废料: {(6)}^{lvl}  \cdot  6.075Qi, 轻量: lvl  \cdot  5 + 40, 坚固: lvl  \cdot  4 + 4 }$ | 铝矿石容量*｛${(2)}^{lvl}$｝; 铜矿石容量*｛${(2)}^{lvl}$｝; 锡矿石容量*｛${(2)}^{lvl}$｝; 铁矿石容量*｛${(2)}^{lvl}$｝ | requirementBase | requirementStat | 110 | 12 |  |  |  |  |  |  |  |
+| 腐蚀性烟雾 | ${ 硫: {(3.5)}^{lvl}  \cdot  2000 }$ | 韧性*｛${(1 / 1.2)}^{lvl}$｝ | requirementBase | requirementStat | 112 | 6 |  |  |  |  |  |  |  |
+| 闻盐 | ${ 盐: {(lvl  \cdot  0.01 + 1.4)}^{lvl}  \cdot  10K }$ | 制作力量*｛${(1.11)}^{lvl}$｝ | requirementBase | requirementStat | 115 |  |  |  |  |  |  |  |  |
+| 钛扩张 | ${ 铜矿石: {(2.75)}^{lvl}  \cdot  250K, 锡矿石: {(2.1)}^{lvl}  \cdot  40K }$ | 铁矿石容量+｛$lvl  \cdot  3$｝; 铁矿石容量*｛${(1.25)}^{lvl}$｝; 钛矿石容量+｛$lvl$｝ | requirementBase | requirementStat | 120 | 3 |  |  |  |  |  |  |  |
+| 余烬锻造 | ${ 煤: lvl  \cdot  3 + 80 }$ | 余烬增益+｛$lvl  \cdot  0.03$｝ | requirementBase | requirementStat | 125 |  |  | true |  |  |  |  |  |
+| 钛存储 | ${ 钛矿石: {(2)}^{lvl}  \cdot  450, 盐: {(1.85)}^{lvl}  \cdot  60M, 硫: {(2.2)}^{lvl}  \cdot  800M }$ | 废料容量*｛$lvl  \cdot  0.4 + 1$｝; 铂矿石容量*｛$lvl  \cdot  0.5 + 1$｝ | requirementBase | requirementStat | 190 | 6 |  |  |  |  |  |  |  |
+| 巨型锻造 | ${ 煤: \text{四舍五入}({(1.25)}^{lvl}  \cdot  1200) }$ | 余烬容量+｛$lvl  \cdot  50$｝ | requirementBase | requirementStat | 132 |  |  |  |  |  | true |  | true |
+| 火药 | ${ 煤: \text{四舍五入}({(1.1)}^{lvl}  \cdot  (lvl  \cdot  20 + 100)), 硫: {(1.5)}^{lvl}  \cdot  120K, 硝: \text{四舍五入}({(1.1)}^{lvl}  \cdot  (lvl  \cdot  100 + 500)) }$ | 伤害*｛${(1.15)}^{lvl}$｝; 废料增益*｛${(1.15)}^{lvl}$｝; 韧性*｛${(1 / 1.15)}^{lvl}$｝ | requirementBase | requirementStat | 135 |  |  |  |  |  |  |  |  |
+| 硝酸 | ${ 硝: \text{四舍五入}({(1.05)}^{lvl}  \cdot  (lvl  \cdot  200 + 1000)) }$ | 伤害*｛$lvl  \cdot  0.1 + 1$｝; 金属锭增量*｛$1 / (lvl  \cdot  0.03 + 1)$｝ | requirementBase | requirementStat | 138 |  |  |  |  |  | true |  |  |
+| 金属探测器 | ${ 废料: {(3.5)}^{lvl}  \cdot  15Sp, 锋利: lvl + 11 }$ | 废料增益*｛$\text{分段线性}(1.1, 0.1, 12, lvl)$｝; 废料容量*｛$\text{分段线性}(1.3, 0.3, 12, lvl)$｝; 钛矿石容量+｛$lvl  \cdot  2$｝ | requirementBase | requirementStat | 140 | 12 | true |  |  |  |  |  |  |
+| 回收 | ${ 余烬: \text{四舍五入}({(1.15)}^{lvl}  \cdot  50) }$ | 废料增益*｛${(1.1)}^{lvl}  \cdot  (lvl  \cdot  0.25 + 1)$｝ | requirementBase | requirementStat | 145 |  |  |  |  |  | true |  |  |
+| 粘罐子 | ${ 废料: 4O }$ | 树脂解锁｛$lvl >= 1$｝ | requirementBase | requirementStat | 150 | 1 |  | true |  |  | true | mining_30 |  |
+| 扫描 | ${ 黑曜石: {(2)}^{lvl}  \cdot  10K }$ | 矿石增益*｛${(1.18)}^{lvl}$｝ | requirementBase | requirementStat | 155 |  |  |  |  |  | true |  |  |
+| 更大的面积 | ${ 废料: {(4000)}^{lvl}  \cdot  6N }$ | 最大树脂+｛$lvl$｝; 钛矿石容量+｛$lvl  \cdot  12$｝ | requirementBase | requirementStat | 160 | 5 |  |  |  |  |  |  |  |
+| 钛锻造 | ${ 轻量: {(2)}^{lvl}  \cdot  500, 坚固: lvl  \cdot  250 + 500, 锋利: lvl  \cdot  5 + 35 }$ | 制作力量*｛${(1.17)}^{lvl}$｝; 钛矿石容量*｛$lvl + 1$｝ | requirementBase | requirementStat | 170 | 9 |  |  |  |  |  |  |  |
+| 铂扩张 | ${ 铜矿石: {(1.75)}^{lvl}  \cdot  150M, 挖掘机: 4 }$ | 钛矿石容量*｛${(1.5)}^{lvl}$｝; 铂矿石容量+｛$getSequence(3, lvl)$｝ | requirementBase | requirementStat | 180 | 5 |  |  |  |  |  |  |  |
+| 巨大的矿石储存 | ${ 废料: 10D }$ | 铝矿石容量*｛${(100)}^{lvl}$｝; 铜矿石容量*｛${(100)}^{lvl}$｝; 锡矿石容量*｛${(100)}^{lvl}$｝; 铁矿石容量*｛${(100)}^{lvl}$｝; 钛矿石容量*｛${(100)}^{lvl}$｝; 铂矿石容量*｛${(100)}^{lvl}$｝ | requirementBase | requirementStat | 200 | 1 |  |  |  |  |  |  |  |
+| 钛炸弹 | ${ 锋利: lvl  \cdot  8 + 20, 挖掘机: lvl  \cdot  4 + 4 }$ | 伤害*｛${(1.2)}^{lvl}$｝ | requirementBase | requirementStat | 220 | 16 |  |  |  |  |  |  |  |
+| 地下雷达 | ${ 丰富: \text{四舍五入}({(1.15)}^{lvl}  \cdot  (lvl + 1)  \cdot  5) }$ | 稀土增益*｛${(1.13)}^{lvl}$｝ | requirementBase | requirementStat | 240 |  |  |  |  |  | true |  |  |
+| 铱扩张 | ${ 挖掘机: \text{四舍五入}({(1.22)}^{lvl}  \cdot  (lvl + 3)  \cdot  2) }$ | 废料容量*｛${(1.11)}^{lvl}$｝; 铱矿石容量+｛$getSequence(1, lvl)$｝ | requirementBase | requirementStat | 260 |  |  |  |  |  | true |  |  |
+| 铱存储 | ${ 废料: {(22.5)}^{lvl}  \cdot  10DD, 硫: {(2.45)}^{lvl}  \cdot  13T }$ | 钛矿石容量*｛$lvl  \cdot  0.25 + 1$｝; 铂矿石容量*｛$lvl  \cdot  0.5 + 1$｝; 铱矿石容量*｛$lvl + 1$｝ | requirementBase | requirementStat | 270 | 4 |  |  |  |  |  |  |  |
+| 铱树梢 | ${ 深岩: {(lvl + 1)}^{2}  \cdot  500M, 熔岩: \text{四舍五入}({(1.3)}^{lvl}  \cdot  (lvl + 2)) }$ | 树脂容量+｛$lvl  \cdot  10$｝; 最大树脂+｛$lvl$｝ | requirementBase | requirementStat | 280 |  |  |  |  |  | true |  |  |
+| 大幅削减 | ${ 深岩: {(lvl  \cdot  0.01 + 1.5)}^{lvl}  \cdot  2.5B }$ | 韧性*｛${(1 / 1.25)}^{lvl}$｝ | requirementBase | requirementStat | 290 |  |  |  |  |  |  |  |  |
+| 铱炸弹 | ${ 坚固: \text{四舍五入}({(1.4)}^{lvl}  \cdot  30K), 熔岩: lvl  \cdot  8 + 6 }$ | 伤害*｛${(1.23)}^{lvl}$｝ | requirementBase | requirementStat | 310 | 7 |  |  |  |  |  |  |  |
+| 矿石袋 | ${ 深岩: {(1.65)}^{lvl}  \cdot  800B, 硫: {(1.9)}^{lvl}  \cdot  450T }$ | 锡矿石容量+｛$lvl  \cdot  12$｝; 铁矿石容量+｛$lvl  \cdot  10$｝; 钛矿石容量+｛$lvl  \cdot  4$｝; 铂矿石容量+｛$lvl  \cdot  4$｝ | requirementBase | requirementStat | 330 | 12 |  |  |  |  |  |  |  |
+| 锇扩张 | ${ 丰富: \text{四舍五入}({(1.44)}^{lvl}  \cdot  (lvl + 3)  \cdot  25), 熔岩: \text{四舍五入}({(1.22)}^{lvl}  \cdot  (lvl + 3)  \cdot  8) }$ | 废料容量*｛${(1.4)}^{lvl}$｝; 锇矿石容量+｛$lvl  \cdot  4$｝ | requirementBase | requirementStat | 350 | 9 |  |  |  |  |  |  |  |
+| 锇存储 | ${ 废料: {(6.75)}^{lvl}  \cdot  900SxD, 深岩: {(2.1)}^{lvl}  \cdot  42T }$ | 锇矿石容量+｛$lvl  \cdot  2$｝; 锇矿石容量*｛$lvl + 1$｝ | requirementBase | requirementStat | 355 | 7 |  |  |  |  |  |  |  |
+| 黑暗炸弹 | ${ 挖掘机: \text{四舍五入}({(1.2)}^{lvl}  \cdot  360), 虚空: lvl  \cdot  6 + 2 }$ | 伤害*｛${(1.55)}^{lvl}$｝; 废料容量*｛${(1.75)}^{lvl}$｝ | requirementBase | requirementStat | 375 | 10 |  |  |  |  |  |  |  |
+| 巨大的废料仓库 | ${ 废料: 1V }$ | 废料容量*｛${(1M)}^{lvl}$｝ | requirementBase | requirementStat | 400 | 1 |  |  |  |  |  |  |  |
+| 溶石剂 | ${ 废料: {(lvl  \cdot  0.02 + 1.8)}^{lvl}  \cdot  1UV }$ | 伤害*｛${(1.15)}^{lvl}$｝; 韧性*｛${(1 / 1.3)}^{lvl}$｝ | requirementBase | requirementStat | 425 | 50 |  |  |  |  |  |  |  |
+| 铅扩张 | ${ 虚空: \text{四舍五入}({(1.4)}^{lvl}  \cdot  (lvl + 3)  \cdot  4) }$ | 矿石容量*｛$lvl  \cdot  0.2 + 1$｝; 铅矿石容量+｛$lvl  \cdot  7$｝ | requirementBase | requirementStat | 450 | 5 |  |  |  |  |  |  |  |

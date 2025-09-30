@@ -1,64 +1,64 @@
 {
-    精华冷凝器: {类型: 'nightHunt', price(lvl) {
+    精华冷凝器: {类型: 'nightHunt', 消耗(lvl) {
         return {精华: Math.pow(8 + 0.25 * lvl, lvl) * 200};
     }, 效果: [
-        {name: '精华增益', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+        {name: '精华增益', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
     ]},
-    幸运符: {类型: 'nightHunt', price(lvl) {
+    幸运符: {类型: 'nightHunt', 消耗(lvl) {
         return {精华: Math.pow(1.5 + 0.02 * lvl, lvl) * 1000};
     }, 效果: [
-        {name: '仪式成功几率', 类型: '基础', value: lvl => lvl * 0.03}
+        {name: '仪式成功几率', 类型: '+', value: lvl => lvl * 0.03}
     ]},
-    更大的锅: {类型: 'nightHunt', cap: 5, price(lvl) {
-        return {精华: Math.pow(buildNum(100, '分钟'), getSequence(1, lvl)) * buildNum(10, 'K')};
+    更大的锅: {类型: 'nightHunt', 上限: 5, 消耗(lvl) {
+        return {精华: Math.pow(buildNum(100, 'M'), getSequence(1, lvl)) * buildNum(10, 'K')};
     }, 效果: [
-        {name: '仪式成分', 类型: '基础', value: lvl => lvl}
+        {name: '仪式成分', 类型: '+', value: lvl => lvl}
     ]},
-    药水架子: {类型: 'nightHunt', cap: 8, requirement() {
-        return store.state.升级成本.item.更大的锅.达到等级 {0} > 0;
-    }, price(lvl) {
+    药水架子: {类型: 'nightHunt', 上限: 8, requirement() {
+        return store.state.升级成本.item.更大的锅.达到等级 > 0;
+    }, 消耗(lvl) {
         return {精华: Math.pow(1000 * Math.pow(10, lvl), lvl) * buildNum(100, 'K')};
     }, 效果: [
-        {name: '可找到的成分', 类型: '基础', value: lvl => lvl},
-        {name: '最喜欢的成分大小', 类型: '基础', value: lvl => lvl},
+        {name: '可找到的成分', 类型: '+', value: lvl => lvl},
+        {name: '最喜欢的成分大小', 类型: '+', value: lvl => lvl},
     ]},
-    仪式粉笔: {类型: 'nightHunt', cap: 3, requirement() {
-        return store.state.升级成本.item.更大的锅.达到等级 {0} > 0;
-    }, price(lvl) {
-        return {精华: Math.pow(buildNum(10, '分钟'), Math.pow(lvl, 2)) * buildNum(50, '分钟')};
+    仪式粉笔: {类型: 'nightHunt', 上限: 3, requirement() {
+        return store.state.升级成本.item.更大的锅.达到等级 > 0;
+    }, 消耗(lvl) {
+        return {精华: Math.pow(buildNum(10, 'M'), Math.pow(lvl, 2)) * buildNum(50, 'M')};
     }, 效果: [
-        {name: '奖励成分', 类型: '基础', value: lvl => lvl}
+        {name: '奖励成分', 类型: '+', value: lvl => lvl}
     ]},
     稳定器: {类型: 'nightHunt', requirement() {
-        return store.state.升级成本.item.仪式粉笔.达到等级 {0} > 0;
-    }, price(lvl) {
-        return {精华: Math.pow(1.75 + 0.03 * lvl, lvl) * buildNum(300, '分钟')};
+        return store.state.升级成本.item.仪式粉笔.达到等级 > 0;
+    }, 消耗(lvl) {
+        return {精华: Math.pow(1.75 + 0.03 * lvl, lvl) * buildNum(300, 'M')};
     }, 效果: [
-        {name: '仪式稳定性', 类型: '基础', value: lvl => lvl * 0.02}
+        {name: '仪式稳定性', 类型: '+', value: lvl => lvl * 0.02}
     ]},
     底座: {类型: 'nightHunt', requirement() {
-        return store.state.升级成本.item.仪式粉笔.达到等级 {0} > 0;
-    }, price(lvl) {
+        return store.state.升级成本.item.仪式粉笔.达到等级 > 0;
+    }, 消耗(lvl) {
         return {精华: Math.pow(120, lvl) * buildNum(7.5, 'B')};
     }, 效果: [
-        {name: '奖励成分数量', 类型: '基础', value: lvl => lvl}
+        {name: '奖励成分数量', 类型: '+', value: lvl => lvl}
     ]},
-    神秘者: {类型: 'nightHunt', price(lvl) {
+    神秘者: {类型: 'nightHunt', 消耗(lvl) {
         return {gem_topaz: lvl * 125 + 100};
     }, 效果: [
-        {name: '精华增益', 类型: 'mult', value: lvl => Math.pow(3, lvl)}
+        {name: '精华增益', 类型: '*', value: lvl => Math.pow(3, lvl)}
     ]},
-    捆绑包: {类型: 'nightHunt', price(lvl) {
+    捆绑包: {类型: 'nightHunt', 消耗(lvl) {
         return {gem_topaz: lvl * 250 + 350};
     }, 效果: [
-        {name: '成分尺寸', 类型: '基础', value: lvl => lvl * 3},
-        {name: '最喜欢的成分大小', 类型: '基础', value: lvl => lvl},
+        {name: '成分尺寸', 类型: '+', value: lvl => lvl * 3},
+        {name: '最喜欢的成分大小', 类型: '+', value: lvl => lvl},
     ]},
     一袋糖果: {类型: 'nightHunt', requirement() {
-        return store.state.升级成本.item.仪式粉笔.达到等级 {0} > 0;
-    }, price(lvl) {
+        return store.state.升级成本.item.仪式粉笔.达到等级 > 0;
+    }, 消耗(lvl) {
         return {gem_topaz: lvl * 200 + 200};
     }, 效果: [
-        {name: '奖励成分数量', 类型: '基础', value: lvl => lvl}
+        {name: '奖励成分数量', 类型: '+', value: lvl => lvl}
     ]},
 }

@@ -1,51 +1,51 @@
 {
-    书籍: 铝淬火: {类型: '书籍', raiseOtherCap: '铝淬火', requirement() {
+    书籍铝淬火: {类型: '书籍', raiseOtherCap: '铝淬火', requirement() {
         return store.state.升级成本.item.铝淬火.highestLevel >= 6;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 7)};
     }, 效果: [
-        {name: 'upgradeMiningAluminiumHardeningCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeMiningAluminiumHardeningCap', 类型: '+', value: lvl => lvl}
     ]},
-    书籍: 铝罐: {类型: '书籍', raiseOtherCap: '铝罐', requirement() {
+    书籍铝罐: {类型: '书籍', raiseOtherCap: '铝罐', requirement() {
         return store.state.升级成本.item.铝罐.highestLevel >= 8;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 5)};
     }, 效果: [
-        {name: 'upgradeMiningAluminiumTanksCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeMiningAluminiumTanksCap', 类型: '+', value: lvl => lvl}
     ]},
-    书籍: 炼油厂: {类型: '书籍', raiseOtherCap: '精炼厂', requirement() {
+    书籍炼油厂: {类型: '书籍', raiseOtherCap: '精炼厂', requirement() {
         return store.state.升级成本.item.精炼厂.highestLevel >= 5;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 40)};
     }, 效果: [
-        {name: 'upgradeMiningRefineryCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeMiningRefineryCap', 类型: '+', value: lvl => lvl}
     ]},
-    书籍: 熔炉: {类型: '书籍', raiseOtherCap: '熔炉', requirement() {
+    书籍熔炉: {类型: '书籍', raiseOtherCap: '熔炉', requirement() {
         return store.state.升级成本.item.熔炉.highestLevel >= 25;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 60)};
     }, 效果: [
-        {name: 'upgradeMiningFurnaceCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeMiningFurnaceCap', 类型: '+', value: lvl => lvl}
     ]},
-    书籍: 铁扩张: {类型: '书籍', raiseOtherCap: '铁扩张', requirement() {
+    书籍铁扩张: {类型: '书籍', raiseOtherCap: '铁扩张', requirement() {
         return store.state.升级成本.item.铁扩张.highestLevel >= 3;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 120)};
     }, 效果: [
-        {name: 'upgradeMiningIronExpansionCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeMiningIronExpansionCap', 类型: '+', value: lvl => lvl}
     ]},
-    书籍: 磁铁: {类型: '书籍', raiseOtherCap: '磁铁', requirement() {
+    书籍磁铁: {类型: '书籍', raiseOtherCap: '磁铁', requirement() {
         return store.state.升级成本.item.磁铁.highestLevel >= 10;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 160)};
     }, 效果: [
-        {name: 'upgradeMiningMagnetCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeMiningMagnetCap', 类型: '+', value: lvl => lvl}
     ]},
-    书籍: 金属探测器: {类型: '书籍', raiseOtherCap: '金属探测器', requirement() {
+    书籍金属探测器: {类型: '书籍', raiseOtherCap: '金属探测器', requirement() {
         return store.state.升级成本.item.金属探测器.highestLevel >= 12;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 250)};
     }, 效果: [
-        {name: 'upgradeMiningMetalDetectorCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeMiningMetalDetectorCap', 类型: '+', value: lvl => lvl}
     ]},
 }

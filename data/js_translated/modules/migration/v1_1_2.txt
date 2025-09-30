@@ -1,8 +1,0 @@
-function(save) {
-    save = raiseUpgradeLevel(save, '更多伤害', 2);
-    save = raiseUpgradeLevel(save, '更多废料', 2);
-    save = raiseUpgradeLevel(save, '加时赛', 1);
-    save = raiseUpgradeLevel(save, '黄金王座', 1);
-    save = raiseUpgradeLevel(save, '学生', 4);
-    return save;
-}

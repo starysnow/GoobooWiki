@@ -1,13 +1,13 @@
 function bossTimeMult(bossFight = 0) {
-    return bossFight exactly= 2 ? 5 : (bossFight exactly= 1 ? 2 : 1);
+    return bossFight === 2 ? 5 : (bossFight === 1 ? 2 : 1);
 }
 export default {
-    攻击和生命值 x{0}: {
+    卡片力量: {
         图标: 'mdi-dumbbell',
         color: 'deep-橙色',
         stats: lvl => {
             return {
-                攻击 +: {类型: 'mult', amount: Math.pow(1.4, lvl)},
+                攻击plus: {类型: '*', amount: Math.pow(1.4, lvl)},
             };
         }
     },
@@ -16,7 +16,7 @@ export default {
         color: '红色',
         stats: lvl => {
             return {
-                生命值: {类型: 'mult', amount: Math.pow(1.5, lvl)},
+                生命值: {类型: '*', amount: Math.pow(1.5, lvl)},
             };
         }
     },
@@ -32,7 +32,7 @@ export default {
             },
             cooldown: () => 5,
             startCooldown: () => 0,
-            uses: (lvl, 击败 {0} (+{1})) => lvl * bossTimeMult(击败 {0} (+{1}))
+            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
         }
     },
     恢复: {
@@ -41,7 +41,7 @@ export default {
         color: '绿色',
         stats: lvl => {
             return {
-                生命值: {类型: 'mult', amount: Math.pow(1.12, lvl)},
+                生命值: {类型: '*', amount: Math.pow(1.12, lvl)},
             };
         },
         激活的卡片: {
@@ -61,7 +61,7 @@ export default {
         color: '樱桃色',
         stats: lvl => {
             return {
-                physicTaken: {类型: 'mult', amount: Math.pow(0.4, lvl)},
+                physicTaken: {类型: '*', amount: Math.pow(0.4, lvl)},
             };
         },
         exclude: ['智慧']
@@ -72,7 +72,7 @@ export default {
         color: '红色',
         stats: lvl => {
             return {
-                physicAttack: {类型: 'mult', amount: Math.pow(1.2, lvl)},
+                physicAttack: {类型: '*', amount: Math.pow(1.2, lvl)},
             };
         },
         激活的卡片: {
@@ -90,10 +90,10 @@ export default {
         minZone: 30,
         图标: 'mdi-magic-staff',
         color: 'deep-紫色',
-        stats: (lvl, 击败 {0} (+{1})) => {
+        stats: (lvl, 击败 (0) (+(1))) => {
             return {
-                firstStrike: {类型: '基础', amount: 2.25 * lvl * bossTimeMult(击败 {0} (+{1}))},
-                magicConversion: {类型: '基础', amount: 1.5 * lvl},
+                firstStrike: {类型: '+', amount: 2.25 * lvl * bossTimeMult(击败 (0) (+(1)))},
+                magicConversion: {类型: '+', amount: 1.5 * lvl},
             };
         }
     },
@@ -103,8 +103,8 @@ export default {
         color: 'indigo',
         stats: lvl => {
             return {
-                magicAttack: {类型: 'mult', amount: Math.pow(1.2, lvl)},
-                magicConversion: {类型: '基础', amount: 0.4 * lvl},
+                magicAttack: {类型: '*', amount: Math.pow(1.2, lvl)},
+                magicConversion: {类型: '+', amount: 0.4 * lvl},
             };
         },
         激活的卡片: {
@@ -115,7 +115,7 @@ export default {
             },
             cooldown: () => 13,
             startCooldown: () => 3,
-            uses: (lvl, 击败 {0} (+{1})) => lvl * bossTimeMult(击败 {0} (+{1}))
+            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
         }
     },
     火球: {
@@ -124,8 +124,8 @@ export default {
         color: '橙色',
         stats: lvl => {
             return {
-                magicAttack: {类型: 'mult', amount: Math.pow(1.2, lvl)},
-                magicConversion: {类型: '基础', amount: 0.4 * lvl},
+                magicAttack: {类型: '*', amount: Math.pow(1.2, lvl)},
+                magicConversion: {类型: '+', amount: 0.4 * lvl},
             };
         },
         激活的卡片: {
@@ -137,7 +137,7 @@ export default {
             },
             cooldown: () => 16,
             startCooldown: () => 5,
-            uses: (lvl, 击败 {0} (+{1})) => lvl * bossTimeMult(击败 {0} (+{1}))
+            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
         }
     },
     无形: {
@@ -146,7 +146,7 @@ export default {
         color: '粉色',
         stats: lvl => {
             return {
-                掠夺: {类型: 'mult', amount: Math.pow(0.25, lvl)},
+                掠夺: {类型: '*', amount: Math.pow(0.25, lvl)},
             };
         }
     },
@@ -156,7 +156,7 @@ export default {
         color: '红色-粉色',
         stats: lvl => {
             return {
-                physicAttack: {类型: 'mult', amount: Math.pow(1.2, lvl)},
+                physicAttack: {类型: '*', amount: Math.pow(1.2, lvl)},
             };
         },
         激活的卡片: {
@@ -165,8 +165,8 @@ export default {
                     {类型: 'damagePhysic', value: getSequence(3, lvl) * 10}
                 ];
             },
-            cooldown: (lvl, 击败 {0} (+{1})) => 28 * bossTimeMult(击败 {0} (+{1})),
-            startCooldown: (lvl, 击败 {0} (+{1})) => 28 * bossTimeMult(击败 {0} (+{1})),
+            cooldown: (lvl, 击败 (0) (+(1))) => 28 * bossTimeMult(击败 (0) (+(1))),
+            startCooldown: (lvl, 击败 (0) (+(1))) => 28 * bossTimeMult(击败 (0) (+(1))),
             uses: () => 1
         }
     },
@@ -176,7 +176,7 @@ export default {
         color: 'dark-blue',
         stats: lvl => {
             return {
-                magicTaken: {类型: 'mult', amount: Math.pow(0.4, lvl)},
+                magicTaken: {类型: '*', amount: Math.pow(0.4, lvl)},
             };
         },
         exclude: ['弹力']
@@ -187,7 +187,7 @@ export default {
         color: '黄色',
         stats: lvl => {
             return {
-                magicConversion: {类型: '基础', amount: 0.3 * lvl},
+                magicConversion: {类型: '+', amount: 0.3 * lvl},
             };
         },
         激活的卡片: {
@@ -198,16 +198,16 @@ export default {
             },
             cooldown: () => 5,
             startCooldown: () => 2,
-            uses: (lvl, 击败 {0} (+{1})) => lvl * 3 * bossTimeMult(击败 {0} (+{1}))
+            uses: (lvl, 击败 (0) (+(1))) => lvl * 3 * bossTimeMult(击败 (0) (+(1)))
         }
     },
     保护: {
         minZone: 44,
         图标: 'mdi-shield',
         color: 'blue',
-        stats: (lvl, 击败 {0} (+{1})) => {
+        stats: (lvl, 击败 (0) (+(1))) => {
             return {
-                divisionShield: {类型: '基础', amount: 5 * lvl * bossTimeMult(击败 {0} (+{1}))},
+                divisionShield: {类型: '+', amount: 5 * lvl * bossTimeMult(击败 (0) (+(1)))},
             };
         }
     },
@@ -215,9 +215,9 @@ export default {
         minZone: 46,
         图标: 'mdi-circle-slice-8',
         color: 'teal',
-        stats: (lvl, 击败 {0} (+{1})) => {
+        stats: (lvl, 击败 (0) (+(1))) => {
             return {
-                divisionShield: {类型: '基础', amount: 3 * lvl * bossTimeMult(击败 {0} (+{1}))},
+                divisionShield: {类型: '+', amount: 3 * lvl * bossTimeMult(击败 (0) (+(1)))},
             };
         },
         激活的卡片: {
@@ -228,7 +228,7 @@ export default {
             },
             cooldown: () => 11,
             startCooldown: () => 9,
-            uses: (lvl, 击败 {0} (+{1})) => (lvl + 1) * bossTimeMult(击败 {0} (+{1}))
+            uses: (lvl, 击败 (0) (+(1))) => (lvl + 1) * bossTimeMult(击败 (0) (+(1)))
         }
     },
     抵抗: {
@@ -237,7 +237,7 @@ export default {
         color: '棕色',
         stats: lvl => {
             return {
-                从眩晕中恢复得更快: {类型: '基础', amount: lvl},
+                从眩晕中恢复得更快: {类型: '+', amount: lvl},
             };
         },
         激活的卡片: {
@@ -248,7 +248,7 @@ export default {
             },
             cooldown: () => 7,
             startCooldown: () => 2,
-            uses: (lvl, 击败 {0} (+{1})) => lvl * bossTimeMult(击败 {0} (+{1}))
+            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
         }
     },
     精确: {
@@ -257,8 +257,8 @@ export default {
         color: '橙色',
         stats: lvl => {
             return {
-                critChance: {类型: '基础', amount: 0.4 * lvl},
-                critMult: {类型: '基础', amount: 0.35 * lvl},
+                critChance: {类型: '+', amount: 0.4 * lvl},
+                critMult: {类型: '+', amount: 0.35 * lvl},
             };
         }
     },
@@ -274,7 +274,7 @@ export default {
             },
             cooldown: () => 10,
             startCooldown: () => 0,
-            uses: (lvl, 击败 {0} (+{1})) => lvl * bossTimeMult(击败 {0} (+{1}))
+            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
         }
     },
     治愈: {
@@ -283,19 +283,19 @@ export default {
         color: 'lime',
         stats: lvl => {
             return {
-                bioTaken: {类型: 'mult', amount: Math.pow(0.75, lvl)},
+                bioTaken: {类型: '*', amount: Math.pow(0.75, lvl)},
             };
         },
         激活的卡片: {
-            效果(lvl, 击败 {0} (+{1})) {
+            效果(lvl, 击败 (0) (+(1))) {
                 return [
-                    {类型: 'heal', value: (lvl * 0.025 + 0.075) / bossTimeMult(击败 {0} (+{1}))},
+                    {类型: 'heal', value: (lvl * 0.025 + 0.075) / bossTimeMult(击败 (0) (+(1)))},
                     {类型: '解毒剂', value: 1}
                 ];
             },
             cooldown: () => 16,
             startCooldown: () => 12,
-            uses: (lvl, 击败 {0} (+{1})) => lvl * bossTimeMult(击败 {0} (+{1}))
+            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
         }
     },
     尖锐: {
@@ -304,8 +304,8 @@ export default {
         color: '紫色',
         stats: lvl => {
             return {
-                cutting: {类型: '基础', amount: 0.002 * lvl},
-                bioConversion: {类型: '基础', amount: 1.5 * lvl},
+                cutting: {类型: '+', amount: 0.002 * lvl},
+                bioConversion: {类型: '+', amount: 1.5 * lvl},
             };
         },
         exclude: ['处决']
@@ -316,8 +316,8 @@ export default {
         color: '光-绿色',
         stats: lvl => {
             return {
-                bioAttack: {类型: 'mult', amount: Math.pow(1.2, lvl)},
-                bioConversion: {类型: '基础', amount: 0.4 * lvl},
+                bioAttack: {类型: '*', amount: Math.pow(1.2, lvl)},
+                bioConversion: {类型: '+', amount: 0.4 * lvl},
             };
         },
         激活的卡片: {
@@ -337,7 +337,7 @@ export default {
         color: 'pale-绿色',
         stats: lvl => {
             return {
-                bioConversion: {类型: '基础', amount: 0.3 * lvl},
+                bioConversion: {类型: '+', amount: 0.3 * lvl},
             };
         },
         激活的卡片: {
@@ -358,7 +358,7 @@ export default {
         color: '绿色',
         stats: lvl => {
             return {
-                bioTaken: {类型: 'mult', amount: Math.pow(0.4, lvl)},
+                bioTaken: {类型: '*', amount: Math.pow(0.4, lvl)},
             };
         },
         exclude: ['韧性']
@@ -369,13 +369,13 @@ export default {
         color: 'beige',
         stats: lvl => {
             return {
-                生命值: {类型: 'mult', amount: Math.pow(1.3, lvl)},
+                生命值: {类型: '*', amount: Math.pow(1.3, lvl)},
             };
         },
         激活的卡片: {
             效果(lvl) {
                 return [
-                    {类型: 'gainStat', 达到 {0} {1}: 'attack_mult', value: lvl * 0.05 + 1.2}
+                    {类型: 'gainStat', stat: 'attack_mult', value: lvl * 0.05 + 1.2}
                 ];
             },
             cooldown: () => 15,
@@ -389,8 +389,8 @@ export default {
         color: 'dark-blue',
         stats: lvl => {
             return {
-                生命值: {类型: 'mult', amount: Math.pow(1.2, lvl)},
-                magicConversion: {类型: '基础', amount: 0.25 * lvl},
+                生命值: {类型: '*', amount: Math.pow(1.2, lvl)},
+                magicConversion: {类型: '+', amount: 0.25 * lvl},
             };
         },
         激活的卡片: {
@@ -402,7 +402,7 @@ export default {
             },
             cooldown: () => 22,
             startCooldown: () => 14,
-            uses: (lvl, 击败 {0} (+{1})) => lvl * bossTimeMult(击败 {0} (+{1}))
+            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
         }
     },
     天使: {
@@ -411,8 +411,8 @@ export default {
         color: '黄色',
         stats: lvl => {
             return {
-                复活 +{0}: {类型: '基础', amount: lvl},
-                生命值: {类型: 'mult', amount: 0.15 * lvl + 0.5},
+                复活+(0): {类型: '+', amount: lvl},
+                生命值: {类型: '*', amount: 0.15 * lvl + 0.5},
             };
         }
     },
@@ -422,14 +422,14 @@ export default {
         color: '金色',
         stats: lvl => {
             return {
-                critChance: {类型: '基础', amount: 0.55 * lvl},
+                critChance: {类型: '+', amount: 0.55 * lvl},
             };
         },
         激活的卡片: {
             效果(lvl) {
                 return [
                     {类型: 'damagePhysic', value: lvl * 0.6 + 1.55},
-                    {类型: 'gainStat', 达到 {0} {1}: 'attack_mult', value: 1.03}
+                    {类型: 'gainStat', stat: 'attack_mult', value: 1.03}
                 ];
             },
             cooldown: () => 4,
@@ -443,8 +443,8 @@ export default {
         color: '光-绿色',
         stats: lvl => {
             return {
-                有毒: {类型: '基础', amount: 0.01 * lvl},
-                bioConversion: {类型: '基础', amount: 1.5 * lvl},
+                有毒: {类型: '+', amount: 0.01 * lvl},
+                bioConversion: {类型: '+', amount: 1.5 * lvl},
             };
         }
     },
@@ -454,8 +454,8 @@ export default {
         color: '绿色',
         stats: lvl => {
             return {
-                bioAttack: {类型: 'mult', amount: Math.pow(1.2, lvl)},
-                bioConversion: {类型: '基础', amount: 0.4 * lvl},
+                bioAttack: {类型: '*', amount: Math.pow(1.2, lvl)},
+                bioConversion: {类型: '+', amount: 0.4 * lvl},
             };
         },
         激活的卡片: {
@@ -473,7 +473,7 @@ export default {
         minZone: 90,
         图标: 'mdi-nuke',
         color: '橙色-红色',
-        cap: 5,
+        上限: 5,
         激活的卡片: {
             效果(lvl) {
                 return [
@@ -482,8 +482,8 @@ export default {
                     {类型: 'damageBio', value: Math.pow(2, lvl) * 250},
                 ];
             },
-            cooldown: (lvl, 击败 {0} (+{1})) => (75 - lvl * 5) * bossTimeMult(击败 {0} (+{1})),
-            startCooldown: (lvl, 击败 {0} (+{1})) => (75 - lvl * 5) * bossTimeMult(击败 {0} (+{1})),
+            cooldown: (lvl, 击败 (0) (+(1))) => (75 - lvl * 5) * bossTimeMult(击败 (0) (+(1))),
+            startCooldown: (lvl, 击败 (0) (+(1))) => (75 - lvl * 5) * bossTimeMult(击败 (0) (+(1))),
             uses: () => 1
         }
     },
@@ -491,11 +491,11 @@ export default {
         minZone: 100,
         图标: 'mdi-looks',
         color: '粉色',
-        cap: 1,
+        上限: 1,
         stats: lvl => {
             return {
-                magicConversion: {类型: '基础', amount: lvl},
-                bioConversion: {类型: '基础', amount: lvl},
+                magicConversion: {类型: '+', amount: lvl},
+                bioConversion: {类型: '+', amount: lvl},
             };
         }
     },
@@ -503,10 +503,10 @@ export default {
         minZone: 110,
         图标: 'mdi-hvac',
         color: 'lime',
-        stats: (lvl, 击败 {0} (+{1})) => {
+        stats: (lvl, 击败 (0) (+(1))) => {
             return {
-                生命值: {类型: 'mult', amount: Math.pow(1.1, lvl)},
-                divisionShield: {类型: '基础', amount: 2 * lvl * bossTimeMult(击败 {0} (+{1}))},
+                生命值: {类型: '*', amount: Math.pow(1.1, lvl)},
+                divisionShield: {类型: '+', amount: 2 * lvl * bossTimeMult(击败 (0) (+(1)))},
             };
         },
         激活的卡片: {
@@ -519,7 +519,7 @@ export default {
             },
             cooldown: () => 14,
             startCooldown: () => 10,
-            uses: (lvl, 击败 {0} (+{1})) => (lvl + 2) * bossTimeMult(击败 {0} (+{1}))
+            uses: (lvl, 击败 (0) (+(1))) => (lvl + 2) * bossTimeMult(击败 (0) (+(1)))
         }
     },
     令人震惊: {
@@ -528,7 +528,7 @@ export default {
         color: '黄色',
         stats: lvl => {
             return {
-                攻击 +: {类型: 'mult', amount: Math.pow(1.15, lvl)},
+                攻击plus: {类型: '*', amount: Math.pow(1.15, lvl)},
             };
         },
         激活的卡片: {
@@ -540,7 +540,7 @@ export default {
             },
             cooldown: () => 15,
             startCooldown: () => 9,
-            uses: (lvl, 击败 {0} (+{1})) => lvl * bossTimeMult(击败 {0} (+{1}))
+            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
         }
     },
     防御: {
@@ -549,8 +549,8 @@ export default {
         color: 'dark-blue',
         stats: lvl => {
             return {
-                生命值: {类型: 'mult', amount: Math.pow(1.15, lvl)},
-                防御: {类型: '基础', amount: lvl * 0.001},
+                生命值: {类型: '*', amount: Math.pow(1.15, lvl)},
+                防御: {类型: '+', amount: lvl * 0.001},
             };
         }
     },
@@ -560,8 +560,8 @@ export default {
         color: 'pale-红色',
         stats: lvl => {
             return {
-                攻击 +: {类型: 'mult', amount: Math.pow(1.15, lvl)},
-                处决 +{0}%: {类型: '基础', amount: lvl * 0.05},
+                攻击plus: {类型: '*', amount: Math.pow(1.15, lvl)},
+                处决+(0)%: {类型: '+', amount: lvl * 0.05},
             };
         },
         exclude: ['尖锐']
@@ -572,8 +572,8 @@ export default {
         color: 'deep-橙色',
         stats: lvl => {
             return {
-                攻击 +: {类型: 'mult', amount: Math.pow(2, lvl)},
-                生命值: {类型: 'mult', amount: Math.pow(0.75, lvl)},
+                攻击plus: {类型: '*', amount: Math.pow(2, lvl)},
+                生命值: {类型: '*', amount: Math.pow(0.75, lvl)},
             };
         },
         激活的卡片: {
@@ -594,8 +594,8 @@ export default {
         color: 'skyblue',
         stats: lvl => {
             return {
-                攻击 +: {类型: 'mult', amount: Math.pow(0.5, lvl)},
-                生命值: {类型: 'mult', amount: Math.pow(3.5, lvl)},
+                攻击plus: {类型: '*', amount: Math.pow(0.5, lvl)},
+                生命值: {类型: '*', amount: Math.pow(3.5, lvl)},
             };
         },
         激活的卡片: {
@@ -615,8 +615,8 @@ export default {
         color: '灰色',
         stats: lvl => {
             return {
-                攻击 +: {类型: 'mult', amount: Math.pow(1.2, lvl)},
-                生命值: {类型: 'mult', amount: Math.pow(1.2, lvl)},
+                攻击plus: {类型: '*', amount: Math.pow(1.2, lvl)},
+                生命值: {类型: '*', amount: Math.pow(1.2, lvl)},
             };
         }
     }

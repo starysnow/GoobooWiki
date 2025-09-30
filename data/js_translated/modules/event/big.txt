@@ -3,42 +3,42 @@
         start: '01-15',
         end: '02-03',
         color: '金色',
-        收集 {0} : '蜡',
+        currency: '蜡',
         token: '煤渣代币'
     },
     bloom: {
         start: '03-09',
         end: '03-31',
         color: '光-绿色',
-        收集 {0} : '腐殖质',
+        currency: '腐殖质',
         token: '绽放代币'
     },
     weatherChaos: {
         start: '05-22',
         end: '06-08',
         color: '灰色',
-        收集 {0} : '云',
+        currency: '云',
         token: '天气混乱代币'
     },
     summerFestival: {
         start: '07-26',
         end: '08-22',
         color: '橙色-红色',
-        收集 {0} : '混合物',
+        currency: '混合物',
         token: '夏季节日代币'
     },
     nightHunt: {
         start: '10-04',
         end: '10-19',
         color: 'deep-紫色',
-        收集 {0} : '魔法',
+        currency: '魔法',
         token: '夜间狩猎代币'
     },
     snowdown: {
         start: '11-25',
         end: '12-15',
         color: 'skyblue',
-        收集 {0} : '雪球',
+        currency: '雪球',
         token: '降雪代币'
     }
 }

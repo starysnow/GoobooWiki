@@ -1,44 +1,44 @@
 {
     书籍: 红色力量: {类型: '书籍', raiseOtherCap: '红色力量', requirement() {
         return store.state.升级成本.item.红色力量.highestLevel >= 15;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 60)};
     }, 效果: [
-        {name: 'upgradeGalleryRedPowerCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeGalleryRedPowerCap', 类型: '+', value: lvl => lvl}
     ]},
     书籍: 橙色力量: {类型: '书籍', raiseOtherCap: '橙色力量', requirement() {
         return store.state.升级成本.item.橙色力量.highestLevel >= 15;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 88)};
     }, 效果: [
-        {name: 'upgradeGalleryOrangePowerCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeGalleryOrangePowerCap', 类型: '+', value: lvl => lvl}
     ]},
     书籍: 黄色力量: {类型: '书籍', raiseOtherCap: '黄色力量', requirement() {
         return store.state.升级成本.item.黄色力量.highestLevel >= 15;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 132)};
     }, 效果: [
-        {name: 'upgradeGalleryYellowPowerCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeGalleryYellowPowerCap', 类型: '+', value: lvl => lvl}
     ]},
     书籍: 绿色力量: {类型: '书籍', raiseOtherCap: '绿色力量', requirement() {
         return store.state.升级成本.item.绿色力量.highestLevel >= 15;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 200)};
     }, 效果: [
-        {name: 'upgradeGalleryGreenPowerCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeGalleryGreenPowerCap', 类型: '+', value: lvl => lvl}
     ]},
     书籍: 蓝色力量: {类型: '书籍', raiseOtherCap: '蓝色力量', requirement() {
         return store.state.升级成本.item.蓝色力量.highestLevel >= 15;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 275)};
     }, 效果: [
-        {name: 'upgradeGalleryBluePowerCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeGalleryBluePowerCap', 类型: '+', value: lvl => lvl}
     ]},
     书籍: 紫色力量: {类型: '书籍', raiseOtherCap: '紫色力量', requirement() {
         return store.state.升级成本.item.紫色力量.highestLevel >= 15;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 380)};
     }, 效果: [
-        {name: 'upgradeGalleryPurplePowerCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeGalleryPurplePowerCap', 类型: '+', value: lvl => lvl}
     ]},
 }

@@ -1,68 +1,68 @@
 {
-    +{0} 金尘: {图标: 'mdi-weather-dust', color: '棕色', 效果: [
-        {name: '废料增益', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)},
-        {name: '废料容量', 类型: 'mult', value: lvl => Math.pow(1.15, lvl)}
+    +(0) 金尘: {图标: 'mdi-weather-dust', color: '棕色', 效果: [
+        {name: '废料增益', 类型: '*', value: lvl => Math.pow(1.2, lvl)},
+        {name: '废料容量', 类型: '*', value: lvl => Math.pow(1.15, lvl)}
     ]},
     clay: {图标: 'mdi-ellipse', color: 'pale-橙色', 效果: [
-        {name: '矿石增益', 类型: 'mult', value: lvl => Math.pow(1.12, lvl)},
-        {name: '稀土增益', 类型: 'mult', value: lvl => Math.pow(1.16, lvl)}
+        {name: '矿石增益', 类型: '*', value: lvl => Math.pow(1.12, lvl)},
+        {name: '稀土增益', 类型: '*', value: lvl => Math.pow(1.16, lvl)}
     ]},
     fire: {图标: 'mdi-fire', color: '橙色-红色', 效果: [
-        {name: '冶炼速度', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
-        {name: '余烬容量', 类型: '基础', value: lvl => lvl * 30}
+        {name: '冶炼速度', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '余烬容量', 类型: '+', value: lvl => lvl * 30}
     ]},
     木头: {图标: 'mdi-tree', color: 'wooden', 效果: [
-        {name: '工人', 类型: '基础', value: lvl => lvl * 12},
-        {name: '工匠', 类型: '基础', value: lvl => lvl}
+        {name: '工人', 类型: '+', value: lvl => lvl * 12},
+        {name: '工匠', 类型: '+', value: lvl => lvl}
     ]},
     flow: {图标: 'mdi-waterfall', color: '光-blue', 效果: [
-        {name: '材料增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)}
+        {name: '材料增益', 类型: '*', value: lvl => Math.pow(1.1, lvl)}
     ]},
     石头: {图标: 'mdi-chart-bubble', color: 'dark-灰色', 效果: [
-        {name: '材料容量', 类型: 'mult', value: lvl => Math.pow(1.09, lvl)}
+        {name: '材料容量', 类型: '*', value: lvl => Math.pow(1.09, lvl)}
     ]},
     spike: {图标: 'mdi-nail', color: 'pale-红色', 效果: [
-        {name: '攻击', 类型: 'mult', value: lvl => Math.pow(1.12, lvl)},
-        {name: '生命值', 类型: 'mult', value: lvl => Math.pow(1.12, lvl)}
+        {name: '攻击', 类型: '*', value: lvl => Math.pow(1.12, lvl)},
+        {name: '生命值', 类型: '*', value: lvl => Math.pow(1.12, lvl)}
     ]},
     dream: {图标: 'mdi-sleep', color: 'pale-光-blue', 效果: [
-        {name: '怀旧之情', 类型: '基础', value: lvl => lvl * 15},
-        {name: '最大传家宝增益', 类型: '基础', value: lvl => lvl}
+        {name: '怀旧之情', 类型: '+', value: lvl => lvl * 15},
+        {name: '最大传家宝增益', 类型: '+', value: lvl => lvl}
     ]},
     三叶草: {图标: 'mdi-clover', color: '光-绿色', 效果: [
-        {name: '装备几率', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
-        {name: '精通点数增益', 类型: 'mult', value: lvl => Math.pow(1.18, lvl)}
+        {name: '装备几率', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '精通点数增益', 类型: '*', value: lvl => Math.pow(1.18, lvl)}
     ]},
     雨色: {图标: 'mdi-weather-pouring', color: 'dark-blue', 效果: [
-        {name: '仅蔬菜增益', 类型: 'mult', value: lvl => Math.pow(1.15, lvl)},
-        {name: '草容量', 类型: '基础', value: lvl => lvl * 100}
+        {name: '仅蔬菜增益', 类型: '*', value: lvl => Math.pow(1.15, lvl)},
+        {name: '草容量', 类型: '+', value: lvl => lvl * 100}
     ]},
     太阳药水: {图标: 'mdi-white-balance-sunny', color: '黄色', 效果: [
-        {name: '仅浆果增益', 类型: 'mult', value: lvl => Math.pow(1.15, lvl)},
-        {name: '黄金几率', 类型: 'mult', value: lvl => lvl * 0.03 + 1}
+        {name: '仅浆果增益', 类型: '*', value: lvl => Math.pow(1.15, lvl)},
+        {name: '黄金几率', 类型: '*', value: lvl => lvl * 0.03 + 1}
     ]},
     云: {图标: 'mdi-clouds', color: 'blue-灰色', 效果: [
-        {name: '仅粮食增益', 类型: 'mult', value: lvl => Math.pow(1.15, lvl)},
-        {name: '仅鲜花增益', 类型: 'mult', value: lvl => Math.pow(1.15, lvl)}
+        {name: '仅粮食增益', 类型: '*', value: lvl => Math.pow(1.15, lvl)},
+        {name: '仅鲜花增益', 类型: '*', value: lvl => Math.pow(1.15, lvl)}
     ]},
     开花: {图标: 'mdi-image-filter-vintage', color: '紫色', 效果: [
-        {name: '美丽增益', 类型: 'mult', value: lvl => Math.pow(1.35, lvl)},
-        {name: '转换器增益', 类型: 'mult', value: lvl => Math.pow(1.06, lvl)}
+        {name: '美丽增益', 类型: '*', value: lvl => Math.pow(1.35, lvl)},
+        {name: '转换器增益', 类型: '*', value: lvl => Math.pow(1.06, lvl)}
     ]},
     leaf: {图标: 'mdi-leaf', color: 'pale-绿色', 效果: [
-        {name: '形状增益', 类型: 'mult', value: lvl => Math.pow(1.15, lvl)},
-        {name: '动机容量', 类型: '基础', value: lvl => lvl * 5}
+        {name: '形状增益', 类型: '*', value: lvl => Math.pow(1.15, lvl)},
+        {name: '动机容量', 类型: '+', value: lvl => lvl * 5}
     ]},
     paper: {图标: 'mdi-note', color: 'pale-黄色', 效果: [
-        {name: '灵感的开始', 类型: '基础', value: lvl => lvl},
-        {name: '画布大小', 类型: '基础', value: lvl => lvl}
+        {name: '灵感的开始', 类型: '+', value: lvl => lvl},
+        {name: '画布大小', 类型: '+', value: lvl => lvl}
     ]},
     书籍: {图标: 'mdi-book', color: 'beige', 效果: [
-        {name: '书籍增益', 类型: '基础', value: lvl => lvl * 5},
-        {name: '金尘容量', 类型: '基础', value: lvl => lvl * 2500}
+        {name: '书籍增益', 类型: '+', value: lvl => lvl * 5},
+        {name: '金尘容量', 类型: '+', value: lvl => lvl * 2500}
     ]},
     金币: {图标: 'mdi-circle-multiple', color: '金色', 效果: [
-        {name: '碎片增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-        {name: '宝藏插槽', 类型: '基础', value: lvl => lvl}
+        {name: '碎片增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
+        {name: '宝藏插槽', 类型: '+', value: lvl => lvl}
     ]},
 }

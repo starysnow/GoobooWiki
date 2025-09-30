@@ -1,0 +1,50 @@
+[
+  {
+    "名称": "cinders",
+    "start": "01-15",
+    "end": "02-03",
+    "color": "金色",
+    "currency": "蜡",
+    "token": "煤渣代币"
+  },
+  {
+    "名称": "bloom",
+    "start": "03-09",
+    "end": "03-31",
+    "color": "光-绿色",
+    "currency": "腐殖质",
+    "token": "绽放代币"
+  },
+  {
+    "名称": "weatherChaos",
+    "start": "05-22",
+    "end": "06-08",
+    "color": "灰色",
+    "currency": "云",
+    "token": "天气混乱代币"
+  },
+  {
+    "名称": "summerFestival",
+    "start": "07-26",
+    "end": "08-22",
+    "color": "橙色-红色",
+    "currency": "混合物",
+    "token": "夏季节日代币"
+  },
+  {
+    "名称": "nightHunt",
+    "start": "10-04",
+    "end": "10-19",
+    "color": "deep-紫色",
+    "currency": "魔法",
+    "token": "夜间狩猎代币"
+  },
+  {
+    "名称": "snowdown",
+    "start": "11-25",
+    "end": "12-15",
+    "color": "skyblue",
+    "currency": "雪球",
+    "token": "降雪代币"
+  }
+]

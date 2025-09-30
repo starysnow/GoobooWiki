@@ -1,0 +1,22 @@
+| 名称  | 类型  | 消耗  | 效果  | requirement | hasDescription | 上限  |
+| --- | --- | --- | --- | ----------- | -------------- | --- |
+| 更多伤害 | 高级 | ${ 红宝石: fallbackArray([15, 80],   \cdot  {(2)}^{\text{向下取整}((lvl - 2} / 2))  \cdot  75, lvl) }$ | 伤害*｛$fallbackArray([1, 1.25, 1.5], getSequence(3, lvl - 2)  \cdot  0.25 + 1, lvl)$｝ |  |  |  |
+| 更多废料 | 高级 | ${ 红宝石: fallbackArray([10, 40],   \cdot  {(2)}^{\text{向下取整}((lvl - 2} / 2))  \cdot  75, lvl) }$ | 废料增益*｛$fallbackArray([1, 1.25, 1.5], getSequence(1, lvl - 2) + 1, lvl)$｝; 废料容量*｛$fallbackArray([1, 1.25, 1.5], getSequence(1, lvl - 2) + 1, lvl)$｝ |  |  |  |
+| 更多绿水晶 | 高级 | ${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  75 }$ | 绿水晶增益*｛$lvl  \cdot  0.25 + 1$｝ | $store.state.解锁.深度居民.see$ |  |  |
+| 更多稀土 | 高级 | ${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  120 }$ | 稀土增益*｛$getSequence(3, lvl)  \cdot  0.05 + 1$｝ | $store.state.stat.mining_maxDepth0.总计 >= 50$ |  |  |
+| 更快的冶炼速度 | 高级 | ${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  100 }$ | 冶炼速度*｛$lvl + 1$｝ | $store.state.解锁.冶炼厂.see$ |  |  |
+| 更多树脂 | 高级 | ${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  150 }$ | 树脂增益*｛$lvl  \cdot  0.1 + 1$｝; 树脂容量+｛$lvl$｝ | $store.state.解锁.树脂.see$ |  |  |
+| 高级制作槽 | 高级 | ${ 红宝石: {(2)}^{lvl}  \cdot  30 }$ | 高级制作插槽+｛$lvl$｝ | $store.state.解锁.镐制作.see$ | true |  |
+| 更多铝 | 高级 | ${ 红宝石: {(2)}^{lvl}  \cdot  300 }$ | 铝矿石增益*｛${(2)}^{lvl}$｝; 铝矿石容量*｛$lvl  \cdot  0.25 + 1$｝ | $store.state.stat.mining_maxDepth0.总计 >= 15$ |  | 1 |
+| 更多铜 | 高级 | ${ 红宝石: {(2)}^{lvl}  \cdot  450 }$ | 铜矿石增益*｛${(2)}^{lvl}$｝; 铜矿石容量*｛$lvl  \cdot  0.25 + 1$｝ | $store.state.stat.mining_maxDepth0.总计 >= 30$ |  | 1 |
+| 更多锡 | 高级 | ${ 红宝石: {(2)}^{lvl}  \cdot  600 }$ | 锡矿石增益*｛${(2)}^{lvl}$｝; 锡矿石容量*｛$lvl  \cdot  0.25 + 1$｝ | $store.state.stat.mining_maxDepth0.总计 >= 50$ |  | 1 |
+| 更多铁 | 高级 | ${ 红宝石: {(2)}^{lvl}  \cdot  900 }$ | 铁矿石增益*｛${(2)}^{lvl}$｝; 铁矿石容量*｛$lvl  \cdot  0.25 + 1$｝ | $store.state.stat.mining_maxDepth0.总计 >= 80$ |  | 1 |
+| 更多钛 | 高级 | ${ 红宝石: {(2)}^{lvl}  \cdot  1200 }$ | 钛矿石增益*｛${(2)}^{lvl}$｝; 钛矿石容量*｛$lvl  \cdot  0.25 + 1$｝ | $store.state.stat.mining_maxDepth0.总计 >= 120$ |  | 1 |
+| 更多铂 | 高级 | ${ 红宝石: {(2)}^{lvl}  \cdot  1800 }$ | 铂矿石增益*｛${(2)}^{lvl}$｝; 铂矿石容量*｛$lvl  \cdot  0.25 + 1$｝ | $store.state.stat.mining_maxDepth0.总计 >= 175$ |  | 1 |
+| 更多铱 | 高级 | ${ 红宝石: {(2)}^{lvl}  \cdot  2500 }$ | 铱矿石增益*｛${(2)}^{lvl}$｝; 铱矿石容量*｛$lvl  \cdot  0.25 + 1$｝ | $store.state.stat.mining_maxDepth0.总计 >= 260$ |  | 1 |
+| 更多锇 | 高级 | ${ 红宝石: {(2)}^{lvl}  \cdot  3500 }$ | 锇矿石增益*｛${(2)}^{lvl}$｝; 锇矿石容量*｛$lvl  \cdot  0.25 + 1$｝ | $store.state.stat.mining_maxDepth0.总计 >= 350$ |  | 1 |
+| 更多铅 | 高级 | ${ 红宝石: {(2)}^{lvl}  \cdot  5000 }$ | 铅矿石增益*｛${(2)}^{lvl}$｝; 铅矿石容量*｛$lvl  \cdot  0.25 + 1$｝ | $store.state.stat.mining_maxDepth0.总计 >= 450$ |  | 1 |
+| 更多氦 | 高级 | ${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  300 }$ | 氦增益+｛$lvl  \cdot  0.004$｝ | $store.state.解锁.miningGasSubfeature.see$ |  | 5 |
+| 更多烟雾 | 高级 | ${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  325 }$ | 烟雾容量*｛${(2)}^{lvl}$｝ | $store.state.解锁.烟雾.see$ |  |  |
+| 更多氖 | 高级 | ${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  525 }$ | 氖增益+｛$lvl  \cdot  0.004$｝ | $store.state.stat.mining_maxDepth1.总计 >= 40$ |  | 5 |
+| 更多氩 | 高级 | ${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  800 }$ | 氩增益+｛$lvl  \cdot  0.004$｝ | $store.state.stat.mining_maxDepth1.总计 >= 90$ |  | 5 |

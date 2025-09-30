@@ -1,7 +1,7 @@
-| 名称  | 类型  | 效果  | cap |
-| --- | --- | --- | --- |
-| 多汁的诱饵 | weatherChaos | [{"name":"最大鱼尺寸","类型":"基础"},{"name":"最大鱼尺寸","类型":"mult"}] |  |
-| 培养箱 | weatherChaos | [{"name":"平均鱼尺寸","类型":"基础"},{"name":"平均鱼尺寸","类型":"mult"}] |  |
-| 鱼哨 | weatherChaos | [{"name":"钓鱼力量","类型":"基础"}] |  |
-| 污染 | weatherChaos | [{"name":"垃圾增益","类型":"mult"}] |  |
-| 金钩 | weatherChaos | [{"name":"钓鱼时间","类型":"mult"}] | 4 |
+| 名称  | 类型  | 消耗  | 效果  | 上限  |
+| --- | --- | --- | --- | --- |
+| 多汁的诱饵 | weatherChaos | ${ 海藻: {(1.35 + 0.08  \cdot  lvl)}^{lvl}  \cdot  500 }$ | 最大鱼尺寸+｛$lvl  \cdot  0.1$｝; 最大鱼尺寸*｛$lvl  \cdot  0.1 + 1$｝ |  |
+| 培养箱 | weatherChaos | ${ 浮木: {(1.25 + 0.065  \cdot  lvl)}^{lvl}  \cdot  250 }$ | 平均鱼尺寸+｛$lvl  \cdot  0.2$｝; 平均鱼尺寸*｛$lvl  \cdot  0.05 + 1$｝ |  |
+| 鱼哨 | weatherChaos | ${ 塑料: {(1.15 + 0.015  \cdot  lvl)}^{lvl}  \cdot  100 }$ | 钓鱼力量+｛$getSequence(1, lvl)  \cdot  0.1 + lvl$｝ |  |
+| 污染 | weatherChaos | ${ 粘液: {(1.35)}^{lvl}  \cdot  100 }$ | 垃圾增益*｛$lvl  \cdot  0.1 + 1$｝ |  |
+| 金钩 | weatherChaos | ${ gem_topaz: lvl  \cdot  250 + 500 }$ | 钓鱼时间*｛$1 / (lvl  \cdot  0.25 + 1)$｝ | 4 |

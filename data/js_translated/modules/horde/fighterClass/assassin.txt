@@ -2,22 +2,22 @@
     解锁: '刺客职业',
     图标: 'mdi-robber',
     baseStats: {
-        攻击 +: 8.5,
+        攻击plus: 8.5,
         生命值: 220,
         mana: 90
     },
     经验值: {
-        基础: 2700,
+        +: 2700,
         increment: 1.5
     },
     skills: {},
     skillTree: [
-        {isInnate: true, 达到等级 {0}: 0, items: []},
+        {isInnate: true, 达到等级: 0, items: []},
     ],
     quests: {
-        达到 {0} {1}: [],
+        stat: [],
         区域: [],
-        达到等级 {0}: [],
-        击败 {0} (+{1}): []
+        达到等级: [],
+        击败 (0) (+(1)): []
     }
 }

@@ -1,6 +1,0 @@
-{
-    price: buildNum(50, 'K'),
-    自定义导航栏: true,
-    自定义背景色: true,
-    包括动画: true
-}

@@ -1,19 +1,19 @@
 {
-    税收: {mult: '税收政策', 图标: 'mdi-cash-register', 效果: [
-        {name: '税率', 类型: 'mult', value: lvl => lvl * 0.25 + 1},
-        {name: '幸福', 类型: '基础', value: lvl => lvl * (lvl > 0 ? -0.05 : -0.03)}
+    税收: {*: '税收政策', 图标: 'mdi-cash-register', 效果: [
+        {name: '税率', 类型: '*', value: lvl => lvl * 0.25 + 1},
+        {name: '幸福', 类型: '+', value: lvl => lvl * (lvl > 0 ? -0.05 : -0.03)}
     ]},
-    移民: {mult: '移民政策', 图标: 'mdi-account-group', 效果: [
-        {name: '工人', 类型: 'mult', value: lvl => lvl * 0.15 + 1},
-        {name: '幸福', 类型: '基础', value: lvl => lvl * (lvl > 0 ? -0.05 : -0.1)}
+    移民: {*: '移民政策', 图标: 'mdi-account-group', 效果: [
+        {name: '工人', 类型: '*', value: lvl => lvl * 0.15 + 1},
+        {name: '幸福', 类型: '+', value: lvl => lvl * (lvl > 0 ? -0.05 : -0.1)}
     ]},
-    宗教: {mult: '宗教政策', 图标: 'mdi-hands-pray', 效果: [
-        {name: '所有资源增益', 类型: 'mult', value: lvl => lvl * (lvl > 0 ? -0.25 : -0.1) + 1},
-        {name: '信仰增益', 类型: 'mult', value: lvl => lvl * 0.25 + 1}
+    宗教: {*: '宗教政策', 图标: 'mdi-hands-pray', 效果: [
+        {name: '所有资源增益', 类型: '*', value: lvl => lvl * (lvl > 0 ? -0.25 : -0.1) + 1},
+        {name: '信仰增益', 类型: '*', value: lvl => lvl * 0.25 + 1}
     ]},
-    扫描: {mult: '扫描政策', 图标: 'mdi-magnify-scan', 效果: [
-        {name: '战利品增益', 类型: 'mult', value: lvl => 1 - lvl * (lvl > 0 ? 0.1 : 0.05)},
-        {name: '战利品品质', 类型: '基础', value: lvl => Math.最大值(lvl, 0)},
-        {name: '战利品品质', 类型: 'mult', value: lvl => Math.出现在区域 {0} 或更高区域(1 + lvl * 0.1, 1)}
+    扫描: {*: '扫描政策', 图标: 'mdi-magnify-scan', 效果: [
+        {name: '战利品增益', 类型: '*', value: lvl => 1 - lvl * (lvl > 0 ? 0.1 : 0.05)},
+        {name: '战利品品质', 类型: '+', value: lvl => Math.max(lvl, 0)},
+        {name: '战利品品质', 类型: '*', value: lvl => Math.min(1 + lvl * 0.1, 1)}
     ]}
 }

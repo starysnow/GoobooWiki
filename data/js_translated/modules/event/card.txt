@@ -1,19 +1,19 @@
 {
     feature: {
         prefix: 'EV',
-        reward: [{name: 'currencyGemTopazCap', 类型: '基础', value: lvl => lvl * 5}],
-        shinyReward: [{name: 'currencyGemTopazCap', 类型: '基础', value: lvl => lvl * 5}],
+        reward: [{name: 'currencyGemTopazCap', 类型: '+', value: lvl => lvl * 5}],
+        shinyReward: [{name: 'currencyGemTopazCap', 类型: '+', value: lvl => lvl * 5}],
         解锁: 'eventFeature'
     },
     collection: {
         周末旅行: {reward: [
-            {name: 'currencyGemTopazCap', 类型: '基础', value: 50}
+            {name: 'currencyGemTopazCap', 类型: '+', value: 50}
         ]},
         热带天堂: {reward: [
-            {name: 'currencyGemTopazCap', 类型: '基础', value: 50}
+            {name: 'currencyGemTopazCap', 类型: '+', value: 50}
         ]},
         寒冷时期: {reward: [
-            {name: 'currencyGemTopazCap', 类型: '基础', value: 50}
+            {name: 'currencyGemTopazCap', 类型: '+', value: 50}
         ]},
     },
     pack: {

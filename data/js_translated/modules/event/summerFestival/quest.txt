@@ -1,130 +1,130 @@
 [
     [
-        {类型: '收集 {0} ', name: '木头', amount: 300}
+        {类型: 'currency', name: 'event_log', amount: 300}
     ],
     [
-        {类型: '构造 {0}x 等级 {1} {2}', name: '收集者', 达到等级 {0}: 1, amount: 1}
+        {类型: 'building', name: '收集者', 达到等级: 1, amount: 1}
     ],
     [
-        {类型: '收集 {0} ', name: '椰子', amount: 1000}
+        {类型: 'currency', name: '椰子', amount: 1000}
     ],
     [
-        {类型: '收集 {0} ', name: '木头', amount: 1750},
-        {类型: '收集 {0} ', name: '椰子', amount: 3000}
+        {类型: 'currency', name: 'event_log', amount: 1750},
+        {类型: 'currency', name: '椰子', amount: 3000}
     ],
     [
-        {类型: '构造 {0}x 等级 {1} {2}', name: '主舞台', 达到等级 {0}: 1, amount: 1}
+        {类型: 'building', name: '主舞台', 达到等级: 1, amount: 1}
     ],
     [
-        {类型: '收集 {0} ', name: '音乐', amount: 1300}
+        {类型: 'currency', name: '音乐', amount: 1300}
     ],
     [
-        {类型: '收集 {0} ', name: '木头', amount: 7000},
-        {类型: '收集 {0} ', name: '椰子', amount: 7000}
+        {类型: 'currency', name: 'event_log', amount: 7000},
+        {类型: 'currency', name: '椰子', amount: 7000}
     ],
     [
-        {类型: '构造 {0}x 等级 {1} {2}', name: '收集者', 达到等级 {0}: 2, amount: 2}
+        {类型: 'building', name: '收集者', 达到等级: 2, amount: 2}
     ],
     [
-        {类型: '收集 {0} ', name: '音乐', amount: buildNum(14, 'K')}
+        {类型: 'currency', name: '音乐', amount: buildNum(14, 'K')}
     ],
     [
-        {类型: '构造 {0}x 等级 {1} {2}', name: '菜地', 达到等级 {0}: 1, amount: 1}
+        {类型: 'building', name: '菜地', 达到等级: 1, amount: 1}
     ],
     [
-        {类型: '构造 {0}x 等级 {1} {2}', name: '收集者', 达到等级 {0}: 3, amount: 2}
+        {类型: 'building', name: '收集者', 达到等级: 3, amount: 2}
     ],
     [
-        {类型: '收集 {0} ', name: '仅蔬菜', amount: 1500}
+        {类型: 'currency', name: '仅蔬菜', amount: 1500}
     ],
     [
-        {类型: '收集 {0} ', name: '音乐', amount: buildNum(50, 'K')}
+        {类型: 'currency', name: '音乐', amount: buildNum(50, 'K')}
     ],
     [
-        {类型: '构造 {0}x 等级 {1} {2}', name: '菜地', 达到等级 {0}: 2, amount: 1}
+        {类型: 'building', name: '菜地', 达到等级: 2, amount: 1}
     ],
     [
-        {类型: '构造 {0}x 等级 {1} {2}', name: '收集者', 达到等级 {0}: 3, amount: 4}
+        {类型: 'building', name: '收集者', 达到等级: 3, amount: 4}
     ],
     [
-        {类型: '收集 {0} ', name: '石块', amount: buildNum(900, 'K')}
+        {类型: 'currency', name: '石块', amount: buildNum(900, 'K')}
     ],
     [
-        {类型: '构造 {0}x 等级 {1} {2}', name: '锯木厂', 达到等级 {0}: 1, amount: 1}
+        {类型: 'building', name: '锯木厂', 达到等级: 1, amount: 1}
     ],
     [
-        {类型: '收集 {0} ', name: '实心板', amount: 10}
+        {类型: 'currency', name: '实心板', amount: 10}
     ],
     [
-        {类型: '收集 {0} ', name: '椰子', amount: buildNum(7, '分钟')},
-        {类型: '收集 {0} ', name: '仅蔬菜', amount: 4000}
+        {类型: 'currency', name: '椰子', amount: buildNum(7, 'M')},
+        {类型: 'currency', name: '仅蔬菜', amount: 4000}
     ],
     [
-        {类型: '构造 {0}x 等级 {1} {2}', name: '厨房', 达到等级 {0}: 1, amount: 1}
+        {类型: 'building', name: '厨房', 达到等级: 1, amount: 1}
     ],
     [
-        {类型: '收集 {0} ', name: '椰子沙拉', amount: 25}
+        {类型: 'currency', name: '椰子沙拉', amount: 25}
     ],
     [
-        {类型: '收集 {0} ', name: '音乐', amount: buildNum(130, 'K')}
+        {类型: 'currency', name: '音乐', amount: buildNum(130, 'K')}
     ],
     [
-        {类型: '收集 {0} ', name: '贝壳', amount: buildNum(16, '分钟')}
+        {类型: 'currency', name: '贝壳', amount: buildNum(16, 'M')}
     ],
     [
-        {类型: '收集 {0} ', name: '木头', amount: buildNum(150, '分钟')},
-        {类型: '收集 {0} ', name: '椰子', amount: buildNum(200, '分钟')},
-        {类型: '收集 {0} ', name: '石块', amount: buildNum(80, '分钟')}
+        {类型: 'currency', name: 'event_log', amount: buildNum(150, 'M')},
+        {类型: 'currency', name: '椰子', amount: buildNum(200, 'M')},
+        {类型: 'currency', name: '石块', amount: buildNum(80, 'M')}
     ],
     [
-        {类型: '构造 {0}x 等级 {1} {2}', name: '主舞台', 达到等级 {0}: 2, amount: 1}
+        {类型: 'building', name: '主舞台', 达到等级: 2, amount: 1}
     ],
     [
-        {类型: '收集 {0} ', name: '音乐', amount: buildNum(360, 'K')}
+        {类型: 'currency', name: '音乐', amount: buildNum(360, 'K')}
     ],
     [
-        {类型: '收集 {0} ', name: '生肉', amount: 20}
+        {类型: 'currency', name: '生肉', amount: 20}
     ],
     [
-        {类型: '收集 {0} ', name: '实心板', amount: 3000},
-        {类型: '收集 {0} ', name: '椰子沙拉', amount: 650},
-        {类型: '收集 {0} ', name: '生肉', amount: 80}
+        {类型: 'currency', name: '实心板', amount: 3000},
+        {类型: 'currency', name: '椰子沙拉', amount: 650},
+        {类型: 'currency', name: '生肉', amount: 80}
     ],
     [
-        {类型: '构造 {0}x 等级 {1} {2}', name: '菜地', 达到等级 {0}: 3, amount: 2}
+        {类型: 'building', name: '菜地', 达到等级: 3, amount: 2}
     ],
     [
-        {类型: '收集 {0} ', name: '沙子', amount: buildNum(40, 'K')}
+        {类型: 'currency', name: '沙子', amount: buildNum(40, 'K')}
     ],
     [
-        {类型: '收集 {0} ', name: '砂岩', amount: 600}
+        {类型: 'currency', name: '砂岩', amount: 600}
     ],
     [
-        {类型: '收集 {0} ', name: '煤', amount: 100}
+        {类型: 'currency', name: '煤', amount: 100}
     ],
     [
-        {类型: '构造 {0}x 等级 {1} {2}', name: '狩猎区', 达到等级 {0}: 1, amount: 2}
+        {类型: 'building', name: '狩猎区', 达到等级: 1, amount: 2}
     ],
     [
-        {类型: '收集 {0} ', name: '音乐', amount: buildNum(900, 'K')}
+        {类型: 'currency', name: '音乐', amount: buildNum(900, 'K')}
     ],
     [
-        {类型: '收集 {0} ', name: '熟肉', amount: 200}
+        {类型: 'currency', name: '熟肉', amount: 200}
     ],
     [
-        {类型: '构造 {0}x 等级 {1} {2}', name: '收集者', 达到等级 {0}: 7, amount: 2}
+        {类型: 'building', name: '收集者', 达到等级: 7, amount: 2}
     ],
     [
-        {类型: '收集 {0} ', name: '盐', amount: 900}
+        {类型: 'currency', name: '盐', amount: 900}
     ],
     [
-        {类型: '收集 {0} ', name: '椰子沙拉', amount: 3000},
-        {类型: '收集 {0} ', name: '咸贝壳', amount: 100}
+        {类型: 'currency', name: '椰子沙拉', amount: 3000},
+        {类型: 'currency', name: '咸贝壳', amount: 100}
     ],
     [
-        {类型: '收集 {0} ', name: '音乐', amount: buildNum(2.5, '分钟')}
+        {类型: 'currency', name: '音乐', amount: buildNum(2.5, 'M')}
     ],
     [
-        {类型: '构造 {0}x 等级 {1} {2}', name: '主舞台', 达到等级 {0}: 3, amount: 1}
+        {类型: 'building', name: '主舞台', 达到等级: 3, amount: 1}
     ],
 ];

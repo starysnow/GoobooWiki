@@ -1,40 +1,40 @@
-| 名称  | 类型  | 图标  | 效果  | 最大值 |
+| 名称  | 类型  | 图标  | 效果  | max |
 | --- | --- | --- | --- | --- |
-| 森林 | producer | mdi-forest | [{"name":"树苗增益","类型":"基础"}] |  |
-| 牧羊人 | producer | mdi-sheep | [{"name":"纱增益","类型":"基础"}] |  |
-| 擀面杖 | producer | mdi-arrow-top-right-bottom-left-bold | [{"name":"面团增益","类型":"基础"}] |  |
-| 雪炮 | producer | mdi-snowflake-alert | [{"name":"雪增益","类型":"基础"}] |  |
-| 雪鸮 | pet | mdi-owl |  | 1 |
-| 狗 | pet | mdi-dog |  | 1 |
-| 猫 | pet | mdi-cat |  | 1 |
-| 企鹅 | pet | mdi-penguin |  | 1 |
-| 兔子 | pet | mdi-rabbit |  | 1 |
-| 乌龟 | pet | mdi-tortoise |  | 1 |
-| 动物牙齿 | petBoost | mdi-tooth | [{"name":"宠物攻击","类型":"基础"},{"name":"宠物攻击","类型":"mult"}] |  |
-| 项圈 | petBoost | mdi-dog-service | [{"name":"宠物生命值","类型":"基础"},{"name":"宠物生命值","类型":"mult"}] |  |
-| 辣椒 | petBoost | mdi-chili-mild | [{"name":"暴击率","类型":"基础"},{"name":"宠物暴击率","类型":"基础"}] |  |
-| 鼓槌 | petBoost | mdi-food-drumstick | [{"name":"宠物攻击","类型":"mult"},{"name":"宠物生命值","类型":"mult"},{"name":"宠物格挡率","类型":"基础"}] |  |
-| 老鼠 | petBoost | mdi-rodent |  | 5 |
-| 骨头 | petBoost | mdi-bone |  | 5 |
-| 墓碑 | petBoost | mdi-grave-stone |  | 3 |
-| 尖刺项圈 | petBoost | mdi-decagram-outline |  | 1 |
-| 心形项圈 | petBoost | mdi-heart-outline |  | 3 |
-| 治疗袋 | petBoost | mdi-sack |  |  |
-| 网球 | petBoost | mdi-tennis-ball |  | 1 |
-| 苹果汁 | tank | mdi-cup |  |  |
-| 热水 | tank | mdi-needle |  | 1 |
-| 哑铃 | tank | mdi-dumbbell |  | 5 |
-| 目标 | tank | mdi-bullseye |  | 5 |
-| 手套 | tank | mdi-hand-back-left |  | 5 |
-| 滑雪板 | 暴击 | mdi-snowboard |  | 1 |
-| 茶 | 暴击 | mdi-tea |  | 3 |
-| 星盾 | 暴击 | mdi-shield-star |  | 1 |
-| 咖啡 | 暴击 | mdi-coffee |  | 3 |
-| 鹅卵石 | 暴击 | mdi-chart-bubble |  | 1 |
-| 日盾 |  | mdi-shield-sun | [{"name":"防御","类型":"基础"}] |  |
-| 月盾 |  | mdi-shield-moon | [{"name":"防御","类型":"基础"},{"name":"格挡率","类型":"基础"}] |  |
-| 壁炉 |  | mdi-fireplace | [{"name":"生命值","类型":"基础"},{"name":"生命值","类型":"mult"}] |  |
-| 特殊雪花 |  | mdi-snowflake-variant | [{"name":"攻击","类型":"mult"},{"name":"暴击率","类型":"基础"}] |  |
-| 糖果手杖 |  | mdi-candycane | [{"name":"生命值","类型":"基础"},{"name":"格挡率","类型":"基础"}] |  |
-| 铲子 |  | mdi-shovel | [{"name":"攻击","类型":"基础"},{"name":"攻击","类型":"mult"}] |  |
-| 火鸡 |  | mdi-food-turkey | [{"name":"攻击","类型":"基础"},{"name":"生命值","类型":"mult"}] |  |
+| 森林 | producer | <i class="mdi mdi-forest"></i> | 树苗增益+｛${(2)}^{lvl}  \cdot  {(lvl + 1)}^{2}  \cdot  0.01$｝ |  |
+| 牧羊人 | producer | <i class="mdi mdi-sheep"></i> | 纱增益+｛${(2)}^{lvl}  \cdot  {(lvl + 1)}^{2}  \cdot  0.01$｝ |  |
+| 擀面杖 | producer | <i class="mdi mdi-arrow-top-right-bottom-left-bold"></i> | 面团增益+｛${(2)}^{lvl}  \cdot  {(lvl + 1)}^{2}  \cdot  0.01$｝ |  |
+| 雪炮 | producer | <i class="mdi mdi-snowflake-alert"></i> | 雪增益+｛${(2)}^{lvl}  \cdot  {(lvl + 1)}^{2}  \cdot  0.01$｝ |  |
+| 雪鸮 | pet | <i class="mdi mdi-owl"></i> |  | 1 |
+| 狗 | pet | <i class="mdi mdi-dog"></i> |  | 1 |
+| 猫 | pet | <i class="mdi mdi-cat"></i> |  | 1 |
+| 企鹅 | pet | <i class="mdi mdi-penguin"></i> |  | 1 |
+| 兔子 | pet | <i class="mdi mdi-rabbit"></i> |  | 1 |
+| 乌龟 | pet | <i class="mdi mdi-tortoise"></i> |  | 1 |
+| 动物牙齿 | petBoost | <i class="mdi mdi-tooth"></i> | 宠物攻击+｛$lvl  \cdot  0.5$｝; 宠物攻击*｛$lvl  \cdot  0.1 + 1$｝ |  |
+| 项圈 | petBoost | <i class="mdi mdi-dog-service"></i> | 宠物生命值+｛$lvl  \cdot  5$｝; 宠物生命值*｛$lvl  \cdot  0.1 + 1$｝ |  |
+| 辣椒 | petBoost | <i class="mdi mdi-chili-mild"></i> | 暴击率+｛$lvl  \cdot  8$｝; 宠物暴击率+｛$lvl  \cdot  10$｝ |  |
+| 鼓槌 | petBoost | <i class="mdi mdi-food-drumstick"></i> | 宠物攻击*｛$lvl  \cdot  0.1 + 1$｝; 宠物生命值*｛$lvl  \cdot  0.1 + 1$｝; 宠物格挡率+｛$lvl  \cdot  5$｝ |  |
+| 老鼠 | petBoost | <i class="mdi mdi-rodent"></i> |  | 5 |
+| 骨头 | petBoost | <i class="mdi mdi-bone"></i> |  | 5 |
+| 墓碑 | petBoost | <i class="mdi mdi-grave-stone"></i> |  | 3 |
+| 尖刺项圈 | petBoost | <i class="mdi mdi-decagram-outline"></i> |  | 1 |
+| 心形项圈 | petBoost | <i class="mdi mdi-heart-outline"></i> |  | 3 |
+| 治疗袋 | petBoost | <i class="mdi mdi-sack"></i> |  |  |
+| 网球 | petBoost | <i class="mdi mdi-tennis-ball"></i> |  | 1 |
+| 苹果汁 | tank | <i class="mdi mdi-cup"></i> |  |  |
+| 热水 | tank | <i class="mdi mdi-needle"></i> |  | 1 |
+| 哑铃 | tank | <i class="mdi mdi-dumbbell"></i> |  | 5 |
+| 目标 | tank | <i class="mdi mdi-bullseye"></i> |  | 5 |
+| 手套 | tank | <i class="mdi mdi-hand-back-left"></i> |  | 5 |
+| 滑雪板 | 暴击 | <i class="mdi mdi-snowboard"></i> |  | 1 |
+| 茶 | 暴击 | <i class="mdi mdi-tea"></i> |  | 3 |
+| 星盾 | 暴击 | <i class="mdi mdi-shield-star"></i> |  | 1 |
+| 咖啡 | 暴击 | <i class="mdi mdi-coffee"></i> |  | 3 |
+| 鹅卵石 | 暴击 | <i class="mdi mdi-chart-bubble"></i> |  | 1 |
+| 日盾 |  | <i class="mdi mdi-shield-sun"></i> | 防御+｛$lvl  \cdot  2$｝ |  |
+| 月盾 |  | <i class="mdi mdi-shield-moon"></i> | 防御+｛$lvl$｝; 格挡率+｛$lvl  \cdot  5$｝ |  |
+| 壁炉 |  | <i class="mdi mdi-fireplace"></i> | 生命值+｛$lvl  \cdot  10$｝; 生命值*｛$lvl  \cdot  0.1 + 1$｝ |  |
+| 特殊雪花 |  | <i class="mdi mdi-snowflake-variant"></i> | 攻击*｛$lvl  \cdot  0.1 + 1$｝; 暴击率+｛$lvl  \cdot  5$｝ |  |
+| 糖果手杖 |  | <i class="mdi mdi-candycane"></i> | 生命值+｛$lvl  \cdot  15$｝; 格挡率+｛$lvl  \cdot  5$｝ |  |
+| 铲子 |  | <i class="mdi mdi-shovel"></i> | 攻击+｛$lvl$｝; 攻击*｛$lvl  \cdot  0.1 + 1$｝ |  |
+| 火鸡 |  | <i class="mdi mdi-food-turkey"></i> | 攻击+｛$lvl$｝; 生命值*｛$lvl  \cdot  0.1 + 1$｝ |  |

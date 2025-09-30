@@ -1,0 +1,92 @@
+[
+  {
+    "名称": "铝矿石",
+    "卡片力量": "15",
+    "杂质": "1.5",
+    "minDepth": "15",
+    "maxDepth": "45",
+    "modulo": "3",
+    "baseAmount": "0.02",
+    "amountMult": "1.05"
+  },
+  {
+    "名称": "铜矿石",
+    "卡片力量": "50",
+    "杂质": "2",
+    "minDepth": "30",
+    "maxDepth": "68",
+    "modulo": "4",
+    "baseAmount": "0.004",
+    "amountMult": "1.05"
+  },
+  {
+    "名称": "锡矿石",
+    "卡片力量": "240",
+    "杂质": "2.5",
+    "minDepth": "50",
+    "maxDepth": "100",
+    "modulo": "5",
+    "baseAmount": "0.0008",
+    "amountMult": "1.05"
+  },
+  {
+    "名称": "铁矿石",
+    "卡片力量": "1300",
+    "杂质": "3",
+    "minDepth": "80",
+    "maxDepth": "140",
+    "modulo": "7",
+    "baseAmount": "0.00016",
+    "amountMult": "1.05"
+  },
+  {
+    "名称": "钛矿石",
+    "卡片力量": "7000",
+    "杂质": "3.5",
+    "minDepth": "120",
+    "maxDepth": "200",
+    "modulo": "11",
+    "baseAmount": "0.000032",
+    "amountMult": "1.05"
+  },
+  {
+    "名称": "铂矿石",
+    "卡片力量": "[Unsupported Node: CallExpression]",
+    "杂质": "4",
+    "minDepth": "175",
+    "maxDepth": "295",
+    "modulo": "13",
+    "baseAmount": "0.0000064",
+    "amountMult": "1.05"
+  },
+  {
+    "名称": "铱矿石",
+    "卡片力量": "[Unsupported Node: CallExpression]",
+    "杂质": "5",
+    "minDepth": "260",
+    "maxDepth": "420",
+    "modulo": "17",
+    "baseAmount": "0.00000128",
+    "amountMult": "1.05"
+  },
+  {
+    "名称": "锇矿石",
+    "卡片力量": "[Unsupported Node: CallExpression]",
+    "杂质": "6",
+    "minDepth": "350",
+    "maxDepth": "525",
+    "modulo": "23",
+    "baseAmount": "2.56e-7",
+    "amountMult": "1.05"
+  },
+  {
+    "名称": "铅矿石",
+    "卡片力量": "[Unsupported Node: CallExpression]",
+    "杂质": "7.5",
+    "minDepth": "450",
+    "maxDepth": "650",
+    "modulo": "29",
+    "baseAmount": "5.12e-8",
+    "amountMult": "1.05"
+  }
+]

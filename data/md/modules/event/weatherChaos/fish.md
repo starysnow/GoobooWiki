@@ -1,25 +1,25 @@
 | 名称  | iconSize | color | location | size | 哑铃  | 图标  | 雨色  | minPower | 太阳药水 |  雪  | thunder | wind |
 | --- | -------- | ----- | -------- | ---- | --- | --- | --- | -------- | ---- | --- | ------- | ---- |
 | 青铜鱼 | 1.1 | pale-红色 | 池塘 | 4.5 | 1.25 |  |  |  |  |  |  |  |
-| 蜗牛 | 0.6 | 绿色 | 池塘 | 2.7 | 3.7 | mdi-snail | true |  |  |  |  |  |
+| 蜗牛 | 0.6 | 绿色 | 池塘 | 2.7 | 3.7 | <i class="mdi mdi-snail"></i> | true |  |  |  |  |  |
 | Cablebiter | 0.75 | dark-灰色 | 池塘 | 6 | 2.8 |  |  | 5 | true |  |  |  |
 | Blueshimmer | 1 | pale-blue | 池塘 | 7.8 | 2.2 |  |  | 8 |  | true |  |  |
 | Introvero | 0.6 | skyblue | 池塘 | 6.2 | 0.1 |  | true | 14 | false |  |  |  |
 | Zapling | 0.7 | 黄色 | 池塘 | 4.1 | 1.6 |  |  | 17 |  |  | true |  |
-| Starcone | 0.7 | 棕色 | 池塘 | 2.4 | 3.1 | mdi-snail |  | 26 |  | true |  |  |
+| Starcone | 0.7 | 棕色 | 池塘 | 2.4 | 3.1 | <i class="mdi mdi-snail"></i> |  | 26 |  | true |  |  |
 | Phelaria | 1.7 | 橙色 | 池塘 | 6.4 | 0.55 |  | false | 38 |  | false | false |  |
 | Coldgil | 0.9 | teal | 池塘 | 3.7 | 0.8 |  | true | 50 |  |  |  |  |
 | Silverbrass | 1.15 | 光-灰色 | 湖泊 | 7.1 | 1.35 |  |  |  |  |  |  |  |
-| Circlejelly | 0.85 | 光-blue | 湖泊 | 5.5 | 1.1 | mdi-jellyfish |  | 42 | true |  |  |  |
-| Woodcrawler | 0.7 | wooden | 湖泊 | 2.8 | 2.3 | mdi-bug |  | 55 | false |  |  |  |
+| Circlejelly | 0.85 | 光-blue | 湖泊 | 5.5 | 1.1 | <i class="mdi mdi-jellyfish"></i> |  | 42 | true |  |  |  |
+| Woodcrawler | 0.7 | wooden | 湖泊 | 2.8 | 2.3 | <i class="mdi mdi-bug"></i> |  | 55 | false |  |  |  |
 | Longdano | 1.1 | 光-绿色 | 湖泊 | 4 | 1.9 |  |  | 61 |  |  |  | true |
 | Legabara | 1.8 | dark-blue | 湖泊 | 9.2 | 0.05 |  |  | 78 |  |  |  |  |
-| Biggiesnail | 1.25 | pale-紫色 | 湖泊 | 4.7 | 0.9 | mdi-snail | true | 90 |  |  |  |  |
+| Biggiesnail | 1.25 | pale-紫色 | 湖泊 | 4.7 | 0.9 | <i class="mdi mdi-snail"></i> | true | 90 |  |  |  |  |
 | Sunshine | 1 | 橙色 | 湖泊 | 5.1 | 0.2 |  |  | 115 | true |  | true |  |
 | Platiglob | 1.2 | blue-灰色 | 河流 | 10.3 | 1.45 |  |  |  |  |  |  |  |
 | Stormdazer | 0.9 | 黄色 | 河流 | 9.3 | 2.2 |  | true | 104 |  |  | true |  |
-| 河龟 | 1.15 | pale-绿色 | 河流 | 12 | 1.1 | mdi-turtle |  | 128 |  | false | false | false |
-| 溪流蜗牛 | 0.8 | lime | 河流 | 7.2 | 1.1 | mdi-snail |  | 145 |  |  |  | true |
+| 河龟 | 1.15 | pale-绿色 | 河流 | 12 | 1.1 | <i class="mdi mdi-turtle"></i> |  | 128 |  | false | false | false |
+| 溪流蜗牛 | 0.8 | lime | 河流 | 7.2 | 1.1 | <i class="mdi mdi-snail"></i> |  | 145 |  |  |  | true |
 | Ralmon | 1.5 | 红色 | 河流 | 11.6 | 2.15 |  |  | 170 |  |  |  |  |
 | Wonelle | 1.3 | 光-灰色 | 河流 | 10.8 | 1.4 |  |  | 202 |  | true |  |  |
 | Grillgil | 0.95 | darker-灰色 | 河流 | 10 | 1.6 |  |  | 217 |  |  | true |  |

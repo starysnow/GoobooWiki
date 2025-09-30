@@ -2,40 +2,40 @@
     解锁: '骑士职业',
     图标: 'mdi-shield',
     baseStats: {
-        攻击 +: 2.5,
+        攻击plus: 2.5,
         生命值: 900,
         能量: 160,
         energyRegen: 1.5
     },
     经验值: {
-        基础: 1200,
+        +: 1200,
         increment: 1.3
     },
     courageMult: 12,
     skills: {
         damageRamp: {
-            类型: '被动: {0}%',
+            类型: '被动: (0)%',
             color: '红色',
             图标: 'mdi-chart-line',
-            最大值: 1,
+            max: 1,
             效果: [
-                {name: '在同一场战斗中每分钟获得+{0}次攻击', 类型: 'tag', value: lvl => [lvl * 0.75]}
+                {name: '在同一场战斗中每分钟获得+(0)次攻击', 类型: 'tag', value: lvl => [lvl * 0.75]}
             ]
         },
-        复活 +{0}: {
-            类型: '被动: {0}%',
+        复活+(0): {
+            类型: '被动: (0)%',
             color: '黄色',
             图标: 'mdi-cross',
-            最大值: 1,
+            max: 1,
             效果: [
-                {name: '复活', 类型: '基础', value: lvl => lvl}
+                {name: '复活', 类型: '+', value: lvl => lvl}
             ]
         },
         heavyHit: {
             类型: '激活的卡片',
             color: '橙色-红色',
             图标: 'mdi-sword',
-            最大值: 1,
+            max: 1,
             cooldown: () => 70,
             activeCost: () => {return {能量: 140};},
             激活的卡片() {
@@ -50,7 +50,7 @@
             类型: '激活的卡片',
             color: '棕色',
             图标: 'mdi-shield',
-            最大值: 5,
+            max: 5,
             cost: 20,
             cooldown: () => 16,
             activeCost: () => {return {能量: 100};},
@@ -62,45 +62,45 @@
             },
             activeType: 'combat'
         },
-        生命值: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '生命值', 类型: '基础', value: lvl => lvl * 120}
+        生命值: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '生命值', 类型: '+', value: lvl => lvl * 120}
         ]},
-        防御: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '防御', 类型: '基础', value: lvl => lvl * 0.001}
+        防御: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '防御', 类型: '+', value: lvl => lvl * 0.001}
         ]},
-        急速: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '急速', 类型: '基础', value: lvl => lvl * 3}
+        急速: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '急速', 类型: '+', value: lvl => lvl * 3}
         ]},
         statRamp: {
-            类型: '被动: {0}%',
+            类型: '被动: (0)%',
             color: '粉色-紫色',
             图标: 'mdi-chart-line',
-            最大值: 5,
+            max: 5,
             cost: 40,
             效果: [
-                {name: '在同一战斗中每分钟获得{0}力量和智力', 类型: 'tag', value: lvl => [lvl * 8]}
+                {name: '在同一战斗中每分钟获得(0)力量和智力', 类型: 'tag', value: lvl => [lvl * 8]}
             ]
         },
-        defense_2: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '防御', 类型: '基础', value: lvl => lvl * 0.0012}
+        defense_2: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '防御', 类型: '+', value: lvl => lvl * 0.0012}
         ]},
-        有毒: {类型: '达到 {0} {1}', 最大值: 20, cost: 10, 效果: [
-            {name: '中毒', 类型: '基础', value: lvl => lvl * 0.005}
+        有毒: {类型: 'stat', max: 20, cost: 10, 效果: [
+            {name: '中毒', 类型: '+', value: lvl => lvl * 0.005}
         ]},
-        magicTaken: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '受到的魔法伤害', 类型: 'mult', value: lvl => Math.pow(1 / 1.09, lvl)}
+        magicTaken: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '受到的魔法伤害', 类型: '*', value: lvl => Math.pow(1 / 1.09, lvl)}
         ]},
-        cutting: {类型: '达到 {0} {1}', 最大值: 20, cost: 10, 效果: [
-            {name: '切割', 类型: '基础', value: lvl => lvl * 0.002}
+        cutting: {类型: 'stat', max: 20, cost: 10, 效果: [
+            {name: '切割', 类型: '+', value: lvl => lvl * 0.002}
         ]},
-        physicTaken: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '受到的物理伤害', 类型: 'mult', value: lvl => Math.pow(1 / 1.09, lvl)}
+        physicTaken: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '受到的物理伤害', 类型: '*', value: lvl => Math.pow(1 / 1.09, lvl)}
         ]},
         refuge: {
             类型: '激活的卡片',
             color: '绿色',
             图标: 'mdi-medical-cotton-swab',
-            最大值: 5,
+            max: 5,
             cost: 20,
             cooldown: () => 50,
             activeCost: () => {return {能量: 120};},
@@ -108,32 +108,32 @@
                 return [
                     {类型: 'heal', value: lvl * 0.05 + 0.25, int: 0.006},
                     {类型: 'buff', value: lvl * 2 + 8, 效果: [
-                        {类型: 'mult', name: '受到的物理伤害', value: 1 / 1.4},
-                        {类型: 'mult', name: '受到的魔法伤害', value: 1 / 1.4},
-                        {类型: 'mult', name: '受到的生物伤害', value: 1 / 1.4}
+                        {类型: '*', name: '受到的物理伤害', value: 1 / 1.4},
+                        {类型: '*', name: '受到的魔法伤害', value: 1 / 1.4},
+                        {类型: '*', name: '受到的生物伤害', value: 1 / 1.4}
                     ]}
                 ];
             },
             activeType: 'combat'
         },
-        health_2: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '生命值', 类型: '基础', value: lvl => lvl * 120}
+        health_2: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '生命值', 类型: '+', value: lvl => lvl * 120}
         ]},
-        恢复: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '生命值', 类型: '基础', value: lvl => lvl * 35},
-            {name: '恢复', 类型: '基础', value: lvl => lvl * 0.01}
+        恢复: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '生命值', 类型: '+', value: lvl => lvl * 35},
+            {name: '恢复', 类型: '+', value: lvl => lvl * 0.01}
         ]},
-        physicTaken_2: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '受到的物理伤害', 类型: 'mult', value: lvl => Math.pow(1 / 1.08, lvl)}
+        physicTaken_2: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '受到的物理伤害', 类型: '*', value: lvl => Math.pow(1 / 1.08, lvl)}
         ]},
-        力量: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '力量', 类型: '基础', value: lvl => lvl * 0.8}
+        力量: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '力量', 类型: '+', value: lvl => lvl * 0.8}
         ]},
         consecrate: {
             类型: '激活的卡片',
             color: '金色',
             图标: 'mdi-shimmer',
-            最大值: 5,
+            max: 5,
             cost: 20,
             cooldown: () => 28,
             activeCost: () => {return {能量: 50};},
@@ -145,90 +145,90 @@
             },
             activeType: 'combat'
         },
-        能量: {类型: '达到 {0} {1}', 最大值: 15, cost: 10, 效果: [
-            {name: '能量', 类型: '基础', value: lvl => lvl * 35}
+        能量: {类型: 'stat', max: 15, cost: 10, 效果: [
+            {name: '能量', 类型: '+', value: lvl => lvl * 35}
         ]},
         祝福: {
             类型: '激活的卡片',
             color: '黄色',
             图标: 'mdi-cross-outline',
-            最大值: 5,
+            max: 5,
             cost: 20,
             cooldown: lvl => 2700 - lvl * 300,
             activeCost: () => {return {能量: 80};},
             激活的卡片(lvl) {
                 return [
                     {类型: 'heal', value: lvl * 0.3 + 0.9, int: 0.02},
-                    {类型: '复活 +{0}', value: 1},
+                    {类型: '复活+(0)', value: 1},
                 ];
             },
             activeType: 'combat'
         },
         revive_2: {
-            类型: '被动: {0}%',
+            类型: '被动: (0)%',
             color: '黄色',
             图标: 'mdi-cross',
-            最大值: 3,
+            max: 3,
             cost: 100,
             效果: [
-                {name: '复活', 类型: '基础', value: lvl => lvl}
+                {name: '复活', 类型: '+', value: lvl => lvl}
             ]
         },
         fortify: {
             类型: '激活的卡片',
             color: 'pale-绿色',
             图标: 'mdi-heart',
-            最大值: 5,
+            max: 5,
             cost: 20,
             cooldown: () => 22 * SECONDS_PER_HOUR,
             activeCost: () => {return {};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'permanentStat', 达到 {0} {1}: 'hordeHealth_base', value: lvl * 30 + 30}
+                    {类型: 'permanentStat', stat: 'hordeHealth_base', value: lvl * 30 + 30}
                 ];
             },
             activeType: 'utility'
         },
-        bioTaken: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '受到的生物伤害', 类型: 'mult', value: lvl => Math.pow(1 / 1.09, lvl)}
+        bioTaken: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '受到的生物伤害', 类型: '*', value: lvl => Math.pow(1 / 1.09, lvl)}
         ]},
-        health_3: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '生命值', 类型: '基础', value: lvl => lvl * 120}
+        health_3: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '生命值', 类型: '+', value: lvl => lvl * 120}
         ]},
-        magicTaken_2: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '受到的魔法伤害', 类型: 'mult', value: lvl => Math.pow(1 / 1.08, lvl)}
+        magicTaken_2: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '受到的魔法伤害', 类型: '*', value: lvl => Math.pow(1 / 1.08, lvl)}
         ]},
-        divisionShield: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '分裂盾', 类型: '基础', value: lvl => lvl}
+        divisionShield: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '分裂盾', 类型: '+', value: lvl => lvl}
         ]},
-        intelligence: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '智力', 类型: '基础', value: lvl => lvl * 0.9}
+        intelligence: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '智力', 类型: '+', value: lvl => lvl * 0.9}
         ]},
-        recovery_2: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '生命值', 类型: '基础', value: lvl => lvl * 35},
-            {name: '恢复', 类型: '基础', value: lvl => lvl * 0.01}
+        recovery_2: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '生命值', 类型: '+', value: lvl => lvl * 35},
+            {name: '恢复', 类型: '+', value: lvl => lvl * 0.01}
         ]},
-        defense_3: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '防御', 类型: '基础', value: lvl => lvl * 0.001}
+        defense_3: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '防御', 类型: '+', value: lvl => lvl * 0.001}
         ]},
-        勇敢: {类型: '达到 {0} {1}', 最大值: 10, cost: 15, 效果: [
-            {name: '勇敢增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
+        勇敢: {类型: 'stat', max: 10, cost: 15, 效果: [
+            {name: '勇敢增益', 类型: '*', value: lvl => lvl * 0.05 + 1}
         ]},
     },
     skillTree: [
-        {isInnate: true, 达到等级 {0}: 0, items: ['damageRamp', '复活 +{0}', 'heavyHit']},
-        {达到等级 {0}: 1, items: ['shieldBash', '生命值', '防御', '急速']},
-        {isChoice: true, 达到等级 {0}: 10, items: [['statRamp', 'defense_2'], ['有毒', 'physicTaken'], ['cutting', 'magicTaken']]},
-        {达到等级 {0}: 20, items: ['refuge', 'health_2', '恢复', 'physicTaken_2', '力量']},
-        {isChoice: true, 达到等级 {0}: 30, items: [['consecrate', '能量'], ['祝福', 'revive_2'], ['fortify', 'bioTaken']]},
-        {达到等级 {0}: 40, items: ['health_3', 'magicTaken_2', 'divisionShield', 'intelligence']},
-        {达到等级 {0}: 50, items: ['recovery_2', 'defense_3', '勇敢']},
+        {isInnate: true, 达到等级: 0, items: ['damageRamp', '复活+(0)', 'heavyHit']},
+        {达到等级: 1, items: ['shieldBash', '生命值', '防御', '急速']},
+        {isChoice: true, 达到等级: 10, items: [['statRamp', 'defense_2'], ['有毒', 'physicTaken'], ['cutting', 'magicTaken']]},
+        {达到等级: 20, items: ['refuge', 'health_2', '恢复', 'physicTaken_2', '力量']},
+        {isChoice: true, 达到等级: 30, items: [['consecrate', '能量'], ['祝福', 'revive_2'], ['fortify', 'bioTaken']]},
+        {达到等级: 40, items: ['health_3', 'magicTaken_2', 'divisionShield', 'intelligence']},
+        {达到等级: 50, items: ['recovery_2', 'defense_3', '勇敢']},
     ],
     quests: {
-        达到 {0} {1}: [
-            {达到 {0} {1}: '生命值', 类型: '基础', value: 3000},
-            {达到 {0} {1}: '切割', 类型: '总计', value: 0.04},
-            {达到 {0} {1}: '生命值', 类型: '基础', value: buildNum(10, 'K')},
+        stat: [
+            {stat: '生命值', 类型: '+', value: 3000},
+            {stat: '切割', 类型: '总计', value: 0.04},
+            {stat: '生命值', 类型: '+', value: buildNum(10, 'K')},
         ],
         区域: [
             {area: '战场', 区域: '9'},
@@ -238,11 +238,11 @@
             {area: '爱岛', 区域: '6'},
             {area: '爱岛', 区域: '14'},
         ],
-        达到等级 {0}: [20, 35, 50, 70, 90, 115, 140, 165, 190],
-        击败 {0} (+{1}): [
-            {击败 {0} (+{1}): 'ohilio', 难度: 20},
-            {击败 {0} (+{1}): 'Chriz', 难度: 15},
-            {击败 {0} (+{1}): 'mina', 难度: 2},
+        达到等级: [20, 35, 50, 70, 90, 115, 140, 165, 190],
+        击败 (0) (+(1)): [
+            {击败 (0) (+(1)): 'ohilio', 难度: 20},
+            {击败 (0) (+(1)): 'Chriz', 难度: 15},
+            {击败 (0) (+(1)): 'mina', 难度: 2},
         ]
     }
 }

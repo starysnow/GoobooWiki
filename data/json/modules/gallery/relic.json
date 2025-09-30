@@ -1,0 +1,170 @@
+[
+  {
+    "名称": "打印机",
+    "图标": "<i class=\"mdi mdi-printer\"></i>",
+    "color": "pale-光-blue",
+    "效果": "新风格保留｛true｝; 回收保留｛true｝; 垃圾分类galleryIdea｛true｝"
+  },
+  {
+    "名称": "灯泡",
+    "图标": "<i class=\"mdi mdi-lightbulb\"></i>",
+    "color": "pale-黄色",
+    "效果": "顿悟保留｛true｝; 灵感的开始+｛1｝"
+  },
+  {
+    "名称": "旧电视",
+    "图标": "<i class=\"mdi mdi-television-classic\"></i>",
+    "color": "棕色",
+    "效果": "广告galleryIdea｛true｝"
+  },
+  {
+    "名称": "令人担忧的邮件",
+    "图标": "<i class=\"mdi mdi-email-alert\"></i>",
+    "color": "红色",
+    "效果": "缺乏耐心galleryIdea｛true｝"
+  },
+  {
+    "名称": "红色气球",
+    "图标": "<i class=\"mdi mdi-balloon\"></i>",
+    "color": "红色",
+    "效果": "红色力量保留｛true｝; 红色转换保留｛true｝"
+  },
+  {
+    "名称": "一袋金子",
+    "图标": "<i class=\"mdi mdi-sack\"></i>",
+    "color": "金色",
+    "效果": "观察彩虹galleryIdea｛true｝"
+  },
+  {
+    "名称": "碎纸机",
+    "图标": "<i class=\"mdi mdi-shredder\"></i>",
+    "color": "pale-紫色",
+    "效果": "过滤器保留｛true｝; 垃圾箱保留｛true｝; 建造堆肥机galleryIdea｛true｝"
+  },
+  {
+    "名称": "红色印花",
+    "图标": "<i class=\"mdi mdi-script-text\"></i>",
+    "color": "红色",
+    "效果": "红色愤怒保留｛true｝; 建造红色储备galleryIdea｛true｝"
+  },
+  {
+    "名称": "橙色气球",
+    "图标": "<i class=\"mdi mdi-balloon\"></i>",
+    "color": "橙色",
+    "效果": "橙色力量保留｛true｝; 橙色转换保留｛true｝"
+  },
+  {
+    "名称": "信用卡",
+    "图标": "<i class=\"mdi mdi-credit-card\"></i>",
+    "color": "pale-绿色",
+    "效果": "订购大量保险箱galleryIdea｛true｝"
+  },
+  {
+    "名称": "简单计算器",
+    "图标": "<i class=\"mdi mdi-calculator\"></i>",
+    "color": "pale-橙色",
+    "效果": "计算胜算galleryIdea｛true｝"
+  },
+  {
+    "名称": "橙色印花",
+    "图标": "<i class=\"mdi mdi-script-text\"></i>",
+    "color": "橙色",
+    "效果": "红色幸运保留｛true｝; 建造橙色储备galleryIdea｛true｝"
+  },
+  {
+    "名称": "黄色气球",
+    "图标": "<i class=\"mdi mdi-balloon\"></i>",
+    "color": "黄色",
+    "效果": "黄色力量保留｛true｝; 黄色转换保留｛true｝"
+  },
+  {
+    "名称": "鱼缸",
+    "图标": "<i class=\"mdi mdi-fishbowl\"></i>",
+    "color": "pale-blue",
+    "效果": "形状增益*｛1.5｝; 感到兴奋galleryIdea｛true｝"
+  },
+  {
+    "名称": "铅笔",
+    "图标": "<i class=\"mdi mdi-lead-pencil\"></i>",
+    "color": "pale-红色",
+    "效果": "形状增益*｛1.5｝; Buy pengalleryIdea｛true｝"
+  },
+  {
+    "名称": "小刷子",
+    "图标": "<i class=\"mdi mdi-brush\"></i>",
+    "color": "pale-粉色",
+    "效果": "形状增益*｛1.5｝; 购买刷子galleryIdea｛true｝"
+  },
+  {
+    "名称": "奇怪的药丸",
+    "图标": "<i class=\"mdi mdi-pill-multiple\"></i>",
+    "color": "pale-红色",
+    "效果": "形状增益*｛1.5｝; 高度关注galleryIdea｛true｝"
+  },
+  {
+    "名称": "奇怪的卷轴",
+    "图标": "<i class=\"mdi mdi-script-text\"></i>",
+    "color": "dark-灰色",
+    "效果": "保持神秘galleryIdea｛true｝"
+  },
+  {
+    "名称": "印刷机",
+    "图标": "<i class=\"mdi mdi-arrow-collapse-vertical\"></i>",
+    "color": "棕色",
+    "效果": "现金增益*｛1.5｝; 印刷报纸galleryIdea｛true｝"
+  },
+  {
+    "名称": "黄色印花",
+    "图标": "<i class=\"mdi mdi-script-text\"></i>",
+    "color": "黄色",
+    "效果": "橙色幸运保留｛true｝; 建造黄色储备galleryIdea｛true｝"
+  },
+  {
+    "名称": "绿色气球",
+    "图标": "<i class=\"mdi mdi-balloon\"></i>",
+    "color": "绿色",
+    "效果": "绿色力量保留｛true｝; 绿色转换保留｛true｝"
+  },
+  {
+    "名称": "木制衣架",
+    "图标": "<i class=\"mdi mdi-hanger\"></i>",
+    "color": "wooden",
+    "效果": "涂得更快galleryIdea｛true｝"
+  },
+  {
+    "名称": "床单",
+    "图标": "<i class=\"mdi mdi-bed-empty\"></i>",
+    "color": "pale-红色",
+    "效果": "扩大画布galleryIdea｛true｝"
+  },
+  {
+    "名称": "图片相册",
+    "图标": "<i class=\"mdi mdi-image-album\"></i>",
+    "color": "橙色-红色",
+    "效果": "油漆桶储存保留｛true｝; 为了乐趣而作画galleryIdea｛true｝"
+  },
+  {
+    "名称": "绿色印记",
+    "图标": "<i class=\"mdi mdi-script-text\"></i>",
+    "color": "绿色",
+    "效果": "黄色幸运保留｛true｝; 建造绿色储备galleryIdea｛true｝"
+  },
+  {
+    "名称": "蓝色气球",
+    "图标": "<i class=\"mdi mdi-balloon\"></i>",
+    "color": "blue",
+    "效果": "蓝色力量保留｛true｝; 蓝色转换保留｛true｝"
+  },
+  {
+    "名称": "蓝色印记",
+    "图标": "<i class=\"mdi mdi-script-text\"></i>",
+    "color": "blue",
+    "效果": "绿色幸运保留｛true｝; 建造蓝色储备galleryIdea｛true｝"
+  },
+  {
+    "名称": "紫色气球",
+    "图标": "<i class=\"mdi mdi-balloon\"></i>",
+    "color": "blue",
+    "效果": "紫色力量保留｛true｝; 紫色转换保留｛true｝"
+  }
+]

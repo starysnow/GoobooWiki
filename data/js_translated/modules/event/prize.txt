@@ -10,9 +10,9 @@ BINGO!: {amount: 50},
 function bigEvents(data, tokenPrice = null) {
     let obj = {};
     for (const [加载的存档文件缺少所需数据, elem] of Object.entries(big)) {
-        let price = {};
-        price[`event_${ elem.token }`] = tokenPrice;
-        obj[加载的存档文件缺少所需数据] = tokenPrice !exactly null ? {...data, price} : data;
+        let 消耗 = {};
+        消耗[`event_${ elem.token }`] = tokenPrice;
+        obj[加载的存档文件缺少所需数据] = tokenPrice !== null ? {...data, 消耗} : data;
     }
     return obj;
 }
@@ -21,9 +21,9 @@ export default {
         类型: '卡包',
         item: '好交易',
         哑铃: 5,
-        cap: 10,
+        上限: 10,
         pool: {
-            merchant: {price: {gem_topaz: 75}}
+            merchant: {消耗: {gem_topaz: 75}}
         }
     },
     cardPack_connectedLine: {
@@ -54,7 +54,7 @@ export default {
             return store.state.解锁.treasureFeature.see;
         },
         pool: {
-            merchant: {哑铃: 0.45, price: {gem_topaz: 160}},
+            merchant: {哑铃: 0.45, 消耗: {gem_topaz: 160}},
             BINGO!: {哑铃: 0.4},
             wheelOfFortune1: {哑铃: 0.4}
         }
@@ -67,7 +67,7 @@ export default {
             return store.state.解锁.treasureFeature.see;
         },
         pool: {
-            merchant: {哑铃: 0.4, price: {gem_topaz: 195}},
+            merchant: {哑铃: 0.4, 消耗: {gem_topaz: 195}},
             BINGO!: {哑铃: 0.8},
             wheelOfFortune1: {哑铃: 0.8}
         }
@@ -80,7 +80,7 @@ export default {
             return store.state.解锁.treasureFeature.see;
         },
         pool: {
-            merchant: {哑铃: 0.35, price: {gem_topaz: 230}},
+            merchant: {哑铃: 0.35, 消耗: {gem_topaz: 230}},
             BINGO!: {哑铃: 0.4},
             双倍 BINGO!: {哑铃: 0.4},
             wheelOfFortune1: {哑铃: 0.4},
@@ -95,7 +95,7 @@ export default {
             return store.state.解锁.treasureFeature.see;
         },
         pool: {
-            merchant: {哑铃: 0.3, price: {gem_topaz: 270}},
+            merchant: {哑铃: 0.3, 消耗: {gem_topaz: 270}},
             双倍 BINGO!: {哑铃: 0.8},
             wheelOfFortune2: {哑铃: 0.8}
         }
@@ -108,7 +108,7 @@ export default {
             return store.state.解锁.treasureFeature.see;
         },
         pool: {
-            merchant: {哑铃: 0.25, price: {gem_topaz: 310}},
+            merchant: {哑铃: 0.25, 消耗: {gem_topaz: 310}},
             双倍 BINGO!: {哑铃: 0.4},
             三倍 BINGO!: {哑铃: 0.4},
             wheelOfFortune2: {哑铃: 0.4},
@@ -124,7 +124,7 @@ export default {
             return store.state.解锁.treasureFeature.see;
         },
         pool: {
-            merchant: {哑铃: 0.2, price: {gem_topaz: 355}},
+            merchant: {哑铃: 0.2, 消耗: {gem_topaz: 355}},
             三倍 BINGO!: {哑铃: 0.8},
             wheelOfFortune3: {哑铃: 0.8},
             ...bigEvents({哑铃: 0.3}, 95)
@@ -138,7 +138,7 @@ export default {
             return store.state.解锁.treasureFeature.see;
         },
         pool: {
-            merchant: {哑铃: 0.15, price: {gem_topaz: 400}},
+            merchant: {哑铃: 0.15, 消耗: {gem_topaz: 400}},
             三倍 BINGO!: {哑铃: 0.4},
             bingo4: {哑铃: 0.4},
             wheelOfFortune3: {哑铃: 0.4},
@@ -154,7 +154,7 @@ export default {
             return store.state.解锁.treasureFeature.see;
         },
         pool: {
-            merchant: {哑铃: 0.1, price: {gem_topaz: 450}},
+            merchant: {哑铃: 0.1, 消耗: {gem_topaz: 450}},
             bingo4: {哑铃: 0.8},
             wheelOfFortune4: {哑铃: 0.8},
             ...bigEvents({哑铃: 0.5}, 130)
@@ -168,7 +168,7 @@ export default {
             return store.state.解锁.treasureFeature.see;
         },
         pool: {
-            merchant: {哑铃: 0.05, price: {gem_topaz: 500}},
+            merchant: {哑铃: 0.05, 消耗: {gem_topaz: 500}},
             bingo4: {哑铃: 0.4},
             wheelOfFortune4: {哑铃: 0.4},
             ...bigEvents({哑铃: 0.4}, 150)
@@ -203,7 +203,7 @@ export default {
             return store.state.解锁.villageFeature.see;
         },
         pool: {
-            merchant: {price: {gem_topaz: 800}}
+            merchant: {消耗: {gem_topaz: 800}}
         }
     },
     热气球: {
@@ -214,7 +214,7 @@ export default {
             return store.state.解锁.冶炼厂.see;
         },
         pool: {
-            merchant: {price: {gem_topaz: 800}}
+            merchant: {消耗: {gem_topaz: 800}}
         }
     },
     大三叶草: {
@@ -263,10 +263,10 @@ export default {
         item: '锡纸帽',
         哑铃: 0.5,
         requirement() {
-            return store.state.达到 {0} {1}.mining_maxDepth0.总计 >= store.state.采矿.ingredient.铝矿石.minDepth;
+            return store.state.stat.mining_maxDepth0.总计 >= store.state.采矿.ingredient.铝矿石.minDepth;
         },
         pool: {
-            merchant: {price: {gem_topaz: 600}},
+            merchant: {消耗: {gem_topaz: 600}},
             bingo4: {},
             wheelOfFortune4: {}
         }
@@ -279,7 +279,7 @@ export default {
             return store.state.升级成本.item.玻璃吹制厂.highestLevel >= 1;
         },
         pool: {
-            merchant: {price: {gem_topaz: 600}},
+            merchant: {消耗: {gem_topaz: 600}},
             bingo4: {},
             wheelOfFortune4: {}
         }
@@ -292,7 +292,7 @@ export default {
             return store.state.解锁.hordeItemMastery.see;
         },
         pool: {
-            merchant: {price: {gem_topaz: 600}},
+            merchant: {消耗: {gem_topaz: 600}},
             bingo4: {},
             wheelOfFortune4: {}
         }
@@ -302,7 +302,7 @@ export default {
         item: '青铜工具',
         哑铃: 0.5,
         requirement() {
-            return store.state.达到 {0} {1}.mining_maxDepth0.总计 >= store.state.采矿.ingredient.锡矿石.minDepth;
+            return store.state.stat.mining_maxDepth0.总计 >= store.state.采矿.ingredient.锡矿石.minDepth;
         },
         pool: {
             ...bigEvents({}, 70)
@@ -313,7 +313,7 @@ export default {
         item: '矿工帽',
         哑铃: 0.5,
         requirement() {
-            return store.state.达到 {0} {1}.mining_maxDepth0.总计 >= store.state.采矿.ingredient.钛矿石.minDepth;
+            return store.state.stat.mining_maxDepth0.总计 >= store.state.采矿.ingredient.钛矿石.minDepth;
         },
         pool: {
             ...bigEvents({}, 100)
@@ -346,31 +346,31 @@ export default {
         item: '血袋',
         哑铃: 0.5,
         requirement() {
-            return store.state.达到 {0} {1}.红色.总计 > 0;
+            return store.state.stat.红色.总计 > 0;
         },
         pool: {
             ...bigEvents({}, 115)
         }
     },
     废料: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '废料',
         哑铃: 1,
-        amountMult: () => store.getters['采矿/depthScrap'](store.state.达到 {0} {1}[`mining_maxDepth${ store.state.system.功能.采矿.currentSubfeature }`].value),
+        amountMult: () => store.getters['采矿/depthScrap'](store.state.stat[`mining_maxDepth${ store.state.system.功能.采矿.currentSubfeature }`].value),
         pool: {
             bingo0: {amount: 500},
             wheelOfFortune0: {amount: 500}
         }
     },
     余烬: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '余烬',
         哑铃: 1,
         requirement() {
-            return store.state.达到 {0} {1}.余烬.总计 > 0;
+            return store.state.stat.余烬.总计 > 0;
         },
         roundAmount: true,
-        amountMult: () => store.getters['mult/新的更新!']('余烬容量'),
+        amountMult: () => store.getters['*/新的更新!']('余烬容量'),
         pool: {
             bingo0: {amount: 0.01},
             BINGO!: {amount: 0.04},
@@ -381,11 +381,11 @@ export default {
         }
     },
     树脂: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '树脂',
         哑铃: 1,
         requirement() {
-            return store.state.达到 {0} {1}.树脂.总计 > 0;
+            return store.state.stat.树脂.总计 > 0;
         },
         pool: {
             bingo0: {amount: 2},
@@ -395,7 +395,7 @@ export default {
         }
     },
     供品: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '供品',
         哑铃: 1,
         requirement() {
@@ -413,33 +413,33 @@ export default {
         }
     },
     骨头: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '骨头',
         哑铃: 1,
         requirement() {
             return store.state.解锁.hordeFeature.see;
         },
-        amountMult: () => store.getters['mult/新的更新!']('骨头增益', store.getters['部落/enemyBone'](store.state.达到 {0} {1}.horde_maxZone.value)),
+        amountMult: () => store.getters['*/新的更新!']('骨头增益', store.getters['部落/enemyBone'](store.state.stat.horde_maxZone.value)),
         pool: {
             bingo0: {amount: 500},
             wheelOfFortune0: {amount: 500}
         }
     },
     美丽: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '美丽',
         哑铃: 1,
         requirement() {
             return store.state.解锁.galleryFeature.see;
         },
-        amountMult: () => store.getters['mult/新的更新!']('美丽增益'),
+        amountMult: () => store.getters['*/新的更新!']('美丽增益'),
         pool: {
             bingo0: {amount: 500},
             wheelOfFortune0: {amount: 500}
         }
     },
     红宝石: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '红宝石',
         哑铃: 0.5,
         requirement() {
@@ -448,7 +448,7 @@ export default {
         pool: gemPool
     },
     翡翠: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '翡翠',
         哑铃: 0.5,
         requirement() {
@@ -457,7 +457,7 @@ export default {
         pool: gemPool
     },
     蓝宝石: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '蓝宝石',
         哑铃: 0.5,
         requirement() {
@@ -466,7 +466,7 @@ export default {
         pool: gemPool
     },
     紫水晶: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '紫水晶',
         哑铃: 0.5,
         requirement() {
@@ -475,7 +475,7 @@ export default {
         pool: gemPool
     },
     考试通过: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '考试通过',
         哑铃: 1,
         requirement() {
@@ -483,7 +483,7 @@ export default {
         },
         roundAmount: true,
         pool: {
-            merchant: {cap: 5, price: {gem_topaz: 90}},
+            merchant: {上限: 5, 消耗: {gem_topaz: 90}},
             BINGO!: {amount: 2},
             双倍 BINGO!: {amount: 8},
             wheelOfFortune1: {amount: 2},
@@ -491,7 +491,7 @@ export default {
         }
     },
     碎片: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '碎片',
         哑铃: 1,
         requirement() {
@@ -507,14 +507,14 @@ export default {
         }
     },
     塔楼钥匙: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '塔楼钥匙',
         requirement() {
             return store.state.解锁.hordeBrickTower.see;
         },
         roundAmount: true,
         pool: {
-            merchant: {cap: 3, price: {gem_topaz: 450}},
+            merchant: {上限: 3, 消耗: {gem_topaz: 450}},
             双倍 BINGO!: {amount: 1},
             三倍 BINGO!: {amount: 4},
             bingo4: {amount: 20},
@@ -531,7 +531,7 @@ export default {
             return store.state.解锁.镐制作.see;
         },
         pool: {
-            merchant: {price: {gem_topaz: 60}},
+            merchant: {消耗: {gem_topaz: 60}},
             BINGO!: {},
             双倍 BINGO!: {amount: 4},
             wheelOfFortune1: {},
@@ -543,7 +543,7 @@ export default {
         item: 'gem_prestigeStone',
         哑铃: 0.25,
         pool: {
-            merchant: {price: {gem_topaz: 1000}},
+            merchant: {消耗: {gem_topaz: 1000}},
             双倍 BINGO!: {},
             三倍 BINGO!: {哑铃: 0.5, amount: 3},
             bingo4: {哑铃: 1, amount: 10},
@@ -560,7 +560,7 @@ export default {
             return store.state.consumable.快速生长.found;
         },
         pool: {
-            merchant: {amount: 25, price: {gem_topaz: 50}},
+            merchant: {amount: 25, 消耗: {gem_topaz: 50}},
             BINGO!: {amount: 25},
             双倍 BINGO!: {amount: 100},
             wheelOfFortune1: {amount: 25},
@@ -575,7 +575,7 @@ export default {
             return store.state.consumable.肥沃的土壤.found;
         },
         pool: {
-            merchant: {amount: 25, price: {gem_topaz: 50}},
+            merchant: {amount: 25, 消耗: {gem_topaz: 50}},
             BINGO!: {amount: 25},
             双倍 BINGO!: {amount: 100},
             wheelOfFortune1: {amount: 25},
@@ -590,7 +590,7 @@ export default {
             return store.state.consumable.闪亮肥料.found;
         },
         pool: {
-            merchant: {amount: 25, price: {gem_topaz: 50}},
+            merchant: {amount: 25, 消耗: {gem_topaz: 50}},
             BINGO!: {amount: 25},
             双倍 BINGO!: {amount: 100},
             wheelOfFortune1: {amount: 25},
@@ -605,7 +605,7 @@ export default {
             return store.state.consumable.涡轮生长.found;
         },
         pool: {
-            merchant: {amount: 25, price: {gem_topaz: 50}},
+            merchant: {amount: 25, 消耗: {gem_topaz: 50}},
             BINGO!: {amount: 25},
             双倍 BINGO!: {amount: 100},
             wheelOfFortune1: {amount: 25},
@@ -620,19 +620,19 @@ export default {
             return store.state.consumable.高级.found;
         },
         pool: {
-            merchant: {amount: 20, price: {gem_topaz: 80}},
+            merchant: {amount: 20, 消耗: {gem_topaz: 80}},
             双倍 BINGO!: {amount: 50},
             wheelOfFortune2: {amount: 50}
         }
     },
     声望: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '绿水晶',
         哑铃: 1,
         requirement() {
-            return store.state.达到 {0} {1}.mining_prestigeCount.总计 >= 1;
+            return store.state.stat.mining_prestigeCount.总计 >= 1;
         },
-        amountMult: () => store.state.达到 {0} {1}.mining_bestPrestige0.总计,
+        amountMult: () => store.state.stat.mining_bestPrestige0.总计,
         pool: {
             BINGO!: {amount: 0.1},
             双倍 BINGO!: {amount: 0.4},
@@ -643,13 +643,13 @@ export default {
         }
     },
     声望: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '祝福',
         哑铃: 1,
         requirement() {
-            return store.state.达到 {0} {1}.village_prestigeCount.总计 >= 1;
+            return store.state.stat.village_prestigeCount.总计 >= 1;
         },
-        amountMult: () => store.state.达到 {0} {1}.village_bestPrestige0.总计,
+        amountMult: () => store.state.stat.village_bestPrestige0.总计,
         pool: {
             BINGO!: {amount: 0.1},
             双倍 BINGO!: {amount: 0.4},
@@ -660,13 +660,13 @@ export default {
         }
     },
     声望: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '强大的灵魂',
         哑铃: 1,
         requirement() {
-            return store.state.达到 {0} {1}.horde_prestigeCount.总计 >= 1;
+            return store.state.stat.horde_prestigeCount.总计 >= 1;
         },
-        amountMult: () => store.state.达到 {0} {1}.horde_bestPrestige0.总计,
+        amountMult: () => store.state.stat.horde_bestPrestige0.总计,
         pool: {
             BINGO!: {amount: 0.1},
             双倍 BINGO!: {amount: 0.4},
@@ -677,13 +677,13 @@ export default {
         }
     },
     声望: {
-        类型: '收集 {0} ',
+        类型: 'currency',
         item: '现金',
         哑铃: 1,
         requirement() {
-            return store.state.达到 {0} {1}.gallery_prestigeCount.总计 >= 1;
+            return store.state.stat.gallery_prestigeCount.总计 >= 1;
         },
-        amountMult: () => store.state.达到 {0} {1}.gallery_bestPrestige.总计,
+        amountMult: () => store.state.stat.gallery_bestPrestige.总计,
         pool: {
             BINGO!: {amount: 0.1},
             双倍 BINGO!: {amount: 0.4},

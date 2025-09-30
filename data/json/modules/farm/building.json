@@ -1,0 +1,22 @@
+[
+  {
+    "名称": "花园侏儒",
+    "图标": "<i class=\"mdi mdi-human-child\"></i>"
+  },
+  {
+    "名称": "洒水装置",
+    "图标": "<i class=\"mdi mdi-sprinkler-variant\"></i>"
+  },
+  {
+    "名称": "讲台",
+    "图标": "<i class=\"mdi mdi-book-open-page-variant\"></i>"
+  },
+  {
+    "名称": "风车",
+    "图标": "<i class=\"mdi mdi-pinwheel\"></i>"
+  },
+  {
+    "名称": "旗帜",
+    "图标": "<i class=\"mdi mdi-flag\"></i>"
+  }
+]

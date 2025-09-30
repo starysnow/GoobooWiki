@@ -1,6 +1,6 @@
 [
-    {id: 1, collection: '有机染料', 攻击和生命值 x{0}: 2, reward: [
-        {name: '红色增益', 类型: 'mult', value: 1.25}
+    {id: 1, collection: '有机染料', 卡片力量: 2, reward: [
+        {name: '红色增益', 类型: '*', value: 1.25}
     ], color: '红色', icons: [
         {"x": 0, "y": 0, "rotate": 135, "size": 1, "图标": "mdi-ladybug"},
         {"x": 0.9, "y": -0.15, "rotate": 40, "size": 0.9, "图标": "mdi-ladybug"},
@@ -11,8 +11,8 @@
         {"x": -0.8, "y": 0.9, "rotate": 170, "size": 0.95, "图标": "mdi-ladybug"},
         {"x": -0.1, "y": 0.65, "rotate": -120, "size": 1, "图标": "mdi-ladybug"}
     ]},
-    {id: 2, collection: '有机染料', 攻击和生命值 x{0}: 2, reward: [
-        {name: '橙色增益', 类型: 'mult', value: 1.25}
+    {id: 2, collection: '有机染料', 卡片力量: 2, reward: [
+        {name: '橙色增益', 类型: '*', value: 1.25}
     ], color: '橙色', icons: [
         {"x": -0.7, "y": -0.3, "rotate": 0, "size": 1.2, "图标": "mdi-bird"},
         {"x": 0, "y": -0.55, "rotate": 0, "size": 1.2, "图标": "mdi-bird"},
@@ -22,15 +22,15 @@
         {"x": 0.65, "y": 0.95, "rotate": 60, "size": 0.85, "图标": "mdi-feather"},
         {"x": -0.4, "y": 0.9, "rotate": -135, "size": 0.85, "图标": "mdi-feather"}
     ]},
-    {id: 3, collection: '有机染料', 攻击和生命值 x{0}: 2, reward: [
-        {name: '黄色增益', 类型: 'mult', value: 1.25}
+    {id: 3, collection: '有机染料', 卡片力量: 2, reward: [
+        {name: '黄色增益', 类型: '*', value: 1.25}
     ], color: '黄色', icons: [
         {"x": 0, "y": 0.35, "rotate": 0, "size": 2, "图标": "mdi-cup"},
         {"x": -0.75, "y": 0.5, "rotate": 0, "size": 1.25, "图标": "mdi-fruit-citrus"},
         {"x": 0.5, "y": -0.5, "rotate": 0, "size": 2, "图标": "mdi-spoon-sugar"}
     ]},
-    {id: 4, collection: '有机染料', 攻击和生命值 x{0}: 2, reward: [
-        {name: '绿色增益', 类型: 'mult', value: 1.25}
+    {id: 4, collection: '有机染料', 卡片力量: 2, reward: [
+        {name: '绿色增益', 类型: '*', value: 1.25}
     ], color: '绿色', icons: [
         {"x": -0.55, "y": 0.5, "rotate": 0, "size": 2.75, "图标": "mdi-waves"},
         {"x": 0.55, "y": 0.5, "rotate": 0, "size": 2.75, "图标": "mdi-waves"},
@@ -38,8 +38,8 @@
         {"x": 0.25, "y": 0, "rotate": 0, "size": 1.4, "图标": "mdi-scent"},
         {"x": 0.7, "y": 0, "rotate": 0, "size": 1.1, "图标": "mdi-scent"}
     ]},
-    {id: 5, collection: '艺术展示', 攻击和生命值 x{0}: 2, reward: [
-        {name: '美丽增益', 类型: 'mult', value: 1.25}
+    {id: 5, collection: '艺术展示', 卡片力量: 2, reward: [
+        {name: '美丽增益', 类型: '*', value: 1.25}
     ], color: 'pale-紫色', icons: [
         {"x": -0.9, "y": -0.25, "rotate": 0, "size": 1.25, "图标": "mdi-image-filter-black-white"},
         {"x": 0, "y": -0.25, "rotate": 0, "size": 1.35, "图标": "mdi-image-area"},
@@ -47,16 +47,16 @@
         {"x": -0.55, "y": 0.7, "rotate": 0, "size": 1.75, "图标": "mdi-human-male-female-child"},
         {"x": 0.7, "y": 0.75, "rotate": 0, "size": 1.5, "图标": "mdi-human-handsdown"}
     ]},
-    {id: 6, collection: '艺术展示', 攻击和生命值 x{0}: 1, reward: [
-        {name: '所有颜色增益', 类型: 'mult', value: 1.1}
+    {id: 6, collection: '艺术展示', 卡片力量: 1, reward: [
+        {name: '所有颜色增益', 类型: '*', value: 1.1}
     ], color: 'dark-灰色', icons: [
         {"x": 0, "y": 0, "rotate": 0, "size": 3, "图标": "mdi-artboard"},
         {"x": 0, "y": 0.1, "rotate": 0, "size": 1.15, "图标": "mdi-draw"},
         {"x": 0, "y": 1.3, "rotate": 45, "size": 1, "图标": "mdi-pencil"},
         {"x": -0.4, "y": 1.2, "rotate": 20, "size": 1, "图标": "mdi-pencil"}
     ]},
-    {id: 7, collection: '艺术展示', 攻击和生命值 x{0}: 1, reward: [
-        {name: '灵感的开始', 类型: '基础', value: 5}
+    {id: 7, collection: '艺术展示', 卡片力量: 1, reward: [
+        {name: '灵感的开始', 类型: '+', value: 5}
     ], color: 'teal', icons: [
         {"x": -0.9, "y": 0, "rotate": 135, "size": 1.5, "图标": "mdi-fountain-pen"},
         {"x": -0.45, "y": 0, "rotate": 135, "size": 1.5, "图标": "mdi-grease-pencil"},
@@ -64,21 +64,21 @@
         {"x": 0.45, "y": 0, "rotate": 135, "size": 1.5, "图标": "mdi-pen"},
         {"x": 0.9, "y": 0, "rotate": 135, "size": 1.5, "图标": "mdi-pencil"}
     ]},
-    {id: 8, collection: '艺术展示', 攻击和生命值 x{0}: 2, reward: [
-        {name: '灵感的开始', 类型: '基础', value: 3}
+    {id: 8, collection: '艺术展示', 卡片力量: 2, reward: [
+        {name: '灵感的开始', 类型: '+', value: 3}
     ], color: '橙色', icons: [
         {"x": -0.25, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-gradient-horizontal"},
         {"x": 0.75, "y": 0.2, "rotate": 0, "size": 1.5, "图标": "mdi-spray"},
         {"x": -0.6, "y": -0.35, "rotate": 0, "size": 2, "图标": "mdi-ruler-square"}
     ]},
-    {id: 9, collection: '艺术展示', 攻击和生命值 x{0}: 3, color: 'pale-粉色', icons: [
+    {id: 9, collection: '艺术展示', 卡片力量: 3, color: 'pale-粉色', icons: [
         {"x": 0, "y": -0.35, "rotate": 0, "size": 2, "图标": "mdi-drawing-box"},
         {"x": -0.5, "y": 0.9, "rotate": 0, "size": 1.5, "图标": "mdi-palette"},
         {"x": 0.1, "y": 0.5, "rotate": 0, "size": 1, "图标": "mdi-brush"},
         {"x": 0.9, "y": 0.7, "rotate": -90, "size": 1.5, "图标": "mdi-palette-swatch-variant"}
     ]},
-    {id: 10, collection: '艺术展示', 攻击和生命值 x{0}: 2, reward: [
-        {name: '灵感时间增量', 类型: 'mult', value: 1 / 1.1}
+    {id: 10, collection: '艺术展示', 卡片力量: 2, reward: [
+        {name: '灵感时间增量', 类型: '*', value: 1 / 1.1}
     ], color: '光-blue', icons: [
         {"x": -0.8, "y": -0.9, "rotate": 0, "size": 2, "图标": "mdi-format-line-style"},
         {"x": 0, "y": -0.9, "rotate": 0, "size": 2, "图标": "mdi-format-line-style"},
@@ -87,26 +87,26 @@
         {"x": -0.45, "y": 0.6, "rotate": -155, "size": 1, "图标": "mdi-brush-variant"},
         {"x": -0.5, "y": 1, "rotate": 0, "size": 1.25, "图标": "mdi-pail"}
     ]},
-    {id: 11, collection: '艺术展示', 攻击和生命值 x{0}: 2, reward: [
-        {name: '灵感时间增量', 类型: 'mult', value: 1 / 1.05},
-        {name: '灵感的开始', 类型: '基础', value: 2}
+    {id: 11, collection: '艺术展示', 卡片力量: 2, reward: [
+        {name: '灵感时间增量', 类型: '*', value: 1 / 1.05},
+        {name: '灵感的开始', 类型: '+', value: 2}
     ], color: '光-绿色', icons: [
         {"x": 0, "y": -0.4, "rotate": 0, "size": 3, "图标": "mdi-image-area"},
         {"x": 0.35, "y": 0.65, "rotate": -45, "size": 1.5, "图标": "mdi-tag-outline"},
         {"x": 0.35, "y": 0.65, "rotate": 0, "size": 0.65, "图标": "mdi-gesture"},
         {"x": 0.72, "y": 0.47, "rotate": 0, "size": 1, "图标": "mdi-fountain-pen"}
     ]},
-    {id: 12, collection: '艺术展示', 攻击和生命值 x{0}: 1, reward: [
-        {name: '现金增益', 类型: 'mult', value: 1.1},
-        {name: '灵感的开始', 类型: '基础', value: 3}
+    {id: 12, collection: '艺术展示', 卡片力量: 1, reward: [
+        {name: '现金增益', 类型: '*', value: 1.1},
+        {name: '灵感的开始', 类型: '+', value: 3}
     ], color: '红色', icons: [
         {"x": -0.1, "y": -0.15, "rotate": 0, "size": 1.25, "图标": "mdi-eyedropper"},
         {"x": -0.35, "y": 0.35, "rotate": 0, "size": 0.8, "图标": "mdi-water-opacity"},
         {"x": -0.45, "y": 0.95, "rotate": 0, "size": 1.5, "图标": "mdi-bucket"},
         {"x": 0.65, "y": 0.3, "rotate": 90, "size": 1.2, "图标": "mdi-palette-swatch"}
     ]},
-    {id: 13, collection: '艺术展示', 攻击和生命值 x{0}: 2, reward: [
-        {name: '现金增益', 类型: 'mult', value: 1.2}
+    {id: 13, collection: '艺术展示', 卡片力量: 2, reward: [
+        {name: '现金增益', 类型: '*', value: 1.2}
     ], color: 'skyblue', icons: [
         {"x": 0, "y": -0.61, "rotate": 0, "size": 0.9, "图标": "mdi-shape"},
         {"x": -0.6, "y": 1, "rotate": 0, "size": 1, "图标": "mdi-human-greeting"},
@@ -118,17 +118,17 @@
         {"x": 0.4, "y": 0.13, "rotate": 0, "size": 0.8, "图标": "mdi-cash-register"},
         {"x": -0.3, "y": 0.2, "rotate": 0, "size": 1, "图标": "mdi-human-male"}
     ]},
-    {id: 14, collection: '艺术展示', 攻击和生命值 x{0}: 1, reward: [
-        {name: '美丽增益', 类型: 'mult', value: 1.3},
-        {name: '现金增益', 类型: 'mult', value: 1.1}
+    {id: 14, collection: '艺术展示', 卡片力量: 1, reward: [
+        {name: '美丽增益', 类型: '*', value: 1.3},
+        {name: '现金增益', 类型: '*', value: 1.1}
     ], color: '黄色', icons: [
         {"x": -0.25, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-image-outline"},
         {"x": -0.25, "y": -0.05, "rotate": 0, "size": 1, "图标": "mdi-face-woman-shimmer"},
         {"x": 0.1, "y": -0.4, "rotate": 0, "size": 1, "图标": "mdi-brush"},
         {"x": 0.8, "y": -0.5, "rotate": 0, "size": 1.5, "图标": "mdi-human-female"}
     ]},
-    {id: 15, collection: '送货服务', 攻击和生命值 x{0}: 2, reward: [
-        {name: '转换器容量', 类型: 'mult', value: 1.3}
+    {id: 15, collection: '送货服务', 卡片力量: 2, reward: [
+        {name: '转换器容量', 类型: '*', value: 1.3}
     ], color: 'pale-绿色', icons: [
         {"x": -0.2, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-delete-outline"},
         {"x": -0.2, "y": 0.1, "rotate": 0, "size": 0.75, "图标": "mdi-recycle"},
@@ -136,15 +136,15 @@
         {"x": 0.6, "y": -0.2, "rotate": 0, "size": 2.5, "图标": "mdi-human-greeting"},
         {"x": -0.05, "y": -0.8, "rotate": 20, "size": 1, "图标": "mdi-food-takeout-box"}
     ]},
-    {id: 16, collection: '送货服务', 攻击和生命值 x{0}: 2, reward: [
-        {name: '转换器增益', 类型: 'mult', value: 1.15}
+    {id: 16, collection: '送货服务', 卡片力量: 2, reward: [
+        {name: '转换器增益', 类型: '*', value: 1.15}
     ], color: '橙色-红色', icons: [
         {"x": 0, "y": 0, "rotate": 0, "size": 3, "图标": "mdi-moped"},
         {"x": 0, "y": -0.4, "rotate": 0, "size": 2, "图标": "mdi-walk"},
         {"x": -0.4, "y": -0.55, "rotate": 60, "size": 1, "图标": "mdi-pizza"}
     ]},
-    {id: 17, collection: '送货服务', 攻击和生命值 x{0}: 2, reward: [
-        {name: '包裹容量', 类型: 'mult', value: 1.25}
+    {id: 17, collection: '送货服务', 卡片力量: 2, reward: [
+        {name: '包裹容量', 类型: '*', value: 1.25}
     ], color: '棕色', icons: [
         {"x": 0.4, "y": 0, "rotate": 0, "size": 2.5, "图标": "mdi-truck-flatbed"},
         {"x": -0.1, "y": -0.1, "rotate": 0, "size": 0.75, "图标": "mdi-package"},
@@ -155,15 +155,15 @@
         {"x": -0.65, "y": 0.35, "rotate": 0, "size": 0.75, "图标": "mdi-package"},
         {"x": -0.825, "y": 0.05, "rotate": 0, "size": 0.75, "图标": "mdi-package"}
     ]},
-    {id: 18, collection: '送货服务', 攻击和生命值 x{0}: 2, reward: [
-        {name: '包裹增益', 类型: 'mult', value: 1.15}
+    {id: 18, collection: '送货服务', 卡片力量: 2, reward: [
+        {name: '包裹增益', 类型: '*', value: 1.15}
     ], color: '红色', icons: [
         {"x": -0.85, "y": 0, "rotate": 0, "size": 1.5, "图标": "mdi-bus-stop-covered"},
         {"x": 0.3, "y": 0.1, "rotate": 0, "size": 2, "图标": "mdi-bus-school"},
         {"x": 0.75, "y": -0.8, "rotate": 0, "size": 1, "图标": "mdi-town-hall"}
     ]},
-    {id: 19, collection: '送货服务', 攻击和生命值 x{0}: 3, reward: [
-        {name: '所有鼓上限', 类型: '基础', value: 3}
+    {id: 19, collection: '送货服务', 卡片力量: 3, reward: [
+        {name: '所有鼓上限', 类型: '+', value: 3}
     ], color: 'dark-blue', icons: [
         {"x": 0.65, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-factory"},
         {"x": -0.85, "y": 0.75, "rotate": 0, "size": 1, "图标": "mdi-barrel"},
@@ -173,9 +173,9 @@
         {"x": -0.3, "y": -0.3, "rotate": 0, "size": 1, "图标": "mdi-forklift"},
         {"x": -0.7, "y": -0.27, "rotate": 0, "size": 0.6, "图标": "mdi-walk"}
     ]},
-    {id: 20, collection: '送货服务', 攻击和生命值 x{0}: 3, reward: [
-        {name: '转换器增益', 类型: 'mult', value: 1.1},
-        {name: '包裹增益', 类型: 'mult', value: 1.1}
+    {id: 20, collection: '送货服务', 卡片力量: 3, reward: [
+        {name: '转换器增益', 类型: '*', value: 1.1},
+        {name: '包裹增益', 类型: '*', value: 1.1}
     ], color: '青色', icons: [
         {"x": 0.8, "y": 0.55, "rotate": 0, "size": 1.75, "图标": "mdi-ferry"},
         {"x": -0.5, "y": 0.65, "rotate": 0, "size": 1, "图标": "mdi-shipping-pallet"},
@@ -185,8 +185,8 @@
         {"x": -0.55, "y": 1.1, "rotate": 0, "size": 1.6, "图标": "mdi-rectangle"},
         {"x": -0.05, "y": 1.1, "rotate": 0, "size": 1.6, "图标": "mdi-rectangle"}
     ]},
-    {id: 21, collection: '送货服务', 攻击和生命值 x{0}: 3, reward: [
-        {name: '红色鼓容量', 类型: 'mult', value: 1.2}
+    {id: 21, collection: '送货服务', 卡片力量: 3, reward: [
+        {name: '红色鼓容量', 类型: '*', value: 1.2}
     ], color: '光-灰色', icons: [
         {"x": -0.95, "y": 0.05, "rotate": 0, "size": 1.2, "图标": "mdi-truck-cargo-container"},
         {"x": -0.2, "y": 0.05, "rotate": 0, "size": 1.2, "图标": "mdi-truck-cargo-container"},
@@ -200,9 +200,9 @@
         {"x": 1.1, "y": -0.48, "rotate": 0, "size": 1, "图标": "mdi-traffic-light"},
         {"x": 1.1, "y": 0, "rotate": 0, "size": 1.25, "图标": "mdi-sign-pole"}
     ]},
-    {id: 22, collection: '送货服务', 攻击和生命值 x{0}: 3, reward: [
-        {name: '灵感的开始', 类型: '基础', value: 2},
-        {name: '所有鼓上限', 类型: '基础', value: 2}
+    {id: 22, collection: '送货服务', 卡片力量: 3, reward: [
+        {name: '灵感的开始', 类型: '+', value: 2},
+        {name: '所有鼓上限', 类型: '+', value: 2}
     ], color: '光-blue', icons: [
         {"x": 0, "y": -0.55, "rotate": 0, "size": 1.5, "图标": "mdi-quadcopter"},
         {"x": 0, "y": 0.4, "rotate": 0, "size": 1.2, "图标": "mdi-parachute"},
@@ -210,9 +210,9 @@
         {"x": -0.85, "y": 0, "rotate": 0, "size": 1, "图标": "mdi-cloud"},
         {"x": 1, "y": -0.4, "rotate": 0, "size": 1, "图标": "mdi-clouds"}
     ]},
-    {id: 23, collection: '送货服务', 攻击和生命值 x{0}: 3, reward: [
-        {name: '所有鼓上限', 类型: '基础', value: 2},
-        {name: '现金增益', 类型: 'mult', value: 1.1}
+    {id: 23, collection: '送货服务', 卡片力量: 3, reward: [
+        {name: '所有鼓上限', 类型: '+', value: 2},
+        {name: '现金增益', 类型: '*', value: 1.1}
     ], color: '橙色', icons: [
         {"x": 0.3, "y": 0.05, "rotate": 0, "size": 1.75, "图标": "mdi-tow-truck"},
         {"x": 1.1, "y": 0.15, "rotate": 0, "size": 1, "图标": "mdi-traffic-cone"},

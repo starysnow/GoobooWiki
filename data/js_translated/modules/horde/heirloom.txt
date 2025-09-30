@@ -1,54 +1,54 @@
 {
-    攻击和生命值 x{0}: {color: '红色', 图标: 'mdi-sword', 效果: [
-        {name: '攻击', 类型: 'mult', value: lvl => lvl * 0.2 + 1}
+    卡片力量: {color: '红色', 图标: 'mdi-sword', 效果: [
+        {name: '攻击', 类型: '*', value: lvl => lvl * 0.2 + 1}
     ]},
     fortitude: {color: '绿色', 图标: 'mdi-heart', 效果: [
-        {name: '生命值', 类型: 'mult', value: lvl => lvl * 0.2 + 1}
+        {name: '生命值', 类型: '*', value: lvl => lvl * 0.2 + 1}
     ]},
     wealth: {color: '金色', 图标: 'mdi-circle-multiple', 效果: [
-        {name: '骨头增益', 类型: 'mult', value: lvl => lvl * 0.15 + 1},
-        {name: '怪物零件增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
+        {name: '骨头增益', 类型: '*', value: lvl => lvl * 0.15 + 1},
+        {name: '怪物零件增益', 类型: '*', value: lvl => lvl * 0.05 + 1}
     ]},
     spirit: {minZone: 40, color: '紫色', 图标: 'mdi-ghost', 效果: [
-        {name: '腐败的灵魂增益', 类型: 'mult', value: lvl => lvl * 0.06 + 1}
+        {name: '腐败的灵魂增益', 类型: '*', value: lvl => lvl * 0.06 + 1}
     ]},
     sharpsight: {minZone: 50, color: '青色', 图标: 'mdi-magnify', 效果: [
-        {name: '装备几率', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
+        {name: '装备几率', 类型: '*', value: lvl => lvl * 0.05 + 1}
     ]},
     reaping: {minZone: 60, color: '粉色', 图标: 'mdi-skull', 效果: [
-        {name: '腐烂的肉体增益', 类型: '基础', value: lvl => lvl * 0.03}
+        {name: '腐烂的肉体增益', 类型: '+', value: lvl => lvl * 0.03}
     ]},
     remembrance: {minZone: 70, color: 'deep-紫色', 图标: 'mdi-grave-stone', 效果: [
-        {name: '腐败的灵魂容量', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
+        {name: '腐败的灵魂容量', 类型: '*', value: lvl => lvl * 0.05 + 1}
     ]},
     holding: {minZone: 80, color: '棕色', 图标: 'mdi-dresser', 效果: [
-        {name: '骨头容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '怪物零件容量', 类型: 'mult', value: lvl => lvl * 0.02 + 1}
+        {name: '骨头容量', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '怪物零件容量', 类型: '*', value: lvl => lvl * 0.02 + 1}
     ]},
     expertise: {minZone: 100, color: '光-blue', 图标: 'mdi-book-open-variant', 效果: [
-        {name: '精通点数增益', 类型: 'mult', value: lvl => lvl * 0.01 + 1}
+        {name: '精通点数增益', 类型: '*', value: lvl => lvl * 0.01 + 1}
     ]},
     神秘: {minZone: 120, color: 'teal', 图标: 'mdi-help-box', 效果: [
-        {name: '神秘碎片几率', 类型: 'mult', value: lvl => lvl * 0.001 + 1}
+        {name: '神秘碎片几率', 类型: '*', value: lvl => lvl * 0.001 + 1}
     ]},
     砖块: {minZone: Infinity, color: '樱桃色', 图标: 'mdi-wall', 效果: [
-        {name: '骨头增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-        {name: '暴击伤害', 类型: '基础', value: lvl => (Math.pow(lvl / 10 + 1, 0.4) - 1) * 0.01}
+        {name: '骨头增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
+        {name: '暴击伤害', 类型: '+', value: lvl => (Math.pow(lvl / 10 + 1, 0.4) - 1) * 0.01}
     ]},
     heat: {minZone: Infinity, color: '橙色-红色', 图标: 'mdi-fire', 效果: [
-        {name: '攻击', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-        {name: '暴击率', 类型: '基础', value: lvl => Math.木头(lvl / 10 + 1) * 0.008}
+        {name: '攻击', 类型: '*', value: lvl => lvl * 0.05 + 1},
+        {name: '暴击率', 类型: '+', value: lvl => Math.log(lvl / 10 + 1) * 0.008}
     ]},
     ice: {minZone: Infinity, color: 'skyblue', 图标: 'mdi-snowflake-variant', 效果: [
-        {name: '生命值', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-        {name: '恢复', 类型: '基础', value: lvl => Math.木头(lvl / 10 + 1) * 0.003}
+        {name: '生命值', 类型: '*', value: lvl => lvl * 0.05 + 1},
+        {name: '恢复', 类型: '+', value: lvl => Math.log(lvl / 10 + 1) * 0.003}
     ]},
     crystal: {minZone: Infinity, color: 'indigo', 图标: 'mdi-billiards-rack', 效果: [
-        {name: '神秘碎片几率', 类型: 'mult', value: lvl => lvl * 0.001 + 1},
-        {name: '神秘碎片容量', 类型: '基础', value: lvl => Math.floor(Math.木头(lvl + 2))}
+        {name: '神秘碎片几率', 类型: '*', value: lvl => lvl * 0.001 + 1},
+        {name: '神秘碎片容量', 类型: '+', value: lvl => Math.floor(Math.log(lvl + 2))}
     ]},
     活力: {minZone: Infinity, color: '光-绿色', 图标: 'mdi-heart-multiple', 效果: [
-        {name: '骨头容量', 类型: 'mult', value: lvl => lvl * 0.001 + 1},
-        {name: '治疗', 类型: 'mult', value: lvl => Math.木头(lvl + 1) * 0.1 + 1}
+        {name: '骨头容量', 类型: '*', value: lvl => lvl * 0.001 + 1},
+        {name: '治疗', 类型: '*', value: lvl => Math.log(lvl + 1) * 0.1 + 1}
     ]},
 }

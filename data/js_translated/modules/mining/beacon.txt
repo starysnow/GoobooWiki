@@ -3,21 +3,21 @@
         color: '紫色',
         ownedMult: '穿刺信标',
         效果: [
-            {name: '韧性', 类型: 'mult', value: lvl => 1 / (lvl * 0.25 + 5)}
+            {name: '韧性', 类型: '*', value: lvl => 1 / (lvl * 0.25 + 5)}
         ]
     },
     富有信标: {
         color: '橙色',
         ownedMult: '富有信标',
         效果: [
-            {name: '矿石增益', 类型: 'mult', value: lvl => lvl * 0.05 + 2}
+            {name: '矿石增益', 类型: '*', value: lvl => lvl * 0.05 + 2}
         ]
     },
     奇迹信标: {
         color: 'blue',
         ownedMult: '奇观信标',
         效果: [
-            {name: '稀土增益', 类型: 'mult', value: lvl => lvl * 0.04 + 1.6}
+            {name: '稀土增益', 类型: '*', value: lvl => lvl * 0.04 + 1.6}
         ]
     },
     希望信标: {
@@ -25,8 +25,8 @@
         ownedMult: '希望信标',
         range: 5,
         效果: [
-            {name: '伤害', 类型: 'mult', value: lvl => lvl * 0.01 + 1.1},
-            {name: '废料增益', 类型: 'mult', value: lvl => lvl * 0.015 + 1.2}
+            {name: '伤害', 类型: '*', value: lvl => lvl * 0.01 + 1.1},
+            {name: '废料增益', 类型: '*', value: lvl => lvl * 0.015 + 1.2}
         ]
     }
 }

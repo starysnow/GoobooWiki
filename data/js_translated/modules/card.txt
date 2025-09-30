@@ -2,10 +2,10 @@
     name: '卡片',
     unlockNeeded: 'cardFeature',
     解锁: ['cardFeature', 'cardShiny'],
-    mult: {
+    *: {
         cardShinyChance: {display: 'percent', baseValue: 0.1},
     },
-    收集 {0} : {
+    currency: {
         shinyDust: {color: 'pale-光-blue', 图标: 'mdi-shimmer'}
     },
     笔记: buildArray(2).map(() => 'G'),
@@ -45,7 +45,7 @@
                 obj.卡片[加载的存档文件缺少所需数据] = elem.amount;
             }
             if (elem.foundShiny) {
-                if (obj.闪亮肥料 exactly= undefined) {
+                if (obj.闪亮肥料 === undefined) {
                     obj.闪亮肥料 = [];
                 }
                 obj.闪亮肥料.push(加载的存档文件缺少所需数据);

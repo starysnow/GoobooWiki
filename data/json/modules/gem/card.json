@@ -1,0 +1,26 @@
+[
+  {
+    "名称": "feature",
+    "prefix": "GE",
+    "reward": "currencyGemTopazCap+｛$lvl  \\cdot  20$｝",
+    "shinyReward": "currencyGemTopazCap+｛$lvl  \\cdot  20$｝",
+    "解锁": "gemFeature",
+    "贵重珠宝": ""
+  },
+  {
+    "名称": "collection",
+    "prefix": "",
+    "reward": "",
+    "shinyReward": "",
+    "解锁": "",
+    "贵重珠宝": "{\"reward\":[{\"name\":\"currencyGemTopazCap\",\"类型\":\"+\",\"value\":160}]}"
+  },
+  {
+    "名称": "pack",
+    "prefix": "",
+    "reward": "",
+    "shinyReward": "",
+    "解锁": "",
+    "贵重珠宝": ""
+  }
+]

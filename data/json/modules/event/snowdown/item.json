@@ -1,0 +1,268 @@
+[
+  {
+    "名称": "森林",
+    "类型": "producer",
+    "图标": "<i class=\"mdi mdi-forest\"></i>",
+    "效果": "树苗增益+｛${(2)}^{lvl}  \\cdot  {(lvl + 1)}^{2}  \\cdot  0.01$｝",
+    "max": ""
+  },
+  {
+    "名称": "牧羊人",
+    "类型": "producer",
+    "图标": "<i class=\"mdi mdi-sheep\"></i>",
+    "效果": "纱增益+｛${(2)}^{lvl}  \\cdot  {(lvl + 1)}^{2}  \\cdot  0.01$｝",
+    "max": ""
+  },
+  {
+    "名称": "擀面杖",
+    "类型": "producer",
+    "图标": "<i class=\"mdi mdi-arrow-top-right-bottom-left-bold\"></i>",
+    "效果": "面团增益+｛${(2)}^{lvl}  \\cdot  {(lvl + 1)}^{2}  \\cdot  0.01$｝",
+    "max": ""
+  },
+  {
+    "名称": "雪炮",
+    "类型": "producer",
+    "图标": "<i class=\"mdi mdi-snowflake-alert\"></i>",
+    "效果": "雪增益+｛${(2)}^{lvl}  \\cdot  {(lvl + 1)}^{2}  \\cdot  0.01$｝",
+    "max": ""
+  },
+  {
+    "名称": "雪鸮",
+    "类型": "pet",
+    "图标": "<i class=\"mdi mdi-owl\"></i>",
+    "效果": "",
+    "max": "1"
+  },
+  {
+    "名称": "狗",
+    "类型": "pet",
+    "图标": "<i class=\"mdi mdi-dog\"></i>",
+    "效果": "",
+    "max": "1"
+  },
+  {
+    "名称": "猫",
+    "类型": "pet",
+    "图标": "<i class=\"mdi mdi-cat\"></i>",
+    "效果": "",
+    "max": "1"
+  },
+  {
+    "名称": "企鹅",
+    "类型": "pet",
+    "图标": "<i class=\"mdi mdi-penguin\"></i>",
+    "效果": "",
+    "max": "1"
+  },
+  {
+    "名称": "兔子",
+    "类型": "pet",
+    "图标": "<i class=\"mdi mdi-rabbit\"></i>",
+    "效果": "",
+    "max": "1"
+  },
+  {
+    "名称": "乌龟",
+    "类型": "pet",
+    "图标": "<i class=\"mdi mdi-tortoise\"></i>",
+    "效果": "",
+    "max": "1"
+  },
+  {
+    "名称": "动物牙齿",
+    "类型": "petBoost",
+    "图标": "<i class=\"mdi mdi-tooth\"></i>",
+    "效果": "宠物攻击+｛$lvl  \\cdot  0.5$｝; 宠物攻击*｛$lvl  \\cdot  0.1 + 1$｝",
+    "max": ""
+  },
+  {
+    "名称": "项圈",
+    "类型": "petBoost",
+    "图标": "<i class=\"mdi mdi-dog-service\"></i>",
+    "效果": "宠物生命值+｛$lvl  \\cdot  5$｝; 宠物生命值*｛$lvl  \\cdot  0.1 + 1$｝",
+    "max": ""
+  },
+  {
+    "名称": "辣椒",
+    "类型": "petBoost",
+    "图标": "<i class=\"mdi mdi-chili-mild\"></i>",
+    "效果": "暴击率+｛$lvl  \\cdot  8$｝; 宠物暴击率+｛$lvl  \\cdot  10$｝",
+    "max": ""
+  },
+  {
+    "名称": "鼓槌",
+    "类型": "petBoost",
+    "图标": "<i class=\"mdi mdi-food-drumstick\"></i>",
+    "效果": "宠物攻击*｛$lvl  \\cdot  0.1 + 1$｝; 宠物生命值*｛$lvl  \\cdot  0.1 + 1$｝; 宠物格挡率+｛$lvl  \\cdot  5$｝",
+    "max": ""
+  },
+  {
+    "名称": "老鼠",
+    "类型": "petBoost",
+    "图标": "<i class=\"mdi mdi-rodent\"></i>",
+    "效果": "",
+    "max": "5"
+  },
+  {
+    "名称": "骨头",
+    "类型": "petBoost",
+    "图标": "<i class=\"mdi mdi-bone\"></i>",
+    "效果": "",
+    "max": "5"
+  },
+  {
+    "名称": "墓碑",
+    "类型": "petBoost",
+    "图标": "<i class=\"mdi mdi-grave-stone\"></i>",
+    "效果": "",
+    "max": "3"
+  },
+  {
+    "名称": "尖刺项圈",
+    "类型": "petBoost",
+    "图标": "<i class=\"mdi mdi-decagram-outline\"></i>",
+    "效果": "",
+    "max": "1"
+  },
+  {
+    "名称": "心形项圈",
+    "类型": "petBoost",
+    "图标": "<i class=\"mdi mdi-heart-outline\"></i>",
+    "效果": "",
+    "max": "3"
+  },
+  {
+    "名称": "治疗袋",
+    "类型": "petBoost",
+    "图标": "<i class=\"mdi mdi-sack\"></i>",
+    "效果": "",
+    "max": ""
+  },
+  {
+    "名称": "网球",
+    "类型": "petBoost",
+    "图标": "<i class=\"mdi mdi-tennis-ball\"></i>",
+    "效果": "",
+    "max": "1"
+  },
+  {
+    "名称": "苹果汁",
+    "类型": "tank",
+    "图标": "<i class=\"mdi mdi-cup\"></i>",
+    "效果": "",
+    "max": ""
+  },
+  {
+    "名称": "热水",
+    "类型": "tank",
+    "图标": "<i class=\"mdi mdi-needle\"></i>",
+    "效果": "",
+    "max": "1"
+  },
+  {
+    "名称": "哑铃",
+    "类型": "tank",
+    "图标": "<i class=\"mdi mdi-dumbbell\"></i>",
+    "效果": "",
+    "max": "5"
+  },
+  {
+    "名称": "目标",
+    "类型": "tank",
+    "图标": "<i class=\"mdi mdi-bullseye\"></i>",
+    "效果": "",
+    "max": "5"
+  },
+  {
+    "名称": "手套",
+    "类型": "tank",
+    "图标": "<i class=\"mdi mdi-hand-back-left\"></i>",
+    "效果": "",
+    "max": "5"
+  },
+  {
+    "名称": "滑雪板",
+    "类型": "暴击",
+    "图标": "<i class=\"mdi mdi-snowboard\"></i>",
+    "效果": "",
+    "max": "1"
+  },
+  {
+    "名称": "茶",
+    "类型": "暴击",
+    "图标": "<i class=\"mdi mdi-tea\"></i>",
+    "效果": "",
+    "max": "3"
+  },
+  {
+    "名称": "星盾",
+    "类型": "暴击",
+    "图标": "<i class=\"mdi mdi-shield-star\"></i>",
+    "效果": "",
+    "max": "1"
+  },
+  {
+    "名称": "咖啡",
+    "类型": "暴击",
+    "图标": "<i class=\"mdi mdi-coffee\"></i>",
+    "效果": "",
+    "max": "3"
+  },
+  {
+    "名称": "鹅卵石",
+    "类型": "暴击",
+    "图标": "<i class=\"mdi mdi-chart-bubble\"></i>",
+    "效果": "",
+    "max": "1"
+  },
+  {
+    "名称": "日盾",
+    "类型": "",
+    "图标": "<i class=\"mdi mdi-shield-sun\"></i>",
+    "效果": "防御+｛$lvl  \\cdot  2$｝",
+    "max": ""
+  },
+  {
+    "名称": "月盾",
+    "类型": "",
+    "图标": "<i class=\"mdi mdi-shield-moon\"></i>",
+    "效果": "防御+｛$lvl$｝; 格挡率+｛$lvl  \\cdot  5$｝",
+    "max": ""
+  },
+  {
+    "名称": "壁炉",
+    "类型": "",
+    "图标": "<i class=\"mdi mdi-fireplace\"></i>",
+    "效果": "生命值+｛$lvl  \\cdot  10$｝; 生命值*｛$lvl  \\cdot  0.1 + 1$｝",
+    "max": ""
+  },
+  {
+    "名称": "特殊雪花",
+    "类型": "",
+    "图标": "<i class=\"mdi mdi-snowflake-variant\"></i>",
+    "效果": "攻击*｛$lvl  \\cdot  0.1 + 1$｝; 暴击率+｛$lvl  \\cdot  5$｝",
+    "max": ""
+  },
+  {
+    "名称": "糖果手杖",
+    "类型": "",
+    "图标": "<i class=\"mdi mdi-candycane\"></i>",
+    "效果": "生命值+｛$lvl  \\cdot  15$｝; 格挡率+｛$lvl  \\cdot  5$｝",
+    "max": ""
+  },
+  {
+    "名称": "铲子",
+    "类型": "",
+    "图标": "<i class=\"mdi mdi-shovel\"></i>",
+    "效果": "攻击+｛$lvl$｝; 攻击*｛$lvl  \\cdot  0.1 + 1$｝",
+    "max": ""
+  },
+  {
+    "名称": "火鸡",
+    "类型": "",
+    "图标": "<i class=\"mdi mdi-food-turkey\"></i>",
+    "效果": "攻击+｛$lvl$｝; 生命值*｛$lvl  \\cdot  0.1 + 1$｝",
+    "max": ""
+  }
+]

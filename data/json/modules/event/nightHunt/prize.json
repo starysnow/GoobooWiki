@@ -1,0 +1,42 @@
+[
+  {
+    "名称": "秋天的森林",
+    "类型": "theme",
+    "item": "秋天的森林",
+    "pool": "{\"nightHunt\":{\"消耗\":{\"夜间狩猎代币\":200}}}",
+    "requirement": "",
+    "amount": ""
+  },
+  {
+    "名称": "块状颗粒",
+    "类型": "圣遗物",
+    "item": "块状颗粒",
+    "pool": "{\"nightHunt\":{\"消耗\":{\"夜间狩猎代币\":170}}}",
+    "requirement": "$store.state.解锁.farmFeature.see$",
+    "amount": ""
+  },
+  {
+    "名称": "魔法瓶",
+    "类型": "圣遗物",
+    "item": "魔法瓶",
+    "pool": "{\"nightHunt\":{\"消耗\":{\"夜间狩猎代币\":175}}}",
+    "requirement": "$store.state.解锁.树脂.see$",
+    "amount": ""
+  },
+  {
+    "名称": "cardPack_midnightAnomaly",
+    "类型": "卡包",
+    "item": "午夜异常",
+    "pool": "{\"nightHunt\":{\"消耗\":{\"夜间狩猎代币\":30}}}",
+    "requirement": "",
+    "amount": ""
+  },
+  {
+    "名称": "田野祝福",
+    "类型": "consumable",
+    "item": "田野祝福",
+    "pool": "{\"nightHunt\":{\"消耗\":{\"夜间狩猎代币\":1}}}",
+    "requirement": "$store.state.解锁.肥料.see$",
+    "amount": "20"
+  }
+]

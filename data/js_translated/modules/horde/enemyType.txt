@@ -1,81 +1,81 @@
 {
     soldier_1: {
-        攻击 +: 1.75,
+        攻击plus: 1.75,
         生命值: 50,
-        印记 +{0}: {
+        印记+(0): {
             rifle_gun: 1
         }
     },
     soldier_2: {
-        攻击 +: 1.75,
+        攻击plus: 1.75,
         生命值: 45,
-        印记 +{0}: {
+        印记+(0): {
             rifle_gun: 1,
             war_grenade: 1
         }
     },
     soldier_3: {
-        攻击 +: 1.6,
+        攻击plus: 1.6,
         生命值: 50,
-        印记 +{0}: {
+        印记+(0): {
             rifle_gun: 1,
             war_bandage: 1
         }
     },
     officer_1: {
-        攻击 +: 1,
+        攻击plus: 1,
         生命值: 80,
-        印记 +{0}: {
+        印记+(0): {
             pistol_gun: 1
         }
     },
     officer_2: {
-        攻击 +: 1,
+        攻击plus: 1,
         生命值: 72.5,
-        印记 +{0}: {
+        印记+(0): {
             pistol_gun: 1,
             war_grenade: 1
         }
     },
     officer_3: {
-        攻击 +: 0.9,
+        攻击plus: 0.9,
         生命值: 80,
-        印记 +{0}: {
+        印记+(0): {
             pistol_gun: 1,
             war_bandage: 1
         }
     },
     猎人: {
-        攻击 +: 1.2,
+        攻击plus: 1.2,
         生命值: 55,
-        印记 +{0}: {
+        印记+(0): {
             shotgun_gun: 1,
             war_grenade: 2,
             war_bandage: 2
         }
     },
     狙击手: {
-        攻击 +: 1.5,
+        攻击plus: 1.5,
         生命值: 40,
         stats: {
             critChance_base: 0.25,
             critMult_base: 0.5
         },
-        印记 +{0}: {
+        印记+(0): {
             sniper_gun: 1
         }
     },
     强壮的猴子: {
-        攻击 +: 2.5,
+        攻击plus: 2.5,
         生命值: 40,
         stats: {
             physicTaken_mult: 1.25,
             magicTaken_mult: 0.75,
         },
-        印记 +{0}: {}
+        印记+(0): {}
     },
     愤怒的猴子: {
-        攻击 +: 1.7,
+        攻击plus: 1.7,
         生命值: 35,
         stats: {
             physicTaken_mult: 1.25,
@@ -83,126 +83,126 @@
             critChance_base: 0.4,
             critMult_base: 1.25,
         },
-        印记 +{0}: {}
+        印记+(0): {}
     },
     飞镖猴: {
-        攻击 +: 1.8,
+        攻击plus: 1.8,
         生命值: 45,
         stats: {
             physicTaken_mult: 1.25,
             magicTaken_mult: 0.75,
         },
-        印记 +{0}: {
+        印记+(0): {
             monkey_dart: 1
         }
     },
     monkeyWizard_1: {
-        攻击 +: 1.75,
+        攻击plus: 1.75,
         生命值: 50,
         stats: {
             physicTaken_mult: 0.75,
             magicTaken_mult: 1.25,
         },
-        印记 +{0}: {
+        印记+(0): {
             monkey_fire: 1
         }
     },
     monkeyWizard_2: {
-        攻击 +: 1.75,
+        攻击plus: 1.75,
         生命值: 50,
         stats: {
             physicTaken_mult: 0.75,
             magicTaken_mult: 1.25,
         },
-        印记 +{0}: {
+        印记+(0): {
             monkey_ice: 1
         }
     },
     monkeyWizard_3: {
-        攻击 +: 1.75,
+        攻击plus: 1.75,
         生命值: 50,
         stats: {
             physicTaken_mult: 0.75,
             magicTaken_mult: 1.25,
         },
-        印记 +{0}: {
+        印记+(0): {
             monkey_lightning: 1
         }
     },
     猴子卫士: {
-        攻击 +: 2,
+        攻击plus: 2,
         生命值: 50,
         stats: {
             physicTaken_mult: 0.1,
             magicTaken_mult: 1.5,
         },
-        印记 +{0}: {}
+        印记+(0): {}
     },
     猴僧: {
-        攻击 +: 2,
+        攻击plus: 2,
         生命值: 50,
         stats: {
             physicTaken_mult: 1.5,
             magicTaken_mult: 0.1,
         },
-        印记 +{0}: {}
+        印记+(0): {}
     },
     小狗: {
-        攻击 +: 1.4,
+        攻击plus: 1.4,
         生命值: 60,
-        印记 +{0}: {
+        印记+(0): {
             cute_bark: 1,
             cute_bite: 1,
         }
     },
     小猫: {
-        攻击 +: 2.8,
+        攻击plus: 2.8,
         生命值: 30,
-        印记 +{0}: {
+        印记+(0): {
             cute_claws: 1,
         }
     },
     海豹: {
-        攻击 +: 1.6,
+        攻击plus: 1.6,
         生命值: 60,
-        印记 +{0}: {
+        印记+(0): {
             cute_ram: 1,
         }
     },
     小猪: {
-        攻击 +: 0.8,
+        攻击plus: 0.8,
         生命值: 90,
-        印记 +{0}: {
+        印记+(0): {
             cute_ram: 1,
             cute_eatCarrot: 1,
         }
     },
     熊猫: {
-        攻击 +: 2.5,
+        攻击plus: 2.5,
         生命值: 35,
-        印记 +{0}: {
+        印记+(0): {
             cute_ram: 2,
         }
     },
     考拉: {
-        攻击 +: 2.2,
+        攻击plus: 2.2,
         生命值: 40,
-        印记 +{0}: {
+        印记+(0): {
             cute_kick: 1,
             cute_bite: 1,
         }
     },
     兔子: {
-        攻击 +: 1.1,
+        攻击plus: 1.1,
         生命值: 70,
-        印记 +{0}: {
+        印记+(0): {
             cute_kick: 1,
             cute_eatCarrot: 1,
         }
     },
     豚鼠: {
-        攻击 +: 1.6,
+        攻击plus: 1.6,
         生命值: 70,
-        印记 +{0}: {}
+        印记+(0): {}
     },
 }

@@ -2,38 +2,38 @@
     绳子: {
         图标: 'mdi-lasso',
         color: 'beige',
-        price: {植物纤维: buildNum(100, 'K')},
+        消耗: {植物纤维: buildNum(100, 'K')},
         value: 10,
-        减少制作时间至 {0}: 60,
+        制作时间: 60,
         里程碑: {
             100: {类型: 'villageCraft', name: '袋子', value: true},
-            750: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 40},
+            750: {类型: 'changeStat', name: '制作时间', value: 40},
             4800: {类型: 'changeStat', name: 'value', value: 14},
-            27000: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 30},
+            27000: {类型: 'changeStat', name: '制作时间', value: 30},
         }
     },
     木板: {
         图标: 'mdi-view-dashboard-variant',
         color: '棕色',
-        price: {木头: buildNum(250, 'K')},
+        消耗: {木头: buildNum(250, 'K')},
         value: 22,
-        减少制作时间至 {0}: 120,
+        制作时间: 120,
         里程碑: {
-            60: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 90},
+            60: {类型: 'changeStat', name: '制作时间', value: 90},
             450: {类型: 'villageCraft', name: '橱柜', value: true},
             3200: {类型: 'changeStat', name: 'value', value: 30},
-            16500: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 75},
+            16500: {类型: 'changeStat', name: '制作时间', value: 75},
         }
     },
     砖块: {
         图标: 'mdi-wall',
         color: '樱桃色',
-        price: {石头: buildNum(600, 'K')},
+        消耗: {石头: buildNum(600, 'K')},
         value: 48,
-        减少制作时间至 {0}: 240,
+        制作时间: 240,
         里程碑: {
             40: {类型: 'changeStat', name: 'value', value: 66},
-            300: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 180},
+            300: {类型: 'changeStat', name: '制作时间', value: 180},
             2000: {类型: 'villageCraft', name: '哑铃', value: true},
             12000: {类型: 'changeStat', name: 'value', value: 84},
         }
@@ -41,12 +41,12 @@
     螺丝: {
         图标: 'mdi-screw-flat-top',
         color: '光-灰色',
-        price: {金属: buildNum(800, 'K')},
+        消耗: {金属: buildNum(800, 'K')},
         value: 25,
-        减少制作时间至 {0}: 120,
+        制作时间: 120,
         里程碑: {
             100: {类型: 'changeStat', name: 'value', value: 34},
-            550: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 100},
+            550: {类型: 'changeStat', name: '制作时间', value: 100},
             4400: {类型: 'villageCraft', name: '剪刀', value: true},
             21000: {类型: 'changeStat', name: 'value', value: 44},
         }
@@ -54,25 +54,25 @@
     水瓶: {
         图标: 'mdi-bottle-soda',
         color: 'blue',
-        price: {水: buildNum(1.5, '分钟')},
+        消耗: {水: buildNum(1.5, 'M')},
         value: 15,
-        减少制作时间至 {0}: 70,
+        制作时间: 70,
         里程碑: {
-            300: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 50},
-            1700: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 35},
+            300: {类型: 'changeStat', name: '制作时间', value: 50},
+            1700: {类型: 'changeStat', name: '制作时间', value: 35},
             9250: {类型: 'villageCraft', name: '草药茶', value: true},
-            53000: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 25},
+            53000: {类型: 'changeStat', name: '制作时间', value: 25},
         }
     },
     鸡尾酒杯: {
         图标: 'mdi-glass-cocktail',
         color: '光-blue',
-        price: {玻璃: buildNum(2.5, '分钟')},
+        消耗: {玻璃: buildNum(2.5, 'M')},
         value: 50,
-        减少制作时间至 {0}: 210,
+        制作时间: 210,
         里程碑: {
             45: {类型: 'changeStat', name: 'value', value: 67},
-            360: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 180},
+            360: {类型: 'changeStat', name: '制作时间', value: 180},
             2500: {类型: 'villageCraft', name: '杯子', value: true},
             14500: {类型: 'changeStat', name: 'value', value: 86},
         }
@@ -80,186 +80,186 @@
     回旋镖: {
         图标: 'mdi-boomerang',
         color: '樱桃色',
-        price: {硬木: buildNum(4, '分钟')},
+        消耗: {硬木: buildNum(4, 'M')},
         value: 38,
-        减少制作时间至 {0}: 140,
+        制作时间: 140,
         里程碑: {
             45: {类型: 'changeStat', name: 'value', value: 51},
-            360: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 120},
+            360: {类型: 'changeStat', name: '制作时间', value: 120},
             14500: {类型: 'changeStat', name: 'value', value: 65},
         }
     },
     抛光宝石: {
         图标: 'mdi-diamond-stone',
         color: '青色',
-        price: {宝石: buildNum(6.5, '分钟')},
+        消耗: {宝石: buildNum(6.5, 'M')},
         value: 36,
-        减少制作时间至 {0}: 160,
+        制作时间: 160,
         里程碑: {
             55: {类型: 'changeStat', name: 'value', value: 47},
-            380: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 140},
+            380: {类型: 'changeStat', name: '制作时间', value: 140},
             13500: {类型: 'changeStat', name: 'value', value: 60},
         }
     },
     油灯: {
         图标: 'mdi-oil-lamp',
         color: 'pale-橙色',
-        price: {油: buildNum(10, '分钟')},
+        消耗: {油: buildNum(10, 'M')},
         value: 51,
-        减少制作时间至 {0}: 270,
+        制作时间: 270,
         里程碑: {
             40: {类型: 'changeStat', name: 'value', value: 65},
-            330: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 225},
+            330: {类型: 'changeStat', name: '制作时间', value: 225},
             12400: {类型: 'changeStat', name: 'value', value: 82},
         }
     },
     淋浴: {
         图标: 'mdi-shower',
         color: 'pale-blue',
-        price: {大理石: buildNum(15, '分钟')},
+        消耗: {大理石: buildNum(15, 'M')},
         value: 70,
-        减少制作时间至 {0}: 360,
+        制作时间: 360,
         里程碑: {
-            40: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 300},
+            40: {类型: 'changeStat', name: '制作时间', value: 300},
             330: {类型: 'changeStat', name: 'value', value: 90},
-            12400: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 250},
+            12400: {类型: 'changeStat', name: '制作时间', value: 250},
         }
     },
     袋子: {
         图标: 'mdi-sack',
         color: 'pale-橙色',
-        price: {植物纤维: buildNum(1, '分钟')},
+        消耗: {植物纤维: buildNum(1, 'M')},
         value: 18,
-        减少制作时间至 {0}: 90,
+        制作时间: 90,
         里程碑: {
             80: {类型: 'changeStat', name: 'value', value: 26},
-            600: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 70},
+            600: {类型: 'changeStat', name: '制作时间', value: 70},
             4000: {类型: 'changeStat', name: 'value', value: 35},
-            22000: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 60},
+            22000: {类型: 'changeStat', name: '制作时间', value: 60},
         }
     },
     橱柜: {
         图标: 'mdi-cupboard',
         color: 'wooden',
-        price: {木头: buildNum(3, '分钟')},
+        消耗: {木头: buildNum(3, 'M')},
         value: 33,
-        减少制作时间至 {0}: 150,
+        制作时间: 150,
         里程碑: {
             50: {类型: 'changeStat', name: 'value', value: 42},
-            400: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 125},
+            400: {类型: 'changeStat', name: '制作时间', value: 125},
             2800: {类型: 'changeStat', name: 'value', value: 52},
-            15000: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 100},
+            15000: {类型: 'changeStat', name: '制作时间', value: 100},
         }
     },
     哑铃: {
         图标: 'mdi-weight',
         color: 'dark-灰色',
-        price: {石头: buildNum(7, '分钟')},
+        消耗: {石头: buildNum(7, 'M')},
         value: 65,
-        减少制作时间至 {0}: 300,
+        制作时间: 300,
         里程碑: {
             50: {类型: 'changeStat', name: 'value', value: 87},
-            400: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 255},
+            400: {类型: 'changeStat', name: '制作时间', value: 255},
             2800: {类型: 'villageCraft', name: '手锯', value: true},
-            15000: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 210},
+            15000: {类型: 'changeStat', name: '制作时间', value: 210},
         }
     },
     剪刀: {
         图标: 'mdi-content-cut',
         color: '光-灰色',
-        price: {金属: buildNum(8, '分钟'), 木头: buildNum(3, '分钟')},
+        消耗: {金属: buildNum(8, 'M'), 木头: buildNum(3, 'M')},
         value: 30,
-        减少制作时间至 {0}: 125,
+        制作时间: 125,
         里程碑: {
-            55: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 110},
+            55: {类型: 'changeStat', name: '制作时间', value: 110},
             420: {类型: 'changeStat', name: 'value', value: 40},
-            3100: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 100},
+            3100: {类型: 'changeStat', name: '制作时间', value: 100},
             17000: {类型: 'changeStat', name: 'value', value: 50},
         }
     },
     草药茶: {
         图标: 'mdi-tea',
         color: '绿色',
-        price: {水: buildNum(12, '分钟'), 植物纤维: buildNum(5, '分钟')},
+        消耗: {水: buildNum(12, 'M'), 植物纤维: buildNum(5, 'M')},
         value: 54,
-        减少制作时间至 {0}: 200,
+        制作时间: 200,
         里程碑: {
             48: {类型: 'changeStat', name: 'value', value: 78},
             380: {类型: 'changeStat', name: 'value', value: 106},
-            2600: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 170},
+            2600: {类型: 'changeStat', name: '制作时间', value: 170},
             14000: {类型: 'changeStat', name: 'value', value: 140},
         }
     },
     杯子: {
         图标: 'mdi-glasses',
         color: '红色-粉色',
-        price: {玻璃: buildNum(14, '分钟'), 金属: buildNum(11, '分钟')},
+        消耗: {玻璃: buildNum(14, 'M'), 金属: buildNum(11, 'M')},
         value: 21,
-        减少制作时间至 {0}: 80,
+        制作时间: 80,
         里程碑: {
-            100: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 65},
+            100: {类型: 'changeStat', name: '制作时间', value: 65},
             750: {类型: 'changeStat', name: 'value', value: 28},
-            5400: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 55},
-            30000: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 45},
+            5400: {类型: 'changeStat', name: '制作时间', value: 55},
+            30000: {类型: 'changeStat', name: '制作时间', value: 45},
         }
     },
     箭头: {
         图标: 'mdi-arrow-projectile-multiple',
         color: 'wooden',
-        price: {木头: buildNum(1.25, '分钟'), 石头: buildNum(400, 'K')},
+        消耗: {木头: buildNum(1.25, 'M'), 石头: buildNum(400, 'K')},
         value: 21,
-        减少制作时间至 {0}: 100,
+        制作时间: 100,
         里程碑: {
-            85: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 85},
-            400: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 70},
-            10000: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 60},
+            85: {类型: 'changeStat', name: '制作时间', value: 85},
+            400: {类型: 'changeStat', name: '制作时间', value: 70},
+            10000: {类型: 'changeStat', name: '制作时间', value: 60},
         }
     },
     碗: {
         图标: 'mdi-bowl',
         color: '棕色',
-        price: {木头: buildNum(2.5, '分钟')},
+        消耗: {木头: buildNum(2.5, 'M')},
         value: 25,
-        减少制作时间至 {0}: 130,
+        制作时间: 130,
         里程碑: {
-            90: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 100},
+            90: {类型: 'changeStat', name: '制作时间', value: 100},
             675: {类型: 'villageCraft', name: '灌木', value: true},
             4800: {类型: 'changeStat', name: 'value', value: 34},
-            25000: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 80},
+            25000: {类型: 'changeStat', name: '制作时间', value: 80},
         }
     },
     链: {
         图标: 'mdi-link-variant',
         color: '光-灰色',
-        price: {植物纤维: buildNum(3, '分钟'), 金属: buildNum(1.35, '分钟')},
+        消耗: {植物纤维: buildNum(3, 'M'), 金属: buildNum(1.35, 'M')},
         value: 19,
-        减少制作时间至 {0}: 70,
+        制作时间: 70,
         里程碑: {
-            140: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 60},
+            140: {类型: 'changeStat', name: '制作时间', value: 60},
             875: {类型: 'villageCraft', name: '车库', value: true},
             4300: {类型: 'changeStat', name: 'value', value: 25},
-            23000: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 50},
+            23000: {类型: 'changeStat', name: '制作时间', value: 50},
         }
     },
     矛: {
         图标: 'mdi-spear',
         color: 'dark-灰色',
-        price: {木头: buildNum(8, '分钟'), 金属: buildNum(1.75, '分钟')},
+        消耗: {木头: buildNum(8, 'M'), 金属: buildNum(1.75, 'M')},
         value: 26,
-        减少制作时间至 {0}: 120,
+        制作时间: 120,
         里程碑: {
-            110: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 95},
+            110: {类型: 'changeStat', name: '制作时间', value: 95},
             800: {类型: 'changeStat', name: 'value', value: 35},
-            5750: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 75},
+            5750: {类型: 'changeStat', name: '制作时间', value: 75},
             28000: {类型: 'changeStat', name: 'value', value: 45},
         }
     },
     金戒指: {
         图标: 'mdi-circle-outline',
         color: '金色',
-        price: {金属: buildNum(5, '分钟'), 水: buildNum(750, 'K')},
+        消耗: {金属: buildNum(5, 'M'), 水: buildNum(750, 'K')},
         value: 140,
-        减少制作时间至 {0}: 600,
+        制作时间: 600,
         里程碑: {
             30: {类型: 'changeStat', name: 'value', value: 188},
             225: {类型: 'changeStat', name: 'value', value: 239},
@@ -269,23 +269,23 @@
     毒箭: {
         图标: 'mdi-arrow-projectile-multiple',
         color: '光-绿色',
-        price: {craft_arrows: 5, 酸瓶: 1},
+        消耗: {craft_arrows: 5, 酸瓶: 1},
         prio: 1,
         value: 850,
-        减少制作时间至 {0}: 600,
+        制作时间: 600,
         里程碑: {
             120: {类型: 'changeStat', name: 'value', value: 1100},
             700: {类型: 'changeStat', name: 'value', value: 1400},
-            5000: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 300},
+            5000: {类型: 'changeStat', name: '制作时间', value: 300},
         }
     },
     冰霜长矛: {
         图标: 'mdi-spear',
         color: '青色',
-        price: {craft_spear: 10, 雪花: 1},
+        消耗: {craft_spear: 10, 雪花: 1},
         prio: 1,
         value: 2200,
-        减少制作时间至 {0}: 1500,
+        制作时间: 1500,
         里程碑: {
             55: {类型: 'changeStat', name: 'value', value: 3000},
             300: {类型: 'changeStat', name: 'value', value: 3950},
@@ -295,10 +295,10 @@
     麻辣汤: {
         图标: 'mdi-pot-steam',
         color: '橙色-红色',
-        price: {craft_bowl: 15, 植物纤维: buildNum(250, '分钟'), 水: buildNum(35, '分钟'), 辣椒包: 1},
+        消耗: {craft_bowl: 15, 植物纤维: buildNum(250, 'M'), 水: buildNum(35, 'M'), 辣椒包: 1},
         prio: 1,
         value: 2550,
-        减少制作时间至 {0}: 75,
+        制作时间: 75,
         里程碑: {
             40: {类型: 'changeStat', name: 'value', value: 3400},
             240: {类型: 'changeStat', name: 'value', value: 4500},
@@ -308,19 +308,19 @@
     秒表: {
         图标: 'mdi-timer',
         color: 'pale-blue',
-        price: {craft_screws: 20, 金属: buildNum(1.44, 'B'), 齿轮: 1},
+        消耗: {craft_screws: 20, 金属: buildNum(1.44, 'B'), 齿轮: 1},
         prio: 1,
         value: 8600,
-        减少制作时间至 {0}: 3600,
+        制作时间: 3600,
         里程碑: {
-            65: {类型: 'changeStat', name: '减少制作时间至 {0}', value: 1800},
+            65: {类型: 'changeStat', name: '制作时间', value: 1800},
             335: {类型: 'changeStat', name: 'value', value: buildNum(12.5, 'K')},
         }
     },
     小宝箱: {
         图标: 'mdi-treasure-chest',
         color: 'pale-黄色',
-        price: {
+        消耗: {
             craft_rope: lvl => Math.pow(2, lvl) * 60,
             craft_woodenPlanks: lvl => Math.pow(2, lvl) * 30,
             craft_brick: lvl => Math.pow(2, lvl) * 15,
@@ -329,14 +329,14 @@
         prio: 1,
         isSpecial: true,
         效果: [
-            {name: '材料容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+            {name: '材料容量', 类型: '*', value: lvl => lvl * 0.1 + 1}
         ],
-        减少制作时间至 {0}: 7200
+        制作时间: 7200
     },
     灌木: {
         图标: 'mdi-nature',
         color: '绿色',
-        price: {
+        消耗: {
             水: lvl => Math.pow(1.25, lvl) * buildNum(500, 'K'),
             craft_pouch: lvl => getSequence(5, lvl + 1) * 8,
             craft_bowl: lvl => getSequence(2, lvl + 1) * 10
@@ -344,55 +344,55 @@
         prio: 1,
         isSpecial: true,
         效果: [
-            {name: '植物纤维增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-            {name: '植物纤维容量', 类型: '基础', value: lvl => getSequence(2, lvl) * 500}
+            {name: '植物纤维增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
+            {name: '植物纤维容量', 类型: '+', value: lvl => getSequence(2, lvl) * 500}
         ],
-        减少制作时间至 {0}: 3600
+        制作时间: 3600
     },
     手锯: {
         图标: 'mdi-hand-saw',
         color: '光-灰色',
-        price: {
-            金属: lvl => Math.pow(1.25, lvl) * buildNum(1.8, '分钟'),
+        消耗: {
+            金属: lvl => Math.pow(1.25, lvl) * buildNum(1.8, 'M'),
             craft_weight: lvl => getSequence(3, lvl + 1) * 15
         },
         prio: 1,
         isSpecial: true,
         效果: [
-            {name: '木头增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-            {name: '木头容量', 类型: '基础', value: lvl => getSequence(2, lvl) * 500}
+            {name: '木头增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
+            {name: '木头容量', 类型: '+', value: lvl => getSequence(2, lvl) * 500}
         ],
-        减少制作时间至 {0}: 3600
+        制作时间: 3600
     },
     车库: {
         图标: 'mdi-garage-open-variant',
         color: 'dark-灰色',
-        price: {
-            木头: lvl => Math.pow(1.25, lvl) * buildNum(14, '分钟'),
+        消耗: {
+            木头: lvl => Math.pow(1.25, lvl) * buildNum(14, 'M'),
             craft_chain: lvl => getSequence(3, lvl + 1) * 15
         },
         prio: 1,
         isSpecial: true,
         效果: [
-            {name: '石头增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-            {name: '石头容量', 类型: '基础', value: lvl => getSequence(2, lvl) * 500}
+            {name: '石头增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
+            {name: '石头容量', 类型: '+', value: lvl => getSequence(2, lvl) * 500}
         ],
-        减少制作时间至 {0}: 3600
+        制作时间: 3600
     },
     钻石戒指: {
         图标: 'mdi-ring',
         color: '青色',
-        price: {
-            金属: lvl => Math.pow(1.25, lvl) * buildNum(14, '分钟'),
-            宝石: lvl => Math.pow(1.25, lvl) * buildNum(2, '分钟'),
+        消耗: {
+            金属: lvl => Math.pow(1.25, lvl) * buildNum(14, 'M'),
+            宝石: lvl => Math.pow(1.25, lvl) * buildNum(2, 'M'),
             craft_goldenRing: lvl => getSequence(2, lvl) * 5
         },
         prio: 1,
         isSpecial: true,
         效果: [
-            {name: '金币增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-            {name: '铜币增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
+            {name: '金币增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
+            {name: '铜币增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
         ],
-        减少制作时间至 {0}: 14400
+        制作时间: 14400
     },
 }

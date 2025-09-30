@@ -3,7 +3,7 @@
         类型: 'theme',
         item: '彩色',
         pool: {
-            bloom: {price: {绽放代币: 180}}
+            bloom: {消耗: {绽放代币: 180}}
         }
     },
     七彩花: {
@@ -13,7 +13,7 @@
             return store.state.解锁.farmFeature.see;
         },
         pool: {
-            bloom: {price: {绽放代币: 170}}
+            bloom: {消耗: {绽放代币: 170}}
         }
     },
     加热灯泡: {
@@ -23,14 +23,14 @@
             return store.state.解锁.灵感.see;
         },
         pool: {
-            bloom: {price: {绽放代币: 200}}
+            bloom: {消耗: {绽放代币: 200}}
         }
     },
     cardPack_greenThumb: {
         类型: '卡包',
         item: '园艺高手',
         pool: {
-            bloom: {price: {绽放代币: 30}}
+            bloom: {消耗: {绽放代币: 30}}
         }
     },
     超级鲜花: {
@@ -41,7 +41,7 @@
             return store.state.解锁.肥料.see;
         },
         pool: {
-            bloom: {price: {绽放代币: 1}}
+            bloom: {消耗: {绽放代币: 1}}
         }
     }
 }

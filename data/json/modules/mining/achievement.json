@@ -1,0 +1,152 @@
+[
+  {
+    "名称": "maxDepth0",
+    "value": "$store.state.stat.mining_maxDepth0.总计$",
+    "default": "1",
+    "milestones": "$lvl  \\cdot  25 + 25$",
+    "上限": "",
+    "圣遗物": "",
+    "秘密成就": "",
+    "display": ""
+  },
+  {
+    "名称": "maxDepth1",
+    "value": "$store.state.stat.mining_maxDepth1.总计$",
+    "default": "1",
+    "milestones": "$lvl  \\cdot  10 + 10$",
+    "上限": "",
+    "圣遗物": "",
+    "秘密成就": "",
+    "display": ""
+  },
+  {
+    "名称": "maxDepthSpeedrun",
+    "value": "$store.state.stat.mining_maxDepthSpeedrun.总计$",
+    "default": "1",
+    "milestones": "$lvl > 0 ? lvl  \\cdot  10 + 10 : 15$",
+    "上限": "10",
+    "圣遗物": "{\"1\":\"雷达\",\"2\":\"报刊\",\"3\":\"橱柜\",\"5\":\"青铜镐\",\"9\":\"洗衣机\"}",
+    "秘密成就": "",
+    "display": ""
+  },
+  {
+    "名称": "totalDamage",
+    "value": "$store.state.stat.mining_totalDamage.总计$",
+    "default": "",
+    "milestones": "${(200K)}^{lvl}  \\cdot  10M$",
+    "上限": "",
+    "圣遗物": "{\"6\":\"打开的礼物\"}",
+    "秘密成就": "",
+    "display": ""
+  },
+  {
+    "名称": "maxDamage",
+    "value": "$store.state.stat.mining_maxDamage.总计$",
+    "default": "",
+    "milestones": "${(200K)}^{lvl}  \\cdot  10K$",
+    "上限": "",
+    "圣遗物": "{\"3\":\"炸弹\"}",
+    "秘密成就": "",
+    "display": ""
+  },
+  {
+    "名称": "废料",
+    "value": "$store.state.stat.废料.总计$",
+    "default": "",
+    "milestones": "${(8000)}^{lvl}  \\cdot  5M$",
+    "上限": "",
+    "圣遗物": "{\"3\":\"跳绳\",\"4\":\"矿石架\"}",
+    "秘密成就": "",
+    "display": ""
+  },
+  {
+    "名称": "oreTotal",
+    "value": "$[store.state.stat.铝矿石.总计, store.state.stat.铜矿石.总计, store.state.stat.锡矿石.总计, store.state.stat.铁矿石.总计, store.state.stat.钛矿石.总计, store.state.stat.铂矿石.总计, store.state.stat.铱矿石.总计, store.state.stat.锇矿石.总计, store.state.stat.铅矿石.总计].reduce((a, b) => a + b, 0)$",
+    "default": "",
+    "milestones": "${(10)}^{lvl}  \\cdot  100$",
+    "上限": "",
+    "圣遗物": "{\"2\":\"铝砖\",\"3\":\"铜砖\",\"4\":\"铝堆\",\"5\":\"铜镐\",\"6\":\"锡桶\"}",
+    "秘密成就": "",
+    "display": ""
+  },
+  {
+    "名称": "oreVariety",
+    "value": "$[store.state.stat.铝矿石.总计, store.state.stat.铜矿石.总计, store.state.stat.锡矿石.总计, store.state.stat.铁矿石.总计, store.state.stat.钛矿石.总计, store.state.stat.铂矿石.总计, store.state.stat.铱矿石.总计, store.state.stat.锇矿石.总计, store.state.stat.铅矿石.总计].reduce((a, b) => a + (b > 0 ? 1 : 0), 0)$",
+    "default": "",
+    "milestones": "$lvl + 2$",
+    "上限": "",
+    "圣遗物": "{\"1\":\"铜堆\",\"2\":\"催化剂\",\"3\":\"磁铁\"}",
+    "秘密成就": "",
+    "display": ""
+  },
+  {
+    "名称": "depthDwellerCap0",
+    "value": "$store.state.stat.mining_depthDwellerCap0.总计$",
+    "default": "",
+    "milestones": "$lvl  \\cdot  10 + (lvl === 0 ? 5 : 0)$",
+    "上限": "30",
+    "圣遗物": "{\"0\":\"锤子\"}",
+    "秘密成就": "",
+    "display": ""
+  },
+  {
+    "名称": "depthDwellerCap1",
+    "value": "$store.state.stat.mining_depthDwellerCap1.总计$",
+    "default": "",
+    "milestones": "$lvl  \\cdot  10 + (lvl === 0 ? 5 : 0)$",
+    "上限": "",
+    "圣遗物": "",
+    "秘密成就": "",
+    "display": ""
+  },
+  {
+    "名称": "煤",
+    "value": "$store.state.stat.煤.总计$",
+    "default": "",
+    "milestones": "${(2.5)}^{lvl}  \\cdot  100$",
+    "上限": "",
+    "圣遗物": "{\"2\":\"煤砖\"}",
+    "秘密成就": "",
+    "display": ""
+  },
+  {
+    "名称": "树脂",
+    "value": "$store.state.stat.树脂.总计$",
+    "default": "",
+    "milestones": "${(2)}^{lvl}  \\cdot  50$",
+    "上限": "",
+    "圣遗物": "{\"3\":\"一罐蜂蜜\"}",
+    "秘密成就": "",
+    "display": ""
+  },
+  {
+    "名称": "craftingWasted",
+    "value": "$store.state.stat.mining_craftingWasted.总计$",
+    "default": "",
+    "milestones": "$1$",
+    "上限": "1",
+    "圣遗物": "",
+    "秘密成就": "true",
+    "display": "boolean"
+  },
+  {
+    "名称": "dwellerCapHit",
+    "value": "$store.state.stat.mining_dwellerCapHit.总计$",
+    "default": "",
+    "milestones": "$1$",
+    "上限": "1",
+    "圣遗物": "",
+    "秘密成就": "true",
+    "display": "boolean"
+  },
+  {
+    "名称": "craftingLuck",
+    "value": "$store.state.stat.mining_craftingLuck.总计$",
+    "default": "1",
+    "milestones": "$1M$",
+    "上限": "1",
+    "圣遗物": "",
+    "秘密成就": "true",
+    "display": ""
+  }
+]

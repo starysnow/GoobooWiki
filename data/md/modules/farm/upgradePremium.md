@@ -1,0 +1,12 @@
+| 名称  | 类型  | 消耗  | 效果  | requirement | hasDescription | 上限  | hideCap |
+| --- | --- | --- | --- | ----------- | -------------- | --- | ------- |
+| 更大的蔬菜 | 高级 | ${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  80 }$ | 仅蔬菜增益*｛$getSequence(2, lvl)  \cdot  0.5 + 1$｝ |  |  |  |  |
+| 更大的浆果 | 高级 | ${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  80 }$ | 仅浆果增益*｛$getSequence(2, lvl)  \cdot  0.5 + 1$｝ | $store.state.升级成本.item.种子箱.达到等级 >= 1$ |  |  |  |
+| 更大的粮食 | 高级 | ${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  80 }$ | 仅粮食增益*｛$getSequence(2, lvl)  \cdot  0.5 + 1$｝ | $store.state.升级成本.item.种子箱.达到等级 >= 2$ |  |  |  |
+| 更大的鲜花 | 高级 | ${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  80 }$ | 仅鲜花增益*｛$getSequence(2, lvl)  \cdot  0.5 + 1$｝ | $store.state.升级成本.item.种子箱.达到等级 >= 3$ |  |  |  |
+| 更多经验 | 高级 | ${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  120 }$ | 作物经验+｛$lvl  \cdot  0.25$｝ | $store.state.解锁.作物经验.see$ |  |  |  |
+| 高级花园侏儒 | 高级 | ${ 红宝石:   \cdot  {(2)}^{\text{向下取整}(lvl / 2})  \cdot  180 }$ | 花园侏儒farmBuildingPremium｛$lvl$｝ | $store.state.升级成本.item.花园侏儒.达到等级 >= lvl + 1$ | true | 5 | true |
+| 高级洒水装置 | 高级 | ${ 红宝石: {(2)}^{lvl}  \cdot  500 }$ | 洒水装置farmBuildingPremium｛$lvl$｝ | $store.state.升级成本.item.洒水装置.达到等级 >= lvl + 1$ | true | 2 | true |
+| 高级讲台 | 高级 | ${ 红宝石: {(2)}^{lvl}  \cdot  675 }$ | 讲台farmBuildingPremium｛$lvl$｝ | $store.state.升级成本.item.讲台.达到等级 >= lvl + 1$ | true | 2 | true |
+| 高级风车 | 高级 | ${ 红宝石: {(3)}^{lvl}  \cdot  1200 }$ | 风车farmBuildingPremium｛$lvl$｝ | $store.state.升级成本.item.风车.达到等级 >= lvl + 1$ | true | 1 | true |
+| 高级旗帜 | 高级 | ${ 红宝石: {(4)}^{lvl}  \cdot  2100 }$ | 旗帜farmBuildingPremium｛$lvl$｝ | $store.state.升级成本.item.旗帜.达到等级 >= lvl + 1$ | true | 1 | true |

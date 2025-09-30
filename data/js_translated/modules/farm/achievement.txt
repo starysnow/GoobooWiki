@@ -1,10 +1,10 @@
 {
-    harvests: {value: () => store.state.达到 {0} {1}.farm_harvests.总计, milestones: lvl => Math.round(Math.pow(lvl + 1, 2) * Math.pow(1.5, lvl) * 10)},
-    maxOvergrow: {value: () => store.state.达到 {0} {1}.farm_maxOvergrow.总计, display: 'percent', milestones: lvl => getSequence(1, lvl + 1), 圣遗物: {2: '格子', 4: '砖墙'}},
-    bestPrestige: {value: () => store.state.达到 {0} {1}.farm_bestPrestige.总计, milestones: lvl => lvl * 2 + 4},
-    仅蔬菜: {value: () => store.state.达到 {0} {1}.仅蔬菜.总计, milestones: lvl => Math.pow(81, lvl) * 250, 圣遗物: {2: '金胡萝卜'}},
-    仅浆果: {value: () => store.state.达到 {0} {1}.仅浆果.总计, milestones: lvl => Math.pow(81, lvl) * 750, 圣遗物: {3: '金苹果'}},
-    仅粮食: {value: () => store.state.达到 {0} {1}.仅粮食.总计, milestones: lvl => Math.pow(81, lvl) * 2250, 圣遗物: {4: '爆米花'}},
-    仅鲜花: {value: () => store.state.达到 {0} {1}.仅鲜花.总计, milestones: lvl => Math.pow(81, lvl) * 6750, 圣遗物: {5: '蔷薇石英'}},
-    黄金: {value: () => store.state.达到 {0} {1}.黄金.总计, milestones: lvl => Math.round(Math.pow(lvl + 2, 2) * Math.pow(2.25, lvl) * 2.5), 圣遗物: {6: '金种子'}}
+    harvests: {value: () => store.state.stat.farm_harvests.总计, milestones: lvl => Math.round(Math.pow(lvl + 1, 2) * Math.pow(1.5, lvl) * 10)},
+    maxOvergrow: {value: () => store.state.stat.farm_maxOvergrow.总计, display: 'percent', milestones: lvl => getSequence(1, lvl + 1), 圣遗物: {2: '格子', 4: '砖墙'}},
+    bestPrestige: {value: () => store.state.stat.farm_bestPrestige.总计, milestones: lvl => lvl * 2 + 4},
+    仅蔬菜: {value: () => store.state.stat.仅蔬菜.总计, milestones: lvl => Math.pow(81, lvl) * 250, 圣遗物: {2: '金胡萝卜'}},
+    仅浆果: {value: () => store.state.stat.仅浆果.总计, milestones: lvl => Math.pow(81, lvl) * 750, 圣遗物: {3: '金苹果'}},
+    仅粮食: {value: () => store.state.stat.仅粮食.总计, milestones: lvl => Math.pow(81, lvl) * 2250, 圣遗物: {4: '爆米花'}},
+    仅鲜花: {value: () => store.state.stat.仅鲜花.总计, milestones: lvl => Math.pow(81, lvl) * 6750, 圣遗物: {5: '蔷薇石英'}},
+    黄金: {value: () => store.state.stat.黄金.总计, milestones: lvl => Math.round(Math.pow(lvl + 2, 2) * Math.pow(2.25, lvl) * 2.5), 圣遗物: {6: '金种子'}}
 }

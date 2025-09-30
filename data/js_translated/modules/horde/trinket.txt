@@ -1,12 +1,12 @@
 {
     活力: {color: '绿色', 图标: 'mdi-heart', 效果: [
-        {name: '生命值', 类型: '基础', value: lvl => lvl * 70 + 30}
+        {name: '生命值', 类型: '+', value: lvl => lvl * 70 + 30}
     ]},
     能量: {color: '金色', 图标: 'mdi-lightning-bolt', needsEnergy, 效果: [
-        {name: '能量', 类型: '基础', value: lvl => lvl * 35 + 20}
+        {name: '能量', 类型: '+', value: lvl => lvl * 35 + 20}
     ]},
     魔法: {color: 'blue', 图标: 'mdi-water', needsMana, 效果: [
-        {name: '法力', 类型: '基础', value: lvl => lvl * 25 + 15}
+        {name: '法力', 类型: '+', value: lvl => lvl * 25 + 15}
     ]},
     拳头: {
         color: '橙色-红色',
@@ -36,16 +36,16 @@
         activeType: 'combat'
     },
     急速: {color: 'pale-黄色', 图标: 'mdi-timer-sand', rarity: 20, 效果: [
-        {name: '急速', 类型: '基础', value: lvl => lvl * 4 + 8}
+        {name: '急速', 类型: '+', value: lvl => lvl * 4 + 8}
     ]},
     精确: {color: '橙色', 图标: 'mdi-bullseye', rarity: 30, 效果: [
-        {name: '暴击率', 类型: '基础', value: lvl => lvl * 0.03 + 0.07}
+        {name: '暴击率', 类型: '+', value: lvl => lvl * 0.03 + 0.07}
     ]},
     愤怒: {color: '橙色-红色', 图标: 'mdi-emoticon-angry', rarity: 40, 效果: [
-        {name: '暴击伤害', 类型: '基础', value: lvl => lvl * 0.08 + 0.3}
+        {name: '暴击伤害', 类型: '+', value: lvl => lvl * 0.08 + 0.3}
     ]},
     力量: {color: '红色', 图标: 'mdi-arm-flex', rarity: 50, 效果: [
-        {name: '力量', 类型: '基础', value: lvl => lvl * 3 + 5}
+        {name: '力量', 类型: '+', value: lvl => lvl * 3 + 5}
     ]},
     毒素: {
         color: '光-绿色',
@@ -62,16 +62,16 @@
         activeType: 'combat'
     },
     智慧: {color: 'indigo', 图标: 'mdi-lightbulb-on', rarity: 70, 效果: [
-        {name: '智力', 类型: '基础', value: lvl => lvl * 3 + 5}
+        {name: '智力', 类型: '+', value: lvl => lvl * 3 + 5}
     ]},
     提取: {color: '红色', 图标: 'mdi-water', rarity: 80, 效果: [
-        {name: '血液增益', 类型: 'mult', value: lvl => lvl * 0.04 + 1.16}
+        {name: '血液增益', 类型: '*', value: lvl => lvl * 0.04 + 1.16}
     ]},
     学习: {color: 'deep-紫色', 图标: 'mdi-school', rarity: 90, isTimeless: true, 效果: [
-        {name: '级技能点数', 类型: '基础', value: () => 1}
+        {name: '级技能点数', 类型: '+', value: () => 1}
     ]},
     维持: {color: '红色', 图标: 'mdi-iv-bag', rarity: 100, 效果: [
-        {name: '血液容量', 类型: 'mult', value: lvl => lvl * 0.06 + 1.24}
+        {name: '血液容量', 类型: '*', value: lvl => lvl * 0.06 + 1.24}
     ]},
     激励: {
         color: '金色',
@@ -89,7 +89,7 @@
         activeType: 'combat'
     },
     自动化: {color: 'dark-灰色', 图标: 'mdi-cogs', rarity: 120, isTimeless: true, 效果: [
-        {name: '自动释放槽位', 类型: '基础', value: () => 1}
+        {name: '自动释放槽位', 类型: '+', value: () => 1}
     ]},
     治愈: {
         color: 'teal',
@@ -108,8 +108,8 @@
         activeType: 'combat'
     },
     二元性: {color: '紫色', 图标: 'mdi-call-split', rarity: 75, uniqueToBoss: 'Chriz', 效果: [
-        {name: '力量', 类型: '基础', value: lvl => lvl * 2 + 4},
-        {name: '智力', 类型: '基础', value: lvl => lvl * 2 + 4}
+        {name: '力量', 类型: '+', value: lvl => lvl * 2 + 4},
+        {name: '智力', 类型: '+', value: lvl => lvl * 2 + 4}
     ]},
     爱: {
         color: 'babypink',
@@ -122,7 +122,7 @@
             return [
                 {类型: 'damageBio', value: lvl * 0.9 + 8.7},
                 {类型: 'buff', value: lvl + 14, 效果: [
-                    {类型: 'mult', name: '造成的生物伤害', value: 1.35},
+                    {类型: '*', name: '造成的生物伤害', value: 1.35},
                 ]}
             ];
         },

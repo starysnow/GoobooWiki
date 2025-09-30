@@ -1,137 +1,137 @@
 {
-    让它变得漂亮: {层: 1, {0} 已拥有: true, 图标: 'mdi-image', color: 'deep-紫色', 效果: [
-        {name: '美丽增益', 类型: 'mult', value: lvl => lvl * 0.4 + getSequence(1, lvl) * 0.1 + 1},
+    让它变得漂亮: {层: 1, 已拥有: true, 图标: 'mdi-image', color: 'deep-紫色', 效果: [
+        {name: '美丽增益', 类型: '*', value: lvl => lvl * 0.4 + getSequence(1, lvl) * 0.1 + 1},
     ]},
-    踩碎浆果: {层: 1, {0} 已拥有: true, 图标: 'mdi-fruit-grapes', color: '红色', 效果: [
-        {name: '红色增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '红色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '美丽增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+    踩碎浆果: {层: 1, 已拥有: true, 图标: 'mdi-fruit-grapes', color: '红色', 效果: [
+        {name: '红色增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '红色转换', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '美丽增益', 类型: '*', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
     雕刻南瓜: {层: 1, 图标: 'mdi-halloween', color: '橙色', 效果: [
-        {name: '橙色增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '橙色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '红色增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: '橙色增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '橙色转换', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '红色增益', 类型: '*', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
     垃圾分类: {层: 1, 图标: 'mdi-delete-variant', color: 'pale-光-绿色', 效果: [
-        {name: '转换器增益', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.25 + 1},
+        {name: '转换器增益', 类型: '*', value: lvl => getSequence(2, lvl) * 0.25 + 1},
     ]},
     广告: {层: 1, 图标: 'mdi-cash', color: '绿色', 效果: [
-        {name: '现金增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
+        {name: '现金增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
     ]},
     缺乏耐心: {层: 1, 图标: 'mdi-run-fast', color: '光-blue', 效果: [
-        {name: '包裹增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '包裹容量', 类型: 'mult', value: lvl => lvl + 1},
+        {name: '包裹增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '包裹容量', 类型: '*', value: lvl => lvl + 1},
     ]},
     感到兴奋: {层: 1, 图标: 'mdi-emoticon-excited', color: '粉色-紫色', 效果: [
-        {name: '动机增益', 类型: '基础', value: lvl => lvl * 0.02},
-        {name: '动机容量', 类型: '基础', value: lvl => lvl * 35},
+        {name: '动机增益', 类型: '+', value: lvl => lvl * 0.02},
+        {name: '动机容量', 类型: '+', value: lvl => lvl * 35},
     ]},
     制作柠檬水: {层: 2, 图标: 'mdi-fruit-citrus', color: '黄色', 效果: [
-        {name: '黄色增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '黄色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '橙色增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: '黄色增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '黄色转换', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '橙色增益', 类型: '*', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
     种一棵树: {层: 2, 图标: 'mdi-tree', color: '绿色', 效果: [
-        {name: '绿色增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '绿色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '黄色增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: '绿色增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '绿色转换', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '黄色增益', 类型: '*', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
     建造堆肥机: {层: 2, 图标: 'mdi-archive-sync', color: '棕色', 效果: [
-        {name: '转换器容量', 类型: 'mult', value: lvl => lvl * 0.5 + 1},
+        {name: '转换器容量', 类型: '*', value: lvl => lvl * 0.5 + 1},
     ]},
     观察彩虹: {层: 2, 图标: 'mdi-looks', color: 'babypink', 效果: [
-        {name: '所有颜色增益', 类型: 'mult', value: lvl => lvl * 0.12 + 1},
+        {name: '所有颜色增益', 类型: '*', value: lvl => lvl * 0.12 + 1},
     ]},
     建造红色储备: {层: 2, 图标: 'mdi-hoop-house', color: '红色', 效果: [
-        {name: '红色鼓容量', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
+        {name: '红色鼓容量', 类型: '*', value: lvl => lvl * 0.4 + 1},
     ]},
     订购大量保险箱: {层: 2, 图标: 'mdi-safe-square', color: 'dark-灰色', 效果: [
-        {name: '所有鼓上限', 类型: '基础', value: lvl => lvl * 3},
-        {name: '画布速度', 类型: 'mult', value: lvl => 1 - (lvl / (lvl + 10))},
+        {name: '所有鼓上限', 类型: '+', value: lvl => lvl * 3},
+        {name: '画布速度', 类型: '*', value: lvl => 1 - (lvl / (lvl + 10))},
     ]},
-    购买 pen: {层: 2, 图标: 'mdi-pen', color: 'indigo', 效果: [
-        {name: '形状增益', 类型: 'mult', value: lvl => lvl * 0.12 + 1},
+    Buy pen: {层: 2, 图标: 'mdi-pen', color: 'indigo', 效果: [
+        {name: '形状增益', 类型: '*', value: lvl => lvl * 0.12 + 1},
     ]},
     画海洋: {层: 3, 图标: 'mdi-waves', color: 'blue', 效果: [
-        {name: 'currencyGalleryBlueGain', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '蓝色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '绿色增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: 'currencyGalleryBlueGain', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '蓝色转换', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '绿色增益', 类型: '*', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
     酿酒: {层: 3, 图标: 'mdi-bottle-wine', color: '紫色', 效果: [
-        {name: '紫色增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '紫色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: 'currencyGalleryBlueGain', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: '紫色增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '紫色转换', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: 'currencyGalleryBlueGain', 类型: '*', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
     计算胜算: {层: 3, 图标: 'mdi-strategy', color: 'indigo', 效果: [
-        {name: '所有鼓几率', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
+        {name: '所有鼓几率', 类型: '*', value: lvl => lvl * 0.4 + 1},
     ]},
     建造橙色储备: {层: 3, 图标: 'mdi-hoop-house', color: '橙色', 效果: [
-        {name: '橙色鼓容量', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
+        {name: '橙色鼓容量', 类型: '*', value: lvl => lvl * 0.4 + 1},
     ]},
     更加努力地思考: {层: 3, 图标: 'mdi-head-lightbulb', color: '金色', 效果: [
-        {name: '灵感的开始', 类型: '基础', value: lvl => lvl * 2},
+        {name: '灵感的开始', 类型: '+', value: lvl => lvl * 2},
     ]},
     涂得更快: {层: 3, 图标: 'mdi-brush', color: '橙色-红色', 效果: [
-        {name: '画布速度', 类型: 'mult', value: lvl => lvl * 0.25 + 1},
+        {name: '画布速度', 类型: '*', value: lvl => lvl * 0.25 + 1},
     ]},
     购买刷子: {层: 3, 图标: 'mdi-brush-variant', color: 'beige', 效果: [
-        {name: '特殊形状几率', 类型: '基础', value: lvl => lvl * 0.002},
-        {name: '特殊形状乘数', 类型: '基础', value: lvl => lvl * 1.5},
+        {name: '特殊形状几率', 类型: '+', value: lvl => lvl * 0.002},
+        {name: '特殊形状乘数', 类型: '+', value: lvl => lvl * 1.5},
     ]},
     收获橙子: {层: 4, 图标: 'mdi-fruit-citrus', color: 'deep-橙色', 效果: [
-        {name: 'currencyGalleryDeep-orangeGain', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '橙红转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '紫色增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: 'currencyGalleryDeep-orangeGain', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '橙红转换', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '紫色增益', 类型: '*', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
     粉碎黄金: {层: 4, 图标: 'mdi-shimmer', color: '金色', 效果: [
-        {name: '金色增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '金色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: 'currencyGalleryDeep-orangeGain', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: '金色增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '金色转换', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: 'currencyGalleryDeep-orangeGain', 类型: '*', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
     建造黄色储备: {层: 4, 图标: 'mdi-hoop-house', color: '黄色', 效果: [
-        {name: '黄色鼓容量', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
+        {name: '黄色鼓容量', 类型: '*', value: lvl => lvl * 0.4 + 1},
     ]},
     为了乐趣而作画: {层: 4, 图标: 'mdi-emoticon-happy', color: '粉色', 效果: [
-        {name: '美丽增益', 类型: 'mult', value: lvl => Math.pow(4, lvl)},
-        {name: '现金增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl)},
+        {name: '美丽增益', 类型: '*', value: lvl => Math.pow(4, lvl)},
+        {name: '现金增益', 类型: '*', value: lvl => Math.pow(0.5, lvl)},
     ]},
     印刷报纸: {层: 4, 图标: 'mdi-newspaper', color: '光-灰色', 效果: [
-        {name: '现金增益', 类型: 'mult', value: lvl => getSequence(2, lvl) * 0.25 + 1},
+        {name: '现金增益', 类型: '*', value: lvl => getSequence(2, lvl) * 0.25 + 1},
     ]},
     扩大画布: {层: 4, 图标: 'mdi-artboard', color: 'wooden', 效果: [
-        {name: '画布大小', 类型: '基础', value: lvl => lvl * 3},
+        {name: '画布大小', 类型: '+', value: lvl => lvl * 3},
     ]},
     高度关注: {层: 4, 图标: 'mdi-image-filter-center-focus-strong-outline', color: '红色-粉色', 效果: [
-        {name: '动机增益', 类型: '基础', value: lvl => lvl * 0.08},
-        {name: '圆形增益', 类型: 'mult', value: lvl => lvl * 0.24 + 1},
+        {name: '动机增益', 类型: '+', value: lvl => lvl * 0.08},
+        {name: '圆形增益', 类型: '*', value: lvl => lvl * 0.24 + 1},
     ]},
     割草: {层: 5, 图标: 'mdi-grass', color: '光-绿色', 效果: [
-        {name: 'currencyGalleryLight-greenGain', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '浅绿色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '金色增益', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: 'currencyGalleryLight-greenGain', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '浅绿色转换', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '金色增益', 类型: '*', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
     形状粘土: {层: 5, 图标: 'mdi-pot', color: 'teal', 效果: [
-        {name: 'currencyGalleryTealGain', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '青色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: 'currencyGalleryLight-greenGain', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: 'currencyGalleryTealGain', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '青色转换', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: 'currencyGalleryLight-greenGain', 类型: '*', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
     建造绿色储备: {层: 5, 图标: 'mdi-hoop-house', color: '绿色', 效果: [
-        {name: '绿色鼓容量', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
+        {name: '绿色鼓容量', 类型: '*', value: lvl => lvl * 0.4 + 1},
     ]},
     保持神秘: {层: 5, 图标: 'mdi-wizard-hat', color: 'pale-紫色', 效果: [
-        {name: '神秘形状增益', 类型: '基础', value: lvl => lvl},
+        {name: '神秘形状增益', 类型: '+', value: lvl => lvl},
     ]},
     看看天空: {层: 6, 图标: 'mdi-clouds', color: '光-blue', 效果: [
-        {name: 'currencyGalleryLight-blueGain', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '浅蓝色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: 'currencyGalleryTealGain', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: 'currencyGalleryLight-blueGain', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '浅蓝色转换', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: 'currencyGalleryTealGain', 类型: '*', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
     嚼泡泡糖: {层: 6, 图标: 'mdi-dots-circle', color: '粉色', 效果: [
-        {name: '粉色增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '粉色转换', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: 'currencyGalleryLight-blueGain', 类型: 'mult', value: lvl => Math.pow(0.5, lvl / 2)},
+        {name: '粉色增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '粉色转换', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: 'currencyGalleryLight-blueGain', 类型: '*', value: lvl => Math.pow(0.5, lvl / 2)},
     ]},
     建造蓝色储备: {层: 6, 图标: 'mdi-hoop-house', color: 'blue', 效果: [
-        {name: '蓝色鼓容量', 类型: 'mult', value: lvl => lvl * 0.4 + 1},
+        {name: '蓝色鼓容量', 类型: '*', value: lvl => lvl * 0.4 + 1},
     ]},
 }

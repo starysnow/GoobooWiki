@@ -1,13 +1,13 @@
 [
     {id: 1, instant: true, collection: '贵重珠宝', reward: [
-        {name: '红宝石', 类型: '收集 {0} ', value: 50}
+        {name: '红宝石', 类型: 'currency', value: 50}
     ], color: '红色', icons: [
         {"x": 0, "y": -0.05, "rotate": 0, "size": 2, "图标": "mdi-train"},
         {"x": 0.15, "y": 0.85, "rotate": 90, "size": 2, "图标": "mdi-fence"},
         {"x": 0, "y": -0.75, "rotate": 0, "size": 1, "图标": "mdi-rhombus"}
     ]},
     {id: 2, instant: true, collection: '贵重珠宝', reward: [
-        {name: '翡翠', 类型: '收集 {0} ', value: 50}
+        {name: '翡翠', 类型: 'currency', value: 50}
     ], color: '绿色', icons: [
         {"x": -0.25, "y": 0, "rotate": 0, "size": 3, "图标": "mdi-tunnel-outline"},
         {"x": 0.8, "y": 0.4, "rotate": 105, "size": 1.5, "图标": "mdi-pickaxe"},
@@ -16,7 +16,7 @@
         {"x": -0.25, "y": -0.25, "rotate": 0, "size": 0.5, "图标": "mdi-hexagon"}
     ]},
     {id: 3, instant: true, collection: '贵重珠宝', reward: [
-        {name: '蓝宝石', 类型: '收集 {0} ', value: 50}
+        {name: '蓝宝石', 类型: 'currency', value: 50}
     ], color: 'indigo', icons: [
         {"x": -0.15, "y": 1.1, "rotate": 0, "size": 1.5, "图标": "mdi-sail-boat-sink"},
         {"x": 0.2, "y": 1.15, "rotate": 0, "size": 0.65, "图标": "mdi-treasure-chest"},
@@ -27,7 +27,7 @@
         {"x": 0.25, "y": 0.95, "rotate": 0, "size": 0.4, "图标": "mdi-pentagon"}
     ]},
     {id: 4, instant: true, collection: '贵重珠宝', reward: [
-        {name: '紫水晶', 类型: '收集 {0} ', value: 50}
+        {name: '紫水晶', 类型: 'currency', value: 50}
     ], color: '紫色', icons: [
         {"x": 0, "y": 0, "rotate": 0, "size": 4, "图标": "mdi-watch-variant"},
         {"x": 0, "y": -0.15, "rotate": 90, "size": 1, "图标": "mdi-minus"},
@@ -38,7 +38,7 @@
         {"x": -0.1, "y": 0.05, "rotate": -20, "size": 0.6, "图标": "mdi-minus-thick"}
     ]},
     {id: 5, instant: true, collection: '贵重珠宝', reward: [
-        {name: 'gem_topaz', 类型: '收集 {0} ', value: 50}
+        {name: 'gem_topaz', 类型: 'currency', value: 50}
     ], color: '金色', icons: [
         {"x": 0, "y": -0.6, "rotate": 0, "size": 2, "图标": "mdi-triangle-outline"},
         {"x": -0.7, "y": 0.6, "rotate": 0, "size": 2, "图标": "mdi-triangle"},
@@ -46,7 +46,7 @@
         {"x": 0, "y": -0.5, "rotate": 0, "size": 1.15, "图标": "mdi-emoticon-angry"}
     ]},
     {id: 6, instant: true, collection: '贵重珠宝', reward: [
-        {name: 'gem_diamond', 类型: '收集 {0} ', value: 5}
+        {name: 'gem_diamond', 类型: 'currency', value: 5}
     ], color: '青色', icons: [
         {"x": 0, "y": 0, "rotate": -45, "size": 2, "图标": "mdi-pickaxe"},
         {"x": 0.7, "y": 0.25, "rotate": 0, "size": 2, "图标": "mdi-axe"},
@@ -55,7 +55,7 @@
         {"x": 0.5, "y": -0.7, "rotate": 0, "size": 0.75, "图标": "mdi-diamond"}
     ]},
     {id: 7, instant: true, collection: '贵重珠宝', reward: [
-        {name: 'gem_onyx', 类型: '收集 {0} ', value: 1}
+        {name: 'gem_onyx', 类型: 'currency', value: 1}
     ], color: 'deep-紫色', icons: [
         {"x": 0, "y": 0.15, "rotate": 0, "size": 0.75, "图标": "mdi-octagon"},
         {"x": 0, "y": 0, "rotate": 90, "size": 2, "图标": "mdi-mirror-rectangle"},

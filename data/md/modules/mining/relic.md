@@ -1,23 +1,23 @@
 | 名称  | 图标  | color | 效果  |
 | --- | --- | ----- | --- |
-| 友好的蝙蝠 | mdi-bat | dark-灰色 | [{"name":"废料增益","类型":"mult","value":1.25}] |
-| 锤子 | mdi-hammer | 棕色 | [{"name":"制作站","类型":"保留","value":true}] |
-| 铝砖 | mdi-wall | blue-灰色 | [{"name":"铝存储","类型":"保留","value":true},{"name":"铝淬火","类型":"保留","value":true}] |
-| 铜砖 | mdi-wall | 橙色 | [{"name":"铜存储","类型":"保留","value":true}] |
-| 铝堆 | mdi-dots-triangle | blue-灰色 | [{"name":"铝罐","类型":"保留","value":true},{"name":"铝砧","类型":"保留","value":true}] |
-| 炸弹 | mdi-bomb | 红色 | [{"name":"破壳者","类型":"保留","value":true}] |
-| 铜堆 | mdi-dots-triangle | 橙色 | [{"name":"铜罐","类型":"保留","value":true}] |
-| 雷达 | mdi-radar | 光-绿色 | [{"name":"深度居民","类型":"保留","value":true}] |
-| 报刊 | mdi-download | deep-紫色 | [{"name":"压缩机","类型":"保留","value":true}] |
-| 橱柜 | mdi-cupboard | 棕色 | [{"name":"矿石槽位","类型":"保留","value":true}] |
-| 催化剂 | mdi-flask | teal | [{"name":"精炼厂","类型":"保留","value":true}] |
-| 跳绳 | mdi-jump-rope | 棕色 | [{"name":"铝扩张","类型":"保留","value":true},{"name":"铜扩张","类型":"保留","value":true}] |
-| 青铜镐 | mdi-pickaxe | 金色 | [{"name":"花岗岩硬化","类型":"保留","value":true}] |
-| 矿石架 | mdi-window-closed | 棕色 | [{"name":"矿石架","类型":"保留","value":true},{"name":"锡存储","类型":"保留","value":true}] |
-| 煤砖 | mdi-wall | dark-灰色 | [{"name":"熔炉","类型":"保留","value":true}] |
-| 洗衣机 | mdi-washing-machine | skyblue | [{"name":"矿石洗选","类型":"保留","value":true}] |
-| 打开的礼物 | mdi-gift-open | blue | [{"name":"青铜存储","类型":"保留","value":true},{"name":"铁存储","类型":"保留","value":true}] |
-| 磁铁 | mdi-magnet | 红色 | [{"name":"铁扩张","类型":"保留","value":true},{"name":"铁淬火","类型":"保留","value":true},{"name":"铁过滤器","类型":"保留","value":true}] |
-| 铜镐 | mdi-pickaxe | 橙色 | [{"name":"磁铁","类型":"保留","value":true},{"name":"仓库","类型":"保留","value":true}] |
-| 锡桶 | mdi-pail | 灰色 | [{"name":"钛扩张","类型":"保留","value":true},{"name":"钛存储","类型":"保留","value":true}] |
-| 一罐蜂蜜 | mdi-pot | 金色 | [{"name":"最大树脂","类型":"基础","value":1}] |
+| 友好的蝙蝠 | <i class="mdi mdi-bat"></i> | dark-灰色 | 废料增益*｛1.25｝ |
+| 锤子 | <i class="mdi mdi-hammer"></i> | 棕色 | 制作站保留｛true｝ |
+| 铝砖 | <i class="mdi mdi-wall"></i> | blue-灰色 | 铝存储保留｛true｝; 铝淬火保留｛true｝ |
+| 铜砖 | <i class="mdi mdi-wall"></i> | 橙色 | 铜存储保留｛true｝ |
+| 铝堆 | <i class="mdi mdi-dots-triangle"></i> | blue-灰色 | 铝罐保留｛true｝; 铝砧保留｛true｝ |
+| 炸弹 | <i class="mdi mdi-bomb"></i> | 红色 | 破壳者保留｛true｝ |
+| 铜堆 | <i class="mdi mdi-dots-triangle"></i> | 橙色 | 铜罐保留｛true｝ |
+| 雷达 | <i class="mdi mdi-radar"></i> | 光-绿色 | 深度居民保留｛true｝ |
+| 报刊 | <i class="mdi mdi-download"></i> | deep-紫色 | 压缩机保留｛true｝ |
+| 橱柜 | <i class="mdi mdi-cupboard"></i> | 棕色 | 矿石槽位保留｛true｝ |
+| 催化剂 | <i class="mdi mdi-flask"></i> | teal | 精炼厂保留｛true｝ |
+| 跳绳 | <i class="mdi mdi-jump-rope"></i> | 棕色 | 铝扩张保留｛true｝; 铜扩张保留｛true｝ |
+| 青铜镐 | <i class="mdi mdi-pickaxe"></i> | 金色 | 花岗岩硬化保留｛true｝ |
+| 矿石架 | <i class="mdi mdi-window-closed"></i> | 棕色 | 矿石架保留｛true｝; 锡存储保留｛true｝ |
+| 煤砖 | <i class="mdi mdi-wall"></i> | dark-灰色 | 熔炉保留｛true｝ |
+| 洗衣机 | <i class="mdi mdi-washing-machine"></i> | skyblue | 矿石洗选保留｛true｝ |
+| 打开的礼物 | <i class="mdi mdi-gift-open"></i> | blue | 青铜存储保留｛true｝; 铁存储保留｛true｝ |
+| 磁铁 | <i class="mdi mdi-magnet"></i> | 红色 | 铁扩张保留｛true｝; 铁淬火保留｛true｝; 铁过滤器保留｛true｝ |
+| 铜镐 | <i class="mdi mdi-pickaxe"></i> | 橙色 | 磁铁保留｛true｝; 仓库保留｛true｝ |
+| 锡桶 | <i class="mdi mdi-pail"></i> | 灰色 | 钛扩张保留｛true｝; 钛存储保留｛true｝ |
+| 一罐蜂蜜 | <i class="mdi mdi-pot"></i> | 金色 | 最大树脂+｛1｝ |

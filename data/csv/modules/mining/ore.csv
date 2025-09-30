@@ -1,0 +1,10 @@
+名称,卡片力量,杂质,minDepth,maxDepth,modulo,baseAmount,amountMult
+铝矿石,15,1.5,15,45,3,0.02,1.05
+铜矿石,50,2,30,68,4,0.004,1.05
+锡矿石,240,2.5,50,100,5,0.0008,1.05
+铁矿石,1300,3,80,140,7,0.00016,1.05
+钛矿石,7000,3.5,120,200,11,0.000032,1.05
+铂矿石,[Unsupported Node: CallExpression],4,175,295,13,0.0000064,1.05
+铱矿石,[Unsupported Node: CallExpression],5,260,420,17,0.00000128,1.05
+锇矿石,[Unsupported Node: CallExpression],6,350,525,23,2.56e-7,1.05
+铅矿石,[Unsupported Node: CallExpression],7.5,450,650,29,5.12e-8,1.05

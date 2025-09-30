@@ -1,23 +1,23 @@
 {
     金胡萝卜: {图标: 'mdi-carrot', color: '金色', 效果: [
-        {name: '仅蔬菜增益', 类型: 'mult', value: 1.4}
+        {name: '仅蔬菜增益', 类型: '*', value: 1.4}
     ]},
     金苹果: {图标: 'mdi-food-apple', color: '金色', 效果: [
-        {name: '仅浆果增益', 类型: 'mult', value: 1.4}
+        {name: '仅浆果增益', 类型: '*', value: 1.4}
     ]},
     爆米花: {图标: 'mdi-popcorn', color: 'pale-黄色', 效果: [
-        {name: '仅粮食增益', 类型: 'mult', value: 1.4}
+        {name: '仅粮食增益', 类型: '*', value: 1.4}
     ]},
     蔷薇石英: {图标: 'mdi-crystal-ball', color: 'pale-粉色', 效果: [
-        {name: '仅鲜花增益', 类型: 'mult', value: 1.4}
+        {name: '仅鲜花增益', 类型: '*', value: 1.4}
     ]},
     金种子: {图标: 'mdi-seed', color: '金色', 效果: [
         {name: '金玫瑰', 类型: 'farmSeed', value: true}
     ]},
     格子: {图标: 'mdi-fence', color: '棕色', 效果: [
-        {name: '过度生长', 类型: '基础', value: 0.05}
+        {name: '过度生长', 类型: '+', value: 0.05}
     ]},
     砖墙: {图标: 'mdi-wall', color: '樱桃色', 效果: [
-        {name: '过度生长', 类型: '基础', value: 0.05}
+        {name: '过度生长', 类型: '+', value: 0.05}
     ]},
 }

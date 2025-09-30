@@ -1,7 +1,7 @@
-| 名称  | price | 效果  |
-| --- | ----- | --- |
-| expandVault | undefined | [{"name":"currencyGemTopazCap","类型":"基础"}] |
-| persuadeInvestors | undefined | [{"name":"金尘容量","类型":"基础"}] |
-| improveCreditScore | undefined | [{"name":"投资规模","类型":"基础"},{"name":"贷款规模","类型":"基础"}] |
-| businessMarketing | undefined | [{"name":"商户优惠","类型":"基础"}] |
-| cardTournament | undefined | [{"name":"银行卡包机会","类型":"基础"}] |
+| 名称  | 消耗  | 效果  |
+| --- | --- | --- |
+| expandVault | $getSequence(2, lvl)  \cdot  500 + 2000$ | currencyGemTopazCap+｛$lvl  \cdot  300$｝ |
+| persuadeInvestors | $getSequence(2, lvl)  \cdot  500 + 2000$ | 金尘容量+｛$lvl  \cdot  4000$｝ |
+| improveCreditScore | $getSequence(2, lvl)  \cdot  500 + 2000$ | 投资规模+｛$lvl  \cdot  200$｝; 贷款规模+｛$lvl  \cdot  200$｝ |
+| businessMarketing | $getSequence(2, lvl)  \cdot  500 + 2000$ | 商户优惠+｛$lvl$｝ |
+| cardTournament | $getSequence(2, lvl)  \cdot  500 + 2000$ | 银行卡包机会+｛$0.5 - {(0.8)}^{lvl}  \cdot  0.5$｝ |

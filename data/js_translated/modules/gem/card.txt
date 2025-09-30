@@ -1,13 +1,13 @@
 {
     feature: {
         prefix: 'GE',
-        reward: [{name: 'currencyGemTopazCap', 类型: '基础', value: lvl => lvl * 20}],
-        shinyReward: [{name: 'currencyGemTopazCap', 类型: '基础', value: lvl => lvl * 20}],
+        reward: [{name: 'currencyGemTopazCap', 类型: '+', value: lvl => lvl * 20}],
+        shinyReward: [{name: 'currencyGemTopazCap', 类型: '+', value: lvl => lvl * 20}],
         解锁: 'gemFeature'
     },
     collection: {
         贵重珠宝: {reward: [
-            {name: 'currencyGemTopazCap', 类型: '基础', value: 160}
+            {name: 'currencyGemTopazCap', 类型: '+', value: 160}
         ]},
     },
     pack: {},

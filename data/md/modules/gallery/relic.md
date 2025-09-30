@@ -1,30 +1,30 @@
 | 名称  | 图标  | color | 效果  |
 | --- | --- | ----- | --- |
-| 打印机 | mdi-printer | pale-光-blue | [{"name":"新风格","类型":"保留","value":true},{"name":"回收","类型":"保留","value":true},{"name":"垃圾分类","类型":"galleryIdea","value":true}] |
-| 灯泡 | mdi-lightbulb | pale-黄色 | [{"name":"顿悟","类型":"保留","value":true},{"name":"灵感的开始","类型":"基础","value":1}] |
-| 旧电视 | mdi-television-classic | 棕色 | [{"name":"广告","类型":"galleryIdea","value":true}] |
-| 令人担忧的邮件 | mdi-email-alert | 红色 | [{"name":"缺乏耐心","类型":"galleryIdea","value":true}] |
-| 红色气球 | mdi-balloon | 红色 | [{"name":"红色力量","类型":"保留","value":true},{"name":"红色转换","类型":"保留","value":true}] |
-| 一袋金子 | mdi-sack | 金色 | [{"name":"观察彩虹","类型":"galleryIdea","value":true}] |
-| 碎纸机 | mdi-shredder | pale-紫色 | [{"name":"过滤器","类型":"保留","value":true},{"name":"垃圾箱","类型":"保留","value":true},{"name":"建造堆肥机","类型":"galleryIdea","value":true}] |
-| 红色印花 | mdi-script-text | 红色 | [{"name":"红色愤怒","类型":"保留","value":true},{"name":"建造红色储备","类型":"galleryIdea","value":true}] |
-| 橙色气球 | mdi-balloon | 橙色 | [{"name":"橙色力量","类型":"保留","value":true},{"name":"橙色转换","类型":"保留","value":true}] |
-| 信用卡 | mdi-credit-card | pale-绿色 | [{"name":"订购大量保险箱","类型":"galleryIdea","value":true}] |
-| 简单计算器 | mdi-calculator | pale-橙色 | [{"name":"计算胜算","类型":"galleryIdea","value":true}] |
-| 橙色印花 | mdi-script-text | 橙色 | [{"name":"红色幸运","类型":"保留","value":true},{"name":"建造橙色储备","类型":"galleryIdea","value":true}] |
-| 黄色气球 | mdi-balloon | 黄色 | [{"name":"黄色力量","类型":"保留","value":true},{"name":"黄色转换","类型":"保留","value":true}] |
-| 鱼缸 | mdi-fishbowl | pale-blue | [{"name":"形状增益","类型":"mult","value":1.5},{"name":"感到兴奋","类型":"galleryIdea","value":true}] |
-| 铅笔 | mdi-lead-pencil | pale-红色 | [{"name":"形状增益","类型":"mult","value":1.5},{"name":"购买 pen","类型":"galleryIdea","value":true}] |
-| 小刷子 | mdi-brush | pale-粉色 | [{"name":"形状增益","类型":"mult","value":1.5},{"name":"购买刷子","类型":"galleryIdea","value":true}] |
-| 奇怪的药丸 | mdi-pill-multiple | pale-红色 | [{"name":"形状增益","类型":"mult","value":1.5},{"name":"高度关注","类型":"galleryIdea","value":true}] |
-| 奇怪的卷轴 | mdi-script-text | dark-灰色 | [{"name":"保持神秘","类型":"galleryIdea","value":true}] |
-| 印刷机 | mdi-arrow-collapse-vertical | 棕色 | [{"name":"现金增益","类型":"mult","value":1.5},{"name":"印刷报纸","类型":"galleryIdea","value":true}] |
-| 黄色印花 | mdi-script-text | 黄色 | [{"name":"橙色幸运","类型":"保留","value":true},{"name":"建造黄色储备","类型":"galleryIdea","value":true}] |
-| 绿色气球 | mdi-balloon | 绿色 | [{"name":"绿色力量","类型":"保留","value":true},{"name":"绿色转换","类型":"保留","value":true}] |
-| 木制衣架 | mdi-hanger | wooden | [{"name":"涂得更快","类型":"galleryIdea","value":true}] |
-| 床单 | mdi-bed-empty | pale-红色 | [{"name":"扩大画布","类型":"galleryIdea","value":true}] |
-| 图片相册 | mdi-image-album | 橙色-红色 | [{"name":"油漆桶储存","类型":"保留","value":true},{"name":"为了乐趣而作画","类型":"galleryIdea","value":true}] |
-| 绿色印记 | mdi-script-text | 绿色 | [{"name":"黄色幸运","类型":"保留","value":true},{"name":"建造绿色储备","类型":"galleryIdea","value":true}] |
-| 蓝色气球 | mdi-balloon | blue | [{"name":"蓝色力量","类型":"保留","value":true},{"name":"蓝色转换","类型":"保留","value":true}] |
-| 蓝色印记 | mdi-script-text | blue | [{"name":"绿色幸运","类型":"保留","value":true},{"name":"建造蓝色储备","类型":"galleryIdea","value":true}] |
-| 紫色气球 | mdi-balloon | blue | [{"name":"紫色力量","类型":"保留","value":true},{"name":"紫色转换","类型":"保留","value":true}] |
+| 打印机 | <i class="mdi mdi-printer"></i> | pale-光-blue | 新风格保留｛true｝; 回收保留｛true｝; 垃圾分类galleryIdea｛true｝ |
+| 灯泡 | <i class="mdi mdi-lightbulb"></i> | pale-黄色 | 顿悟保留｛true｝; 灵感的开始+｛1｝ |
+| 旧电视 | <i class="mdi mdi-television-classic"></i> | 棕色 | 广告galleryIdea｛true｝ |
+| 令人担忧的邮件 | <i class="mdi mdi-email-alert"></i> | 红色 | 缺乏耐心galleryIdea｛true｝ |
+| 红色气球 | <i class="mdi mdi-balloon"></i> | 红色 | 红色力量保留｛true｝; 红色转换保留｛true｝ |
+| 一袋金子 | <i class="mdi mdi-sack"></i> | 金色 | 观察彩虹galleryIdea｛true｝ |
+| 碎纸机 | <i class="mdi mdi-shredder"></i> | pale-紫色 | 过滤器保留｛true｝; 垃圾箱保留｛true｝; 建造堆肥机galleryIdea｛true｝ |
+| 红色印花 | <i class="mdi mdi-script-text"></i> | 红色 | 红色愤怒保留｛true｝; 建造红色储备galleryIdea｛true｝ |
+| 橙色气球 | <i class="mdi mdi-balloon"></i> | 橙色 | 橙色力量保留｛true｝; 橙色转换保留｛true｝ |
+| 信用卡 | <i class="mdi mdi-credit-card"></i> | pale-绿色 | 订购大量保险箱galleryIdea｛true｝ |
+| 简单计算器 | <i class="mdi mdi-calculator"></i> | pale-橙色 | 计算胜算galleryIdea｛true｝ |
+| 橙色印花 | <i class="mdi mdi-script-text"></i> | 橙色 | 红色幸运保留｛true｝; 建造橙色储备galleryIdea｛true｝ |
+| 黄色气球 | <i class="mdi mdi-balloon"></i> | 黄色 | 黄色力量保留｛true｝; 黄色转换保留｛true｝ |
+| 鱼缸 | <i class="mdi mdi-fishbowl"></i> | pale-blue | 形状增益*｛1.5｝; 感到兴奋galleryIdea｛true｝ |
+| 铅笔 | <i class="mdi mdi-lead-pencil"></i> | pale-红色 | 形状增益*｛1.5｝; Buy pengalleryIdea｛true｝ |
+| 小刷子 | <i class="mdi mdi-brush"></i> | pale-粉色 | 形状增益*｛1.5｝; 购买刷子galleryIdea｛true｝ |
+| 奇怪的药丸 | <i class="mdi mdi-pill-multiple"></i> | pale-红色 | 形状增益*｛1.5｝; 高度关注galleryIdea｛true｝ |
+| 奇怪的卷轴 | <i class="mdi mdi-script-text"></i> | dark-灰色 | 保持神秘galleryIdea｛true｝ |
+| 印刷机 | <i class="mdi mdi-arrow-collapse-vertical"></i> | 棕色 | 现金增益*｛1.5｝; 印刷报纸galleryIdea｛true｝ |
+| 黄色印花 | <i class="mdi mdi-script-text"></i> | 黄色 | 橙色幸运保留｛true｝; 建造黄色储备galleryIdea｛true｝ |
+| 绿色气球 | <i class="mdi mdi-balloon"></i> | 绿色 | 绿色力量保留｛true｝; 绿色转换保留｛true｝ |
+| 木制衣架 | <i class="mdi mdi-hanger"></i> | wooden | 涂得更快galleryIdea｛true｝ |
+| 床单 | <i class="mdi mdi-bed-empty"></i> | pale-红色 | 扩大画布galleryIdea｛true｝ |
+| 图片相册 | <i class="mdi mdi-image-album"></i> | 橙色-红色 | 油漆桶储存保留｛true｝; 为了乐趣而作画galleryIdea｛true｝ |
+| 绿色印记 | <i class="mdi mdi-script-text"></i> | 绿色 | 黄色幸运保留｛true｝; 建造绿色储备galleryIdea｛true｝ |
+| 蓝色气球 | <i class="mdi mdi-balloon"></i> | blue | 蓝色力量保留｛true｝; 蓝色转换保留｛true｝ |
+| 蓝色印记 | <i class="mdi mdi-script-text"></i> | blue | 绿色幸运保留｛true｝; 建造蓝色储备galleryIdea｛true｝ |
+| 紫色气球 | <i class="mdi mdi-balloon"></i> | blue | 紫色力量保留｛true｝; 紫色转换保留｛true｝ |

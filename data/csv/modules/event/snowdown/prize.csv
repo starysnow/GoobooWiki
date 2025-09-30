@@ -1,0 +1,6 @@
+名称,类型,item,pool,requirement,amount
+冰冷,theme,冰冷,"{""snowdown"":{""消耗"":{""降雪代币"":225}}}",,
+金钱礼物,圣遗物,金钱礼物,"{""snowdown"":{""消耗"":{""降雪代币"":155}}}",$store.state.解锁.villageFeature.see$,
+冷冻胡萝卜,圣遗物,冷冻胡萝卜,"{""snowdown"":{""消耗"":{""降雪代币"":170}}}",$store.state.解锁.farmFeature.see$,
+cardPack_icyWonderland,卡包,冰雪仙境,"{""snowdown"":{""消耗"":{""降雪代币"":30}}}",,
+肉桂袋,consumable,肉桂袋,"{""snowdown"":{""消耗"":{""降雪代币"":1}}}",$store.state.解锁.肥料.see$,20

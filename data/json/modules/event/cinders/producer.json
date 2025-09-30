@@ -1,0 +1,72 @@
+[
+  {
+    "名称": "萤火虫",
+    "类型": "cindersProducer",
+    "图标": "<i class=\"mdi mdi-bee\"></i>",
+    "消耗": "$lvl > 0 ? { 光: store.getters[' \\cdot /新的更新!']('非第一生产者成本', 1000  \\cdot  {(1.15)}^{lvl}) } : {}$",
+    "requirement": ""
+  },
+  {
+    "名称": "发光蘑菇",
+    "类型": "cindersProducer",
+    "图标": "<i class=\"mdi mdi-mushroom\"></i>",
+    "消耗": "${ 光: store.getters[' \\cdot /新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', 50M  \\cdot  {(1.16)}^{lvl}) }$",
+    "requirement": "$store.state.升级成本.item.萤火虫.达到等级 > 0$"
+  },
+  {
+    "名称": "发光鱼",
+    "类型": "cindersProducer",
+    "图标": "<i class=\"mdi mdi-fish\"></i>",
+    "消耗": "${ 光: store.getters[' \\cdot /新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', 3T  \\cdot  {(1.17)}^{lvl}) }$",
+    "requirement": "$store.state.升级成本.item.发光蘑菇.达到等级 > 0$"
+  },
+  {
+    "名称": "灯",
+    "类型": "cindersProducer",
+    "图标": "<i class=\"mdi mdi-lamp\"></i>",
+    "消耗": "${ 光: store.getters[' \\cdot /新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', 240Qa  \\cdot  {(1.18)}^{lvl}) }$",
+    "requirement": "$store.state.升级成本.item.发光鱼.达到等级 > 0$"
+  },
+  {
+    "名称": "营火",
+    "类型": "cindersProducer",
+    "图标": "<i class=\"mdi mdi-campfire\"></i>",
+    "消耗": "${ 光: store.getters[' \\cdot /新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', 24Sx  \\cdot  {(1.19)}^{lvl}) }$",
+    "requirement": "$store.state.升级成本.item.灯.达到等级 > 0$"
+  },
+  {
+    "名称": "珊瑚",
+    "类型": "cindersProducer",
+    "图标": "<i class=\"mdi mdi-spa\"></i>",
+    "消耗": "${ 光: store.getters[' \\cdot /新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', 3.6O  \\cdot  {(1.2)}^{lvl}) }$",
+    "requirement": "$store.state.升级成本.item.营火.达到等级 > 0$"
+  },
+  {
+    "名称": "海蜇",
+    "类型": "cindersProducer",
+    "图标": "<i class=\"mdi mdi-jellyfish\"></i>",
+    "消耗": "${ 光: store.getters[' \\cdot /新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', 720N  \\cdot  {(1.25)}^{lvl}) }$",
+    "requirement": "$store.state.升级成本.item.珊瑚.达到等级 > 0$"
+  },
+  {
+    "名称": "夜花",
+    "类型": "cindersProducer",
+    "图标": "<i class=\"mdi mdi-flower\"></i>",
+    "消耗": "${ 光: store.getters[' \\cdot /新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', 180UD  \\cdot  {(1.3)}^{lvl}) }$",
+    "requirement": "$store.state.升级成本.item.海蜇.达到等级 > 0$"
+  },
+  {
+    "名称": "霓虹灯",
+    "类型": "cindersProducer",
+    "图标": "<i class=\"mdi mdi-ruler\"></i>",
+    "消耗": "${ 光: store.getters[' \\cdot /新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', 54TD  \\cdot  {(1.35)}^{lvl}) }$",
+    "requirement": "$store.state.升级成本.item.夜花.达到等级 > 0$"
+  },
+  {
+    "名称": "太阳药水",
+    "类型": "cindersProducer",
+    "图标": "<i class=\"mdi mdi-white-balance-sunny\"></i>",
+    "消耗": "${ 光: store.getters[' \\cdot /新的更新!'](lvl > 0 ? '非第一生产者成本' : '第一生产者成本', 27QiD  \\cdot  {(1.5)}^{lvl}) }$",
+    "requirement": "$store.state.升级成本.item.霓虹灯.达到等级 > 0$"
+  }
+]

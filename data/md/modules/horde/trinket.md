@@ -1,21 +1,21 @@
-| 名称  | color | 图标  | 效果  | needsEnergy | needsMana | cooldown | activeCost | activeType | rarity | isTimeless | 可以在眩晕时使用 | uniqueToBoss |
-| --- | ----- | --- | --- | ----------- | --------- | -------- | ---------- | ---------- | ------ | ---------- | -------- | ------------ |
-| 活力 | 绿色 | mdi-heart | [{"name":"生命值","类型":"基础"}] |  |  |  |  |  |  |  |  |  |
-| 能量 | 金色 | mdi-lightning-bolt | [{"name":"能量","类型":"基础"}] | needsEnergy |  |  |  |  |  |  |  |  |
-| 魔法 | blue | mdi-water | [{"name":"法力","类型":"基础"}] |  | needsMana |  |  |  |  |  |  |  |
-| 拳头 | 橙色-红色 | mdi-arm-flex |  | needsEnergy |  | undefined | undefined | combat |  |  |  |  |
-| 火花 | 光-blue | mdi-shimmer |  |  | needsMana | undefined | undefined | combat | 10 |  |  |  |
-| 急速 | pale-黄色 | mdi-timer-sand | [{"name":"急速","类型":"基础"}] |  |  |  |  |  | 20 |  |  |  |
-| 精确 | 橙色 | mdi-bullseye | [{"name":"暴击率","类型":"基础"}] |  |  |  |  |  | 30 |  |  |  |
-| 愤怒 | 橙色-红色 | mdi-emoticon-angry | [{"name":"暴击伤害","类型":"基础"}] |  |  |  |  |  | 40 |  |  |  |
-| 力量 | 红色 | mdi-arm-flex | [{"name":"力量","类型":"基础"}] |  |  |  |  |  | 50 |  |  |  |
-| 毒素 | 光-绿色 | mdi-clouds |  |  |  | undefined | undefined | combat | 60 |  |  |  |
-| 智慧 | indigo | mdi-lightbulb-on | [{"name":"智力","类型":"基础"}] |  |  |  |  |  | 70 |  |  |  |
-| 提取 | 红色 | mdi-water | [{"name":"血液增益","类型":"mult"}] |  |  |  |  |  | 80 |  |  |  |
-| 学习 | deep-紫色 | mdi-school | [{"name":"级技能点数","类型":"基础"}] |  |  |  |  |  | 90 | true |  |  |
-| 维持 | 红色 | mdi-iv-bag | [{"name":"血液容量","类型":"mult"}] |  |  |  |  |  | 100 |  |  |  |
-| 激励 | 金色 | mdi-battery |  | needsEnergy |  | undefined | undefined | combat | 110 | true |  |  |
-| 自动化 | dark-灰色 | mdi-cogs | [{"name":"自动释放槽位","类型":"基础"}] |  |  |  |  |  | 120 | true |  |  |
-| 治愈 | teal | mdi-heart |  |  |  | undefined | undefined | combat | 130 | true | true |  |
-| 二元性 | 紫色 | mdi-call-split | [{"name":"力量","类型":"基础"},{"name":"智力","类型":"基础"}] |  |  |  |  |  | 75 |  |  | Chriz |
-| 爱 | babypink | mdi-heart-multiple |  |  |  | undefined | undefined | combat | 120 |  |  | mina |
+| 名称  | color | 图标  | 效果  | needsEnergy | needsMana | cooldown | activeCost | 激活的卡片 | activeType | rarity | isTimeless | 可以在眩晕时使用 | uniqueToBoss |
+| --- | ----- | --- | --- | ----------- | --------- | -------- | ---------- | ----- | ---------- | ------ | ---------- | -------- | ------------ |
+| 活力 | 绿色 | <i class="mdi mdi-heart"></i> | 生命值+｛$lvl  \cdot  70 + 30$｝ |  |  |  |  |  |  |  |  |  |  |
+| 能量 | 金色 | <i class="mdi mdi-lightning-bolt"></i> | 能量+｛$lvl  \cdot  35 + 20$｝ | needsEnergy |  |  |  |  |  |  |  |  |  |
+| 魔法 | blue | <i class="mdi mdi-water"></i> | 法力+｛$lvl  \cdot  25 + 15$｝ |  | needsMana |  |  |  |  |  |  |  |  |
+| 拳头 | 橙色-红色 | <i class="mdi mdi-arm-flex"></i> |  | needsEnergy |  | $15$ | ${ 能量: 25 }$ | $[{ 类型: 'damagePhysic', value: lvl  \cdot  0.4 + 3.1, str: 0.15 }]$ | combat |  |  |  |  |
+| 火花 | 光-blue | <i class="mdi mdi-shimmer"></i> |  |  | needsMana | $9$ | ${ mana: 5 }$ | $[{ 类型: 'damageMagic', value: lvl  \cdot  0.55 + 3.65, int: 0.2 }]$ | combat | 10 |  |  |  |
+| 急速 | pale-黄色 | <i class="mdi mdi-timer-sand"></i> | 急速+｛$lvl  \cdot  4 + 8$｝ |  |  |  |  |  |  | 20 |  |  |  |
+| 精确 | 橙色 | <i class="mdi mdi-bullseye"></i> | 暴击率+｛$lvl  \cdot  0.03 + 0.07$｝ |  |  |  |  |  |  | 30 |  |  |  |
+| 愤怒 | 橙色-红色 | <i class="mdi mdi-emoticon-angry"></i> | 暴击伤害+｛$lvl  \cdot  0.08 + 0.3$｝ |  |  |  |  |  |  | 40 |  |  |  |
+| 力量 | 红色 | <i class="mdi mdi-arm-flex"></i> | 力量+｛$lvl  \cdot  3 + 5$｝ |  |  |  |  |  |  | 50 |  |  |  |
+| 毒素 | 光-绿色 | <i class="mdi mdi-clouds"></i> |  |  |  | $135$ | ${}$ | $[{ 类型: 'maxdamageBio', value: lvl  \cdot  0.015 + 0.09 }, { 类型: 'removeAttack', value: lvl  \cdot  0.005 + 0.05 }]$ | combat | 60 |  |  |  |
+| 智慧 | indigo | <i class="mdi mdi-lightbulb-on"></i> | 智力+｛$lvl  \cdot  3 + 5$｝ |  |  |  |  |  |  | 70 |  |  |  |
+| 提取 | 红色 | <i class="mdi mdi-water"></i> | 血液增益*｛$lvl  \cdot  0.04 + 1.16$｝ |  |  |  |  |  |  | 80 |  |  |  |
+| 学习 | deep-紫色 | <i class="mdi mdi-school"></i> | 级技能点数+｛$1$｝ |  |  |  |  |  |  | 90 | true |  |  |
+| 维持 | 红色 | <i class="mdi mdi-iv-bag"></i> | 血液容量*｛$lvl  \cdot  0.06 + 1.24$｝ |  |  |  |  |  |  | 100 |  |  |  |
+| 激励 | 金色 | <i class="mdi mdi-battery"></i> |  | needsEnergy |  | $270$ | ${}$ | $[{ 类型: 'refillEnergy', value: 1 }]$ | combat | 110 | true |  |  |
+| 自动化 | dark-灰色 | <i class="mdi mdi-cogs"></i> | 自动释放槽位+｛$1$｝ |  |  |  |  |  |  | 120 | true |  |  |
+| 治愈 | teal | <i class="mdi mdi-heart"></i> |  |  |  | $45$ | ${}$ | $[{ 类型: 'heal', value: 0.05, int: 0.0005 }, { 类型: '移除眩晕', value: null }]$ | combat | 130 | true | true |  |
+| 二元性 | 紫色 | <i class="mdi mdi-call-split"></i> | 力量+｛$lvl  \cdot  2 + 4$｝; 智力+｛$lvl  \cdot  2 + 4$｝ |  |  |  |  |  |  | 75 |  |  | Chriz |
+| 爱 | babypink | <i class="mdi mdi-heart-multiple"></i> |  |  |  | $70$ | ${}$ | $[{ 类型: 'damageBio', value: lvl  \cdot  0.9 + 8.7 }, { 类型: 'buff', value: lvl + 14, 效果: [{ 类型: ' \cdot ', name: '造成的生物伤害', value: 1.35 }] }]$ | combat | 120 |  |  | mina |

@@ -1,7 +1,7 @@
-{name: '红宝石', 类型: '收集 {0} ', value: 10},
-    {name: '翡翠', 类型: '收集 {0} ', value: 10},
-    {name: '蓝宝石', 类型: '收集 {0} ', value: 10},
-    {name: '紫水晶', 类型: '收集 {0} ', value: 10}
+{name: '红宝石', 类型: 'currency', value: 10},
+    {name: '翡翠', 类型: 'currency', value: 10},
+    {name: '蓝宝石', 类型: 'currency', value: 10},
+    {name: '紫水晶', 类型: 'currency', value: 10}
 ];
 export default [
     {id: 1, instant: true, collection: '周末旅行', reward, color: '粉色', icons: [

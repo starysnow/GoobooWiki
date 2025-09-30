@@ -1,0 +1,42 @@
+[
+  {
+    "名称": "冰冷",
+    "类型": "theme",
+    "item": "冰冷",
+    "pool": "{\"snowdown\":{\"消耗\":{\"降雪代币\":225}}}",
+    "requirement": "",
+    "amount": ""
+  },
+  {
+    "名称": "金钱礼物",
+    "类型": "圣遗物",
+    "item": "金钱礼物",
+    "pool": "{\"snowdown\":{\"消耗\":{\"降雪代币\":155}}}",
+    "requirement": "$store.state.解锁.villageFeature.see$",
+    "amount": ""
+  },
+  {
+    "名称": "冷冻胡萝卜",
+    "类型": "圣遗物",
+    "item": "冷冻胡萝卜",
+    "pool": "{\"snowdown\":{\"消耗\":{\"降雪代币\":170}}}",
+    "requirement": "$store.state.解锁.farmFeature.see$",
+    "amount": ""
+  },
+  {
+    "名称": "cardPack_icyWonderland",
+    "类型": "卡包",
+    "item": "冰雪仙境",
+    "pool": "{\"snowdown\":{\"消耗\":{\"降雪代币\":30}}}",
+    "requirement": "",
+    "amount": ""
+  },
+  {
+    "名称": "肉桂袋",
+    "类型": "consumable",
+    "item": "肉桂袋",
+    "pool": "{\"snowdown\":{\"消耗\":{\"降雪代币\":1}}}",
+    "requirement": "$store.state.解锁.肥料.see$",
+    "amount": "20"
+  }
+]

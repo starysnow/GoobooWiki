@@ -1,18 +1,18 @@
 {
-    额外的建筑槽位: {类型: 'summerFestival', cap: 3, price(lvl) {
+    额外的建筑槽位: {类型: 'summerFestival', 上限: 3, 消耗(lvl) {
         return {gem_topaz: Math.pow(2, lvl) * 250};
     }, 效果: [
-        {name: '建造队列插槽', 类型: '基础', value: lvl => lvl * 2}
+        {name: '建造队列插槽', 类型: '+', value: lvl => lvl * 2}
     ]},
-    双倍时间: {类型: 'summerFestival', cap: 5, price(lvl) {
+    双倍时间: {类型: 'summerFestival', 上限: 5, 消耗(lvl) {
         return {gem_topaz: lvl * 100 + 200};
     }, 效果: [
-        {name: '建造队列速度', 类型: 'mult', value: lvl => lvl + 1}
+        {name: '建造队列速度', 类型: '*', value: lvl => lvl + 1}
     ]},
-    热带祝福: {类型: 'summerFestival', cap: 8, price(lvl) {
+    热带祝福: {类型: 'summerFestival', 上限: 8, 消耗(lvl) {
         return {gem_topaz: lvl * 50 + 100};
     }, 效果: [
-        {name: '材料增益', 类型: 'mult', value: lvl => lvl * 0.25 + 1},
-        {name: '材料堆叠容量', 类型: '基础', value: lvl => lvl * 5}
+        {name: '材料增益', 类型: '*', value: lvl => lvl * 0.25 + 1},
+        {name: '材料堆叠容量', 类型: '+', value: lvl => lvl * 5}
     ]},
 }

@@ -1,13 +1,13 @@
-| 名称  | 子功能 | cap | 效果  | requirementBase | requirementValue |
-| --- | --- | --- | --- | --------------- | ---------------- |
-| 输血 | 1 | 50 | [{"name":"攻击","类型":"mult"},{"name":"生命值","类型":"mult"}] |  |  |
-| 黑暗攻击 | 1 |  | [{"name":"攻击","类型":"mult"}] | requirementBase | 1 |
-| 黑暗生命值 | 1 |  | [{"name":"生命值","类型":"mult"}] | requirementBase | 3 |
-| 收割 | 1 |  | [{"name":"血液增益","类型":"mult"}] | requirementBase | 8 |
-| 保护壳 | 1 | 20 | [{"name":"攻击","类型":"mult"},{"name":"生命值","类型":"mult"}] | requirementBase | 14 |
-| 血液存储 | 1 | 20 | [{"name":"生命值","类型":"mult"},{"name":"血液容量","类型":"mult"}] | requirementBase | 18 |
-| 黑暗里程碑 | 1 |  | [{"name":"攻击","类型":"mult"},{"name":"生命值","类型":"mult"},{"name":"血液容量","类型":"mult"}] | requirementBase | 24 |
-| 无尽的愤怒 | 1 | 20 | [{"name":"攻击","类型":"mult"}] | requirementBase | 31 |
-| 拳击 | 1 | 30 | [{"name":"血液增益","类型":"mult"},{"name":"攻击","类型":"mult"}] | requirementBase | 42 |
-| 注射器 | 1 | 30 | [{"name":"血液增益","类型":"mult"},{"name":"血液容量","类型":"mult"}] | requirementBase | 55 |
-| 血祭 | 1 |  | [{"name":"腐败","类型":"bonus"}] | requirementBase | 70 |
+| 名称  | 子功能 | 上限  | 消耗  | 效果  | requirementBase | requirementValue |
+| --- | --- | --- | --- | --- | --------------- | ---------------- |
+| 输血 | 1 | 50 | ${ 血液: {(1.3)}^{lvl}  \cdot  300 }$ | 攻击*｛$getSequence(5, lvl)  \cdot  0.02 + 1$｝; 生命值*｛$getSequence(5, lvl)  \cdot  0.02 + 1$｝ |  |  |
+| 黑暗攻击 | 1 |  | ${ 血液: {(lvl  \cdot  0.0025 + 1.325)}^{lvl}  \cdot  24K }$ | 攻击*｛${(1.18)}^{lvl}$｝ | requirementBase | 1 |
+| 黑暗生命值 | 1 |  | ${ 血液: {(lvl  \cdot  0.0025 + 1.325)}^{lvl}  \cdot  110K }$ | 生命值*｛${(1.19)}^{lvl}$｝ | requirementBase | 3 |
+| 收割 | 1 |  | ${ 血液: {(lvl  \cdot  0.003 + 1.45)}^{lvl}  \cdot  3M }$ | 血液增益*｛${(1.11)}^{lvl}$｝ | requirementBase | 8 |
+| 保护壳 | 1 | 20 | ${ 血液: {(2.35)}^{lvl}  \cdot  190M }$ | 攻击*｛${(1.07)}^{lvl}$｝; 生命值*｛${(1.14)}^{lvl}$｝ | requirementBase | 14 |
+| 血液存储 | 1 | 20 | ${ 血液: {(lvl  \cdot  0.04 + 1.9)}^{lvl}  \cdot  2.2B }$ | 生命值*｛${(1.1)}^{lvl}$｝; 血液容量*｛${(1.175)}^{lvl}$｝ | requirementBase | 18 |
+| 黑暗里程碑 | 1 |  | ${ 血液: {(1000)}^{lvl}  \cdot  1T }$ | 攻击*｛${(3)}^{lvl}$｝; 生命值*｛${(3)}^{lvl}$｝; 血液容量*｛${(10)}^{lvl}$｝ | requirementBase | 24 |
+| 无尽的愤怒 | 1 | 20 | ${ 血液: {(2.8)}^{lvl}  \cdot  25Qi }$ | 攻击*｛${(1.33)}^{lvl}$｝ | requirementBase | 31 |
+| 拳击 | 1 | 30 | ${ 血液: {(2.45)}^{lvl}  \cdot  400Sx }$ | 血液增益*｛${(1.1)}^{lvl}$｝; 攻击*｛${(1.23)}^{lvl}$｝ | requirementBase | 42 |
+| 注射器 | 1 | 30 | ${ 血液: {(lvl  \cdot  0.02 + 1.7)}^{lvl}  \cdot  65Sp }$ | 血液增益*｛${(1.15)}^{lvl}$｝; 血液容量*｛${(1.18)}^{lvl}$｝ | requirementBase | 55 |
+| 血祭 | 1 |  | ${ 血液: {(10)}^{lvl}  \cdot  1O }$ | 腐败bonus｛$-0.07  \cdot  lvl$｝ | requirementBase | 70 |

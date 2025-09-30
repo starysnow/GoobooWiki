@@ -1,0 +1,74 @@
+[
+  {
+    "名称": "基础",
+    "已拥有": "true",
+    "图标": "",
+    "效果": ""
+  },
+  {
+    "名称": "快速",
+    "已拥有": "",
+    "图标": "<i class=\"mdi mdi-run-fast\"></i>",
+    "效果": "钓鱼时间*｛[Unsupported Node: BinaryExpression]｝; 平均鱼尺寸*｛[Unsupported Node: BinaryExpression]｝; 垃圾增益*｛[Unsupported Node: BinaryExpression]｝"
+  },
+  {
+    "名称": "绿叶",
+    "已拥有": "",
+    "图标": "<i class=\"mdi mdi-leaf\"></i>",
+    "效果": "中鱼几率+｛[Unsupported Node: UnaryExpression]｝; 海藻增益*｛1.75｝"
+  },
+  {
+    "名称": "重",
+    "已拥有": "",
+    "图标": "<i class=\"mdi mdi-weight\"></i>",
+    "效果": "钓鱼时间*｛1.1｝; 最大鱼尺寸+｛1｝; 平均鱼尺寸*｛[Unsupported Node: BinaryExpression]｝"
+  },
+  {
+    "名称": "硬木",
+    "已拥有": "",
+    "图标": "<i class=\"mdi mdi-palm-tree\"></i>",
+    "效果": "钓鱼力量*｛[Unsupported Node: BinaryExpression]｝; 浮木增益*｛1.75｝"
+  },
+  {
+    "名称": "精通",
+    "已拥有": "",
+    "图标": "<i class=\"mdi mdi-trophy-award\"></i>",
+    "效果": "钓鱼力量+｛12｝; 钓鱼时间*｛1.15｝"
+  },
+  {
+    "名称": "臭",
+    "已拥有": "",
+    "图标": "<i class=\"mdi mdi-scent\"></i>",
+    "效果": "粘液增益*｛2｝; 钓鱼时间*｛1.5｝"
+  },
+  {
+    "名称": "涡轮",
+    "已拥有": "",
+    "图标": "<i class=\"mdi mdi-truck-fast\"></i>",
+    "效果": "钓鱼时间*｛0.5｝; 中鱼几率+｛[Unsupported Node: UnaryExpression]｝; 宝藏几率+｛[Unsupported Node: UnaryExpression]｝; 垃圾增益*｛[Unsupported Node: BinaryExpression]｝"
+  },
+  {
+    "名称": "金色",
+    "已拥有": "",
+    "图标": "<i class=\"mdi mdi-gold\"></i>",
+    "效果": "中鱼几率+｛0.05｝; 宝藏几率+｛0.025｝; 垃圾增益*｛[Unsupported Node: BinaryExpression]｝"
+  },
+  {
+    "名称": "迟钝",
+    "已拥有": "",
+    "图标": "<i class=\"mdi mdi-square-opacity\"></i>",
+    "效果": "宝藏几率+｛[Unsupported Node: UnaryExpression]｝; 塑料增益*｛1.75｝"
+  },
+  {
+    "名称": "神秘",
+    "已拥有": "",
+    "图标": "<i class=\"mdi mdi-auto-fix\"></i>",
+    "效果": "忽略天气+｛0.1｝; 最大鱼尺寸*｛[Unsupported Node: BinaryExpression]｝; 平均鱼尺寸*｛[Unsupported Node: BinaryExpression]｝"
+  },
+  {
+    "名称": "双胞胎",
+    "已拥有": "",
+    "图标": "<i class=\"mdi mdi-call-split\"></i>",
+    "效果": "钓鱼时间*｛1.1｝; 双倍鱼几率+｛0.2｝; 垃圾增益*｛[Unsupported Node: BinaryExpression]｝"
+  }
+]

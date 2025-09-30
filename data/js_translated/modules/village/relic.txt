@@ -1,15 +1,15 @@
 {
     泥砖: {图标: 'mdi-wall', color: '棕色', 效果: [
         {name: '棚子', 类型: '保留', value: true},
-        {name: '水增益', 类型: 'mult', value: 1.5}
+        {name: '水增益', 类型: '*', value: 1.5}
     ]},
     树苗: {图标: 'mdi-sprout', color: '光-绿色', 效果: [
         {name: '棚子', 类型: '保留', value: true},
-        {name: '植物纤维增益', 类型: 'mult', value: 1.5},
+        {name: '植物纤维增益', 类型: '*', value: 1.5},
     ]},
     钥匙链: {图标: 'mdi-key-chain', color: '光-灰色', 效果: [
         {name: '小房子', 类型: '保留', value: true},
-        {name: '木头增益', 类型: 'mult', value: 1.5}
+        {name: '木头增益', 类型: '*', value: 1.5}
     ]},
     宝箱: {图标: 'mdi-treasure-chest', color: '金色', 效果: [
         {name: '财政部', 类型: '保留', value: true},
@@ -19,7 +19,7 @@
     ]},
     螺丝刀: {图标: 'mdi-screwdriver', color: 'indigo', 效果: [
         {name: '起重机', 类型: '保留', value: true},
-        {name: '石头增益', 类型: 'mult', value: 1.5}
+        {name: '石头增益', 类型: '*', value: 1.5}
     ]},
     玫瑰: {图标: 'mdi-flower', color: '红色', 效果: [
         {name: '花园', 类型: '保留', value: true},

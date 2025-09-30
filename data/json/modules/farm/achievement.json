@@ -1,0 +1,58 @@
+[
+  {
+    "名称": "harvests",
+    "value": "$store.state.stat.farm_harvests.总计$",
+    "milestones": "$\\text{四舍五入}({(lvl + 1)}^{2}  \\cdot  {(1.5)}^{lvl}  \\cdot  10)$",
+    "display": "",
+    "圣遗物": ""
+  },
+  {
+    "名称": "maxOvergrow",
+    "value": "$store.state.stat.farm_maxOvergrow.总计$",
+    "milestones": "$getSequence(1, lvl + 1)$",
+    "display": "percent",
+    "圣遗物": "{\"2\":\"格子\",\"4\":\"砖墙\"}"
+  },
+  {
+    "名称": "bestPrestige",
+    "value": "$store.state.stat.farm_bestPrestige.总计$",
+    "milestones": "$lvl  \\cdot  2 + 4$",
+    "display": "",
+    "圣遗物": ""
+  },
+  {
+    "名称": "仅蔬菜",
+    "value": "$store.state.stat.仅蔬菜.总计$",
+    "milestones": "${(81)}^{lvl}  \\cdot  250$",
+    "display": "",
+    "圣遗物": "{\"2\":\"金胡萝卜\"}"
+  },
+  {
+    "名称": "仅浆果",
+    "value": "$store.state.stat.仅浆果.总计$",
+    "milestones": "${(81)}^{lvl}  \\cdot  750$",
+    "display": "",
+    "圣遗物": "{\"3\":\"金苹果\"}"
+  },
+  {
+    "名称": "仅粮食",
+    "value": "$store.state.stat.仅粮食.总计$",
+    "milestones": "${(81)}^{lvl}  \\cdot  2250$",
+    "display": "",
+    "圣遗物": "{\"4\":\"爆米花\"}"
+  },
+  {
+    "名称": "仅鲜花",
+    "value": "$store.state.stat.仅鲜花.总计$",
+    "milestones": "${(81)}^{lvl}  \\cdot  6750$",
+    "display": "",
+    "圣遗物": "{\"5\":\"蔷薇石英\"}"
+  },
+  {
+    "名称": "黄金",
+    "value": "$store.state.stat.黄金.总计$",
+    "milestones": "$\\text{四舍五入}({(lvl + 2)}^{2}  \\cdot  {(2.25)}^{lvl}  \\cdot  2.5)$",
+    "display": "",
+    "圣遗物": "{\"6\":\"金种子\"}"
+  }
+]

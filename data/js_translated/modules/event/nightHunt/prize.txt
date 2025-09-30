@@ -3,7 +3,7 @@
         类型: 'theme',
         item: '秋天的森林',
         pool: {
-            nightHunt: {price: {夜间狩猎代币: 200}}
+            nightHunt: {消耗: {夜间狩猎代币: 200}}
         }
     },
     块状颗粒: {
@@ -13,7 +13,7 @@
             return store.state.解锁.farmFeature.see;
         },
         pool: {
-            nightHunt: {price: {夜间狩猎代币: 170}}
+            nightHunt: {消耗: {夜间狩猎代币: 170}}
         }
     },
     魔法瓶: {
@@ -23,14 +23,14 @@
             return store.state.解锁.树脂.see;
         },
         pool: {
-            nightHunt: {price: {夜间狩猎代币: 175}}
+            nightHunt: {消耗: {夜间狩猎代币: 175}}
         }
     },
     cardPack_midnightAnomaly: {
         类型: '卡包',
         item: '午夜异常',
         pool: {
-            nightHunt: {price: {夜间狩猎代币: 30}}
+            nightHunt: {消耗: {夜间狩猎代币: 30}}
         }
     },
     田野祝福: {
@@ -41,7 +41,7 @@
             return store.state.解锁.肥料.see;
         },
         pool: {
-            nightHunt: {price: {夜间狩猎代币: 1}}
+            nightHunt: {消耗: {夜间狩猎代币: 1}}
         }
     }
 }

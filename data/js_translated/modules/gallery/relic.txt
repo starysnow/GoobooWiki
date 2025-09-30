@@ -6,7 +6,7 @@
     ]},
     灯泡: {图标: 'mdi-lightbulb', color: 'pale-黄色', 效果: [
         {name: '顿悟', 类型: '保留', value: true},
-        {name: '灵感的开始', 类型: '基础', value: 1}
+        {name: '灵感的开始', 类型: '+', value: 1}
     ]},
     旧电视: {图标: 'mdi-television-classic', color: '棕色', 效果: [
         {name: '广告', 类型: 'galleryIdea', value: true}
@@ -49,26 +49,26 @@
         {name: '黄色转换', 类型: '保留', value: true}
     ]},
     鱼缸: {图标: 'mdi-fishbowl', color: 'pale-blue', 效果: [
-        {name: '形状增益', 类型: 'mult', value: 1.5},
+        {name: '形状增益', 类型: '*', value: 1.5},
         {name: '感到兴奋', 类型: 'galleryIdea', value: true}
     ]},
     铅笔: {图标: 'mdi-lead-pencil', color: 'pale-红色', 效果: [
-        {name: '形状增益', 类型: 'mult', value: 1.5},
-        {name: '购买 pen', 类型: 'galleryIdea', value: true}
+        {name: '形状增益', 类型: '*', value: 1.5},
+        {name: 'Buy pen', 类型: 'galleryIdea', value: true}
     ]},
     小刷子: {图标: 'mdi-brush', color: 'pale-粉色', 效果: [
-        {name: '形状增益', 类型: 'mult', value: 1.5},
+        {name: '形状增益', 类型: '*', value: 1.5},
         {name: '购买刷子', 类型: 'galleryIdea', value: true}
     ]},
     奇怪的药丸: {图标: 'mdi-pill-multiple', color: 'pale-红色', 效果: [
-        {name: '形状增益', 类型: 'mult', value: 1.5},
+        {name: '形状增益', 类型: '*', value: 1.5},
         {name: '高度关注', 类型: 'galleryIdea', value: true}
     ]},
     奇怪的卷轴: {图标: 'mdi-script-text', color: 'dark-灰色', 效果: [
         {name: '保持神秘', 类型: 'galleryIdea', value: true}
     ]},
     印刷机: {图标: 'mdi-arrow-collapse-vertical', color: '棕色', 效果: [
-        {name: '现金增益', 类型: 'mult', value: 1.5},
+        {name: '现金增益', 类型: '*', value: 1.5},
         {name: '印刷报纸', 类型: 'galleryIdea', value: true}
     ]},
     黄色印花: {图标: 'mdi-script-text', color: '黄色', 效果: [

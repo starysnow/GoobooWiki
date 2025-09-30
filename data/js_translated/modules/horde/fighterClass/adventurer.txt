@@ -1,7 +1,7 @@
 {
     图标: 'mdi-bag-personal',
     baseStats: {
-        攻击 +: 5,
+        攻击plus: 5,
         生命值: 500,
         能量: 200,
         energyRegen: 1,
@@ -9,25 +9,25 @@
         manaRegen: 0.01
     },
     经验值: {
-        基础: 600,
+        +: 600,
         increment: 1.2
     },
     skills: {
         energyConvert: {
-            类型: '被动: {0}%',
+            类型: '被动: (0)%',
             color: '金色',
             图标: 'mdi-lightning-bolt',
-            最大值: 1,
+            max: 1,
             效果: [
-                {name: '每当前能量 +{0} 力量', 类型: 'tag', value: lvl => [lvl * 0.02]},
-                {name: '每丢失能量 +{0} 能量再生', 类型: 'tag', value: lvl => [lvl * 0.005]}
+                {name: '每当前能量+(0) 力量', 类型: 'tag', value: lvl => [lvl * 0.02]},
+                {name: '每丢失能量+(0) 能量再生', 类型: 'tag', value: lvl => [lvl * 0.005]}
             ]
         },
         stab: {
             类型: '激活的卡片',
             color: '红色',
             图标: 'mdi-knife',
-            最大值: 1,
+            max: 1,
             cooldown: () => 8,
             activeCost: () => {return {能量: 30};},
             激活的卡片() {
@@ -37,41 +37,41 @@
             },
             activeType: 'combat'
         },
-        生命值: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '生命值', 类型: '基础', value: lvl => lvl * 70}
+        生命值: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '生命值', 类型: '+', value: lvl => lvl * 70}
         ]},
-        力量: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '力量', 类型: '基础', value: lvl => lvl * 1.3}
+        力量: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '力量', 类型: '+', value: lvl => lvl * 1.3}
         ]},
-        能量: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '能量', 类型: '基础', value: lvl => lvl * 40}
+        能量: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '能量', 类型: '+', value: lvl => lvl * 40}
         ]},
         brawl: {
             类型: '激活的卡片',
             color: '橙色',
             图标: 'mdi-arm-flex',
-            最大值: 5,
+            max: 5,
             cost: 20,
             cooldown: () => 60,
             activeCost: () => {return {能量: 140};},
             激活的卡片(lvl) {
                 return [
                     {类型: 'buff', value: 18, 效果: [
-                        {类型: '基础', name: '力量', value: 10 * lvl},
-                        {类型: 'mult', name: '攻击', value: 1.3}
+                        {类型: '+', name: '力量', value: 10 * lvl},
+                        {类型: '*', name: '攻击', value: 1.3}
                     ]}
                 ];
             },
             activeType: 'combat'
         },
-        strength_2: {类型: '达到 {0} {1}', 最大值: 15, cost: 10, 效果: [
-            {name: '力量', 类型: '基础', value: lvl => lvl * 1.5}
+        strength_2: {类型: 'stat', max: 15, cost: 10, 效果: [
+            {name: '力量', 类型: '+', value: lvl => lvl * 1.5}
         ]},
         spark: {
             类型: '激活的卡片',
             color: '光-blue',
             图标: 'mdi-flare',
-            最大值: 5,
+            max: 5,
             cost: 20,
             cooldown: () => 6,
             activeCost: () => {return {mana: 12};},
@@ -82,14 +82,14 @@
             },
             activeType: 'combat'
         },
-        intelligence: {类型: '达到 {0} {1}', 最大值: 15, cost: 10, 效果: [
-            {name: '智力', 类型: '基础', value: lvl => lvl * 1.8}
+        intelligence: {类型: 'stat', max: 15, cost: 10, 效果: [
+            {name: '智力', 类型: '+', value: lvl => lvl * 1.8}
         ]},
         smash: {
             类型: '激活的卡片',
             color: '棕色',
             图标: 'mdi-anvil',
-            最大值: 5,
+            max: 5,
             cost: 20,
             cooldown: () => 22,
             activeCost: () => {return {能量: 60};},
@@ -101,14 +101,14 @@
             },
             activeType: 'combat'
         },
-        急速: {类型: '达到 {0} {1}', 最大值: 15, cost: 10, 效果: [
-            {name: '急速', 类型: '基础', value: lvl => lvl * 4}
+        急速: {类型: 'stat', max: 15, cost: 10, 效果: [
+            {name: '急速', 类型: '+', value: lvl => lvl * 4}
         ]},
         lootSearch: {
             类型: '激活的卡片',
             color: '光-绿色',
             图标: 'mdi-sack',
-            最大值: 5,
+            max: 5,
             cost: 20,
             cooldown: () => 300,
             activeCost: () => {return {};},
@@ -119,27 +119,27 @@
             },
             activeType: 'utility'
         },
-        伤害: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '攻击', 类型: '基础', value: lvl => lvl * 0.15}
+        伤害: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '攻击', 类型: '+', value: lvl => lvl * 0.15}
         ]},
-        energy_2: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '能量', 类型: '基础', value: lvl => lvl * 40}
+        energy_2: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '能量', 类型: '+', value: lvl => lvl * 40}
         ]},
-        damage_2: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '攻击', 类型: '基础', value: lvl => lvl * 0.15}
+        damage_2: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '攻击', 类型: '+', value: lvl => lvl * 0.15}
         ]},
-        health_2: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '生命值', 类型: '基础', value: lvl => lvl * 70}
+        health_2: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '生命值', 类型: '+', value: lvl => lvl * 70}
         ]},
-        恢复: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '生命值', 类型: '基础', value: lvl => lvl * 25},
-            {name: '恢复', 类型: '基础', value: lvl => lvl * 0.008}
+        恢复: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '生命值', 类型: '+', value: lvl => lvl * 25},
+            {name: '恢复', 类型: '+', value: lvl => lvl * 0.008}
         ]},
         combatHeal: {
             类型: '激活的卡片',
             color: '绿色',
             图标: 'mdi-medication',
-            最大值: 5,
+            max: 5,
             cost: 20,
             cooldown: () => 45,
             activeCost: () => {return {mana: 55};},
@@ -150,49 +150,49 @@
             },
             activeType: 'combat'
         },
-        energy_3: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '能量', 类型: '基础', value: lvl => lvl * 40}
+        energy_3: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '能量', 类型: '+', value: lvl => lvl * 40}
         ]},
-        mana: {类型: '达到 {0} {1}', 最大值: 10, cost: 10, 效果: [
-            {name: '法力', 类型: '基础', value: lvl => lvl * 20}
+        mana: {类型: 'stat', max: 10, cost: 10, 效果: [
+            {name: '法力', 类型: '+', value: lvl => lvl * 20}
         ]},
-        血液: {类型: '达到 {0} {1}', 最大值: 20, cost: 15, 效果: [
-            {name: '血液增益', 类型: 'mult', value: lvl => getSequence(3, lvl) * 0.05 + 1},
-            {name: '血液容量', 类型: 'mult', value: lvl => getSequence(3, lvl) * 0.05 + 1}
+        血液: {类型: 'stat', max: 20, cost: 15, 效果: [
+            {name: '血液增益', 类型: '*', value: lvl => getSequence(3, lvl) * 0.05 + 1},
+            {name: '血液容量', 类型: '*', value: lvl => getSequence(3, lvl) * 0.05 + 1}
         ]},
-        勇敢: {类型: '达到 {0} {1}', 最大值: 20, cost: 15, 效果: [
-            {name: '勇敢增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
+        勇敢: {类型: 'stat', max: 20, cost: 15, 效果: [
+            {name: '勇敢增益', 类型: '*', value: lvl => lvl * 0.05 + 1}
         ]},
         supercharge: {
             类型: '激活的卡片',
             color: '金色',
             图标: 'mdi-lightning-bolt',
-            最大值: 5,
+            max: 5,
             cost: 20,
             cooldown: () => 22 * SECONDS_PER_HOUR,
             activeCost: () => {return {};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'permanentStat', 达到 {0} {1}: 'hordeEnergy_base', value: lvl * 5 + 5}
+                    {类型: 'permanentStat', stat: 'hordeEnergy_base', value: lvl * 5 + 5}
                 ];
             },
             activeType: 'utility'
         },
     },
     skillTree: [
-        {isInnate: true, 达到等级 {0}: 0, items: ['energyConvert', 'stab']},
-        {达到等级 {0}: 1, items: ['生命值', '力量', '能量']},
-        {isChoice: true, 达到等级 {0}: 10, items: [['brawl', 'strength_2'], ['spark', 'intelligence'], ['smash', '急速']]},
-        {达到等级 {0}: 20, items: ['lootSearch', '伤害', 'energy_2']},
-        {达到等级 {0}: 30, items: ['damage_2', 'health_2', '恢复']},
-        {达到等级 {0}: 40, items: ['combatHeal', 'energy_3', 'mana']},
-        {isChoice: true, 达到等级 {0}: 50, items: [['血液'], ['勇敢'], ['supercharge']]},
+        {isInnate: true, 达到等级: 0, items: ['energyConvert', 'stab']},
+        {达到等级: 1, items: ['生命值', '力量', '能量']},
+        {isChoice: true, 达到等级: 10, items: [['brawl', 'strength_2'], ['spark', 'intelligence'], ['smash', '急速']]},
+        {达到等级: 20, items: ['lootSearch', '伤害', 'energy_2']},
+        {达到等级: 30, items: ['damage_2', 'health_2', '恢复']},
+        {达到等级: 40, items: ['combatHeal', 'energy_3', 'mana']},
+        {isChoice: true, 达到等级: 50, items: [['血液'], ['勇敢'], ['supercharge']]},
     ],
     quests: {
-        达到 {0} {1}: [
-            {达到 {0} {1}: '生命值', 类型: '基础', value: 1000},
-            {达到 {0} {1}: '智力', 类型: '总计', value: 20},
-            {达到 {0} {1}: '力量', 类型: '总计', value: 90},
+        stat: [
+            {stat: '生命值', 类型: '+', value: 1000},
+            {stat: '智力', 类型: '总计', value: 20},
+            {stat: '力量', 类型: '总计', value: 90},
         ],
         区域: [
             {area: '战场', 区域: '1'},
@@ -204,11 +204,11 @@
             {area: '爱岛', 区域: '1'},
             {area: '爱岛', 区域: '8'},
         ],
-        达到等级 {0}: [7, 15, 25, 40, 60, 80, 100, 125, 150, 175, 200],
-        击败 {0} (+{1}): [
-            {击败 {0} (+{1}): 'ohilio', 难度: 3},
-            {击败 {0} (+{1}): 'Chriz', 难度: 5},
-            {击败 {0} (+{1}): 'mina', 难度: 15},
+        达到等级: [7, 15, 25, 40, 60, 80, 100, 125, 150, 175, 200],
+        击败 (0) (+(1)): [
+            {击败 (0) (+(1)): 'ohilio', 难度: 3},
+            {击败 (0) (+(1)): 'Chriz', 难度: 5},
+            {击败 (0) (+(1)): 'mina', 难度: 15},
         ]
     }
 }

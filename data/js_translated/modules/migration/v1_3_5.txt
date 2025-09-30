@@ -1,8 +1,0 @@
-function(save) {
-    if (save.部落 && save.部落.loadout) {
-        save.部落.loadout = save.部落.loadout.map(elem => {
-            return {name: encodeURIComponent(elem.name), content: elem.content};
-        });
-    }
-    return save;
-}

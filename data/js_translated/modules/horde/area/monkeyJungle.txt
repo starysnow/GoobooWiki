@@ -163,9 +163,9 @@
             x: -1,
             y: -1.5,
             unlockedBy: '19',
-            类型: '击败 {0} (+{1})',
+            类型: '击败 (0) (+(1))',
             难度: 75,
-            击败 {0} (+{1}): ['Chriz', 'Chriz'],
+            击败 (0) (+(1)): ['Chriz', 'Chriz'],
             reward: 'hordeAreaLoveIsland'
         },
         endless: {

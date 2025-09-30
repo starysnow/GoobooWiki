@@ -1,0 +1,42 @@
+[
+  {
+    "名称": "彩色",
+    "类型": "theme",
+    "item": "彩色",
+    "pool": "{\"bloom\":{\"消耗\":{\"绽放代币\":180}}}",
+    "requirement": "",
+    "amount": ""
+  },
+  {
+    "名称": "七彩花",
+    "类型": "圣遗物",
+    "item": "七彩花",
+    "pool": "{\"bloom\":{\"消耗\":{\"绽放代币\":170}}}",
+    "requirement": "$store.state.解锁.farmFeature.see$",
+    "amount": ""
+  },
+  {
+    "名称": "加热灯泡",
+    "类型": "圣遗物",
+    "item": "加热灯泡",
+    "pool": "{\"bloom\":{\"消耗\":{\"绽放代币\":200}}}",
+    "requirement": "$store.state.解锁.灵感.see$",
+    "amount": ""
+  },
+  {
+    "名称": "cardPack_greenThumb",
+    "类型": "卡包",
+    "item": "园艺高手",
+    "pool": "{\"bloom\":{\"消耗\":{\"绽放代币\":30}}}",
+    "requirement": "",
+    "amount": ""
+  },
+  {
+    "名称": "超级鲜花",
+    "类型": "consumable",
+    "item": "超级鲜花",
+    "pool": "{\"bloom\":{\"消耗\":{\"绽放代币\":1}}}",
+    "requirement": "$store.state.解锁.肥料.see$",
+    "amount": "20"
+  }
+]

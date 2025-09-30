@@ -1,58 +1,58 @@
 {
     书籍: 钱包: {类型: '书籍', raiseOtherCap: '钱包', requirement() {
         return store.state.升级成本.item.钱包.highestLevel >= 12;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 10)};
     }, 效果: [
-        {name: 'upgradeVillageWalletCap', 类型: '基础', value: lvl => lvl * 2}
+        {name: 'upgradeVillageWalletCap', 类型: '+', value: lvl => lvl * 2}
     ]},
     书籍: 资源袋: {类型: '书籍', raiseOtherCap: '资源包', requirement() {
         return store.state.升级成本.item.资源包.highestLevel >= 10;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 15)};
     }, 效果: [
-        {name: 'upgradeVillageResourceBagCap', 类型: '基础', value: lvl => lvl * 2}
+        {name: 'upgradeVillageResourceBagCap', 类型: '+', value: lvl => lvl * 2}
     ]},
     书籍: 金属袋: {类型: '书籍', raiseOtherCap: '金属包', requirement() {
         return store.state.升级成本.item.金属包.highestLevel >= 5;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 16)};
     }, 效果: [
-        {name: 'upgradeVillageMetalBagCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeVillageMetalBagCap', 类型: '+', value: lvl => lvl}
     ]},
     书籍: 财政部: {类型: '书籍', raiseOtherCap: '财政部', requirement() {
         return store.state.升级成本.item.财政部.highestLevel >= 10;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 30)};
     }, 效果: [
-        {name: 'upgradeVillageTreasuryCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeVillageTreasuryCap', 类型: '+', value: lvl => lvl}
     ]},
     书籍: 存储: {类型: '书籍', raiseOtherCap: '存储', requirement() {
         return store.state.升级成本.item.存储.highestLevel >= 20;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 90)};
     }, 效果: [
-        {name: 'upgradeVillageStorageCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeVillageStorageCap', 类型: '+', value: lvl => lvl}
     ]},
     书籍: 棚子: {类型: '书籍', raiseOtherCap: '棚子', requirement() {
         return store.state.升级成本.item.棚子.highestLevel >= 5;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 110)};
     }, 效果: [
-        {name: 'upgradeVillageShedCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeVillageShedCap', 类型: '+', value: lvl => lvl}
     ]},
     书籍: 学校: {类型: '书籍', raiseOtherCap: '学校', requirement() {
         return store.state.升级成本.item.学校.highestLevel >= 5;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 180)};
     }, 效果: [
-        {name: 'upgradeVillageSchoolCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeVillageSchoolCap', 类型: '+', value: lvl => lvl}
     ]},
     书籍: 大存储空间: {类型: '书籍', raiseOtherCap: '大存储空间', requirement() {
         return store.state.升级成本.item.大存储空间.highestLevel >= 20;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 480)};
     }, 效果: [
-        {name: 'upgradeVillageBigStorageCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeVillageBigStorageCap', 类型: '+', value: lvl => lvl}
     ]},
 }

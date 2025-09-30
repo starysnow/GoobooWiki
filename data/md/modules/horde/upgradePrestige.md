@@ -1,0 +1,40 @@
+| 名称  | 类型  | 上限  | 消耗  | 效果  | requirementBase | requirementStat | requirementValue | requirement |
+| --- | --- | --- | --- | --- | --------------- | --------------- | ---------------- | ----------- |
+| 愤怒 | 声望 | 10 | ${ 强大的灵魂: {(1.55)}^{lvl}  \cdot  60 }$ | 攻击*｛$lvl  \cdot  0.25 + 1$｝; 暴击率+｛$lvl  \cdot  0.01$｝ |  |  |  |  |
+| 和平 | 声望 | 10 | ${ 强大的灵魂: {(1.55)}^{lvl}  \cdot  60 }$ | 生命值*｛$lvl  \cdot  0.25 + 1$｝; 重生时间+｛$lvl  \cdot  -5$｝ |  |  |  |  |
+| 牛奶 | 声望 | 45 | ${ 强大的灵魂: {(1.65)}^{lvl}  \cdot  80 }$ | 骨头增益+｛${(2)}^{lvl}  \cdot  50$｝; 骨头增益*｛$lvl  \cdot  0.2 + 1$｝; 骨头容量*｛${(1.75)}^{lvl}$｝ |  |  |  |  |
+| 屠夫 | 声望 | 10 | ${ 强大的灵魂: {(1.75)}^{lvl}  \cdot  100 }$ | 怪物零件增益+｛$lvl  \cdot  0.05$｝; 怪物零件容量+｛$lvl  \cdot  30$｝ |  |  |  |  |
+| 新手运气 | 声望 | 120 | ${ 强大的灵魂: {(1.9)}^{lvl}  \cdot  375 }$ | 装备几率*｛$lvl  \cdot  0.2 + 1$｝; 腐败的灵魂增益*｛$lvl  \cdot  0.08 + 1$｝ | requirementBase | requirementStat | 26 |  |
+| 平衡 | 声望 |  | ${ 强大的灵魂: {(1.55)}^{lvl}  \cdot  1100 }$ | 攻击*｛${(1.12)}^{lvl}$｝; 生命值*｛${(1.12)}^{lvl}$｝ | requirementBase | requirementStat | 31 |  |
+| 进阶运气 | 声望 |  | ${ 强大的灵魂: {(1.9)}^{lvl}  \cdot  4250 }$ | 传家宝几率+｛$Math.min(lvl  \cdot  0.0025, 0.1)$｝; 怀旧之情+｛$lvl  \cdot  5$｝ | requirementBase | requirementStat | 36 |  |
+| 骨头商人 | 声望 | 150 | ${ 强大的灵魂: {(1.65)}^{lvl}  \cdot  18.5K }$ | 骨头增益*｛${(1.3)}^{lvl}$｝; 怪物零件容量*｛${(1.1)}^{lvl}$｝ | requirementBase | requirementStat | 41 |  |
+| 灵魂牢笼 | 声望 | 80 | ${ 强大的灵魂: {(2.35)}^{lvl}  \cdot  65K }$ | 腐败的灵魂增益*｛$lvl  \cdot  0.05 + 1$｝; 腐败的灵魂容量*｛${(1.4)}^{lvl}$｝ | requirementBase | requirementStat | 46 |  |
+| 进攻之书 | 声望 | 50 | ${ 强大的灵魂: {(1.3)}^{lvl}  \cdot  350K }$ | 力量效果*｛${(1.1)}^{lvl}  \cdot  (lvl  \cdot  0.15 + 1)$｝ | requirementBase | requirementStat | 51 |  |
+| 防御之书 | 声望 | 50 | ${ 强大的灵魂: {(1.3)}^{lvl}  \cdot  1.25M }$ | 韧效果*｛${(1.1)}^{lvl}  \cdot  (lvl  \cdot  0.15 + 1)$｝ | requirementBase | requirementStat | 56 |  |
+| 灰圈 | 声望 |  | ${ 强大的灵魂: {(lvl  \cdot  0.02 + 1.25)}^{lvl}  \cdot  9M }$ | 腐败+｛$lvl  \cdot  -0.12$｝ | requirementBase | requirementStat | 61 |  |
+| 遗愿 | 声望 | 15 | ${ 强大的灵魂: {(lvl  \cdot  0.5 + 3)}^{lvl}  \cdot  75M }$ | 最大传家宝增益+｛$lvl$｝ | requirementBase | requirementStat | 66 |  |
+| 蜡烛圈 | 声望 |  | ${ 强大的灵魂: {(lvl  \cdot  0.002 + 1.3)}^{lvl}  \cdot  1.7B }$ | 腐败的灵魂增益*｛${(1.03)}^{lvl}$｝; 重生时间+｛$lvl  \cdot  -5$｝ | requirementBase | requirementStat | 71 |  |
+| 收容室 | 声望 | 100 | ${ 强大的灵魂: {(1.3 + lvl  \cdot  0.01)}^{lvl}  \cdot  100B }$ | 骨头容量*｛${(1.2)}^{lvl}$｝; 传家宝效果*｛$lvl  \cdot  0.03 + 1$｝ | requirementBase | requirementStat | 81 |  |
+| 陵墓 | 声望 | 80 | ${ 强大的灵魂: {(lvl  \cdot  0.005 + 1.4)}^{lvl}  \cdot  2.4T }$ | 骨头增益*｛${(1.3)}^{lvl}$｝; 怪物零件增益*｛${(1.15)}^{lvl}$｝; 腐败的灵魂增益*｛${(1.075)}^{lvl}$｝ | requirementBase | requirementStat | 91 |  |
+| 战斗研究 | 声望 |  | ${ 强大的灵魂: {(1.45 + lvl  \cdot  0.025)}^{lvl}  \cdot  85Qa }$ | 精通点数增益*｛${(1.1)}^{lvl}  \cdot  (lvl  \cdot  0.1 + 1)$｝ | requirementBase | requirementStat | 111 |  |
+| 骨室 | 声望 |  | ${ 强大的灵魂: {(2.7 + lvl  \cdot  0.05)}^{lvl}  \cdot  275Qi }$ | 骨头容量*｛${(2)}^{lvl}$｝ | requirementBase | requirementStat | 131 |  |
+| 深仇大恨 | 声望 | 30 | ${ 强大的灵魂: {(lvl  \cdot  0.02 + 1.6)}^{lvl}  \cdot  2.25Sx }$ | 攻击*｛${(1.06)}^{lvl}  \cdot  (lvl  \cdot  0.1 + 1)$｝; 生命值*｛${(1.03)}^{lvl}  \cdot  (lvl  \cdot  0.05 + 1)$｝ | requirementBase | requirementStat | 151 |  |
+| 精神诱惑 | 声望 | 50 | ${ 强大的灵魂: {(1.25)}^{lvl}  \cdot  333Sp }$ | 腐败的灵魂增益*｛$lvl  \cdot  0.08 + 1$｝ | requirementBase | requirementStat | 181 |  |
+| 神秘的电容器 | 声望 |  | ${ 强大的灵魂: {(lvl  \cdot  0.1 + 2)}^{lvl}  \cdot  15N }$ | 神秘碎片容量+｛$lvl$｝ | requirementBase | requirementStat | 211 |  |
+| 皇家宝剑 | 声望 |  | ${ 王冠: \text{四舍五入}({(1.08)}^{lvl}  \cdot  (lvl + 1)  \cdot  10) }$ | 攻击*｛${(1.05)}^{lvl}  \cdot  (0.1  \cdot  lvl + 1)$｝ | requirementBase | requirementStat | 140 |  |
+| 皇家盔甲 | 声望 |  | ${ 王冠: \text{四舍五入}({(1.08)}^{lvl}  \cdot  (lvl + 1)  \cdot  14) }$ | 生命值*｛${(1.05)}^{lvl}  \cdot  (0.1  \cdot  lvl + 1)$｝ |  |  |  | $store.state.解锁.皇家盔甲升级.use$ |
+| 皇家存储 | 声望 |  | ${ 王冠: \text{四舍五入}({(1.08)}^{lvl}  \cdot  (lvl + 1)  \cdot  28) }$ | 骨头增益*｛${(1.05)}^{lvl}  \cdot  (0.1  \cdot  lvl + 1)$｝; 骨头容量*｛${(1.05)}^{lvl}  \cdot  (0.1  \cdot  lvl + 1)$｝ |  |  |  | $store.state.解锁.皇家存储升级.use$ |
+| 皇家屠夫 | 声望 |  | ${ 王冠: \text{四舍五入}({(1.08)}^{lvl}  \cdot  (lvl + 1)  \cdot  55) }$ | 怪物零件增益*｛${(1.05)}^{lvl}  \cdot  (0.05  \cdot  lvl + 1)$｝ |  |  |  | $store.state.解锁.皇家屠夫升级.use$ |
+| 皇家墓穴 | 声望 |  | ${ 王冠: \text{四舍五入}({(1.08)}^{lvl}  \cdot  (lvl + 1)  \cdot  111) }$ | 腐败的灵魂增益*｛$getSequence(5, lvl)  \cdot  0.01 + 1$｝; 腐败的灵魂容量*｛$getSequence(5, lvl)  \cdot  0.01 + 1$｝ |  |  |  | $store.state.解锁.皇家地窖升级.use$ |
+| 皇家秘密 | 声望 |  | ${ 王冠: \text{四舍五入}({(1.08)}^{lvl}  \cdot  (lvl + 1)  \cdot  222) }$ | 神秘碎片容量+｛$lvl$｝ |  |  |  | $store.state.解锁.皇家秘密升级.use$ |
+| 精确 | 声望 |  | ${ 勇敢: {(lvl  \cdot  0.01 + 1.55)}^{lvl}  \cdot  1000 }$ | 攻击*｛${(1.15)}^{lvl}$｝ |  |  |  | $store.state.解锁.hordeClassesSubfeature.see$ |
+| 解救 | 声望 |  | ${ 勇敢: {(lvl  \cdot  0.01 + 1.55)}^{lvl}  \cdot  1250 }$ | 生命值*｛${(1.15)}^{lvl}$｝ |  |  |  | $store.state.解锁.hordeClassesSubfeature.see$ |
+| 决心 | 声望 |  | ${ 勇敢: {(lvl  \cdot  0.02 + 2.35)}^{lvl}  \cdot  6000 }$ | 腐败的灵魂增益*｛${(1.08)}^{lvl}$｝; 勇敢增益*｛${(1.08)}^{lvl}$｝ | requirementBase2 |  | 7 |  |
+| 教育 | 声望 |  | ${ 勇敢: {(lvl  \cdot  0.01 + 1.6)}^{lvl}  \cdot  11K }$ | 等级时间*｛${(1 / 1.1)}^{lvl}$｝ | requirementBase2 |  | 10 |  |
+| 血室 | 声望 |  | ${ 勇敢: {(lvl  \cdot  0.05 + 2.5)}^{lvl}  \cdot  16K }$ | 骨头容量*｛${(1.75)}^{lvl}$｝; 血液容量*｛${(1.5)}^{lvl}$｝ | requirementBase2 |  | 12 |  |
+| 石肤 | 声望 |  | ${ 勇敢: {(lvl + 5)}^{lvl}  \cdot  70K }$ | 生命值*｛${(1.5)}^{lvl}$｝; 治疗*｛${(1 / 1.2)}^{lvl}$｝ | requirementBase2 |  | 16 |  |
+| 大学 | 声望 |  | ${ 勇敢: {(lvl  \cdot  0.01 + 1.85)}^{lvl}  \cdot  250K }$ | 等级增量*｛${(1 / 1.1)}^{lvl}$｝ | requirementBase2 |  | 20 |  |
+| 发现 | 声望 |  | ${ 勇敢: {(lvl  \cdot  0.25 + 4)}^{lvl}  \cdot  5M }$ | 最大传家宝增益+｛$lvl$｝; 饰品最大增益*｛$lvl  \cdot  0.1 + 1$｝ | requirementBase2 |  | 27 |  |
+| 心灵专注 | 声望 |  | ${ 勇敢: {(lvl  \cdot  0.5 + 2)}^{lvl}  \cdot  28M }$ | 治疗*｛${(1.1)}^{lvl}$｝ | requirementBase2 |  | 33 |  |
+| 清洗 | 声望 |  | ${ 勇敢: {(lvl  \cdot  0.015 + 1.25)}^{lvl}  \cdot  150B }$ | 腐败+｛$lvl  \cdot  -0.09$｝ | requirementBase2 |  | 45 |  |
+| 混沌箱 | 声望 | 10 | ${ 勇敢: {(10)}^{lvl}  \cdot  1Qa }$ | 攻击*｛${(1.35)}^{lvl}$｝; 装备几率*｛$lvl >= 1 ? \text{向下取整}((lvl + 4) / 5)  \cdot  0.5 + 1 : null$｝; 最大传家宝增益+｛$lvl >= 2 ? \text{向下取整}((lvl + 3) / 5)  \cdot  5 : null$｝; 精通点数增益*｛$lvl >= 3 ? \text{向下取整}((lvl + 2) / 5)  \cdot  0.5 + 1 : null$｝; 神秘碎片容量+｛$lvl >= 4 ? \text{向下取整}((lvl + 1) / 5)  \cdot  10 : null$｝; 级技能点数+｛$lvl >= 5 ? \text{向下取整}(lvl / 5) : null$｝ | requirementBase2 |  | 65 |  |

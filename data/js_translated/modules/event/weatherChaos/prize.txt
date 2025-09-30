@@ -3,14 +3,14 @@
         类型: 'theme',
         item: '雨色',
         pool: {
-            weatherChaos: {price: {天气混乱代币: 260}}
+            weatherChaos: {消耗: {天气混乱代币: 260}}
         }
     },
     垃圾箱: {
         类型: '圣遗物',
         item: '垃圾箱',
         pool: {
-            weatherChaos: {price: {天气混乱代币: 130}}
+            weatherChaos: {消耗: {天气混乱代币: 130}}
         }
     },
     手提箱: {
@@ -20,14 +20,14 @@
             return store.state.解锁.hordeHeirlooms.see;
         },
         pool: {
-            weatherChaos: {price: {天气混乱代币: 155}}
+            weatherChaos: {消耗: {天气混乱代币: 155}}
         }
     },
     cardPack_fishingForFun: {
         类型: '卡包',
         item: '钓鱼为乐',
         pool: {
-            weatherChaos: {price: {天气混乱代币: 30}}
+            weatherChaos: {消耗: {天气混乱代币: 30}}
         }
     },
     臭泥: {
@@ -38,7 +38,7 @@
             return store.state.解锁.肥料.see;
         },
         pool: {
-            weatherChaos: {price: {天气混乱代币: 1}}
+            weatherChaos: {消耗: {天气混乱代币: 1}}
         }
     }
 }

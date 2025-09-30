@@ -1,0 +1,27 @@
+[
+  {
+    "名称": "expandVault",
+    "消耗": "$getSequence(2, lvl)  \\cdot  500 + 2000$",
+    "效果": "currencyGemTopazCap+｛$lvl  \\cdot  300$｝"
+  },
+  {
+    "名称": "persuadeInvestors",
+    "消耗": "$getSequence(2, lvl)  \\cdot  500 + 2000$",
+    "效果": "金尘容量+｛$lvl  \\cdot  4000$｝"
+  },
+  {
+    "名称": "improveCreditScore",
+    "消耗": "$getSequence(2, lvl)  \\cdot  500 + 2000$",
+    "效果": "投资规模+｛$lvl  \\cdot  200$｝; 贷款规模+｛$lvl  \\cdot  200$｝"
+  },
+  {
+    "名称": "businessMarketing",
+    "消耗": "$getSequence(2, lvl)  \\cdot  500 + 2000$",
+    "效果": "商户优惠+｛$lvl$｝"
+  },
+  {
+    "名称": "cardTournament",
+    "消耗": "$getSequence(2, lvl)  \\cdot  500 + 2000$",
+    "效果": "银行卡包机会+｛$0.5 - {(0.8)}^{lvl}  \\cdot  0.5$｝"
+  }
+]

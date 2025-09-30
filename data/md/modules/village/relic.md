@@ -1,11 +1,11 @@
 | 名称  | 图标  | color | 效果  |
 | --- | --- | ----- | --- |
-| 泥砖 | mdi-wall | 棕色 | [{"name":"棚子","类型":"保留","value":true},{"name":"水增益","类型":"mult","value":1.5}] |
-| 树苗 | mdi-sprout | 光-绿色 | [{"name":"棚子","类型":"保留","value":true},{"name":"植物纤维增益","类型":"mult","value":1.5}] |
-| 钥匙链 | mdi-key-chain | 光-灰色 | [{"name":"小房子","类型":"保留","value":true},{"name":"木头增益","类型":"mult","value":1.5}] |
-| 宝箱 | mdi-treasure-chest | 金色 | [{"name":"财政部","类型":"保留","value":true},{"name":"钱包","类型":"保留","value":true},{"name":"资源包","类型":"保留","value":true},{"name":"金属包","类型":"保留","value":true}] |
-| 螺丝刀 | mdi-screwdriver | indigo | [{"name":"起重机","类型":"保留","value":true},{"name":"石头增益","类型":"mult","value":1.5}] |
-| 玫瑰 | mdi-flower | 红色 | [{"name":"花园","类型":"保留","value":true},{"name":"水井","类型":"保留","value":true}] |
-| 金钥匙 | mdi-key-chain | 金色 | [{"name":"房子","类型":"保留","value":true},{"name":"微型铁匠","类型":"保留","value":true}] |
-| 导师 | mdi-account-tie | indigo | [{"name":"锯木厂","类型":"保留","value":true},{"name":"隧道","类型":"保留","value":true}] |
-| 地球仪 | mdi-globe-model | 绿色 | [{"name":"图书馆","类型":"保留","value":true},{"name":"玻璃吹制厂","类型":"保留","value":true}] |
+| 泥砖 | <i class="mdi mdi-wall"></i> | 棕色 | 棚子保留｛true｝; 水增益*｛1.5｝ |
+| 树苗 | <i class="mdi mdi-sprout"></i> | 光-绿色 | 棚子保留｛true｝; 植物纤维增益*｛1.5｝ |
+| 钥匙链 | <i class="mdi mdi-key-chain"></i> | 光-灰色 | 小房子保留｛true｝; 木头增益*｛1.5｝ |
+| 宝箱 | <i class="mdi mdi-treasure-chest"></i> | 金色 | 财政部保留｛true｝; 钱包保留｛true｝; 资源包保留｛true｝; 金属包保留｛true｝ |
+| 螺丝刀 | <i class="mdi mdi-screwdriver"></i> | indigo | 起重机保留｛true｝; 石头增益*｛1.5｝ |
+| 玫瑰 | <i class="mdi mdi-flower"></i> | 红色 | 花园保留｛true｝; 水井保留｛true｝ |
+| 金钥匙 | <i class="mdi mdi-key-chain"></i> | 金色 | 房子保留｛true｝; 微型铁匠保留｛true｝ |
+| 导师 | <i class="mdi mdi-account-tie"></i> | indigo | 锯木厂保留｛true｝; 隧道保留｛true｝ |
+| 地球仪 | <i class="mdi mdi-globe-model"></i> | 绿色 | 图书馆保留｛true｝; 玻璃吹制厂保留｛true｝ |

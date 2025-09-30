@@ -1,0 +1,42 @@
+[
+  {
+    "名称": "波浪",
+    "类型": "theme",
+    "item": "波浪",
+    "pool": "{\"summerFestival\":{\"消耗\":{\"夏季节日代币\":240}}}",
+    "requirement": "",
+    "amount": ""
+  },
+  {
+    "名称": "热带帐篷",
+    "类型": "圣遗物",
+    "item": "热带帐篷",
+    "pool": "{\"summerFestival\":{\"消耗\":{\"夏季节日代币\":150}}}",
+    "requirement": "$store.state.解锁.villageFeature.see$",
+    "amount": ""
+  },
+  {
+    "名称": "水果篮",
+    "类型": "圣遗物",
+    "item": "水果篮",
+    "pool": "{\"summerFestival\":{\"消耗\":{\"夏季节日代币\":170}}}",
+    "requirement": "$store.state.解锁.farmFeature.see$",
+    "amount": ""
+  },
+  {
+    "名称": "cardPack_charmingShip",
+    "类型": "卡包",
+    "item": "迷人的船",
+    "pool": "{\"summerFestival\":{\"消耗\":{\"夏季节日代币\":30}}}",
+    "requirement": "",
+    "amount": ""
+  },
+  {
+    "名称": "热带水",
+    "类型": "consumable",
+    "item": "热带水",
+    "pool": "{\"summerFestival\":{\"消耗\":{\"夏季节日代币\":1}}}",
+    "requirement": "$store.state.解锁.肥料.see$",
+    "amount": "20"
+  }
+]

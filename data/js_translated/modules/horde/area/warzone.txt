@@ -105,9 +105,9 @@
             x: 0,
             y: 0,
             unlockedBy: '10',
-            类型: '击败 {0} (+{1})',
+            类型: '击败 (0) (+(1))',
             难度: 30,
-            击败 {0} (+{1}): ['警卫 A', '警卫 B', 'ohilio'],
+            击败 (0) (+(1)): ['警卫 A', '警卫 B', 'ohilio'],
             reward: 'hordeAreaMonkeyJungle'
         },
         endless: {

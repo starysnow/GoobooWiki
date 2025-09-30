@@ -1,0 +1,107 @@
+[
+  {
+    "名称": "卡片力量",
+    "color": "红色",
+    "图标": "<i class=\"mdi mdi-sword\"></i>",
+    "效果": "攻击*｛$lvl  \\cdot  0.2 + 1$｝",
+    "minZone": ""
+  },
+  {
+    "名称": "fortitude",
+    "color": "绿色",
+    "图标": "<i class=\"mdi mdi-heart\"></i>",
+    "效果": "生命值*｛$lvl  \\cdot  0.2 + 1$｝",
+    "minZone": ""
+  },
+  {
+    "名称": "wealth",
+    "color": "金色",
+    "图标": "<i class=\"mdi mdi-circle-multiple\"></i>",
+    "效果": "骨头增益*｛$lvl  \\cdot  0.15 + 1$｝; 怪物零件增益*｛$lvl  \\cdot  0.05 + 1$｝",
+    "minZone": ""
+  },
+  {
+    "名称": "spirit",
+    "color": "紫色",
+    "图标": "<i class=\"mdi mdi-ghost\"></i>",
+    "效果": "腐败的灵魂增益*｛$lvl  \\cdot  0.06 + 1$｝",
+    "minZone": "40"
+  },
+  {
+    "名称": "sharpsight",
+    "color": "青色",
+    "图标": "<i class=\"mdi mdi-magnify\"></i>",
+    "效果": "装备几率*｛$lvl  \\cdot  0.05 + 1$｝",
+    "minZone": "50"
+  },
+  {
+    "名称": "reaping",
+    "color": "粉色",
+    "图标": "<i class=\"mdi mdi-skull\"></i>",
+    "效果": "腐烂的肉体增益+｛$lvl  \\cdot  0.03$｝",
+    "minZone": "60"
+  },
+  {
+    "名称": "remembrance",
+    "color": "deep-紫色",
+    "图标": "<i class=\"mdi mdi-grave-stone\"></i>",
+    "效果": "腐败的灵魂容量*｛$lvl  \\cdot  0.05 + 1$｝",
+    "minZone": "70"
+  },
+  {
+    "名称": "holding",
+    "color": "棕色",
+    "图标": "<i class=\"mdi mdi-dresser\"></i>",
+    "效果": "骨头容量*｛$lvl  \\cdot  0.1 + 1$｝; 怪物零件容量*｛$lvl  \\cdot  0.02 + 1$｝",
+    "minZone": "80"
+  },
+  {
+    "名称": "expertise",
+    "color": "光-blue",
+    "图标": "<i class=\"mdi mdi-book-open-variant\"></i>",
+    "效果": "精通点数增益*｛$lvl  \\cdot  0.01 + 1$｝",
+    "minZone": "100"
+  },
+  {
+    "名称": "神秘",
+    "color": "teal",
+    "图标": "<i class=\"mdi mdi-help-box\"></i>",
+    "效果": "神秘碎片几率*｛$lvl  \\cdot  0.001 + 1$｝",
+    "minZone": "120"
+  },
+  {
+    "名称": "砖块",
+    "color": "樱桃色",
+    "图标": "<i class=\"mdi mdi-wall\"></i>",
+    "效果": "骨头增益*｛$lvl  \\cdot  0.05 + 1$｝; 暴击伤害+｛$({(lvl / 10 + 1)}^{0.4} - 1)  \\cdot  0.01$｝",
+    "minZone": "Infinity"
+  },
+  {
+    "名称": "heat",
+    "color": "橙色-红色",
+    "图标": "<i class=\"mdi mdi-fire\"></i>",
+    "效果": "攻击*｛$lvl  \\cdot  0.05 + 1$｝; 暴击率+｛$Math.log(lvl / 10 + 1)  \\cdot  0.008$｝",
+    "minZone": "Infinity"
+  },
+  {
+    "名称": "ice",
+    "color": "skyblue",
+    "图标": "<i class=\"mdi mdi-snowflake-variant\"></i>",
+    "效果": "生命值*｛$lvl  \\cdot  0.05 + 1$｝; 恢复+｛$Math.log(lvl / 10 + 1)  \\cdot  0.003$｝",
+    "minZone": "Infinity"
+  },
+  {
+    "名称": "crystal",
+    "color": "indigo",
+    "图标": "<i class=\"mdi mdi-billiards-rack\"></i>",
+    "效果": "神秘碎片几率*｛$lvl  \\cdot  0.001 + 1$｝; 神秘碎片容量+｛$\\text{向下取整}(Math.log(lvl + 2))$｝",
+    "minZone": "Infinity"
+  },
+  {
+    "名称": "活力",
+    "color": "光-绿色",
+    "图标": "<i class=\"mdi mdi-heart-multiple\"></i>",
+    "效果": "骨头容量*｛$lvl  \\cdot  0.001 + 1$｝; 治疗*｛$Math.log(lvl + 1)  \\cdot  0.1 + 1$｝",
+    "minZone": "Infinity"
+  }
+]

@@ -1,353 +1,353 @@
 {
-    营火: {cap: 1, 保留: true, 图标: 'mdi-campfire', 笔记: 'village_1', price() {
+    营火: {上限: 1, 保留: true, 图标: 'mdi-campfire', 笔记: 'village_1', 消耗() {
         return {木头: 5, 石头: 5};
-    }, 减少制作时间至 {0}() {
+    }, 制作时间() {
         return 5;
     }, 效果: [
         {name: '层 1 建筑', 类型: '解锁', value: lvl => lvl >= 1}
     ]},
-    棚子: {cap: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-tent', 笔记: 'village_2', requirement() {
+    棚子: {上限: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-tent', 笔记: 'village_2', requirement() {
         return store.state.解锁.层 1 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {植物纤维: Math.pow(1.35, lvl) * 15, 木头: Math.pow(1.32, lvl) * 10};
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.25, lvl) * 10);
     }, 效果: [
-        {name: '工人', 类型: '基础', value: lvl => lvl}
+        {name: '工人', 类型: '+', value: lvl => lvl}
     ]},
-    农场: {cap: 10, capMult: true, 保留: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-tractor', 笔记: 'village_3', requirement() {
+    农场: {上限: 10, capMult: true, 保留: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-tractor', 笔记: 'village_3', requirement() {
         return store.state.解锁.层 1 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {木头: Math.pow(1.65, lvl) * 200, 石头: Math.pow(1.65, lvl) * 400};
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.33, lvl) * 40);
     }, 效果: [
         {name: '农夫', 类型: 'villageJob', value: lvl => lvl},
-        {name: '植物纤维容量', 类型: '基础', value: lvl => lvl > 1 ? (250 * (lvl - 1)) : null}
+        {name: '植物纤维容量', 类型: '+', value: lvl => lvl > 1 ? (250 * (lvl - 1)) : null}
     ]},
-    种植园: {cap: 10, capMult: true, 保留: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-forest', 笔记: 'village_4', requirement() {
+    种植园: {上限: 10, capMult: true, 保留: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-forest', 笔记: 'village_4', requirement() {
         return store.state.解锁.层 1 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {植物纤维: Math.pow(1.65, lvl) * 750, 石头: Math.pow(1.65, lvl) * 430};
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.33, lvl) * 50);
     }, 效果: [
         {name: '收割机', 类型: 'villageJob', value: lvl => lvl},
-        {name: '木头容量', 类型: '基础', value: lvl => lvl > 1 ? (250 * (lvl - 1)) : null}
+        {name: '木头容量', 类型: '+', value: lvl => lvl > 1 ? (250 * (lvl - 1)) : null}
     ]},
-    矿山: {cap: 10, capMult: true, 保留: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-tunnel', 笔记: 'village_5', requirement() {
+    矿山: {上限: 10, capMult: true, 保留: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-tunnel', 笔记: 'village_5', requirement() {
         return store.state.解锁.层 1 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {木头: Math.pow(1.65, lvl) * 1150};
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.33, lvl) * 60);
     }, 效果: [
         {name: '矿工', 类型: 'villageJob', value: lvl => lvl},
-        {name: '石头容量', 类型: '基础', value: lvl => lvl > 1 ? (250 * (lvl - 1)) : null}
+        {name: '石头容量', 类型: '+', value: lvl => lvl > 1 ? (250 * (lvl - 1)) : null}
     ]},
-    社区中心: {cap: 1, 保留: true, 图标: 'mdi-home-account', 笔记: 'village_6', requirement() {
+    社区中心: {上限: 1, 保留: true, 图标: 'mdi-home-account', 笔记: 'village_6', requirement() {
         return store.state.解锁.层 1 建筑.use;
-    }, 减少制作时间至 {0}() {
+    }, 制作时间() {
         return 750;
-    }, price() {
+    }, 消耗() {
         return {木头: 1800, 石头: 1650, 金属: 100};
     }, 效果: [
         {name: '层 2 建筑', 类型: '解锁', value: lvl => lvl >= 1}
     ]},
-    小房子: {cap: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-home-variant', 笔记: 'village_7', requirement() {
+    小房子: {上限: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-home-variant', 笔记: 'village_7', requirement() {
         return store.state.解锁.层 2 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {木头: Math.pow(1.35, lvl) * 2750, 金属: Math.pow(1.35, lvl) * 250, 水: Math.pow(1.5, lvl) * 400};
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.25, lvl) * 210);
     }, 效果: [
-        {name: '工人', 类型: '基础', value: lvl => lvl}
+        {name: '工人', 类型: '+', value: lvl => lvl}
     ]},
-    起重机: {cap: 20, 图标: 'mdi-crane', 笔记: 'village_31', requirement() {
+    起重机: {上限: 20, 图标: 'mdi-crane', 笔记: 'village_31', requirement() {
         return store.state.解锁.层 2 建筑.use;
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.2, lvl) * 45);
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {木头: Math.pow(1.5, lvl) * 580, 金属: Math.pow(1.35, lvl) * 275};
     }, 效果: [
-        {name: '建造速度', 类型: '基础', value: lvl => lvl}
+        {name: '建造速度', 类型: '+', value: lvl => lvl}
     ]},
-    财政部: {cap: 10, hasDescription: true, capMult: true, 图标: 'mdi-treasure-chest', 笔记: 'village_9', requirement() {
+    财政部: {上限: 10, hasDescription: true, capMult: true, 图标: 'mdi-treasure-chest', 笔记: 'village_9', requirement() {
         return store.state.解锁.层 2 建筑.use;
-    }, price(lvl) {
-        let obj = {植物纤维: Math.pow(1.25, Math.最大值(0, lvl - 9)) * Math.pow(1.5, lvl) * 2600};
+    }, 消耗(lvl) {
+        let obj = {植物纤维: Math.pow(1.25, Math.max(0, lvl - 9)) * Math.pow(1.5, lvl) * 2600};
         if (lvl <= 0) {
             obj.水果 = 325;
             obj.仅粮食 = 550;
         }
         return obj;
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.4, lvl) * 240);
     }, 效果: [
         {name: '金币升级', 类型: '解锁', value: lvl => lvl >= 1},
-        {name: '税率', 类型: '基础', value: lvl => splicedLinear(0.025, 0.01, 10, lvl)}
+        {name: '税率', 类型: '+', value: lvl => splicedLinear(0.025, 0.01, 10, lvl)}
     ]},
-    存储: {cap: 20, capMult: true, 图标: 'mdi-database', 笔记: 'village_8', requirement() {
+    存储: {上限: 20, capMult: true, 图标: 'mdi-database', 笔记: 'village_8', requirement() {
         return store.state.解锁.层 2 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         let obj = {植物纤维: Math.pow(lvl * 0.02 + 1.15, lvl) * 900, 木头: Math.pow(lvl * 0.02 + 1.15, lvl) * 900, 石头: Math.pow(lvl * 0.02 + 1.18, lvl) * 1400};
         if (lvl <= 0) {
             obj.金币 = 50;
         }
         return obj;
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.15, lvl) * 225);
     }, 效果: [
-        {name: '木头容量', 类型: 'mult', value: lvl => splicedPowLinear(1.2, 0.1, 20, lvl)},
-        {name: '植物纤维容量', 类型: 'mult', value: lvl => splicedPowLinear(1.2, 0.1, 20, lvl)},
-        {name: '石头容量', 类型: 'mult', value: lvl => splicedPowLinear(1.2, 0.1, 20, lvl)},
-        {name: '金属容量', 类型: 'mult', value: lvl => lvl > 5 ? splicedPowLinear(1.2, 0.1, 15, lvl - 5) : null}
+        {name: '木头容量', 类型: '*', value: lvl => splicedPowLinear(1.2, 0.1, 20, lvl)},
+        {name: '植物纤维容量', 类型: '*', value: lvl => splicedPowLinear(1.2, 0.1, 20, lvl)},
+        {name: '石头容量', 类型: '*', value: lvl => splicedPowLinear(1.2, 0.1, 20, lvl)},
+        {name: '金属容量', 类型: '*', value: lvl => lvl > 5 ? splicedPowLinear(1.2, 0.1, 15, lvl - 5) : null}
     ]},
-    锻造: {cap: 20, 图标: 'mdi-anvil', requirement() {
+    锻造: {上限: 20, 图标: 'mdi-anvil', requirement() {
         return store.state.解锁.层 2 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {石头: Math.pow(lvl * 0.02 + 1.25, lvl) * 2750, 金属: Math.pow(lvl * 0.02 + 1.18, lvl) * 250};
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.3, lvl) * 180);
     }, 效果: [
-        {name: '金属增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '金属容量', 类型: '基础', value: lvl => lvl * 200}
+        {name: '金属增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '金属容量', 类型: '+', value: lvl => lvl * 200}
     ]},
-    保险箱: {cap: 20, 图标: 'mdi-safe', 笔记: 'village_10', requirement() {
+    保险箱: {上限: 20, 图标: 'mdi-safe', 笔记: 'village_10', requirement() {
         return store.state.解锁.层 2 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {金属: Math.pow(lvl * 0.02 + 1.2, lvl) * 900, 金币: Math.pow(lvl * 0.02 + 1.18, lvl) * 150};
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.3, lvl) * 270);
     }, 效果: [
-        {name: '金币容量', 类型: '基础', value: lvl => lvl * 100},
-        {name: '金币容量', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)}
+        {name: '金币容量', 类型: '+', value: lvl => lvl * 100},
+        {name: '金币容量', 类型: '*', value: lvl => Math.pow(1.2, lvl)}
     ]},
-    水井: {cap: 10, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-water-well', 笔记: 'village_11', requirement() {
+    水井: {上限: 10, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-water-well', 笔记: 'village_11', requirement() {
         return store.state.解锁.层 2 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {植物纤维: Math.pow(1.65, lvl) * 6800, 木头: Math.pow(1.65, lvl) * 4500, 石头: Math.pow(1.65, lvl) * 5000};
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.33, lvl) * 300);
     }, 效果: [
         {name: '井工', 类型: 'villageJob', value: lvl => lvl},
-        {name: '水容量', 类型: '基础', value: lvl => lvl > 1 ? (1000 * Math.出现在区域 {0} 或更高区域(lvl - 1, 9)) : null},
-        {name: '水容量', 类型: 'mult', value: lvl => lvl > 1 ? Math.pow(1.5, Math.出现在区域 {0} 或更高区域(lvl - 1, 9)) : null}
+        {name: '水容量', 类型: '+', value: lvl => lvl > 1 ? (1000 * Math.min(lvl - 1, 9)) : null},
+        {name: '水容量', 类型: '*', value: lvl => lvl > 1 ? Math.pow(1.5, Math.min(lvl - 1, 9)) : null}
     ]},
-    花园: {cap: 20, 图标: 'mdi-flower', 笔记: 'village_12', requirement() {
+    花园: {上限: 20, 图标: 'mdi-flower', 笔记: 'village_12', requirement() {
         return store.state.解锁.层 2 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {植物纤维: Math.pow(1.25, lvl) * 8750, 水: Math.pow(1.33, lvl) * 500};
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.3, lvl) * 480);
     }, 效果: [
-        {name: '植物纤维容量', 类型: 'mult', value: lvl => lvl * 0.15 + 1},
-        {name: '金币容量', 类型: '基础', value: lvl => lvl * 50}
+        {name: '植物纤维容量', 类型: '*', value: lvl => lvl * 0.15 + 1},
+        {name: '金币容量', 类型: '+', value: lvl => lvl * 50}
     ]},
-    市政厅: {cap: 1, 保留: true, 图标: 'mdi-town-hall', 笔记: 'village_13', requirement() {
+    市政厅: {上限: 1, 保留: true, 图标: 'mdi-town-hall', 笔记: 'village_13', requirement() {
         return store.state.解锁.层 2 建筑.use;
-    }, 减少制作时间至 {0}() {
+    }, 制作时间() {
         return buildNum(14.4, 'K');
-    }, price() {
+    }, 消耗() {
         return {木头: buildNum(12.8, 'K'), 石头: buildNum(10.5, 'K'), 金属: 3150, 水: 2900};
     }, 效果: [
         {name: '层 3 建筑', 类型: '解锁', value: lvl => lvl >= 1}
     ]},
-    房子: {cap: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-home', 笔记: 'village_14', requirement() {
+    房子: {上限: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-home', 笔记: 'village_14', requirement() {
         return store.state.解锁.层 3 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             植物纤维: Math.pow(1.35, lvl) * buildNum(17.8, 'K'),
             木头: Math.pow(1.35, lvl) * buildNum(16, 'K'),
             金属: Math.pow(1.35, lvl) * 2600,
             知识: lvl * 5 + 75
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.25, lvl) * 900);
     }, 效果: [
-        {name: '工人', 类型: '基础', value: lvl => lvl}
+        {name: '工人', 类型: '+', value: lvl => lvl}
     ]},
-    棚子: {图标: 'mdi-home-analytics', cap: 5, capMult: true, requirement() {
+    棚子: {图标: 'mdi-home-analytics', 上限: 5, capMult: true, requirement() {
         return store.state.解锁.层 3 建筑.use;
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.75, lvl) * 1600);
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {木头: Math.pow(1.8, lvl) * buildNum(14.5, 'K'), 石头: Math.pow(2.05, lvl) * 9000, 金属: Math.pow(1.7, lvl) * 5200};
     }, 效果: [
-        {name: '水容量', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
+        {name: '水容量', 类型: '*', value: lvl => lvl * 0.2 + 1},
         {name: '镰刀升级', 类型: '解锁', value: lvl => lvl >= 1},
         {name: '斧头升级', 类型: '解锁', value: lvl => lvl >= 2},
         {name: '镐子升级', 类型: '解锁', value: lvl => lvl >= 3},
         {name: '浇水器可以升级', 类型: '解锁', value: lvl => lvl >= 4},
         {name: '投资升级', 类型: '解锁', value: lvl => lvl >= 5}
     ]},
-    隧道: {图标: 'mdi-tunnel', cap: 15, requirement() {
+    隧道: {图标: 'mdi-tunnel', 上限: 15, requirement() {
         return store.state.解锁.层 3 建筑.use;
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.3, lvl) * 1350);
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {植物纤维: Math.pow(1.35, lvl) * buildNum(12, 'K'), 水: Math.pow(1.5, lvl) * 850};
     }, 效果: [
-        {name: '石头增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '石头容量', 类型: 'mult', value: lvl => lvl * 0.2 + 1}
+        {name: '石头增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '石头容量', 类型: '*', value: lvl => lvl * 0.2 + 1}
     ]},
-    锯木厂: {图标: 'mdi-saw-blade', cap: 15, requirement() {
+    锯木厂: {图标: 'mdi-saw-blade', 上限: 15, requirement() {
         return store.state.解锁.层 3 建筑.use;
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.3, lvl) * 1500);
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {金属: Math.pow(1.3, lvl) * 3200, 水: Math.pow(1.5, lvl) * 1150};
     }, 效果: [
-        {name: '木头增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '木头容量', 类型: 'mult', value: lvl => lvl * 0.2 + 1}
+        {name: '木头增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '木头容量', 类型: '*', value: lvl => lvl * 0.2 + 1}
     ]},
-    图书馆: {cap: 10, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-book', 笔记: 'village_15', requirement() {
+    图书馆: {上限: 10, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-book', 笔记: 'village_15', requirement() {
         return store.state.解锁.层 3 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {木头: Math.pow(1.65, lvl) * buildNum(15, 'K'), 水: Math.pow(1.85, lvl) * 6100};
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.33, lvl) * 2100);
     }, 效果: [
         {name: '图书管理员', 类型: 'villageJob', value: lvl => lvl},
-        {name: '知识容量', 类型: '基础', value: lvl => lvl > 1 ? (5 * (lvl - 1)) : null}
+        {name: '知识容量', 类型: '+', value: lvl => lvl > 1 ? (5 * (lvl - 1)) : null}
     ]},
-    水族馆: {图标: 'mdi-fishbowl', cap: 20, 笔记: 'village_16', requirement() {
+    水族馆: {图标: 'mdi-fishbowl', 上限: 20, 笔记: 'village_16', requirement() {
         return store.state.解锁.层 3 建筑.use;
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.3, lvl) * 2400);
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {水: Math.pow(1.5, lvl) * 4400, 知识: lvl * 10 + 35};
     }, 效果: [
-        {name: '金属容量', 类型: 'mult', value: lvl => lvl * 0.15 + 1},
-        {name: '金币容量', 类型: 'mult', value: lvl => lvl * 0.15 + 1}
+        {name: '金属容量', 类型: '*', value: lvl => lvl * 0.15 + 1},
+        {name: '金币容量', 类型: '*', value: lvl => lvl * 0.15 + 1}
     ]},
-    玻璃吹制厂: {cap: 10, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-glass-wine', 笔记: 'village_17', requirement() {
+    玻璃吹制厂: {上限: 10, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-glass-wine', 笔记: 'village_17', requirement() {
         return store.state.解锁.层 3 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {金属: Math.pow(1.65, lvl) * buildNum(12, 'K'), 水: Math.pow(1.85, lvl) * buildNum(24, 'K')};
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.33, lvl) * 3000);
     }, 效果: [
         {name: '玻璃吹制工', 类型: 'villageJob', value: lvl => lvl},
-        {name: '玻璃容量', 类型: '基础', value: lvl => lvl > 1 ? (250 * (lvl - 1)) : null}
+        {name: '玻璃容量', 类型: '+', value: lvl => lvl > 1 ? (250 * (lvl - 1)) : null}
     ]},
-    知识塔: {cap: 50, 图标: 'mdi-wizard-hat', 笔记: 'village_19', requirement() {
+    知识塔: {上限: 50, 图标: 'mdi-wizard-hat', 笔记: 'village_19', requirement() {
         return store.state.解锁.层 3 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             植物纤维: Math.pow(1.5, lvl) * buildNum(44, 'K'),
             石头: Math.pow(1.5, lvl) * buildNum(35, 'K'),
             玻璃: Math.pow(1.5, lvl) * 450,
             知识: Math.ceil(lvl * 8 * Math.pow(1.05, lvl) + 50)
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.24, lvl) * 3300);
     }, 效果: [
-        {name: '玻璃容量', 类型: '基础', value: lvl => lvl * 250},
-        {name: '水容量', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-        {name: '知识容量', 类型: '基础', value: lvl => lvl * 3}
+        {name: '玻璃容量', 类型: '+', value: lvl => lvl * 250},
+        {name: '水容量', 类型: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '知识容量', 类型: '+', value: lvl => lvl * 3}
     ]},
-    微型铁匠: {cap: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-fireplace', requirement() {
+    微型铁匠: {上限: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-fireplace', requirement() {
         return store.state.解锁.层 3 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             木头: Math.pow(1.65, lvl) * buildNum(60, 'K'),
             石头: Math.pow(1.65, lvl) * buildNum(35, 'K'),
             玻璃: Math.pow(1.4, lvl) * 600
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.25, lvl) * 2500);
     }, 效果: [
-        {name: '金属增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '工人', 类型: '基础', value: lvl => lvl > 4 ? Math.floor(lvl / 5) : null}
+        {name: '金属增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '工人', 类型: '+', value: lvl => lvl > 4 ? Math.floor(lvl / 5) : null}
     ]},
-    教堂: {cap: 25, hasDescription: true, 图标: 'mdi-church', 笔记: 'village_18', requirement() {
+    教堂: {上限: 25, hasDescription: true, 图标: 'mdi-church', 笔记: 'village_18', requirement() {
         return store.state.解锁.层 3 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             木头: Math.pow(1.65, lvl) * buildNum(65, 'K'),
             石头: Math.pow(1.65, lvl) * buildNum(85, 'K'),
             玻璃: Math.pow(1.5, lvl) * 1700
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.3, lvl) * 4800);
     }, 效果: [
-        {name: '信仰增益', 类型: '基础', value: lvl => getSequence(1, lvl) * 0.02}
+        {name: '信仰增益', 类型: '+', value: lvl => getSequence(1, lvl) * 0.02}
     ]},
-    学校: {图标: 'mdi-school', cap: 5, capMult: true, 笔记: 'village_20', requirement() {
+    学校: {图标: 'mdi-school', 上限: 5, capMult: true, 笔记: 'village_20', requirement() {
         return store.state.解锁.层 3 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             植物纤维: Math.pow(2.25, lvl) * buildNum(400, 'K'),
             金属: Math.pow(2.25, lvl) * buildNum(45, 'K'),
             玻璃: Math.pow(2.1, lvl) * 4800,
             金币: Math.pow(1.85, lvl) * buildNum(70, 'K')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.6, lvl) * 3600);
     }, 效果: [
-        {name: '知识容量', 类型: '基础', value: lvl => lvl * 5},
+        {name: '知识容量', 类型: '+', value: lvl => lvl * 5},
         {name: '基础升级', 类型: '解锁', value: lvl => lvl >= 1},
         {name: '加工升级', 类型: '解锁', value: lvl => lvl >= 2},
         {name: '水泵升级', 类型: '解锁', value: lvl => lvl >= 3},
         {name: '沙子升级', 类型: '解锁', value: lvl => lvl >= 4},
         {name: '书籍升级', 类型: '解锁', value: lvl => lvl >= 5}
     ]},
-    地方政府: {cap: 1, 笔记: 'village_21', 保留: true, 图标: 'mdi-city-variant', requirement() {
+    地方政府: {上限: 1, 笔记: 'village_21', 保留: true, 图标: 'mdi-city-variant', requirement() {
         return store.state.解锁.层 3 建筑.use;
-    }, 减少制作时间至 {0}() {
+    }, 制作时间() {
         return buildNum(240, 'K');
-    }, price() {
-        return {植物纤维: buildNum(1.02, '分钟'), 木头: buildNum(975, 'K'), 玻璃: buildNum(16, 'K'), 金币: buildNum(280, 'K')};
+    }, 消耗() {
+        return {植物纤维: buildNum(1.02, 'M'), 木头: buildNum(975, 'K'), 玻璃: buildNum(16, 'K'), 金币: buildNum(280, 'K')};
     }, 效果: [
         {name: '层 4 建筑', 类型: '解锁', value: lvl => lvl >= 1}
     ]},
-    公寓: {cap: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-home-city', requirement() {
+    公寓: {上限: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-home-city', requirement() {
         return store.state.解锁.层 4 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
-            木头: Math.pow(1.65, lvl) * buildNum(20, '分钟'),
+            木头: Math.pow(1.65, lvl) * buildNum(20, 'M'),
             玻璃: Math.pow(1.65, lvl) * buildNum(29.5, 'K'),
             硬木: Math.pow(1.3, lvl) * 1500,
             宝石: Math.pow(1.35, lvl) * 600
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.25, lvl) * 7200);
     }, 效果: [
-        {name: '工人', 类型: '基础', value: lvl => lvl * 2}
+        {name: '工人', 类型: '+', value: lvl => lvl * 2}
     ]},
-    寺庙: {cap: 30, 图标: 'mdi-temple-hindu', requirement() {
+    寺庙: {上限: 30, 图标: 'mdi-temple-hindu', requirement() {
         return store.state.解锁.层 4 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             玻璃: Math.pow(1.25, lvl) * 8000,
-            水: Math.pow(1.5, lvl) * buildNum(2, '分钟'),
+            水: Math.pow(1.5, lvl) * buildNum(2, 'M'),
             金币: Math.pow(1.45, lvl) * buildNum(100, 'K'),
             知识: 15 * lvl + 125,
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.3, lvl) * buildNum(62.5, 'K'));
     }, 效果: [
-        {name: '信仰容量', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)}
+        {name: '信仰容量', 类型: '*', value: lvl => Math.pow(1.2, lvl)}
     ]},
-    方尖碑: {cap: 0, capMult: true, 图标: 'mdi-tower-fire', requirement() {
+    方尖碑: {上限: 0, capMult: true, 图标: 'mdi-tower-fire', requirement() {
         return store.state.解锁.层 4 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {金币: Math.pow(4.5, lvl) * buildNum(50, 'K')};
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.45, lvl) * buildNum(50, 'K'));
     }, 效果: [
-        {name: '金币容量', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '材料容量', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)}
+        {name: '金币容量', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '材料容量', 类型: '*', value: lvl => Math.pow(1.2, lvl)}
     ]},
-    供奉底座: {cap: 4, hasDescription: true, 笔记: 'village_23', 图标: 'mdi-table-furniture', requirement() {
+    供奉底座: {上限: 4, hasDescription: true, 笔记: 'village_23', 图标: 'mdi-table-furniture', requirement() {
         return store.state.解锁.层 4 建筑.use;
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(3, lvl) * buildNum(32.5, 'K'));
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return [
-            {植物纤维: buildNum(2, '分钟'), 木头: buildNum(2, '分钟'), 石头: buildNum(2, '分钟')},
-            {金币: buildNum(10, '分钟'), 金属: buildNum(3, '分钟'), 水: buildNum(5, '分钟')},
+            {植物纤维: buildNum(2, 'M'), 木头: buildNum(2, 'M'), 石头: buildNum(2, 'M')},
+            {金币: buildNum(10, 'M'), 金属: buildNum(3, 'M'), 水: buildNum(5, 'M')},
             {玻璃: buildNum(120, 'K'), 硬木: buildNum(40, 'K'), 宝石: buildNum(40, 'K')},
             {知识: 600, 科学: 200, 快乐: 750}
         ][lvl];
@@ -357,10 +357,10 @@
         {name: '层 3 供品', 类型: '解锁', value: lvl => lvl >= 3},
         {name: '层 4 供品', 类型: '解锁', value: lvl => lvl >= 4}
     ]},
-    剧院: {cap: 5, capMult: true, 笔记: 'village_24', subtype: '这座建筑算作一个工作站', 图标: 'mdi-drama-masks', requirement() {
+    剧院: {上限: 5, capMult: true, 笔记: 'village_24', subtype: '这座建筑算作一个工作站', 图标: 'mdi-drama-masks', requirement() {
         return store.state.解锁.层 4 建筑.use;
-    }, price(lvl) {
-        let obj = {石头: Math.pow(2.15, lvl) * buildNum(3, '分钟'), 玻璃: Math.pow(1.8, lvl) * buildNum(14.8, 'K')};
+    }, 消耗(lvl) {
+        let obj = {石头: Math.pow(2.15, lvl) * buildNum(3, 'M'), 玻璃: Math.pow(1.8, lvl) * buildNum(14.8, 'K')};
         if (lvl >= 1) {
             obj.硬木 = Math.pow(1.75, lvl - 1) * 2000;
         }
@@ -368,346 +368,346 @@
             obj.宝石 = Math.pow(1.75, lvl - 2) * 2750;
         }
         return obj;
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.33, lvl) * buildNum(60, 'K'));
     }, 效果: [
         {name: '艺人', 类型: 'villageJob', value: lvl => lvl}
     ]},
-    伐木工小屋: {cap: 10, capMult: true, 笔记: 'village_25', subtype: '这座建筑算作一个工作站', 图标: 'mdi-axe', requirement() {
+    伐木工小屋: {上限: 10, capMult: true, 笔记: 'village_25', subtype: '这座建筑算作一个工作站', 图标: 'mdi-axe', requirement() {
         return store.state.解锁.层 4 建筑.use;
-    }, price(lvl) {
-        return {植物纤维: Math.pow(1.85, lvl) * buildNum(7.7, '分钟'), 金属: Math.pow(1.85, lvl) * buildNum(1.35, '分钟')};
-    }, 减少制作时间至 {0}(lvl) {
+    }, 消耗(lvl) {
+        return {植物纤维: Math.pow(1.85, lvl) * buildNum(7.7, 'M'), 金属: Math.pow(1.85, lvl) * buildNum(1.35, 'M')};
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.3, lvl) * buildNum(10, 'K'));
     }, 效果: [
         {name: '伐木工', 类型: 'villageJob', value: lvl => lvl},
-        {name: '硬木容量', 类型: '基础', value: lvl => lvl > 1 ? (200 * (lvl - 1)) : null}
+        {name: '硬木容量', 类型: '+', value: lvl => lvl > 1 ? (200 * (lvl - 1)) : null}
     ]},
-    深矿井: {cap: 10, capMult: true, 笔记: 'village_26', subtype: '这座建筑算作一个工作站', 图标: 'mdi-tunnel', requirement() {
+    深矿井: {上限: 10, capMult: true, 笔记: 'village_26', subtype: '这座建筑算作一个工作站', 图标: 'mdi-tunnel', requirement() {
         return store.state.解锁.层 4 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
-            木头: Math.pow(1.85, lvl) * buildNum(13, '分钟'),
+            木头: Math.pow(1.85, lvl) * buildNum(13, 'M'),
             知识: lvl * 10 + 165,
             硬木: Math.pow(1.65, lvl) * 500
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.33, lvl) * buildNum(12, 'K'));
     }, 效果: [
         {name: '爆破矿工', 类型: 'villageJob', value: lvl => lvl},
-        {name: '宝石容量', 类型: '基础', value: lvl => lvl > 1 ? (200 * (lvl - 1)) : null}
+        {name: '宝石容量', 类型: '+', value: lvl => lvl > 1 ? (200 * (lvl - 1)) : null}
     ]},
-    大存储空间: {cap: 20, capMult: true, 图标: 'mdi-database-settings', requirement() {
+    大存储空间: {上限: 20, capMult: true, 图标: 'mdi-database-settings', requirement() {
         return store.state.解锁.层 4 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {硬木: Math.pow(lvl * 0.03 + 1.25, lvl) * 900, 宝石: Math.pow(lvl * 0.03 + 1.25, lvl) * 900};
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.15, lvl) * buildNum(15, 'K'));
     }, 效果: [
-        {name: '水容量', 类型: 'mult', value: lvl => splicedPowLinear(1.25, 0.2, 20, lvl)},
-        {name: '硬木容量', 类型: 'mult', value: lvl => splicedPowLinear(1.2, 0.1, 20, lvl)},
-        {name: '宝石容量', 类型: 'mult', value: lvl => splicedPowLinear(1.2, 0.1, 20, lvl)}
+        {name: '水容量', 类型: '*', value: lvl => splicedPowLinear(1.25, 0.2, 20, lvl)},
+        {name: '硬木容量', 类型: '*', value: lvl => splicedPowLinear(1.2, 0.1, 20, lvl)},
+        {name: '宝石容量', 类型: '*', value: lvl => splicedPowLinear(1.2, 0.1, 20, lvl)}
     ]},
-    豪宅: {cap: 25, capMult: true, 笔记: 'village_27', subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-bank', requirement() {
+    豪宅: {上限: 25, capMult: true, 笔记: 'village_27', subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-bank', requirement() {
         return store.state.解锁.层 4 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
-            金属: Math.pow(1.65, lvl) * buildNum(7, '分钟'),
+            金属: Math.pow(1.65, lvl) * buildNum(7, 'M'),
             硬木: Math.pow(1.35, lvl) * 4000,
             宝石: Math.pow(1.3, lvl) * 9200,
-            金币: Math.pow(2.15, lvl) * buildNum(25, '分钟')
+            金币: Math.pow(2.15, lvl) * buildNum(25, 'M')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.25, lvl) * buildNum(18, 'K'));
     }, 效果: [
-        {name: '工人', 类型: '基础', value: lvl => lvl},
-        {name: '幸福', 类型: '基础', value: lvl => lvl * 0.002}
+        {name: '工人', 类型: '+', value: lvl => lvl},
+        {name: '幸福', 类型: '+', value: lvl => lvl * 0.002}
     ]},
-    湖泊: {cap: 10, capMult: true, 笔记: 'village_28', subtype: '这座建筑算作一个工作站', 图标: 'mdi-waves', requirement() {
+    湖泊: {上限: 10, capMult: true, 笔记: 'village_28', subtype: '这座建筑算作一个工作站', 图标: 'mdi-waves', requirement() {
         return store.state.解锁.层 4 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
-            水: Math.pow(2.25, lvl) * buildNum(50, '分钟'),
+            水: Math.pow(2.25, lvl) * buildNum(50, 'M'),
             玻璃: Math.pow(1.65, lvl) * buildNum(60, 'K'),
             宝石: Math.pow(1.65, lvl) * buildNum(11, 'K')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.33, lvl) * buildNum(20, 'K'));
     }, 效果: [
         {name: '渔夫', 类型: 'villageJob', value: lvl => lvl}
     ]},
     宝石锯片: {图标: 'mdi-saw-blade', requirement() {
         return store.state.解锁.层 4 建筑.use;
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.15, lvl) * buildNum(30, 'K'));
-    }, price(lvl) {
-        return {石头: Math.pow(1.85, lvl) * buildNum(75, '分钟'), 宝石: Math.ceil(Math.pow(1.5, lvl) * buildNum(15, 'K'))};
+    }, 消耗(lvl) {
+        return {石头: Math.pow(1.85, lvl) * buildNum(75, 'M'), 宝石: Math.ceil(Math.pow(1.5, lvl) * buildNum(15, 'K'))};
     }, 效果: [
-        {name: '建造速度', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)}
+        {name: '建造速度', 类型: '*', value: lvl => Math.pow(1.2, lvl)}
     ]},
-    微型冰淇淋店: {cap: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-glass-tulip', requirement() {
+    微型冰淇淋店: {上限: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-glass-tulip', requirement() {
         return store.state.解锁.层 4 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
-            植物纤维: Math.pow(1.5, lvl) * buildNum(125, '分钟'),
-            水: Math.pow(1.85, lvl) * buildNum(120, '分钟'),
+            植物纤维: Math.pow(1.5, lvl) * buildNum(125, 'M'),
+            水: Math.pow(1.85, lvl) * buildNum(120, 'M'),
             硬木: Math.pow(1.3, lvl) * buildNum(12.5, 'K')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.25, lvl) * buildNum(14, 'K'));
     }, 效果: [
-        {name: '玻璃增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '工人', 类型: '基础', value: lvl => lvl > 4 ? Math.floor(lvl / 5) : null}
+        {name: '玻璃增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '工人', 类型: '+', value: lvl => lvl > 4 ? Math.floor(lvl / 5) : null}
     ]},
-    丢失的页面: {图标: 'mdi-script-text', cap: 10, 笔记: 'village_29', requirement() {
+    丢失的页面: {图标: 'mdi-script-text', 上限: 10, 笔记: 'village_29', requirement() {
         return store.state.解锁.层 4 建筑.use;
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.5, lvl) * buildNum(80, 'K'));
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
-            植物纤维: Math.pow(1.85, lvl) * buildNum(185, '分钟'),
-            木头: Math.pow(1.85, lvl) * buildNum(140, '分钟'),
+            植物纤维: Math.pow(1.85, lvl) * buildNum(185, 'M'),
+            木头: Math.pow(1.85, lvl) * buildNum(140, 'M'),
             知识: lvl * 15 + 220,
             硬木: Math.pow(1.65, lvl) * buildNum(22, 'K')
         };
     }, 效果: [
-        {name: '知识容量', 类型: '基础', value: lvl => lvl * 8},
-        {name: '信仰容量', 类型: '基础', value: lvl => lvl * 20},
+        {name: '知识容量', 类型: '+', value: lvl => lvl * 8},
+        {name: '信仰容量', 类型: '+', value: lvl => lvl * 20},
         {name: '斧子升级', 类型: '解锁', value: lvl => lvl >= 2},
         {name: '炸弹升级', 类型: '解锁', value: lvl => lvl >= 4},
         {name: '收费升级', 类型: '解锁', value: lvl => lvl >= 6},
         {name: '鱼竿升级', 类型: '解锁', value: lvl => lvl >= 8},
         {name: '圣书升级', 类型: '解锁', value: lvl => lvl >= 10}
     ]},
-    操场: {cap: 5, 笔记: 'village_30', 图标: 'mdi-slide', requirement() {
+    操场: {上限: 5, 笔记: 'village_30', 图标: 'mdi-slide', requirement() {
         return store.state.解锁.层 4 建筑.use;
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.15, lvl) * buildNum(140, 'K'));
-    }, price(lvl) {
-        return {水: Math.pow(4, lvl) * buildNum(250, '分钟'), 金币: Math.pow(3, lvl) * buildNum(50, '分钟')};
+    }, 消耗(lvl) {
+        return {水: Math.pow(4, lvl) * buildNum(250, 'M'), 金币: Math.pow(3, lvl) * buildNum(50, 'M')};
     }, 效果: [
-        {name: '幸福', 类型: '基础', value: lvl => lvl * 0.01}
+        {name: '幸福', 类型: '+', value: lvl => lvl * 0.01}
     ]},
-    政府: {cap: 1, 保留: true, 图标: 'mdi-city', requirement() {
+    政府: {上限: 1, 保留: true, 图标: 'mdi-city', requirement() {
         return store.state.解锁.层 4 建筑.use;
-    }, 减少制作时间至 {0}() {
-        return buildNum(1.5, '分钟');
-    }, price() {
-        return {硬木: buildNum(50, 'K'), 宝石: buildNum(50, 'K'), 金币: buildNum(150, '分钟'), 知识: 260};
+    }, 制作时间() {
+        return buildNum(1.5, 'M');
+    }, 消耗() {
+        return {硬木: buildNum(50, 'K'), 宝石: buildNum(50, 'K'), 金币: buildNum(150, 'M'), 知识: 260};
     }, 效果: [
         {name: '层 5 建筑', 类型: '解锁', value: lvl => lvl >= 1}
     ]},
-    现代住宅: {cap: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-home-modern', requirement() {
+    现代住宅: {上限: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-home-modern', requirement() {
         return store.state.解锁.层 5 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
-            木头: Math.pow(1.65, lvl) * buildNum(330, '分钟'),
+            木头: Math.pow(1.65, lvl) * buildNum(330, 'M'),
             玻璃: Math.pow(1.65, lvl) * buildNum(240, 'K'),
             硬木: Math.pow(1.3, lvl) * buildNum(77.5, 'K'),
             宝石: Math.pow(1.35, lvl) * buildNum(18, 'K')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.25, lvl) * buildNum(200, 'K'));
     }, 效果: [
-        {name: '工人', 类型: '基础', value: lvl => lvl * 3}
+        {name: '工人', 类型: '+', value: lvl => lvl * 3}
     ]},
-    喷泉: {cap: 10, 图标: 'mdi-fountain', requirement() {
+    喷泉: {上限: 10, 图标: 'mdi-fountain', requirement() {
         return store.state.解锁.层 5 建筑.use;
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.3, lvl) * buildNum(275, 'K'));
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             植物纤维: Math.pow(1.65, lvl) * buildNum(1.7, 'B'),
             石头: Math.pow(1.65, lvl) * buildNum(1.35, 'B'),
-            金属: Math.pow(1.65, lvl) * buildNum(290, '分钟'),
-            金币: Math.pow(1.85, lvl) * buildNum(650, '分钟')
+            金属: Math.pow(1.65, lvl) * buildNum(290, 'M'),
+            金币: Math.pow(1.85, lvl) * buildNum(650, 'M')
         };
     }, 效果: [
-        {name: '水增益', 类型: 'mult', value: lvl => Math.pow(1.4, lvl)},
-        {name: '水容量', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
+        {name: '水增益', 类型: '*', value: lvl => Math.pow(1.4, lvl)},
+        {name: '水容量', 类型: '*', value: lvl => Math.pow(2, lvl)}
     ]},
-    实验室: {cap: 10, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-flask', requirement() {
+    实验室: {上限: 10, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-flask', requirement() {
         return store.state.解锁.层 5 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
-            金属: Math.pow(1.85, lvl) * buildNum(70, '分钟'),
+            金属: Math.pow(1.85, lvl) * buildNum(70, 'M'),
             玻璃: Math.pow(1.85, lvl) * buildNum(475, 'K'),
             宝石: Math.pow(1.85, lvl) * buildNum(140, 'K')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.33, lvl) * buildNum(300, 'K'));
     }, 效果: [
         {name: '科学家', 类型: 'villageJob', value: lvl => lvl},
-        {name: '科学容量', 类型: '基础', value: lvl => lvl > 2 ? ((lvl - 2) * 5) : null},
+        {name: '科学容量', 类型: '+', value: lvl => lvl > 2 ? ((lvl - 2) * 5) : null},
         {name: '突破升级', 类型: '解锁', value: lvl => lvl >= 2}
     ]},
-    法庭: {cap: 2, hasDescription: true, 图标: 'mdi-gavel', requirement() {
+    法庭: {上限: 2, hasDescription: true, 图标: 'mdi-gavel', requirement() {
         return store.state.解锁.层 5 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             硬木: Math.pow(1.85, lvl) * buildNum(280, 'K'),
             知识: Math.round(Math.pow(1.15, lvl) * 290),
             科学: lvl * 20 + 30
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.5, lvl) * buildNum(480, 'K'));
     }, 效果: [
-        {name: '税收政策', 类型: '基础', value: lvl => lvl >= 1 ? 1 : null},
-        {name: '移民政策', 类型: '基础', value: lvl => lvl >= 2 ? 1 : null}
+        {name: '税收政策', 类型: '+', value: lvl => lvl >= 1 ? 1 : null},
+        {name: '移民政策', 类型: '+', value: lvl => lvl >= 2 ? 1 : null}
     ]},
-    温室: {cap: 10, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-greenhouse', requirement() {
+    温室: {上限: 10, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-greenhouse', requirement() {
         return store.state.解锁.层 5 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             植物纤维: Math.pow(1.85, lvl) * buildNum(1.15, 'B'),
             玻璃: Math.pow(1.85, lvl) * buildNum(900, 'K')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.33, lvl) * buildNum(550, 'K'));
     }, 效果: [
         {name: '园丁', 类型: 'villageJob', value: lvl => lvl}
     ]},
-    满篮: {cap: 8, 图标: 'mdi-basket', requirement() {
+    满篮: {上限: 8, 图标: 'mdi-basket', requirement() {
         return store.state.解锁.层 5 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             植物纤维: Math.pow(2.4, lvl) * buildNum(2.4, 'B'),
             快乐: Math.ceil(Math.pow(1.35, lvl) * 70)
         };
-    }, 减少制作时间至 {0}(lvl) {
-        return Math.ceil(Math.pow(1.75, lvl) * buildNum(1.5, '分钟'));
+    }, 制作时间(lvl) {
+        return Math.ceil(Math.pow(1.75, lvl) * buildNum(1.5, 'M'));
     }, 效果: [
-        {name: '食物增益', 类型: 'mult', value: lvl => Math.pow(1.2, lvl) * (lvl * 0.25 + 1)},
-        {name: '信仰容量', 类型: '基础', value: lvl => lvl * 32}
+        {name: '食物增益', 类型: '*', value: lvl => Math.pow(1.2, lvl) * (lvl * 0.25 + 1)},
+        {name: '信仰容量', 类型: '+', value: lvl => lvl * 32}
     ]},
-    储藏室: {cap: 20, 图标: 'mdi-warehouse', requirement() {
+    储藏室: {上限: 20, 图标: 'mdi-warehouse', requirement() {
         return store.state.解锁.层 5 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             木头: Math.pow(1.85, lvl) * buildNum(4.5, 'B'),
-            金属: Math.pow(1.65, lvl) * buildNum(360, '分钟'),
+            金属: Math.pow(1.65, lvl) * buildNum(360, 'M'),
             硬木: Math.pow(1.5, lvl) * buildNum(575, 'K')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.3, lvl) * buildNum(700, 'K'));
     }, 效果: [
-        {name: '木头容量', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)},
-        {name: '植物纤维容量', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)},
-        {name: '石头容量', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)},
-        {name: '科学容量', 类型: '基础', value: lvl => lvl * 8}
+        {name: '木头容量', 类型: '*', value: lvl => Math.pow(1.5, lvl)},
+        {name: '植物纤维容量', 类型: '*', value: lvl => Math.pow(1.5, lvl)},
+        {name: '石头容量', 类型: '*', value: lvl => Math.pow(1.5, lvl)},
+        {name: '科学容量', 类型: '+', value: lvl => lvl * 8}
     ]},
-    生物实验室: {cap: 5, 图标: 'mdi-dna', requirement() {
+    生物实验室: {上限: 5, 图标: 'mdi-dna', requirement() {
         return store.state.解锁.层 5 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
-            金属: Math.pow(2.3, lvl) * buildNum(580, '分钟'),
+            金属: Math.pow(2.3, lvl) * buildNum(580, 'M'),
             宝石: Math.pow(1.85, lvl) * buildNum(695, 'K')
         };
-    }, 减少制作时间至 {0}(lvl) {
-        return Math.ceil(Math.pow(1.75, lvl) * buildNum(1, '分钟'));
+    }, 制作时间(lvl) {
+        return Math.ceil(Math.pow(1.75, lvl) * buildNum(1, 'M'));
     }, 效果: [
-        {name: '玻璃容量', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)},
+        {name: '玻璃容量', 类型: '*', value: lvl => Math.pow(1.5, lvl)},
         {name: '改造植物升级', 类型: '解锁', value: lvl => lvl >= 1},
         {name: '多巴胺升级', 类型: '解锁', value: lvl => lvl >= 3},
         {name: '肾上腺素升级', 类型: '解锁', value: lvl => lvl >= 5}
     ]},
-    税务局: {cap: 3, 图标: 'mdi-office-building', requirement() {
-        return store.state.解锁.层 5 建筑.use && store.state.升级成本.item.法庭.达到等级 {0} >= 1;
-    }, price(lvl) {
+    税务局: {上限: 3, 图标: 'mdi-office-building', requirement() {
+        return store.state.解锁.层 5 建筑.use && store.state.升级成本.item.法庭.达到等级 >= 1;
+    }, 消耗(lvl) {
         return {
             石头: Math.pow(6, lvl) * buildNum(10.5, 'B'),
             水: Math.pow(15, lvl) * buildNum(75, 'B'),
             知识: lvl * 75 + 350,
             金币: Math.pow(3.5, lvl) * buildNum(6, 'B')
         };
-    }, 减少制作时间至 {0}(lvl) {
-        return Math.ceil(Math.pow(2.5, lvl) * buildNum(1.2, '分钟'));
+    }, 制作时间(lvl) {
+        return Math.ceil(Math.pow(2.5, lvl) * buildNum(1.2, 'M'));
     }, 效果: [
-        {name: '税收政策', 类型: '基础', value: lvl => lvl}
+        {name: '税收政策', 类型: '+', value: lvl => lvl}
     ]},
     节日: {图标: 'mdi-party-popper', requirement() {
         return store.state.解锁.层 5 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             快乐: Math.ceil(Math.pow(1.15, lvl) * 100)
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.35, lvl) * buildNum(750, 'K'));
     }, 效果: [
-        {name: '幸福', 类型: '基础', value: lvl => lvl * 0.003},
-        {name: '税率', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
+        {name: '幸福', 类型: '+', value: lvl => lvl * 0.003},
+        {name: '税率', 类型: '*', value: lvl => lvl * 0.05 + 1}
     ]},
-    墓地: {cap: 10, 图标: 'mdi-grave-stone', requirement() {
+    墓地: {上限: 10, 图标: 'mdi-grave-stone', requirement() {
         return store.state.解锁.层 5 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             木头: Math.pow(lvl * 0.1 + 1.85, lvl) * buildNum(20, 'B'),
             石头: Math.pow(lvl * 0.1 + 1.85, lvl) * buildNum(27.5, 'B')
         };
-    }, 减少制作时间至 {0}(lvl) {
-        return Math.ceil(Math.pow(1.3, lvl) * buildNum(1.5, '分钟'));
+    }, 制作时间(lvl) {
+        return Math.ceil(Math.pow(1.3, lvl) * buildNum(1.5, 'M'));
     }, 效果: [
-        {name: '供品力量', 类型: 'mult', value: lvl => lvl * 0.5 + 1},
-        {name: '信仰容量', 类型: '基础', value: lvl => lvl * 32}
+        {name: '供品力量', 类型: '*', value: lvl => lvl * 0.5 + 1},
+        {name: '信仰容量', 类型: '+', value: lvl => lvl * 32}
     ]},
-    清真寺: {cap: 25, 图标: 'mdi-mosque', requirement() {
+    清真寺: {上限: 25, 图标: 'mdi-mosque', requirement() {
         return store.state.解锁.层 5 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             石头: Math.pow(2.12, lvl) * buildNum(155, 'B'),
-            玻璃: Math.pow(1.9, lvl) * buildNum(40, '分钟'),
-            宝石: Math.pow(1.55, lvl) * buildNum(17, '分钟')
+            玻璃: Math.pow(1.9, lvl) * buildNum(40, 'M'),
+            宝石: Math.pow(1.55, lvl) * buildNum(17, 'M')
         };
-    }, 减少制作时间至 {0}(lvl) {
-        return Math.ceil(Math.pow(1.3, lvl) * buildNum(3.2, '分钟'));
+    }, 制作时间(lvl) {
+        return Math.ceil(Math.pow(1.3, lvl) * buildNum(3.2, 'M'));
     }, 效果: [
-        {name: '信仰增益', 类型: '基础', value: lvl => getSequence(2, lvl)}
+        {name: '信仰增益', 类型: '+', value: lvl => getSequence(2, lvl)}
     ]},
-    水塔: {cap: 12, 图标: 'mdi-tower-beach', requirement() {
+    水塔: {上限: 12, 图标: 'mdi-tower-beach', requirement() {
         return store.state.解锁.层 5 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             植物纤维: Math.pow(2.45, lvl) * buildNum(260, 'B'),
             知识: lvl * 125 + 700
         };
-    }, 减少制作时间至 {0}(lvl) {
-        return Math.ceil(Math.pow(1.65, lvl) * buildNum(8, '分钟'));
+    }, 制作时间(lvl) {
+        return Math.ceil(Math.pow(1.65, lvl) * buildNum(8, 'M'));
     }, 效果: [
-        {name: '水增益', 类型: 'mult', value: lvl => Math.pow(1.2, lvl) * (lvl * 0.5 + 1)}
+        {name: '水增益', 类型: '*', value: lvl => Math.pow(1.2, lvl) * (lvl * 0.5 + 1)}
     ]},
-    室外泵: {cap: 5, 图标: 'mdi-water-pump', requirement() {
+    室外泵: {上限: 5, 图标: 'mdi-water-pump', requirement() {
         return store.state.解锁.层 5 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             水: Math.pow(3.3, lvl) * buildNum(1.6, 'T'),
             快乐: lvl * 180 + 720
         };
-    }, 减少制作时间至 {0}(lvl) {
-        return Math.ceil(Math.pow(1.65, lvl) * buildNum(18.5, '分钟'));
+    }, 制作时间(lvl) {
+        return Math.ceil(Math.pow(1.65, lvl) * buildNum(18.5, 'M'));
     }, 效果: [
-        {name: '植物纤维增益', 类型: 'mult', value: lvl => lvl * 0.4 + 1}
+        {name: '植物纤维增益', 类型: '*', value: lvl => lvl * 0.4 + 1}
     ]},
-    银行金库: {cap: 12, 图标: 'mdi-safe-square', requirement() {
+    银行金库: {上限: 12, 图标: 'mdi-safe-square', requirement() {
         return store.state.解锁.层 5 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             金属: Math.pow(1.85, lvl) * buildNum(7.35, 'B'),
             科学: lvl * 45 + 270
         };
-    }, 减少制作时间至 {0}(lvl) {
-        return Math.ceil(Math.pow(1.65, lvl) * buildNum(40, '分钟'));
+    }, 制作时间(lvl) {
+        return Math.ceil(Math.pow(1.65, lvl) * buildNum(40, 'M'));
     }, 效果: [
-        {name: '金币容量', 类型: 'mult', value: lvl => Math.pow(1.6, lvl)}
+        {name: '金币容量', 类型: '*', value: lvl => Math.pow(1.6, lvl)}
     ]},
-    蒸汽机: {cap: 1, 保留: true, 图标: 'mdi-turbine', requirement() {
+    蒸汽机: {上限: 1, 保留: true, 图标: 'mdi-turbine', requirement() {
         return store.state.解锁.层 5 建筑.use;
-    }, 减少制作时间至 {0}() {
-        return buildNum(600, '分钟');
-    }, price() {
+    }, 制作时间() {
+        return buildNum(600, 'M');
+    }, 消耗() {
         return {
             金属: buildNum(27.6, 'B'),
             水: buildNum(45, 'T'),
-            硬木: buildNum(175, '分钟'),
+            硬木: buildNum(175, 'M'),
             金币: buildNum(3.5, 'T'),
             科学: 440,
             快乐: 1500
@@ -715,282 +715,282 @@
     }, 效果: [
         {name: '层 6 建筑', 类型: '解锁', value: lvl => lvl >= 1}
     ]},
-    高级公寓: {cap: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-balcony', requirement() {
+    高级公寓: {上限: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-balcony', requirement() {
         return store.state.解锁.层 6 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             植物纤维: Math.pow(1.65, lvl) * buildNum(63, 'T'),
             大理石: Math.pow(1.35, lvl) * 600
         };
-    }, 减少制作时间至 {0}(lvl) {
-        return Math.ceil(Math.pow(1.25, lvl) * buildNum(140, '分钟'));
+    }, 制作时间(lvl) {
+        return Math.ceil(Math.pow(1.25, lvl) * buildNum(140, 'M'));
     }, 效果: [
-        {name: '工人', 类型: '基础', value: lvl => lvl * 4}
+        {name: '工人', 类型: '+', value: lvl => lvl * 4}
     ]},
-    石油钻机: {cap: 10, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-tower-fire', requirement() {
+    石油钻机: {上限: 10, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-tower-fire', requirement() {
         return store.state.解锁.层 6 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             石头: Math.pow(2.35, lvl) * buildNum(1.32, 'T'),
             水: Math.pow(4.1, lvl) * buildNum(90, 'T'),
             知识: lvl * 500 + 1500
         };
-    }, 减少制作时间至 {0}(lvl) {
-        return Math.ceil(Math.pow(1.33, lvl) * buildNum(320, '分钟'));
+    }, 制作时间(lvl) {
+        return Math.ceil(Math.pow(1.33, lvl) * buildNum(320, 'M'));
     }, 效果: [
         {name: '石油工人', 类型: 'villageJob', value: lvl => lvl},
-        {name: '油容量', 类型: '基础', value: lvl => lvl > 1 ? ((lvl - 1) * 400) : null}
+        {name: '油容量', 类型: '+', value: lvl => lvl > 1 ? ((lvl - 1) * 400) : null}
     ]},
     发电机: {hasDescription: true, 图标: 'mdi-engine', requirement() {
         return store.state.解锁.层 6 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             木头: Math.pow(1.45, lvl) * buildNum(1.93, 'T'),
             金属: Math.pow(1.2, lvl) * buildNum(84, 'B'),
             油: Math.pow(1.25, lvl) * 1400
         };
-    }, 减少制作时间至 {0}(lvl) {
-        return Math.ceil(Math.pow(1.2, lvl) * buildNum(550, '分钟'));
+    }, 制作时间(lvl) {
+        return Math.ceil(Math.pow(1.2, lvl) * buildNum(550, 'M'));
     }, 效果: [
-        {name: '力量', 类型: '基础', value: lvl => lvl * 3},
-        {name: '污染', 类型: '基础', value: lvl => lvl * 2}
+        {name: '力量', 类型: '+', value: lvl => lvl * 3},
+        {name: '污染', 类型: '+', value: lvl => lvl * 2}
     ]},
-    灯塔: {cap: 25, 图标: 'mdi-lighthouse', requirement() {
+    灯塔: {上限: 25, 图标: 'mdi-lighthouse', requirement() {
         return store.state.解锁.层 6 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             植物纤维: Math.pow(lvl * 0.06 + 1.6, lvl) * buildNum(3.68, 'T'),
-            宝石: Math.pow(lvl * 0.04 + 1.4, lvl) * buildNum(480, '分钟'),
+            宝石: Math.pow(lvl * 0.04 + 1.4, lvl) * buildNum(480, 'M'),
             油: Math.pow(lvl * 0.05 + 1.5, lvl) * 2800
         };
-    }, 减少制作时间至 {0}(lvl) {
-        return Math.ceil(Math.pow(1.3, lvl) * buildNum(650, '分钟'));
+    }, 制作时间(lvl) {
+        return Math.ceil(Math.pow(1.3, lvl) * buildNum(650, 'M'));
     }, 效果: [
-        {name: '信仰增益', 类型: 'mult', value: lvl => Math.pow(1.225, lvl)}
+        {name: '信仰增益', 类型: '*', value: lvl => Math.pow(1.225, lvl)}
     ]},
     大堂: {图标: 'mdi-account-group', requirement() {
         return store.state.解锁.层 6 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             金币: Math.pow(lvl * 0.05 + 1.35, lvl) * buildNum(13.5, 'T')
         };
-    }, 减少制作时间至 {0}(lvl) {
-        return Math.ceil(Math.pow(1.3, lvl) * buildNum(750, '分钟'));
+    }, 制作时间(lvl) {
+        return Math.ceil(Math.pow(1.3, lvl) * buildNum(750, 'M'));
     }, 效果: [
-        {name: '污染耐受性', 类型: '基础', value: lvl => lvl}
+        {name: '污染耐受性', 类型: '+', value: lvl => lvl}
     ]},
-    油存储: {cap: 20, 图标: 'mdi-barrel', requirement() {
+    油存储: {上限: 20, 图标: 'mdi-barrel', requirement() {
         return store.state.解锁.层 6 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             硬木: Math.pow(1.55, lvl) * buildNum(1.05, 'B'),
             玻璃: Math.pow(1.6, lvl) * buildNum(2.25, 'B')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.3, lvl) * buildNum(1.1, 'B'));
     }, 效果: [
-        {name: '金属增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
-        {name: '金属容量', 类型: 'mult', value: lvl => Math.pow(1.4, lvl)},
-        {name: '油容量', 类型: 'mult', value: lvl => Math.pow(1.4, lvl)}
+        {name: '金属增益', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '金属容量', 类型: '*', value: lvl => Math.pow(1.4, lvl)},
+        {name: '油容量', 类型: '*', value: lvl => Math.pow(1.4, lvl)}
     ]},
-    美术馆: {cap: 10, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-palette-advanced', requirement() {
+    美术馆: {上限: 10, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-palette-advanced', requirement() {
         return store.state.解锁.层 6 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             植物纤维: Math.pow(2.9, lvl) * buildNum(198, 'T'),
             油: Math.pow(2.2, lvl) * buildNum(264, 'K'),
             快乐: lvl * 400 + 2200
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.33, lvl) * buildNum(1.6, 'B'));
     }, 效果: [
         {name: '雕塑家', 类型: 'villageJob', value: lvl => lvl},
-        {name: '大理石容量', 类型: '基础', value: lvl => lvl > 1 ? ((lvl - 1) * 100) : null}
+        {name: '大理石容量', 类型: '+', value: lvl => lvl > 1 ? ((lvl - 1) * 100) : null}
     ]},
     挖掘机: {图标: 'mdi-excavator', requirement() {
         return store.state.解锁.层 6 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             硬木: Math.pow(1.35, lvl) * buildNum(5.28, 'B'),
             油: Math.pow(1.6, lvl) * buildNum(360, 'K')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.3, lvl) * buildNum(2.2, 'B'));
     }, 效果: [
-        {name: '木头增益', 类型: 'mult', value: lvl => Math.pow(1.25, lvl) * (0.25 * lvl + 1)},
-        {name: '植物纤维增益', 类型: 'mult', value: lvl => Math.pow(1.25, lvl) * (0.25 * lvl + 1)},
-        {name: '石头增益', 类型: 'mult', value: lvl => Math.pow(1.25, lvl) * (0.25 * lvl + 1)},
-        {name: '污染', 类型: '基础', value: lvl => lvl}
+        {name: '木头增益', 类型: '*', value: lvl => Math.pow(1.25, lvl) * (0.25 * lvl + 1)},
+        {name: '植物纤维增益', 类型: '*', value: lvl => Math.pow(1.25, lvl) * (0.25 * lvl + 1)},
+        {name: '石头增益', 类型: '*', value: lvl => Math.pow(1.25, lvl) * (0.25 * lvl + 1)},
+        {name: '污染', 类型: '+', value: lvl => lvl}
     ]},
     油车: {图标: 'mdi-tanker-truck', requirement() {
         return store.state.解锁.层 6 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             宝石: Math.pow(1.45, lvl) * buildNum(7.8, 'B')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.3, lvl) * buildNum(3, 'B'));
     }, 效果: [
-        {name: '油容量', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '污染', 类型: '基础', value: lvl => lvl}
+        {name: '油容量', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '污染', 类型: '+', value: lvl => lvl}
     ]},
-    老图书馆: {图标: 'mdi-book-clock', cap: 2, requirement() {
+    老图书馆: {图标: 'mdi-book-clock', 上限: 2, requirement() {
         return store.state.解锁.层 6 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             木头: Math.pow(7.1, lvl) * buildNum(1.68, 'Qa'),
             大理石: Math.pow(4.5, lvl) * 7500,
             知识: lvl * 600 + 2800
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(10, lvl) * buildNum(4, 'B'));
     }, 效果: [
-        {name: '科学容量', 类型: '基础', value: lvl => lvl * 20},
+        {name: '科学容量', 类型: '+', value: lvl => lvl * 20},
         {name: '喷头升级', 类型: '解锁', value: lvl => lvl >= 1},
         {name: '贪婪升级', 类型: '解锁', value: lvl => lvl >= 2}
     ]},
-    移民局: {cap: 3, 图标: 'mdi-office-building', requirement() {
-        return store.state.解锁.层 6 建筑.use && store.state.升级成本.item.法庭.达到等级 {0} >= 2;
-    }, price(lvl) {
+    移民局: {上限: 3, 图标: 'mdi-office-building', requirement() {
+        return store.state.解锁.层 6 建筑.use && store.state.升级成本.item.法庭.达到等级 >= 2;
+    }, 消耗(lvl) {
         return {
             知识: lvl * 2000 + 4500,
             科学: lvl * 750 + 1500,
             金币: Math.pow(10, lvl) * buildNum(1.5, 'Qa')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(8, lvl) * buildNum(5, 'B'));
     }, 效果: [
-        {name: '移民政策', 类型: '基础', value: lvl => lvl}
+        {name: '移民政策', 类型: '+', value: lvl => lvl}
     ]},
-    大理石雕像: {cap: 10, 图标: 'mdi-human-female-dance', requirement() {
+    大理石雕像: {上限: 10, 图标: 'mdi-human-female-dance', requirement() {
         return store.state.解锁.层 6 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             大理石: Math.pow(1.65, lvl) * 2250
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.75, lvl) * buildNum(120, 'B'));
     }, 效果: [
-        {name: '幸福', 类型: '基础', value: lvl => lvl * 0.004},
-        {name: '大理石容量', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)},
-        {name: '知识容量', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '幸福', 类型: '+', value: lvl => lvl * 0.004},
+        {name: '大理石容量', 类型: '*', value: lvl => Math.pow(1.2, lvl)},
+        {name: '知识容量', 类型: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    黑暗教派: {cap: 4, hasDescription: true, 图标: 'mdi-pentagram', requirement() {
-        return store.state.解锁.层 6 建筑.use && store.state.升级成本.item.法庭.达到等级 {0} >= 2;
-    }, price(lvl) {
+    黑暗教派: {上限: 4, hasDescription: true, 图标: 'mdi-pentagram', requirement() {
+        return store.state.解锁.层 6 建筑.use && store.state.升级成本.item.法庭.达到等级 >= 2;
+    }, 消耗(lvl) {
         return {
             宝石: Math.pow(6.25, lvl) * buildNum(82, 'B'),
-            油: Math.pow(5.5, lvl) * buildNum(55, '分钟'),
+            油: Math.pow(5.5, lvl) * buildNum(55, 'M'),
             大理石: Math.pow(2.5, lvl) * buildNum(50, 'K')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(6, lvl) * buildNum(11, 'B'));
     }, 效果: [
-        {name: '宗教政策', 类型: '基础', value: lvl => lvl}
+        {name: '宗教政策', 类型: '+', value: lvl => lvl}
     ]},
     屠宰场: {图标: 'mdi-cow', requirement() {
         return store.state.解锁.层 6 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             植物纤维: Math.pow(1.5, lvl) * buildNum(15.4, 'Qa'),
             木头: Math.pow(1.5, lvl) * buildNum(12, 'Qa'),
             硬木: Math.pow(1.35, lvl) * buildNum(140, 'B'),
             水: Math.pow(1.9, lvl) * buildNum(9.5, 'Qi')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.25, lvl) * buildNum(16, 'B'));
     }, 效果: [
-        {name: '肉增益', 类型: '基础', value: lvl => getSequence(4, lvl) * 100},
-        {name: '污染', 类型: '基础', value: lvl => lvl}
+        {name: '肉增益', 类型: '+', value: lvl => getSequence(4, lvl) * 100},
+        {name: '污染', 类型: '+', value: lvl => lvl}
     ]},
-    生态委员会: {cap: 1, 保留: true, 图标: 'mdi-earth', requirement() {
+    生态委员会: {上限: 1, 保留: true, 图标: 'mdi-earth', requirement() {
         return store.state.解锁.层 6 建筑.use;
-    }, 减少制作时间至 {0}() {
+    }, 制作时间() {
         return buildNum(250, 'B');
-    }, price() {
-        return {油: buildNum(96, '分钟'), 大理石: buildNum(500, 'K'), 金币: buildNum(14, 'Qa'), 科学: 2000, 快乐: 6000};
+    }, 消耗() {
+        return {油: buildNum(96, 'M'), 大理石: buildNum(500, 'K'), 金币: buildNum(14, 'Qa'), 科学: 2000, 快乐: 6000};
     }, 效果: [
         {name: '层 7 建筑', 类型: '解锁', value: lvl => lvl >= 1}
     ]},
-    树屋: {cap: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-tree-outline', requirement() {
+    树屋: {上限: 25, capMult: true, subtype: '该建筑算作住房，可提高前 25 栋建筑的全局等级', 图标: 'mdi-tree-outline', requirement() {
         return store.state.解锁.层 7 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             硬木: Math.pow(1.45, lvl) * buildNum(162.5, 'B'),
             常见战利品: Math.ceil(Math.pow(1.2, lvl) * 5)
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.25, lvl) * buildNum(45, 'B'));
     }, 效果: [
-        {name: '工人', 类型: '基础', value: lvl => lvl * 6}
+        {name: '工人', 类型: '+', value: lvl => lvl * 6}
     ]},
     雨林: {图标: 'mdi-forest', requirement() {
         return store.state.解锁.层 7 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             硬木: Math.pow(1.35, lvl) * buildNum(185, 'B'),
             水: Math.pow(1.9, lvl) * buildNum(12.5, 'Qi')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.25, lvl) * buildNum(250, 'B'));
     }, 效果: [
-        {name: '污染', 类型: '基础', value: lvl => lvl * -1}
+        {name: '污染', 类型: '+', value: lvl => lvl * -1}
     ]},
-    豪华储物空间: {cap: 20, 图标: 'mdi-warehouse', requirement() {
+    豪华储物空间: {上限: 20, 图标: 'mdi-warehouse', requirement() {
         return store.state.解锁.层 7 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             木头: Math.pow(1.85, lvl) * buildNum(121, 'Qa'),
             石头: Math.pow(1.85, lvl) * buildNum(143, 'Qa'),
-            油: Math.pow(1.6, lvl) * buildNum(234, '分钟')
+            油: Math.pow(1.6, lvl) * buildNum(234, 'M')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.3, lvl) * buildNum(60, 'B'));
     }, 效果: [
-        {name: '金属容量', 类型: 'mult', value: lvl => Math.pow(1.3, lvl)},
-        {name: '玻璃容量', 类型: 'mult', value: lvl => Math.pow(1.4, lvl)},
-        {name: '硬木容量', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)},
-        {name: '宝石容量', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)},
-        {name: '大理石容量', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)},
+        {name: '金属容量', 类型: '*', value: lvl => Math.pow(1.3, lvl)},
+        {name: '玻璃容量', 类型: '*', value: lvl => Math.pow(1.4, lvl)},
+        {name: '硬木容量', 类型: '*', value: lvl => Math.pow(1.25, lvl)},
+        {name: '宝石容量', 类型: '*', value: lvl => Math.pow(1.25, lvl)},
+        {name: '大理石容量', 类型: '*', value: lvl => Math.pow(1.25, lvl)},
     ]},
-    金字塔: {cap: 10, hasDescription: true, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-pyramid', requirement() {
+    金字塔: {上限: 10, hasDescription: true, capMult: true, subtype: '这座建筑算作一个工作站', 图标: 'mdi-pyramid', requirement() {
         return store.state.解锁.层 7 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             石头: Math.pow(3.75, lvl) * buildNum(375, 'Qa'),
-            大理石: Math.pow(2.45, lvl) * buildNum(2.85, '分钟'),
+            大理石: Math.pow(2.45, lvl) * buildNum(2.85, 'M'),
             快乐: lvl * 4000 + buildNum(15.5, 'K')
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.45, lvl) * buildNum(100, 'B'));
     }, 效果: [
         {name: '探险家', 类型: 'villageJob', value: lvl => lvl},
-        {name: '战利品品质', 类型: '基础', value: lvl => lvl > 1 ? ((lvl - 1) * 2) : null}
+        {name: '战利品品质', 类型: '+', value: lvl => lvl > 1 ? ((lvl - 1) * 2) : null}
     ]},
-    奖杯柜: {cap: 6, 图标: 'mdi-gradient-vertical', requirement() {
+    奖杯柜: {上限: 6, 图标: 'mdi-gradient-vertical', requirement() {
         return store.state.解锁.层 7 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         let obj = {};
         obj[`掠夺${ lvl }`] = 1;
         return obj;
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(2.5, lvl) * buildNum(150, 'B'));
     }, 效果: [
-        {name: '材料增益', 类型: 'mult', value: lvl => Math.pow(1.4, lvl)},
-        {name: '材料容量', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)}
+        {name: '材料增益', 类型: '*', value: lvl => Math.pow(1.4, lvl)},
+        {name: '材料容量', 类型: '*', value: lvl => Math.pow(1.2, lvl)}
     ]},
-    古玩: {图标: 'mdi-store', cap: 12, requirement() {
+    古玩: {图标: 'mdi-store', 上限: 12, requirement() {
         return store.state.解锁.层 7 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         let obj = {
             金币: Math.pow(2.5, lvl) * buildNum(32.5, 'Qa')
         };
         obj[`掠夺${ Math.floor(lvl / 2) }`] = Math.pow(10, lvl % 2) * 10;
         return obj;
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(3, lvl) * buildNum(200, 'B'));
     }, 效果: [
-        {name: '金币容量', 类型: 'mult', value: lvl => Math.pow(1.3, lvl)},
+        {name: '金币容量', 类型: '*', value: lvl => Math.pow(1.3, lvl)},
         {name: '野心升级', 类型: '解锁', value: lvl => lvl >= 1},
         {name: '认知升级', 类型: '解锁', value: lvl => lvl >= 2},
         {name: '好奇心升级', 类型: '解锁', value: lvl => lvl >= 3},
@@ -998,57 +998,57 @@
         {name: '易货升级', 类型: '解锁', value: lvl => lvl >= 5},
         {name: '火花升级', 类型: '解锁', value: lvl => lvl >= 6},
     ]},
-    风力发电机: {cap: 20, 图标: 'mdi-wind-turbine', requirement() {
+    风力发电机: {上限: 20, 图标: 'mdi-wind-turbine', requirement() {
         return store.state.解锁.层 7 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             金属: Math.pow(1.65, lvl) * buildNum(1.25, 'Qa'),
             罕见的战利品: Math.ceil(Math.pow(1.15, lvl) * (3 + lvl))
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.25, lvl) * buildNum(240, 'B'));
     }, 效果: [
-        {name: '力量', 类型: '基础', value: lvl => lvl},
-        {name: '战利品增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1}
+        {name: '力量', 类型: '+', value: lvl => lvl},
+        {name: '战利品增益', 类型: '*', value: lvl => lvl * 0.05 + 1}
     ]},
-    雷达: {cap: 10, hasDescription: true, 图标: 'mdi-satellite-uplink', requirement() {
-        return store.state.解锁.层 7 建筑.use && store.state.升级成本.item.法庭.达到等级 {0} >= 2;
-    }, price(lvl) {
+    雷达: {上限: 10, hasDescription: true, 图标: 'mdi-satellite-uplink', requirement() {
+        return store.state.解锁.层 7 建筑.use && store.state.升级成本.item.法庭.达到等级 >= 2;
+    }, 消耗(lvl) {
         return {
             金属: Math.pow(3.15, lvl) * buildNum(6.57, 'Qa'),
-            大理石: Math.pow(2.4, lvl) * buildNum(41.5, '分钟'),
+            大理石: Math.pow(2.4, lvl) * buildNum(41.5, 'M'),
             科学: lvl * 650 + 3500
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(3, lvl) * buildNum(333, 'B'));
     }, 效果: [
-        {name: '扫描政策', 类型: '基础', value: lvl => lvl}
+        {name: '扫描政策', 类型: '+', value: lvl => lvl}
     ]},
-    水力涡轮: {cap: 20, 图标: 'mdi-hydro-power', requirement() {
+    水力涡轮: {上限: 20, 图标: 'mdi-hydro-power', requirement() {
         return store.state.解锁.层 7 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             水: Math.pow(2.2, lvl) * buildNum(200, 'Qi'),
             玻璃: Math.pow(1.65, lvl) * buildNum(6.8, 'T'),
             稀有战利品: Math.ceil(Math.pow(1.14, lvl) * (2 + lvl))
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.25, lvl) * buildNum(420, 'B'));
     }, 效果: [
-        {name: '力量', 类型: '基础', value: lvl => lvl},
-        {name: '水增益', 类型: 'mult', value: lvl => Math.pow(1.15, lvl)}
+        {name: '力量', 类型: '+', value: lvl => lvl},
+        {name: '水增益', 类型: '*', value: lvl => Math.pow(1.15, lvl)}
     ]},
-    太阳能板: {cap: 20, 图标: 'mdi-solar-panel', requirement() {
+    太阳能板: {上限: 20, 图标: 'mdi-solar-panel', requirement() {
         return store.state.解锁.层 7 建筑.use;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {
             宝石: Math.pow(1.55, lvl) * buildNum(9, 'T'),
             油: Math.pow(1.8, lvl) * buildNum(30.4, 'B'),
             史诗战利品: Math.ceil(Math.pow(1.13, lvl) * (1 + lvl))
         };
-    }, 减少制作时间至 {0}(lvl) {
+    }, 制作时间(lvl) {
         return Math.ceil(Math.pow(1.25, lvl) * buildNum(550, 'B'));
     }, 效果: [
-        {name: '力量', 类型: '基础', value: lvl => lvl * 2}
+        {name: '力量', 类型: '+', value: lvl => lvl * 2}
     ]},
 }

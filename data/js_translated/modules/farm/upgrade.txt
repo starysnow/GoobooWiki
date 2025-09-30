@@ -1,5 +1,5 @@
 {
-    种子箱: {cap: 24, hideCap: true, price(lvl) {
+    种子箱: {上限: 24, hideCap: true, 消耗(lvl) {
         return [
             {仅蔬菜: 70},
             {仅浆果: 150},
@@ -8,10 +8,10 @@
             {仅蔬菜: 4600},
             {仅浆果: buildNum(50, 'K')},
             {仅粮食: buildNum(335, 'K')},
-            {仅鲜花: buildNum(2, '分钟')},
-            {仅蔬菜: buildNum(17.5, '分钟')},
-            {仅浆果: buildNum(120, '分钟')},
-            {仅粮食: buildNum(900, '分钟')},
+            {仅鲜花: buildNum(2, 'M')},
+            {仅蔬菜: buildNum(17.5, 'M')},
+            {仅浆果: buildNum(120, 'M')},
+            {仅粮食: buildNum(900, 'M')},
             {仅鲜花: buildNum(7.2, 'B')},
             {仅蔬菜: buildNum(54, 'B')},
             {仅浆果: buildNum(370, 'B')},
@@ -52,27 +52,27 @@
         {name: '向日葵', 类型: 'farmSeed', value: lvl => lvl >= 23},
         {name: '菠菜', 类型: 'farmSeed', value: lvl => lvl >= 24},
     ]},
-    繁殖力: {requirementBase, requirementStat, requirementValue: 1, price(lvl) {
+    繁殖力: {requirementBase, requirementStat, requirementValue: 1, 消耗(lvl) {
         return {仅蔬菜: 50 * Math.pow(lvl * 0.005 + 1.3, lvl), 仅浆果: 50 * Math.pow(lvl * 0.005 + 1.3, lvl)};
     }, 效果: [
-        {name: '作物增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)}
+        {name: '作物增益', 类型: '*', value: lvl => Math.pow(1.1, lvl)}
     ]},
-    过度生长: {cap: 9, requirementBase, requirementStat, requirementValue: 1, price(lvl) {
+    过度生长: {上限: 9, requirementBase, requirementStat, requirementValue: 1, 消耗(lvl) {
         return fallbackArray([
             {仅浆果: 200},
             {仅粮食: 850, 仅鲜花: 1300},
         ], {仅鲜花: 240 * Math.pow(5 + lvl, lvl)}, lvl);
     }, 效果: [
-        {name: '过度生长', 类型: '基础', value: lvl => lvl >= 1 ? (lvl * 0.05 + 0.05) : null}
+        {name: '过度生长', 类型: '+', value: lvl => lvl >= 1 ? (lvl * 0.05 + 0.05) : null}
     ], onBuy() {
         store.dispatch('农场/updateFieldCaches');
     }},
-    扩张: {cap: 45, requirementBase, requirementStat, requirementValue: 2, price(lvl) {
+    扩张: {上限: 45, requirementBase, requirementStat, requirementValue: 2, 消耗(lvl) {
         return {仅粮食: 300 * Math.pow(lvl * 0.05 + 2, lvl)};
     }, 效果: [
         {name: '农场地块', 类型: 'farmTile', value: lvl => lvl}
     ]},
-    花园侏儒: {cap: 5, hasDescription: true, requirementBase, requirementStat, requirementValue: 3, price(lvl) {
+    花园侏儒: {上限: 5, hasDescription: true, requirementBase, requirementStat, requirementValue: 3, 消耗(lvl) {
         return {仅蔬菜: 500 * Math.pow(96, lvl), 仅浆果: 500 * Math.pow(96, lvl), 仅鲜花: 1000 * Math.pow(128, lvl)};
     }, 效果: [
         {name: '花园侏儒', 类型: 'farmBuilding', value: lvl => lvl},
@@ -80,201 +80,201 @@
     ], onBuy() {
         store.dispatch('农场/applyEarlyGameBuff');
     }},
-    学习: {cap: 1, hasDescription: true, requirementBase, requirementStat, requirementValue: 4, price() {
+    学习: {上限: 1, hasDescription: true, requirementBase, requirementStat, requirementValue: 4, 消耗() {
         return {黄金: 1};
     }, 效果: [
         {name: '作物经验', 类型: '解锁', value: lvl => lvl >= 1}
     ]},
-    肥料: {cap: 1, requirement() {
-        return store.state.升级成本.item.学习.达到等级 {0} >= 1;
-    }, price() {
+    肥料: {上限: 1, requirement() {
+        return store.state.升级成本.item.学习.达到等级 >= 1;
+    }, 消耗() {
         return {黄金: 5};
     }, 效果: [
         {name: '肥料', 类型: '解锁', value: lvl => lvl >= 1}
     ]},
-    磨碎种子: {requirementBase, requirementStat, requirementValue: 5, price(lvl) {
-        return {仅鲜花: 6000 * Math.pow(1.75, lvl), 种子壳: Math.round(4 * lvl * Math.pow(1.1, Math.最大值(0, lvl - 10)) + 10)};
+    磨碎种子: {requirementBase, requirementStat, requirementValue: 5, 消耗(lvl) {
+        return {仅鲜花: 6000 * Math.pow(1.75, lvl), 种子壳: Math.round(4 * lvl * Math.pow(1.1, Math.max(0, lvl - 10)) + 10)};
     }, 效果: [
-        {name: '仅粮食增益', 类型: 'mult', value: lvl => lvl * 0.15 + 1},
-        {name: '过度生长', 类型: '基础', value: lvl => lvl * 0.01}
+        {name: '仅粮食增益', 类型: '*', value: lvl => lvl * 0.15 + 1},
+        {name: '过度生长', 类型: '+', value: lvl => lvl * 0.01}
     ], onBuy() {
         store.dispatch('农场/updateFieldCaches');
     }},
-    烤种子: {cap: 5, requirementBase, requirementStat, requirementValue: 5, price(lvl) {
+    烤种子: {上限: 5, requirementBase, requirementStat, requirementValue: 5, 消耗(lvl) {
         return {种子壳: Math.round(Math.pow(1.8, lvl) * 4)};
     }, 效果: [
-        {name: '作物经验', 类型: '基础', value: lvl => lvl * 0.1}
+        {name: '作物经验', 类型: '+', value: lvl => lvl * 0.1}
     ]},
-    干草捆: {requirementBase, requirementStat, requirementValue: 5, price(lvl) {
+    干草捆: {requirementBase, requirementStat, requirementValue: 5, 消耗(lvl) {
         return {草: lvl * 125 + 75};
     }, 效果: [
-        {name: '草容量', 类型: '基础', value: lvl => lvl * 100}
+        {name: '草容量', 类型: '+', value: lvl => lvl * 100}
     ]},
-    小箱子: {cap: 7, capMult: true, requirementBase, requirementStat, requirementValue: 6, price(lvl) {
+    小箱子: {上限: 7, capMult: true, requirementBase, requirementStat, requirementValue: 6, 消耗(lvl) {
         return {仅浆果: buildNum(24.5, 'K') * Math.pow(1.9, lvl)};
     }, 效果: [
-        {name: '种子壳容量', 类型: '基础', value: lvl => lvl * 10}
+        {name: '种子壳容量', 类型: '+', value: lvl => lvl * 10}
     ]},
-    洒水装置: {cap: 2, hasDescription: true, 笔记: 'farm_8', requirementBase, requirementStat, requirementValue: 6, price(lvl) {
-        return {仅蔬菜: buildNum(120, 'K') * Math.pow(buildNum(4, '分钟'), lvl), 种子壳: 50 * Math.pow(10, lvl)};
+    洒水装置: {上限: 2, hasDescription: true, 笔记: 'farm_8', requirementBase, requirementStat, requirementValue: 6, 消耗(lvl) {
+        return {仅蔬菜: buildNum(120, 'K') * Math.pow(buildNum(4, 'M'), lvl), 种子壳: 50 * Math.pow(10, lvl)};
     }, 效果: [
         {name: '洒水装置', 类型: 'farmBuilding', value: lvl => lvl}
     ]},
-    放大镜: {cap: 20, requirementBase, requirementStat, requirementValue: 7, price(lvl) {
+    放大镜: {上限: 20, requirementBase, requirementStat, requirementValue: 7, 消耗(lvl) {
         return {仅粮食: buildNum(54, 'K') * Math.pow(lvl * 0.1 + 2, lvl), 仅鲜花: buildNum(33, 'K') * Math.pow(lvl * 0.1 + 2, lvl)};
     }, 效果: [
-        {name: '作物经验', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '作物经验', 类型: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    稻草人: {cap: 10, capMult: true, requirementBase, requirementStat, requirementValue: 7, price(lvl) {
+    稻草人: {上限: 10, capMult: true, requirementBase, requirementStat, requirementValue: 7, 消耗(lvl) {
         return {仅粮食: buildNum(110, 'K') * Math.pow(1.8, lvl), 花瓣: Math.round(Math.pow(1.4, lvl) * 3), 黄金: 6 + lvl};
     }, 效果: [
-        {name: '作物增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '花瓣容量', 类型: '基础', value: lvl => lvl * 3}
+        {name: '作物增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '花瓣容量', 类型: '+', value: lvl => lvl * 3}
     ]},
-    蚁丘: {requirementBase, requirementStat, requirementValue: 7, price(lvl) {
+    蚁丘: {requirementBase, requirementStat, requirementValue: 7, 消耗(lvl) {
         return {草: getSequence(3, lvl) * 50 + 200};
     }, 效果: [
-        {name: '稀有掉率', 类型: '基础', value: lvl => lvl * 0.015}
+        {name: '稀有掉率', 类型: '+', value: lvl => lvl * 0.015}
     ]},
-    虫粉: {requirementBase, requirementStat, requirementValue: 8, price(lvl) {
-        return {仅粮食: buildNum(675, 'K') * Math.pow(1.75, lvl), 虫子: Math.round(5 * lvl * Math.pow(1.1, Math.最大值(0, lvl - 10)) + 10)};
+    虫粉: {requirementBase, requirementStat, requirementValue: 8, 消耗(lvl) {
+        return {仅粮食: buildNum(675, 'K') * Math.pow(1.75, lvl), 虫子: Math.round(5 * lvl * Math.pow(1.1, Math.max(0, lvl - 10)) + 10)};
     }, 效果: [
-        {name: '仅蔬菜增益', 类型: 'mult', value: lvl => lvl * 0.15 + 1}
+        {name: '仅蔬菜增益', 类型: '*', value: lvl => lvl * 0.15 + 1}
     ]},
-    棚子: {cap: 10, capMult: true, requirementBase, requirementStat, requirementValue: 8, price(lvl) {
+    棚子: {上限: 10, capMult: true, requirementBase, requirementStat, requirementValue: 8, 消耗(lvl) {
         return {种子壳: 5 * getSequence(3, lvl) + 35, 虫子: 5 * getSequence(3, lvl) + 35, 花瓣: 4 * getSequence(1, lvl) + 10};
     }, 效果: [
-        {name: '种子壳容量', 类型: '基础', value: lvl => lvl * 20},
-        {name: '虫子容量', 类型: '基础', value: lvl => lvl * 20},
-        {name: '花瓣容量', 类型: '基础', value: lvl => lvl * 10}
+        {name: '种子壳容量', 类型: '+', value: lvl => lvl * 20},
+        {name: '虫子容量', 类型: '+', value: lvl => lvl * 20},
+        {name: '花瓣容量', 类型: '+', value: lvl => lvl * 10}
     ]},
-    讲台: {cap: 2, hasDescription: true, 笔记: 'farm_12', requirementBase, requirementStat, requirementValue: 9, price(lvl) {
-        return {仅鲜花: buildNum(3.5, '分钟') * Math.pow(buildNum(3, '分钟'), lvl), 花瓣: 75 * Math.pow(5, lvl)};
+    讲台: {上限: 2, hasDescription: true, 笔记: 'farm_12', requirementBase, requirementStat, requirementValue: 9, 消耗(lvl) {
+        return {仅鲜花: buildNum(3.5, 'M') * Math.pow(buildNum(3, 'M'), lvl), 花瓣: 75 * Math.pow(5, lvl)};
     }, 效果: [
         {name: '讲台', 类型: 'farmBuilding', value: lvl => lvl}
     ]},
-    香水: {cap: 25, 笔记: 'farm_13', requirementBase, requirementStat, requirementValue: 9, price(lvl) {
-        return {虫子: Math.round(5 * lvl * Math.pow(1.1, Math.最大值(0, lvl - 10)) + 10), 蝴蝶: Math.round(lvl * Math.pow(1.1, Math.最大值(0, lvl - 10)) + 2)};
+    香水: {上限: 25, 笔记: 'farm_13', requirementBase, requirementStat, requirementValue: 9, 消耗(lvl) {
+        return {虫子: Math.round(5 * lvl * Math.pow(1.1, Math.max(0, lvl - 10)) + 10), 蝴蝶: Math.round(lvl * Math.pow(1.1, Math.max(0, lvl - 10)) + 2)};
     }, 效果: [
-        {name: '仅浆果增益', 类型: 'mult', value: lvl => lvl * 0.15 + 1},
-        {name: '稀有掉率', 类型: '基础', value: lvl => lvl * 0.01}
+        {name: '仅浆果增益', 类型: '*', value: lvl => lvl * 0.15 + 1},
+        {name: '稀有掉率', 类型: '+', value: lvl => lvl * 0.01}
     ]},
-    中箱子: {cap: 8, capMult: true, requirementBase, requirementStat, requirementValue: 10, price(lvl) {
-        return {仅蔬菜: buildNum(90, '分钟') * Math.pow(1.75, lvl), 仅粮食: buildNum(54, '分钟') * Math.pow(2.1, lvl)};
+    中箱子: {上限: 8, capMult: true, requirementBase, requirementStat, requirementValue: 10, 消耗(lvl) {
+        return {仅蔬菜: buildNum(90, 'M') * Math.pow(1.75, lvl), 仅粮食: buildNum(54, 'M') * Math.pow(2.1, lvl)};
     }, 效果: [
-        {name: '种子壳容量', 类型: '基础', value: lvl => lvl * 25},
-        {name: '草容量', 类型: '基础', value: lvl => lvl * 40}
+        {name: '种子壳容量', 类型: '+', value: lvl => lvl * 25},
+        {name: '草容量', 类型: '+', value: lvl => lvl * 40}
     ]},
-    踩碎种子: {requirementBase, requirementStat, requirementValue: 10, price(lvl) {
+    踩碎种子: {requirementBase, requirementStat, requirementValue: 10, 消耗(lvl) {
         return {种子壳: Math.round(Math.pow(1.15, lvl) * 150)};
     }, 效果: [
-        {name: '作物增益', 类型: 'mult', value: lvl => Math.pow(1.12, lvl)}
+        {name: '作物增益', 类型: '*', value: lvl => Math.pow(1.12, lvl)}
     ]},
-    昆虫天堂: {cap: 6, capMult: true, requirementBase, requirementStat, requirementValue: 11, price(lvl) {
-        return {仅浆果: buildNum(750, '分钟') * Math.pow(2.4, lvl), 花瓣: Math.round(Math.pow(1.75, lvl) * 11)};
+    昆虫天堂: {上限: 6, capMult: true, requirementBase, requirementStat, requirementValue: 11, 消耗(lvl) {
+        return {仅浆果: buildNum(750, 'M') * Math.pow(2.4, lvl), 花瓣: Math.round(Math.pow(1.75, lvl) * 11)};
     }, 效果: [
-        {name: '虫子容量', 类型: '基础', value: lvl => lvl * 40},
-        {name: '蝴蝶容量', 类型: '基础', value: lvl => lvl * 5},
-        {name: '瓢虫容量', 类型: '基础', value: lvl => lvl * 30}
+        {name: '虫子容量', 类型: '+', value: lvl => lvl * 40},
+        {name: '蝴蝶容量', 类型: '+', value: lvl => lvl * 5},
+        {name: '瓢虫容量', 类型: '+', value: lvl => lvl * 30}
     ]},
-    黄金工具: {requirementBase, requirementStat, requirementValue: 11, price(lvl) {
+    黄金工具: {requirementBase, requirementStat, requirementValue: 11, 消耗(lvl) {
         return {黄金: Math.round(Math.pow(1.25, lvl) * 350)};
     }, 效果: [
-        {name: '作物增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '作物增益', 类型: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    蝴蝶翅膀: {cap: 6, requirementBase, requirementStat, requirementValue: 12, price(lvl) {
+    蝴蝶翅膀: {上限: 6, requirementBase, requirementStat, requirementValue: 12, 消耗(lvl) {
         return {蝴蝶: Math.round(Math.pow(1.35, lvl) * 14)};
     }, 效果: [
-        {name: '花瓣容量', 类型: '基础', value: lvl => lvl * 15}
+        {name: '花瓣容量', 类型: '+', value: lvl => lvl * 15}
     ]},
-    肥沃之地: {requirementBase, requirementStat, requirementValue: 12, price(lvl) {
+    肥沃之地: {requirementBase, requirementStat, requirementValue: 12, 消耗(lvl) {
         return {仅浆果: buildNum(4, 'B') * Math.pow(2.25, lvl), 仅鲜花: buildNum(3.3, 'B') * Math.pow(2.25, lvl)};
     }, 效果: [
-        {name: '仅蔬菜增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '仅蔬菜增益', 类型: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    风车: {cap: 1, hasDescription: true, 笔记: 'farm_17', requirementBase, requirementStat, requirementValue: 13, price() {
+    风车: {上限: 1, hasDescription: true, 笔记: 'farm_17', requirementBase, requirementStat, requirementValue: 13, 消耗() {
         return {仅鲜花: buildNum(250, 'B'), 花瓣: 150, 瓢虫: 50};
     }, 效果: [
         {name: '风车', 类型: 'farmBuilding', value: lvl => lvl}
     ]},
-    神秘之地: {requirementBase, requirementStat, requirementValue: 13, price(lvl) {
+    神秘之地: {requirementBase, requirementStat, requirementValue: 13, 消耗(lvl) {
         return {仅蔬菜: buildNum(37.5, 'B') * Math.pow(2.25, lvl), 瓢虫: Math.round(Math.pow(1.12, lvl) * 10)};
     }, 效果: [
-        {name: '仅粮食增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '瓢虫容量', 类型: '基础', value: lvl => lvl * 20}
+        {name: '仅粮食增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '瓢虫容量', 类型: '+', value: lvl => lvl * 20}
     ]},
-    化肥袋: {cap: 1, requirementBase, requirementStat, requirementValue: 14, price() {
+    化肥袋: {上限: 1, requirementBase, requirementStat, requirementValue: 14, 消耗() {
         return {黄金: 700};
     }, 效果: [
         {name: '除草剂', 类型: 'findConsumable', value: lvl => lvl >= 1},
         {name: '涡轮生长', 类型: 'findConsumable', value: lvl => lvl >= 1},
         {name: '高级', 类型: 'findConsumable', value: lvl => lvl >= 1}
     ]},
-    大箱子: {cap: 10, capMult: true, requirementBase, requirementStat, requirementValue: 14, price(lvl) {
+    大箱子: {上限: 10, capMult: true, requirementBase, requirementStat, requirementValue: 14, 消耗(lvl) {
         return {仅浆果: buildNum(190, 'B') * Math.pow(1.85, lvl), 仅粮食: buildNum(240, 'B') * Math.pow(1.85, lvl)};
     }, 效果: [
-        {name: '种子壳容量', 类型: '基础', value: lvl => lvl * 60},
-        {name: '草容量', 类型: '基础', value: lvl => lvl * 80},
-        {name: '花瓣容量', 类型: '基础', value: lvl => lvl * 25}
+        {name: '种子壳容量', 类型: '+', value: lvl => lvl * 60},
+        {name: '草容量', 类型: '+', value: lvl => lvl * 80},
+        {name: '花瓣容量', 类型: '+', value: lvl => lvl * 25}
     ]},
-    人造网: {cap: 3, requirementBase, requirementStat, requirementValue: 15, price(lvl) {
+    人造网: {上限: 3, requirementBase, requirementStat, requirementValue: 15, 消耗(lvl) {
         return {仅鲜花: buildNum(1, 'T') * Math.pow(9, lvl), 瓢虫: Math.round(Math.pow(1.5, lvl) * 100)};
     }, 效果: [
-        {name: '蜘蛛容量', 类型: '基础', value: lvl => lvl * 4}
+        {name: '蜘蛛容量', 类型: '+', value: lvl => lvl * 4}
     ]},
-    研究昆虫: {cap: 10, requirementBase, requirementStat, requirementValue: 15, price(lvl) {
+    研究昆虫: {上限: 10, requirementBase, requirementStat, requirementValue: 15, 消耗(lvl) {
         return {仅浆果: buildNum(1.35, 'T') * Math.pow(2.65, lvl), 蝴蝶: Math.round(Math.pow(1.25, lvl) * 28)};
     }, 效果: [
-        {name: '作物经验', 类型: 'mult', value: lvl => lvl * 0.1 + 1}
+        {name: '作物经验', 类型: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    蜂窝: {cap: 20, requirementBase, requirementStat, requirementValue: 16, price(lvl) {
+    蜂窝: {上限: 20, requirementBase, requirementStat, requirementValue: 16, 消耗(lvl) {
         return {仅鲜花: buildNum(22.5, 'T') * Math.pow(1.4, lvl), 种子壳: Math.round(Math.pow(1.14, lvl) * 280), 虫子: Math.round(Math.pow(1.16, lvl) * 160)};
     }, 效果: [
-        {name: '蜘蛛容量', 类型: '基础', value: lvl => lvl},
-        {name: '蜜蜂容量', 类型: '基础', value: lvl => lvl * 200}
+        {name: '蜘蛛容量', 类型: '+', value: lvl => lvl},
+        {name: '蜜蜂容量', 类型: '+', value: lvl => lvl * 200}
     ]},
-    黑暗角落: {cap: 10, requirementBase, requirementStat, requirementValue: 17, price(lvl) {
+    黑暗角落: {上限: 10, requirementBase, requirementStat, requirementValue: 17, 消耗(lvl) {
         return {仅蔬菜: buildNum(175, 'T') * Math.pow(1.75, lvl), 仅粮食: buildNum(300, 'T') * Math.pow(1.6, lvl), 虫子: Math.round(Math.pow(1.24, lvl) * 230)};
     }, 效果: [
-        {name: '蜘蛛容量', 类型: '基础', value: lvl => lvl * 2},
-        {name: '稀有掉率', 类型: '基础', value: lvl => lvl * 0.01}
+        {name: '蜘蛛容量', 类型: '+', value: lvl => lvl * 2},
+        {name: '稀有掉率', 类型: '+', value: lvl => lvl * 0.01}
     ]},
-    旗帜: {cap: 1, hasDescription: true, 笔记: 'farm_20', requirementBase, requirementStat, requirementValue: 18, price() {
+    旗帜: {上限: 1, hasDescription: true, 笔记: 'farm_20', requirementBase, requirementStat, requirementValue: 18, 消耗() {
         return {蜘蛛: 50, 蜜蜂: 2500, 金色花瓣: 10};
     }, 效果: [
         {name: '旗帜', 类型: 'farmBuilding', value: lvl => lvl}
     ]},
-    虫饵: {requirementBase, requirementStat, requirementValue: 19, price(lvl) {
+    虫饵: {requirementBase, requirementStat, requirementValue: 19, 消耗(lvl) {
         return {草: Math.round(Math.pow(1.22, lvl) * 1350), 花瓣: Math.round(Math.pow(1.16, lvl) * 175), 蝴蝶: Math.round(Math.pow(1.16, lvl) * 50)};
     }, 效果: [
-        {name: '仅蔬菜增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-        {name: '虫子容量', 类型: '基础', value: lvl => lvl * 20},
-        {name: '瓢虫容量', 类型: '基础', value: lvl => lvl * 35},
+        {name: '仅蔬菜增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
+        {name: '虫子容量', 类型: '+', value: lvl => lvl * 20},
+        {name: '瓢虫容量', 类型: '+', value: lvl => lvl * 35},
     ]},
-    闪亮的土壤: {requirementBase, requirementStat, requirementValue: 20, price(lvl) {
+    闪亮的土壤: {requirementBase, requirementStat, requirementValue: 20, 消耗(lvl) {
         return {蜜蜂: Math.round(Math.pow(1.16, lvl) * 4000), 金色花瓣: Math.round(lvl * 0.3 + 5)};
     }, 效果: [
-        {name: '仅浆果增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-        {name: '蝴蝶容量', 类型: '基础', value: lvl => lvl * 4},
+        {name: '仅浆果增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
+        {name: '蝴蝶容量', 类型: '+', value: lvl => lvl * 4},
     ]},
-    大肥料袋: {cap: 1, requirementBase, requirementStat, requirementValue: 21, price() {
+    大肥料袋: {上限: 1, requirementBase, requirementStat, requirementValue: 21, 消耗() {
         return {黄金: 2000};
     }, 效果: [
         {name: '分析肥料', 类型: 'findConsumable', value: lvl => lvl >= 1},
         {name: '超级多汁', 类型: 'findConsumable', value: lvl => lvl >= 1},
         {name: '颗粒', 类型: 'findConsumable', value: lvl => lvl >= 1}
     ]},
-    芝麻开门: {requirementBase, requirementStat, requirementValue: 22, price(lvl) {
+    芝麻开门: {requirementBase, requirementStat, requirementValue: 22, 消耗(lvl) {
         return {仅鲜花: buildNum(870, 'Sx') * Math.pow(1.6, lvl), 小种子: Math.round(Math.pow(1.28, lvl) * 225)};
     }, 效果: [
-        {name: '仅粮食增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-        {name: '种子壳容量', 类型: '基础', value: lvl => lvl * 50},
-        {name: '小种子容量', 类型: '基础', value: lvl => lvl * 150},
+        {name: '仅粮食增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
+        {name: '种子壳容量', 类型: '+', value: lvl => lvl * 50},
+        {name: '小种子容量', 类型: '+', value: lvl => lvl * 150},
     ]},
-    花卉绘画: {requirementBase, requirementStat, requirementValue: 23, price(lvl) {
+    花卉绘画: {requirementBase, requirementStat, requirementValue: 23, 消耗(lvl) {
         return {仅浆果: buildNum(92, 'Sp') * Math.pow(1.6, lvl), 蜜蜂: Math.round(Math.pow(1.28, lvl) * 6000)};
     }, 效果: [
-        {name: '仅鲜花增益', 类型: 'mult', value: lvl => lvl * 0.05 + 1},
-        {name: '蜜蜂容量', 类型: '基础', value: lvl => lvl * 150},
+        {name: '仅鲜花增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
+        {name: '蜜蜂容量', 类型: '+', value: lvl => lvl * 150},
     ]},
 }

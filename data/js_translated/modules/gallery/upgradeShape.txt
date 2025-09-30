@@ -1,35 +1,35 @@
 {
-    大圆: {类型: 'shape', price(lvl) {
+    大圆: {类型: 'shape', 消耗(lvl) {
         return {圆形: Math.pow(lvl * 0.01 + 1.35, lvl) * 100};
     }, 效果: [
-        {name: '形状增益', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+        {name: '形状增益', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
     ]},
-    画得很好的圆: {类型: 'shape', price(lvl) {
+    画得很好的圆: {类型: 'shape', 消耗(lvl) {
         return {圆形: Math.pow(lvl * 0.05 + 2.25, lvl) * 5000};
     }, 效果: [
-        {name: '红色增益', 类型: 'mult', value: lvl => lvl * 0.02 + 1}
+        {name: '红色增益', 类型: '*', value: lvl => lvl * 0.02 + 1}
     ]},
     大矩形: {类型: 'shape', requirement() {
         return store.state.画廊.shape.矩形.unlocked;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {矩形: Math.pow(lvl * 0.1 + 1.75, lvl) * 1000};
     }, 效果: [
-        {name: '动机容量', 类型: '基础', value: lvl => lvl}
+        {name: '动机容量', 类型: '+', value: lvl => lvl}
     ]},
     画得很好的矩形: {类型: 'shape', requirement() {
         return store.state.画廊.shape.矩形.unlocked;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {矩形: Math.pow(lvl * 0.05 + 2.25, lvl) * 6500};
     }, 效果: [
-        {name: '转换器容量', 类型: '基础', value: lvl => lvl * 40}
+        {name: '转换器容量', 类型: '+', value: lvl => lvl * 40}
     ]},
     创意药水: {类型: 'shape', requirement() {
         return store.state.画廊.shape.三角形.unlocked;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return fallbackArray([
             {三角形: buildNum(10, 'K'), 圆形: 4000},
             {三角形: buildNum(100, 'K'), 矩形: buildNum(40, 'K')},
-            {三角形: buildNum(10, '分钟'), 星形: buildNum(4, '分钟')},
+            {三角形: buildNum(10, 'M'), 星形: buildNum(4, 'M')},
             {三角形: buildNum(10, 'B'), 椭圆形: buildNum(3, 'B'), 心形: buildNum(3, 'B')},
             {三角形: buildNum(100, 'T'), 正方形: buildNum(30, 'Sx'), 八边形: buildNum(30, 'T')},
             {三角形: buildNum(10, 'Qi'), 五边形: buildNum(300, 'Qa'), 六边形: buildNum(300, 'Qa')}
@@ -41,120 +41,120 @@
         {name: 'sparkles', 类型: '形状', value: lvl => lvl >= 4},
         {name: '沙漏', 类型: '形状', value: lvl => lvl >= 5},
         {name: 'chest', 类型: '形状', value: lvl => lvl >= 6},
-        {name: '动机增益', 类型: '基础', value: lvl => lvl >= 7 ? ((lvl - 6) * 0.005) : null}
+        {name: '动机增益', 类型: '+', value: lvl => lvl >= 7 ? ((lvl - 6) * 0.005) : null}
     ]},
     画得很好的三角形: {类型: 'shape', requirement() {
         return store.state.画廊.shape.三角形.unlocked;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {三角形: Math.pow(lvl * 0.05 + 2.25, lvl) * 8500};
     }, 效果: [
-        {name: '现金增益', 类型: 'mult', value: lvl => lvl * 0.01 + 1}
+        {name: '现金增益', 类型: '*', value: lvl => lvl * 0.01 + 1}
     ]},
     大星形: {类型: 'shape', requirement() {
         return store.state.画廊.shape.星形.unlocked;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {星形: Math.pow(lvl * 0.4 + 2.35, lvl) * buildNum(75, 'K')};
     }, 效果: [
-        {name: '特殊形状几率', 类型: '基础', value: lvl => lvl * 0.0008}
+        {name: '特殊形状几率', 类型: '+', value: lvl => lvl * 0.0008}
     ]},
     画得很好的星形: {类型: 'shape', requirement() {
         return store.state.画廊.shape.星形.unlocked;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {星形: Math.pow(lvl * 0.05 + 2.25, lvl) * buildNum(24, 'K')};
     }, 效果: [
-        {name: '红色鼓容量', 类型: '基础', value: lvl => lvl * 3}
+        {name: '红色鼓容量', 类型: '+', value: lvl => lvl * 3}
     ]},
     大椭圆: {类型: 'shape', requirement() {
         return store.state.画廊.shape.椭圆形.unlocked;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {椭圆形: Math.pow(lvl * 0.4 + 2.35, lvl) * buildNum(400, 'K')};
     }, 效果: [
-        {name: '特殊形状乘数', 类型: '基础', value: lvl => lvl * 0.25}
+        {name: '特殊形状乘数', 类型: '+', value: lvl => lvl * 0.25}
     ]},
     画得很好的椭圆: {类型: 'shape', requirement() {
         return store.state.画廊.shape.椭圆形.unlocked;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {椭圆形: Math.pow(lvl * 0.3 + 12.5, lvl) * buildNum(850, 'K')};
     }, 效果: [
-        {name: '所有鼓上限', 类型: '基础', value: lvl => lvl}
+        {name: '所有鼓上限', 类型: '+', value: lvl => lvl}
     ]},
     大心形: {类型: 'shape', requirement() {
         return store.state.画廊.shape.心形.unlocked;
-    }, price(lvl) {
-        return {心形: Math.pow(lvl + 8, lvl) * buildNum(2, '分钟')};
+    }, 消耗(lvl) {
+        return {心形: Math.pow(lvl + 8, lvl) * buildNum(2, 'M')};
     }, 效果: [
-        {name: '形状增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '动机容量', 类型: '基础', value: lvl => lvl * 2}
+        {name: '形状增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '动机容量', 类型: '+', value: lvl => lvl * 2}
     ]},
     画得很好的心形: {类型: 'shape', requirement() {
         return store.state.画廊.shape.心形.unlocked;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {心形: Math.pow(lvl * 0.05 + 2.25, lvl) * buildNum(600, 'K')};
     }, 效果: [
-        {name: '所有颜色增益', 类型: 'mult', value: lvl => lvl * 0.005 + 1}
+        {name: '所有颜色增益', 类型: '*', value: lvl => lvl * 0.005 + 1}
     ]},
     大正方形: {类型: 'shape', requirement() {
         return store.state.画廊.shape.正方形.unlocked;
-    }, price(lvl) {
-        return {正方形: Math.pow(lvl * 0.002 + 1.35, lvl) * buildNum(15, '分钟')};
+    }, 消耗(lvl) {
+        return {正方形: Math.pow(lvl * 0.002 + 1.35, lvl) * buildNum(15, 'M')};
     }, 效果: [
-        {name: '正方形增益', 类型: 'mult', value: lvl => Math.pow(1.3, lvl)}
+        {name: '正方形增益', 类型: '*', value: lvl => Math.pow(1.3, lvl)}
     ]},
     画得很好的正方形: {类型: 'shape', requirement() {
         return store.state.画廊.shape.正方形.unlocked;
-    }, price(lvl) {
-        return {正方形: Math.pow(lvl * 0.15 + 3.5, lvl) * buildNum(3.75, '分钟')};
+    }, 消耗(lvl) {
+        return {正方形: Math.pow(lvl * 0.15 + 3.5, lvl) * buildNum(3.75, 'M')};
     }, 效果: [
-        {name: '橙色鼓容量', 类型: '基础', value: lvl => lvl * 3},
-        {name: '黄色鼓容量', 类型: '基础', value: lvl => lvl * 2},
-        {name: '绿色鼓容量', 类型: '基础', value: lvl => lvl}
+        {name: '橙色鼓容量', 类型: '+', value: lvl => lvl * 3},
+        {name: '黄色鼓容量', 类型: '+', value: lvl => lvl * 2},
+        {name: '绿色鼓容量', 类型: '+', value: lvl => lvl}
     ]},
     大八边形: {类型: 'shape', requirement() {
         return store.state.画廊.shape.八边形.unlocked;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {八边形: Math.pow(lvl * 0.01 + 1.45, lvl) * buildNum(1, 'B')};
     }, 效果: [
-        {name: '圆形增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
-        {name: '矩形增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
-        {name: '三角形增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)}
+        {name: '圆形增益', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '矩形增益', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '三角形增益', 类型: '*', value: lvl => Math.pow(1.1, lvl)}
     ]},
     画得很好的八边形: {类型: 'shape', requirement() {
         return store.state.画廊.shape.八边形.unlocked;
-    }, price(lvl) {
-        return {八边形: Math.pow(lvl * 0.2 + 2.25, lvl) * buildNum(225, '分钟')};
+    }, 消耗(lvl) {
+        return {八边形: Math.pow(lvl * 0.2 + 2.25, lvl) * buildNum(225, 'M')};
     }, 效果: [
-        {name: '灵感时间基数', 类型: 'mult', value: lvl => 1 / (0.01 * lvl + 1)}
+        {name: '灵感时间基数', 类型: '*', value: lvl => 1 / (0.01 * lvl + 1)}
     ]},
     大五边形: {类型: 'shape', requirement() {
         return store.state.画廊.shape.五边形.unlocked;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {五边形: Math.pow(lvl * 0.01 + 1.45, lvl) * buildNum(75, 'B')};
     }, 效果: [
-        {name: '星形增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
-        {name: '椭圆形增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
-        {name: '心形增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)}
+        {name: '星形增益', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '椭圆形增益', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '心形增益', 类型: '*', value: lvl => Math.pow(1.1, lvl)}
     ]},
     画得很好的五边形: {类型: 'shape', requirement() {
         return store.state.画廊.shape.五边形.unlocked;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {五边形: Math.pow(lvl * 0.1 + 2.25, lvl) * buildNum(13.5, 'B')};
     }, 效果: [
-        {name: '包裹容量', 类型: '基础', value: lvl => lvl * 2}
+        {name: '包裹容量', 类型: '+', value: lvl => lvl * 2}
     ]},
     大六边形: {类型: 'shape', requirement() {
         return store.state.画廊.shape.六边形.unlocked;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {六边形: Math.pow(lvl * 0.01 + 1.45, lvl) * buildNum(11, 'T')};
     }, 效果: [
-        {name: '八边形增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
-        {name: '五边形增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)},
-        {name: '六边形增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)}
+        {name: '八边形增益', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '五边形增益', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '六边形增益', 类型: '*', value: lvl => Math.pow(1.1, lvl)}
     ]},
     画得很好的六边形: {类型: 'shape', requirement() {
         return store.state.画廊.shape.六边形.unlocked;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {六边形: Math.pow(lvl * 0.1 + 2.25, lvl) * buildNum(2, 'T')};
     }, 效果: [
-        {name: '画布速度', 类型: 'mult', value: lvl => lvl * 0.01 + 1}
+        {name: '画布速度', 类型: '*', value: lvl => lvl * 0.01 + 1}
     ]},
 }

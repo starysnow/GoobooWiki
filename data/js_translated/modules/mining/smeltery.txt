@@ -1,69 +1,69 @@
 {
     aluminium: {
-        price: {
-            铝矿石: {基础: 1000, increment: 50},
-            花岗岩: {基础: 800, increment: 800}
+        消耗: {
+            铝矿石: {+: 1000, increment: 50},
+            花岗岩: {+: 800, increment: 800}
         },
         output: '轻量',
-        减少制作时间至 {0}: 300,
+        制作时间: 300,
         minTemperature: 100
     },
     bronze: {
-        price: {
-            铜矿石: {基础: 900, increment: 45},
-            锡矿石: {基础: 100, increment: 5},
-            盐: {基础: 150, increment: 50}
+        消耗: {
+            铜矿石: {+: 900, increment: 45},
+            锡矿石: {+: 100, increment: 5},
+            盐: {+: 150, increment: 50}
         },
         output: '坚固',
-        减少制作时间至 {0}: SECONDS_PER_HOUR,
+        制作时间: SECONDS_PER_HOUR,
         minTemperature: 275
     },
     steel: {
-        price: {
-            铁矿石: {基础: 1000, increment: 50},
-            煤: {基础: 2, increment: 0}
+        消耗: {
+            铁矿石: {+: 1000, increment: 50},
+            煤: {+: 2, increment: 0}
         },
         output: '锋利',
-        减少制作时间至 {0}: 8 * SECONDS_PER_HOUR,
+        制作时间: 8 * SECONDS_PER_HOUR,
         minTemperature: 500
     },
     titanium: {
-        price: {
-            钛矿石: {基础: 1000, increment: 50},
-            硫: {基础: 200, increment: 10},
-            硝: {基础: 50, increment: 0}
+        消耗: {
+            钛矿石: {+: 1000, increment: 50},
+            硫: {+: 200, increment: 10},
+            硝: {+: 50, increment: 0}
         },
         output: '挖掘机',
-        减少制作时间至 {0}: 3 * SECONDS_PER_DAY,
+        制作时间: 3 * SECONDS_PER_DAY,
         minTemperature: 800
     },
     闪亮肥料: {
-        price: {
-            铂矿石: {基础: 1000, increment: 50},
-            黑曜石: {基础: buildNum(2, '分钟'), increment: buildNum(100, 'K')}
+        消耗: {
+            铂矿石: {+: 1000, increment: 50},
+            黑曜石: {+: buildNum(2, 'M'), increment: buildNum(100, 'K')}
         },
         output: '丰富',
-        减少制作时间至 {0}: 30 * SECONDS_PER_DAY,
+        制作时间: 30 * SECONDS_PER_DAY,
         minTemperature: 1200
     },
     iridium: {
-        price: {
-            铱矿石: {基础: 1000, increment: 50},
-            氦: {基础: buildNum(10, 'K'), increment: 2500}
+        消耗: {
+            铱矿石: {+: 1000, increment: 50},
+            氦: {+: buildNum(10, 'K'), increment: 2500}
         },
         output: '熔岩',
-        减少制作时间至 {0}: 365 * SECONDS_PER_DAY,
+        制作时间: 365 * SECONDS_PER_DAY,
         minTemperature: 1750
     },
     darkIron: {
-        price: {
-            铁矿石: {基础: buildNum(10, '分钟'), increment: buildNum(500, 'K')},
-            锇矿石: {基础: 1000, increment: 50},
-            深岩: {基础: buildNum(100, '分钟'), increment: buildNum(25, '分钟')},
-            氖: {基础: buildNum(10, 'K'), increment: 2500}
+        消耗: {
+            铁矿石: {+: buildNum(10, 'M'), increment: buildNum(500, 'K')},
+            锇矿石: {+: 1000, increment: 50},
+            深岩: {+: buildNum(100, 'M'), increment: buildNum(25, 'M')},
+            氖: {+: buildNum(10, 'K'), increment: 2500}
         },
         output: '虚空',
-        减少制作时间至 {0}: 5000 * SECONDS_PER_DAY,
+        制作时间: 5000 * SECONDS_PER_DAY,
         minTemperature: 2500
     },
 }

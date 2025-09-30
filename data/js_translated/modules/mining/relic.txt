@@ -1,6 +1,6 @@
 {
     友好的蝙蝠: {图标: 'mdi-bat', color: 'dark-灰色', 效果: [
-        {name: '废料增益', 类型: 'mult', value: 1.25}
+        {name: '废料增益', 类型: '*', value: 1.25}
     ]},
     锤子: {图标: 'mdi-hammer', color: '棕色', 效果: [
         {name: '制作站', 类型: '保留', value: true}
@@ -69,6 +69,6 @@
         {name: '钛存储', 类型: '保留', value: true}
     ]},
     一罐蜂蜜: {图标: 'mdi-pot', color: '金色', 效果: [
-        {name: '最大树脂', 类型: '基础', value: 1}
+        {name: '最大树脂', 类型: '+', value: 1}
     ]},
 }

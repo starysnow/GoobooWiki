@@ -1,89 +1,89 @@
 {
-    方舟: {类型: '声望', price(lvl) {
+    方舟: {类型: '声望', 消耗(lvl) {
         return {祝福: Math.pow(1.35, lvl) * 50};
     }, 效果: [
-        {name: '工人', 类型: '基础', value: lvl => lvl * 2}
+        {name: '工人', 类型: '+', value: lvl => lvl * 2}
     ]},
-    圣草: {类型: '声望', price(lvl) {
+    圣草: {类型: '声望', 消耗(lvl) {
         return {祝福: Math.pow(1.65, lvl) * 50};
     }, 效果: [
-        {name: '植物纤维增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-        {name: '植物纤维容量', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+        {name: '植物纤维增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '植物纤维容量', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
     ]},
-    圣树: {类型: '声望', price(lvl) {
+    圣树: {类型: '声望', 消耗(lvl) {
         return {祝福: Math.pow(1.65, lvl) * 50};
     }, 效果: [
-        {name: '木头增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-        {name: '木头容量', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+        {name: '木头增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '木头容量', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
     ]},
-    圣石: {类型: '声望', price(lvl) {
+    圣石: {类型: '声望', 消耗(lvl) {
         return {祝福: Math.pow(1.65, lvl) * 50};
     }, 效果: [
-        {name: '石头增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-        {name: '石头容量', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+        {name: '石头增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '石头容量', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
     ]},
-    神圣金属: {类型: '声望', price(lvl) {
+    神圣金属: {类型: '声望', 消耗(lvl) {
         return {祝福: Math.pow(1.65, lvl) * 70};
     }, 效果: [
-        {name: '金属增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-        {name: '金属容量', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+        {name: '金属增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '金属容量', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
     ]},
-    教会税: {类型: '声望', price(lvl) {
+    教会税: {类型: '声望', 消耗(lvl) {
         return {祝福: Math.pow(1.85, lvl) * 80};
     }, 效果: [
-        {name: '税率', 类型: 'mult', value: lvl => Math.pow(1.1, lvl)}
+        {name: '税率', 类型: '*', value: lvl => Math.pow(1.1, lvl)}
     ]},
-    圣水: {name: '圣水', feature: '村庄', 类型: '声望', price(lvl) {
+    圣水: {name: '圣水', feature: '村庄', 类型: '声望', 消耗(lvl) {
         return {祝福: Math.pow(1.65, lvl) * 90};
     }, 效果: [
-        {name: '水增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-        {name: '水容量', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+        {name: '水增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '水容量', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
     ]},
-    神圣玻璃: {类型: '声望', price(lvl) {
+    神圣玻璃: {类型: '声望', 消耗(lvl) {
         return {祝福: Math.pow(1.65, lvl) * 100};
     }, 效果: [
-        {name: '玻璃增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-        {name: '玻璃容量', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+        {name: '玻璃增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '玻璃容量', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
     ]},
-    圣鹤: {类型: '声望', price(lvl) {
+    圣鹤: {类型: '声望', 消耗(lvl) {
         return {祝福: Math.pow(2.15, lvl) * 125};
     }, 效果: [
-        {name: '建造速度', 类型: '基础', value: lvl => lvl},
-        {name: '建造速度', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+        {name: '建造速度', 类型: '+', value: lvl => lvl},
+        {name: '建造速度', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
     ]},
-    僧侣: {类型: '声望', price(lvl) {
+    僧侣: {类型: '声望', 消耗(lvl) {
         return {祝福: Math.pow(1.85, lvl) * 150};
     }, 效果: [
-        {name: '知识增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-        {name: '知识容量', 类型: '基础', value: lvl => lvl * 10}
+        {name: '知识增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '知识容量', 类型: '+', value: lvl => lvl * 10}
     ]},
-    神圣的存钱罐: {类型: '声望', price(lvl) {
+    神圣的存钱罐: {类型: '声望', 消耗(lvl) {
         return {祝福: Math.pow(2.3, lvl) * 200};
     }, 效果: [
-        {name: '金币容量', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+        {name: '金币容量', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
     ]},
-    深深的崇拜: {类型: '声望', price(lvl) {
+    深深的崇拜: {类型: '声望', 消耗(lvl) {
         return {祝福: Math.pow(2.75, lvl) * 250};
     }, 效果: [
-        {name: '信仰容量', 类型: 'mult', value: lvl => Math.pow(1.5, lvl)}
+        {name: '信仰容量', 类型: '*', value: lvl => Math.pow(1.5, lvl)}
     ]},
-    城市规划: {类型: '声望', cap: 5, requirement() {
+    城市规划: {类型: '声望', 上限: 5, requirement() {
         return store.state.解锁.层 4 建筑.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {祝福: Math.pow(3.2, lvl) * 1750};
     }, 效果: [
-        {name: '住房最高等级', 类型: '基础', value: lvl => lvl * 5}
+        {name: '住房最高等级', 类型: '+', value: lvl => lvl * 5}
     ]},
-    经理人: {类型: '声望', cap: 5, requirement() {
+    经理人: {类型: '声望', 上限: 5, requirement() {
         return store.state.解锁.层 4 建筑.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {祝福: Math.pow(3.2, lvl) * 2100};
     }, 效果: [
-        {name: '工作站最高等级', 类型: '基础', value: lvl => lvl * 2}
+        {name: '工作站最高等级', 类型: '+', value: lvl => lvl * 2}
     ]},
-    仓库: {类型: '声望', cap: 6, requirement() {
+    仓库: {类型: '声望', 上限: 6, requirement() {
         return store.state.解锁.层 4 建筑.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {祝福: Math.pow(3.3, lvl) * 1300};
     }, 效果: [
         {name: '存储', 类型: '保留', value: lvl => lvl >= 1},
@@ -93,114 +93,114 @@
         {name: '知识塔', 类型: '保留', value: lvl => lvl >= 5},
         {name: '大存储空间', 类型: '保留', value: lvl => lvl >= 6}
     ]},
-    砂岩: {类型: '声望', raiseOtherCap: '方尖碑', cap: 10, 笔记: 'village_22', requirement() {
+    砂岩: {类型: '声望', raiseOtherCap: '方尖碑', 上限: 10, 笔记: 'village_22', requirement() {
         return store.state.解锁.层 4 建筑.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {祝福: Math.pow(2.25, lvl) * 1500};
     }, 效果: [
-        {name: 'upgradeVillageObeliskCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeVillageObeliskCap', 类型: '+', value: lvl => lvl}
     ]},
     神圣森林: {类型: '声望', requirement() {
         return store.state.解锁.层 4 建筑.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {祝福: Math.pow(1.65, lvl) * 1800};
     }, 效果: [
-        {name: '硬木增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-        {name: '硬木容量', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+        {name: '硬木增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '硬木容量', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
     ]},
     神圣宝石: {类型: '声望', requirement() {
         return store.state.解锁.层 4 建筑.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {祝福: Math.pow(1.65, lvl) * 1800};
     }, 效果: [
-        {name: '宝石增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-        {name: '宝石容量', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+        {name: '宝石增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '宝石容量', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
     ]},
     更深层次的敬拜: {类型: '声望', requirement() {
         return store.state.解锁.层 5 建筑.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {祝福: Math.pow(lvl * 0.15 + 1.75, lvl) * buildNum(40, 'K')};
     }, 效果: [
-        {name: '信仰容量', 类型: '基础', value: lvl => lvl * 20},
-        {name: '信仰容量', 类型: 'mult', value: lvl => Math.pow(1.3, lvl)}
+        {name: '信仰容量', 类型: '+', value: lvl => lvl * 20},
+        {name: '信仰容量', 类型: '*', value: lvl => Math.pow(1.3, lvl)}
     ]},
     神圣实验室: {类型: '声望', requirement() {
         return store.state.解锁.层 5 建筑.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {祝福: Math.pow(1.85, lvl) * buildNum(70, 'K')};
     }, 效果: [
-        {name: '科学增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-        {name: '科学容量', 类型: '基础', value: lvl => lvl * 10}
+        {name: '科学增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '科学容量', 类型: '+', value: lvl => lvl * 10}
     ]},
     慈善机构: {类型: '声望', requirement() {
         return store.state.解锁.层 5 建筑.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {祝福: Math.pow(2.35, lvl) * buildNum(120, 'K')};
     }, 效果: [
-        {name: '快乐增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-        {name: '幸福', 类型: '基础', value: lvl => lvl * 0.01}
+        {name: '快乐增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '幸福', 类型: '+', value: lvl => lvl * 0.01}
     ]},
     圣油: {类型: '声望', requirement() {
         return store.state.解锁.层 6 建筑.see;
-    }, price(lvl) {
-        return {祝福: Math.pow(1.65, lvl) * buildNum(75, '分钟')};
+    }, 消耗(lvl) {
+        return {祝福: Math.pow(1.65, lvl) * buildNum(75, 'M')};
     }, 效果: [
-        {name: '油增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-        {name: '油容量', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+        {name: '油增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '油容量', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
     ]},
     神圣大理石: {类型: '声望', requirement() {
         return store.state.解锁.层 6 建筑.see;
-    }, price(lvl) {
-        return {祝福: Math.pow(1.65, lvl) * buildNum(110, '分钟')};
+    }, 消耗(lvl) {
+        return {祝福: Math.pow(1.65, lvl) * buildNum(110, 'M')};
     }, 效果: [
-        {name: '大理石增益', 类型: 'mult', value: lvl => lvl * 0.2 + 1},
-        {name: '大理石容量', 类型: 'mult', value: lvl => Math.pow(1.25, lvl)}
+        {name: '大理石增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '大理石容量', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
     ]},
     平静的演讲: {类型: '声望', requirement() {
         return store.state.解锁.层 6 建筑.see;
-    }, price(lvl) {
-        return {祝福: Math.pow(0.08 * lvl + 1.8, lvl) * buildNum(150, '分钟')};
+    }, 消耗(lvl) {
+        return {祝福: Math.pow(0.08 * lvl + 1.8, lvl) * buildNum(150, 'M')};
     }, 效果: [
-        {name: '污染耐受性', 类型: '基础', value: lvl => lvl}
+        {name: '污染耐受性', 类型: '+', value: lvl => lvl}
     ]},
     神圣战利品: {类型: '声望', requirement() {
         return store.state.解锁.层 7 建筑.see;
-    }, price(lvl) {
-        return {祝福: Math.pow(1.65, lvl) * buildNum(800, '分钟')};
+    }, 消耗(lvl) {
+        return {祝福: Math.pow(1.65, lvl) * buildNum(800, 'M')};
     }, 效果: [
-        {name: '战利品增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.1 + 1)}
+        {name: '战利品增益', 类型: '*', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.1 + 1)}
     ]},
     神圣凿子: {类型: '声望', requirement() {
         return store.state.解锁.层 7 建筑.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {祝福: Math.pow(0.05 * lvl + 1.5, lvl) * buildNum(2.5, 'B')};
     }, 效果: [
-        {name: '战利品品质', 类型: '基础', value: lvl => lvl * 2}
+        {name: '战利品品质', 类型: '+', value: lvl => lvl * 2}
     ]},
     雇佣工匠: {类型: '声望', requirement() {
         return store.state.解锁.villageCraftingSubfeature.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {股票: Math.pow(10, getSequence(1, lvl)) * 10};
     }, 效果: [
-        {name: '工匠', 类型: '基础', value: lvl => lvl}
+        {name: '工匠', 类型: '+', value: lvl => lvl}
     ]},
     雇佣工人: {类型: '声望', requirement() {
         return store.state.解锁.villageCraftingSubfeature.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {股票: Math.pow(lvl * 0.02 + 1.65, lvl) * 5};
     }, 效果: [
-        {name: '材料增益', 类型: 'mult', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.05 + 1)}
+        {name: '材料增益', 类型: '*', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.05 + 1)}
     ]},
     雇佣会计师: {类型: '声望', requirement() {
         return store.state.解锁.villageCraftingSubfeature.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {股票: Math.pow(1.9, lvl) * 8};
     }, 效果: [
-        {name: '铜币容量', 类型: 'mult', value: lvl => Math.pow(1.75, lvl)}
+        {name: '铜币容量', 类型: '*', value: lvl => Math.pow(1.75, lvl)}
     ]},
-    配方书: {类型: '声望', cap: 6, requirement() {
+    配方书: {类型: '声望', 上限: 6, requirement() {
         return store.state.解锁.villageCraftingSubfeature.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {股票: Math.pow(2.5, lvl) * 60};
     }, 效果: [
         {name: '箭头', 类型: 'villageCraft', value: lvl => lvl >= 1},
@@ -212,19 +212,19 @@
     ]},
     广告活动: {类型: '声望', requirement() {
         return store.state.解锁.villageCraftingSubfeature.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {股票: Math.pow(lvl * 0.05 + 1.9, lvl) * 80};
     }, 效果: [
-        {name: '铜币增益', 类型: 'mult', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.2 + 1)}
+        {name: '铜币增益', 类型: '*', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.2 + 1)}
     ]},
-    雇佣探险家: {类型: '声望', cap: 4, requirement() {
+    雇佣探险家: {类型: '声望', 上限: 4, requirement() {
         return store.state.解锁.villageCraftingSubfeature.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {股票: Math.pow(15, getSequence(1, lvl)) * 575};
     }, 效果: [
         {name: '特殊成分', 类型: '解锁', value: lvl => lvl >= 1},
-        {name: '可找到的成分', 类型: '基础', value: lvl => lvl > 1 ? (lvl - 1) : null},
-        {name: '成分每个箱子', 类型: '基础', value: lvl => lvl > 1 ? (4 * (lvl - 1)) : null},
+        {name: '可找到的成分', 类型: '+', value: lvl => lvl > 1 ? (lvl - 1) : null},
+        {name: '成分每个箱子', 类型: '+', value: lvl => lvl > 1 ? (4 * (lvl - 1)) : null},
         {name: '毒箭', 类型: 'villageCraft', value: lvl => lvl >= 1},
         {name: '冰霜长矛', 类型: 'villageCraft', value: lvl => lvl >= 2},
         {name: '麻辣汤', 类型: 'villageCraft', value: lvl => lvl >= 3},
@@ -235,42 +235,42 @@
     }},
     雇佣园丁: {类型: '声望', requirement() {
         return store.state.升级成本.item.木仓.highestLevel >= 1;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {股票: Math.pow(1.75, lvl) * 140};
     }, 效果: [
-        {name: '植物纤维增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '木头增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '植物纤维容量', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)},
-        {name: '木头容量', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)}
+        {name: '植物纤维增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '木头增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '植物纤维容量', 类型: '*', value: lvl => Math.pow(1.2, lvl)},
+        {name: '木头容量', 类型: '*', value: lvl => Math.pow(1.2, lvl)}
     ]},
     雇佣矿工: {类型: '声望', requirement() {
         return store.state.升级成本.item.金属仓.highestLevel >= 1;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {股票: Math.pow(1.75, lvl) * 220};
     }, 效果: [
-        {name: '石头增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '金属增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '石头容量', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)},
-        {name: '金属容量', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)}
+        {name: '石头增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '金属增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '石头容量', 类型: '*', value: lvl => Math.pow(1.2, lvl)},
+        {name: '金属容量', 类型: '*', value: lvl => Math.pow(1.2, lvl)}
     ]},
     雇佣调酒师: {类型: '声望', requirement() {
         return store.state.升级成本.item.玻璃仓.highestLevel >= 1;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {股票: Math.pow(1.75, lvl) * 335};
     }, 效果: [
-        {name: '水增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '玻璃增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '水容量', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)},
-        {name: '玻璃容量', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)}
+        {name: '水增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '玻璃增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '水容量', 类型: '*', value: lvl => Math.pow(1.2, lvl)},
+        {name: '玻璃容量', 类型: '*', value: lvl => Math.pow(1.2, lvl)}
     ]},
     雇佣专家: {类型: '声望', requirement() {
         return store.state.升级成本.item.宝石仓.highestLevel >= 1;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {股票: Math.pow(1.75, lvl) * 520};
     }, 效果: [
-        {name: '硬木增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '宝石增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '硬木容量', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)},
-        {name: '宝石容量', 类型: 'mult', value: lvl => Math.pow(1.2, lvl)}
+        {name: '硬木增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '宝石增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '硬木容量', 类型: '*', value: lvl => Math.pow(1.2, lvl)},
+        {name: '宝石容量', 类型: '*', value: lvl => Math.pow(1.2, lvl)}
     ]},
 }

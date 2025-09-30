@@ -2,18 +2,18 @@
     匕首: {
         findZone: 0,
         found: true,
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * 10;
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '攻击', value: lvl * 4 + 6}
+                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 4 + 6}
             ];
         },
         激活的卡片(lvl) {
             return [
                 {类型: 'buff', value: 40, 效果: [
-                    {类型: '基础', name: '攻击', value: lvl * 5 + 30}
+                    {类型: '+', name: '攻击', value: lvl * 5 + 30}
                 ]}
             ];
         },
@@ -26,12 +26,12 @@
     衬衫: {
         findZone: 0,
         found: true,
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * 10;
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '生命值', value: lvl * 800 + 1200}
+                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 800 + 1200}
             ];
         },
         激活的卡片() {
@@ -48,13 +48,13 @@
     守护天使: {
         findZone: 5,
         findChance: 1 / buildNum(10, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(10, lvl - 1) * 100;
         },
-        cap: 5,
+        上限: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '复活', value: 1}
+                {isPositive: true, 类型: '+', name: '复活', value: 1}
             ];
         },
         激活的卡片() {
@@ -71,13 +71,13 @@
     一杯牛奶: {
         findZone: 6,
         findChance: 1 / 2000,
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(4, lvl - 1) * 20;
         },
-        cap: 9,
+        上限: 9,
         stats() {
             return [
-                {isPositive: true, 类型: 'mult', name: '骨头增益', value: 1.2}
+                {isPositive: true, 类型: '*', name: '骨头增益', value: 1.2}
             ];
         },
         激活的卡片(lvl) {
@@ -94,13 +94,13 @@
     星盾: {
         findZone: 8,
         findChance: 1 / 4000,
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(16, getSequence(1, lvl - 1)) * 80;
         },
-        cap: 4,
+        上限: 4,
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '分裂盾', value: lvl + 2}
+                {isPositive: true, 类型: '+', name: '分裂盾', value: lvl + 2}
             ];
         },
         激活的卡片() {
@@ -117,19 +117,19 @@
     长剑: {
         findZone: 10,
         findChance: 1 / 8000,
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(4, lvl - 1) * 40;
         },
-        cap: 5,
+        上限: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '暴击率', value: 0.3},
-                {isPositive: true, 类型: '基础', name: '暴击伤害', value: 0.25}
+                {isPositive: true, 类型: '+', name: '暴击率', value: 0.3},
+                {isPositive: true, 类型: '+', name: '暴击伤害', value: 0.25}
             ];
         },
         激活的卡片(lvl) {
             return [
-                {类型: 'damagePhysic', value: 7.5, str: 0.1, 能以{0}%的效率暴击: 0.1 * lvl}
+                {类型: 'damagePhysic', value: 7.5, str: 0.1, 能以(0)%的效率暴击: 0.1 * lvl}
             ];
         },
         activeType: 'combat',
@@ -141,12 +141,12 @@
     靴子: {
         findZone: 12,
         findChance: 1 / buildNum(14, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * 75;
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '先发制人', value: lvl * 0.1 + 2.4}
+                {isPositive: true, 类型: '+', name: '先发制人', value: lvl * 0.1 + 2.4}
             ];
         },
         激活的卡片() {
@@ -164,17 +164,17 @@
     三叶草: {
         findZone: 14,
         findChance: 1 / buildNum(20, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * 100;
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: 'mult', name: '装备几率', value: lvl * 0.05 + 1.7}
+                {isPositive: true, 类型: '*', name: '装备几率', value: lvl * 0.05 + 1.7}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'permanentStat', 达到 {0} {1}: 'hordeItemChance_mult', value: 0.25}
+                {类型: 'permanentStat', stat: 'hordeItemChance_mult', value: 0.25}
             ];
         },
         activeType: 'utility',
@@ -186,13 +186,13 @@
     肝脏: {
         findZone: 15,
         findChance: 1 / buildNum(100, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(4, lvl - 1) * 120;
         },
-        cap: 11,
+        上限: 11,
         stats() {
             return [
-                {isPositive: true, 类型: 'mult', name: '怪物零件增益', value: 1.2}
+                {isPositive: true, 类型: '*', name: '怪物零件增益', value: 1.2}
             ];
         },
         激活的卡片(lvl) {
@@ -209,21 +209,21 @@
     火球: {
         findZone: 16,
         findChance: 1 / buildNum(25, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * 150;
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '攻击', value: lvl * 2 + 8},
-                {isPositive: true, 类型: '基础', name: '暴击伤害', value: 0.4},
-                {isPositive: false, 类型: '基础', name: '魔法伤害转换', value: 0.5}
+                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 2 + 8},
+                {isPositive: true, 类型: '+', name: '暴击伤害', value: 0.4},
+                {isPositive: false, 类型: '+', name: '魔法伤害转换', value: 0.5}
             ];
         },
         激活的卡片() {
             return [
                 {类型: 'damageMagic', value: 13.5, int: 0.18},
                 {类型: 'buff', value: 20, 效果: [
-                    {类型: '基础', name: '暴击率', value: 0.5}
+                    {类型: '+', name: '暴击率', value: 0.5}
                 ]}
             ];
         },
@@ -236,20 +236,20 @@
     营火: {
         findZone: 18,
         findChance: 1 / buildNum(35, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * 200;
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '生命值', value: lvl * 500 + 1000},
-                {isPositive: true, 类型: '基础', name: '恢复', value: 0.04}
+                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 500 + 1000},
+                {isPositive: true, 类型: '+', name: '恢复', value: 0.04}
             ];
         },
         激活的卡片() {
             return [
                 {类型: 'heal', value: 0.65, int: 0.02},
                 {类型: 'buff', value: 210, 效果: [
-                    {类型: '基础', name: '恢复', value: 0.15}
+                    {类型: '+', name: '恢复', value: 0.15}
                 ]}
             ];
         },
@@ -262,14 +262,14 @@
     雪花: {
         findZone: 20,
         findChance: 1 / buildNum(45, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * 300;
         },
         stats(lvl) {
             return [
-                {isPositive: false, 类型: 'mult', name: '攻击', value: 1 / 1.6},
-                {isPositive: true, 类型: 'mult', name: '生命值', value: 1.6},
-                {isPositive: true, 类型: '基础', name: '生命值', value: lvl * 800 + 6200}
+                {isPositive: false, 类型: '*', name: '攻击', value: 1 / 1.6},
+                {isPositive: true, 类型: '*', name: '生命值', value: 1.6},
+                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 800 + 6200}
             ];
         },
         masteryBoost: 0.25,
@@ -287,13 +287,13 @@
     压迫者: {
         findZone: 22,
         findChance: 1 / buildNum(55, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(6, lvl - 1) * 360;
         },
-        cap: 5,
+        上限: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '敌人开始冷却时间', value: 0.5}
+                {isPositive: true, 类型: '+', name: '敌人开始冷却时间', value: 0.5}
             ];
         },
         激活的卡片() {
@@ -310,22 +310,22 @@
     肉盾: {
         findZone: 23,
         findChance: 1 / buildNum(60, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(3, lvl - 1) * 400;
         },
-        cap: 6,
+        上限: 6,
         stats(lvl) {
             return [
-                {isPositive: true, 类型: 'mult', name: '受到的物理伤害', value: 1 / (lvl * 0.1 + 1.15)},
-                {isPositive: false, 类型: '基础', name: '受到的魔法伤害', value: 0.3},
-                {isPositive: false, 类型: '基础', name: '受到的生物伤害', value: 0.3}
+                {isPositive: true, 类型: '*', name: '受到的物理伤害', value: 1 / (lvl * 0.1 + 1.15)},
+                {isPositive: false, 类型: '+', name: '受到的魔法伤害', value: 0.3},
+                {isPositive: false, 类型: '+', name: '受到的生物伤害', value: 0.3}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
                 {类型: 'buff', value: 5, 效果: [
-                    {类型: 'mult', name: '受到的物理伤害', value: 0}
+                    {类型: '*', name: '受到的物理伤害', value: 0}
                 ]}
             ];
         },
@@ -338,13 +338,13 @@
     腐败的眼睛: {
         findZone: 25,
         findChance: 1 / buildNum(300, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(10, lvl - 1) * 5000;
         },
-        cap: 5,
+        上限: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '小击败 {0} (+{1})时间', value: -20}
+                {isPositive: true, 类型: '+', name: '小击败 (0) (+(1))时间', value: -20}
             ];
         },
         masteryBoost: 0.25,
@@ -363,13 +363,13 @@
     巫师帽: {
         findZone: 27,
         findChance: 1 / buildNum(80, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * 1500;
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '攻击', value: lvl * 3 + 29},
-                {isPositive: true, 类型: '基础', name: '造成的魔法伤害', value: 0.15}
+                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 3 + 29},
+                {isPositive: true, 类型: '+', name: '造成的魔法伤害', value: 0.15}
             ];
         },
         激活的卡片() {
@@ -386,18 +386,18 @@
     红色杖: {
         findZone: 30,
         findChance: 1 / buildNum(100, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * 2500;
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '攻击', value: lvl * 3 + 27},
-                {isPositive: true, 类型: '基础', name: '先发制人', value: lvl * 0.05 + 0.7}
+                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 3 + 27},
+                {isPositive: true, 类型: '+', name: '先发制人', value: lvl * 0.05 + 0.7}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'permanentStat', 达到 {0} {1}: 'hordeAttack_mult', value: 0.1}
+                {类型: 'permanentStat', stat: 'hordeAttack_mult', value: 0.1}
             ];
         },
         activeType: 'utility',
@@ -409,13 +409,13 @@
     坏了的秒表: {
         findZone: 31,
         findChance: 1 / buildNum(25, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(6, lvl - 1) * 3000;
         },
-        cap: 5,
+        上限: 5,
         stats() {
             return [
-                {isPositive: false, 类型: 'mult', name: '怀旧之情', value: 0}
+                {isPositive: false, 类型: '*', name: '怀旧之情', value: 0}
             ];
         },
         激活的卡片(lvl) {
@@ -432,15 +432,15 @@
     大理石柱: {
         findZone: 33,
         findChance: 1 / buildNum(125, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * 4000;
         },
-        cap: 16,
+        上限: 16,
         stats(lvl) {
             return [
-                {isPositive: false, 类型: 'mult', name: '造成的魔法伤害', value: 0.25},
-                {isPositive: true, 类型: 'mult', name: '受到的魔法伤害', value: 1 / (lvl * 0.05 + 2.2)},
-                {isPositive: true, 类型: '基础', name: '分裂盾', value: 2}
+                {isPositive: false, 类型: '*', name: '造成的魔法伤害', value: 0.25},
+                {isPositive: true, 类型: '*', name: '受到的魔法伤害', value: 1 / (lvl * 0.05 + 2.2)},
+                {isPositive: true, 类型: '+', name: '分裂盾', value: 2}
             ];
         },
         激活的卡片() {
@@ -459,15 +459,15 @@
     彩虹之杖: {
         findZone: 35,
         findChance: 1 / buildNum(450, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(3, lvl - 1) * 6000;
         },
-        cap: 11,
+        上限: 11,
         stats() {
             return [
-                {isPositive: false, 类型: 'mult', name: '攻击', value: 1 / 1.15},
-                {isPositive: false, 类型: '基础', name: '魔法伤害转换', value: 1},
-                {isPositive: false, 类型: '基础', name: '生物伤害转换', value: 1},
+                {isPositive: false, 类型: '*', name: '攻击', value: 1 / 1.15},
+                {isPositive: false, 类型: '+', name: '魔法伤害转换', value: 1},
+                {isPositive: false, 类型: '+', name: '生物伤害转换', value: 1},
             ];
         },
         激活的卡片(lvl) {
@@ -486,14 +486,14 @@
     毒素: {
         findZone: 37,
         findChance: 1 / buildNum(160, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * 7000;
         },
-        cap: 6,
+        上限: 6,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '中毒', value: 0.02},
-                {isPositive: false, 类型: '基础', name: '生物伤害转换', value: 0.5}
+                {isPositive: true, 类型: '+', name: '中毒', value: 0.02},
+                {isPositive: false, 类型: '+', name: '生物伤害转换', value: 0.5}
             ];
         },
         激活的卡片(lvl) {
@@ -510,13 +510,13 @@
     净化泉: {
         findZone: 40,
         findChance: 1 / buildNum(200, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(5, lvl - 1) * buildNum(10, 'K');
         },
-        cap: 5,
+        上限: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '眩晕抵抗', value: 1}
+                {isPositive: true, 类型: '+', name: '眩晕抵抗', value: 1}
             ];
         },
         激活的卡片() {
@@ -534,13 +534,13 @@
     毒剑: {
         findZone: 43,
         findChance: 1 / buildNum(275, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * buildNum(12, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '攻击', value: lvl * 10 + 130},
-                {isPositive: false, 类型: 'mult', name: '暴击伤害', value: 0.8}
+                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 10 + 130},
+                {isPositive: false, 类型: '*', name: '暴击伤害', value: 0.8}
             ];
         },
         masteryBoost: 0.25,
@@ -558,14 +558,14 @@
     },
     幸运符: {
         findZone: 45,
-        findChance: 1 / buildNum(1.4, '分钟'),
-        price(lvl) {
+        findChance: 1 / buildNum(1.4, 'M'),
+        消耗(lvl) {
             return Math.pow(10, lvl - 1) * buildNum(15, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: false, 类型: 'mult', name: '腐败的灵魂增益', value: 1 / 1.5},
-                {isPositive: true, 类型: '基础', name: '传家宝几率', value: lvl * 0.001 + 0.004}
+                {isPositive: false, 类型: '*', name: '腐败的灵魂增益', value: 1 / 1.5},
+                {isPositive: true, 类型: '+', name: '传家宝几率', value: lvl * 0.001 + 0.004}
             ];
         },
         masteryBoost: 0.25,
@@ -586,13 +586,13 @@
     邮件破坏者: {
         findZone: 46,
         findChance: 1 / buildNum(375, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * buildNum(18, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '攻击', value: lvl * 2 + 18},
-                {isPositive: true, 类型: '基础', name: '破盾', value: 1}
+                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 2 + 18},
+                {isPositive: true, 类型: '+', name: '破盾', value: 1}
             ];
         },
         激活的卡片() {
@@ -610,14 +610,14 @@
     击棍: {
         findZone: 47,
         findChance: 1 / buildNum(400, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * buildNum(20, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '攻击', value: lvl * 10 + 110},
-                {isPositive: true, 类型: 'mult', name: '攻击', value: lvl * 0.01 + 1.19},
-                {isPositive: false, 类型: 'mult', name: '暴击率', value: 0}
+                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 10 + 110},
+                {isPositive: true, 类型: '*', name: '攻击', value: lvl * 0.01 + 1.19},
+                {isPositive: false, 类型: '*', name: '暴击率', value: 0}
             ];
         },
         masteryBoost: 0.25,
@@ -635,13 +635,13 @@
     金色杖: {
         findZone: 49,
         findChance: 1 / buildNum(500, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(4, lvl - 1) * buildNum(24, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '法术之刃', value: lvl * 0.05 + 0.55},
-                {isPositive: false, 类型: '基础', name: '魔法伤害转换', value: 0.5}
+                {isPositive: true, 类型: '+', name: '法术之刃', value: lvl * 0.05 + 0.55},
+                {isPositive: false, 类型: '+', name: '魔法伤害转换', value: 0.5}
             ];
         },
         激活的卡片() {
@@ -659,15 +659,15 @@
     狼牙棒: {
         findZone: 51,
         findChance: 1 / buildNum(650, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(4, lvl - 1) * buildNum(28, 'K');
         },
-        cap: 5,
+        上限: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '暴击率', value: 0.2},
-                {isPositive: false, 类型: '基础', name: '物理伤害转换', value: 2.5},
-                {isPositive: true, 类型: '基础', name: '造成的物理伤害', value: 0.15}
+                {isPositive: true, 类型: '+', name: '暴击率', value: 0.2},
+                {isPositive: false, 类型: '+', name: '物理伤害转换', value: 2.5},
+                {isPositive: true, 类型: '+', name: '造成的物理伤害', value: 0.15}
             ];
         },
         激活的卡片(lvl) {
@@ -685,14 +685,14 @@
     剪刀: {
         findZone: 53,
         findChance: 1 / buildNum(850, 'K'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(4, lvl - 1) * buildNum(35, 'K');
         },
-        cap: 5,
+        上限: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '切割', value: 0.02},
-                {isPositive: false, 类型: '基础', name: '生物伤害转换', value: 0.5}
+                {isPositive: true, 类型: '+', name: '切割', value: 0.02},
+                {isPositive: false, 类型: '+', name: '生物伤害转换', value: 0.5}
             ];
         },
         激活的卡片(lvl) {
@@ -709,15 +709,15 @@
     },
     猫: {
         findZone: 55,
-        findChance: 1 / buildNum(4.25, '分钟'),
-        price(lvl) {
+        findChance: 1 / buildNum(4.25, 'M'),
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * buildNum(45, 'K');
         },
         stats() {
             return [
-                {isPositive: false, 类型: 'mult', name: '生命值', value: 1 / 3},
-                {isPositive: true, 类型: '基础', name: '复活', value: 8},
-                {isPositive: true, 类型: 'mult', name: '恢复', value: 4}
+                {isPositive: false, 类型: '*', name: '生命值', value: 1 / 3},
+                {isPositive: true, 类型: '+', name: '复活', value: 8},
+                {isPositive: true, 类型: '*', name: '恢复', value: 4}
             ];
         },
         masteryBoost: 0.25,
@@ -734,15 +734,15 @@
     },
     健康水果: {
         findZone: 57,
-        findChance: 1 / buildNum(1.1, '分钟'),
-        price(lvl) {
+        findChance: 1 / buildNum(1.1, 'M'),
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * buildNum(55, 'K');
         },
         stats() {
             return [
-                {isPositive: false, 类型: 'mult', name: '暴击率', value: 0.5},
-                {isPositive: true, 类型: 'mult', name: '受到的生物伤害', value: 1 / 2.5},
-                {isPositive: true, 类型: '基础', name: '恢复', value: 0.03}
+                {isPositive: false, 类型: '*', name: '暴击率', value: 0.5},
+                {isPositive: true, 类型: '*', name: '受到的生物伤害', value: 1 / 2.5},
+                {isPositive: true, 类型: '+', name: '恢复', value: 0.03}
             ];
         },
         masteryBoost: 0.25,
@@ -762,16 +762,16 @@
     },
     死鸟: {
         findZone: 60,
-        findChance: 1 / buildNum(1.3, '分钟'),
-        price(lvl) {
+        findChance: 1 / buildNum(1.3, 'M'),
+        消耗(lvl) {
             return Math.pow(4, lvl - 1) * buildNum(85, 'K');
         },
-        cap: 8,
+        上限: 8,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '中毒', value: 0.125},
-                {isPositive: false, 类型: 'mult', name: '攻击', value: 0.25},
-                {isPositive: true, 类型: '基础', name: '造成的生物伤害', value: 0.15}
+                {isPositive: true, 类型: '+', name: '中毒', value: 0.125},
+                {isPositive: false, 类型: '*', name: '攻击', value: 0.25},
+                {isPositive: true, 类型: '+', name: '造成的生物伤害', value: 0.15}
             ];
         },
         masteryBoost: 0.25,
@@ -779,7 +779,7 @@
             return [
                 {类型: 'heal', value: 0.14 + lvl * 0.0075, int: 0.008},
                 {类型: 'buff', value: 12, 效果: [
-                    {类型: 'mult', name: '中毒', value: 2}
+                    {类型: '*', name: '中毒', value: 2}
                 ]}
             ];
         },
@@ -791,16 +791,16 @@
     },
     护盾溶解器: {
         findZone: 61,
-        findChance: 1 / buildNum(1.4, '分钟'),
-        price(lvl) {
+        findChance: 1 / buildNum(1.4, 'M'),
+        消耗(lvl) {
             return Math.pow(7, lvl - 1) * buildNum(90, 'K');
         },
-        cap: 6,
+        上限: 6,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '破盾', value: 3},
-                {isPositive: false, 类型: 'mult', name: '生命值', value: 1 / 1.1},
-                {isPositive: false, 类型: 'mult', name: '分裂盾', value: 0}
+                {isPositive: true, 类型: '+', name: '破盾', value: 3},
+                {isPositive: false, 类型: '*', name: '生命值', value: 1 / 1.1},
+                {isPositive: false, 类型: '*', name: '分裂盾', value: 0}
             ];
         },
         masteryBoost: 0.25,
@@ -817,15 +817,15 @@
     },
     安神丸: {
         findZone: 63,
-        findChance: 1 / buildNum(1.5, '分钟'),
-        price(lvl) {
+        findChance: 1 / buildNum(1.5, 'M'),
+        消耗(lvl) {
             return Math.pow(4, lvl - 1) * buildNum(100, 'K');
         },
-        cap: 11,
+        上限: 11,
         stats(lvl) {
             return [
                 {isPositive: true, 类型: 'bonus', name: '腐败', value: -0.09 - lvl * 0.01},
-                {isPositive: true, 类型: '基础', name: '怀旧之情', value: 10}
+                {isPositive: true, 类型: '+', name: '怀旧之情', value: 10}
             ];
         },
         激活的卡片() {
@@ -842,11 +842,11 @@
     },
     洁面液: {
         findZone: 65,
-        findChance: 1 / buildNum(7.5, '分钟'),
-        price(lvl) {
+        findChance: 1 / buildNum(7.5, 'M'),
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * buildNum(120, 'K');
         },
-        cap: 16,
+        上限: 16,
         stats(lvl) {
             return [
                 {isPositive: true, 类型: 'bonus', name: '腐败', value: -0.23 - lvl * 0.02}
@@ -866,17 +866,17 @@
     },
     禁忌之剑: {
         findZone: 67,
-        findChance: 1 / buildNum(1.8, '分钟'),
-        price(lvl) {
+        findChance: 1 / buildNum(1.8, 'M'),
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * buildNum(200, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '攻击', value: lvl * 15 + 210},
-                {isPositive: true, 类型: 'mult', name: '攻击', value: 1.35},
-                {isPositive: true, 类型: '基础', name: '暴击率', value: 0.25},
-                {isPositive: true, 类型: '基础', name: '暴击伤害', value: 0.4},
-                {isPositive: false, 类型: 'mult', name: '腐败', value: 1.15}
+                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 15 + 210},
+                {isPositive: true, 类型: '*', name: '攻击', value: 1.35},
+                {isPositive: true, 类型: '+', name: '暴击率', value: 0.25},
+                {isPositive: true, 类型: '+', name: '暴击伤害', value: 0.4},
+                {isPositive: false, 类型: '*', name: '腐败', value: 1.15}
             ];
         },
         masteryBoost: 0.25,
@@ -893,14 +893,14 @@
     },
     解毒剂: {
         findZone: 70,
-        findChance: 1 / buildNum(2, '分钟'),
-        price(lvl) {
+        findChance: 1 / buildNum(2, 'M'),
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * buildNum(250, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '生命值', value: lvl * 600 + 8400},
-                {isPositive: true, 类型: 'mult', name: '受到的生物伤害', value: 1 / 1.25}
+                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 600 + 8400},
+                {isPositive: true, 类型: '*', name: '受到的生物伤害', value: 1 / 1.25}
             ];
         },
         激活的卡片() {
@@ -916,16 +916,16 @@
     },
     腐烂的骨头: {
         findZone: 73,
-        findChance: 1 / buildNum(2.2, '分钟'),
-        price(lvl) {
+        findChance: 1 / buildNum(2.2, 'M'),
+        消耗(lvl) {
             return Math.pow(4, lvl - 1) * buildNum(300, 'K');
         },
-        cap: 7,
+        上限: 7,
         stats() {
             return [
-                {isPositive: true, 类型: 'mult', name: '骨头增益', value: 2.25},
-                {isPositive: true, 类型: 'mult', name: '怪物零件增益', value: 1.2},
-                {isPositive: false, 类型: 'mult', name: '腐败', value: 1.15}
+                {isPositive: true, 类型: '*', name: '骨头增益', value: 2.25},
+                {isPositive: true, 类型: '*', name: '怪物零件增益', value: 1.2},
+                {isPositive: false, 类型: '*', name: '腐败', value: 1.15}
             ];
         },
         masteryBoost: 0.25,
@@ -942,14 +942,14 @@
     },
     瘟疫使者: {
         findZone: 75,
-        findChance: 1 / buildNum(11, '分钟'),
-        price(lvl) {
+        findChance: 1 / buildNum(11, 'M'),
+        消耗(lvl) {
             return Math.pow(4, lvl - 1) * buildNum(400, 'K');
         },
-        cap: 5,
+        上限: 5,
         stats() {
             return [
-                {isPositive: true, 类型: 'mult', name: '腐败', value: 2}
+                {isPositive: true, 类型: '*', name: '腐败', value: 2}
             ];
         },
         激活的卡片() {
@@ -957,13 +957,13 @@
                 {类型: 'removeAttack', value: 0.8},
                 {类型: '沉默药水', value: 90},
                 {类型: 'buff', value: 300, 效果: [
-                    {类型: '基础', name: '暴击率', value: 0.75},
-                    {类型: '基础', name: '暴击伤害', value: 3},
-                    {类型: '基础', name: '法术之刃', value: 6.5},
-                    {类型: '基础', name: '切割', value: 0.2},
-                    {类型: '基础', name: '破盾', value: 15},
-                    {类型: '基础', name: '眩晕抵抗', value: 15},
-                    {类型: '基础', name: '恢复', value: 0.25}
+                    {类型: '+', name: '暴击率', value: 0.75},
+                    {类型: '+', name: '暴击伤害', value: 3},
+                    {类型: '+', name: '法术之刃', value: 6.5},
+                    {类型: '+', name: '切割', value: 0.2},
+                    {类型: '+', name: '破盾', value: 15},
+                    {类型: '+', name: '眩晕抵抗', value: 15},
+                    {类型: '+', name: '恢复', value: 0.25}
                 ]}
             ];
         },
@@ -975,23 +975,23 @@
     },
     禁忌之盾: {
         findZone: 77,
-        findChance: 1 / buildNum(2.7, '分钟'),
-        price(lvl) {
+        findChance: 1 / buildNum(2.7, 'M'),
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * buildNum(500, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '生命值', value: lvl * 750 + 6750},
-                {isPositive: true, 类型: 'mult', name: '生命值', value: 1.35},
-                {isPositive: true, 类型: '基础', name: '复活', value: 1},
-                {isPositive: false, 类型: 'mult', name: '腐败', value: 1.15}
+                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 750 + 6750},
+                {isPositive: true, 类型: '*', name: '生命值', value: 1.35},
+                {isPositive: true, 类型: '+', name: '复活', value: 1},
+                {isPositive: false, 类型: '*', name: '腐败', value: 1.15}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
                 {类型: 'heal', value: 0.75, int: 0.03},
-                {类型: '复活 +{0}', value: 1}
+                {类型: '复活+(0)', value: 1}
             ];
         },
         activeType: 'combat',
@@ -1002,15 +1002,15 @@
     },
     危险之盾: {
         findZone: 80,
-        findChance: 1 / buildNum(3.1, '分钟'),
-        price(lvl) {
+        findChance: 1 / buildNum(3.1, 'M'),
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * buildNum(550, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '生命值', value: lvl * 400 + 4600},
-                {isPositive: true, 类型: 'mult', name: '受到的物理伤害', value: 1 / 1.2},
-                {isPositive: true, 类型: '基础', name: '分裂盾', value: 1}
+                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 400 + 4600},
+                {isPositive: true, 类型: '*', name: '受到的物理伤害', value: 1 / 1.2},
+                {isPositive: true, 类型: '+', name: '分裂盾', value: 1}
             ];
         },
         激活的卡片() {
@@ -1028,15 +1028,15 @@
     },
     禁忌毒素: {
         findZone: 83,
-        findChance: 1 / buildNum(3.5, '分钟'),
-        price(lvl) {
+        findChance: 1 / buildNum(3.5, 'M'),
+        消耗(lvl) {
             return Math.pow(4, lvl - 1) * buildNum(600, 'K');
         },
-        cap: 6,
+        上限: 6,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '中毒', value: 0.05},
-                {isPositive: false, 类型: 'mult', name: '腐败', value: 1.15}
+                {isPositive: true, 类型: '+', name: '中毒', value: 0.05},
+                {isPositive: false, 类型: '*', name: '腐败', value: 1.15}
             ];
         },
         masteryBoost: 0.25,
@@ -1053,16 +1053,16 @@
     },
     发光的眼睛: {
         findZone: 85,
-        findChance: 1 / buildNum(17.5, '分钟'),
-        price(lvl) {
+        findChance: 1 / buildNum(17.5, 'M'),
+        消耗(lvl) {
             return Math.pow(4, lvl - 1) * buildNum(750, 'K');
         },
-        cap: 10,
+        上限: 10,
         stats() {
             return [
-                {isPositive: true, 类型: 'mult', name: '腐败的灵魂增益', value: 1.05},
-                {isPositive: true, 类型: 'mult', name: '传家宝几率', value: 1.05},
-                {isPositive: false, 类型: 'mult', name: '腐败', value: 1.15}
+                {isPositive: true, 类型: '*', name: '腐败的灵魂增益', value: 1.05},
+                {isPositive: true, 类型: '*', name: '传家宝几率', value: 1.05},
+                {isPositive: false, 类型: '*', name: '腐败', value: 1.15}
             ];
         },
         masteryBoost: 0.25,
@@ -1080,24 +1080,24 @@
     },
     实验疫苗: {
         findZone: 87,
-        findChance: 1 / buildNum(7, '分钟'),
-        price(lvl) {
-            return Math.pow(20, lvl - 1) * buildNum(1, '分钟');
+        findChance: 1 / buildNum(7, 'M'),
+        消耗(lvl) {
+            return Math.pow(20, lvl - 1) * buildNum(1, 'M');
         },
-        cap: 3,
+        上限: 3,
         stats() {
             return [
-                {isPositive: false, 类型: 'mult', name: '攻击', value: 1 / 1.5},
-                {isPositive: false, 类型: 'mult', name: '生命值', value: 1 / 1.5},
-                {isPositive: true, 类型: 'mult', name: '腐败', value: 1 / 1.2}
+                {isPositive: false, 类型: '*', name: '攻击', value: 1 / 1.5},
+                {isPositive: false, 类型: '*', name: '生命值', value: 1 / 1.5},
+                {isPositive: true, 类型: '*', name: '腐败', value: 1 / 1.2}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
                 {类型: 'buff', value: lvl * 2 + 14, 效果: [
-                    {类型: 'mult', name: '攻击', value: 1.5},
-                    {类型: 'mult', name: '生命值', value: 1.5}
+                    {类型: '*', name: '攻击', value: 1.5},
+                    {类型: '*', name: '生命值', value: 1.5}
                 ]}
             ];
         },
@@ -1109,23 +1109,23 @@
     },
     杯子: {
         findZone: 90,
-        findChance: 1 / buildNum(9, '分钟'),
-        price(lvl) {
-            return Math.pow(5, lvl - 1) * buildNum(1.25, '分钟');
+        findChance: 1 / buildNum(9, 'M'),
+        消耗(lvl) {
+            return Math.pow(5, lvl - 1) * buildNum(1.25, 'M');
         },
-        cap: 6,
+        上限: 6,
         stats() {
             return [
-                {isPositive: true, 类型: 'mult', name: '受到的魔法伤害', value: 1 / 1.75},
-                {isPositive: false, 类型: '基础', name: '受到的物理伤害', value: 0.3},
-                {isPositive: false, 类型: '基础', name: '受到的生物伤害', value: 0.3}
+                {isPositive: true, 类型: '*', name: '受到的魔法伤害', value: 1 / 1.75},
+                {isPositive: false, 类型: '+', name: '受到的物理伤害', value: 0.3},
+                {isPositive: false, 类型: '+', name: '受到的生物伤害', value: 0.3}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
                 {类型: 'buff', value: 5, 效果: [
-                    {类型: 'mult', name: '受到的魔法伤害', value: 0}
+                    {类型: '*', name: '受到的魔法伤害', value: 0}
                 ]}
             ];
         },
@@ -1137,23 +1137,23 @@
     },
     显微镜: {
         findZone: 93,
-        findChance: 1 / buildNum(12, '分钟'),
-        price(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(1.5, '分钟');
+        findChance: 1 / buildNum(12, 'M'),
+        消耗(lvl) {
+            return Math.pow(2, lvl - 1) * buildNum(1.5, 'M');
         },
-        cap: 6,
+        上限: 6,
         stats() {
             return [
-                {isPositive: true, 类型: 'mult', name: '受到的生物伤害', value: 1 / 1.75},
-                {isPositive: false, 类型: '基础', name: '受到的物理伤害', value: 0.3},
-                {isPositive: false, 类型: '基础', name: '受到的魔法伤害', value: 0.3}
+                {isPositive: true, 类型: '*', name: '受到的生物伤害', value: 1 / 1.75},
+                {isPositive: false, 类型: '+', name: '受到的物理伤害', value: 0.3},
+                {isPositive: false, 类型: '+', name: '受到的魔法伤害', value: 0.3}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
                 {类型: 'buff', value: 5, 效果: [
-                    {类型: 'mult', name: '受到的生物伤害', value: 0}
+                    {类型: '*', name: '受到的生物伤害', value: 0}
                 ]}
             ];
         },
@@ -1165,20 +1165,20 @@
     },
     熔火之盾: {
         findZone: 95,
-        findChance: 1 / buildNum(60, '分钟'),
-        price(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(1.8, '分钟');
+        findChance: 1 / buildNum(60, 'M'),
+        消耗(lvl) {
+            return Math.pow(2, lvl - 1) * buildNum(1.8, 'M');
         },
         stats(lvl) {
             return [
-                {isPositive: false, 类型: 'mult', name: '生命值', value: 1 / 1.3},
-                {isPositive: true, 类型: '基础', name: '分裂盾', value: lvl + 14}
+                {isPositive: false, 类型: '*', name: '生命值', value: 1 / 1.3},
+                {isPositive: true, 类型: '+', name: '分裂盾', value: lvl + 14}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'permanentStat', 达到 {0} {1}: 'hordeHealth_mult', value: 0.15}
+                {类型: 'permanentStat', stat: 'hordeHealth_mult', value: 0.15}
             ];
         },
         activeType: 'utility',
@@ -1189,15 +1189,15 @@
     },
     美工刀: {
         findZone: 97,
-        findChance: 1 / buildNum(16, '分钟'),
-        price(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(2.2, '分钟');
+        findChance: 1 / buildNum(16, 'M'),
+        消耗(lvl) {
+            return Math.pow(2, lvl - 1) * buildNum(2.2, 'M');
         },
         stats() {
             return [
-                {isPositive: false, 类型: 'mult', name: '攻击', value: 1 / 2.5},
-                {isPositive: true, 类型: '基础', name: '切割', value: 0.05},
-                {isPositive: false, 类型: 'mult', name: '恢复', value: 0.5}
+                {isPositive: false, 类型: '*', name: '攻击', value: 1 / 2.5},
+                {isPositive: true, 类型: '+', name: '切割', value: 0.05},
+                {isPositive: false, 类型: '*', name: '恢复', value: 0.5}
             ];
         },
         masteryBoost: 0.25,
@@ -1215,14 +1215,14 @@
     },
     书籍: {
         findZone: 100,
-        findChance: 1 / buildNum(20, '分钟'),
-        price(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(2.75, '分钟');
+        findChance: 1 / buildNum(20, 'M'),
+        消耗(lvl) {
+            return Math.pow(2, lvl - 1) * buildNum(2.75, 'M');
         },
         stats() {
             return [
-                {isPositive: false, 类型: 'mult', name: '攻击', value: 0.5},
-                {isPositive: true, 类型: 'mult', name: '精通点数增益', value: 1.4}
+                {isPositive: false, 类型: '*', name: '攻击', value: 0.5},
+                {isPositive: true, 类型: '*', name: '精通点数增益', value: 1.4}
             ];
         },
         masteryBoost: 0.25,
@@ -1240,21 +1240,21 @@
     },
     巧克力牛奶: {
         findZone: 107,
-        findChance: 1 / buildNum(40, '分钟'),
-        price(lvl) {
-            return Math.pow(5, lvl - 1) * buildNum(4, '分钟');
+        findChance: 1 / buildNum(40, 'M'),
+        消耗(lvl) {
+            return Math.pow(5, lvl - 1) * buildNum(4, 'M');
         },
-        cap: 11,
+        上限: 11,
         stats(lvl) {
             return [
-                {isPositive: true, 类型: 'mult', name: '骨头增益', value: lvl * 0.01 + 1.29},
-                {isPositive: false, 类型: 'mult', name: '怪物零件增益', value: 1 / 1.5}
+                {isPositive: true, 类型: '*', name: '骨头增益', value: lvl * 0.01 + 1.29},
+                {isPositive: false, 类型: '*', name: '怪物零件增益', value: 1 / 1.5}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'permanentStat', 达到 {0} {1}: '骨头增益_mult', value: 0.18}
+                {类型: 'permanentStat', stat: '骨头增益_mult', value: 0.18}
             ];
         },
         activeType: 'utility',
@@ -1265,15 +1265,15 @@
     },
     大锤: {
         findZone: 114,
-        findChance: 1 / buildNum(80, '分钟'),
-        price(lvl) {
-            return Math.pow(7, lvl - 1) * buildNum(7, '分钟');
+        findChance: 1 / buildNum(80, 'M'),
+        消耗(lvl) {
+            return Math.pow(7, lvl - 1) * buildNum(7, 'M');
         },
         stats(lvl) {
             return [
-                {isPositive: false, 类型: 'mult', name: '攻击', value: 1 / 1.25},
-                {isPositive: true, 类型: '基础', name: '暴击率', value: 0.15},
-                {isPositive: true, 类型: '基础', name: '暴击伤害', value: lvl * 0.02 + 1.08}
+                {isPositive: false, 类型: '*', name: '攻击', value: 1 / 1.25},
+                {isPositive: true, 类型: '+', name: '暴击率', value: 0.15},
+                {isPositive: true, 类型: '+', name: '暴击伤害', value: lvl * 0.02 + 1.08}
             ];
         },
         masteryBoost: 0.25,
@@ -1292,16 +1292,16 @@
     },
     古怪的南瓜: {
         findZone: 121,
-        findChance: 1 / buildNum(160, '分钟'),
-        price(lvl) {
-            return Math.pow(9, lvl - 1) * buildNum(12, '分钟');
+        findChance: 1 / buildNum(160, 'M'),
+        消耗(lvl) {
+            return Math.pow(9, lvl - 1) * buildNum(12, 'M');
         },
-        cap: 6,
+        上限: 6,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '眩晕抵抗', value: 4},
-                {isPositive: false, 类型: 'mult', name: '生命值', value: 1 / 1.25},
-                {isPositive: false, 类型: '基础', name: '受到的魔法伤害', value: 0.75}
+                {isPositive: true, 类型: '+', name: '眩晕抵抗', value: 4},
+                {isPositive: false, 类型: '*', name: '生命值', value: 1 / 1.25},
+                {isPositive: false, 类型: '+', name: '受到的魔法伤害', value: 0.75}
             ];
         },
         masteryBoost: 0.25,
@@ -1321,21 +1321,21 @@
     },
     奇怪的化学物质: {
         findZone: 128,
-        findChance: 1 / buildNum(320, '分钟'),
-        price(lvl) {
-            return Math.pow(5, lvl - 1) * buildNum(20, '分钟');
+        findChance: 1 / buildNum(320, 'M'),
+        消耗(lvl) {
+            return Math.pow(5, lvl - 1) * buildNum(20, 'M');
         },
-        cap: 11,
+        上限: 11,
         stats(lvl) {
             return [
-                {isPositive: true, 类型: 'mult', name: '怪物零件增益', value: lvl * 0.01 + 1.29},
-                {isPositive: false, 类型: 'mult', name: '骨头增益', value: 1 / 4},
+                {isPositive: true, 类型: '*', name: '怪物零件增益', value: lvl * 0.01 + 1.29},
+                {isPositive: false, 类型: '*', name: '骨头增益', value: 1 / 4},
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'permanentStat', 达到 {0} {1}: '怪物零件增益_mult', value: 0.225}
+                {类型: 'permanentStat', stat: '怪物零件增益_mult', value: 0.225}
             ];
         },
         activeType: 'utility',
@@ -1346,15 +1346,15 @@
     },
     禁心之盾: {
         findZone: 135,
-        findChance: 1 / buildNum(640, '分钟'),
-        price(lvl) {
-            return Math.pow(4, lvl - 1) * buildNum(35, '分钟');
+        findChance: 1 / buildNum(640, 'M'),
+        消耗(lvl) {
+            return Math.pow(4, lvl - 1) * buildNum(35, 'M');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '分裂盾', value: lvl * 2 + 34},
-                {isPositive: true, 类型: '基础', name: '眩晕抵抗', value: 12},
-                {isPositive: false, 类型: 'mult', name: '腐败', value: 1.15}
+                {isPositive: true, 类型: '+', name: '分裂盾', value: lvl * 2 + 34},
+                {isPositive: true, 类型: '+', name: '眩晕抵抗', value: 12},
+                {isPositive: false, 类型: '*', name: '腐败', value: 1.15}
             ];
         },
         masteryBoost: 0.25,
@@ -1373,14 +1373,14 @@
     云杖: {
         findZone: 142,
         findChance: 1 / buildNum(1.2, 'B'),
-        price(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(60, '分钟');
+        消耗(lvl) {
+            return Math.pow(2, lvl - 1) * buildNum(60, 'M');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '先发制人', value: lvl * 0.04 + 1.76},
-                {isPositive: true, 类型: '基础', name: '法术之刃', value: lvl * 0.01 + 0.49},
-                {isPositive: true, 类型: '基础', name: '分裂盾', value: 2}
+                {isPositive: true, 类型: '+', name: '先发制人', value: lvl * 0.04 + 1.76},
+                {isPositive: true, 类型: '+', name: '法术之刃', value: lvl * 0.01 + 0.49},
+                {isPositive: true, 类型: '+', name: '分裂盾', value: 2}
             ];
         },
         激活的卡片() {
@@ -1398,17 +1398,17 @@
     秘密武器: {
         findZone: 149,
         findChance: 1 / buildNum(2.4, 'B'),
-        price(lvl) {
-            return Math.pow(8, lvl - 1) * buildNum(110, '分钟');
+        消耗(lvl) {
+            return Math.pow(8, lvl - 1) * buildNum(110, 'M');
         },
-        cap: 21,
+        上限: 21,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '中毒', value: 0.1},
-                {isPositive: true, 类型: '基础', name: '切割', value: 0.06},
-                {isPositive: false, 类型: 'mult', name: '恢复', value: 0},
-                {isPositive: false, 类型: 'mult', name: '分裂盾', value: 0},
-                {isPositive: false, 类型: 'mult', name: '复活', value: 0}
+                {isPositive: true, 类型: '+', name: '中毒', value: 0.1},
+                {isPositive: true, 类型: '+', name: '切割', value: 0.06},
+                {isPositive: false, 类型: '*', name: '恢复', value: 0},
+                {isPositive: false, 类型: '*', name: '分裂盾', value: 0},
+                {isPositive: false, 类型: '*', name: '复活', value: 0}
             ];
         },
         masteryBoost: 0.25,
@@ -1417,7 +1417,7 @@
                 {类型: '毒药药水', value: 24, str: 0.25, int: 0.25},
                 {类型: '沉默药水', value: lvl + 29},
                 {类型: 'buff', value: 35, 效果: [
-                    {类型: '基础', name: '切割', value: 0.1}
+                    {类型: '+', name: '切割', value: 0.1}
                 ]}
             ];
         },
@@ -1430,16 +1430,16 @@
     炸弹: {
         findZone: 156,
         findChance: 1 / buildNum(4.8, 'B'),
-        price(lvl) {
-            return Math.pow(5, lvl - 1) * buildNum(175, '分钟');
+        消耗(lvl) {
+            return Math.pow(5, lvl - 1) * buildNum(175, 'M');
         },
-        cap: 11,
+        上限: 11,
         stats() {
             return [
-                {isPositive: true, 类型: 'mult', name: '攻击', value: 1.5},
-                {isPositive: true, 类型: 'mult', name: '生命值', value: 1.35},
-                {isPositive: false, 类型: 'mult', name: '骨头增益', value: 0},
-                {isPositive: false, 类型: 'mult', name: '怪物零件增益', value: 0}
+                {isPositive: true, 类型: '*', name: '攻击', value: 1.5},
+                {isPositive: true, 类型: '*', name: '生命值', value: 1.35},
+                {isPositive: false, 类型: '*', name: '骨头增益', value: 0},
+                {isPositive: false, 类型: '*', name: '怪物零件增益', value: 0}
             ];
         },
         masteryBoost: 0.25,
@@ -1457,13 +1457,13 @@
     吸血杖: {
         findZone: 163,
         findChance: 1 / buildNum(10, 'B'),
-        price(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(320, '分钟');
+        消耗(lvl) {
+            return Math.pow(2, lvl - 1) * buildNum(320, 'M');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '攻击', value: lvl * 3 + 112},
-                {isPositive: true, 类型: '基础', name: '恢复', value: 0.03}
+                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 3 + 112},
+                {isPositive: true, 类型: '+', name: '恢复', value: 0.03}
             ];
         },
         激活的卡片() {
@@ -1481,19 +1481,19 @@
     破碎的宝石: {
         findZone: 170,
         findChance: 1 / buildNum(20, 'B'),
-        price(lvl) {
-            return Math.pow(10, lvl - 1) * buildNum(550, '分钟');
+        消耗(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(550, 'M');
         },
         stats(lvl) {
             return [
-                {isPositive: false, 类型: 'mult', name: '生命值', value: 0.5},
-                {isPositive: true, 类型: '基础', name: '传家宝几率', value: lvl * 0.001 + 0.009}
+                {isPositive: false, 类型: '*', name: '生命值', value: 0.5},
+                {isPositive: true, 类型: '+', name: '传家宝几率', value: lvl * 0.001 + 0.009}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'permanentStat', 达到 {0} {1}: '腐败的灵魂增益_mult', value: 0.03}
+                {类型: 'permanentStat', stat: '腐败的灵魂增益_mult', value: 0.03}
             ];
         },
         activeType: 'utility',
@@ -1505,20 +1505,20 @@
     沙漏: {
         findZone: 177,
         findChance: 1 / buildNum(40, 'B'),
-        price(lvl) {
-            return Math.pow(4, lvl - 1) * buildNum(975, '分钟');
+        消耗(lvl) {
+            return Math.pow(4, lvl - 1) * buildNum(975, 'M');
         },
-        cap: 11,
+        上限: 11,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '急速', value: 15}
+                {isPositive: true, 类型: '+', name: '急速', value: 15}
             ];
         },
         激活的卡片(lvl) {
             return [
                 {类型: 'buff', value: 45, 效果: [
-                    {类型: '基础', name: '急速', value: 50},
-                    {类型: '基础', name: '法术之刃', value: lvl * 0.05 + 1.45}
+                    {类型: '+', name: '急速', value: 50},
+                    {类型: '+', name: '法术之刃', value: lvl * 0.05 + 1.45}
                 ]}
             ];
         },
@@ -1531,14 +1531,14 @@
     胶水: {
         findZone: 184,
         findChance: 1 / buildNum(80, 'B'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(8, lvl - 1) * buildNum(1.75, 'B');
         },
-        cap: 6,
+        上限: 6,
         stats() {
             return [
-                {isPositive: true, 类型: 'mult', name: '攻击', value: 1.35},
-                {isPositive: false, 类型: '基础', name: '急速', value: -30}
+                {isPositive: true, 类型: '*', name: '攻击', value: 1.35},
+                {isPositive: false, 类型: '+', name: '急速', value: -30}
             ];
         },
         masteryBoost: 0.25,
@@ -1557,14 +1557,14 @@
     烟花: {
         findZone: 191,
         findChance: 1 / buildNum(160, 'B'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * buildNum(3, 'B');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '攻击', value: lvl * 2 + 68},
-                {isPositive: true, 类型: '基础', name: '暴击率', value: 0.2},
-                {isPositive: true, 类型: '基础', name: '中毒', value: 0.01}
+                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 2 + 68},
+                {isPositive: true, 类型: '+', name: '暴击率', value: 0.2},
+                {isPositive: true, 类型: '+', name: '中毒', value: 0.01}
             ];
         },
         激活的卡片() {
@@ -1572,7 +1572,7 @@
                 {类型: 'damageBio', value: 18, int: 0.35},
                 {类型: '毒药药水', value: 2.75, int: 0.13},
                 {类型: 'buff', value: 15, 效果: [
-                    {类型: '基础', name: '暴击伤害', value: 5.75}
+                    {类型: '+', name: '暴击伤害', value: 5.75}
                 ]}
             ];
         },
@@ -1585,14 +1585,14 @@
     蝴蝶结: {
         findZone: 198,
         findChance: 1 / buildNum(320, 'B'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * buildNum(5, 'B');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '生命值', value: lvl * 400 + 8600},
-                {isPositive: true, 类型: '基础', name: '分裂盾', value: lvl + 10},
-                {isPositive: false, 类型: 'mult', name: '恢复', value: 0}
+                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 400 + 8600},
+                {isPositive: true, 类型: '+', name: '分裂盾', value: lvl + 10},
+                {isPositive: false, 类型: '*', name: '恢复', value: 0}
             ];
         },
         masteryBoost: 0.25,
@@ -1611,14 +1611,14 @@
     禁用秒表: {
         findZone: 205,
         findChance: 1 / buildNum(640, 'B'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(6, lvl - 1) * buildNum(8, 'B');
         },
-        cap: 6,
+        上限: 6,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '急速', value: 70},
-                {isPositive: false, 类型: 'mult', name: '腐败', value: 1.15}
+                {isPositive: true, 类型: '+', name: '急速', value: 70},
+                {isPositive: false, 类型: '*', name: '腐败', value: 1.15}
             ];
         },
         masteryBoost: 0.25,
@@ -1636,18 +1636,18 @@
     神秘加速器: {
         findZone: 212,
         findChance: 1 / buildNum(1.25, 'T'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(14, lvl - 1) * buildNum(12.5, 'B');
         },
-        cap: 5,
+        上限: 5,
         stats() {
             return [
-                {isPositive: true, 类型: 'mult', name: '神秘碎片几率', value: 1.5}
+                {isPositive: true, 类型: '*', name: '神秘碎片几率', value: 1.5}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'permanentStat', 达到 {0} {1}: 'hordeShardChance_mult', value: 0.35}
+                {类型: 'permanentStat', stat: 'hordeShardChance_mult', value: 0.35}
             ];
         },
         activeType: 'utility',
@@ -1659,14 +1659,14 @@
     炽热之杖: {
         findZone: 219,
         findChance: 1 / buildNum(2.5, 'T'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(25, lvl - 1) * buildNum(18, 'B');
         },
-        cap: 4,
+        上限: 4,
         stats() {
             return [
-                {isPositive: true, 类型: 'mult', name: '攻击', value: 2.5},
-                {isPositive: false, 类型: 'mult', name: '生命值', value: 0.5}
+                {isPositive: true, 类型: '*', name: '攻击', value: 2.5},
+                {isPositive: false, 类型: '*', name: '生命值', value: 0.5}
             ];
         },
         masteryBoost: 0.25,
@@ -1674,7 +1674,7 @@
             return [
                 {类型: 'damageMagic', value: lvl * 3 + 25, str: 0.6},
                 {类型: 'buff', value: 12, 效果: [
-                    {类型: 'mult', name: '攻击', value: 1.4}
+                    {类型: '*', name: '攻击', value: 1.4}
                 ]}
             ];
         },
@@ -1687,21 +1687,21 @@
     护盾: {
         findZone: 226,
         findChance: 1 / buildNum(5, 'T'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(25, lvl - 1) * buildNum(25, 'B');
         },
-        cap: 4,
+        上限: 4,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '防御', value: 0.004}
+                {isPositive: true, 类型: '+', name: '防御', value: 0.004}
             ];
         },
         激活的卡片() {
             return [
                 {类型: 'buff', value: 8, 效果: [
-                    {类型: 'mult', name: '受到的物理伤害', value: 0.25},
-                    {类型: 'mult', name: '受到的魔法伤害', value: 0.25},
-                    {类型: 'mult', name: '受到的生物伤害', value: 0.25}
+                    {类型: '*', name: '受到的物理伤害', value: 0.25},
+                    {类型: '*', name: '受到的魔法伤害', value: 0.25},
+                    {类型: '*', name: '受到的生物伤害', value: 0.25}
                 ]}
             ];
         },
@@ -1714,13 +1714,13 @@
     护甲: {
         findZone: 233,
         findChance: 1 / buildNum(10, 'T'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * buildNum(35, 'B');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '生命值', value: lvl * 400 + buildNum(10.8, 'K')},
-                {isPositive: true, 类型: '基础', name: '防御', value: 0.0025}
+                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 400 + buildNum(10.8, 'K')},
+                {isPositive: true, 类型: '+', name: '防御', value: 0.0025}
             ];
         },
         激活的卡片() {
@@ -1737,14 +1737,14 @@
     自然之石: {
         findZone: 240,
         findChance: 1 / buildNum(20, 'T'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(20, lvl - 1) * buildNum(50, 'B');
         },
-        cap: 5,
+        上限: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '恢复', value: 0.01},
-                {isPositive: true, 类型: '基础', name: '治疗', value: 0.3}
+                {isPositive: true, 类型: '+', name: '恢复', value: 0.01},
+                {isPositive: true, 类型: '+', name: '治疗', value: 0.3}
             ];
         },
         激活的卡片(lvl) {
@@ -1762,24 +1762,24 @@
     常生藤: {
         findZone: 247,
         findChance: 1 / buildNum(40, 'T'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(100, lvl - 1) * buildNum(75, 'B');
         },
-        cap: 3,
+        上限: 3,
         stats() {
             return [
-                {isPositive: true, 类型: 'mult', name: '生命值', value: 1.5},
-                {isPositive: true, 类型: '基础', name: '恢复', value: 0.2},
-                {isPositive: false, 类型: 'mult', name: '防御', value: 0},
-                {isPositive: false, 类型: 'mult', name: '分裂盾', value: 0},
-                {isPositive: true, 类型: 'tag', name: '每秒应用 {0} 恢复', value: [0.1]}
+                {isPositive: true, 类型: '*', name: '生命值', value: 1.5},
+                {isPositive: true, 类型: '+', name: '恢复', value: 0.2},
+                {isPositive: false, 类型: '*', name: '防御', value: 0},
+                {isPositive: false, 类型: '*', name: '分裂盾', value: 0},
+                {isPositive: true, 类型: 'tag', name: '每秒应用 (0) 恢复', value: [0.1]}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
                 {类型: 'buff', value: lvl * 3 + 21, 效果: [
-                    {类型: '基础', name: '治疗', value: 0.25}
+                    {类型: '+', name: '治疗', value: 0.25}
                 ]}
             ];
         },
@@ -1792,22 +1792,22 @@
     能量饮料: {
         findZone: 254,
         findChance: 1 / buildNum(80, 'T'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(100, lvl - 1) * buildNum(140, 'B');
         },
-        cap: 3,
+        上限: 3,
         stats() {
             return [
-                {isPositive: true, 类型: 'mult', name: '急速', value: 1.5},
-                {isPositive: false, 类型: 'mult', name: '暴击伤害', value: 0.5}
+                {isPositive: true, 类型: '*', name: '急速', value: 1.5},
+                {isPositive: false, 类型: '*', name: '暴击伤害', value: 0.5}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
                 {类型: 'buff', value: lvl + 7, 效果: [
-                    {类型: '基础', name: '暴击率', value: 0.35},
-                    {类型: '基础', name: '暴击伤害', value: 0.8}
+                    {类型: '+', name: '暴击率', value: 0.35},
+                    {类型: '+', name: '暴击伤害', value: 0.8}
                 ]}
             ];
         },
@@ -1820,20 +1820,20 @@
     龙心: {
         findZone: 261,
         findChance: 1 / buildNum(160, 'T'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * buildNum(225, 'B');
         },
-        cap: 21,
+        上限: 21,
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '恢复', value: lvl * 0.001 + 0.039},
-                {isPositive: true, 类型: '基础', name: '防御', value: 0.002}
+                {isPositive: true, 类型: '+', name: '恢复', value: lvl * 0.001 + 0.039},
+                {isPositive: true, 类型: '+', name: '防御', value: 0.002}
             ];
         },
         激活的卡片() {
             return [
                 {类型: 'buff', value: 14, 效果: [
-                    {类型: '基础', name: '防御', value: 0.05}
+                    {类型: '+', name: '防御', value: 0.05}
                 ]}
             ];
         },
@@ -1846,13 +1846,13 @@
     棱镜: {
         findZone: 268,
         findChance: 1 / buildNum(320, 'T'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(12, lvl - 1) * buildNum(400, 'B');
         },
-        cap: 8,
+        上限: 8,
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '神秘碎片容量', value: lvl}
+                {isPositive: true, 类型: '+', name: '神秘碎片容量', value: lvl}
             ];
         },
         激活的卡片() {
@@ -1874,19 +1874,19 @@
     死亡之剑: {
         findZone: 275,
         findChance: 1 / buildNum(640, 'T'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(25, lvl - 1) * buildNum(700, 'B');
         },
-        cap: 5,
+        上限: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '处决', value: 0.06}
+                {isPositive: true, 类型: '+', name: '处决', value: 0.06}
             ];
         },
         激活的卡片() {
             return [
                 {类型: 'buff', value: 5, 效果: [
-                    {类型: '基础', name: '切割', value: 0.15}
+                    {类型: '+', name: '切割', value: 0.15}
                 ]}
             ];
         },
@@ -1899,14 +1899,14 @@
     针: {
         findZone: 282,
         findChance: 1 / buildNum(1.25, 'Qa'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(25, lvl - 1) * buildNum(1.2, 'T');
         },
-        cap: 5,
+        上限: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '处决', value: 0.04},
-                {isPositive: true, 类型: '基础', name: '切割', value: 0.01}
+                {isPositive: true, 类型: '+', name: '处决', value: 0.04},
+                {isPositive: true, 类型: '+', name: '切割', value: 0.01}
             ];
         },
         激活的卡片() {
@@ -1926,22 +1926,22 @@
     矿山: {
         findZone: 289,
         findChance: 1 / buildNum(2.5, 'Qa'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(8, lvl - 1) * buildNum(2, 'T');
         },
-        cap: 9,
+        上限: 9,
         stats() {
             return [
-                {isPositive: false, 类型: 'mult', name: '攻击', value: 1 / 1.25},
-                {isPositive: true, 类型: '基础', name: '暴击率', value: 0.5},
-                {isPositive: true, 类型: '基础', name: '急速', value: 20},
-                {isPositive: true, 类型: 'tag', name: '伤害性活动可以在 {0} 效率下暴击', value: [0.3]}
+                {isPositive: false, 类型: '*', name: '攻击', value: 1 / 1.25},
+                {isPositive: true, 类型: '+', name: '暴击率', value: 0.5},
+                {isPositive: true, 类型: '+', name: '急速', value: 20},
+                {isPositive: true, 类型: 'tag', name: '伤害性活动可以在 (0) 效率下暴击', value: [0.3]}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: 'damagePhysic', value: lvl * 0.25 + 4.25, str: 0.13, 能以{0}%的效率暴击: 1}
+                {类型: 'damagePhysic', value: lvl * 0.25 + 4.25, str: 0.13, 能以(0)%的效率暴击: 1}
             ];
         },
         activeType: 'combat',
@@ -1953,20 +1953,20 @@
     欢乐面具: {
         findZone: 296,
         findChance: 1 / buildNum(5, 'Qa'),
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(25, lvl - 1) * buildNum(3.3, 'T');
         },
-        cap: 5,
+        上限: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '基础', name: '暴击率', value: 0.15},
-                {isPositive: true, 类型: '基础', name: '治疗', value: 0.1},
-                {isPositive: true, 类型: 'tag', name: '治疗活动可以以 {0} 的效率暴击', value: [0.1]}
+                {isPositive: true, 类型: '+', name: '暴击率', value: 0.15},
+                {isPositive: true, 类型: '+', name: '治疗', value: 0.1},
+                {isPositive: true, 类型: 'tag', name: '治疗活动可以以 (0) 的效率暴击', value: [0.1]}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'heal', value: 0.1, int: 0.005, 能以{0}%的效率暴击: 0.4}
+                {类型: 'heal', value: 0.1, int: 0.005, 能以(0)%的效率暴击: 0.4}
             ];
         },
         activeType: 'combat',
@@ -1977,15 +1977,15 @@
     },
     士兵: {
         findZone: 50,
-        findChance: 1 / buildNum(10, '分钟'),
+        findChance: 1 / buildNum(10, 'M'),
         解锁: '棋具',
-        price(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(1, '分钟');
+        消耗(lvl) {
+            return Math.pow(2, lvl - 1) * buildNum(1, 'M');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '攻击', value: lvl * 10 + 90},
-                {isPositive: true, 类型: '基础', name: '先发制人', value: 1.25}
+                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 10 + 90},
+                {isPositive: true, 类型: '+', name: '先发制人', value: 1.25}
             ];
         },
         激活的卡片() {
@@ -2001,15 +2001,15 @@
     },
     骑士: {
         findZone: 80,
-        findChance: 1 / buildNum(100, '分钟'),
+        findChance: 1 / buildNum(100, 'M'),
         解锁: '棋具',
-        price(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(4, '分钟');
+        消耗(lvl) {
+            return Math.pow(2, lvl - 1) * buildNum(4, 'M');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '法术之刃', value: lvl * 0.1 + 0.4},
-                {isPositive: true, 类型: '基础', name: '分裂盾', value: 7}
+                {isPositive: true, 类型: '+', name: '法术之刃', value: lvl * 0.1 + 0.4},
+                {isPositive: true, 类型: '+', name: '分裂盾', value: 7}
             ];
         },
         激活的卡片() {
@@ -2028,14 +2028,14 @@
         findZone: 110,
         findChance: 1 / buildNum(1, 'B'),
         解锁: '棋具',
-        price(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(16, '分钟');
+        消耗(lvl) {
+            return Math.pow(2, lvl - 1) * buildNum(16, 'M');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '生命值', value: lvl * 500 + 7000},
-                {isPositive: true, 类型: '基础', name: '中毒', value: 0.01},
-                {isPositive: true, 类型: '基础', name: '切割', value: 0.01}
+                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 500 + 7000},
+                {isPositive: true, 类型: '+', name: '中毒', value: 0.01},
+                {isPositive: true, 类型: '+', name: '切割', value: 0.01}
             ];
         },
         激活的卡片() {
@@ -2054,13 +2054,13 @@
         findZone: 140,
         findChance: 1 / buildNum(10, 'B'),
         解锁: '棋具',
-        price(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(64, '分钟');
+        消耗(lvl) {
+            return Math.pow(2, lvl - 1) * buildNum(64, 'M');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '暴击率', value: 0.05},
-                {isPositive: true, 类型: '基础', name: '暴击伤害', value: lvl * 0.02 + 0.58}
+                {isPositive: true, 类型: '+', name: '暴击率', value: 0.05},
+                {isPositive: true, 类型: '+', name: '暴击伤害', value: lvl * 0.02 + 0.58}
             ];
         },
         激活的卡片() {
@@ -2079,17 +2079,17 @@
         findZone: 170,
         findChance: 1 / buildNum(100, 'B'),
         解锁: '棋具',
-        price(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(256, '分钟');
+        消耗(lvl) {
+            return Math.pow(2, lvl - 1) * buildNum(256, 'M');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '攻击', value: lvl * 2 + 28},
-                {isPositive: true, 类型: '基础', name: '生命值', value: lvl * 200 + 2800},
-                {isPositive: true, 类型: '基础', name: '先发制人', value: 0.6},
-                {isPositive: true, 类型: '基础', name: '中毒', value: 0.005},
-                {isPositive: false, 类型: '基础', name: '魔法伤害转换', value: 0.4},
-                {isPositive: false, 类型: '基础', name: '生物伤害转换', value: 0.4}
+                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 2 + 28},
+                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 200 + 2800},
+                {isPositive: true, 类型: '+', name: '先发制人', value: 0.6},
+                {isPositive: true, 类型: '+', name: '中毒', value: 0.005},
+                {isPositive: false, 类型: '+', name: '魔法伤害转换', value: 0.4},
+                {isPositive: false, 类型: '+', name: '生物伤害转换', value: 0.4}
             ];
         },
         激活的卡片() {
@@ -2112,20 +2112,20 @@
         findZone: 200,
         findChance: 1 / buildNum(1, 'T'),
         解锁: '棋具',
-        price(lvl) {
+        消耗(lvl) {
             return Math.pow(2, lvl - 1) * buildNum(1.024, 'B');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '基础', name: '生命值', value: lvl * 2000 + 4000},
-                {isPositive: true, 类型: '基础', name: '复活', value: 1}
+                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 2000 + 4000},
+                {isPositive: true, 类型: '+', name: '复活', value: 1}
             ];
         },
         激活的卡片(lvl) {
             return [
                 {类型: 'heal', value: 1},
                 {类型: '解毒剂', value: 1},
-                {类型: '复活 +{0}', value: 1},
+                {类型: '复活+(0)', value: 1},
                 {类型: 'stun', value: lvl + 24}
             ];
         },

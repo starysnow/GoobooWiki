@@ -1,0 +1,245 @@
+[
+  {
+    "名称": "伤害",
+    "feature": "采矿",
+    "图标": "<i class=\"mdi mdi-bomb\"></i>",
+    "value": "0.25",
+    "解锁": "",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "废料增益",
+    "feature": "采矿",
+    "图标": "<i class=\"mdi mdi-dots-triangle\"></i>",
+    "value": "0.3",
+    "解锁": "",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "矿石增益",
+    "feature": "采矿",
+    "图标": "<i class=\"mdi mdi-chart-bubble\"></i>",
+    "value": "0.2",
+    "解锁": "",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "冶炼速度",
+    "feature": "采矿",
+    "图标": "<i class=\"mdi mdi-fire\"></i>",
+    "value": "0.2",
+    "解锁": "冶炼厂",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "烟雾增益",
+    "feature": "采矿",
+    "图标": "<i class=\"mdi mdi-smoke\"></i>",
+    "value": "0.04",
+    "解锁": "烟雾",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "绿水晶增益",
+    "feature": "采矿",
+    "图标": "<i class=\"mdi mdi-star-three-points\"></i>",
+    "value": "0.1",
+    "解锁": "",
+    "类型": "特殊效果",
+    "unique": "true"
+  },
+  {
+    "名称": "黄水晶增益",
+    "feature": "采矿",
+    "图标": "<i class=\"mdi mdi-star-four-points\"></i>",
+    "value": "0.05",
+    "解锁": "miningGasSubfeature",
+    "类型": "特殊效果",
+    "unique": "true"
+  },
+  {
+    "名称": "建造速度",
+    "feature": "村庄",
+    "图标": "<i class=\"mdi mdi-hammer\"></i>",
+    "value": "0.3",
+    "解锁": "",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "材料增益",
+    "feature": "村庄",
+    "图标": "<i class=\"mdi mdi-tree\"></i>",
+    "value": "0.1",
+    "解锁": "",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "金币增益",
+    "feature": "村庄",
+    "图标": "<i class=\"mdi mdi-circle-multiple\"></i>",
+    "value": "0.25",
+    "解锁": "",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "精神资源增益",
+    "feature": "村庄",
+    "图标": "<i class=\"mdi mdi-brain\"></i>",
+    "value": "0.1",
+    "解锁": "",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "信仰增益",
+    "feature": "村庄",
+    "图标": "<i class=\"mdi mdi-hands-pray\"></i>",
+    "value": "0.1",
+    "解锁": "",
+    "类型": "特殊效果",
+    "unique": "true"
+  },
+  {
+    "名称": "股票增益",
+    "feature": "村庄",
+    "图标": "<i class=\"mdi mdi-certificate\"></i>",
+    "value": "0.05",
+    "解锁": "villageCraftingSubfeature",
+    "类型": "特殊效果",
+    "unique": "true"
+  },
+  {
+    "名称": "攻击",
+    "feature": "部落",
+    "图标": "<i class=\"mdi mdi-sword\"></i>",
+    "value": "0.2",
+    "解锁": "",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "骨头增益",
+    "feature": "部落",
+    "图标": "<i class=\"mdi mdi-bone\"></i>",
+    "value": "0.3",
+    "解锁": "",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "怪物零件增益",
+    "feature": "部落",
+    "图标": "<i class=\"mdi mdi-stomach\"></i>",
+    "value": "0.15",
+    "解锁": "",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "精通点数增益",
+    "feature": "部落",
+    "图标": "<i class=\"mdi mdi-seal\"></i>",
+    "value": "0.1",
+    "解锁": "hordeItemMastery",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "腐败的灵魂增益",
+    "feature": "部落",
+    "图标": "<i class=\"mdi mdi-ghost\"></i>",
+    "value": "0.1",
+    "解锁": "",
+    "类型": "特殊效果",
+    "unique": "true"
+  },
+  {
+    "名称": "仅蔬菜增益",
+    "feature": "农场",
+    "图标": "<i class=\"mdi mdi-carrot\"></i>",
+    "value": "0.35",
+    "解锁": "",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "仅浆果增益",
+    "feature": "农场",
+    "图标": "<i class=\"mdi mdi-fruit-grapes\"></i>",
+    "value": "0.35",
+    "解锁": "",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "仅粮食增益",
+    "feature": "农场",
+    "图标": "<i class=\"mdi mdi-barley\"></i>",
+    "value": "0.35",
+    "解锁": "",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "仅鲜花增益",
+    "feature": "农场",
+    "图标": "<i class=\"mdi mdi-flower\"></i>",
+    "value": "0.35",
+    "解锁": "",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "作物经验",
+    "feature": "农场",
+    "图标": "<i class=\"mdi mdi-star\"></i>",
+    "value": "0.1",
+    "解锁": "作物经验",
+    "类型": "特殊效果",
+    "unique": "true"
+  },
+  {
+    "名称": "美丽增益",
+    "feature": "画廊",
+    "图标": "<i class=\"mdi mdi-image-filter-vintage\"></i>",
+    "value": "0.4",
+    "解锁": "",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "转换器增益",
+    "feature": "画廊",
+    "图标": "<i class=\"mdi mdi-recycle\"></i>",
+    "value": "0.15",
+    "解锁": "转换",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "包裹增益",
+    "feature": "画廊",
+    "图标": "<i class=\"mdi mdi-package-variant\"></i>",
+    "value": "0.15",
+    "解锁": "鼓",
+    "类型": "",
+    "unique": ""
+  },
+  {
+    "名称": "现金增益",
+    "feature": "画廊",
+    "图标": "<i class=\"mdi mdi-cash\"></i>",
+    "value": "0.1",
+    "解锁": "",
+    "类型": "特殊效果",
+    "unique": "true"
+  }
+]

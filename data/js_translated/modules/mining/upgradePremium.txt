@@ -1,149 +1,149 @@
 {
-    更多伤害: {类型: '高级', price(lvl) {
+    更多伤害: {类型: '高级', 消耗(lvl) {
         return {红宝石: fallbackArray([15, 80], [2, 3][(lvl - 2) % 2] * Math.pow(2, Math.floor((lvl - 2) / 2)) * 75, lvl)};
     }, 效果: [
-        {name: '伤害', 类型: 'mult', value: lvl => fallbackArray([1, 1.25, 1.5], getSequence(3, lvl - 2) * 0.25 + 1, lvl) }
+        {name: '伤害', 类型: '*', value: lvl => fallbackArray([1, 1.25, 1.5], getSequence(3, lvl - 2) * 0.25 + 1, lvl) }
     ]},
-    更多废料: {类型: '高级', price(lvl) {
+    更多废料: {类型: '高级', 消耗(lvl) {
         return {红宝石: fallbackArray([10, 40], [2, 3][(lvl - 2) % 2] * Math.pow(2, Math.floor((lvl - 2) / 2)) * 75, lvl)};
     }, 效果: [
-        {name: '废料增益', 类型: 'mult', value: lvl => fallbackArray([1, 1.25, 1.5], getSequence(1, lvl - 2) + 1, lvl)},
-        {name: '废料容量', 类型: 'mult', value: lvl => fallbackArray([1, 1.25, 1.5], getSequence(1, lvl - 2) + 1, lvl)}
+        {name: '废料增益', 类型: '*', value: lvl => fallbackArray([1, 1.25, 1.5], getSequence(1, lvl - 2) + 1, lvl)},
+        {name: '废料容量', 类型: '*', value: lvl => fallbackArray([1, 1.25, 1.5], getSequence(1, lvl - 2) + 1, lvl)}
     ]},
     更多绿水晶: {类型: '高级', requirement() {
         return store.state.解锁.深度居民.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 75};
     }, 效果: [
-        {name: '绿水晶增益', 类型: 'mult', value: lvl => lvl * 0.25 + 1}
+        {name: '绿水晶增益', 类型: '*', value: lvl => lvl * 0.25 + 1}
     ]},
     更多稀土: {类型: '高级', requirement() {
-        return store.state.达到 {0} {1}.mining_maxDepth0.总计 >= 50;
-    }, price(lvl) {
+        return store.state.stat.mining_maxDepth0.总计 >= 50;
+    }, 消耗(lvl) {
         return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 120};
     }, 效果: [
-        {name: '稀土增益', 类型: 'mult', value: lvl => getSequence(3, lvl) * 0.05 + 1}
+        {name: '稀土增益', 类型: '*', value: lvl => getSequence(3, lvl) * 0.05 + 1}
     ]},
     更快的冶炼速度: {类型: '高级', requirement() {
         return store.state.解锁.冶炼厂.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 100};
     }, 效果: [
-        {name: '冶炼速度', 类型: 'mult', value: lvl => lvl + 1}
+        {name: '冶炼速度', 类型: '*', value: lvl => lvl + 1}
     ]},
     更多树脂: {类型: '高级', requirement() {
         return store.state.解锁.树脂.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 150};
     }, 效果: [
-        {name: '树脂增益', 类型: 'mult', value: lvl => lvl * 0.1 + 1},
-        {name: '树脂容量', 类型: '基础', value: lvl => lvl}
+        {name: '树脂增益', 类型: '*', value: lvl => lvl * 0.1 + 1},
+        {name: '树脂容量', 类型: '+', value: lvl => lvl}
     ]},
     高级制作槽: {类型: '高级', hasDescription: true, requirement() {
         return store.state.解锁.镐制作.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {红宝石: Math.pow(2, lvl) * 30};
     }, 效果: [
-        {name: '高级制作插槽', 类型: '基础', value: lvl => lvl}
+        {name: '高级制作插槽', 类型: '+', value: lvl => lvl}
     ]},
-    更多铝: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.mining_maxDepth0.总计 >= 15;
-    }, price(lvl) {
+    更多铝: {类型: '高级', 上限: 1, requirement() {
+        return store.state.stat.mining_maxDepth0.总计 >= 15;
+    }, 消耗(lvl) {
         return {红宝石: Math.pow(2, lvl) * 300};
     }, 效果: [
-        {name: '铝矿石增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '铝矿石容量', 类型: 'mult', value: lvl => lvl * 0.25 + 1}
+        {name: '铝矿石增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '铝矿石容量', 类型: '*', value: lvl => lvl * 0.25 + 1}
     ]},
-    更多铜: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.mining_maxDepth0.总计 >= 30;
-    }, price(lvl) {
+    更多铜: {类型: '高级', 上限: 1, requirement() {
+        return store.state.stat.mining_maxDepth0.总计 >= 30;
+    }, 消耗(lvl) {
         return {红宝石: Math.pow(2, lvl) * 450};
     }, 效果: [
-        {name: '铜矿石增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '铜矿石容量', 类型: 'mult', value: lvl => lvl * 0.25 + 1}
+        {name: '铜矿石增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '铜矿石容量', 类型: '*', value: lvl => lvl * 0.25 + 1}
     ]},
-    更多锡: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.mining_maxDepth0.总计 >= 50;
-    }, price(lvl) {
+    更多锡: {类型: '高级', 上限: 1, requirement() {
+        return store.state.stat.mining_maxDepth0.总计 >= 50;
+    }, 消耗(lvl) {
         return {红宝石: Math.pow(2, lvl) * 600};
     }, 效果: [
-        {name: '锡矿石增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '锡矿石容量', 类型: 'mult', value: lvl => lvl * 0.25 + 1}
+        {name: '锡矿石增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '锡矿石容量', 类型: '*', value: lvl => lvl * 0.25 + 1}
     ]},
-    更多铁: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.mining_maxDepth0.总计 >= 80;
-    }, price(lvl) {
+    更多铁: {类型: '高级', 上限: 1, requirement() {
+        return store.state.stat.mining_maxDepth0.总计 >= 80;
+    }, 消耗(lvl) {
         return {红宝石: Math.pow(2, lvl) * 900};
     }, 效果: [
-        {name: '铁矿石增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '铁矿石容量', 类型: 'mult', value: lvl => lvl * 0.25 + 1}
+        {name: '铁矿石增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '铁矿石容量', 类型: '*', value: lvl => lvl * 0.25 + 1}
     ]},
-    更多钛: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.mining_maxDepth0.总计 >= 120;
-    }, price(lvl) {
+    更多钛: {类型: '高级', 上限: 1, requirement() {
+        return store.state.stat.mining_maxDepth0.总计 >= 120;
+    }, 消耗(lvl) {
         return {红宝石: Math.pow(2, lvl) * 1200};
     }, 效果: [
-        {name: '钛矿石增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '钛矿石容量', 类型: 'mult', value: lvl => lvl * 0.25 + 1}
+        {name: '钛矿石增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '钛矿石容量', 类型: '*', value: lvl => lvl * 0.25 + 1}
     ]},
-    更多铂: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.mining_maxDepth0.总计 >= 175;
-    }, price(lvl) {
+    更多铂: {类型: '高级', 上限: 1, requirement() {
+        return store.state.stat.mining_maxDepth0.总计 >= 175;
+    }, 消耗(lvl) {
         return {红宝石: Math.pow(2, lvl) * 1800};
     }, 效果: [
-        {name: '铂矿石增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '铂矿石容量', 类型: 'mult', value: lvl => lvl * 0.25 + 1}
+        {name: '铂矿石增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '铂矿石容量', 类型: '*', value: lvl => lvl * 0.25 + 1}
     ]},
-    更多铱: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.mining_maxDepth0.总计 >= 260;
-    }, price(lvl) {
+    更多铱: {类型: '高级', 上限: 1, requirement() {
+        return store.state.stat.mining_maxDepth0.总计 >= 260;
+    }, 消耗(lvl) {
         return {红宝石: Math.pow(2, lvl) * 2500};
     }, 效果: [
-        {name: '铱矿石增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '铱矿石容量', 类型: 'mult', value: lvl => lvl * 0.25 + 1}
+        {name: '铱矿石增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '铱矿石容量', 类型: '*', value: lvl => lvl * 0.25 + 1}
     ]},
-    更多锇: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.mining_maxDepth0.总计 >= 350;
-    }, price(lvl) {
+    更多锇: {类型: '高级', 上限: 1, requirement() {
+        return store.state.stat.mining_maxDepth0.总计 >= 350;
+    }, 消耗(lvl) {
         return {红宝石: Math.pow(2, lvl) * 3500};
     }, 效果: [
-        {name: '锇矿石增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '锇矿石容量', 类型: 'mult', value: lvl => lvl * 0.25 + 1}
+        {name: '锇矿石增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '锇矿石容量', 类型: '*', value: lvl => lvl * 0.25 + 1}
     ]},
-    更多铅: {类型: '高级', cap: 1, requirement() {
-        return store.state.达到 {0} {1}.mining_maxDepth0.总计 >= 450;
-    }, price(lvl) {
+    更多铅: {类型: '高级', 上限: 1, requirement() {
+        return store.state.stat.mining_maxDepth0.总计 >= 450;
+    }, 消耗(lvl) {
         return {红宝石: Math.pow(2, lvl) * 5000};
     }, 效果: [
-        {name: '铅矿石增益', 类型: 'mult', value: lvl => Math.pow(2, lvl)},
-        {name: '铅矿石容量', 类型: 'mult', value: lvl => lvl * 0.25 + 1}
+        {name: '铅矿石增益', 类型: '*', value: lvl => Math.pow(2, lvl)},
+        {name: '铅矿石容量', 类型: '*', value: lvl => lvl * 0.25 + 1}
     ]},
-    更多氦: {类型: '高级', cap: 5, requirement() {
+    更多氦: {类型: '高级', 上限: 5, requirement() {
         return store.state.解锁.miningGasSubfeature.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 300};
     }, 效果: [
-        {name: '氦增益', 类型: '基础', value: lvl => lvl * 0.004}
+        {name: '氦增益', 类型: '+', value: lvl => lvl * 0.004}
     ]},
     更多烟雾: {类型: '高级', requirement() {
         return store.state.解锁.烟雾.see;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 325};
     }, 效果: [
-        {name: '烟雾容量', 类型: 'mult', value: lvl => Math.pow(2, lvl)}
+        {name: '烟雾容量', 类型: '*', value: lvl => Math.pow(2, lvl)}
     ]},
-    更多氖: {类型: '高级', cap: 5, requirement() {
-        return store.state.达到 {0} {1}.mining_maxDepth1.总计 >= 40;
-    }, price(lvl) {
+    更多氖: {类型: '高级', 上限: 5, requirement() {
+        return store.state.stat.mining_maxDepth1.总计 >= 40;
+    }, 消耗(lvl) {
         return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 525};
     }, 效果: [
-        {name: '氖增益', 类型: '基础', value: lvl => lvl * 0.004}
+        {name: '氖增益', 类型: '+', value: lvl => lvl * 0.004}
     ]},
-    更多氩: {类型: '高级', cap: 5, requirement() {
-        return store.state.达到 {0} {1}.mining_maxDepth1.总计 >= 90;
-    }, price(lvl) {
+    更多氩: {类型: '高级', 上限: 5, requirement() {
+        return store.state.stat.mining_maxDepth1.总计 >= 90;
+    }, 消耗(lvl) {
         return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 800};
     }, 效果: [
-        {name: '氩增益', 类型: '基础', value: lvl => lvl * 0.004}
+        {name: '氩增益', 类型: '+', value: lvl => lvl * 0.004}
     ]},
 }

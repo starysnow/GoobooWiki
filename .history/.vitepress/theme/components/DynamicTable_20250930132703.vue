@@ -1,0 +1,1 @@
+formulaStr = formulaStr.replace(/buildNum\(([^,]+), ?'([^']+)'\)/g, "$1$2");

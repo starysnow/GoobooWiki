@@ -1,6 +1,0 @@
-function(save) {
-    if (save.达到 {0} {1}.供品) {
-        save.达到 {0} {1}.village_offeringAmount = save.达到 {0} {1}.供品;
-    }
-    return save;
-}

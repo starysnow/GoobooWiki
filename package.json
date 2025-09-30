@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "node toolscript/build-data-index.js && vitepress dev",
+    "docs:dev": "vitepress dev",
     "docs:build": "node toolscript/build-data-index.js && vitepress build",
     "docs:preview": "vitepress preview",
     "convert": "node convert.js"
@@ -31,6 +31,7 @@
     "fs-extra": "^11.3.2",
     "glob": "^11.0.3",
     "json2md": "^2.0.3",
+    "markdown-it-mathjax3": "^4.3.2",
     "papaparse": "^5.5.3",
     "path": "^0.12.7",
     "prettier": "^3.6.2"

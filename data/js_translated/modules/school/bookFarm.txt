@@ -1,44 +1,44 @@
 {
     书籍: 小箱子: {类型: '书籍', raiseOtherCap: '小箱子', requirement() {
         return store.state.升级成本.item.小箱子.highestLevel >= 7;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.25, lvl) * (lvl + 5) * 72)};
     }, 效果: [
-        {name: 'upgradeFarmSmallCrateCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeFarmSmallCrateCap', 类型: '+', value: lvl => lvl}
     ]},
     书籍: 稻草人: {类型: '书籍', raiseOtherCap: '稻草人', requirement() {
         return store.state.升级成本.item.稻草人.highestLevel >= 10;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.25, lvl) * (lvl + 5) * 96)};
     }, 效果: [
-        {name: 'upgradeFarmScarecrowCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeFarmScarecrowCap', 类型: '+', value: lvl => lvl}
     ]},
     书籍: 棚子: {类型: '书籍', raiseOtherCap: '棚子', requirement() {
         return store.state.升级成本.item.棚子.highestLevel >= 10;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.25, lvl) * (lvl + 5) * 144)};
     }, 效果: [
-        {name: 'upgradeFarmShedCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeFarmShedCap', 类型: '+', value: lvl => lvl}
     ]},
     书籍: 中箱子: {类型: '书籍', raiseOtherCap: '中箱子', requirement() {
         return store.state.升级成本.item.中箱子.highestLevel >= 8;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.25, lvl) * (lvl + 5) * 185)};
     }, 效果: [
-        {name: 'upgradeFarmMediumCrateCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeFarmMediumCrateCap', 类型: '+', value: lvl => lvl}
     ]},
     书籍: 昆虫天堂: {类型: '书籍', raiseOtherCap: '昆虫天堂', requirement() {
         return store.state.升级成本.item.昆虫天堂.highestLevel >= 6;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.25, lvl) * (lvl + 5) * 330)};
     }, 效果: [
-        {name: 'upgradeFarmInsectParadiseCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeFarmInsectParadiseCap', 类型: '+', value: lvl => lvl}
     ]},
     书籍: 大箱子: {类型: '书籍', raiseOtherCap: '大箱子', requirement() {
         return store.state.升级成本.item.大箱子.highestLevel >= 10;
-    }, price(lvl) {
+    }, 消耗(lvl) {
         return {书籍: Math.round(Math.pow(1.25, lvl) * (lvl + 5) * 525)};
     }, 效果: [
-        {name: 'upgradeFarmBigCrateCap', 类型: '基础', value: lvl => lvl}
+        {name: 'upgradeFarmBigCrateCap', 类型: '+', value: lvl => lvl}
     ]},
 }

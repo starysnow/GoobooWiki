@@ -1,7 +1,7 @@
 | 名称  | 图标  |
 | --- | --- |
-| 花园侏儒 | mdi-human-child |
-| 洒水装置 | mdi-sprinkler-variant |
-| 讲台 | mdi-book-open-page-variant |
-| 风车 | mdi-pinwheel |
-| 旗帜 | mdi-flag |
+| 花园侏儒 | <i class="mdi mdi-human-child"></i> |
+| 洒水装置 | <i class="mdi mdi-sprinkler-variant"></i> |
+| 讲台 | <i class="mdi mdi-book-open-page-variant"></i> |
+| 风车 | <i class="mdi mdi-pinwheel"></i> |
+| 旗帜 | <i class="mdi mdi-flag"></i> |

@@ -197,7 +197,7 @@ function createSidebar() {
     },
     {
       text: '其他系统',
-      collapsed: true,
+      collapsed: false,
       items: [
         { text: '笔记', link: '/pages/notes/' },
         { text: '宝石', link: '/pages/gems/' },
@@ -221,12 +221,12 @@ function createSidebar() {
         { text: '转换器最佳转换节点（未完成）', link: '/pages/tools/' },
         { text: '切割伤害占比', link: '/pages/tools/DamageProfiler' },
       ]
-    },
+    }
     {
       text: '活动',
       collapsed: false,
       items: [
-        { text: '夜间狩猎', link: '/pages/event/nighthunt' },
+        { text: '夜间sh', link: '/pages/tools/GasCalculator' },
 
       ]
     }

@@ -197,7 +197,7 @@ function createSidebar() {
     },
     {
       text: '其他系统',
-      collapsed: true,
+      collapsed: false,
       items: [
         { text: '笔记', link: '/pages/notes/' },
         { text: '宝石', link: '/pages/gems/' },
@@ -221,13 +221,16 @@ function createSidebar() {
         { text: '转换器最佳转换节点（未完成）', link: '/pages/tools/' },
         { text: '切割伤害占比', link: '/pages/tools/DamageProfiler' },
       ]
-    },
+    }
     {
-      text: '活动',
+      text: '辅助工具',
       collapsed: false,
       items: [
-        { text: '夜间狩猎', link: '/pages/event/nighthunt' },
-
+        { text: '气体获取量计算', link: '/pages/tools/GasCalculator' },
+        { text: '工匠制品收益', link: '/pages/tools/Crafters' },
+        { text: '压腐败所需时间', link: '/pages/tools/CorruptionCalculator' },
+        { text: '转换器最佳转换节点（未完成）', link: '/pages/tools/' },
+        { text: '切割伤害占比', link: '/pages/tools/DamageProfiler' },
       ]
     }
   ]

@@ -197,7 +197,7 @@ function createSidebar() {
     },
     {
       text: '其他系统',
-      collapsed: true,
+      collapsed: false,
       items: [
         { text: '笔记', link: '/pages/notes/' },
         { text: '宝石', link: '/pages/gems/' },

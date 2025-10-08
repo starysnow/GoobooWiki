@@ -4,7 +4,6 @@
     "value": "$store.state.stat.village_maxBuilding.总计$",
     "milestones": "$\\text{四舍五入}(lvl  \\cdot  25  \\cdot  {(1.2)}^{lvl} + 35)$",
     "圣遗物": "{\"3\":\"泥砖\",\"4\":\"钥匙链\",\"5\":\"金钥匙\"}",
-    "秘密成就": "",
     "display": "",
     "上限": ""
   },
@@ -13,7 +12,6 @@
     "value": "$Math.max(store.state.stat.village_woodMax.总计, store.state.stat.village_plantFiberMax.总计, store.state.stat.village_stoneMax.总计)$",
     "milestones": "${(10)}^{lvl}  \\cdot  10K$",
     "圣遗物": "{\"3\":\"树苗\"}",
-    "秘密成就": "",
     "display": "",
     "上限": ""
   },
@@ -22,7 +20,6 @@
     "value": "$store.state.stat.village_metalMax.总计$",
     "milestones": "${(10)}^{lvl}  \\cdot  5000$",
     "圣遗物": "{\"3\":\"螺丝刀\"}",
-    "秘密成就": "",
     "display": "",
     "上限": ""
   },
@@ -31,7 +28,6 @@
     "value": "$store.state.stat.金币.总计$",
     "milestones": "${(16)}^{lvl}  \\cdot  2000$",
     "圣遗物": "{\"4\":\"宝箱\"}",
-    "秘密成就": "",
     "display": "",
     "上限": ""
   },
@@ -40,7 +36,6 @@
     "value": "$store.state.stat.village_waterMax.总计$",
     "milestones": "${(20)}^{lvl}  \\cdot  5000$",
     "圣遗物": "{\"3\":\"玫瑰\"}",
-    "秘密成就": "",
     "display": "",
     "上限": ""
   },
@@ -49,7 +44,6 @@
     "value": "$store.state.stat.village_knowledgeMax.总计$",
     "milestones": "$\\text{四舍五入}(getSequence(2, lvl + 1)  \\cdot  {(1.2)}^{Math.max(lvl - 10, 0})  \\cdot  250)$",
     "圣遗物": "{\"2\":\"地球仪\"}",
-    "秘密成就": "",
     "display": "",
     "上限": ""
   },
@@ -58,7 +52,6 @@
     "value": "$Math.max(store.state.stat.village_hardwoodMax.总计, store.state.stat.village_gemMax.总计)$",
     "milestones": "${(6)}^{lvl}  \\cdot  10K$",
     "圣遗物": "{\"3\":\"导师\"}",
-    "秘密成就": "",
     "display": "",
     "上限": ""
   },
@@ -67,7 +60,6 @@
     "value": "$store.state.stat.祝福.总计$",
     "milestones": "${(9)}^{lvl}  \\cdot  1000$",
     "圣遗物": "",
-    "秘密成就": "",
     "display": "",
     "上限": ""
   },
@@ -76,7 +68,6 @@
     "value": "$store.state.stat.供品.总计$",
     "milestones": "$\\text{四舍五入}({(2.5)}^{lvl}  \\cdot  500)$",
     "圣遗物": "",
-    "秘密成就": "",
     "display": "",
     "上限": ""
   },
@@ -85,7 +76,6 @@
     "value": "$store.getters['村庄/offeringCount']$",
     "milestones": "$getSequence(6, lvl + 1)  \\cdot  5$",
     "圣遗物": "",
-    "秘密成就": "",
     "display": "",
     "上限": ""
   },
@@ -94,7 +84,6 @@
     "value": "$store.state.stat.village_oilMax.总计$",
     "milestones": "${(10)}^{lvl}  \\cdot  100K$",
     "圣遗物": "",
-    "秘密成就": "",
     "display": "",
     "上限": ""
   },
@@ -103,7 +92,6 @@
     "value": "$store.state.stat.village_highestPower.总计$",
     "milestones": "$getSequence(2, lvl + 1)  \\cdot  10$",
     "圣遗物": "",
-    "秘密成就": "",
     "display": "",
     "上限": ""
   },
@@ -112,7 +100,6 @@
     "value": "$store.state.stat.village_minHappiness.总计$",
     "milestones": "$1$",
     "圣遗物": "",
-    "秘密成就": "true",
     "display": "boolean",
     "上限": "1"
   }

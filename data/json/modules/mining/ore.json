@@ -51,7 +51,7 @@
   },
   {
     "名称": "铂矿石",
-    "力量": "[Unsupported Node: CallExpression]",
+    "力量": "$40K$",
     "杂质": "4",
     "minDepth": "175",
     "maxDepth": "295",
@@ -61,7 +61,7 @@
   },
   {
     "名称": "铱矿石",
-    "力量": "[Unsupported Node: CallExpression]",
+    "力量": "$250K$",
     "杂质": "5",
     "minDepth": "260",
     "maxDepth": "420",
@@ -71,7 +71,7 @@
   },
   {
     "名称": "锇矿石",
-    "力量": "[Unsupported Node: CallExpression]",
+    "力量": "$1.75M$",
     "杂质": "6",
     "minDepth": "350",
     "maxDepth": "525",
@@ -81,7 +81,7 @@
   },
   {
     "名称": "铅矿石",
-    "力量": "[Unsupported Node: CallExpression]",
+    "力量": "$12.5M$",
     "杂质": "7.5",
     "minDepth": "450",
     "maxDepth": "650",

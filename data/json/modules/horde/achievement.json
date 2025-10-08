@@ -6,8 +6,7 @@
     "上限": "30",
     "milestones": "$lvl  \\cdot  10 + 10$",
     "圣遗物": "{\"7\":\"终极指南\",\"11\":\"破裂的保险箱\"}",
-    "display": "",
-    "秘密成就": ""
+    "display": ""
   },
   {
     "名称": "maxZoneSpeedrun",
@@ -16,8 +15,7 @@
     "上限": "10",
     "milestones": "$lvl  \\cdot  5 + 10$",
     "圣遗物": "{\"8\":\"哑铃\"}",
-    "display": "",
-    "秘密成就": ""
+    "display": ""
   },
   {
     "名称": "totalDamage",
@@ -26,8 +24,7 @@
     "上限": "",
     "milestones": "${(lvl  \\cdot  250 + 7500)}^{lvl}  \\cdot  10K$",
     "圣遗物": "{\"6\":\"新背包\"}",
-    "display": "",
-    "秘密成就": ""
+    "display": ""
   },
   {
     "名称": "maxDamage",
@@ -36,8 +33,7 @@
     "上限": "",
     "milestones": "${(lvl  \\cdot  250 + 7500)}^{lvl}  \\cdot  10$",
     "圣遗物": "{\"3\":\"燃烧的头骨\"}",
-    "display": "",
-    "秘密成就": ""
+    "display": ""
   },
   {
     "名称": "骨头",
@@ -46,8 +42,7 @@
     "上限": "",
     "milestones": "${(2)}^{getSequence(10, lvl} - 10)  \\cdot  1M$",
     "圣遗物": "{\"2\":\"被遗忘的盾牌\"}",
-    "display": "",
-    "秘密成就": ""
+    "display": ""
   },
   {
     "名称": "怪物零件",
@@ -56,8 +51,7 @@
     "上限": "",
     "milestones": "${(16)}^{lvl}  \\cdot  50$",
     "圣遗物": "{\"3\":\"能量饮料\",\"5\":\"绷带\"}",
-    "display": "",
-    "秘密成就": ""
+    "display": ""
   },
   {
     "名称": "腐败的灵魂",
@@ -66,8 +60,7 @@
     "上限": "",
     "milestones": "${(7 + lvl)}^{lvl}  \\cdot  1000$",
     "圣遗物": "{\"4\":\"幸运骰子\"}",
-    "display": "",
-    "秘密成就": ""
+    "display": ""
   },
   {
     "名称": "maxCorruptionKill",
@@ -76,8 +69,7 @@
     "上限": "",
     "milestones": "$lvl + 1$",
     "圣遗物": "",
-    "display": "percent",
-    "秘密成就": ""
+    "display": "percent"
   },
   {
     "名称": "maxMastery",
@@ -86,8 +78,7 @@
     "上限": "",
     "milestones": "$lvl + 1$",
     "圣遗物": "",
-    "display": "",
-    "秘密成就": ""
+    "display": ""
   },
   {
     "名称": "totalMastery",
@@ -96,8 +87,7 @@
     "上限": "",
     "milestones": "$\\text{四舍五入}((lvl + 1)  \\cdot  25  \\cdot  (lvl  \\cdot  0.2 + 1))$",
     "圣遗物": "",
-    "display": "",
-    "秘密成就": ""
+    "display": ""
   },
   {
     "名称": "unlucky",
@@ -106,7 +96,6 @@
     "上限": "1",
     "milestones": "$1$",
     "圣遗物": "",
-    "display": "boolean",
-    "秘密成就": "true"
+    "display": "boolean"
   }
 ]

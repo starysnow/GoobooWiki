@@ -2,7 +2,7 @@
   {
     "名称": "绳子",
     "图标": "<i class=\"mdi mdi-lasso\"></i>",
-    "消耗": "{\"植物纤维\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"植物纤维\":\"$100K$\"}",
     "value": "10",
     "制作时间": "60",
     "里程碑": "{\"100\":{\"类型\":\"villageCraft\",\"name\":\"袋子\",\"value\":true},\"750\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":40},\"4800\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":14},\"27000\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":30}}",
@@ -13,7 +13,7 @@
   {
     "名称": "木板",
     "图标": "<i class=\"mdi mdi-view-dashboard-variant\"></i>",
-    "消耗": "{\"木头\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"木头\":\"$250K$\"}",
     "value": "22",
     "制作时间": "120",
     "里程碑": "{\"60\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":90},\"450\":{\"类型\":\"villageCraft\",\"name\":\"橱柜\",\"value\":true},\"3200\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":30},\"16500\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":75}}",
@@ -24,7 +24,7 @@
   {
     "名称": "砖块",
     "图标": "<i class=\"mdi mdi-wall\"></i>",
-    "消耗": "{\"石头\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"石头\":\"$600K$\"}",
     "value": "48",
     "制作时间": "240",
     "里程碑": "{\"40\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":66},\"300\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":180},\"2000\":{\"类型\":\"villageCraft\",\"name\":\"哑铃\",\"value\":true},\"12000\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":84}}",
@@ -35,7 +35,7 @@
   {
     "名称": "螺丝",
     "图标": "<i class=\"mdi mdi-screw-flat-top\"></i>",
-    "消耗": "{\"金属\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"金属\":\"$800K$\"}",
     "value": "25",
     "制作时间": "120",
     "里程碑": "{\"100\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":34},\"550\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":100},\"4400\":{\"类型\":\"villageCraft\",\"name\":\"剪刀\",\"value\":true},\"21000\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":44}}",
@@ -46,7 +46,7 @@
   {
     "名称": "水瓶",
     "图标": "<i class=\"mdi mdi-bottle-soda\"></i>",
-    "消耗": "{\"水\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"水\":\"$1.5M$\"}",
     "value": "15",
     "制作时间": "70",
     "里程碑": "{\"300\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":50},\"1700\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":35},\"9250\":{\"类型\":\"villageCraft\",\"name\":\"草药茶\",\"value\":true},\"53000\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":25}}",
@@ -57,7 +57,7 @@
   {
     "名称": "鸡尾酒杯",
     "图标": "<i class=\"mdi mdi-glass-cocktail\"></i>",
-    "消耗": "{\"玻璃\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"玻璃\":\"$2.5M$\"}",
     "value": "50",
     "制作时间": "210",
     "里程碑": "{\"45\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":67},\"360\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":180},\"2500\":{\"类型\":\"villageCraft\",\"name\":\"杯子\",\"value\":true},\"14500\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":86}}",
@@ -68,7 +68,7 @@
   {
     "名称": "回旋镖",
     "图标": "<i class=\"mdi mdi-boomerang\"></i>",
-    "消耗": "{\"硬木\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"硬木\":\"$4M$\"}",
     "value": "38",
     "制作时间": "140",
     "里程碑": "{\"45\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":51},\"360\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":120},\"14500\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":65}}",
@@ -79,7 +79,7 @@
   {
     "名称": "抛光宝石",
     "图标": "<i class=\"mdi mdi-diamond-stone\"></i>",
-    "消耗": "{\"宝石\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"宝石\":\"$6.5M$\"}",
     "value": "36",
     "制作时间": "160",
     "里程碑": "{\"55\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":47},\"380\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":140},\"13500\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":60}}",
@@ -90,7 +90,7 @@
   {
     "名称": "油灯",
     "图标": "<i class=\"mdi mdi-oil-lamp\"></i>",
-    "消耗": "{\"油\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"油\":\"$10M$\"}",
     "value": "51",
     "制作时间": "270",
     "里程碑": "{\"40\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":65},\"330\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":225},\"12400\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":82}}",
@@ -101,7 +101,7 @@
   {
     "名称": "淋浴",
     "图标": "<i class=\"mdi mdi-shower\"></i>",
-    "消耗": "{\"大理石\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"大理石\":\"$15M$\"}",
     "value": "70",
     "制作时间": "360",
     "里程碑": "{\"40\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":300},\"330\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":90},\"12400\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":250}}",
@@ -112,7 +112,7 @@
   {
     "名称": "袋子",
     "图标": "<i class=\"mdi mdi-sack\"></i>",
-    "消耗": "{\"植物纤维\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"植物纤维\":\"$1M$\"}",
     "value": "18",
     "制作时间": "90",
     "里程碑": "{\"80\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":26},\"600\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":70},\"4000\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":35},\"22000\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":60}}",
@@ -123,7 +123,7 @@
   {
     "名称": "橱柜",
     "图标": "<i class=\"mdi mdi-cupboard\"></i>",
-    "消耗": "{\"木头\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"木头\":\"$3M$\"}",
     "value": "33",
     "制作时间": "150",
     "里程碑": "{\"50\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":42},\"400\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":125},\"2800\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":52},\"15000\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":100}}",
@@ -134,7 +134,7 @@
   {
     "名称": "哑铃",
     "图标": "<i class=\"mdi mdi-weight\"></i>",
-    "消耗": "{\"石头\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"石头\":\"$7M$\"}",
     "value": "65",
     "制作时间": "300",
     "里程碑": "{\"50\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":87},\"400\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":255},\"2800\":{\"类型\":\"villageCraft\",\"name\":\"手锯\",\"value\":true},\"15000\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":210}}",
@@ -145,7 +145,7 @@
   {
     "名称": "剪刀",
     "图标": "<i class=\"mdi mdi-content-cut\"></i>",
-    "消耗": "{\"金属\":\"[Unsupported Node: CallExpression]\",\"木头\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"金属\":\"$8M$\",\"木头\":\"$3M$\"}",
     "value": "30",
     "制作时间": "125",
     "里程碑": "{\"55\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":110},\"420\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":40},\"3100\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":100},\"17000\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":50}}",
@@ -156,7 +156,7 @@
   {
     "名称": "草药茶",
     "图标": "<i class=\"mdi mdi-tea\"></i>",
-    "消耗": "{\"水\":\"[Unsupported Node: CallExpression]\",\"植物纤维\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"水\":\"$12M$\",\"植物纤维\":\"$5M$\"}",
     "value": "54",
     "制作时间": "200",
     "里程碑": "{\"48\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":78},\"380\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":106},\"2600\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":170},\"14000\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":140}}",
@@ -167,7 +167,7 @@
   {
     "名称": "杯子",
     "图标": "<i class=\"mdi mdi-glasses\"></i>",
-    "消耗": "{\"玻璃\":\"[Unsupported Node: CallExpression]\",\"金属\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"玻璃\":\"$14M$\",\"金属\":\"$11M$\"}",
     "value": "21",
     "制作时间": "80",
     "里程碑": "{\"100\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":65},\"750\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":28},\"5400\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":55},\"30000\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":45}}",
@@ -178,7 +178,7 @@
   {
     "名称": "箭头",
     "图标": "<i class=\"mdi mdi-arrow-projectile-multiple\"></i>",
-    "消耗": "{\"木头\":\"[Unsupported Node: CallExpression]\",\"石头\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"木头\":\"$1.25M$\",\"石头\":\"$400K$\"}",
     "value": "21",
     "制作时间": "100",
     "里程碑": "{\"85\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":85},\"400\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":70},\"10000\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":60}}",
@@ -189,7 +189,7 @@
   {
     "名称": "碗",
     "图标": "<i class=\"mdi mdi-bowl\"></i>",
-    "消耗": "{\"木头\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"木头\":\"$2.5M$\"}",
     "value": "25",
     "制作时间": "130",
     "里程碑": "{\"90\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":100},\"675\":{\"类型\":\"villageCraft\",\"name\":\"灌木\",\"value\":true},\"4800\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":34},\"25000\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":80}}",
@@ -200,7 +200,7 @@
   {
     "名称": "链",
     "图标": "<i class=\"mdi mdi-link-variant\"></i>",
-    "消耗": "{\"植物纤维\":\"[Unsupported Node: CallExpression]\",\"金属\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"植物纤维\":\"$3M$\",\"金属\":\"$1.35M$\"}",
     "value": "19",
     "制作时间": "70",
     "里程碑": "{\"140\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":60},\"875\":{\"类型\":\"villageCraft\",\"name\":\"车库\",\"value\":true},\"4300\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":25},\"23000\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":50}}",
@@ -211,7 +211,7 @@
   {
     "名称": "矛",
     "图标": "<i class=\"mdi mdi-spear\"></i>",
-    "消耗": "{\"木头\":\"[Unsupported Node: CallExpression]\",\"金属\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"木头\":\"$8M$\",\"金属\":\"$1.75M$\"}",
     "value": "26",
     "制作时间": "120",
     "里程碑": "{\"110\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":95},\"800\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":35},\"5750\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":75},\"28000\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":45}}",
@@ -222,7 +222,7 @@
   {
     "名称": "金戒指",
     "图标": "<i class=\"mdi mdi-circle-outline\"></i>",
-    "消耗": "{\"金属\":\"[Unsupported Node: CallExpression]\",\"水\":\"[Unsupported Node: CallExpression]\"}",
+    "消耗": "{\"金属\":\"$5M$\",\"水\":\"$750K$\"}",
     "value": "140",
     "制作时间": "600",
     "里程碑": "{\"30\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":188},\"225\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":239},\"1800\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":295}}",
@@ -255,7 +255,7 @@
   {
     "名称": "麻辣汤",
     "图标": "<i class=\"mdi mdi-pot-steam\"></i>",
-    "消耗": "{\"craft_bowl\":15,\"植物纤维\":\"[Unsupported Node: CallExpression]\",\"水\":\"[Unsupported Node: CallExpression]\",\"辣椒包\":1}",
+    "消耗": "{\"craft_bowl\":15,\"植物纤维\":\"$250M$\",\"水\":\"$35M$\",\"辣椒包\":1}",
     "value": "2550",
     "制作时间": "75",
     "里程碑": "{\"40\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":3400},\"240\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":4500},\"1900\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":5750}}",
@@ -266,10 +266,10 @@
   {
     "名称": "秒表",
     "图标": "<i class=\"mdi mdi-timer\"></i>",
-    "消耗": "{\"craft_screws\":20,\"金属\":\"[Unsupported Node: CallExpression]\",\"齿轮\":1}",
+    "消耗": "{\"craft_screws\":20,\"金属\":\"$1.44B$\",\"齿轮\":1}",
     "value": "8600",
     "制作时间": "3600",
-    "里程碑": "{\"65\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":1800},\"335\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":\"[Unsupported Node: CallExpression]\"}}",
+    "里程碑": "{\"65\":{\"类型\":\"changeStat\",\"name\":\"制作时间\",\"value\":1800},\"335\":{\"类型\":\"changeStat\",\"name\":\"value\",\"value\":\"$12.5K$\"}}",
     "prio": "1",
     "isSpecial": "",
     "效果": ""

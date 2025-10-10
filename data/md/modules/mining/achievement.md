@@ -1,17 +1,17 @@
-| 名称  | value | default | milestones | 上限  | 圣遗物 | display |
-| --- | ----- | ------- | ---------- | --- | --- | ------- |
-| maxDepth0 | $store.state.stat.mining_maxDepth0.总计$ | 1 | $lvl  \cdot  25 + 25$ |  |  |  |
-| maxDepth1 | $store.state.stat.mining_maxDepth1.总计$ | 1 | $lvl  \cdot  10 + 10$ |  |  |  |
-| maxDepthSpeedrun | $store.state.stat.mining_maxDepthSpeedrun.总计$ | 1 | $lvl > 0 ? lvl  \cdot  10 + 10 : 15$ | 10 | {"1":"雷达","2":"报刊","3":"橱柜","5":"青铜镐","9":"洗衣机"} |  |
-| totalDamage | $store.state.stat.mining_totalDamage.总计$ |  | ${(200K)}^{lvl}  \cdot  10M$ |  | {"6":"打开的礼物"} |  |
-| maxDamage | $store.state.stat.mining_maxDamage.总计$ |  | ${(200K)}^{lvl}  \cdot  10K$ |  | {"3":"炸弹"} |  |
-| 废料 | $store.state.stat.废料.总计$ |  | ${(8000)}^{lvl}  \cdot  5M$ |  | {"3":"跳绳","4":"矿石架"} |  |
-| oreTotal | $[store.state.stat.铝矿石.总计, store.state.stat.铜矿石.总计, store.state.stat.锡矿石.总计, store.state.stat.铁矿石.总计, store.state.stat.钛矿石.总计, store.state.stat.铂矿石.总计, store.state.stat.铱矿石.总计, store.state.stat.锇矿石.总计, store.state.stat.铅矿石.总计].reduce((a, b) => a + b, 0)$ |  | ${(10)}^{lvl}  \cdot  100$ |  | {"2":"铝砖","3":"铜砖","4":"铝堆","5":"铜镐","6":"锡桶"} |  |
-| oreVariety | $[store.state.stat.铝矿石.总计, store.state.stat.铜矿石.总计, store.state.stat.锡矿石.总计, store.state.stat.铁矿石.总计, store.state.stat.钛矿石.总计, store.state.stat.铂矿石.总计, store.state.stat.铱矿石.总计, store.state.stat.锇矿石.总计, store.state.stat.铅矿石.总计].reduce((a, b) => a + (b > 0 ? 1 : 0), 0)$ |  | $lvl + 2$ |  | {"1":"铜堆","2":"催化剂","3":"磁铁"} |  |
-| depthDwellerCap0 | $store.state.stat.mining_depthDwellerCap0.总计$ |  | $lvl  \cdot  10 + (lvl === 0 ? 5 : 0)$ | 30 | {"0":"锤子"} |  |
-| depthDwellerCap1 | $store.state.stat.mining_depthDwellerCap1.总计$ |  | $lvl  \cdot  10 + (lvl === 0 ? 5 : 0)$ |  |  |  |
-| 煤 | $store.state.stat.煤.总计$ |  | ${(2.5)}^{lvl}  \cdot  100$ |  | {"2":"煤砖"} |  |
-| 树脂 | $store.state.stat.树脂.总计$ |  | ${(2)}^{lvl}  \cdot  50$ |  | {"3":"一罐蜂蜜"} |  |
-| craftingWasted | $store.state.stat.mining_craftingWasted.总计$ |  | $1$ | 1 |  | boolean |
-| dwellerCapHit | $store.state.stat.mining_dwellerCapHit.总计$ |  | $1$ | 1 |  | boolean |
-| craftingLuck | $store.state.stat.mining_craftingLuck.总计$ | 1 | $1M$ | 1 |  |  |
+| 名称  | value | default | milestones | 上限  | 圣遗物 |
+| --- | ----- | ------- | ---------- | --- | --- |
+| maxDepth0 | $store.state.stat.mining_maxDepth0.总计$ | 1 | $lvl  \cdot  25 + 25$ |  |  |
+| maxDepth1 | $store.state.stat.mining_maxDepth1.总计$ | 1 | $lvl  \cdot  10 + 10$ |  |  |
+| maxDepthSpeedrun | $store.state.stat.mining_maxDepthSpeedrun.总计$ | 1 | $lvl > 0 ? lvl  \cdot  10 + 10 : 15$ | 10 | {"1":"雷达","2":"报刊","3":"橱柜","5":"青铜镐","9":"洗衣机"} |
+| totalDamage | $store.state.stat.mining_totalDamage.总计$ |  | ${(200K)}^{lvl}  \cdot  10M$ |  | {"6":"打开的礼物"} |
+| maxDamage | $store.state.stat.mining_maxDamage.总计$ |  | ${(200K)}^{lvl}  \cdot  10K$ |  | {"3":"炸弹"} |
+| 废料 | $store.state.stat.废料.总计$ |  | ${(8000)}^{lvl}  \cdot  5M$ |  | {"3":"跳绳","4":"矿石架"} |
+| oreTotal | $[store.state.stat.铝矿石.总计, store.state.stat.铜矿石.总计, store.state.stat.锡矿石.总计, store.state.stat.铁矿石.总计, store.state.stat.钛矿石.总计, store.state.stat.铂矿石.总计, store.state.stat.铱矿石.总计, store.state.stat.锇矿石.总计, store.state.stat.铅矿石.总计].reduce((a, b) => a + b, 0)$ |  | ${(10)}^{lvl}  \cdot  100$ |  | {"2":"铝砖","3":"铜砖","4":"铝堆","5":"铜镐","6":"锡桶"} |
+| oreVariety | $[store.state.stat.铝矿石.总计, store.state.stat.铜矿石.总计, store.state.stat.锡矿石.总计, store.state.stat.铁矿石.总计, store.state.stat.钛矿石.总计, store.state.stat.铂矿石.总计, store.state.stat.铱矿石.总计, store.state.stat.锇矿石.总计, store.state.stat.铅矿石.总计].reduce((a, b) => a + (b > 0 ? 1 : 0), 0)$ |  | $lvl + 2$ |  | {"1":"铜堆","2":"催化剂","3":"磁铁"} |
+| depthDwellerCap0 | $store.state.stat.mining_depthDwellerCap0.总计$ |  | $lvl  \cdot  10 + (lvl === 0 ? 5 : 0)$ | 30 | {"0":"锤子"} |
+| depthDwellerCap1 | $store.state.stat.mining_depthDwellerCap1.总计$ |  | $lvl  \cdot  10 + (lvl === 0 ? 5 : 0)$ |  |  |
+| 煤 | $store.state.stat.煤.总计$ |  | ${(2.5)}^{lvl}  \cdot  100$ |  | {"2":"煤砖"} |
+| 树脂 | $store.state.stat.树脂.总计$ |  | ${(2)}^{lvl}  \cdot  50$ |  | {"3":"一罐蜂蜜"} |
+| craftingWasted | $store.state.stat.mining_craftingWasted.总计$ |  | $1$ | 1 |  |
+| dwellerCapHit | $store.state.stat.mining_dwellerCapHit.总计$ |  | $1$ | 1 |  |
+| craftingLuck | $store.state.stat.mining_craftingLuck.总计$ | 1 | $1M$ | 1 |  |

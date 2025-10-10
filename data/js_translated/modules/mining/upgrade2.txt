@@ -4,29 +4,29 @@
     }, 效果: [
         {name: '伤害', 类型: '*', value: lvl => Math.pow(1.12, lvl) * Math.pow(lvl * 0.2 + 1, 2)}
     ]},
-    巨型陨石坑: {子功能: 1, requirementBase, requirementStat, 解锁层数: 5, 消耗(lvl) {
+    巨型陨石坑: {子功能: 1, requirementBase, requirementStat, 解锁要求: 5, 消耗(lvl) {
         return {废料: Math.ceil(Math.pow(lvl * 2 + 8, lvl) * buildNum(2.5, 'M'))};
     }, 效果: [
         {name: '废料容量', 类型: '*', value: lvl => Math.pow(7, lvl)}
     ]},
-    更大的压力: {子功能: 1, requirementBase, requirementStat, 解锁层数: 10, 消耗(lvl) {
+    更大的压力: {子功能: 1, requirementBase, requirementStat, 解锁要求: 10, 消耗(lvl) {
         return {废料: Math.ceil(Math.pow(lvl * 0.025 + 1.75, lvl) * buildNum(400, 'M'))};
     }, 效果: [
         {name: '伤害', 类型: '*', value: lvl => Math.pow(1.2, lvl)},
         {name: '废料增益', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
     ]},
-    燃气居民: {子功能: 1, 上限: 1, 保留: true, requirementBase, requirementStat, 解锁层数: 15, 消耗() {
+    燃气居民: {子功能: 1, 上限: 1, 保留: true, requirementBase, requirementStat, 解锁要求: 15, 消耗() {
         return {氦: 250};
     }, 效果: [
         {name: '深度居民', 类型: '解锁', value: lvl => lvl >= 1},
         {name: '深度居民速度', 类型: '*', value: lvl => Math.pow(3, lvl)}
     ]},
-    活塞: {子功能: 1, requirementBase, requirementStat, 解锁层数: 20, 消耗(lvl) {
+    活塞: {子功能: 1, requirementBase, requirementStat, 解锁要求: 20, 消耗(lvl) {
         return {氦: Math.round(Math.pow(1.35, lvl) * 50)};
     }, 效果: [
         {name: '伤害', 类型: '*', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.2 + 1)}
     ]},
-    污染: {子功能: 1, 上限: 1, 保留: true, requirementBase, requirementStat, 解锁层数: 25, 消耗() {
+    污染: {子功能: 1, 上限: 1, 保留: true, requirementBase, requirementStat, 解锁要求: 25, 消耗() {
         return {氦: 1000};
     }, 效果: [
         {name: '烟雾', 类型: '解锁', value: lvl => lvl >= 1}
@@ -38,35 +38,35 @@
     }, 效果: [
         {name: '制作力量', 类型: '*', value: lvl => Math.pow(1.15, lvl)}
     ]},
-    热气球: {子功能: 1, 上限: 8, requirementBase, requirementStat, 解锁层数: 30, 消耗(lvl) {
+    热气球: {子功能: 1, 上限: 8, requirementBase, requirementStat, 解锁要求: 30, 消耗(lvl) {
         return {废料: Math.ceil(Math.pow(3.75, lvl) * buildNum(2.2, 'T'))};
     }, 效果: [
         {name: '废料容量', 类型: '*', value: lvl => Math.pow(1.5, lvl)},
         {name: '烟雾容量', 类型: '*', value: lvl => lvl * 0.5 + 1}
     ]},
-    通风口: {子功能: 1, 上限: 20, requirementBase, requirementStat, 解锁层数: 40, 消耗(lvl) {
+    通风口: {子功能: 1, 上限: 20, requirementBase, requirementStat, 解锁要求: 40, 消耗(lvl) {
         return {废料: Math.ceil(Math.pow(1.65, lvl) * buildNum(40, 'T'))};
     }, 效果: [
         {name: '伤害', 类型: '*', value: lvl => Math.pow(1.05, lvl)},
         {name: '废料增益', 类型: '*', value: lvl => Math.pow(1.3, lvl)}
     ]},
-    收割机: {子功能: 1, requirementBase, requirementStat, 解锁层数: 50, 消耗(lvl) {
+    收割机: {子功能: 1, requirementBase, requirementStat, 解锁要求: 50, 消耗(lvl) {
         return {氖: Math.round(Math.pow(1.35, lvl) * 50)};
     }, 效果: [
         {name: '废料增益', 类型: '*', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.3 + 1)}
     ]},
-    石墨棒: {子功能: 1, 上限: 40, requirementBase, requirementStat, 解锁层数: 75, 消耗(lvl) {
+    石墨棒: {子功能: 1, 上限: 40, requirementBase, requirementStat, 解锁要求: 75, 消耗(lvl) {
         return {废料: Math.ceil(Math.pow(1.85, lvl) * buildNum(1, 'Qi'))};
     }, 效果: [
         {name: '制作力量', 类型: '*', value: lvl => Math.pow(1.12, lvl)},
         {name: '烟雾容量', 类型: '*', value: lvl => Math.pow(1.1, lvl)}
     ]},
-    浓缩水晶: {子功能: 1, requirementBase, requirementStat, 解锁层数: 100, 消耗(lvl) {
+    浓缩水晶: {子功能: 1, requirementBase, requirementStat, 解锁要求: 100, 消耗(lvl) {
         return {氩: Math.round(Math.pow(1.35, lvl) * 50)};
     }, 效果: [
         {name: '黄水晶增益', 类型: '*', value: lvl => lvl * 0.05 + 1}
     ]},
-    吸烟者: {子功能: 1, requirementBase, requirementStat, 解锁层数: 160, 消耗(lvl) {
+    吸烟者: {子功能: 1, requirementBase, requirementStat, 解锁要求: 160, 消耗(lvl) {
         return {氪: Math.round(Math.pow(1.35, lvl) * 50)};
     }, 效果: [
         {name: '烟雾增益', 类型: '*', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.2 + 1)}

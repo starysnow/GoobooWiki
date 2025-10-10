@@ -5,58 +5,58 @@
         {name: '攻击', 类型: '*', value: lvl => getSequence(5, lvl) * 0.02 + 1},
         {name: '生命值', 类型: '*', value: lvl => getSequence(5, lvl) * 0.02 + 1}
     ]},
-    黑暗攻击: {子功能: 1, requirementBase, 解锁层数: 1, 消耗(lvl) {
+    黑暗攻击: {子功能: 1, requirementBase, 解锁要求: 1, 消耗(lvl) {
         return {血液: Math.pow(lvl * 0.0025 + 1.325, lvl) * buildNum(24, 'K')};
     }, 效果: [
         {name: '攻击', 类型: '*', value: lvl => Math.pow(1.18, lvl)}
     ]},
-    黑暗生命值: {子功能: 1, requirementBase, 解锁层数: 3, 消耗(lvl) {
+    黑暗生命值: {子功能: 1, requirementBase, 解锁要求: 3, 消耗(lvl) {
         return {血液: Math.pow(lvl * 0.0025 + 1.325, lvl) * buildNum(110, 'K')};
     }, 效果: [
         {name: '生命值', 类型: '*', value: lvl => Math.pow(1.19, lvl)}
     ]},
-    收割: {子功能: 1, requirementBase, 解锁层数: 8, 消耗(lvl) {
+    收割: {子功能: 1, requirementBase, 解锁要求: 8, 消耗(lvl) {
         return {血液: Math.pow(lvl * 0.003 + 1.45, lvl) * buildNum(3, 'M')};
     }, 效果: [
         {name: '血液增益', 类型: '*', value: lvl => Math.pow(1.11, lvl)}
     ]},
-    保护壳: {子功能: 1, 上限: 20, requirementBase, 解锁层数: 14, 消耗(lvl) {
+    保护壳: {子功能: 1, 上限: 20, requirementBase, 解锁要求: 14, 消耗(lvl) {
         return {血液: Math.pow(2.35, lvl) * buildNum(190, 'M')};
     }, 效果: [
         {name: '攻击', 类型: '*', value: lvl => Math.pow(1.07, lvl)},
         {name: '生命值', 类型: '*', value: lvl => Math.pow(1.14, lvl)}
     ]},
-    血液存储: {子功能: 1, 上限: 20, requirementBase, 解锁层数: 18, 消耗(lvl) {
+    血液存储: {子功能: 1, 上限: 20, requirementBase, 解锁要求: 18, 消耗(lvl) {
         return {血液: Math.pow(lvl * 0.04 + 1.9, lvl) * buildNum(2.2, 'B')};
     }, 效果: [
         {name: '生命值', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
         {name: '血液容量', 类型: '*', value: lvl => Math.pow(1.175, lvl)}
     ]},
-    黑暗里程碑: {子功能: 1, requirementBase, 解锁层数: 24, 消耗(lvl) {
+    黑暗里程碑: {子功能: 1, requirementBase, 解锁要求: 24, 消耗(lvl) {
         return {血液: Math.pow(1000, lvl) * buildNum(1, 'T')};
     }, 效果: [
         {name: '攻击', 类型: '*', value: lvl => Math.pow(3, lvl)},
         {name: '生命值', 类型: '*', value: lvl => Math.pow(3, lvl)},
         {name: '血液容量', 类型: '*', value: lvl => Math.pow(10, lvl)}
     ]},
-    无尽的愤怒: {子功能: 1, 上限: 20, requirementBase, 解锁层数: 31, 消耗(lvl) {
+    无尽的愤怒: {子功能: 1, 上限: 20, requirementBase, 解锁要求: 31, 消耗(lvl) {
         return {血液: Math.pow(2.8, lvl) * buildNum(25, 'Qi')};
     }, 效果: [
         {name: '攻击', 类型: '*', value: lvl => Math.pow(1.33, lvl)}
     ]},
-    拳击: {子功能: 1, 上限: 30, requirementBase, 解锁层数: 42, 消耗(lvl) {
+    拳击: {子功能: 1, 上限: 30, requirementBase, 解锁要求: 42, 消耗(lvl) {
         return {血液: Math.pow(2.45, lvl) * buildNum(400, 'Sx')};
     }, 效果: [
         {name: '血液增益', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
         {name: '攻击', 类型: '*', value: lvl => Math.pow(1.23, lvl)}
     ]},
-    注射器: {子功能: 1, 上限: 30, requirementBase, 解锁层数: 55, 消耗(lvl) {
+    注射器: {子功能: 1, 上限: 30, requirementBase, 解锁要求: 55, 消耗(lvl) {
         return {血液: Math.pow(lvl * 0.02 + 1.7, lvl) * buildNum(65, 'Sp')};
     }, 效果: [
         {name: '血液增益', 类型: '*', value: lvl => Math.pow(1.15, lvl)},
         {name: '血液容量', 类型: '*', value: lvl => Math.pow(1.18, lvl)}
     ]},
-    血祭: {子功能: 1, requirementBase, 解锁层数: 70, 消耗(lvl) {
+    血祭: {子功能: 1, requirementBase, 解锁要求: 70, 消耗(lvl) {
         return {血液: Math.pow(10, lvl) * buildNum(1, 'O')};
     }, 效果: [
         {name: '腐败', 类型: 'bonus', value: lvl => -0.07 * lvl}

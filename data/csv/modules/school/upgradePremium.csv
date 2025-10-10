@@ -1,2 +1,2 @@
-名称,类型,消耗,效果
-学生,高级,"${ 红宝石: fallbackArray([5, 20, 60, 125],   \cdot  {(2)}^{\text{向下取整}(lvl / 4})  \cdot  25, lvl) }$",书籍增益+｛$5  \cdot  lvl$｝
+名称,消耗,效果
+学生,"${ 红宝石: fallbackArray([5, 20, 60, 125],   \cdot  {(2)}^{\text{向下取整}(lvl / 4})  \cdot  25, lvl) }$",书籍增益+｛$5  \cdot  lvl$｝

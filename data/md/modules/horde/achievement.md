@@ -1,13 +1,13 @@
-| 名称  | value | default | 上限  | milestones | 圣遗物 | display |
-| --- | ----- | ------- | --- | ---------- | --- | ------- |
-| maxZone | $store.state.stat.horde_maxZone.总计$ | 1 | 30 | $lvl  \cdot  10 + 10$ | {"7":"终极指南","11":"破裂的保险箱"} |  |
-| maxZoneSpeedrun | $store.state.stat.horde_maxZoneSpeedrun.总计$ | 1 | 10 | $lvl  \cdot  5 + 10$ | {"8":"哑铃"} |  |
-| totalDamage | $store.state.stat.horde_totalDamage.总计$ |  |  | ${(lvl  \cdot  250 + 7500)}^{lvl}  \cdot  10K$ | {"6":"新背包"} |  |
-| maxDamage | $store.state.stat.horde_maxDamage.总计$ |  |  | ${(lvl  \cdot  250 + 7500)}^{lvl}  \cdot  10$ | {"3":"燃烧的头骨"} |  |
-| 骨头 | $store.state.stat.骨头.总计$ |  |  | ${(2)}^{getSequence(10, lvl} - 10)  \cdot  1M$ | {"2":"被遗忘的盾牌"} |  |
-| 怪物零件 | $store.state.stat.怪物零件.总计$ |  |  | ${(16)}^{lvl}  \cdot  50$ | {"3":"能量饮料","5":"绷带"} |  |
-| 腐败的灵魂 | $store.state.stat.腐败的灵魂.总计$ |  |  | ${(7 + lvl)}^{lvl}  \cdot  1000$ | {"4":"幸运骰子"} |  |
-| maxCorruptionKill | $store.state.stat.horde_maxCorruptionKill.总计$ |  |  | $lvl + 1$ |  | percent |
-| maxMastery | $store.state.stat.horde_maxMastery.总计$ |  |  | $lvl + 1$ |  |  |
-| totalMastery | $store.state.stat.horde_totalMastery.总计$ |  |  | $\text{四舍五入}((lvl + 1)  \cdot  25  \cdot  (lvl  \cdot  0.2 + 1))$ |  |  |
-| unlucky | $store.state.stat.horde_unlucky.总计$ |  | 1 | $1$ |  | boolean |
+| 名称  | value | default | 上限  | milestones | 圣遗物 |
+| --- | ----- | ------- | --- | ---------- | --- |
+| maxZone | $store.state.stat.horde_maxZone.总计$ | 1 | 30 | $lvl  \cdot  10 + 10$ | {"7":"终极指南","11":"破裂的保险箱"} |
+| maxZoneSpeedrun | $store.state.stat.horde_maxZoneSpeedrun.总计$ | 1 | 10 | $lvl  \cdot  5 + 10$ | {"8":"哑铃"} |
+| totalDamage | $store.state.stat.horde_totalDamage.总计$ |  |  | ${(lvl  \cdot  250 + 7500)}^{lvl}  \cdot  10K$ | {"6":"新背包"} |
+| maxDamage | $store.state.stat.horde_maxDamage.总计$ |  |  | ${(lvl  \cdot  250 + 7500)}^{lvl}  \cdot  10$ | {"3":"燃烧的头骨"} |
+| 骨头 | $store.state.stat.骨头.总计$ |  |  | ${(2)}^{getSequence(10, lvl} - 10)  \cdot  1M$ | {"2":"被遗忘的盾牌"} |
+| 怪物零件 | $store.state.stat.怪物零件.总计$ |  |  | ${(16)}^{lvl}  \cdot  50$ | {"3":"能量饮料","5":"绷带"} |
+| 腐败的灵魂 | $store.state.stat.腐败的灵魂.总计$ |  |  | ${(7 + lvl)}^{lvl}  \cdot  1000$ | {"4":"幸运骰子"} |
+| maxCorruptionKill | $store.state.stat.horde_maxCorruptionKill.总计$ |  |  | $lvl + 1$ |  |
+| maxMastery | $store.state.stat.horde_maxMastery.总计$ |  |  | $lvl + 1$ |  |
+| totalMastery | $store.state.stat.horde_totalMastery.总计$ |  |  | $\text{四舍五入}((lvl + 1)  \cdot  25  \cdot  (lvl  \cdot  0.2 + 1))$ |  |
+| unlucky | $store.state.stat.horde_unlucky.总计$ |  | 1 | $1$ |  |

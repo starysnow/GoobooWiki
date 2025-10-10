@@ -11,74 +11,74 @@
         {name: '生命值', 类型: '+', value: lvl => lvl * 150},
         {name: '生命值', 类型: '*', value: lvl => Math.pow(1.12, lvl)}
     ]},
-    训练: {上限: 100, capMult: true, requirementBase, requirementStat, 解锁层数: 3, 消耗(lvl) {
+    训练: {上限: 100, capMult: true, requirementBase, requirementStat, 解锁要求: 3, 消耗(lvl) {
         return {骨头: splicedPow(1.35, 2.8, 100, lvl) * 2500};
     }, 效果: [
         {name: '攻击', 类型: '*', value: lvl => splicedPowLinear(1.1, 0.1, 100, lvl)},
         {name: '生命值', 类型: '*', value: lvl => splicedPowLinear(1.1, 0.1, 100, lvl)}
     ]},
-    弹力: {上限: 1, requirementBase, requirementStat, 解锁层数: 5, 消耗() {
+    弹力: {上限: 1, requirementBase, requirementStat, 解锁要求: 5, 消耗() {
         return {骨头: buildNum(24, 'K')};
     }, 效果: [
         {name: '生命值', 类型: '*', value: lvl => Math.pow(1.5, lvl)},
         {name: '复活', 类型: '+', value: lvl => lvl}
     ]},
-    骨头+: {requirementBase, requirementStat, 解锁层数: 6, 消耗(lvl) {
+    骨头+: {requirementBase, requirementStat, 解锁要求: 6, 消耗(lvl) {
         return {骨头: Math.pow(lvl * 0.01 + 1.35, lvl) * buildNum(52, 'K')};
     }, 效果: [
         {name: '骨头增益', 类型: '*', value: lvl => Math.pow(1.22, lvl)}
     ]},
-    骨袋: {上限: 4, requirementBase, requirementStat, 解锁层数: 7, 消耗(lvl) {
+    骨袋: {上限: 4, requirementBase, requirementStat, 解锁要求: 7, 消耗(lvl) {
         return {骨头: Math.pow(10, lvl) * buildNum(480, 'K')};
     }, 效果: [
         {name: '骨头容量', 类型: '*', value: lvl => Math.pow(10, lvl)},
         {name: '装备容量', 类型: '+', value: lvl => Math.min(1, lvl)}
     ]},
-    愤怒: {上限: 10, requirementBase, requirementStat, 解锁层数: 9, 消耗(lvl) {
+    愤怒: {上限: 10, requirementBase, requirementStat, 解锁要求: 9, 消耗(lvl) {
         return {骨头: Math.pow(1.65, lvl) * buildNum(145, 'K')};
     }, 效果: [
         {name: '攻击', 类型: '*', value: lvl => Math.pow(1.18, lvl)},
         {name: '暴击率', 类型: '+', value: lvl => lvl * 0.01}
     ]},
-    休息: {上限: 2, requirementBase, requirementStat, 解锁层数: 11, 消耗(lvl) {
+    休息: {上限: 2, requirementBase, requirementStat, 解锁要求: 11, 消耗(lvl) {
         return {骨头: Math.pow(75, lvl) * buildNum(2.6, 'M')};
     }, 效果: [
         {name: '生命值', 类型: '*', value: lvl => lvl * 0.75 + 1},
         {name: '恢复', 类型: '+', value: lvl => lvl * 0.01}
     ]},
-    怪物汤: {上限: 10, requirementBase, requirementStat, 解锁层数: 13, 消耗(lvl) {
+    怪物汤: {上限: 10, requirementBase, requirementStat, 解锁要求: 13, 消耗(lvl) {
         return {怪物零件: Math.pow(1.1, lvl) * (lvl + 10) * 3};
     }, 效果: [
         {name: '骨头增益', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
         {name: '怪物零件容量', 类型: '+', value: lvl => lvl * 5}
     ]},
-    怪物袋: {上限: 75, requirementBase, requirementStat, 解锁层数: 17, 消耗(lvl) {
+    怪物袋: {上限: 75, requirementBase, requirementStat, 解锁要求: 17, 消耗(lvl) {
         return {怪物零件: Math.pow(lvl * 0.005 + 1.35, lvl) * 80};
     }, 效果: [
         {name: '骨头容量', 类型: '*', value: lvl => Math.pow(1.6, lvl)},
         {name: '怪物零件容量', 类型: '*', value: lvl => Math.pow(1.3, lvl)},
         {name: '装备容量', 类型: '+', value: lvl => Math.min(1, lvl)}
     ]},
-    幸运一击: {上限: 15, capMult: true, requirementBase, requirementStat, 解锁层数: 21, 消耗(lvl) {
+    幸运一击: {上限: 15, capMult: true, requirementBase, requirementStat, 解锁要求: 21, 消耗(lvl) {
         return {骨头: splicedPow(1.85, 4.6, 15, lvl) * buildNum(30, 'B')};
     }, 效果: [
         {name: '攻击', 类型: '*', value: lvl => splicedPowLinear(1.14, 0.07, 15, lvl)},
         {name: '装备几率', 类型: '*', value: lvl => lvl * 0.2 + 1}
     ]},
-    囤积: {上限: 20, requirementBase, requirementStat, 解锁层数: 25, 消耗(lvl) {
+    囤积: {上限: 20, requirementBase, requirementStat, 解锁要求: 25, 消耗(lvl) {
         return {骨头: Math.pow(2.1, lvl) * buildNum(1.1, 'T')};
     }, 效果: [
         {name: '骨头容量', 类型: '*', value: lvl => Math.pow(1.4, lvl)},
         {name: '生命值', 类型: '*', value: lvl => Math.pow(1.08, lvl)}
     ]},
-    厚脸皮: {上限: 30, requirementBase, requirementStat, 解锁层数: 30, 消耗(lvl) {
+    厚脸皮: {上限: 30, requirementBase, requirementStat, 解锁要求: 30, 消耗(lvl) {
         return {骨头: Math.pow(1.85, lvl) * buildNum(52.5, 'T')};
     }, 效果: [
         {name: '攻击', 类型: '*', value: lvl => Math.pow(1.08, lvl)},
         {name: '生命值', 类型: '*', value: lvl => Math.pow(1.17, lvl)},
         {name: '装备容量', 类型: '+', value: lvl => Math.min(1, lvl)}
     ]},
-    净化器: {保留: true, hasDescription: true, 上限: 1, 笔记: 'horde_18', requirementBase, requirementStat, 解锁层数: 42, 消耗() {
+    净化器: {保留: true, hasDescription: true, 上限: 1, 笔记: 'horde_18', requirementBase, requirementStat, 解锁要求: 42, 消耗() {
         return {骨头: buildNum(10, 'Qi')};
     }, 效果: [
         {name: '掠夺腐化的肉体', 类型: '解锁', value: lvl => lvl >= 1}
@@ -90,56 +90,56 @@
     }, 效果: [
         {name: '腐败', 类型: 'bonus', value: lvl => -0.08 * lvl}
     ]},
-    刺击指南: {上限: 5, requirementBase, requirementStat, 解锁层数: 48, 消耗(lvl) {
+    刺击指南: {上限: 5, requirementBase, requirementStat, 解锁要求: 48, 消耗(lvl) {
         return {骨头: Math.pow(7, lvl) * buildNum(130, 'Qi')};
     }, 效果: [
         {name: '攻击', 类型: '*', value: lvl => Math.pow(1.46, lvl)},
         {name: '暴击率', 类型: '+', value: lvl => lvl * 0.01}
     ]},
-    掠夺秘密: {上限: 1, requirementBase, requirementStat, 解锁层数: 53, 消耗() {
+    掠夺秘密: {上限: 1, requirementBase, requirementStat, 解锁要求: 53, 消耗() {
         return {骨头: buildNum(25, 'Sx')};
     }, 效果: [
         {name: '怪物零件增益', 类型: '*', value: lvl => lvl >= 1 ? 1.5 : null},
         {name: '骨头容量', 类型: '*', value: lvl => lvl >= 1 ? 100 : null},
         {name: '装备容量', 类型: '+', value: lvl => Math.min(1, lvl)}
     ]},
-    闪避指南: {上限: 15, requirementBase, requirementStat, 解锁层数: 59, 消耗(lvl) {
+    闪避指南: {上限: 15, requirementBase, requirementStat, 解锁要求: 59, 消耗(lvl) {
         return {骨头: Math.pow(2.1, lvl) * buildNum(980, 'Sx')};
     }, 效果: [
         {name: '生命值', 类型: '*', value: lvl => Math.pow(1.2, lvl)}
     ]},
-    生存指南: {上限: 25, capMult: true, requirementBase, requirementStat, 解锁层数: 66, 消耗(lvl) {
+    生存指南: {上限: 25, capMult: true, requirementBase, requirementStat, 解锁要求: 66, 消耗(lvl) {
         return {骨头: splicedPow(2.25, 4.75, 25, lvl) * buildNum(1.25, 'O')};
     }, 效果: [
         {name: '攻击', 类型: '*', value: lvl => splicedPowLinear(1.2, 0.1, 25, lvl)},
         {name: '生命值', 类型: '*', value: lvl => splicedPowLinear(1.15, 0.075, 25, lvl)}
     ]},
-    掠夺: {上限: 25, capMult: true, requirementBase, requirementStat, 解锁层数: 69, 消耗(lvl) {
+    掠夺: {上限: 25, capMult: true, requirementBase, requirementStat, 解锁要求: 69, 消耗(lvl) {
         return {骨头: splicedPow(3.3, 8.7, 25, lvl) * buildNum(22, 'O')};
     }, 效果: [
         {name: '骨头容量', 类型: '*', value: lvl => splicedPowLinear(2, 0.25, 25, lvl)},
         {name: '怪物零件容量', 类型: '*', value: lvl => splicedPowLinear(1.05, 0.05, 25, lvl)}
     ]},
-    白漆: {上限: 25, capMult: true, requirementBase, requirementStat, 解锁层数: 80, 消耗(lvl) {
+    白漆: {上限: 25, capMult: true, requirementBase, requirementStat, 解锁要求: 80, 消耗(lvl) {
         return {骨头: Math.pow(2.8, lvl) * buildNum(1.11, 'UD')};
     }, 效果: [
         {name: '骨头增益', 类型: '*', value: lvl => splicedPowLinear(1.15, 0.075, 25, lvl)},
         {name: '骨头容量', 类型: '*', value: lvl => splicedPowLinear(1.25, 0.125, 25, lvl)}
     ]},
-    目标假人: {requirementBase, requirementStat, 解锁层数: 92, 消耗(lvl) {
+    目标假人: {requirementBase, requirementStat, 解锁要求: 92, 消耗(lvl) {
         return {骨头: Math.pow(lvl * 0.005 + 1.7, lvl) * buildNum(250, 'TD')};
     }, 效果: [
         {name: '攻击', 类型: '*', value: lvl => Math.pow(1.15, lvl)},
         {name: '生命值', 类型: '*', value: lvl => Math.pow(1.15, lvl)}
     ]},
-    毛袋: {上限: 1, requirementBase, requirementStat, 解锁层数: 98, 消耗() {
+    毛袋: {上限: 1, requirementBase, requirementStat, 解锁要求: 98, 消耗() {
         return {骨头: buildNum(155, 'QaD')};
     }, 效果: [
         {name: '骨头容量', 类型: '*', value: lvl => Math.pow(100, lvl)},
         {name: '怪物零件增益', 类型: '*', value: lvl => Math.pow(3, lvl)},
         {name: '装备容量', 类型: '+', value: lvl => Math.min(1, lvl)}
     ]},
-    里程碑: {requirementBase, requirementStat, 解锁层数: 110, 消耗(lvl) {
+    里程碑: {requirementBase, requirementStat, 解锁要求: 110, 消耗(lvl) {
         return {骨头: Math.pow(buildNum(1, 'M'), lvl) * buildNum(1, 'SxD')};
     }, 效果: [
         {name: '攻击', 类型: '*', value: lvl => Math.pow(2, lvl)},
@@ -147,31 +147,31 @@
         {name: '骨头增益', 类型: '*', value: lvl => Math.pow(4, lvl)},
         {name: '骨头容量', 类型: '*', value: lvl => Math.pow(1000, lvl)}
     ]},
-    实战课: {上限: 15, requirementBase, requirementStat, 解锁层数: 120, 消耗(lvl) {
+    实战课: {上限: 15, requirementBase, requirementStat, 解锁要求: 120, 消耗(lvl) {
         return {骨头: Math.pow(lvl * 0.4 + 3.4, lvl) * buildNum(650, 'SpD')};
     }, 效果: [
         {name: '攻击', 类型: '*', value: lvl => Math.pow(1.25, lvl)},
         {name: '生命值', 类型: '*', value: lvl => Math.pow(1.22, lvl)}
     ]},
-    雕刻: {上限: 5, capMult: true, requirementBase, requirementStat, 解锁层数: 125, 消耗(lvl) {
+    雕刻: {上限: 5, capMult: true, requirementBase, requirementStat, 解锁要求: 125, 消耗(lvl) {
         return {骨头: Math.pow(12, lvl) * buildNum(2, 'ND')};
     }, 效果: [
         {name: '骨头容量', 类型: '*', value: lvl => splicedPowLinear(8, 0.25, 5, lvl)},
         {name: '腐烂的肉体增益', 类型: '*', value: lvl => lvl * 0.2 + 1}
     ]},
-    神秘袋: {上限: 1, requirementBase, requirementStat, 解锁层数: 135, 消耗(lvl) {
+    神秘袋: {上限: 1, requirementBase, requirementStat, 解锁要求: 135, 消耗(lvl) {
         return {神秘碎片: 25 * (lvl + 1)};
     }, 效果: [
         {name: '装备容量', 类型: '+', value: lvl => lvl}
     ], onBuy() {
         store.dispatch('部落/checkPlayerHealth');
     }},
-    无限的愤怒: {上限: 20, requirementBase, requirementStat, 解锁层数: 145, 消耗(lvl) {
+    无限的愤怒: {上限: 20, requirementBase, requirementStat, 解锁要求: 145, 消耗(lvl) {
         return {骨头: Math.pow(lvl * 0.1 + 4.7, lvl) * buildNum(4, 'QaV')};
     }, 效果: [
         {name: '攻击', 类型: '*', value: lvl => Math.pow(1.2, lvl)}
     ]},
-    奇异的力量: {requirementBase, requirementStat, 解锁层数: 155, 消耗(lvl) {
+    奇异的力量: {requirementBase, requirementStat, 解锁要求: 155, 消耗(lvl) {
         return {神秘碎片: lvl * 4 + 28};
     }, 效果: [
         {name: '攻击', 类型: '*', value: lvl => Math.pow(1.35, lvl)},
@@ -179,7 +179,7 @@
     ], onBuy() {
         store.dispatch('部落/checkPlayerHealth');
     }},
-    收集者: {requirementBase, requirementStat, 解锁层数: 165, 消耗(lvl) {
+    收集者: {requirementBase, requirementStat, 解锁要求: 165, 消耗(lvl) {
         return {神秘碎片: lvl * 8 + 34};
     }, 效果: [
         {name: '骨头增益', 类型: '*', value: lvl => Math.pow(1.65, lvl)},
@@ -187,7 +187,7 @@
     ], onBuy() {
         store.dispatch('部落/checkPlayerHealth');
     }},
-    准备牺牲: {保留: true, alwaysActive: true, 上限: 4, requirementBase, requirementStat, 解锁层数: 175, 消耗(lvl) {
+    准备牺牲: {保留: true, alwaysActive: true, 上限: 4, requirementBase, requirementStat, 解锁要求: 175, 消耗(lvl) {
         return {神秘碎片: lvl * 40 + 20};
     }, 效果: [
         {name: '神秘袋', 类型: '保留', value: lvl => lvl >= 1},

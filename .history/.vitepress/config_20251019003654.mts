@@ -229,12 +229,12 @@ function createSidebar() {
         { text: '夜间狩猎', link: '/pages/event/nighthunt' },
 
       ]
-    },
+    }
     {
-      text: '更新信息',
+      text: '活动攻略',
       collapsed: false,
       items: [
-        { text: '1.6.0（测试版）', link: '/pages/update/1.6.0_test' },
+        { text: '夜间狩猎', link: '/pages/event/nighthunt' },
 
       ]
     }

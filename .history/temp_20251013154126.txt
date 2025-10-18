@@ -1,0 +1,116 @@
+// 功能: 能谱统计状态机
+module Spectrum(
+    // 与RAM的接口
+    output reg [9:0]  channel_address_write,
+    output reg        channel_count_write_en,
+    output reg [31:0] channel_count_write,
+    input      [31:0] channel_count_read,
+
+    // 与脉冲幅度测量模块的接口
+    input      [13:0] pulse_height,
+    input             pulse_indicator,
+
+    input             cmd_start,
+    input             cmd_pause,
+    input             cmd_clear,
+    input             rst_n,
+    input             CLOCK_65
+);
+
+    // 状态定义
+    parameter STATE_PAUSE = 5'b00001;
+    parameter STATE_IDLE  = 5'b00010;
+    parameter STATE_READ  = 5'b00100;
+    parameter STATE_WRITE = 5'b01000;
+    parameter STATE_CLEAR = 5'b10000;
+
+    reg [4:0] state;
+    reg [9:0] clear_count;
+
+    // 状态转移逻辑
+    always @(posedge CLOCK_65 or negedge rst_n) begin
+        if (!rst_n)
+            state <= STATE_PAUSE;
+        else begin
+            if (cmd_clear)
+                state <= STATE_CLEAR;
+            else if (cmd_pause)
+                state <= STATE_PAUSE;
+            else if (cmd_start)
+                state <= STATE_IDLE;
+            else begin
+                case (state)
+                    STATE_PAUSE: begin
+                    end
+                    STATE_IDLE: begin
+                        // IDLE状态：等待脉冲指示信号
+                        if (pulse_indicator)
+                            state <= STATE_READ;
+                    end
+                    STATE_READ: begin
+                        // RAM读取需要1个时钟周期延迟，所以下一拍进入WRITE
+                        state <= STATE_WRITE;
+                    end
+                    STATE_WRITE: begin
+                        // 写操作完成后，返回IDLE，等待下一个脉冲
+                        state <= STATE_IDLE;
+                    end
+                    STATE_CLEAR: begin
+                        // 逐地址清零RAM
+                        if (clear_count == 10'h3FF)
+                            state <= STATE_PAUSE;
+                        else
+                            state <= STATE_CLEAR;
+                    end
+                    default:
+                        state <= STATE_PAUSE;
+                endcase
+            end
+        end
+    end
+
+    // -- 用于CLEAR状态的地址计数器 --
+    always @(posedge CLOCK_65 or negedge rst_n) begin
+        if (!rst_n)
+            clear_count <= 10'b0;
+        else if (state == STATE_CLEAR) begin
+            if (clear_count == 10'h3FF)
+                clear_count <= 10'b0;
+            else
+                clear_count <= clear_count + 1;
+        end else
+            clear_count <= 10'b0; // 其他状态下，计数器复位
+    end
+
+    // -- 状态机第二段：组合逻辑，根据当前状态产生输出 --
+    always @(*) begin
+        channel_address_write = 10'b0;
+        channel_count_write_en = 1'b0;
+        channel_count_write = 32'b0;
+
+        case (state)
+            STATE_IDLE: begin
+                // 准备读取RAM，地址由脉冲幅度决定
+                // pulse_height是14位，截取高10位作为1024个通道的地址
+                channel_address_write = pulse_height[13:4];
+            end
+            STATE_READ: begin
+                // 继续保持地址，等待RAM数据输出
+                channel_address_write = pulse_height[13:4];
+            end
+            STATE_WRITE: begin
+                channel_count_write_en = 1'b1;
+                channel_address_write = pulse_height[13:4];
+                // 写入的数据是“读出的值 + 1”
+                channel_count_write = channel_count_read + 1;
+            end
+            STATE_CLEAR: begin
+                channel_count_write_en = 1'b1;
+                channel_address_write = clear_count; // 地址是清零计数器的值
+                channel_count_write = 32'b0;
+            end
+            // PAUSE状态不做任何操作
+        endcase
+    end
+
+endmodule

@@ -1,7 +1,8 @@
 {
+  "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/:path((?!api/|.*\\.).*)",
+      "source": "/((?!_next|assets|api|.*\\.\\w{2,4}$).*)",
       "destination": "/index.html"
     }
   ]

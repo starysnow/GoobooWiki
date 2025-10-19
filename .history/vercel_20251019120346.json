@@ -1,0 +1,9 @@
+{
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/((?!_next|assets|api|.*\\.\\w{2,4}$).*)",
+      "destination": "/index.html"
+    }
+  ]
+}

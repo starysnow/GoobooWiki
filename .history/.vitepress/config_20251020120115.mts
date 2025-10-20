@@ -10,7 +10,7 @@ export default defineConfig({
   // --- 网站元数据 ---
   lang: 'zh-CN', // 网站语言，对SEO和可访问性至关重要
   title: 'Gooboo Wiki', // 网站标题，会显示在浏览器标签页上
-  description: '放置类游戏Gooboo的个人自建wiki', // 网站描述，用于搜索引擎优化
+  description: '放置类游戏Gooboo的个人zi'jan', // 网站描述，用于搜索引擎优化
 
   markdown: {
     config: (md) => {

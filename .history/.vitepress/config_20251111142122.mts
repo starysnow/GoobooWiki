@@ -158,7 +158,7 @@ function createNav() {
       text: '使用须知', link:'/about/notice'
     },
     {
-      text: 'wiki版本-1.5.8',
+      text: '切换版本',
       items: [
         { text: 'v1.6.0', link: 'https://www.gooboowiki.top/' },
         { text: 'v1.5.8', link: 'https://www.v158.gooboowiki.top/' },

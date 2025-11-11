@@ -160,8 +160,9 @@ function createNav() {
     {
       text: '切换版本',
       items: [
-        { text: 'v1.6.0', link: 'https://www.gooboowiki.top/' },
-        { text: 'v1.5.8', link: 'https://v158.gooboowiki.top/' },
+        { text: 'v1.5.8', link: 'https://docs.qq.com/sheet/DQlNPSHdVVkdxZ0l4?tab=0rz4hx' },
+        { text: 'FAQ', link: 'https://docs.qq.com/doc/DQlNoUk9kZWFnYVVZ' },
+        { text: 'Github仓库', link: 'https://github.com/starysnow/GoobooWiki' }
       ]
     },
     {
@@ -230,8 +231,8 @@ function createSidebar() {
       text: '更新信息',
       collapsed: false,
       items: [
-        { text: '1.6.0', link: '/pages/update/version/1.6.0/' },
-        { text: '1.6.0（测试版）', link: '/pages/update/test/1.6.0_test/' },
+        { text: '1.6.0（测试版）', link: '/pages/update/1.6.0_test/' },
+
       ]
     }
   ]

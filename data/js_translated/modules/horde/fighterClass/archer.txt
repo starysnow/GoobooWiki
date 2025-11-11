@@ -1,224 +1,324 @@
 {
     解锁: '射手职业',
-    图标: 'mdi-bow-arrow',
+    icon: 'mdi-bow-arrow',
     baseStats: {
         攻击plus: 7,
-        生命值: 325,
-        能量: 150,
+        生命值plus: 325,
+        energy: 150,
         energyRegen: 1.25
     },
-    经验值: {
+    exp: {
         +: 720,
         increment: 1.22
     },
-    courageMult: 2,
+    courageMult: 1.5,
     skills: {
-        critMult: {类型: 'stat', max: 1, 效果: [
-            {name: '暴击伤害', 类型: '+', value: lvl => lvl * 1.75}
+        critMult: {type: 'stat', max: 1, effect: [
+            {name: '暴击伤害', type: '+', value: lvl => lvl * 3.5}
         ]},
         energyOnCrit: {
-            类型: '被动: (0)%',
-            color: '金色',
-            图标: 'mdi-lightning-bolt',
+            type: 'passive',
+            color: '金色油漆',
+            icon: 'mdi-lightning-bolt',
             max: 1,
-            效果: [
-                {name: '暴击时+(0) 能量', 类型: 'tag', value: lvl => [lvl * 10]}
+            effect: [
+                {name: '暴击时 +{0} 能量', type: 'tag', value: lvl => [lvl * 15]}
             ]
         },
         longshot: {
-            类型: '激活的卡片',
+            type: '激活的卡片',
             color: 'skyblue',
-            图标: 'mdi-arrow-projectile',
+            icon: 'mdi-arrow-projectile',
             max: 1,
-            cooldown: () => 30,
-            activeCost: () => {return {能量: 70};},
+            cooldown: () => 10,
+            activeCost: () => {return {energy: 50};},
             激活的卡片() {
                 return [
-                    {类型: 'damagePhysic', value: 4.25, str: 0.65, 能以(0)%的效率暴击: 0.75}
+                    {type: 'damagePhysic', value: 3.25, str: 0.45, canCrit: 0.75}
                 ];
             },
             activeType: 'combat'
         },
         eagleEye: {
-            类型: '激活的卡片',
-            color: '光-绿色',
-            图标: 'mdi-eye',
+            type: '激活的卡片',
+            color: '浅绿色油漆',
+            icon: 'mdi-eye',
             max: 5,
             cost: 20,
             cooldown: () => 45,
-            activeCost: () => {return {能量: 50};},
+            activeCost: () => {return {energy: 100};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'buff', value: 12, 效果: [
-                        {类型: '+', name: '暴击率', value: lvl * 0.05 + 0.05}
+                    {type: 'buff', value: 12, effect: [
+                        {type: '+', name: '暴击率', value: lvl * 0.05 + 0.05}
                     ]}
                 ];
             },
             activeType: 'combat'
         },
-        力量: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '力量', 类型: '+', value: lvl => lvl * 1.3}
+        strength: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '力量', type: '+', value: lvl => lvl * 1.3}
         ]},
-        critMult_2: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '暴击伤害', 类型: '+', value: lvl => lvl * 0.1}
+        critMult_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '暴击伤害', type: '+', value: lvl => lvl * 0.2}
+        ]},
+        energy: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '能量', type: '+', value: lvl => lvl * 40}
+        ]},
+        recovery: {type: 'stat', max: 5, cost: 20, effect: [
+            {name: '生命值', type: '+', value: lvl => lvl * 80},
+            {name: '恢复', type: '+', value: lvl => lvl * 0.004}
         ]},
         fireArrows: {
-            类型: '激活的卡片',
-            color: '橙色-红色',
-            图标: 'mdi-fire',
+            type: '激活的卡片',
+            color: '橙色油漆-红色油漆',
+            icon: 'mdi-fire',
             max: 5,
             cost: 20,
             cooldown: () => 90,
-            activeCost: () => {return {能量: 110};},
+            activeCost: () => {return {energy: 125};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'buff', value: 30, 效果: [
-                        {类型: '*', name: '攻击', value: lvl * 0.05 + 1.25},
-                        {类型: '+', name: '魔法伤害转换', value: 1.75}
+                    {type: 'buff', value: 30, effect: [
+                        {type: '*', name: '攻击', value: lvl * 0.05 + 1.25},
+                        {type: '+', name: '魔法伤害转换', value: 1.75}
                     ]}
                 ];
             },
             activeType: 'combat'
         },
         poisonArrow: {
-            类型: '激活的卡片',
+            type: '激活的卡片',
             color: 'lime',
-            图标: 'mdi-bottle-tonic-skull',
+            icon: 'mdi-bottle-tonic-skull',
             max: 5,
             cost: 20,
-            cooldown: () => 16,
-            activeCost: () => {return {能量: 50};},
+            cooldown: () => 56,
+            activeCost: () => {return {energy: 140};},
             激活的卡片(lvl) {
                 return [
-                    {类型: '毒药药水', value: lvl * 0.05 + 0.25, int: 0.01}
+                    {type: 'poison', value: lvl * 0.15 + 0.35, int: 0.02}
                 ];
             },
             activeType: 'combat'
         },
-        critChance: {类型: 'stat', max: 5, cost: 20, 效果: [
-            {name: '暴击率', 类型: '+', value: lvl => lvl * 0.03}
+        damage: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '攻击', type: '+', value: lvl => lvl * 0.2}
         ]},
-        intelligence: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '智力', 类型: '+', value: lvl => lvl * 1.75}
+        critChance: {type: 'stat', max: 5, cost: 20, effect: [
+            {name: '暴击率', type: '+', value: lvl => lvl * 0.03}
+        ]},
+        intelligence: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '智力', type: '+', value: lvl => lvl * 1.75}
         ]},
         healOnCrit: {
-            类型: '被动: (0)%',
-            color: '光-绿色',
-            图标: 'mdi-heart-plus',
+            type: 'passive',
+            color: '浅绿色油漆',
+            icon: 'mdi-heart-plus',
             max: 1,
             cost: 50,
-            效果: [
-                {name: '暴击时治愈 (0) 最大生命值', 类型: 'tag', value: lvl => [lvl * 0.03]}
+            effect: [
+                {name: '暴击时治愈 {0} 最大生命值', type: 'tag', value: lvl => [lvl * 0.03]}
             ]
         },
-        生命值: {类型: 'stat', max: 15, cost: 10, 效果: [
-            {name: '生命值', 类型: '+', value: lvl => lvl * 65}
+        生命值plus: {type: 'stat', max: 15, cost: 10, effect: [
+            {name: '生命值', type: '+', value: lvl => lvl * 65}
         ]},
         reduceCooldownOnCrit: {
-            类型: '被动: (0)%',
-            color: 'pale-橙色',
-            图标: 'mdi-timer-sand-paused',
+            type: 'passive',
+            color: 'pale-橙色油漆',
+            icon: 'mdi-timer-sand-paused',
             max: 1,
             cost: 50,
-            效果: [
-                {name: '暴击时减少冷却 (0)', 类型: 'tag', value: lvl => [lvl]}
+            effect: [
+                {name: '暴击时减少冷却 {0}', type: 'tag', value: lvl => [lvl]}
             ]
         },
-        急速: {类型: 'stat', max: 15, cost: 10, 效果: [
-            {name: '急速', 类型: '+', value: lvl => lvl * 4}
+        haste: {type: 'stat', max: 15, cost: 10, effect: [
+            {name: '急速', type: '+', value: lvl => lvl * 4},
+            {name: '能量', type: '+', value: lvl => lvl * 10}
         ]},
         bloodOnCrit: {
-            类型: '被动: (0)%',
-            color: '樱桃色',
-            图标: 'mdi-diabetes',
+            type: 'passive',
+            color: 'cherry',
+            icon: 'mdi-diabetes',
             max: 1,
             cost: 50,
-            效果: [
-                {name: '暴击时获得 (0) 敌人血液', 类型: 'tag', value: lvl => [lvl * 0.15]}
+            effect: [
+                {name: '暴击时获得 {0} 敌人血液', type: 'tag', value: lvl => [lvl * 0.15]}
             ]
         },
-        血液: {类型: 'stat', max: 15, cost: 10, 效果: [
-            {name: '血液容量', 类型: '*', value: lvl => lvl * 0.13 + 1}
+        血液: {type: 'stat', max: 15, cost: 10, effect: [
+            {name: '血液容量', type: '*', value: lvl => lvl * 0.13 + 1}
         ]},
-        critChance_2: {类型: 'stat', max: 5, cost: 20, 效果: [
-            {name: '暴击率', 类型: '+', value: lvl => lvl * 0.03}
+        shockArrow: {
+            type: '激活的卡片',
+            color: '浅蓝色油漆',
+            icon: 'mdi-flash-alert',
+            max: 5,
+            cost: 20,
+            cooldown: () => 24,
+            activeCost: () => {return {energy: 110};},
+            激活的卡片(lvl) {
+                return [
+                    {type: 'damageMagic', value: lvl * 1.3 + 4.1, int: 0.55, canCrit: lvl * 0.1},
+                    {type: 'silence', value: lvl + 5}
+                ];
+            },
+            activeType: 'combat'
+        },
+        critChance_2: {type: 'stat', max: 5, cost: 20, effect: [
+            {name: '暴击率', type: '+', value: lvl => lvl * 0.03}
         ]},
-        能量: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '能量', 类型: '+', value: lvl => lvl * 30}
+        energy_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '能量', type: '+', value: lvl => lvl * 40}
         ]},
-        health_2: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '生命值', 类型: '+', value: lvl => lvl * 60}
+        health_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '生命值', type: '+', value: lvl => lvl * 60}
+        ]},
+        intelligence_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '智力', type: '+', value: lvl => lvl * 1.75}
         ]},
         sharpArrow: {
-            类型: '激活的卡片',
-            color: '红色',
-            图标: 'mdi-arrow-projectile-multiple',
+            type: '激活的卡片',
+            color: '红色油漆',
+            icon: 'mdi-arrow-projectile-multiple',
             max: 5,
             cost: 20,
             cooldown: () => 7,
-            activeCost: () => {return {能量: 25};},
+            activeCost: () => {return {energy: 30};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'damagePhysic', value: lvl * 0.4 + 1.2, str: 0.2},
-                    {类型: 'removeDivisionShield', value: 1}
+                    {type: 'damagePhysic', value: lvl * 0.4 + 1.2, str: 0.2, canCrit: lvl * 0.15},
+                    {type: 'removeDivisionShield', value: 1}
                 ];
             },
             activeType: 'combat'
         },
-        strength_2: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '力量', 类型: '+', value: lvl => lvl * 1.3}
+        strength_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '力量', type: '+', value: lvl => lvl * 1.3}
+        ]},
+        health_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '生命值', type: '+', value: lvl => lvl * 60}
+        ]},
+        haste_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '急速', type: '+', value: lvl => lvl * 4}
         ]},
         sharpMind: {
-            类型: '激活的卡片',
-            color: '橙色-红色',
-            图标: 'mdi-motion',
+            type: '激活的卡片',
+            color: '橙色油漆-红色油漆',
+            icon: 'mdi-motion',
             max: 5,
             cost: 20,
-            cooldown: () => 22 * SECONDS_PER_HOUR,
+            cooldown: () => HORDE_STACKING_COOLDOWN,
             activeCost: () => {return {};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'permanentStat', stat: 'hordeCritMult_base', value: lvl * 0.02 + 0.02}
+                    {type: 'permanentStat', stat: 'hordeCritMult_base', value: lvl * 0.02 + 0.02}
                 ];
             },
             activeType: 'utility'
         },
-        critChance_3: {类型: 'stat', max: 5, cost: 20, 效果: [
-            {name: '暴击率', 类型: '+', value: lvl => lvl * 0.03}
+        forestBlessing: {
+            type: '激活的卡片',
+            color: '绿色油漆',
+            icon: 'mdi-tree',
+            max: 5,
+            cost: 20,
+            cooldown: () => 300,
+            activeCost: () => {return {energy: 500};},
+            激活的卡片(lvl) {
+                return [
+                    {type: 'buff', value: lvl * 10 + 40, effect: [
+                        {type: '+', name: '力量', value: lvl * 4},
+                        {type: '+', name: '智力', value: lvl * 4},
+                        {type: '+', name: '能量回复', value: 20},
+                        {type: '+', name: '急速', value: 100},
+                        {type: '+', name: '恢复', value: 0.15},
+                    ]}
+                ];
+            },
+            activeType: 'combat'
+        },
+        critChance_3: {type: 'stat', max: 5, cost: 20, effect: [
+            {name: '暴击率', type: '+', value: lvl => lvl * 0.03}
         ]},
-        勇敢: {类型: 'stat', max: 10, cost: 15, 效果: [
-            {name: '勇敢增益', 类型: '*', value: lvl => lvl * 0.05 + 1}
+        damage_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '攻击', type: '+', value: lvl => lvl * 0.2}
+        ]},
+        勇敢: {type: 'stat', max: 10, cost: 15, effect: [
+            {name: '勇气积分增益', type: '*', value: lvl => lvl * 0.05 + 1}
+        ]},
+        damage_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '攻击', type: '+', value: lvl => lvl * 0.2}
+        ]},
+        health_4: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '生命值', type: '+', value: lvl => lvl * 60}
+        ]},
+        critMult_3: {type: 'stat', max: 20, cost: 10, effect: [
+            {name: '暴击伤害', type: '+', value: lvl => lvl * 0.2}
+        ]},
+        strength_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '力量', type: '+', value: lvl => lvl * 1.3}
+        ]},
+        recovery_2: {type: 'stat', max: 5, cost: 20, effect: [
+            {name: '生命值', type: '+', value: lvl => lvl * 80},
+            {name: '恢复', type: '+', value: lvl => lvl * 0.004}
+        ]},
+        damage_4: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '攻击', type: '+', value: lvl => lvl * 0.2}
+        ]},
+        health_5: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '生命值', type: '+', value: lvl => lvl * 60}
+        ]},
+        critChance_4: {type: 'stat', max: 5, cost: 20, effect: [
+            {name: '暴击率', type: '+', value: lvl => lvl * 0.03}
+        ]},
+        intelligence_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '智力', type: '+', value: lvl => lvl * 1.75}
+        ]},
+        haste_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '急速', type: '+', value: lvl => lvl * 4}
+        ]},
+        energy_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '能量', type: '+', value: lvl => lvl * 40}
         ]},
     },
     skillTree: [
-        {isInnate: true, 达到等级: 0, items: ['critMult', 'energyOnCrit', 'longshot']},
-        {达到等级: 1, items: ['eagleEye', '力量', 'critMult_2']},
-        {达到等级: 10, items: ['fireArrows', 'poisonArrow', 'critChance', 'intelligence']},
-        {isChoice: true, 达到等级: 20, items: [['healOnCrit', '生命值'], ['reduceCooldownOnCrit', '急速'], ['bloodOnCrit', '血液']]},
-        {达到等级: 30, items: ['critChance_2', '能量', 'health_2']},
-        {达到等级: 40, items: ['sharpArrow', 'sharpMind', 'strength_2']},
-        {达到等级: 50, items: ['critChance_3', '勇敢']},
+        {isInnate: true, level: 0, items: ['critMult', 'energyOnCrit', 'longshot']},
+        {level: 1, items: ['eagleEye', 'strength', 'critMult_2', 'energy', 'recovery']},
+        {level: 10, items: ['fireArrows', 'poisonArrow', 'damage', 'critChance', 'intelligence']},
+        {isChoice: true, level: 20, items: [['healOnCrit', '生命值plus'], ['reduceCooldownOnCrit', 'haste'], ['bloodOnCrit', '血液']]},
+        {level: 30, items: ['shockArrow', 'critChance_2', 'energy_2', 'health_2', 'intelligence_2']},
+        {level: 40, items: ['sharpArrow', 'sharpMind', 'strength_2', 'health_3', 'haste_2']},
+        {level: 50, items: ['forestBlessing', 'critChance_3', 'damage_2', '勇敢']},
+        {level: 75, items: ['damage_3', 'health_4', 'critMult_3', 'strength_3', 'recovery_2']},
+        {level: 100, items: ['damage_4', 'health_5', 'critChance_4', 'intelligence_3', 'haste_3', 'energy_3']},
     ],
     quests: {
         stat: [
-            {stat: '智力', 类型: '总计', value: 10},
-            {stat: '急速', 类型: '总计', value: 80},
-            {stat: '暴击率', 类型: '总计', value: 0.5},
+            {stat: '暴击伤害', type: 'total', value: 7},
+            {stat: '暴击率', type: 'total', value: 0.6},
+            {stat: '生命值', type: '+', value: 1250},
+            {stat: '智力', type: 'total', value: 35},
+            {stat: '急速', type: 'total', value: 120},
+            {stat: '暴击率', type: 'total', value: 1.1},
+            {stat: '力量', type: 'total', value: 85},
         ],
-        区域: [
-            {area: '战场', 区域: '4'},
-            {area: '战场', 区域: '8'},
-            {area: '猴子丛林', 区域: '5'},
-            {area: '猴子丛林', 区域: '12'},
-            {area: '猴子丛林', 区域: '16'},
-            {area: '爱岛', 区域: '3'},
-            {area: '爱岛', 区域: '11'},
+        zone: [
+            {area: 'warzone', zone: '4'},
+            {area: 'warzone', zone: '8'},
+            {area: 'monkeyJungle', zone: '5'},
+            {area: 'monkeyJungle', zone: '12'},
+            {area: 'monkeyJungle', zone: '16'},
+            {area: 'loveIsland', zone: '3'},
+            {area: 'loveIsland', zone: '11'},
         ],
-        达到等级: [10, 20, 35, 50, 70, 95, 120, 145, 170, 195],
-        击败 (0) (+(1)): [
-            {击败 (0) (+(1)): 'ohilio', 难度: 7},
-            {击败 (0) (+(1)): 'Chriz', 难度: 10},
-            {击败 (0) (+(1)): 'mina', 难度: 10},
+        level: [10, 20, 35, 50, 70, 95, 120, 145, 170, 195],
+        boss: [
+            {boss: 'ohilio', difficulty: 7},
+            {boss: 'chriz2', difficulty: 10},
+            {boss: 'mina', difficulty: 10},
         ]
     }
 }

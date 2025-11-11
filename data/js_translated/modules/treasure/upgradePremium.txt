@@ -1,12 +1,12 @@
 {
-    更多插槽: {类型: '高级', 消耗(lvl) {
-        return {红宝石: lvl * 10 + 50};
-    }, 效果: [
-        {name: '宝藏插槽', 类型: '+', value: lvl => lvl}
+    更多插槽: {type: '优质肥料', price(lvl) {
+        return {gem_ruby: Math.max(lvl * 10, Math.round(Math.pow(1.1, lvl) * 6 * lvl)) + 50};
+    }, effect: [
+        {name: '宝藏插槽', type: '+', value: lvl => lvl}
     ]},
-    更多碎片: {类型: '高级', 消耗(lvl) {
-        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 150};
-    }, 效果: [
-        {name: '碎片增益', 类型: '*', value: lvl => lvl * 0.2 + 1}
+    更多碎片: {type: '优质肥料', price(lvl) {
+        return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 150};
+    }, effect: [
+        {name: '碎片增益', type: '*', value: lvl => lvl * 0.2 + 1}
     ]}
 }

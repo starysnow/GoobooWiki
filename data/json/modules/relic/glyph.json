@@ -1,0 +1,92 @@
+[
+  {
+    "名称": "灰尘",
+    "icon": "<i class=\"mdi mdi-weather-dust\"></i>",
+    "effect": "废料增益*｛${(1.45)}^{lvl}$｝; 废料容量*｛${(1.65)}^{lvl}$｝"
+  },
+  {
+    "名称": "粘土",
+    "icon": "<i class=\"mdi mdi-ellipse\"></i>",
+    "effect": "矿石增益*｛${(1.15)}^{lvl}$｝; 稀土增益*｛${(1.6)}^{lvl}$｝"
+  },
+  {
+    "名称": "热量",
+    "icon": "<i class=\"mdi mdi-scent\"></i>",
+    "effect": "冶炼时间*｛${(1 / 1.35)}^{lvl}$｝; 余烬容量+｛$lvl  \\cdot  130$｝"
+  },
+  {
+    "名称": "木头",
+    "icon": "<i class=\"mdi mdi-tree\"></i>",
+    "effect": "工人+｛$lvl  \\cdot  32$｝; 建造速度*｛${(1.5)}^{lvl}$｝"
+  },
+  {
+    "名称": "流动",
+    "icon": "<i class=\"mdi mdi-waterfall\"></i>",
+    "effect": "材料增益*｛${(1.3)}^{lvl}$｝; 金币增益*｛${(1.2)}^{lvl}$｝"
+  },
+  {
+    "名称": "石头",
+    "icon": "<i class=\"mdi mdi-chart-bubble\"></i>",
+    "effect": "材料容量*｛${(1.25)}^{lvl}$｝; 金币容量*｛${(1.2)}^{lvl}$｝"
+  },
+  {
+    "名称": "尖刺",
+    "icon": "<i class=\"mdi mdi-nail\"></i>",
+    "effect": "攻击*｛${(1.3)}^{lvl}$｝; 生命值*｛${(1.3)}^{lvl}$｝"
+  },
+  {
+    "名称": "梦",
+    "icon": "<i class=\"mdi mdi-sleep\"></i>",
+    "effect": "传家宝效果*｛$lvl  \\cdot  0.1 + 1$｝; 怀旧之情+｛$lvl  \\cdot  100$｝"
+  },
+  {
+    "名称": "三叶草",
+    "icon": "<i class=\"mdi mdi-clover\"></i>",
+    "effect": "装备几率*｛${(1.5)}^{lvl}$｝; 精通点数增益*｛${(1.85)}^{lvl}$｝"
+  },
+  {
+    "名称": "雨",
+    "icon": "<i class=\"mdi mdi-weather-pouring\"></i>",
+    "effect": "蔬菜增益*｛${(1.5)}^{lvl}$｝; 草容量+｛$lvl  \\cdot  300$｝"
+  },
+  {
+    "名称": "日",
+    "icon": "<i class=\"mdi mdi-white-balance-sunny\"></i>",
+    "effect": "浆果增益*｛${(1.5)}^{lvl}$｝; 黄金几率*｛$lvl  \\cdot  0.05 + 1$｝"
+  },
+  {
+    "名称": "云",
+    "icon": "<i class=\"mdi mdi-clouds\"></i>",
+    "effect": "粮食增益*｛${(1.5)}^{lvl}$｝; 花肥增益*｛${(1.5)}^{lvl}$｝"
+  },
+  {
+    "名称": "开花",
+    "icon": "<i class=\"mdi mdi-image-filter-vintage\"></i>",
+    "effect": "美丽增益*｛${(2.25)}^{lvl}$｝; 转换器增益*｛${(1.6)}^{lvl}$｝"
+  },
+  {
+    "名称": "叶子",
+    "icon": "<i class=\"mdi mdi-leaf\"></i>",
+    "effect": "形状增益*｛${(2)}^{lvl}$｝; 动机容量+｛$lvl  \\cdot  30$｝"
+  },
+  {
+    "名称": "纸",
+    "icon": "<i class=\"mdi mdi-note\"></i>",
+    "effect": "灵感的开始+｛$lvl  \\cdot  2$｝; 画布大小+｛$lvl  \\cdot  2$｝"
+  },
+  {
+    "名称": "书籍",
+    "icon": "<i class=\"mdi mdi-book\"></i>",
+    "effect": "书+｛$lvl  \\cdot  2$｝; 金尘容量+｛$lvl  \\cdot  2500$｝"
+  },
+  {
+    "名称": "金币",
+    "icon": "<i class=\"mdi mdi-circle-multiple\"></i>",
+    "effect": "碎片增益*｛$lvl  \\cdot  0.2 + 1$｝; 宝藏插槽+｛$lvl$｝"
+  },
+  {
+    "名称": "卡牌",
+    "icon": "<i class=\"mdi mdi-cards-playing-spade\"></i>",
+    "effect": "闪亮卡牌几率+｛$lvl  \\cdot  0.002$｝"
+  }
+]

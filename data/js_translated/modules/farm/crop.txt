@@ -1,313 +1,476 @@
 {
-    胡萝卜: {
+    carrot: {
         found: true,
-        图标: 'mdi-carrot',
-        color: '橙色',
-        生长: MINUTES_PER_HOUR,
-        产量: 40,
-        层: 0,
-        类型: '仅蔬菜'
-    },
-    蓝莓: {
-        图标: 'mdi-fruit-grapes',
-        color: 'blue',
-        生长: 2 * MINUTES_PER_HOUR,
-        产量: 70,
-        层: 1,
-        类型: '仅浆果'
-    },
-    小麦: {
-        图标: 'mdi-barley',
-        color: '黄色',
-        生长: 4 * MINUTES_PER_HOUR,
-        产量: 120,
-        层: 2,
-        类型: '仅粮食'
-    },
-    郁金香: {
-        图标: 'mdi-flower-tulip',
-        color: '红色',
-        生长: 8 * MINUTES_PER_HOUR,
-        产量: 200,
-        层: 3,
-        类型: '仅鲜花'
-    },
-    土豆: {
-        图标: 'mdi-circle',
-        color: '棕色',
-        cost: {黄金: 1},
-        生长: 20 * MINUTES_PER_HOUR,
-        产量: 640,
-        稀有掉落: [
-            {name: '土豆水', 类型: 'consumable', 几率: 0.15, value: 3}
+        icon: 'mdi-carrot',
+        color: '橙色油漆',
+        grow: MINUTES_PER_HOUR,
+        yield: 130,
+        rareDrop: [
+            {name: '老根', type: 'currency', chance: -1, value: 5},
         ],
-        层: 4,
-        类型: '仅蔬菜'
+        tier: 0,
+        type: '蔬菜'
     },
-    覆盆子: {
-        图标: 'mdi-fruit-grapes',
-        color: '粉色',
-        cost: {黄金: 1},
-        生长: 6 * MINUTES_PER_HOUR,
-        产量: 300,
-        稀有掉落: [
-            {name: '种子壳', 类型: 'currency', 几率: 0.2, value: 6}
+    blueberry: {
+        icon: 'mdi-fruit-grapes',
+        color: '蓝色油漆',
+        grow: 2 * MINUTES_PER_HOUR,
+        yield: 250,
+        rareDrop: [
+            {name: '老根', type: 'currency', chance: -1, value: 9},
         ],
-        层: 5,
-        类型: '仅浆果'
+        tier: 1,
+        type: '浆果'
     },
-    大麦: {
-        图标: 'mdi-barley',
-        color: '金色',
-        生长: 10 * MINUTES_PER_HOUR,
-        产量: 230,
-        稀有掉落: [
-            {name: '种子壳', 类型: 'currency', 几率: 0.06, value: 1}
+    wheat: {
+        icon: 'mdi-barley',
+        color: '黄色油漆',
+        grow: 4 * MINUTES_PER_HOUR,
+        yield: 480,
+        rareDrop: [
+            {name: '老根', type: 'currency', chance: -1, value: 16},
         ],
-        层: 6,
-        类型: '仅粮食'
+        tier: 2,
+        type: '粮食'
     },
-    蒲公英: {
-        图标: 'mdi-flower',
-        color: 'pale-黄色',
-        cost: {黄金: 1},
-        生长: 1 * MINUTES_PER_HOUR + 30,
-        产量: 160,
-        稀有掉落: [
-            {name: '花瓣', 类型: 'currency', 几率: 0.15, value: 2}
+    tulip: {
+        icon: 'mdi-flower-tulip',
+        color: '红色油漆',
+        grow: 8 * MINUTES_PER_HOUR,
+        yield: 850,
+        rareDrop: [
+            {name: '老根', type: 'currency', chance: -1, value: 28},
         ],
-        层: 7,
-        类型: '仅鲜花'
+        tier: 3,
+        type: '花肥'
     },
-    玉米: {
-        图标: 'mdi-corn',
-        color: '金色',
-        cost: {草: 10},
-        生长: 30 * MINUTES_PER_HOUR,
-        产量: 550,
-        稀有掉落: [
-            {name: '虫子', 类型: 'currency', 几率: 0.02, value: 2}
+    potato: {
+        icon: 'mdi-circle',
+        color: 'brown',
+        grow: 20 * MINUTES_PER_HOUR,
+        yield: 1600,
+        rareDrop: [
+            {name: '土豆水', type: 'consumable', chance: 0.15, value: 3},
         ],
-        层: 8,
-        类型: '仅蔬菜'
+        tier: 4,
+        type: '蔬菜'
     },
-    西瓜: {
-        图标: 'mdi-fruit-watermelon',
-        color: '红色',
-        cost: {黄金: 4},
-        生长: 12 * MINUTES_PER_HOUR,
-        产量: 1100,
-        稀有掉落: [
-            {name: '虫子', 类型: 'currency', 几率: 0.1, value: 10},
-            {name: '蝴蝶', 类型: 'currency', 几率: -0.02, value: 2}
+    raspberry: {
+        icon: 'mdi-fruit-grapes',
+        color: '粉红色油漆',
+        grow: 6 * MINUTES_PER_HOUR,
+        yield: 680,
+        rareDrop: [
+            {name: '种子壳', type: 'currency', chance: 0.2, value: 6},
         ],
-        层: 9,
-        类型: '仅浆果'
+        tier: 5,
+        type: '浆果'
     },
-    大米: {
-        图标: 'mdi-rice',
-        color: '光-灰色',
-        cost: {黄金: 2},
-        生长: 24 * MINUTES_PER_HOUR,
-        产量: 1200,
-        稀有掉落: [
-            {name: '种子壳', 类型: 'currency', 几率: 0.05, value: 12},
-            {name: '瓢虫', 类型: 'currency', 几率: -0.05, value: 4}
+    barley: {
+        icon: 'mdi-barley',
+        color: '金色油漆',
+        grow: 10 * MINUTES_PER_HOUR,
+        yield: 1050,
+        rareDrop: [
+            {name: '种子壳', type: 'currency', chance: 0.18, value: 10},
         ],
-        层: 10,
-        类型: '仅粮食'
+        tier: 6,
+        type: '粮食'
     },
-    玫瑰: {
-        图标: 'mdi-flower',
-        color: '红色',
-        cost: {黄金: 10},
-        生长: 48 * MINUTES_PER_HOUR,
-        产量: 4500,
-        稀有掉落: [
-            {name: '花瓣', 类型: 'currency', 几率: 0, value: 12},
-            {name: '瓢虫', 类型: 'currency', 几率: -0.08, value: 10},
-            {name: '玫瑰水', 类型: 'consumable', 几率: -0.12, value: 8}
+    dandelion: {
+        icon: 'mdi-flower',
+        color: 'pale-黄色油漆',
+        grow: 1 * MINUTES_PER_HOUR + 30,
+        yield: 230,
+        rareDrop: [
+            {name: '花瓣', type: 'currency', chance: 0.15, value: 1},
         ],
-        层: 11,
-        类型: '仅鲜花'
+        tier: 7,
+        type: '花肥'
     },
-    韭菜: {
-        图标: 'mdi-leek',
-        color: '光-绿色',
-        cost: {黄金: 5},
-        生长: 3 * MINUTES_PER_HOUR,
-        产量: 780,
-        稀有掉落: [
-            {name: '虫子', 类型: 'currency', 几率: -0.1, value: 3},
-            {name: '瓢虫', 类型: 'currency', 几率: -0.15, value: 3}
+    corn: {
+        icon: 'mdi-corn',
+        color: '金色油漆',
+        grow: 30 * MINUTES_PER_HOUR,
+        yield: 2600,
+        rareDrop: [
+            {name: '虫子', type: 'currency', chance: 0.12, value: 15},
         ],
-        层: 12,
-        类型: '仅蔬菜'
+        tier: 8,
+        type: '蔬菜'
     },
-    蜜瓜: {
-        图标: 'mdi-fruit-watermelon',
-        color: '金色',
-        生长: 42 * MINUTES_PER_HOUR,
-        产量: 800,
-        稀有掉落: [
-            {name: '蝴蝶', 类型: 'currency', 几率: -0.12, value: 2},
-            {name: '蜘蛛', 类型: 'currency', 几率: -0.3, value: 1, *: 0.5}
+    watermelon: {
+        icon: 'mdi-fruit-watermelon',
+        color: '红色油漆',
+        grow: 12 * MINUTES_PER_HOUR,
+        yield: 1250,
+        rareDrop: [
+            {name: '虫子', type: 'currency', chance: 0.1, value: 6},
+            {name: '蝴蝶', type: 'currency', chance: -0.02, value: 2},
         ],
-        层: 13,
-        类型: '仅浆果'
+        tier: 9,
+        type: '浆果'
     },
-    黑麦: {
-        图标: 'mdi-barley',
-        color: 'pale-橙色',
-        cost: {黄金: 3},
-        生长: 7 * MINUTES_PER_HOUR,
-        产量: 875,
-        稀有掉落: [
-            {name: '种子壳', 类型: 'currency', 几率: -0.16, value: 20},
-            {name: '蜘蛛', 类型: 'currency', 几率: -0.25, value: 1, *: 0.5}
+    rice: {
+        icon: 'mdi-rice',
+        color: '光-grey',
+        grow: 24 * MINUTES_PER_HOUR,
+        yield: 2200,
+        rareDrop: [
+            {name: '种子壳', type: 'currency', chance: 0.05, value: 24},
+            {name: '瓢虫', type: 'currency', chance: -0.05, value: 12},
         ],
-        层: 14,
-        类型: '仅粮食'
+        tier: 10,
+        type: '粮食'
     },
-    雏菊: {
-        图标: 'mdi-flower',
-        color: '黄色',
-        cost: {黄金: 8},
-        生长: 14 * MINUTES_PER_HOUR,
-        产量: 2350,
-        稀有掉落: [
-            {name: '花瓣', 类型: 'currency', 几率: -0.18, value: 12},
-            {name: '蝴蝶', 类型: 'currency', 几率: -0.21, value: 10},
-            {name: '蜜蜂', 类型: 'currency', 几率: -0.25, value: 10}
+    rose: {
+        icon: 'mdi-flower',
+        color: '红色油漆',
+        grow: 48 * MINUTES_PER_HOUR,
+        yield: 3500,
+        rareDrop: [
+            {name: '花瓣', type: 'currency', chance: 0, value: 32},
+            {name: '瓢虫', type: 'currency', chance: -0.08, value: 24},
+            {name: '玫瑰水', type: 'consumable', chance: -0.12, value: 8},
         ],
-        层: 15,
-        类型: '仅鲜花'
+        tier: 11,
+        type: '花肥'
     },
-    黄瓜: {
-        图标: 'mdi-ruler',
-        color: 'pale-绿色',
-        cost: {黄金: 6},
-        生长: 2 * MINUTES_PER_HOUR + 30,
-        产量: 1000,
-        稀有掉落: [
-            {name: '虫子', 类型: 'currency', 几率: -0.24, value: 4}
+    leek: {
+        icon: 'mdi-leek',
+        color: '浅绿色油漆',
+        grow: 3 * MINUTES_PER_HOUR,
+        yield: 490,
+        rareDrop: [
+            {name: '虫子', type: 'currency', chance: -0.1, value: 2},
+            {name: '瓢虫', type: 'currency', chance: -0.15, value: 2},
         ],
-        层: 16,
-        类型: '仅蔬菜'
+        tier: 12,
+        type: '蔬菜'
     },
-    葡萄: {
-        图标: 'mdi-fruit-grapes',
-        color: '紫色',
-        cost: {黄金: 9},
-        生长: 5 * MINUTES_PER_HOUR,
-        产量: 1700,
-        稀有掉落: [
-            {name: '瓢虫', 类型: 'currency', 几率: -0.23, value: 7},
-            {name: '蜜蜂', 类型: 'currency', 几率: -0.28, value: 10}
+    honeymelon: {
+        icon: 'mdi-fruit-watermelon',
+        color: '金色油漆',
+        grow: 42 * MINUTES_PER_HOUR,
+        yield: 3875,
+        rareDrop: [
+            {name: '蝴蝶', type: 'currency', chance: -0.12, value: 7},
+            {name: '蜘蛛', type: 'currency', chance: -0.3, value: 1},
         ],
-        层: 17,
-        类型: '仅浆果'
+        tier: 13,
+        type: '浆果'
     },
-    啤酒花: {
-        图标: 'mdi-hops',
-        color: '绿色',
-        cost: {黄金: 5},
-        生长: 1 * MINUTES_PER_HOUR + 15,
-        产量: 550,
-        稀有掉落: [
-            {name: '蜘蛛', 类型: 'currency', 几率: -0.32, value: 1, *: 0.5}
+    rye: {
+        icon: 'mdi-barley',
+        color: 'pale-橙色油漆',
+        grow: 7 * MINUTES_PER_HOUR,
+        yield: 1050,
+        rareDrop: [
+            {name: '种子壳', type: 'currency', chance: -0.16, value: 7},
+            {name: '蜘蛛', type: 'currency', chance: -0.25, value: 1, *: 0.5},
         ],
-        层: 18,
-        类型: '仅粮食'
+        tier: 14,
+        type: '粮食'
     },
-    紫罗兰: {
-        图标: 'mdi-flower',
-        color: 'deep-紫色',
-        cost: {花瓣: 5},
-        生长: 36 * MINUTES_PER_HOUR,
-        产量: 970,
-        稀有掉落: [
-            {name: '花瓣', 类型: 'currency', 几率: -0.3, value: 3},
-            {name: '蜜蜂', 类型: 'currency', 几率: -0.33, value: 3}
+    daisy: {
+        icon: 'mdi-flower',
+        color: '黄色油漆',
+        grow: 14 * MINUTES_PER_HOUR,
+        yield: 1700,
+        rareDrop: [
+            {name: '花瓣', type: 'currency', chance: -0.18, value: 9},
+            {name: '蝴蝶', type: 'currency', chance: -0.21, value: 2},
+            {name: '蜜蜂', type: 'currency', chance: -0.25, value: 28},
         ],
-        层: 19,
-        类型: '仅鲜花'
+        tier: 15,
+        type: '花肥'
     },
-    金玫瑰: {
-        图标: 'mdi-flower',
-        color: '金色',
-        cost: {黄金: 100},
-        生长: 168 * MINUTES_PER_HOUR,
-        产量: buildNum(64, 'K'),
-        稀有掉落: [
-            {name: '花瓣', 类型: 'currency', 几率: -0.1, value: 30},
-            {name: '金色花瓣', 类型: 'currency', 几率: -0.4, value: 1, *: 0.05},
-            {name: '玫瑰水', 类型: 'consumable', 几率: -0.45, value: 100}
+    cucumber: {
+        icon: 'mdi-ruler',
+        color: 'pale-绿色油漆',
+        grow: 2 * MINUTES_PER_HOUR + 30,
+        yield: 560,
+        rareDrop: [
+            {name: '虫子', type: 'currency', chance: -0.24, value: 1},
         ],
-        层: 20,
-        类型: '仅鲜花'
+        tier: 16,
+        type: '蔬菜'
     },
-    红薯: {
-        图标: 'mdi-circle',
+    grapes: {
+        icon: 'mdi-fruit-grapes',
+        color: '紫色油漆',
+        grow: 5 * MINUTES_PER_HOUR,
+        yield: 950,
+        rareDrop: [
+            {name: '瓢虫', type: 'currency', chance: -0.23, value: 3},
+            {name: '蜜蜂', type: 'currency', chance: -0.28, value: 10},
+        ],
+        tier: 17,
+        type: '浆果'
+    },
+    hops: {
+        icon: 'mdi-hops',
+        color: '绿色油漆',
+        grow: 1 * MINUTES_PER_HOUR + 15,
+        yield: 340,
+        rareDrop: [
+            {name: '蜘蛛', type: 'currency', chance: -0.32, value: 1, *: 0.25},
+        ],
+        tier: 18,
+        type: '粮食'
+    },
+    violet: {
+        icon: 'mdi-flower',
+        color: 'deep-紫色油漆',
+        grow: 36 * MINUTES_PER_HOUR,
+        yield: 4600,
+        rareDrop: [
+            {name: '花瓣', type: 'currency', chance: -0.3, value: 24},
+            {name: '蜜蜂', type: 'currency', chance: -0.33, value: 72},
+        ],
+        tier: 19,
+        type: '花肥'
+    },
+    sweetPotato: {
+        icon: 'mdi-circle',
         color: 'beige',
-        cost: {黄金: 8},
-        生长: 11 * MINUTES_PER_HOUR + 30,
-        产量: 3300,
-        稀有掉落: [
-            {name: '虫子', 类型: 'currency', 几率: -0.36, value: 8}
+        grow: 11 * MINUTES_PER_HOUR + 30,
+        yield: 2300,
+        rareDrop: [
+            {name: '虫子', type: 'currency', chance: -0.36, value: 6},
         ],
-        层: 20,
-        类型: '仅蔬菜'
+        tier: 20,
+        type: '蔬菜'
     },
-    草莓: {
-        图标: 'mdi-fruit-grapes',
-        color: '红色',
-        cost: {蝴蝶: 1},
-        生长: 27 * MINUTES_PER_HOUR,
-        产量: 875,
-        稀有掉落: [
-            {name: '瓢虫', 类型: 'currency', 几率: -0.4, value: 8},
-            {name: '蜜蜂', 类型: 'currency', 几率: -0.45, value: 5}
+    strawberry: {
+        icon: 'mdi-fruit-grapes',
+        color: '红色油漆',
+        grow: 27 * MINUTES_PER_HOUR,
+        yield: 4100,
+        rareDrop: [
+            {name: '瓢虫', type: 'currency', chance: -0.4, value: 14},
+            {name: '蜜蜂', type: 'currency', chance: -0.45, value: 54},
         ],
-        层: 21,
-        类型: '仅浆果'
+        tier: 21,
+        type: '浆果'
     },
-    芝麻: {
-        图标: 'mdi-grain',
-        color: 'pale-橙色',
-        cost: {黄金: 5, 种子壳: 25},
-        生长: 4 * MINUTES_PER_HOUR + 30,
-        产量: 1500,
-        稀有掉落: [
-            {name: '小种子', 类型: 'currency', 几率: -0.48, value: 3},
-            {name: '蜘蛛', 类型: 'currency', 几率: -0.51, value: 1, *: 0.5}
+    sesame: {
+        icon: 'mdi-grain',
+        color: 'pale-橙色油漆',
+        grow: 4 * MINUTES_PER_HOUR + 30,
+        yield: 1125,
+        rareDrop: [
+            {name: '小种子', type: 'currency', chance: -0.48, value: 3},
+            {name: '蜘蛛', type: 'currency', chance: -0.51, value: 1, *: 0.5},
         ],
-        层: 22,
-        类型: '仅粮食'
+        tier: 22,
+        type: '粮食'
     },
-    向日葵: {
-        图标: 'mdi-flower-outline',
-        color: '棕色',
-        cost: {黄金: 14},
-        生长: 28 * MINUTES_PER_HOUR,
-        产量: 8300,
-        稀有掉落: [
-            {name: '小种子', 类型: 'currency', 几率: -0.5, value: 15},
-            {name: '花瓣', 类型: 'currency', 几率: -0.53, value: 4}
+    sunflower: {
+        icon: 'mdi-flower-outline',
+        color: 'brown',
+        grow: 28 * MINUTES_PER_HOUR,
+        yield: 4650,
+        rareDrop: [
+            {name: '小种子', type: 'currency', chance: -0.5, value: 15},
+            {name: '花瓣', type: 'currency', chance: -0.53, value: 18},
         ],
-        层: 23,
-        类型: '仅鲜花'
+        tier: 23,
+        type: '花肥'
     },
-    菠菜: {
-        图标: 'mdi-flower-poppy',
-        color: '绿色',
-        cost: {黄金: 3, 草: 100},
-        生长: 5 * MINUTES_PER_HOUR + 45,
-        产量: 1425,
-        稀有掉落: [
-            {name: '虫子', 类型: 'currency', 几率: -0.55, value: 3}
+    spinach: {
+        icon: 'mdi-flower-poppy',
+        color: '绿色油漆',
+        grow: 5 * MINUTES_PER_HOUR + 45,
+        yield: 1650,
+        rareDrop: [
+            {name: '虫子', type: 'currency', chance: -0.55, value: 3},
         ],
-        层: 24,
-        类型: '仅蔬菜'
+        tier: 24,
+        type: '蔬菜'
+    },
+    currant: {
+        icon: 'mdi-fruit-grapes',
+        color: '红色油漆',
+        grow: 18 * MINUTES_PER_HOUR,
+        yield: 4500,
+        rareDrop: [
+            {name: '蝴蝶', type: 'currency', chance: -0.58, value: 3},
+            {name: '小种子', type: 'currency', chance: -0.6, value: 10},
+        ],
+        tier: 25,
+        type: '浆果'
+    },
+    redwheat: {
+        icon: 'mdi-barley',
+        color: 'pale-红色油漆',
+        grow: 68 * MINUTES_PER_HOUR,
+        yield: 13000,
+        rareDrop: [
+            {name: '种子壳', type: 'currency', chance: -0.62, value: 68},
+            {name: '蜘蛛', type: 'currency', chance: -0.64, value: 3},
+        ],
+        tier: 26,
+        type: '粮食'
+    },
+    poppy: {
+        icon: 'mdi-flower-poppy',
+        color: '红色油漆',
+        grow: 3 * MINUTES_PER_HOUR + 30,
+        yield: 1450,
+        rareDrop: [
+            {name: '小种子', type: 'currency', chance: -0.67, value: 2},
+        ],
+        tier: 27,
+        type: '花肥'
+    },
+    pumpkin: {
+        icon: 'mdi-pumpkin',
+        color: '橙色油漆',
+        grow: 60 * MINUTES_PER_HOUR,
+        yield: 13000,
+        rareDrop: [
+            {name: '虫子', type: 'currency', chance: -0.69, value: 30},
+            {name: '蜘蛛', type: 'currency', chance: -0.75, value: 3},
+        ],
+        tier: 28,
+        type: '蔬菜'
+    },
+    blackberry: {
+        icon: 'mdi-fruit-grapes',
+        color: 'pale-紫色油漆',
+        grow: 22 * MINUTES_PER_HOUR,
+        yield: 6400,
+        rareDrop: [
+            {name: '蜜蜂', type: 'currency', chance: -0.73, value: 44},
+            {name: '小种子', type: 'currency', chance: -0.76, value: 15},
+        ],
+        tier: 29,
+        type: '浆果'
+    },
+    millet: {
+        icon: 'mdi-feather',
+        color: 'lime',
+        grow: 16 * MINUTES_PER_HOUR,
+        yield: 5300,
+        rareDrop: [
+            {name: '种子壳', type: 'currency', chance: -0.78, value: 16},
+            {name: '蜗牛', type: 'currency', chance: -0.8, value: 4},
+        ],
+        tier: 30,
+        type: '粮食'
+    },
+    petunia: {
+        icon: 'mdi-flower',
+        color: 'babypink',
+        grow: 21 * MINUTES_PER_HOUR,
+        yield: 6800,
+        rareDrop: [
+            {name: '蜗牛', type: 'currency', chance: -0.83, value: 5},
+            {name: '花瓣', type: 'currency', chance: -0.85, value: 14},
+        ],
+        tier: 31,
+        type: '花肥'
+    },
+    chili: {
+        icon: 'mdi-chili-mild',
+        color: '红色油漆',
+        grow: 40 * MINUTES_PER_HOUR,
+        yield: 11500,
+        rareDrop: [
+            {name: '蜗牛', type: 'currency', chance: -0.87, value: 10},
+        ],
+        tier: 32,
+        type: '蔬菜'
+    },
+    fern: {
+        icon: 'mdi-grass',
+        color: 'pale-绿色油漆',
+        cost: {草: 15},
+        grow: 10 * MINUTES_PER_HOUR,
+        giantGrow: 92 * MINUTES_PER_HOUR,
+        giantMult: 7,
+        baseExp: 10,
+        specialEffect: [
+            {name: '蔬菜增益', type: '*', value: lvl => (lvl * 0.1 + 1) * Math.pow(1.1, lvl)},
+            {name: '浆果增益', type: '*', value: lvl => (lvl * 0.1 + 1) * Math.pow(1.1, lvl)},
+        ],
+        type: 'special'
+    },
+    reed: {
+        icon: 'mdi-feather',
+        color: 'beige',
+        cost: {黄金: 10},
+        grow: 20 * MINUTES_PER_HOUR,
+        giantGrow: 140 * MINUTES_PER_HOUR,
+        giantMult: 6,
+        baseExp: 12,
+        specialEffect: [
+            {name: '粮食增益', type: '*', value: lvl => (lvl * 0.1 + 1) * Math.pow(1.1, lvl)},
+            {name: '花肥增益', type: '*', value: lvl => (lvl * 0.1 + 1) * Math.pow(1.1, lvl)},
+        ],
+        type: 'special'
+    },
+    wildflower: {
+        icon: 'mdi-flower-pollen',
+        color: 'lime',
+        cost: {混合种子: 1},
+        grow: 5 * MINUTES_PER_HOUR,
+        giantGrow: 68 * MINUTES_PER_HOUR,
+        giantMult: 10,
+        baseExp: 25,
+        specialEffect: [
+            {name: '产出', type: '*', value: lvl => lvl * 0.04 + 1},
+        ],
+        type: 'special'
+    },
+    仙人掌: {
+        icon: 'mdi-cactus',
+        color: '绿色油漆',
+        cost: {仙人掌种子: 1},
+        grow: 5 * MINUTES_PER_DAY,
+        giantGrow: 24 * MINUTES_PER_DAY,
+        giantMult: 4,
+        baseExp: 7,
+        specialEffect: [
+            {name: '作物经验', type: '*', value: lvl => lvl * 0.03 + 1},
+        ],
+        type: 'special'
+    },
+    cress: {
+        icon: 'mdi-leaf-circle-outline',
+        color: '浅绿色油漆',
+        cost: {小种子: 2},
+        grow: MINUTES_PER_HOUR + 30,
+        giantGrow: 20 * MINUTES_PER_HOUR,
+        giantMult: 10,
+        baseExp: 80,
+        specialEffect: [
+            {name: '稀有掉率', type: '+', value: lvl => lvl * 0.01},
+        ],
+        type: 'special'
+    },
+    goldenRose: {
+        icon: 'mdi-flower',
+        color: '金色油漆',
+        cost: {黄金: 250},
+        grow: 14 * MINUTES_PER_DAY,
+        giantGrow: 48 * MINUTES_PER_DAY,
+        giantMult: 3,
+        baseExp: 4,
+        specialEffect: [
+            {name: '花瓣容量', type: '+', value: lvl => lvl * 50},
+        ],
+        type: 'special'
+    },
+    ancientFern: {
+        icon: 'mdi-grass',
+        color: 'pale-蓝色油漆',
+        cost: {远古种子: 1},
+        grow: 30 * MINUTES_PER_DAY,
+        giantGrow: 100 * MINUTES_PER_DAY,
+        giantMult: 3,
+        baseExp: 1,
+        type: 'special'
     },
 }

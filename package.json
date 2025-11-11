@@ -19,10 +19,10 @@
     "vitepress": "^1.6.3"
   },
   "dependencies": {
-    "@babel/core": "^7.28.4",
+    "@babel/core": "^7.28.5",
     "@babel/generator": "^7.28.3",
     "@babel/parser": "^7.28.4",
-    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-env": "^7.28.5",
     "@babel/register": "^7.28.3",
     "@babel/traverse": "^7.28.4",
     "@vercel/analytics": "^1.5.0",

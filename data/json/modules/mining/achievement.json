@@ -1,122 +1,189 @@
 [
   {
-    "名称": "maxDepth0",
-    "value": "$store.state.stat.mining_maxDepth0.总计$",
+    "名称": "这很深",
+    "value": "$store.state.stat.这很深.total$",
     "default": "1",
     "milestones": "$lvl  \\cdot  25 + 25$",
-    "上限": "",
-    "圣遗物": ""
+    "cap": "",
+    "reward": "",
+    "descriptionCustom": "",
+    "relic": "",
+    "secret": ""
   },
   {
-    "名称": "maxDepth1",
-    "value": "$store.state.stat.mining_maxDepth1.总计$",
+    "名称": "深入挖掘",
+    "value": "$store.state.stat.深入挖掘.total$",
     "default": "1",
-    "milestones": "$lvl  \\cdot  10 + 10$",
-    "上限": "",
-    "圣遗物": ""
+    "milestones": "$lvl > 0 ? lvl  \\cdot  20 : 10$",
+    "cap": "",
+    "reward": "",
+    "descriptionCustom": "",
+    "relic": "",
+    "secret": ""
   },
   {
-    "名称": "maxDepthSpeedrun",
-    "value": "$store.state.stat.mining_maxDepthSpeedrun.总计$",
+    "名称": "深渊",
+    "value": "$store.state.stat.深渊.total$",
     "default": "1",
     "milestones": "$lvl > 0 ? lvl  \\cdot  10 + 10 : 15$",
-    "上限": "10",
-    "圣遗物": "{\"1\":\"雷达\",\"2\":\"报刊\",\"3\":\"橱柜\",\"5\":\"青铜镐\",\"9\":\"洗衣机\"}"
+    "cap": "10",
+    "reward": "{\"1\":[{\"name\":\"深度居民\",\"type\":\"保留\",\"value\":true}],\"2\":[{\"name\":\"压缩机\",\"type\":\"保留\",\"value\":true}],\"3\":[{\"name\":\"矿石槽位\",\"type\":\"保留\",\"value\":true}],\"5\":[{\"name\":\"花岗岩硬化\",\"type\":\"保留\",\"value\":true}],\"9\":[{\"name\":\"矿石洗选\",\"type\":\"保留\",\"value\":true}]}",
+    "descriptionCustom": "",
+    "relic": "",
+    "secret": ""
   },
   {
-    "名称": "totalDamage",
-    "value": "$store.state.stat.mining_totalDamage.总计$",
+    "名称": "威猛",
+    "value": "$store.state.stat.威猛.total$",
     "default": "",
-    "milestones": "${(200K)}^{lvl}  \\cdot  10M$",
-    "上限": "",
-    "圣遗物": "{\"6\":\"打开的礼物\"}"
-  },
-  {
-    "名称": "maxDamage",
-    "value": "$store.state.stat.mining_maxDamage.总计$",
-    "default": "",
-    "milestones": "${(200K)}^{lvl}  \\cdot  10K$",
-    "上限": "",
-    "圣遗物": "{\"3\":\"炸弹\"}"
+    "milestones": "${(80K)}^{lvl}  \\cdot  10K$",
+    "cap": "",
+    "reward": "{\"3\":[{\"name\":\"破壳者\",\"type\":\"保留\",\"value\":true}],\"6\":[{\"name\":\"青铜存储\",\"type\":\"保留\",\"value\":true}]}",
+    "descriptionCustom": "",
+    "relic": "",
+    "secret": ""
   },
   {
     "名称": "废料",
-    "value": "$store.state.stat.废料.总计$",
+    "value": "$store.state.stat.废料.total$",
     "default": "",
     "milestones": "${(8000)}^{lvl}  \\cdot  5M$",
-    "上限": "",
-    "圣遗物": "{\"3\":\"跳绳\",\"4\":\"矿石架\"}"
+    "cap": "",
+    "reward": "{\"3\":[{\"name\":\"铝扩张\",\"type\":\"保留\",\"value\":true},{\"name\":\"铜扩张\",\"type\":\"保留\",\"value\":true}],\"4\":[{\"name\":\"锡存储\",\"type\":\"保留\",\"value\":true}]}",
+    "descriptionCustom": "",
+    "relic": "",
+    "secret": ""
   },
   {
-    "名称": "oreTotal",
-    "value": "$[store.state.stat.铝矿石.总计, store.state.stat.铜矿石.总计, store.state.stat.锡矿石.总计, store.state.stat.铁矿石.总计, store.state.stat.钛矿石.总计, store.state.stat.铂矿石.总计, store.state.stat.铱矿石.总计, store.state.stat.锇矿石.总计, store.state.stat.铅矿石.总计].reduce((a, b) => a + b, 0)$",
+    "名称": "更多矿石",
+    "value": "$[store.state.stat.铝矿石.total, store.state.stat.铜矿石.total, store.state.stat.锡矿石.total, store.state.stat.铁矿石.total, store.state.stat.钛矿石.total, store.state.stat.铂矿石.total, store.state.stat.铱矿石.total, store.state.stat.锇矿石.total, store.state.stat.铅矿石.total].reduce((a, b) => a + b, 0)$",
     "default": "",
     "milestones": "${(10)}^{lvl}  \\cdot  100$",
-    "上限": "",
-    "圣遗物": "{\"2\":\"铝砖\",\"3\":\"铜砖\",\"4\":\"铝堆\",\"5\":\"铜镐\",\"6\":\"锡桶\"}"
+    "cap": "",
+    "reward": "{\"2\":[{\"name\":\"铝存储\",\"type\":\"保留\",\"value\":true},{\"name\":\"铝淬火\",\"type\":\"保留\",\"value\":true}],\"3\":[{\"name\":\"铜存储\",\"type\":\"保留\",\"value\":true}],\"4\":[{\"name\":\"铝罐\",\"type\":\"保留\",\"value\":true},{\"name\":\"铝砧\",\"type\":\"保留\",\"value\":true}],\"5\":[{\"name\":\"磁铁\",\"type\":\"保留\",\"value\":true},{\"name\":\"仓库\",\"type\":\"保留\",\"value\":true}],\"6\":[{\"name\":\"钛扩张\",\"type\":\"保留\",\"value\":true},{\"name\":\"钛存储\",\"type\":\"保留\",\"value\":true}]}",
+    "descriptionCustom": "",
+    "relic": "",
+    "secret": ""
   },
   {
     "名称": "oreVariety",
-    "value": "$[store.state.stat.铝矿石.总计, store.state.stat.铜矿石.总计, store.state.stat.锡矿石.总计, store.state.stat.铁矿石.总计, store.state.stat.钛矿石.总计, store.state.stat.铂矿石.总计, store.state.stat.铱矿石.总计, store.state.stat.锇矿石.总计, store.state.stat.铅矿石.总计].reduce((a, b) => a + (b > 0 ? 1 : 0), 0)$",
+    "value": "$[store.state.stat.铝矿石.total, store.state.stat.铜矿石.total, store.state.stat.锡矿石.total, store.state.stat.铁矿石.total, store.state.stat.钛矿石.total, store.state.stat.铂矿石.total, store.state.stat.铱矿石.total, store.state.stat.锇矿石.total, store.state.stat.铅矿石.total, store.state.stat.花岗岩.total, store.state.stat.盐.total, store.state.stat.煤.total, store.state.stat.硫.total, store.state.stat.硝.total, store.state.stat.黑曜石.total, store.state.stat.深岩.total, store.state.stat.辉光碎片.total, store.state.stat.石灰岩.total, store.state.stat.月之碎片.total, store.state.stat.磷.total, store.state.stat.氦.total, store.state.stat.氖.total, store.state.stat.氩.total, store.state.stat.氪.total, store.state.stat.氙.total, store.state.stat.氡.total].reduce((a, b) => a + (b > 0 ? 1 : 0), 0)$",
     "default": "",
-    "milestones": "$lvl + 2$",
-    "上限": "",
-    "圣遗物": "{\"1\":\"铜堆\",\"2\":\"催化剂\",\"3\":\"磁铁\"}"
+    "milestones": "$splicedLinear(1, 2, 8, lvl) + 2$",
+    "cap": "",
+    "reward": "{\"1\":[{\"name\":\"铜罐\",\"type\":\"保留\",\"value\":true}],\"3\":[{\"name\":\"精炼厂\",\"type\":\"保留\",\"value\":true}],\"5\":[{\"name\":\"铁扩张\",\"type\":\"保留\",\"value\":true},{\"name\":\"铁淬火\",\"type\":\"保留\",\"value\":true},{\"name\":\"铁过滤器\",\"type\":\"保留\",\"value\":true}]}",
+    "descriptionCustom": "$store.state.解锁.miningGasSubfeature.see ? 2 : store.state.stat.这很深.total >= 50 ? 1 : 0$",
+    "relic": "",
+    "secret": ""
   },
   {
-    "名称": "depthDwellerCap0",
-    "value": "$store.state.stat.mining_depthDwellerCap0.总计$",
+    "名称": "垂直向下钻",
+    "value": "$store.state.stat.垂直向下钻.total$",
     "default": "",
     "milestones": "$lvl  \\cdot  10 + (lvl === 0 ? 5 : 0)$",
-    "上限": "30",
-    "圣遗物": "{\"0\":\"锤子\"}"
+    "cap": "10",
+    "reward": "{\"0\":[{\"name\":\"制作站\",\"type\":\"保留\",\"value\":true}],\"9\":[{\"name\":\"钻机燃料\",\"type\":\"保留\",\"value\":true}]}",
+    "descriptionCustom": "",
+    "relic": "",
+    "secret": ""
   },
   {
-    "名称": "depthDwellerCap1",
-    "value": "$store.state.stat.mining_depthDwellerCap1.总计$",
+    "名称": "无火花",
+    "value": "$store.state.stat.无火花.total$",
     "default": "",
     "milestones": "$lvl  \\cdot  10 + (lvl === 0 ? 5 : 0)$",
-    "上限": "",
-    "圣遗物": ""
+    "cap": "10",
+    "reward": "",
+    "descriptionCustom": "",
+    "relic": "",
+    "secret": ""
   },
   {
     "名称": "煤",
-    "value": "$store.state.stat.煤.总计$",
+    "value": "$store.state.stat.煤.total$",
     "default": "",
     "milestones": "${(2.5)}^{lvl}  \\cdot  100$",
-    "上限": "",
-    "圣遗物": "{\"2\":\"煤砖\"}"
+    "cap": "",
+    "reward": "{\"2\":[{\"name\":\"熔炉\",\"type\":\"保留\",\"value\":true}]}",
+    "descriptionCustom": "",
+    "relic": "",
+    "secret": ""
+  },
+  {
+    "名称": "准备好了",
+    "value": "$store.state.stat.准备好了.total$",
+    "default": "",
+    "milestones": "$(lvl + 1)  \\cdot  2$",
+    "cap": "5",
+    "reward": "",
+    "descriptionCustom": "",
+    "relic": "",
+    "secret": ""
   },
   {
     "名称": "树脂",
-    "value": "$store.state.stat.树脂.总计$",
+    "value": "$store.state.stat.树脂.total$",
     "default": "",
     "milestones": "${(2)}^{lvl}  \\cdot  50$",
-    "上限": "",
-    "圣遗物": "{\"3\":\"一罐蜂蜜\"}"
+    "cap": "",
+    "reward": "",
+    "descriptionCustom": "",
+    "relic": "{\"3\":\"蜂蜜罐\"}",
+    "secret": ""
   },
   {
-    "名称": "craftingWasted",
-    "value": "$store.state.stat.mining_craftingWasted.总计$",
+    "名称": "急性子",
+    "value": "$[store.state.stat.mining_heliumMax.total, store.state.stat.mining_neonMax.total, store.state.stat.mining_argonMax.total, store.state.stat.mining_kryptonMax.total, store.state.stat.mining_xenonMax.total, store.state.stat.mining_radonMax.total].reduce((a, b) => a + (b < 1 ? 0 : \\text{向下取整}(Math.log10(b))), 0)$",
+    "default": "",
+    "milestones": "$(lvl + 1)  \\cdot  4$",
+    "cap": "",
+    "reward": "",
+    "descriptionCustom": "",
+    "relic": "",
+    "secret": ""
+  },
+  {
+    "名称": "烟雾",
+    "value": "$store.state.stat.mining_smokeMax.total$",
+    "default": "",
+    "milestones": "${(64)}^{lvl}  \\cdot  100$",
+    "cap": "",
+    "reward": "",
+    "descriptionCustom": "",
+    "relic": "",
+    "secret": ""
+  },
+  {
+    "名称": "浪费了",
+    "value": "$store.state.stat.浪费了.total$",
     "default": "",
     "milestones": "$1$",
-    "上限": "1",
-    "圣遗物": ""
+    "cap": "1",
+    "reward": "",
+    "descriptionCustom": "",
+    "relic": "",
+    "secret": "true"
   },
   {
-    "名称": "dwellerCapHit",
-    "value": "$store.state.stat.mining_dwellerCapHit.总计$",
+    "名称": "谷底",
+    "value": "$store.state.stat.谷底.total$",
     "default": "",
     "milestones": "$1$",
-    "上限": "1",
-    "圣遗物": ""
+    "cap": "1",
+    "reward": "",
+    "descriptionCustom": "",
+    "relic": "",
+    "secret": "true"
   },
   {
-    "名称": "craftingLuck",
-    "value": "$store.state.stat.mining_craftingLuck.总计$",
+    "名称": "百万分之一",
+    "value": "$store.state.stat.百万分之一.total$",
     "default": "1",
     "milestones": "$1M$",
-    "上限": "1",
-    "圣遗物": ""
+    "cap": "1",
+    "reward": "",
+    "descriptionCustom": "",
+    "relic": "",
+    "secret": "true"
   }
 ]

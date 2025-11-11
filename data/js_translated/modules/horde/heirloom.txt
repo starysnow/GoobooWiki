@@ -1,54 +1,53 @@
 {
-    力量: {color: '红色', 图标: 'mdi-sword', 效果: [
-        {name: '攻击', 类型: '*', value: lvl => lvl * 0.2 + 1}
+    最高力量: {color: '红色油漆', icon: 'mdi-sword', effect: [
+        {name: '攻击', type: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    fortitude: {color: '绿色', 图标: 'mdi-heart', 效果: [
-        {name: '生命值', 类型: '*', value: lvl => lvl * 0.2 + 1}
+    fortitude: {minZone: 40, color: '绿色油漆', icon: 'mdi-heart', effect: [
+        {name: '生命值', type: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    wealth: {color: '金色', 图标: 'mdi-circle-multiple', 效果: [
-        {name: '骨头增益', 类型: '*', value: lvl => lvl * 0.15 + 1},
-        {name: '怪物零件增益', 类型: '*', value: lvl => lvl * 0.05 + 1}
+    wealth: {minZone: 50, color: '金色油漆', icon: 'mdi-circle-multiple', effect: [
+        {name: '骨头增益', type: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    spirit: {minZone: 40, color: '紫色', 图标: 'mdi-ghost', 效果: [
-        {name: '腐败的灵魂增益', 类型: '*', value: lvl => lvl * 0.06 + 1}
+    spirit: {minZone: 60, color: '紫色油漆', icon: 'mdi-ghost', effect: [
+        {name: '腐败的灵魂增益', type: '*', value: lvl => lvl * 0.03 + 1}
     ]},
-    sharpsight: {minZone: 50, color: '青色', 图标: 'mdi-magnify', 效果: [
-        {name: '装备几率', 类型: '*', value: lvl => lvl * 0.05 + 1}
+    sharpsight: {minZone: 70, color: 'cyan', icon: 'mdi-magnify', effect: [
+        {name: '装备几率', type: '*', value: lvl => lvl * 0.05 + 1}
     ]},
-    reaping: {minZone: 60, color: '粉色', 图标: 'mdi-skull', 效果: [
-        {name: '腐烂的肉体增益', 类型: '+', value: lvl => lvl * 0.03}
+    reaping: {minZone: 80, color: '粉红色油漆', icon: 'mdi-skull', effect: [
+        {name: '腐烂的肉体增益', type: '*', value: lvl => lvl * 0.01 + 1}
     ]},
-    remembrance: {minZone: 70, color: 'deep-紫色', 图标: 'mdi-grave-stone', 效果: [
-        {name: '腐败的灵魂容量', 类型: '*', value: lvl => lvl * 0.05 + 1}
+    remembrance: {minZone: 90, color: 'deep-紫色油漆', icon: 'mdi-grave-stone', effect: [
+        {name: '腐败的灵魂容量', type: '*', value: lvl => lvl * 0.03 + 1}
     ]},
-    holding: {minZone: 80, color: '棕色', 图标: 'mdi-dresser', 效果: [
-        {name: '骨头容量', 类型: '*', value: lvl => lvl * 0.1 + 1},
-        {name: '怪物零件容量', 类型: '*', value: lvl => lvl * 0.02 + 1}
+    expertise: {minZone: 100, color: '浅蓝色油漆', icon: 'mdi-book-open-variant', effect: [
+        {name: '精通点数增益', type: '*', value: lvl => lvl * 0.01 + 1}
     ]},
-    expertise: {minZone: 100, color: '光-blue', 图标: 'mdi-book-open-variant', 效果: [
-        {name: '精通点数增益', 类型: '*', value: lvl => lvl * 0.01 + 1}
+    holding: {minZone: 110, color: 'brown', icon: 'mdi-dresser', effect: [
+        {name: '骨头容量', type: '*', value: lvl => lvl * 0.02 + 1}
     ]},
-    神秘: {minZone: 120, color: 'teal', 图标: 'mdi-help-box', 效果: [
-        {name: '神秘碎片几率', 类型: '*', value: lvl => lvl * 0.001 + 1}
+    mystery: {minZone: 120, color: '青色油漆', icon: 'mdi-help-box', effect: [
+        {name: '神秘碎片几率', type: '*', value: lvl => lvl * 0.001 + 1}
     ]},
-    砖块: {minZone: Infinity, color: '樱桃色', 图标: 'mdi-wall', 效果: [
-        {name: '骨头增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
-        {name: '暴击伤害', 类型: '+', value: lvl => (Math.pow(lvl / 10 + 1, 0.4) - 1) * 0.01}
+    freezing: {minZone: 130, color: 'dark-蓝色油漆', icon: 'mdi-fridge', effect: [
+        {name: '怪物零件容量', type: '*', value: lvl => lvl * 0.001 + 1}
     ]},
-    heat: {minZone: Infinity, color: '橙色-红色', 图标: 'mdi-fire', 效果: [
-        {name: '攻击', 类型: '*', value: lvl => lvl * 0.05 + 1},
-        {name: '暴击率', 类型: '+', value: lvl => Math.log(lvl / 10 + 1) * 0.008}
+    brick: {minZone: Infinity, color: 'cherry', icon: 'mdi-wall', effect: [
+        {name: '骨头增益', type: '*', value: lvl => lvl * 0.01 + 1}
     ]},
-    ice: {minZone: Infinity, color: 'skyblue', 图标: 'mdi-snowflake-variant', 效果: [
-        {name: '生命值', 类型: '*', value: lvl => lvl * 0.05 + 1},
-        {name: '恢复', 类型: '+', value: lvl => Math.log(lvl / 10 + 1) * 0.003}
+    热量: {minZone: Infinity, color: '橙色油漆-红色油漆', icon: 'mdi-fire', effect: [
+        {name: '攻击', type: '*', value: lvl => lvl * 0.01 + 1}
     ]},
-    crystal: {minZone: Infinity, color: 'indigo', 图标: 'mdi-billiards-rack', 效果: [
-        {name: '神秘碎片几率', 类型: '*', value: lvl => lvl * 0.001 + 1},
-        {name: '神秘碎片容量', 类型: '+', value: lvl => Math.floor(Math.log(lvl + 2))}
+    ice: {minZone: Infinity, color: 'skyblue', icon: 'mdi-snowflake-variant', effect: [
+        {name: '生命值', type: '*', value: lvl => lvl * 0.01 + 1}
     ]},
-    活力: {minZone: Infinity, color: '光-绿色', 图标: 'mdi-heart-multiple', 效果: [
-        {name: '骨头容量', 类型: '*', value: lvl => lvl * 0.001 + 1},
-        {name: '治疗', 类型: '*', value: lvl => Math.log(lvl + 1) * 0.1 + 1}
+    crystal: {minZone: Infinity, color: 'indigo', icon: 'mdi-billiards-rack', effect: [
+        {name: '神秘碎片几率', type: '*', value: lvl => lvl * 0.001 + 1}
+    ]},
+    vitality: {minZone: Infinity, color: '浅绿色油漆', icon: 'mdi-heart-multiple', effect: [
+        {name: '骨头容量', type: '*', value: lvl => lvl * 0.001 + 1}
+    ]},
+    nature: {minZone: Infinity, color: 'lime', icon: 'mdi-leaf', effect: [
+        {name: '精通点数增益', type: '*', value: lvl => lvl * 0.001 + 1}
     ]},
 }

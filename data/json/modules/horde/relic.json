@@ -1,47 +1,9 @@
 [
   {
-    "名称": "被遗忘的盾牌",
-    "图标": "<i class=\"mdi mdi-shield-sun\"></i>",
-    "效果": "弹力保留｛true｝; 休息保留｛true｝"
-  },
-  {
-    "名称": "燃烧的头骨",
-    "图标": "<i class=\"mdi mdi-skull\"></i>",
-    "效果": "骨袋保留｛true｝; 愤怒保留｛true｝"
-  },
-  {
     "名称": "能量饮料",
-    "图标": "<i class=\"mdi mdi-bottle-soda\"></i>",
-    "效果": "怪物零件增益+｛0.5｝; 怪物汤保留｛true｝"
-  },
-  {
-    "名称": "幸运骰子",
-    "图标": "<i class=\"mdi mdi-dice-6\"></i>",
-    "效果": "幸运一击保留｛true｝"
-  },
-  {
-    "名称": "哑铃",
-    "图标": "<i class=\"mdi mdi-dumbbell\"></i>",
-    "效果": "训练保留｛true｝"
-  },
-  {
-    "名称": "绷带",
-    "图标": "<i class=\"mdi mdi-bandage\"></i>",
-    "效果": "厚脸皮保留｛true｝"
-  },
-  {
-    "名称": "新背包",
-    "图标": "<i class=\"mdi mdi-bag-personal\"></i>",
-    "效果": "囤积保留｛true｝; 掠夺秘密保留｛true｝"
-  },
-  {
-    "名称": "终极指南",
-    "图标": "<i class=\"mdi mdi-book-multiple\"></i>",
-    "效果": "刺击指南保留｛true｝; 闪避指南保留｛true｝"
-  },
-  {
-    "名称": "破裂的保险箱",
-    "图标": "<i class=\"mdi mdi-safe-square\"></i>",
-    "效果": "掠夺保留｛true｝"
+    "icon": "<i class=\"mdi mdi-bottle-soda\"></i>",
+    "effect": "$[{ name: '怪物零件增益', type: '+', value: 0.5 }, { name: '怪物汤', type: '保留', value: true }]$",
+    "glyph": "${ 梦: 3, 三叶草: 1 }$",
+    "激活的卡片": "{\"cost\":{\"最高力量\":3},\"params\":\"${ let actives = 0; for (const [, elem] of Object.entries(store.state.horde.items)) { if (elem.activeType === 'combat' && elem.cooldownLeft > 0) { actives++; } } for (const [key, elem] of Object.entries(store.state.horde.skillActive)) { const split = key.split('_'); let type = null; if (split[0] === 'skill') { type = store.state.horde.fighterClass[store.state.horde.selectedClass].skills[split[1]].activeType; } else if (split[0] === '做好一切准备') { type = store.state.horde.做好一切准备[split[1]].activeType; } if (type === 'combat' && elem > 0) { actives++; } } return [actives]; }$\",\"description\":\"$[]$\",\"formula\":\"$[formatInt(params[0])]$\",\"disabled\":\"$store.state.cryolab.horde.激活的卡片 || params[0] <= 0$\",\"trigger\":\"${ for (const [key, elem] of Object.entries(store.state.horde.items)) { if (elem.activeType === 'combat' && elem.cooldownLeft > 0) { store.commit('horde/updateItemKey', { name: key, key: 'cooldownLeft', value: 0 }); } } for (const [key, elem] of Object.entries(store.state.horde.skillActive)) { const split = key.split('_'); let type = null; if (split[0] === 'skill') { type = store.state.horde.fighterClass[store.state.horde.selectedClass].skills[split[1]].activeType; } else if (split[0] === '做好一切准备') { type = store.state.horde.做好一切准备[split[1]].activeType; } if (type === 'combat' && elem > 0) { store.commit('horde/updateSubkey', { name: 'skillActive', key, value: 0 }); } } store.dispatch('horde/resetStats'); }$\"}"
   }
 ]

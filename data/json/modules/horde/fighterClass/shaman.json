@@ -1,0 +1,72 @@
+[
+  {
+    "0": "",
+    "名称": "baseStats",
+    "攻击plus": "4.4",
+    "生命值plus": "575",
+    "mana": "150",
+    "manaRegen": "0.01",
+    "base": "",
+    "increment": "",
+    "stat": "",
+    "zone": "",
+    "level": "",
+    "boss": ""
+  },
+  {
+    "0": "",
+    "名称": "exp",
+    "攻击plus": "",
+    "生命值plus": "",
+    "mana": "",
+    "manaRegen": "",
+    "base": "4200",
+    "increment": "1.425",
+    "stat": "",
+    "zone": "",
+    "level": "",
+    "boss": ""
+  },
+  {
+    "0": "",
+    "名称": "skills",
+    "攻击plus": "",
+    "生命值plus": "",
+    "mana": "",
+    "manaRegen": "",
+    "base": "",
+    "increment": "",
+    "stat": "",
+    "zone": "",
+    "level": "",
+    "boss": ""
+  },
+  {
+    "0": "{\"isInnate\":true,\"level\":0,\"items\":[]}",
+    "名称": "skillTree",
+    "攻击plus": "",
+    "生命值plus": "",
+    "mana": "",
+    "manaRegen": "",
+    "base": "",
+    "increment": "",
+    "stat": "",
+    "zone": "",
+    "level": "",
+    "boss": ""
+  },
+  {
+    "0": "",
+    "名称": "quests",
+    "攻击plus": "",
+    "生命值plus": "",
+    "mana": "",
+    "manaRegen": "",
+    "base": "",
+    "increment": "",
+    "stat": "",
+    "zone": "",
+    "level": "",
+    "boss": ""
+  }
+]

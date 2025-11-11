@@ -1,44 +1,33 @@
 {
-    烛光: {
-        类型: 'theme',
-        item: '烛光',
+    theme_candlelight: {
+        type: 'theme',
+        item: 'candlelight',
         pool: {
-            cinders: {消耗: {煤渣代币: 170}}
+            cinders: {price: {煤渣代币: 170}}
         }
     },
     晶洞: {
-        类型: '圣遗物',
+        type: 'relic',
         item: '晶洞',
         pool: {
-            cinders: {消耗: {煤渣代币: 140}}
+            cinders: {price: {煤渣代币: 140}}
         }
     },
     生日蛋糕: {
-        类型: '圣遗物',
+        type: 'relic',
         item: '生日蛋糕',
         requirement() {
             return store.state.解锁.treasureFeature.see;
         },
         pool: {
-            cinders: {消耗: {煤渣代币: 180}}
+            cinders: {price: {煤渣代币: 180}}
         }
     },
     cardPack_sparksOfJoy: {
-        类型: '卡包',
+        type: '卡包',
         item: '欢乐的火花',
         pool: {
-            cinders: {消耗: {煤渣代币: 30}}
-        }
-    },
-    Sunshine: {
-        类型: 'consumable',
-        item: 'Sunshine',
-        amount: 20,
-        requirement() {
-            return store.state.解锁.肥料.see;
-        },
-        pool: {
-            cinders: {消耗: {煤渣代币: 1}}
+            cinders: {price: {煤渣代币: 30}}
         }
     }
 }

@@ -1,0 +1,247 @@
+[
+  {
+    "名称": "makeItPretty",
+    "tier": "1",
+    "拥有最多": "true",
+    "icon": "<i class=\"mdi mdi-image\"></i>",
+    "effect": "美丽增益*｛$lvl  \\cdot  0.4 + getSequence(1, lvl)  \\cdot  0.1 + 1$｝"
+  },
+  {
+    "名称": "stompBerries",
+    "tier": "1",
+    "拥有最多": "true",
+    "icon": "<i class=\"mdi mdi-fruit-grapes\"></i>",
+    "effect": "红色油漆增益*｛${(2)}^{lvl}$｝; 红色转换*｛${(2)}^{lvl}$｝; 美丽增益*｛${(0.5)}^{lvl / 2}$｝"
+  },
+  {
+    "名称": "carvePumpkins",
+    "tier": "1",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-halloween\"></i>",
+    "effect": "橙色油漆增益*｛${(2)}^{lvl}$｝; 橙色转换*｛${(2)}^{lvl}$｝; 红色油漆增益*｛${(0.5)}^{lvl / 2}$｝"
+  },
+  {
+    "名称": "sortWaste",
+    "tier": "1",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-delete-variant\"></i>",
+    "effect": "转换器增益*｛$getSequence(2, lvl)  \\cdot  0.25 + 1$｝"
+  },
+  {
+    "名称": "advertise",
+    "tier": "1",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-cash\"></i>",
+    "effect": "现金增益*｛$lvl  \\cdot  0.1 + 1$｝"
+  },
+  {
+    "名称": "beImpatient",
+    "tier": "1",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-run-fast\"></i>",
+    "effect": "包裹增益*｛$lvl  \\cdot  0.1 + 1$｝; 包裹容量*｛$lvl + 1$｝"
+  },
+  {
+    "名称": "beExcited",
+    "tier": "1",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-emoticon-excited\"></i>",
+    "effect": "动机增益+｛$lvl  \\cdot  0.001$｝; 动机容量+｛$lvl  \\cdot  70$｝"
+  },
+  {
+    "名称": "makeLemonade",
+    "tier": "2",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-fruit-citrus\"></i>",
+    "effect": "黄色油漆增益*｛${(2)}^{lvl}$｝; 黄色转换*｛${(2)}^{lvl}$｝; 橙色油漆增益*｛${(0.5)}^{lvl / 2}$｝"
+  },
+  {
+    "名称": "growATree",
+    "tier": "2",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-tree\"></i>",
+    "effect": "绿色油漆增益*｛${(2)}^{lvl}$｝; 绿色转换*｛${(2)}^{lvl}$｝; 黄色油漆增益*｛${(0.5)}^{lvl / 2}$｝"
+  },
+  {
+    "名称": "buildComposter",
+    "tier": "2",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-archive-sync\"></i>",
+    "effect": "转换器容量*｛$lvl  \\cdot  0.5 + 1$｝"
+  },
+  {
+    "名称": "observeRainbow",
+    "tier": "2",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-looks\"></i>",
+    "effect": "所有颜色增益*｛$lvl  \\cdot  0.12 + 1$｝"
+  },
+  {
+    "名称": "buildRedReservoir",
+    "tier": "2",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-hoop-house\"></i>",
+    "effect": "红色鼓容量*｛$lvl  \\cdot  0.4 + 1$｝"
+  },
+  {
+    "名称": "orderMassiveSafe",
+    "tier": "2",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-safe-square\"></i>",
+    "effect": "所有鼓上限+｛$lvl  \\cdot  3$｝; 画布速度*｛$1 - lvl / (lvl + 10)$｝"
+  },
+  {
+    "名称": "buyPen",
+    "tier": "2",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-pen\"></i>",
+    "effect": "形状增益*｛$lvl  \\cdot  0.12 + 1$｝"
+  },
+  {
+    "名称": "drawOcean",
+    "tier": "3",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-waves\"></i>",
+    "effect": "蓝色油漆增益*｛${(2)}^{lvl}$｝; 蓝色转换*｛${(2)}^{lvl}$｝; 绿色油漆增益*｛${(0.5)}^{lvl / 2}$｝"
+  },
+  {
+    "名称": "makeWine",
+    "tier": "3",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-bottle-wine\"></i>",
+    "effect": "紫色油漆增益*｛${(2)}^{lvl}$｝; 紫色转换*｛${(2)}^{lvl}$｝; 蓝色油漆增益*｛${(0.5)}^{lvl / 2}$｝"
+  },
+  {
+    "名称": "calculateOdds",
+    "tier": "3",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-strategy\"></i>",
+    "effect": "所有鼓几率*｛$lvl  \\cdot  0.1 + 1$｝"
+  },
+  {
+    "名称": "buildOrangeReservoir",
+    "tier": "3",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-hoop-house\"></i>",
+    "effect": "橙色鼓容量*｛$lvl  \\cdot  0.4 + 1$｝"
+  },
+  {
+    "名称": "thinkHarder",
+    "tier": "3",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-head-lightbulb\"></i>",
+    "effect": "+{0} 等级对于所有层级 1 想法tag｛$[lvl]$｝"
+  },
+  {
+    "名称": "paintFaster",
+    "tier": "3",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-brush\"></i>",
+    "effect": "画布速度*｛$lvl  \\cdot  0.25 + 1$｝"
+  },
+  {
+    "名称": "buyBrush",
+    "tier": "3",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-brush-variant\"></i>",
+    "effect": "特殊形状几率+｛$lvl  \\cdot  0.002$｝; 特殊形状乘数+｛$lvl  \\cdot  1.5$｝"
+  },
+  {
+    "名称": "harvestOranges",
+    "tier": "4",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-fruit-citrus\"></i>",
+    "effect": "currencyGalleryDeep-orangeGain*｛${(2)}^{lvl}$｝; 橙红转换*｛${(2)}^{lvl}$｝; 紫色油漆增益*｛${(0.5)}^{lvl / 2}$｝"
+  },
+  {
+    "名称": "pulverizeGold",
+    "tier": "4",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-shimmer\"></i>",
+    "effect": "金色油漆增益*｛${(2)}^{lvl}$｝; 金色转换*｛${(2)}^{lvl}$｝; currencyGalleryDeep-orangeGain*｛${(0.5)}^{lvl / 2}$｝"
+  },
+  {
+    "名称": "buildYellowReservoir",
+    "tier": "4",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-hoop-house\"></i>",
+    "effect": "黄色鼓容量*｛$lvl  \\cdot  0.4 + 1$｝"
+  },
+  {
+    "名称": "paintForFun",
+    "tier": "4",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-emoticon-happy\"></i>",
+    "effect": "美丽增益*｛${(4)}^{lvl}$｝; 现金增益*｛${(0.5)}^{lvl}$｝"
+  },
+  {
+    "名称": "printNewspaper",
+    "tier": "4",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-newspaper\"></i>",
+    "effect": "现金增益*｛$getSequence(2, lvl)  \\cdot  0.25 + 1$｝"
+  },
+  {
+    "名称": "expandCanvas",
+    "tier": "4",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-artboard\"></i>",
+    "effect": "画布大小+｛$lvl  \\cdot  3$｝"
+  },
+  {
+    "名称": "hyperfocus",
+    "tier": "4",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-image-filter-center-focus-strong-outline\"></i>",
+    "effect": "动机增益+｛$lvl  \\cdot  0.008$｝; 圆形增益*｛$lvl  \\cdot  0.24 + 1$｝"
+  },
+  {
+    "名称": "cutGrass",
+    "tier": "5",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-grass\"></i>",
+    "effect": "currencyGalleryLight-greenGain*｛${(2)}^{lvl}$｝; 浅绿色转换*｛${(2)}^{lvl}$｝; 金色油漆增益*｛${(0.5)}^{lvl / 2}$｝"
+  },
+  {
+    "名称": "shapeClay",
+    "tier": "5",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-pot\"></i>",
+    "effect": "青色油漆增益*｛${(2)}^{lvl}$｝; 青色转换*｛${(2)}^{lvl}$｝; currencyGalleryLight-greenGain*｛${(0.5)}^{lvl / 2}$｝"
+  },
+  {
+    "名称": "buildGreenReservoir",
+    "tier": "5",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-hoop-house\"></i>",
+    "effect": "绿色鼓容量*｛$lvl  \\cdot  0.4 + 1$｝"
+  },
+  {
+    "名称": "beMysterious",
+    "tier": "5",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-wizard-hat\"></i>",
+    "effect": "神秘形状增益+｛$lvl$｝"
+  },
+  {
+    "名称": "lookAtTheSky",
+    "tier": "6",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-clouds\"></i>",
+    "effect": "currencyGalleryLight-blueGain*｛${(2)}^{lvl}$｝; 浅蓝色转换*｛${(2)}^{lvl}$｝; 青色油漆增益*｛${(0.5)}^{lvl / 2}$｝"
+  },
+  {
+    "名称": "chewBubblegum",
+    "tier": "6",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-dots-circle\"></i>",
+    "effect": "粉红色油漆增益*｛${(2)}^{lvl}$｝; 粉色转换*｛${(2)}^{lvl}$｝; currencyGalleryLight-blueGain*｛${(0.5)}^{lvl / 2}$｝"
+  },
+  {
+    "名称": "buildBlueReservoir",
+    "tier": "6",
+    "拥有最多": "",
+    "icon": "<i class=\"mdi mdi-hoop-house\"></i>",
+    "effect": "蓝色鼓容量*｛$lvl  \\cdot  0.4 + 1$｝"
+  }
+]

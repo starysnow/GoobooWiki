@@ -1,16 +1,18 @@
-名称,value,default,milestones,上限,圣遗物
-maxDepth0,$store.state.stat.mining_maxDepth0.总计$,1,$lvl  \cdot  25 + 25$,,
-maxDepth1,$store.state.stat.mining_maxDepth1.总计$,1,$lvl  \cdot  10 + 10$,,
-maxDepthSpeedrun,$store.state.stat.mining_maxDepthSpeedrun.总计$,1,$lvl > 0 ? lvl  \cdot  10 + 10 : 15$,10,"{""1"":""雷达"",""2"":""报刊"",""3"":""橱柜"",""5"":""青铜镐"",""9"":""洗衣机""}"
-totalDamage,$store.state.stat.mining_totalDamage.总计$,,${(200K)}^{lvl}  \cdot  10M$,,"{""6"":""打开的礼物""}"
-maxDamage,$store.state.stat.mining_maxDamage.总计$,,${(200K)}^{lvl}  \cdot  10K$,,"{""3"":""炸弹""}"
-废料,$store.state.stat.废料.总计$,,${(8000)}^{lvl}  \cdot  5M$,,"{""3"":""跳绳"",""4"":""矿石架""}"
-oreTotal,"$[store.state.stat.铝矿石.总计, store.state.stat.铜矿石.总计, store.state.stat.锡矿石.总计, store.state.stat.铁矿石.总计, store.state.stat.钛矿石.总计, store.state.stat.铂矿石.总计, store.state.stat.铱矿石.总计, store.state.stat.锇矿石.总计, store.state.stat.铅矿石.总计].reduce((a, b) => a + b, 0)$",,${(10)}^{lvl}  \cdot  100$,,"{""2"":""铝砖"",""3"":""铜砖"",""4"":""铝堆"",""5"":""铜镐"",""6"":""锡桶""}"
-oreVariety,"$[store.state.stat.铝矿石.总计, store.state.stat.铜矿石.总计, store.state.stat.锡矿石.总计, store.state.stat.铁矿石.总计, store.state.stat.钛矿石.总计, store.state.stat.铂矿石.总计, store.state.stat.铱矿石.总计, store.state.stat.锇矿石.总计, store.state.stat.铅矿石.总计].reduce((a, b) => a + (b > 0 ? 1 : 0), 0)$",,$lvl + 2$,,"{""1"":""铜堆"",""2"":""催化剂"",""3"":""磁铁""}"
-depthDwellerCap0,$store.state.stat.mining_depthDwellerCap0.总计$,,$lvl  \cdot  10 + (lvl === 0 ? 5 : 0)$,30,"{""0"":""锤子""}"
-depthDwellerCap1,$store.state.stat.mining_depthDwellerCap1.总计$,,$lvl  \cdot  10 + (lvl === 0 ? 5 : 0)$,,
-煤,$store.state.stat.煤.总计$,,${(2.5)}^{lvl}  \cdot  100$,,"{""2"":""煤砖""}"
-树脂,$store.state.stat.树脂.总计$,,${(2)}^{lvl}  \cdot  50$,,"{""3"":""一罐蜂蜜""}"
-craftingWasted,$store.state.stat.mining_craftingWasted.总计$,,$1$,1,
-dwellerCapHit,$store.state.stat.mining_dwellerCapHit.总计$,,$1$,1,
-craftingLuck,$store.state.stat.mining_craftingLuck.总计$,1,$1M$,1,
+名称,value,default,milestones,cap,reward,descriptionCustom,relic,secret
+这很深,$store.state.stat.这很深.total$,1,$lvl  \cdot  25 + 25$,,,,,
+深入挖掘,$store.state.stat.深入挖掘.total$,1,$lvl > 0 ? lvl  \cdot  20 : 10$,,,,,
+深渊,$store.state.stat.深渊.total$,1,$lvl > 0 ? lvl  \cdot  10 + 10 : 15$,10,"{""1"":[{""name"":""深度居民"",""type"":""保留"",""value"":true}],""2"":[{""name"":""压缩机"",""type"":""保留"",""value"":true}],""3"":[{""name"":""矿石槽位"",""type"":""保留"",""value"":true}],""5"":[{""name"":""花岗岩硬化"",""type"":""保留"",""value"":true}],""9"":[{""name"":""矿石洗选"",""type"":""保留"",""value"":true}]}",,,
+威猛,$store.state.stat.威猛.total$,,${(80K)}^{lvl}  \cdot  10K$,,"{""3"":[{""name"":""破壳者"",""type"":""保留"",""value"":true}],""6"":[{""name"":""青铜存储"",""type"":""保留"",""value"":true}]}",,,
+废料,$store.state.stat.废料.total$,,${(8000)}^{lvl}  \cdot  5M$,,"{""3"":[{""name"":""铝扩张"",""type"":""保留"",""value"":true},{""name"":""铜扩张"",""type"":""保留"",""value"":true}],""4"":[{""name"":""锡存储"",""type"":""保留"",""value"":true}]}",,,
+更多矿石,"$[store.state.stat.铝矿石.total, store.state.stat.铜矿石.total, store.state.stat.锡矿石.total, store.state.stat.铁矿石.total, store.state.stat.钛矿石.total, store.state.stat.铂矿石.total, store.state.stat.铱矿石.total, store.state.stat.锇矿石.total, store.state.stat.铅矿石.total].reduce((a, b) => a + b, 0)$",,${(10)}^{lvl}  \cdot  100$,,"{""2"":[{""name"":""铝存储"",""type"":""保留"",""value"":true},{""name"":""铝淬火"",""type"":""保留"",""value"":true}],""3"":[{""name"":""铜存储"",""type"":""保留"",""value"":true}],""4"":[{""name"":""铝罐"",""type"":""保留"",""value"":true},{""name"":""铝砧"",""type"":""保留"",""value"":true}],""5"":[{""name"":""磁铁"",""type"":""保留"",""value"":true},{""name"":""仓库"",""type"":""保留"",""value"":true}],""6"":[{""name"":""钛扩张"",""type"":""保留"",""value"":true},{""name"":""钛存储"",""type"":""保留"",""value"":true}]}",,,
+oreVariety,"$[store.state.stat.铝矿石.total, store.state.stat.铜矿石.total, store.state.stat.锡矿石.total, store.state.stat.铁矿石.total, store.state.stat.钛矿石.total, store.state.stat.铂矿石.total, store.state.stat.铱矿石.total, store.state.stat.锇矿石.total, store.state.stat.铅矿石.total, store.state.stat.花岗岩.total, store.state.stat.盐.total, store.state.stat.煤.total, store.state.stat.硫.total, store.state.stat.硝.total, store.state.stat.黑曜石.total, store.state.stat.深岩.total, store.state.stat.辉光碎片.total, store.state.stat.石灰岩.total, store.state.stat.月之碎片.total, store.state.stat.磷.total, store.state.stat.氦.total, store.state.stat.氖.total, store.state.stat.氩.total, store.state.stat.氪.total, store.state.stat.氙.total, store.state.stat.氡.total].reduce((a, b) => a + (b > 0 ? 1 : 0), 0)$",,"$splicedLinear(1, 2, 8, lvl) + 2$",,"{""1"":[{""name"":""铜罐"",""type"":""保留"",""value"":true}],""3"":[{""name"":""精炼厂"",""type"":""保留"",""value"":true}],""5"":[{""name"":""铁扩张"",""type"":""保留"",""value"":true},{""name"":""铁淬火"",""type"":""保留"",""value"":true},{""name"":""铁过滤器"",""type"":""保留"",""value"":true}]}",$store.state.解锁.miningGasSubfeature.see ? 2 : store.state.stat.这很深.total >= 50 ? 1 : 0$,,
+垂直向下钻,$store.state.stat.垂直向下钻.total$,,$lvl  \cdot  10 + (lvl === 0 ? 5 : 0)$,10,"{""0"":[{""name"":""制作站"",""type"":""保留"",""value"":true}],""9"":[{""name"":""钻机燃料"",""type"":""保留"",""value"":true}]}",,,
+无火花,$store.state.stat.无火花.total$,,$lvl  \cdot  10 + (lvl === 0 ? 5 : 0)$,10,,,,
+煤,$store.state.stat.煤.total$,,${(2.5)}^{lvl}  \cdot  100$,,"{""2"":[{""name"":""熔炉"",""type"":""保留"",""value"":true}]}",,,
+准备好了,$store.state.stat.准备好了.total$,,$(lvl + 1)  \cdot  2$,5,,,,
+树脂,$store.state.stat.树脂.total$,,${(2)}^{lvl}  \cdot  50$,,,,"{""3"":""蜂蜜罐""}",
+急性子,"$[store.state.stat.mining_heliumMax.total, store.state.stat.mining_neonMax.total, store.state.stat.mining_argonMax.total, store.state.stat.mining_kryptonMax.total, store.state.stat.mining_xenonMax.total, store.state.stat.mining_radonMax.total].reduce((a, b) => a + (b < 1 ? 0 : \text{向下取整}(Math.log10(b))), 0)$",,$(lvl + 1)  \cdot  4$,,,,,
+烟雾,$store.state.stat.mining_smokeMax.total$,,${(64)}^{lvl}  \cdot  100$,,,,,
+浪费了,$store.state.stat.浪费了.total$,,$1$,1,,,,true
+谷底,$store.state.stat.谷底.total$,,$1$,1,,,,true
+百万分之一,$store.state.stat.百万分之一.total$,1,$1M$,1,,,,true

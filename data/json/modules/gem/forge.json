@@ -1,0 +1,74 @@
+[
+  {
+    "名称": "钻石镐",
+    "relic": "钻石镐",
+    "price": "50",
+    "type": "",
+    "upgradeLevel": "",
+    "condition": ""
+  },
+  {
+    "名称": "钻石锤",
+    "relic": "钻石锤",
+    "price": "50",
+    "type": "",
+    "upgradeLevel": "",
+    "condition": ""
+  },
+  {
+    "名称": "钻石剑",
+    "relic": "钻石剑",
+    "price": "50",
+    "type": "",
+    "upgradeLevel": "",
+    "condition": ""
+  },
+  {
+    "名称": "钻石铲",
+    "relic": "钻石铲",
+    "price": "50",
+    "type": "",
+    "upgradeLevel": "",
+    "condition": ""
+  },
+  {
+    "名称": "钻石刷子",
+    "relic": "钻石刷子",
+    "price": "50",
+    "type": "",
+    "upgradeLevel": "",
+    "condition": ""
+  },
+  {
+    "名称": "redCard_1",
+    "relic": "红牌",
+    "price": "10",
+    "type": "upgrade",
+    "upgradeLevel": "1",
+    "condition": ""
+  },
+  {
+    "名称": "briefcase_1",
+    "relic": "公文包",
+    "price": "35",
+    "type": "upgrade",
+    "upgradeLevel": "1",
+    "condition": ""
+  },
+  {
+    "名称": "diamondPillar_0",
+    "relic": "钻石柱子",
+    "price": "40",
+    "type": "",
+    "upgradeLevel": "",
+    "condition": ""
+  },
+  {
+    "名称": "diamondPillar_1",
+    "relic": "钻石柱子",
+    "price": "100",
+    "type": "upgrade",
+    "upgradeLevel": "1",
+    "condition": "$store.getters[' \\cdot /get']('底座尺寸 (A)') >= 2$"
+  }
+]

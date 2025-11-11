@@ -1,16 +1,18 @@
-名称,图标,效果,minZone
-力量,"<i class=""mdi mdi-sword""></i>",攻击*｛$lvl  \cdot  0.2 + 1$｝,
-fortitude,"<i class=""mdi mdi-heart""></i>",生命值*｛$lvl  \cdot  0.2 + 1$｝,
-wealth,"<i class=""mdi mdi-circle-multiple""></i>",骨头增益*｛$lvl  \cdot  0.15 + 1$｝; 怪物零件增益*｛$lvl  \cdot  0.05 + 1$｝,
-spirit,"<i class=""mdi mdi-ghost""></i>",腐败的灵魂增益*｛$lvl  \cdot  0.06 + 1$｝,40
-sharpsight,"<i class=""mdi mdi-magnify""></i>",装备几率*｛$lvl  \cdot  0.05 + 1$｝,50
-reaping,"<i class=""mdi mdi-skull""></i>",腐烂的肉体增益+｛$lvl  \cdot  0.03$｝,60
-remembrance,"<i class=""mdi mdi-grave-stone""></i>",腐败的灵魂容量*｛$lvl  \cdot  0.05 + 1$｝,70
-holding,"<i class=""mdi mdi-dresser""></i>",骨头容量*｛$lvl  \cdot  0.1 + 1$｝; 怪物零件容量*｛$lvl  \cdot  0.02 + 1$｝,80
+名称,icon,effect,minZone
+最高力量,"<i class=""mdi mdi-sword""></i>",攻击*｛$lvl  \cdot  0.1 + 1$｝,
+fortitude,"<i class=""mdi mdi-heart""></i>",生命值*｛$lvl  \cdot  0.1 + 1$｝,40
+wealth,"<i class=""mdi mdi-circle-multiple""></i>",骨头增益*｛$lvl  \cdot  0.1 + 1$｝,50
+spirit,"<i class=""mdi mdi-ghost""></i>",腐败的灵魂增益*｛$lvl  \cdot  0.03 + 1$｝,60
+sharpsight,"<i class=""mdi mdi-magnify""></i>",装备几率*｛$lvl  \cdot  0.05 + 1$｝,70
+reaping,"<i class=""mdi mdi-skull""></i>",腐烂的肉体增益*｛$lvl  \cdot  0.01 + 1$｝,80
+remembrance,"<i class=""mdi mdi-grave-stone""></i>",腐败的灵魂容量*｛$lvl  \cdot  0.03 + 1$｝,90
 expertise,"<i class=""mdi mdi-book-open-variant""></i>",精通点数增益*｛$lvl  \cdot  0.01 + 1$｝,100
-神秘,"<i class=""mdi mdi-help-box""></i>",神秘碎片几率*｛$lvl  \cdot  0.001 + 1$｝,120
-砖块,"<i class=""mdi mdi-wall""></i>",骨头增益*｛$lvl  \cdot  0.05 + 1$｝; 暴击伤害+｛$({(lvl / 10 + 1)}^{0.4} - 1)  \cdot  0.01$｝,Infinity
-heat,"<i class=""mdi mdi-fire""></i>",攻击*｛$lvl  \cdot  0.05 + 1$｝; 暴击率+｛$Math.log(lvl / 10 + 1)  \cdot  0.008$｝,Infinity
-ice,"<i class=""mdi mdi-snowflake-variant""></i>",生命值*｛$lvl  \cdot  0.05 + 1$｝; 恢复+｛$Math.log(lvl / 10 + 1)  \cdot  0.003$｝,Infinity
-crystal,"<i class=""mdi mdi-billiards-rack""></i>",神秘碎片几率*｛$lvl  \cdot  0.001 + 1$｝; 神秘碎片容量+｛$\text{向下取整}(Math.log(lvl + 2))$｝,Infinity
-活力,"<i class=""mdi mdi-heart-multiple""></i>",骨头容量*｛$lvl  \cdot  0.001 + 1$｝; 治疗*｛$Math.log(lvl + 1)  \cdot  0.1 + 1$｝,Infinity
+holding,"<i class=""mdi mdi-dresser""></i>",骨头容量*｛$lvl  \cdot  0.02 + 1$｝,110
+mystery,"<i class=""mdi mdi-help-box""></i>",神秘碎片几率*｛$lvl  \cdot  0.001 + 1$｝,120
+freezing,"<i class=""mdi mdi-fridge""></i>",怪物零件容量*｛$lvl  \cdot  0.001 + 1$｝,130
+brick,"<i class=""mdi mdi-wall""></i>",骨头增益*｛$lvl  \cdot  0.01 + 1$｝,Infinity
+热量,"<i class=""mdi mdi-fire""></i>",攻击*｛$lvl  \cdot  0.01 + 1$｝,Infinity
+ice,"<i class=""mdi mdi-snowflake-variant""></i>",生命值*｛$lvl  \cdot  0.01 + 1$｝,Infinity
+crystal,"<i class=""mdi mdi-billiards-rack""></i>",神秘碎片几率*｛$lvl  \cdot  0.001 + 1$｝,Infinity
+vitality,"<i class=""mdi mdi-heart-multiple""></i>",骨头容量*｛$lvl  \cdot  0.001 + 1$｝,Infinity
+nature,"<i class=""mdi mdi-leaf""></i>",精通点数增益*｛$lvl  \cdot  0.001 + 1$｝,Infinity

@@ -1,0 +1,6 @@
+名称,攻击plus,生命值plus,mana,manaRegen,base,increment,0,stat,zone,level,boss
+baseStats,4.4,575,150,0.01,,,,,,,
+exp,,,,,4200,1.425,,,,,
+skills,,,,,,,,,,,
+skillTree,,,,,,,"{""isInnate"":true,""level"":0,""items"":[]}",,,,
+quests,,,,,,,,,,,

@@ -1,121 +1,121 @@
 {
-    加时赛: {类型: '高级', 消耗(lvl) {
-        return {红宝石: fallbackArray([70], [2, 3][(lvl - 1) % 2] * Math.pow(2, Math.floor((lvl - 1) / 2)) * 100, lvl)};
-    }, 效果: [
-        {name: '材料增益', 类型: '*', value: lvl => fallbackArray([1, 1.1], Math.pow(1.25, lvl - 1), lvl)}
+    加时赛: {type: '优质肥料', price(lvl) {
+        return {gem_ruby: fallbackArray([70], [2, 3][(lvl - 1) % 2] * Math.pow(2, Math.floor((lvl - 1) / 2)) * 100, lvl)};
+    }, effect: [
+        {name: '材料增益', type: '*', value: lvl => fallbackArray([1, 1.1], Math.pow(1.25, lvl - 1), lvl)}
     ]},
-    黄金王座: {类型: '高级', requirement() {
-        return store.state.stat.金币.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: fallbackArray([30], [2, 3][(lvl - 1) % 2] * Math.pow(2, Math.floor((lvl - 1) / 2)) * 60, lvl)};
-    }, 效果: [
-        {name: '金币增益', 类型: '*', value: lvl => fallbackArray([1, 1.5], getSequence(2, lvl - 1) * 0.5 + 1, lvl)}
+    黄金王座: {type: '优质肥料', requirement() {
+        return store.state.stat.金币.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: fallbackArray([30], [2, 3][(lvl - 1) % 2] * Math.pow(2, Math.floor((lvl - 1) / 2)) * 60, lvl)};
+    }, effect: [
+        {name: '金币增益', type: '*', value: lvl => fallbackArray([1, 1.5], getSequence(2, lvl - 1) * 0.5 + 1, lvl)}
     ]},
-    更快的建造: {类型: '高级', 消耗(lvl) {
-        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 75};
-    }, 效果: [
-        {name: '建造速度', 类型: '*', value: lvl => lvl + 1}
+    更快的建造: {type: '优质肥料', price(lvl) {
+        return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 75};
+    }, effect: [
+        {name: '建造速度', type: '*', value: lvl => lvl + 1}
     ]},
-    更多信仰: {类型: '高级', requirement() {
-        return store.state.stat.信仰.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 80};
-    }, 效果: [
-        {name: '信仰增益', 类型: '*', value: lvl => lvl * 0.25 + 1},
-        {name: '信仰容量', 类型: '*', value: lvl => lvl * 0.25 + 1}
+    更多信仰: {type: '优质肥料', requirement() {
+        return store.state.stat.信仰.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 80};
+    }, effect: [
+        {name: '信仰增益', type: '*', value: lvl => lvl * 0.25 + 1},
+        {name: '信仰容量', type: '*', value: lvl => lvl * 0.25 + 1}
     ]},
-    更多植物纤维: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.植物纤维.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 275};
-    }, 效果: [
-        {name: '植物纤维增益', 类型: '*', value: lvl => Math.pow(1.75, lvl)},
-        {name: '植物纤维容量', 类型: '*', value: lvl => lvl * 0.1 + 1}
+    更多植物纤维: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumResource', requirement() {
+        return store.state.stat.植物纤维.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 275};
+    }, effect: [
+        {name: '植物纤维增益', type: '*', value: lvl => Math.pow(1.75, lvl)},
+        {name: '植物纤维容量', type: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    更多木头: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.木头.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 275};
-    }, 效果: [
-        {name: '木头增益', 类型: '*', value: lvl => Math.pow(1.75, lvl)},
-        {name: '木头容量', 类型: '*', value: lvl => lvl * 0.1 + 1}
+    更多木头: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumResource', requirement() {
+        return store.state.stat.木头.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 275};
+    }, effect: [
+        {name: '木头增益', type: '*', value: lvl => Math.pow(1.75, lvl)},
+        {name: '木头容量', type: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    更多石头: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.石头.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 275};
-    }, 效果: [
-        {name: '石头增益', 类型: '*', value: lvl => Math.pow(1.75, lvl)},
-        {name: '石头容量', 类型: '*', value: lvl => lvl * 0.1 + 1}
+    更多石头: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumResource', requirement() {
+        return store.state.stat.石头.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 275};
+    }, effect: [
+        {name: '石头增益', type: '*', value: lvl => Math.pow(1.75, lvl)},
+        {name: '石头容量', type: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    更多金属: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.金属.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 375};
-    }, 效果: [
-        {name: '金属增益', 类型: '*', value: lvl => Math.pow(1.75, lvl)},
-        {name: '金属容量', 类型: '*', value: lvl => lvl * 0.1 + 1}
+    更多金属: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumResource', requirement() {
+        return store.state.stat.金属.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 375};
+    }, effect: [
+        {name: '金属增益', type: '*', value: lvl => Math.pow(1.75, lvl)},
+        {name: '金属容量', type: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    更多水: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.水.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 450};
-    }, 效果: [
-        {name: '水增益', 类型: '*', value: lvl => Math.pow(1.75, lvl)},
-        {name: '水容量', 类型: '*', value: lvl => lvl * 0.1 + 1}
+    更多水: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumResource', requirement() {
+        return store.state.stat.水.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 450};
+    }, effect: [
+        {name: '水增益', type: '*', value: lvl => Math.pow(1.75, lvl)},
+        {name: '水容量', type: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    更多玻璃: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.玻璃.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 600};
-    }, 效果: [
-        {name: '玻璃增益', 类型: '*', value: lvl => Math.pow(1.75, lvl)},
-        {name: '玻璃容量', 类型: '*', value: lvl => lvl * 0.1 + 1}
+    更多玻璃: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumResource', requirement() {
+        return store.state.stat.玻璃.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 600};
+    }, effect: [
+        {name: '玻璃增益', type: '*', value: lvl => Math.pow(1.75, lvl)},
+        {name: '玻璃容量', type: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    更多硬木: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.硬木.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 900};
-    }, 效果: [
-        {name: '硬木增益', 类型: '*', value: lvl => Math.pow(1.75, lvl)},
-        {name: '硬木容量', 类型: '*', value: lvl => lvl * 0.1 + 1}
+    更多硬木: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumResource', requirement() {
+        return store.state.stat.硬木.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 900};
+    }, effect: [
+        {name: '硬木增益', type: '*', value: lvl => Math.pow(1.75, lvl)},
+        {name: '硬木容量', type: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    更多宝石: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.宝石.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 900};
-    }, 效果: [
-        {name: '宝石增益', 类型: '*', value: lvl => Math.pow(1.75, lvl)},
-        {name: '宝石容量', 类型: '*', value: lvl => lvl * 0.1 + 1}
+    更多宝石: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumResource', requirement() {
+        return store.state.stat.宝石.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 900};
+    }, effect: [
+        {name: '宝石增益', type: '*', value: lvl => Math.pow(1.75, lvl)},
+        {name: '宝石容量', type: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    更多知识: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.知识.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 675};
-    }, 效果: [
-        {name: '知识增益', 类型: '*', value: lvl => Math.pow(1.75, lvl)}
+    更多知识: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumResource', requirement() {
+        return store.state.stat.知识.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 675};
+    }, effect: [
+        {name: '知识增益', type: '*', value: lvl => Math.pow(1.75, lvl)}
     ]},
-    更多科学: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.科学.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 1300};
-    }, 效果: [
-        {name: '科学增益', 类型: '*', value: lvl => Math.pow(1.75, lvl)}
+    更多科学: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumResource', requirement() {
+        return store.state.stat.科学.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 1300};
+    }, effect: [
+        {name: '科学增益', type: '*', value: lvl => Math.pow(1.75, lvl)}
     ]},
-    更多油: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.油.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 1800};
-    }, 效果: [
-        {name: '油增益', 类型: '*', value: lvl => Math.pow(1.75, lvl)},
-        {name: '油容量', 类型: '*', value: lvl => lvl * 0.1 + 1}
+    更多油: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumResource', requirement() {
+        return store.state.stat.油.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 1800};
+    }, effect: [
+        {name: '油增益', type: '*', value: lvl => Math.pow(1.75, lvl)},
+        {name: '油容量', type: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    更多大理石: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.大理石.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 2250};
-    }, 效果: [
-        {name: '大理石增益', 类型: '*', value: lvl => Math.pow(1.75, lvl)},
-        {name: '大理石容量', 类型: '*', value: lvl => lvl * 0.1 + 1}
+    更多大理石: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumResource', requirement() {
+        return store.state.stat.大理石.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 2250};
+    }, effect: [
+        {name: '大理石增益', type: '*', value: lvl => Math.pow(1.75, lvl)},
+        {name: '大理石容量', type: '*', value: lvl => lvl * 0.1 + 1}
     ]},
 }

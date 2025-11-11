@@ -1,0 +1,9 @@
+[
+  {
+    "名称": "笔记本",
+    "icon": "<i class=\"mdi mdi-notebook\"></i>",
+    "effect": "$[{ name: '金尘容量', type: '+', value: 2000 }]$",
+    "glyph": "${ 书籍: 3 }$",
+    "激活的卡片": "{\"cost\":{\"最高力量\":3},\"params\":\"$[1000, 5000]$\",\"description\":\"$[formatInt(params[option ? 1 : 0])]$\",\"formula\":\"$[formatInt(params[0]), formatInt(params[1])]$\",\"disabled\":\"$option && store.state.currency.考试通过.value < 1$\",\"trigger\":\"${ if (option) { if (store.state.currency.考试通过.value >= 1) { store.dispatch('currency/spend', { feature: '学校', name: '考试通过', amount: 1 }, { root: true }); store.dispatch('currency/gain', { feature: '学校', name: '金尘', amount: \\\\text{四舍五入}(SCHOOL_EXAM_DUST_MIN  \\\\cdot  store.getters['学校/dustMult']) }, { root: true }); store.commit('stat/add', { feature: '学校', name: 'totalPoints', value: params[1] }, { root: true }); } } else { store.commit('stat/add', { feature: '学校', name: 'totalPoints', value: params[0] }, { root: true }); } }$\"}"
+  }
+]

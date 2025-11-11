@@ -1,47 +1,36 @@
 {
-    秋天的森林: {
-        类型: 'theme',
-        item: '秋天的森林',
+    theme_autumnForest: {
+        type: 'theme',
+        item: 'autumnForest',
         pool: {
-            nightHunt: {消耗: {夜间狩猎代币: 200}}
+            nightHunt: {price: {夜间狩猎代币: 200}}
         }
     },
-    块状颗粒: {
-        类型: '圣遗物',
-        item: '块状颗粒',
+    大量谷物: {
+        type: 'relic',
+        item: '大量谷物',
         requirement() {
             return store.state.解锁.farmFeature.see;
         },
         pool: {
-            nightHunt: {消耗: {夜间狩猎代币: 170}}
+            nightHunt: {price: {夜间狩猎代币: 170}}
         }
     },
-    魔法瓶: {
-        类型: '圣遗物',
-        item: '魔法瓶',
+    附魔瓶: {
+        type: 'relic',
+        item: '附魔瓶',
         requirement() {
             return store.state.解锁.树脂.see;
         },
         pool: {
-            nightHunt: {消耗: {夜间狩猎代币: 175}}
+            nightHunt: {price: {夜间狩猎代币: 175}}
         }
     },
     cardPack_midnightAnomaly: {
-        类型: '卡包',
+        type: '卡包',
         item: '午夜异常',
         pool: {
-            nightHunt: {消耗: {夜间狩猎代币: 30}}
-        }
-    },
-    田野祝福: {
-        类型: 'consumable',
-        item: '田野祝福',
-        amount: 20,
-        requirement() {
-            return store.state.解锁.肥料.see;
-        },
-        pool: {
-            nightHunt: {消耗: {夜间狩猎代币: 1}}
+            nightHunt: {price: {夜间狩猎代币: 30}}
         }
     }
 }

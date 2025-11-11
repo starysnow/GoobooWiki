@@ -1,0 +1,25 @@
+{
+    钻石镐: {icon: 'mdi-pickaxe', feature: ['宝石', 'mining'], color: 'cyan', effect() {return [
+        {name: '高级矿石最高等级', type: '+', value: 1},
+        {name: '伤害', type: '*', value: 1.5},
+    ];}, glyph() {return {灰尘: 6};}},
+    钻石锤: {icon: 'mdi-hammer', feature: ['宝石', 'village'], color: 'cyan', effect() {return [
+        {name: '高级资源最大等级', type: '+', value: 1},
+        {name: '建造速度', type: '*', value: 1.5},
+    ];}, glyph() {return {木头: 6};}},
+    钻石剑: {icon: 'mdi-sword', feature: ['宝石', 'horde'], color: 'cyan', effect() {return [
+        {name: '上古传家宝最大等级', type: '+', value: 1},
+        {name: '攻击', type: '*', value: 1.35},
+        {name: '生命值', type: '*', value: 1.35},
+    ];}, glyph() {return {尖刺: 6};}},
+    钻石铲: {icon: 'mdi-shovel', feature: ['宝石', '农场'], color: 'cyan', effect() {return [
+        {name: '产出', type: '*', value: 1.5},
+    ];}, glyph() {return {云: 6};}},
+    钻石刷子: {icon: 'mdi-brush', feature: ['宝石', 'gallery'], color: 'cyan', effect() {return [
+        {name: '高级颜色最大等级', type: '+', value: 1},
+        {name: '美丽增益', type: '*', value: 2.5},
+    ];}, glyph() {return {开花: 6};}},
+    钻石柱子: {icon: 'mdi-pillar', feature: ['宝石', 'relic'], color: 'cyan', effect(lvl) {return [
+        {name: '底座尺寸 (B)', type: '+', value: lvl}
+    ];}, glyph() {return {石头: 6};}},
+}

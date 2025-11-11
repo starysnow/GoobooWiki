@@ -1,4 +1,4 @@
-名称,力量,杂质,minDepth,maxDepth,modulo,baseAmount,amountMult
+名称,最高力量,impurity,minDepth,maxDepth,modulo,baseAmount,amountMult
 铝矿石,15,1.5,15,45,3,0.02,1.05
 铜矿石,50,2,30,68,4,0.004,1.05
 锡矿石,240,2.5,50,100,5,0.0008,1.05

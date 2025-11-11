@@ -1,58 +1,59 @@
 {
-    书籍: 钱包: {类型: '书籍', raiseOtherCap: '钱包', requirement() {
-        return store.state.升级成本.item.钱包.highestLevel >= 12;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 10)};
-    }, 效果: [
-        {name: 'upgradeVillageWalletCap', 类型: '+', value: lvl => lvl * 2}
+    coinCap: {subfeature: 0, scalesWithGL: true, minGL: 25, maxGL: 124, effect: [
+        {name: '金币容量', type: '+', value: lvl => lvl * 50}
     ]},
-    书籍: 资源袋: {类型: '书籍', raiseOtherCap: '资源包', requirement() {
-        return store.state.升级成本.item.资源包.highestLevel >= 10;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 15)};
-    }, 效果: [
-        {name: 'upgradeVillageResourceBagCap', 类型: '+', value: lvl => lvl * 2}
+    plantFiberCap: {subfeature: 0, scalesWithGL: true, minGL: 40, maxGL: 139, effect: [
+        {name: '植物纤维容量', type: '*', value: lvl => lvl * 0.02 + 1}
     ]},
-    书籍: 金属袋: {类型: '书籍', raiseOtherCap: '金属包', requirement() {
-        return store.state.升级成本.item.金属包.highestLevel >= 5;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 16)};
-    }, 效果: [
-        {name: 'upgradeVillageMetalBagCap', 类型: '+', value: lvl => lvl}
+    woodCap: {subfeature: 0, scalesWithGL: true, minGL: 40, maxGL: 139, effect: [
+        {name: '木头容量', type: '*', value: lvl => lvl * 0.02 + 1}
     ]},
-    书籍: 财政部: {类型: '书籍', raiseOtherCap: '财政部', requirement() {
-        return store.state.升级成本.item.财政部.highestLevel >= 10;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 30)};
-    }, 效果: [
-        {name: 'upgradeVillageTreasuryCap', 类型: '+', value: lvl => lvl}
+    stoneCap: {subfeature: 0, scalesWithGL: true, minGL: 40, maxGL: 139, effect: [
+        {name: '石头容量', type: '*', value: lvl => lvl * 0.02 + 1}
     ]},
-    书籍: 存储: {类型: '书籍', raiseOtherCap: '存储', requirement() {
-        return store.state.升级成本.item.存储.highestLevel >= 20;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 90)};
-    }, 效果: [
-        {name: 'upgradeVillageStorageCap', 类型: '+', value: lvl => lvl}
+    metalCap: {subfeature: 0, scalesWithGL: true, minGL: 50, maxGL: 149, effect: [
+        {name: '金属容量', type: '*', value: lvl => lvl * 0.02 + 1}
     ]},
-    书籍: 棚子: {类型: '书籍', raiseOtherCap: '棚子', requirement() {
-        return store.state.升级成本.item.棚子.highestLevel >= 5;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 110)};
-    }, 效果: [
-        {name: 'upgradeVillageShedCap', 类型: '+', value: lvl => lvl}
+    taxRate: {subfeature: 0, scalesWithGL: true, minGL: 60, maxGL: 109, effect: [
+        {name: '税率', type: '+', value: lvl => lvl * 0.004}
     ]},
-    书籍: 学校: {类型: '书籍', raiseOtherCap: '学校', requirement() {
-        return store.state.升级成本.item.学校.highestLevel >= 5;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 180)};
-    }, 效果: [
-        {name: 'upgradeVillageSchoolCap', 类型: '+', value: lvl => lvl}
+    waterCap: {subfeature: 0, scalesWithGL: true, minGL: 80, maxGL: 179, effect: [
+        {name: '水容量', type: '*', value: lvl => lvl * 0.04 + 1}
     ]},
-    书籍: 大存储空间: {类型: '书籍', raiseOtherCap: '大存储空间', requirement() {
-        return store.state.升级成本.item.大存储空间.highestLevel >= 20;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 480)};
-    }, 效果: [
-        {name: 'upgradeVillageBigStorageCap', 类型: '+', value: lvl => lvl}
+    glassCap: {subfeature: 0, scalesWithGL: true, minGL: 90, maxGL: 189, effect: [
+        {name: '玻璃容量', type: '*', value: lvl => lvl * 0.01 + 1}
+    ]},
+    knowledgeCap: {subfeature: 0, scalesWithGL: true, minGL: 100, effect: [
+        {name: '知识容量', type: '+', value: lvl => lvl}
+    ]},
+    hardwoodCap: {subfeature: 0, scalesWithGL: true, minGL: 150, maxGL: 249, effect: [
+        {name: '硬木容量', type: '*', value: lvl => lvl * 0.01 + 1}
+    ]},
+    gemCap: {subfeature: 0, scalesWithGL: true, minGL: 150, maxGL: 249, effect: [
+        {name: '宝石容量', type: '*', value: lvl => lvl * 0.01 + 1}
+    ]},
+    plantFiberCap2: {subfeature: 1, scalesWithGL: true, minGL: 20, maxGL: 119, effect: [
+        {name: '植物纤维容量', type: '+', value: lvl => lvl * 30}
+    ]},
+    woodCap2: {subfeature: 1, scalesWithGL: true, minGL: 25, maxGL: 124, effect: [
+        {name: '木头容量', type: '+', value: lvl => lvl * 30}
+    ]},
+    stoneCap2: {subfeature: 1, scalesWithGL: true, minGL: 30, maxGL: 129, effect: [
+        {name: '石头容量', type: '+', value: lvl => lvl * 30}
+    ]},
+    metalCap2: {subfeature: 1, scalesWithGL: true, minGL: 40, maxGL: 139, effect: [
+        {name: '金属容量', type: '+', value: lvl => lvl * 15}
+    ]},
+    waterCap2: {subfeature: 1, scalesWithGL: true, minGL: 60, maxGL: 159, effect: [
+        {name: '水容量', type: '+', value: lvl => lvl * 15}
+    ]},
+    glassCap2: {subfeature: 1, scalesWithGL: true, minGL: 80, maxGL: 179, effect: [
+        {name: '玻璃容量', type: '+', value: lvl => lvl * 15}
+    ]},
+    hardwoodCap2: {subfeature: 1, scalesWithGL: true, minGL: 110, maxGL: 209, effect: [
+        {name: '硬木容量', type: '+', value: lvl => lvl * 15}
+    ]},
+    gemCap2: {subfeature: 1, scalesWithGL: true, minGL: 140, maxGL: 239, effect: [
+        {name: '宝石容量', type: '+', value: lvl => lvl * 15}
     ]},
 }

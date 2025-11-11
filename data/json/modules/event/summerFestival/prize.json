@@ -1,32 +1,26 @@
 [
   {
-    "名称": "波浪",
-    "item": "波浪",
-    "pool": "{\"summerFestival\":{\"消耗\":{\"夏季节日代币\":240}}}",
-    "amount": ""
+    "名称": "theme_waves",
+    "type": "theme",
+    "item": "waves",
+    "pool": "{\"summerFestival\":{\"price\":{\"夏季节日代币\":240}}}"
   },
   {
     "名称": "热带帐篷",
+    "type": "relic",
     "item": "热带帐篷",
-    "pool": "{\"summerFestival\":{\"消耗\":{\"夏季节日代币\":150}}}",
-    "amount": ""
+    "pool": "{\"summerFestival\":{\"price\":{\"夏季节日代币\":150}}}"
   },
   {
     "名称": "水果篮",
+    "type": "relic",
     "item": "水果篮",
-    "pool": "{\"summerFestival\":{\"消耗\":{\"夏季节日代币\":170}}}",
-    "amount": ""
+    "pool": "{\"summerFestival\":{\"price\":{\"夏季节日代币\":170}}}"
   },
   {
     "名称": "cardPack_charmingShip",
+    "type": "卡包",
     "item": "迷人的船",
-    "pool": "{\"summerFestival\":{\"消耗\":{\"夏季节日代币\":30}}}",
-    "amount": ""
-  },
-  {
-    "名称": "热带水",
-    "item": "热带水",
-    "pool": "{\"summerFestival\":{\"消耗\":{\"夏季节日代币\":1}}}",
-    "amount": "20"
+    "pool": "{\"summerFestival\":{\"price\":{\"夏季节日代币\":30}}}"
   }
 ]

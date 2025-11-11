@@ -1,81 +1,81 @@
 {
-    活力: {color: '绿色', 图标: 'mdi-heart', 效果: [
-        {name: '生命值', 类型: '+', value: lvl => lvl * 70 + 30}
+    vitality: {color: '绿色油漆', icon: 'mdi-heart', effect: [
+        {name: '生命值', type: '+', value: lvl => lvl * 70 + 30}
     ]},
-    能量: {color: '金色', 图标: 'mdi-lightning-bolt', needsEnergy, 效果: [
-        {name: '能量', 类型: '+', value: lvl => lvl * 35 + 20}
+    energy: {color: '金色油漆', icon: 'mdi-lightning-bolt', needsEnergy, effect: [
+        {name: '能量', type: '+', value: lvl => lvl * 35 + 20}
     ]},
-    魔法: {color: 'blue', 图标: 'mdi-water', needsMana, 效果: [
-        {name: '法力', 类型: '+', value: lvl => lvl * 25 + 15}
+    魔法: {color: '蓝色油漆', icon: 'mdi-water', needsMana, effect: [
+        {name: '法力', type: '+', value: lvl => lvl * 25 + 15}
     ]},
-    拳头: {
-        color: '橙色-红色',
-        图标: 'mdi-arm-flex',
+    fists: {
+        color: '橙色油漆-红色油漆',
+        icon: 'mdi-arm-flex',
         needsEnergy,
         cooldown: () => 15,
-        activeCost: () => {return {能量: 25};},
+        activeCost: () => {return {energy: 25};},
         激活的卡片(lvl) {
             return [
-                {类型: 'damagePhysic', value: lvl * 0.4 + 3.1, str: 0.15}
+                {type: 'damagePhysic', value: lvl * 0.4 + 3.1, str: 0.25}
             ];
         },
         activeType: 'combat'
     },
     火花: {
-        color: '光-blue',
-        图标: 'mdi-shimmer',
+        color: '浅蓝色油漆',
+        icon: 'mdi-shimmer',
         rarity: 10,
         needsMana,
         cooldown: () => 9,
-        activeCost: () => {return {mana: 5};},
+        activeCost: () => {return {mana: 2};},
         激活的卡片(lvl) {
             return [
-                {类型: 'damageMagic', value: lvl * 0.55 + 3.65, int: 0.2}
+                {type: 'damageMagic', value: lvl * 0.55 + 3.65, int: 0.35}
             ];
         },
         activeType: 'combat'
     },
-    急速: {color: 'pale-黄色', 图标: 'mdi-timer-sand', rarity: 20, 效果: [
-        {name: '急速', 类型: '+', value: lvl => lvl * 4 + 8}
+    haste: {color: 'pale-黄色油漆', icon: 'mdi-timer-sand', rarity: 20, effect: [
+        {name: '急速', type: '+', value: lvl => lvl * 4 + 8}
     ]},
-    精确: {color: '橙色', 图标: 'mdi-bullseye', rarity: 30, 效果: [
-        {name: '暴击率', 类型: '+', value: lvl => lvl * 0.03 + 0.07}
+    精确: {color: '橙色油漆', icon: 'mdi-bullseye', rarity: 30, effect: [
+        {name: '暴击率', type: '+', value: lvl => lvl * 0.03 + 0.07}
     ]},
-    愤怒: {color: '橙色-红色', 图标: 'mdi-emoticon-angry', rarity: 40, 效果: [
-        {name: '暴击伤害', 类型: '+', value: lvl => lvl * 0.08 + 0.3}
+    愤怒: {color: '橙色油漆-红色油漆', icon: 'mdi-emoticon-angry', rarity: 40, effect: [
+        {name: '暴击伤害', type: '+', value: lvl => lvl * 0.08 + 0.3}
     ]},
-    力量: {color: '红色', 图标: 'mdi-arm-flex', rarity: 50, 效果: [
-        {name: '力量', 类型: '+', value: lvl => lvl * 3 + 5}
+    strength: {color: '红色油漆', icon: 'mdi-arm-flex', rarity: 50, effect: [
+        {name: '力量', type: '+', value: lvl => lvl * 3 + 5}
     ]},
-    毒素: {
-        color: '光-绿色',
-        图标: 'mdi-clouds',
+    toxins: {
+        color: '浅绿色油漆',
+        icon: 'mdi-clouds',
         rarity: 60,
         cooldown: () => 135,
         activeCost: () => {return {};},
         激活的卡片(lvl) {
             return [
-                {类型: 'maxdamageBio', value: lvl * 0.015 + 0.09},
-                {类型: 'removeAttack', value: lvl * 0.005 + 0.05}
+                {type: 'maxdamageBio', value: lvl * 0.015 + 0.09},
+                {type: 'removeAttack', value: lvl * 0.005 + 0.05}
             ];
         },
         activeType: 'combat'
     },
-    智慧: {color: 'indigo', 图标: 'mdi-lightbulb-on', rarity: 70, 效果: [
-        {name: '智力', 类型: '+', value: lvl => lvl * 3 + 5}
+    wisdom: {color: 'indigo', icon: 'mdi-lightbulb-on', rarity: 70, effect: [
+        {name: '智力', type: '+', value: lvl => lvl * 3 + 5}
     ]},
-    提取: {color: '红色', 图标: 'mdi-water', rarity: 80, 效果: [
-        {name: '血液增益', 类型: '*', value: lvl => lvl * 0.04 + 1.16}
+    extraction: {color: '红色油漆', icon: 'mdi-water', rarity: 80, effect: [
+        {name: '血液增益', type: '*', value: lvl => lvl * 0.04 + 1.16}
     ]},
-    学习: {color: 'deep-紫色', 图标: 'mdi-school', rarity: 90, isTimeless: true, 效果: [
-        {name: '级技能点数', 类型: '+', value: () => 1}
+    学习: {color: 'deep-紫色油漆', icon: 'mdi-school', rarity: 90, isTimeless: true, effect: [
+        {name: '级技能点数', type: '+', value: () => 1}
     ]},
-    维持: {color: '红色', 图标: 'mdi-iv-bag', rarity: 100, 效果: [
-        {name: '血液容量', 类型: '*', value: lvl => lvl * 0.06 + 1.24}
+    preservation: {color: '红色油漆', icon: 'mdi-iv-bag', rarity: 100, effect: [
+        {name: '血液容量', type: '*', value: lvl => lvl * 0.06 + 1.24}
     ]},
-    激励: {
-        color: '金色',
-        图标: 'mdi-battery',
+    energize: {
+        color: '金色油漆',
+        icon: 'mdi-battery',
         rarity: 110,
         isTimeless: true,
         needsEnergy,
@@ -83,46 +83,50 @@
         activeCost: () => {return {};},
         激活的卡片() {
             return [
-                {类型: 'refillEnergy', value: 1}
+                {type: 'refillEnergy', value: 1}
             ];
         },
         activeType: 'combat'
     },
-    自动化: {color: 'dark-灰色', 图标: 'mdi-cogs', rarity: 120, isTimeless: true, 效果: [
-        {name: '自动释放槽位', 类型: '+', value: () => 1}
+    automation: {color: 'dark-grey', icon: 'mdi-cogs', rarity: 120, isTimeless: true, effect: [
+        {name: '自动释放槽位', type: '+', value: () => 1}
     ]},
-    治愈: {
-        color: 'teal',
-        图标: 'mdi-heart',
+    cure: {
+        color: '青色油漆',
+        icon: 'mdi-heart',
         rarity: 130,
         isTimeless: true,
         cooldown: () => 45,
         activeCost: () => {return {};},
         激活的卡片() {
             return [
-                {类型: 'heal', value: 0.05, int: 0.0005},
-                {类型: '移除眩晕', value: null}
+                {type: 'heal', value: 0.05, int: 0.0005},
+                {type: 'removeStun', value: null}
             ];
         },
-        可以在眩晕时使用: true,
+        usableInStun: true,
         activeType: 'combat'
     },
-    二元性: {color: '紫色', 图标: 'mdi-call-split', rarity: 75, uniqueToBoss: 'Chriz', 效果: [
-        {name: '力量', 类型: '+', value: lvl => lvl * 2 + 4},
-        {name: '智力', 类型: '+', value: lvl => lvl * 2 + 4}
+    石头: {color: 'grey', icon: 'mdi-chart-bubble', rarity: 30, uniqueToBoss: 'ohilio', effect: [
+        {name: '生命值', type: '*', value: lvl => lvl * 0.12 + 1.3},
+        {name: '治疗', type: '*', value: lvl => 1 / (lvl * 0.12 + 1.5)}
     ]},
-    爱: {
+    duality: {color: '紫色油漆', icon: 'mdi-call-split', rarity: 75, uniqueToBoss: 'chriz2', effect: [
+        {name: '力量', type: '+', value: lvl => lvl * 2 + 4},
+        {name: '智力', type: '+', value: lvl => lvl * 2 + 4}
+    ]},
+    love: {
         color: 'babypink',
-        图标: 'mdi-heart-multiple',
+        icon: 'mdi-heart-multiple',
         rarity: 120,
         uniqueToBoss: 'mina',
         cooldown: () => 70,
         activeCost: () => {return {};},
         激活的卡片(lvl) {
             return [
-                {类型: 'damageBio', value: lvl * 0.9 + 8.7},
-                {类型: 'buff', value: lvl + 14, 效果: [
-                    {类型: '*', name: '造成的生物伤害', value: 1.35},
+                {type: 'damageBio', value: lvl * 0.9 + 8.7},
+                {type: 'buff', value: lvl + 14, effect: [
+                    {type: '*', name: '造成的生物伤害', value: 1.35},
                 ]}
             ];
         },

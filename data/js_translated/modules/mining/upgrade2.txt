@@ -1,74 +1,144 @@
 {
-    烟雾: {子功能: 1, 消耗(lvl) {
-        return {废料: Math.ceil(Math.pow(lvl * 0.012 + 1.24, lvl) * buildNum(750, 'K'))};
-    }, 效果: [
-        {name: '伤害', 类型: '*', value: lvl => Math.pow(1.12, lvl) * Math.pow(lvl * 0.2 + 1, 2)}
+    烟雾: {subfeature: 1, price(lvl) {
+        return {废料: Math.pow(lvl * 0.012 + 1.24, lvl) * buildNum(750, 'K')};
+    }, effect: [
+        {name: '伤害', type: '*', value: lvl => Math.pow(1.12, lvl) * Math.pow(lvl * 0.2 + 1, 2)}
     ]},
-    巨型陨石坑: {子功能: 1, requirementBase, requirementStat, 解锁要求: 5, 消耗(lvl) {
-        return {废料: Math.ceil(Math.pow(lvl * 2 + 8, lvl) * buildNum(2.5, 'M'))};
-    }, 效果: [
-        {name: '废料容量', 类型: '*', value: lvl => Math.pow(7, lvl)}
+    小箱子: {subfeature: 1, cap: 25, requirementBase, requirementStat, requirementValue: 3, price(lvl) {
+        return {石灰岩: Math.pow(lvl * 0.025 + 1.35, lvl) * 1000};
+    }, effect: [
+        {name: '废料容量', type: '*', value: lvl => Math.pow(1.1, lvl)}
     ]},
-    更大的压力: {子功能: 1, requirementBase, requirementStat, 解锁要求: 10, 消耗(lvl) {
-        return {废料: Math.ceil(Math.pow(lvl * 0.025 + 1.75, lvl) * buildNum(400, 'M'))};
-    }, 效果: [
-        {name: '伤害', 类型: '*', value: lvl => Math.pow(1.2, lvl)},
-        {name: '废料增益', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
+    巨型陨石坑: {subfeature: 1, requirementBase, requirementStat, requirementValue: 5, price(lvl) {
+        return {废料: Math.pow(lvl * 2 + 8, lvl) * buildNum(2.5, 'M')};
+    }, effect: [
+        {name: '废料容量', type: '*', value: lvl => Math.pow(6, lvl)}
     ]},
-    燃气居民: {子功能: 1, 上限: 1, 保留: true, requirementBase, requirementStat, 解锁要求: 15, 消耗() {
+    更大的压力: {subfeature: 1, cap: 25, requirementBase, requirementStat, requirementValue: 10, price(lvl) {
+        return {废料: Math.pow(lvl * 0.025 + 1.75, lvl) * buildNum(400, 'M')};
+    }, effect: [
+        {name: '伤害', type: '*', value: lvl => Math.pow(1.2, lvl)},
+        {name: '废料增益', type: '*', value: lvl => Math.pow(1.25, lvl)}
+    ]},
+    燃气居民: {subfeature: 1, cap: 1, 保留: true, requirementBase, requirementStat, requirementValue: 15, price() {
         return {氦: 250};
-    }, 效果: [
-        {name: '深度居民', 类型: '解锁', value: lvl => lvl >= 1},
-        {name: '深度居民速度', 类型: '*', value: lvl => Math.pow(3, lvl)}
+    }, effect: [
+        {name: '深度居民', type: '解锁', value: lvl => lvl >= 1},
+        {name: '尽可能高的居民深度', type: '*', value: lvl => Math.pow(1 / 1.25, lvl)}
     ]},
-    活塞: {子功能: 1, requirementBase, requirementStat, 解锁要求: 20, 消耗(lvl) {
+    活塞: {subfeature: 1, cap: 10, requirementBase, requirementStat, requirementValue: 20, price(lvl) {
         return {氦: Math.round(Math.pow(1.35, lvl) * 50)};
-    }, 效果: [
-        {name: '伤害', 类型: '*', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.2 + 1)}
+    }, effect: [
+        {name: '伤害', type: '*', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.2 + 1)}
     ]},
-    污染: {子功能: 1, 上限: 1, 保留: true, requirementBase, requirementStat, 解锁要求: 25, 消耗() {
+    污染: {subfeature: 1, cap: 1, 保留: true, requirementBase, requirementStat, requirementValue: 25, price() {
         return {氦: 1000};
-    }, 效果: [
-        {name: '烟雾', 类型: '解锁', value: lvl => lvl >= 1}
+    }, effect: [
+        {name: '烟雾', type: '解锁', value: lvl => lvl >= 1}
     ]},
-    颗粒过滤器: {子功能: 1, requirement() {
+    颗粒过滤器: {subfeature: 1, requirement() {
         return store.state.解锁.烟雾.use;
-    }, 消耗(lvl) {
-        return {废料: Math.ceil(Math.pow(1.4, lvl) * buildNum(1, 'T'))};
-    }, 效果: [
-        {name: '制作力量', 类型: '*', value: lvl => Math.pow(1.15, lvl)}
+    }, price(lvl) {
+        return {废料: Math.pow(1.4, lvl) * buildNum(1, 'T')};
+    }, effect: [
+        {name: '制作力量', type: '*', value: lvl => Math.pow(1.15, lvl)}
     ]},
-    热气球: {子功能: 1, 上限: 8, requirementBase, requirementStat, 解锁要求: 30, 消耗(lvl) {
-        return {废料: Math.ceil(Math.pow(3.75, lvl) * buildNum(2.2, 'T'))};
-    }, 效果: [
-        {name: '废料容量', 类型: '*', value: lvl => Math.pow(1.5, lvl)},
-        {name: '烟雾容量', 类型: '*', value: lvl => lvl * 0.5 + 1}
+    热气球: {subfeature: 1, cap: 8, requirementBase, requirementStat, requirementValue: 30, price(lvl) {
+        return {废料: Math.pow(3.75, lvl) * buildNum(2.2, 'T')};
+    }, effect: [
+        {name: '废料容量', type: '*', value: lvl => Math.pow(1.5, lvl)},
+        {name: '烟雾容量', type: '*', value: lvl => lvl * 0.5 + 1}
     ]},
-    通风口: {子功能: 1, 上限: 20, requirementBase, requirementStat, 解锁要求: 40, 消耗(lvl) {
-        return {废料: Math.ceil(Math.pow(1.65, lvl) * buildNum(40, 'T'))};
-    }, 效果: [
-        {name: '伤害', 类型: '*', value: lvl => Math.pow(1.05, lvl)},
-        {name: '废料增益', 类型: '*', value: lvl => Math.pow(1.3, lvl)}
+    导体: {subfeature: 1, cap: 10, requirementBase, requirementStat, requirementValue: 35, price(lvl) {
+        return {
+            废料: Math.pow(40, lvl) * buildNum(10, 'T'),
+            石灰岩: Math.pow(4.5, lvl) * buildNum(200, 'K')
+        };
+    }, effect: [
+        {name: '深度居民速度', type: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    收割机: {子功能: 1, requirementBase, requirementStat, 解锁要求: 50, 消耗(lvl) {
+    通风口: {subfeature: 1, cap: 20, requirementBase, requirementStat, requirementValue: 40, price(lvl) {
+        return {废料: Math.pow(1.85, lvl) * buildNum(40, 'T')};
+    }, effect: [
+        {name: '废料增益', type: '*', value: lvl => Math.pow(1.3, lvl)}
+    ]},
+    缸: {subfeature: 1, cap: 20, requirementBase, requirementStat, requirementValue: 45, price(lvl) {
+        return {石灰岩: Math.pow(2.8, lvl) * buildNum(850, 'K')};
+    }, effect: [
+        {name: '烟雾容量', type: '*', value: lvl => getSequence(5, lvl) * 0.05 + 1}
+    ]},
+    月球的祝福: {subfeature: 1, cap: 20, requirementBase, requirementStat, requirementValue: 50, price(lvl) {
+        return {月之碎片: Math.pow(2, lvl) * 10};
+    }, effect: [
+        {name: '制作力量', type: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '伤害', type: '*', value: lvl => Math.pow(1.05, lvl)}
+    ]},
+    收割机: {subfeature: 1, cap: 10, requirementBase, requirementStat, requirementValue: 60, price(lvl) {
         return {氖: Math.round(Math.pow(1.35, lvl) * 50)};
-    }, 效果: [
-        {name: '废料增益', 类型: '*', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.3 + 1)}
+    }, effect: [
+        {name: '废料增益', type: '*', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.3 + 1)}
     ]},
-    石墨棒: {子功能: 1, 上限: 40, requirementBase, requirementStat, 解锁要求: 75, 消耗(lvl) {
-        return {废料: Math.ceil(Math.pow(1.85, lvl) * buildNum(1, 'Qi'))};
-    }, 效果: [
-        {name: '制作力量', 类型: '*', value: lvl => Math.pow(1.12, lvl)},
-        {name: '烟雾容量', 类型: '*', value: lvl => Math.pow(1.1, lvl)}
+    黑板: {subfeature: 1, cap: 15, requirementBase, requirementStat, requirementValue: 70, price(lvl) {
+        return {月之碎片: Math.pow(2.25, lvl) * buildNum(30, 'K')};
+    }, effect: [
+        {name: '石灰岩增益', type: '*', value: lvl => Math.pow(1.35, lvl)}
     ]},
-    浓缩水晶: {子功能: 1, requirementBase, requirementStat, 解锁要求: 100, 消耗(lvl) {
+    石墨棒: {subfeature: 1, cap: 40, requirementBase, requirementStat, requirementValue: 80, price(lvl) {
+        return {废料: Math.pow(1.85, lvl) * buildNum(2, 'Qi')};
+    }, effect: [
+        {name: '制作力量', type: '*', value: lvl => Math.pow(1.12, lvl)},
+        {name: '烟雾容量', type: '*', value: lvl => Math.pow(1.1, lvl)}
+    ]},
+    矿车: {subfeature: 1, cap: 25, requirementBase, requirementStat, requirementValue: 90, price(lvl) {
+        return {石灰岩: Math.pow(lvl * 0.03 + 2.15, lvl) * buildNum(5, 'B')};
+    }, effect: [
+        {name: '废料增益', type: '*', value: lvl => Math.pow(1.2, lvl)},
+        {name: '废料容量', type: '*', value: lvl => Math.pow(1.1, lvl)},
+    ]},
+    月长石: {subfeature: 1, cap: 10, requirementBase, requirementStat, requirementValue: 100, price(lvl) {
+        return {月之碎片: Math.pow(10, lvl) * buildNum(1, 'M')};
+    }, effect: [
+        {name: '制作力量', type: '*', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    夜视仪: {subfeature: 1, cap: 40, requirementBase, requirementStat, requirementValue: 115, price(lvl) {
+        return {废料: Math.pow(1.85, lvl) * buildNum(75, 'O')};
+    }, effect: [
+        {name: '稀土增益', type: '*', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.1 + 1)}
+    ]},
+    浓缩水晶: {subfeature: 1, cap: 10, requirementBase, requirementStat, requirementValue: 130, price(lvl) {
         return {氩: Math.round(Math.pow(1.35, lvl) * 50)};
-    }, 效果: [
-        {name: '黄水晶增益', 类型: '*', value: lvl => lvl * 0.05 + 1}
+    }, effect: [
+        {name: '黄水晶增益', type: '*', value: lvl => lvl * 0.05 + 1}
     ]},
-    吸烟者: {子功能: 1, requirementBase, requirementStat, 解锁要求: 160, 消耗(lvl) {
+    火柴: {subfeature: 1, requirementBase, requirementStat, requirementValue: 150, price(lvl) {
+        return {磷: Math.pow(lvl * 0.05 + 2.25, lvl) * 8};
+    }, effect: [
+        {name: '伤害', type: '*', value: lvl => Math.pow(1.1, lvl)}
+    ]},
+    烟雾稳定器: {subfeature: 1, cap: 50, requirementBase, requirementStat, requirementValue: 170, price(lvl) {
+        return {废料: Math.pow(lvl * 0.01 + 1.7, lvl) * buildNum(1.25, 'UD')};
+    }, effect: [
+        {name: '制作力量', type: '*', value: lvl => Math.pow(1.14, lvl)}
+    ]},
+    电梯: {subfeature: 1, cap: 30, requirementBase, requirementStat, requirementValue: 190, price(lvl) {
+        return {
+            石灰岩: Math.pow(lvl * 0.05 + 2.25, lvl) * buildNum(80, 'T'),
+            月之碎片: Math.pow(lvl * 0.06 + 2.5, lvl) * buildNum(3.5, 'T'),
+            磷: Math.pow(lvl * 0.03 + 1.75, lvl) * 6600
+        };
+    }, effect: [
+        {name: '废料增益', type: '*', value: lvl => Math.pow(1.3, lvl)}
+    ]},
+    铲子: {subfeature: 1, cap: 20, requirementBase, requirementStat, requirementValue: 210, price(lvl) {
+        return {废料: Math.pow(lvl * 0.08 + 2.16, lvl) * buildNum(860, 'TD')};
+    }, effect: [
+        {name: '伤害', type: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '制作力量', type: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '废料增益', type: '*', value: lvl => Math.pow(1.1, lvl)}
+    ]},
+    吸烟者: {subfeature: 1, cap: 10, requirementBase, requirementStat, requirementValue: 230, price(lvl) {
         return {氪: Math.round(Math.pow(1.35, lvl) * 50)};
-    }, 效果: [
-        {name: '烟雾增益', 类型: '*', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.2 + 1)}
+    }, effect: [
+        {name: '烟雾增益', type: '*', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.2 + 1)}
     ]},
 }

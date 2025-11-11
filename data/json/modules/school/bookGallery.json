@@ -1,0 +1,50 @@
+[
+  {
+    "名称": "redGain",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "20",
+    "maxGL": "119",
+    "effect": "红色油漆增益*｛$lvl  \\cdot  0.02 + 1$｝"
+  },
+  {
+    "名称": "converterCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "40",
+    "maxGL": "139",
+    "effect": "转换器容量+｛$lvl  \\cdot  20$｝"
+  },
+  {
+    "名称": "shapeGain",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "60",
+    "maxGL": "",
+    "effect": "形状增益*｛${(1.01)}^{lvl}$｝"
+  },
+  {
+    "名称": "packageCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "80",
+    "maxGL": "178",
+    "effect": "包裹容量+｛$\\text{向上取整}(lvl / 2)$｝"
+  },
+  {
+    "名称": "drumCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "100",
+    "maxGL": "190",
+    "effect": "所有鼓上限+｛$\\text{向上取整}(lvl / 10)$｝"
+  },
+  {
+    "名称": "canvasSpeed",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "120",
+    "maxGL": "219",
+    "effect": "画布速度*｛$lvl  \\cdot  0.01 + 1$｝"
+  }
+]

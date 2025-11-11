@@ -1,62 +1,74 @@
 [
   {
     "名称": "收银机",
-    "消耗": "${ 铜币: {(lvl  \\cdot  0.25 + 2)}^{lvl}  \\cdot  2000 }$",
-    "效果": "柜台+｛$lvl$｝; 铜币容量*｛${(2)}^{lvl}$｝"
+    "subfeature": "1",
+    "price": "${ 铜币: {(lvl  \\cdot  0.25 + 2)}^{lvl}  \\cdot  2000 }$",
+    "effect": "柜台+｛$lvl$｝; 铜币容量*｛${(2)}^{lvl}$｝"
   },
   {
     "名称": "装饰品",
-    "消耗": "${ 铜币: {(1.75)}^{lvl}  \\cdot  900 }$",
-    "效果": "铜币增益*｛${(1.175)}^{lvl}$｝"
+    "subfeature": "1",
+    "price": "${ 铜币: {(1.75)}^{lvl}  \\cdot  900 }$",
+    "effect": "铜币增益*｛${(1.175)}^{lvl}$｝"
   },
   {
     "名称": "植物纤维仓",
-    "消耗": "${ if (lvl === 0) { return {}; } return { 铜币: {(3)}^{lvl}  \\cdot  100 }; }$",
-    "效果": "植物纤维增益+｛$getSequence(1, lvl)  \\cdot  0.1$｝; 绳子villageCraft｛$lvl >= 1$｝"
+    "subfeature": "1",
+    "price": "${ if (lvl === 0) { return {}; } return { 铜币: {(3)}^{lvl}  \\cdot  100 }; }$",
+    "effect": "植物纤维增益+｛$getSequence(1, lvl)  \\cdot  0.1$｝; ropevillageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "木仓",
-    "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  200 }$",
-    "效果": "木头增益+｛$getSequence(1, lvl)  \\cdot  0.1$｝; 木板villageCraft｛$lvl >= 1$｝"
+    "subfeature": "1",
+    "price": "${ 铜币: {(3)}^{lvl}  \\cdot  200 }$",
+    "effect": "木头增益+｛$getSequence(1, lvl)  \\cdot  0.1$｝; woodenPlanksvillageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "石仓",
-    "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  500 }$",
-    "效果": "石头增益+｛$getSequence(1, lvl)  \\cdot  0.1$｝; 砖块villageCraft｛$lvl >= 1$｝"
+    "subfeature": "1",
+    "price": "${ 铜币: {(3)}^{lvl}  \\cdot  500 }$",
+    "effect": "石头增益+｛$getSequence(1, lvl)  \\cdot  0.1$｝; brickvillageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "金属仓",
-    "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  50K }$",
-    "效果": "金属增益+｛$getSequence(1, lvl)  \\cdot  0.075$｝; 螺丝villageCraft｛$lvl >= 1$｝"
+    "subfeature": "1",
+    "price": "${ 铜币: {(3)}^{lvl}  \\cdot  50K }$",
+    "effect": "金属增益+｛$getSequence(1, lvl)  \\cdot  0.075$｝; screwsvillageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "水仓",
-    "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  600K }$",
-    "效果": "水增益+｛$getSequence(1, lvl)  \\cdot  0.06$｝; 水瓶villageCraft｛$lvl >= 1$｝"
+    "subfeature": "1",
+    "price": "${ 铜币: {(3)}^{lvl}  \\cdot  600K }$",
+    "effect": "水增益+｛$getSequence(1, lvl)  \\cdot  0.06$｝; waterBottlevillageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "玻璃仓",
-    "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  14.5M }$",
-    "效果": "玻璃增益+｛$getSequence(1, lvl)  \\cdot  0.05$｝; 鸡尾酒杯villageCraft｛$lvl >= 1$｝"
+    "subfeature": "1",
+    "price": "${ 铜币: {(3)}^{lvl}  \\cdot  14.5M }$",
+    "effect": "玻璃增益+｛$getSequence(1, lvl)  \\cdot  0.05$｝; cocktailGlassvillageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "硬木仓",
-    "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  900M }$",
-    "效果": "硬木增益+｛$getSequence(1, lvl)  \\cdot  0.025$｝; 回旋镖villageCraft｛$lvl >= 1$｝"
+    "subfeature": "1",
+    "price": "${ 铜币: {(3)}^{lvl}  \\cdot  900M }$",
+    "effect": "硬木增益+｛$getSequence(1, lvl)  \\cdot  0.025$｝; boomerangvillageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "宝石仓",
-    "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  85B }$",
-    "效果": "宝石增益+｛$getSequence(1, lvl)  \\cdot  0.025$｝; 抛光宝石villageCraft｛$lvl >= 1$｝"
+    "subfeature": "1",
+    "price": "${ 铜币: {(3)}^{lvl}  \\cdot  85B }$",
+    "effect": "宝石增益+｛$getSequence(1, lvl)  \\cdot  0.025$｝; polishedGemvillageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "油仓",
-    "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  9.6T }$",
-    "效果": "油增益+｛$getSequence(1, lvl)  \\cdot  0.015$｝; 油灯villageCraft｛$lvl >= 1$｝"
+    "subfeature": "1",
+    "price": "${ 铜币: {(3)}^{lvl}  \\cdot  9.6T }$",
+    "effect": "油增益+｛$getSequence(1, lvl)  \\cdot  0.015$｝; oilLampvillageCraft｛$lvl >= 1$｝"
   },
   {
     "名称": "大理石仓",
-    "消耗": "${ 铜币: {(3)}^{lvl}  \\cdot  1.44Qa }$",
-    "效果": "大理石增益+｛$getSequence(1, lvl)  \\cdot  0.01$｝; 淋浴villageCraft｛$lvl >= 1$｝"
+    "subfeature": "1",
+    "price": "${ 铜币: {(3)}^{lvl}  \\cdot  1.44Qa }$",
+    "effect": "大理石增益+｛$getSequence(1, lvl)  \\cdot  0.01$｝; showervillageCraft｛$lvl >= 1$｝"
   }
 ]

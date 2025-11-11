@@ -1,64 +1,100 @@
 {
-    输血: {子功能: 1, 上限: 50, 消耗(lvl) {
+    输血: {subfeature: 1, cap: 50, price(lvl) {
         return {血液: Math.pow(1.3, lvl) * 300};
-    }, 效果: [
-        {name: '攻击', 类型: '*', value: lvl => getSequence(5, lvl) * 0.02 + 1},
-        {name: '生命值', 类型: '*', value: lvl => getSequence(5, lvl) * 0.02 + 1}
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => getSequence(5, lvl) * 0.02 + 1},
+        {name: '生命值', type: '*', value: lvl => getSequence(5, lvl) * 0.02 + 1}
     ]},
-    黑暗攻击: {子功能: 1, requirementBase, 解锁要求: 1, 消耗(lvl) {
+    黑暗攻击: {subfeature: 1, requirementBase, requirementStat, requirementValue: 1, price(lvl) {
         return {血液: Math.pow(lvl * 0.0025 + 1.325, lvl) * buildNum(24, 'K')};
-    }, 效果: [
-        {name: '攻击', 类型: '*', value: lvl => Math.pow(1.18, lvl)}
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.18, lvl)}
     ]},
-    黑暗生命值: {子功能: 1, requirementBase, 解锁要求: 3, 消耗(lvl) {
+    黑暗生命值: {subfeature: 1, requirementBase, requirementStat, requirementValue: 3, price(lvl) {
         return {血液: Math.pow(lvl * 0.0025 + 1.325, lvl) * buildNum(110, 'K')};
-    }, 效果: [
-        {name: '生命值', 类型: '*', value: lvl => Math.pow(1.19, lvl)}
+    }, effect: [
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.19, lvl)}
     ]},
-    收割: {子功能: 1, requirementBase, 解锁要求: 8, 消耗(lvl) {
+    收割: {subfeature: 1, requirementBase, requirementStat, requirementValue: 8, price(lvl) {
         return {血液: Math.pow(lvl * 0.003 + 1.45, lvl) * buildNum(3, 'M')};
-    }, 效果: [
-        {name: '血液增益', 类型: '*', value: lvl => Math.pow(1.11, lvl)}
+    }, effect: [
+        {name: '血液增益', type: '*', value: lvl => Math.pow(1.11, lvl)}
     ]},
-    保护壳: {子功能: 1, 上限: 20, requirementBase, 解锁要求: 14, 消耗(lvl) {
+    保护壳: {subfeature: 1, cap: 20, requirementBase, requirementStat, requirementValue: 14, price(lvl) {
         return {血液: Math.pow(2.35, lvl) * buildNum(190, 'M')};
-    }, 效果: [
-        {name: '攻击', 类型: '*', value: lvl => Math.pow(1.07, lvl)},
-        {name: '生命值', 类型: '*', value: lvl => Math.pow(1.14, lvl)}
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.07, lvl)},
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.11, lvl)},
+        {name: '恢复', type: '+', value: lvl => lvl * 0.001}
     ]},
-    血液存储: {子功能: 1, 上限: 20, requirementBase, 解锁要求: 18, 消耗(lvl) {
+    血液存储: {subfeature: 1, cap: 20, requirementBase, requirementStat, requirementValue: 18, price(lvl) {
         return {血液: Math.pow(lvl * 0.04 + 1.9, lvl) * buildNum(2.2, 'B')};
-    }, 效果: [
-        {name: '生命值', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
-        {name: '血液容量', 类型: '*', value: lvl => Math.pow(1.175, lvl)}
+    }, effect: [
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '血液容量', type: '*', value: lvl => Math.pow(1.175, lvl)}
     ]},
-    黑暗里程碑: {子功能: 1, requirementBase, 解锁要求: 24, 消耗(lvl) {
+    第二次机会: {subfeature: 1, cap: 1, requirementBase, requirementStat, requirementValue: 22, price() {
+        return {血液: buildNum(333, 'B')};
+    }, effect: [
+        {name: '复活', type: '+', value: lvl => lvl}
+    ]},
+    黑暗里程碑: {subfeature: 1, requirementBase, requirementStat, requirementValue: 24, price(lvl) {
         return {血液: Math.pow(1000, lvl) * buildNum(1, 'T')};
-    }, 效果: [
-        {name: '攻击', 类型: '*', value: lvl => Math.pow(3, lvl)},
-        {name: '生命值', 类型: '*', value: lvl => Math.pow(3, lvl)},
-        {name: '血液容量', 类型: '*', value: lvl => Math.pow(10, lvl)}
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(3, lvl)},
+        {name: '生命值', type: '*', value: lvl => Math.pow(3, lvl)},
+        {name: '血液容量', type: '*', value: lvl => Math.pow(10, lvl)},
     ]},
-    无尽的愤怒: {子功能: 1, 上限: 20, requirementBase, 解锁要求: 31, 消耗(lvl) {
+    无尽的愤怒: {subfeature: 1, cap: 20, requirementBase, requirementStat, requirementValue: 31, price(lvl) {
         return {血液: Math.pow(2.8, lvl) * buildNum(25, 'Qi')};
-    }, 效果: [
-        {name: '攻击', 类型: '*', value: lvl => Math.pow(1.33, lvl)}
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.33, lvl)}
     ]},
-    拳击: {子功能: 1, 上限: 30, requirementBase, 解锁要求: 42, 消耗(lvl) {
+    拳击: {subfeature: 1, cap: 30, requirementBase, requirementStat, requirementValue: 42, price(lvl) {
         return {血液: Math.pow(2.45, lvl) * buildNum(400, 'Sx')};
-    }, 效果: [
-        {name: '血液增益', 类型: '*', value: lvl => Math.pow(1.1, lvl)},
-        {name: '攻击', 类型: '*', value: lvl => Math.pow(1.23, lvl)}
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '血液增益', type: '*', value: lvl => Math.pow(1.1, lvl)},
     ]},
-    注射器: {子功能: 1, 上限: 30, requirementBase, 解锁要求: 55, 消耗(lvl) {
+    注射器: {subfeature: 1, cap: 30, requirementBase, requirementStat, requirementValue: 55, price(lvl) {
         return {血液: Math.pow(lvl * 0.02 + 1.7, lvl) * buildNum(65, 'Sp')};
-    }, 效果: [
-        {name: '血液增益', 类型: '*', value: lvl => Math.pow(1.15, lvl)},
-        {name: '血液容量', 类型: '*', value: lvl => Math.pow(1.18, lvl)}
+    }, effect: [
+        {name: '血液增益', type: '*', value: lvl => Math.pow(1.15, lvl)},
+        {name: '血液容量', type: '*', value: lvl => Math.pow(1.18, lvl)},
     ]},
-    血祭: {子功能: 1, requirementBase, 解锁要求: 70, 消耗(lvl) {
+    血祭: {subfeature: 1, requirementBase, requirementStat, requirementValue: 66, price(lvl) {
         return {血液: Math.pow(10, lvl) * buildNum(1, 'O')};
-    }, 效果: [
-        {name: '腐败', 类型: 'bonus', value: lvl => -0.07 * lvl}
+    }, effect: [
+        {name: '腐败', type: 'bonus', value: lvl => -0.07 * lvl},
+    ]},
+    黑暗假人: {subfeature: 1, cap: 50, requirementBase, requirementStat, requirementValue: 77, price(lvl) {
+        return {血液: Math.pow(lvl * 0.01 + 1.9, lvl) * 7.5e29};
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.12, lvl)},
+    ]},
+    驱逐仪式: {subfeature: 1, requirementBase, requirementStat, requirementValue: 90, price(lvl) {
+        return {血液: Math.pow(250, lvl) * 1.5e34};
+    }, effect: [
+        {name: '腐败', type: 'bonus', value: lvl => -0.15 * lvl},
+        {name: '血液容量', type: '*', value: lvl => Math.pow(2, lvl)},
+    ]},
+    牙矛: {subfeature: 1, 保留: true, cap: 25, requirementBase, requirementStat, requirementValue: 105, price(lvl) {
+        return {锋利的怪物牙齿: lvl * 4 + 2};
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.125, lvl)},
+    ]},
+    牙齿项链: {subfeature: 1, 保留: true, cap: 25, requirementBase, requirementStat, requirementValue: 111, price(lvl) {
+        return {锋利的怪物牙齿: lvl * 4 + 4};
+    }, effect: [
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.13, lvl)},
+    ]},
+    暗盾: {subfeature: 1, cap: 10, requirementBase, requirementStat, requirementValue: 115, price(lvl) {
+        return {血液: Math.pow(lvl * 0.5 + 3.75, lvl) * 8e42};
+    }, effect: [
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.12, lvl)},
+        {name: '血液增益', type: '*', value: lvl => Math.pow(1.25, lvl)},
+        {name: '血液容量', type: '*', value: lvl => Math.pow(1.75, lvl)},
     ]},
 }

@@ -1,32 +1,32 @@
 {
-    穿刺信标: {
-        color: '紫色',
+    piercing: {
+        color: '紫色油漆',
         ownedMult: '穿刺信标',
-        效果: [
-            {name: '韧性', 类型: '*', value: lvl => 1 / (lvl * 0.25 + 5)}
+        effect: [
+            {name: '韧性', type: '*', value: lvl => 1 / (lvl * 0.25 + 5)}
         ]
     },
-    富有信标: {
-        color: '橙色',
+    rich: {
+        color: '橙色油漆',
         ownedMult: '富有信标',
-        效果: [
-            {name: '矿石增益', 类型: '*', value: lvl => lvl * 0.05 + 2}
+        effect: [
+            {name: '矿石增益', type: '*', value: lvl => lvl * 0.05 + 2}
         ]
     },
-    奇迹信标: {
-        color: 'blue',
+    wonder: {
+        color: '蓝色油漆',
         ownedMult: '奇观信标',
-        效果: [
-            {name: '稀土增益', 类型: '*', value: lvl => lvl * 0.04 + 1.6}
+        effect: [
+            {name: '稀土增益', type: '*', value: lvl => lvl * 0.04 + 1.6}
         ]
     },
-    希望信标: {
-        color: '绿色',
+    hope: {
+        color: '绿色油漆',
         ownedMult: '希望信标',
         range: 5,
-        效果: [
-            {name: '伤害', 类型: '*', value: lvl => lvl * 0.01 + 1.1},
-            {name: '废料增益', 类型: '*', value: lvl => lvl * 0.015 + 1.2}
+        effect: [
+            {name: '伤害', type: '*', value: lvl => lvl * 0.01 + 1.1},
+            {name: '废料增益', type: '*', value: lvl => lvl * 0.015 + 1.2}
         ]
     }
 }

@@ -1,26 +1,26 @@
 [
   {
     "名称": "多汁的诱饵",
-    "图标": "<i class=\"mdi mdi-fruit-grapes\"></i>",
+    "icon": "<i class=\"mdi mdi-fruit-grapes\"></i>",
     "stackSize": "10",
-    "效果": "钓鱼时间*｛0.1｝; 中鱼几率+｛1｝; 双倍鱼几率+｛0.35｝; 宝藏几率*｛0.1｝"
+    "effect": "钓鱼时间*｛0.1｝; 中鱼几率+｛1｝; 双倍鱼几率+｛0.35｝; 宝藏几率*｛0.1｝"
   },
   {
-    "名称": "彩虹饵",
-    "图标": "<i class=\"mdi mdi-looks\"></i>",
+    "名称": "rainbowBait",
+    "icon": "<i class=\"mdi mdi-looks\"></i>",
     "stackSize": "3",
-    "效果": "中鱼几率+｛1｝; 忽略天气+｛0.25｝; 最大鱼尺寸*｛[Unsupported Node: BinaryExpression]｝; 平均鱼尺寸*｛0.8｝"
+    "effect": "中鱼几率+｛1｝; 忽略天气+｛0.25｝; 最大鱼尺寸*｛[Unsupported Node: BinaryExpression]｝; 平均鱼尺寸*｛0.8｝"
   },
   {
-    "名称": "垃圾网",
-    "图标": "<i class=\"mdi mdi-spider-web\"></i>",
+    "名称": "trashNet",
+    "icon": "<i class=\"mdi mdi-spider-web\"></i>",
     "stackSize": "10",
-    "效果": "钓鱼时间*｛0.1｝; 中鱼几率+｛[Unsupported Node: UnaryExpression]｝; 垃圾增益*｛3｝; 宝藏几率*｛0.1｝"
+    "effect": "钓鱼时间*｛0.1｝; 中鱼几率+｛[Unsupported Node: UnaryExpression]｝; 垃圾增益*｛3｝; 宝藏几率*｛0.1｝"
   },
   {
     "名称": "磁铁",
-    "图标": "<i class=\"mdi mdi-magnet\"></i>",
+    "icon": "<i class=\"mdi mdi-magnet\"></i>",
     "stackSize": "",
-    "效果": "宝藏几率+｛1｝"
+    "effect": "宝藏几率+｛1｝"
   }
 ]

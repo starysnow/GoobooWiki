@@ -1,31 +1,30 @@
 {
-    松树: {类型: 'snowdown', 消耗(lvl) {
+    松树: {type: 'snowdown', price(lvl) {
         return {树苗: 250 * Math.pow(lvl * 0.5 + 1, 2) * Math.pow(2, lvl)};
-    }, 效果: [
-        {name: '全部攻击', 类型: '*', value: lvl => Math.pow(1.02, lvl) * (lvl * 0.05 + 1)}
+    }, effect: [
+        {name: '全部攻击', type: '*', value: lvl => Math.pow(1.02, lvl) * (lvl * 0.05 + 1)}
     ]},
-    羊毛帽: {类型: 'snowdown', 消耗(lvl) {
+    羊毛帽: {type: 'snowdown', price(lvl) {
         return {纱: 250 * Math.pow(lvl * 0.5 + 1, 2) * Math.pow(2, lvl)};
-    }, 效果: [
-        {name: '全部生命值', 类型: '*', value: lvl => Math.pow(1.02, lvl) * (lvl * 0.05 + 1)},
-        {name: '全部防御', 类型: '*', value: lvl => Math.pow(1.02, lvl) * (lvl * 0.05 + 1)},
+    }, effect: [
+        {name: '全部生命值', type: '*', value: lvl => Math.pow(1.02, lvl) * (lvl * 0.05 + 1)},
     ]},
-    饼干: {类型: 'snowdown', 消耗(lvl) {
+    饼干: {type: 'snowdown', price(lvl) {
         return {面团: 250 * Math.pow(lvl * 0.5 + 1, 2) * Math.pow(2, lvl)};
-    }, 效果: [
-        {name: '复仇统计', 类型: '+', value: lvl => lvl * 0.0005},
-        {name: '复仇暴击率', 类型: '+', value: lvl => lvl * 0.06},
-        {name: '复仇格挡率', 类型: '+', value: lvl => lvl * 0.04},
+    }, effect: [
+        {name: '复仇统计', type: '+', value: lvl => lvl * 0.0005},
+        {name: '复仇暴击率', type: '+', value: lvl => lvl * 0.06},
+        {name: '复仇格挡率', type: '+', value: lvl => lvl * 0.04},
     ]},
-    攻击提升: {类型: 'snowdown', 消耗(lvl) {
-        return {gem_topaz: lvl * 50 + 150};
-    }, 效果: [
-        {name: '全部攻击', 类型: '*', value: lvl => lvl * 0.5 + 1}
-    ]},
-    生命值提升: {类型: 'snowdown', 消耗(lvl) {
+    攻击提升: {type: 'snowdown', price(lvl) {
         return {gem_topaz: lvl * 40 + 100};
-    }, 效果: [
-        {name: '全部生命值', 类型: '*', value: lvl => lvl * 0.5 + 1},
-        {name: '全部防御', 类型: '*', value: lvl => lvl * 0.5 + 1},
+    }, effect: [
+        {name: '全部攻击', type: '*', value: lvl => lvl * 0.5 + 1}
+    ]},
+    生命值提升: {type: 'snowdown', price(lvl) {
+        return {gem_topaz: lvl * 50 + 150};
+    }, effect: [
+        {name: '全部生命值', type: '*', value: lvl => lvl * 0.5 + 1},
+        {name: '全部防御', type: '*', value: lvl => lvl * 0.5 + 1},
     ]},
 }

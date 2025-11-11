@@ -1,0 +1,6 @@
+| 名称  | icon | price | unique |
+| --- | ---- | ----- | ------ |
+| 上箭头 | <i class="mdi mdi-arrow-up-bold"></i> | {"gem_emerald":100} |  |
+| 扩展器 | <i class="mdi mdi-magnify-expand"></i> | {"gem_emerald":300} | true |
+| 通配符 | <i class="mdi mdi-card-bulleted"></i> | {"gem_sapphire":300} |  |
+| 活动星级 | <i class="mdi mdi-star"></i> |  |  |

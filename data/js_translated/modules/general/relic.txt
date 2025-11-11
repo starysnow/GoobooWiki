@@ -1,0 +1,112 @@
+{
+    火炬: {icon: 'mdi-torch', feature: ['general', 'mining', 'village'], color: '橙色油漆', effect() {return [
+        {name: '矿山卡片容量', type: '+', value: 1},
+        {name: '村庄卡片容量', type: '+', value: 1},
+    ];}, glyph() {return {热量: 2, 木头: 2};}, 激活的卡片: {
+        cost: {最高力量: 40},
+        params: () => [],
+        description: () => [],
+        formula: () => [],
+        disabled(params, option) {
+            return store.state.system.features.mining.currentSubfeature !== 0 || store.state.cryolab.mining.激活的卡片 || store.state.mining.torchDepths.includes(parseInt(option));
+        },
+        trigger(params, option) {
+            store.commit('mining/addTorchDepth', parseInt(option));
+        }
+    }},
+    紫心勋章: {icon: 'mdi-heart', feature: ['general', 'horde'], color: '紫色油漆', effect() {return [
+        {name: '生命值', type: '*', value: 1.5},
+        {name: '腐败的灵魂增益', type: '*', value: 1.2},
+    ];}, glyph() {return {尖刺: 1, 梦: 3};}},
+    布满灰尘的书: {icon: 'mdi-book', feature: ['general', '学校'], color: 'beige', effect() {return [
+        {name: '图书馆', type: '解锁', value: true},
+        {name: '多通道', type: '+', value: 2},
+        {name: '金尘容量', type: '+', value: 1e4},
+    ];}, glyph() {return {灰尘: 2, 书籍: 3};}},
+    腐烂的叶子: {icon: 'mdi-leaf', feature: ['general', '农场'], color: 'brown', effect() {return [
+        {name: '产出', type: '*', value: 1.75},
+        {name: '作物经验', type: '*', value: 1.2},
+        {name: '过度生长', type: '+', value: 0.2},
+    ];}, glyph() {return {雨: 2, 日: 3, 云: 1};}},
+    石头穿孔机: {icon: 'mdi-screwdriver', feature: ['general', 'mining'], color: 'cherry', effect() {return [
+        {name: '伤害', type: '*', value: 2.25},
+    ];}, glyph() {return {灰尘: 4, 粘土: 1};}, 激活的卡片: {
+        cost: {最高力量: 35},
+        params() {
+            let increases = 0;
+            let 硝 = 0;
+            store.state.mining.breaks.forEach((amount, index) => {
+                const highest = Math.max(...store.state.mining.breaks.slice(index));
+                if (highest > amount) {
+                    increases++;
+                    if (store.state.system.features.mining.currentSubfeature === 0 && (index + 1) >= MINING_NITER_DEPTH) {
+                        let breaksMult = 0;
+                        let currentBreaks = amount;
+                        while (currentBreaks < highest) {
+                            const breaksBase = currentBreaks > 0 ? Math.floor(Math.log10(currentBreaks)) : -1;
+                            const nextStep = Math.pow(10, breaksBase + 1);
+                            currentBreaks = Math.min(highest, nextStep);
+                            if (currentBreaks === nextStep) {
+                                breaksMult++;
+                            }
+                        }
+                        硝 += store.getters['mining/rareDropFinal']('硝') * breaksMult;
+                    }
+                }
+            });
+            return [increases, 硝];
+        },
+        description: () => [],
+        formula: params => [formatNum(params[1])],
+        disabled(params) {
+            return store.state.cryolab.mining.激活的卡片 || params[0] <= 0;
+        },
+        trigger(params) {
+            let highest = 0;
+            store.commit('mining/updateKey', {key: 'breaks', value: [...store.state.mining.breaks].reverse().map(el => {
+                if (el > highest) {
+                    highest = el;
+                }
+                return highest;
+            }).reverse()});
+            store.dispatch('currency/gain', {feature: 'mining', name: '硝', amount: params[1]});
+        }
+    }},
+    安慰奖: {icon: 'mdi-seal-variant', feature: ['general', 'village', 'horde', '农场'], color: 'lighter-grey', effect() {return [
+        {name: '所有资源增益', type: '*', value: 1.4},
+        {name: '精通点数增益', type: '*', value: 1.4},
+        {name: '作物经验', type: '*', value: 1.4},
+    ];}, glyph() {return {石头: 2, 三叶草: 2, 云: 2};}},
+    漂亮的灯: {icon: 'mdi-vanity-light', feature: ['general', 'gallery'], color: '浅蓝色油漆', effect() {return [
+        {name: '灵感的开始', type: '+', value: 3},
+        {name: 'thinkHarder', type: 'galleryIdea', value: true},
+    ];}, glyph() {return {开花: 2, 纸: 4};}},
+    博物馆钥匙: {icon: 'mdi-key', feature: ['general', 'relic'], color: 'deep-紫色油漆', effect() {return [
+        {name: '博物馆', type: '解锁', value: true},
+    ];}, glyph() {return {云: 2, 纸: 2, 金币: 3};}},
+    丝带: {icon: 'mdi-ribbon', feature: ['general', '农场', 'gallery'], color: 'babypink', effect() {return [
+        {name: '农场卡牌容量', type: '+', value: 1},
+        {name: '画廊卡片容量', type: '+', value: 1},
+    ];}, glyph() {return {雨: 2, 日: 2, 开花: 4};}},
+    复印机: {icon: 'mdi-printer', feature: ['general', 'treasure'], color: '蓝色油漆-grey', effect() {return [
+        {name: '双宝', type: '解锁', value: true},
+        {name: '宝藏插槽', type: '+', value: 2},
+    ];}, glyph() {return {金币: 3, 纸: 3};}},
+    游戏牌: {icon: 'mdi-cards-playing', feature: ['general', '卡牌'], color: '青色油漆', effect() {return [
+        {name: '闪亮卡牌', type: '解锁', value: true},
+    ];}, glyph() {return {金币: 4, 卡牌: 3};}},
+    棋盘: {icon: 'mdi-checkerboard', feature: ['general', 'horde'], color: 'grey', effect() {return [
+        {name: '象棋装备', type: '解锁', value: true},
+    ];}, glyph() {return {三叶草: 5};}},
+    彩虹花: {icon: 'mdi-flower-pollen', feature: ['general', 'cryolab'], color: '粉红色油漆', effect() {return [
+        {name: '最大冻结的功能', type: '+', value: 1},
+        {name: '底座尺寸 (C)', type: '+', value: 1},
+    ];}, glyph() {return {书籍: 5, 开花: 2};}},
+    科学书: {icon: 'mdi-book-education', feature: ['general', 'treasure'], color: 'pale-蓝色油漆', effect() {return [
+        {name: '久负盛名的宝藏', type: '解锁', value: true},
+        {name: '多通道', type: '+', value: 4},
+    ];}, glyph() {return {书籍: 3, 金币: 5};}},
+    巨大钻石: {icon: 'mdi-diamond-outline', feature: ['general', '宝石'], color: 'cyan', effect() {return [
+        {name: '钻石发电机', type: '解锁', value: true},
+    ];}, glyph() {return {灰尘: 5, 石头: 4};}},
+}

@@ -1,106 +1,136 @@
 {
-    更多力量: {类型: '高级', 消耗(lvl) {
-        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 100};
-    }, 效果: [
-        {name: '攻击', 类型: '*', value: lvl => getSequence(2, lvl) * 0.3 + 1},
-        {name: '生命值', 类型: '*', value: lvl => getSequence(2, lvl) * 0.3 + 1}
+    更多力量: {type: '优质肥料', price(lvl) {
+        return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 100};
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => getSequence(2, lvl) * 0.3 + 1},
+        {name: '生命值', type: '*', value: lvl => getSequence(2, lvl) * 0.3 + 1}
     ]},
-    更多骨头: {类型: '高级', 消耗(lvl) {
-        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 75};
-    }, 效果: [
-        {name: '骨头增益', 类型: '*', value: lvl => getSequence(1, lvl) + 1},
-        {name: '骨头容量', 类型: '*', value: lvl => getSequence(1, lvl) + 1}
+    更多骨头: {type: '优质肥料', price(lvl) {
+        return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 75};
+    }, effect: [
+        {name: '骨头增益', type: '*', value: lvl => getSequence(1, lvl) + 1},
+        {name: '骨头容量', type: '*', value: lvl => getSequence(1, lvl) + 1}
     ]},
-    更多怪物零件: {类型: '高级', requirement() {
-        return store.state.stat.怪物零件.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 90};
-    }, 效果: [
-        {name: '怪物零件增益', 类型: '*', value: lvl => lvl * 0.5 + 1}
+    更多怪物零件: {type: '优质肥料', requirement() {
+        return store.state.stat.怪物零件.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 90};
+    }, effect: [
+        {name: '怪物零件增益', type: '*', value: lvl => lvl * 0.5 + 1}
     ]},
-    更多灵魂: {类型: '高级', requirement() {
-        return store.state.stat.horde_maxZone.总计 > 19;
-    }, 消耗(lvl) {
-        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 110};
-    }, 效果: [
-        {name: '腐败的灵魂增益', 类型: '*', value: lvl => lvl * 0.25 + 1},
-        {name: '腐败的灵魂容量', 类型: '*', value: lvl => lvl * 0.25 + 1}
+    更多灵魂: {type: '优质肥料', requirement() {
+        return store.state.stat.探险家.total > 19;
+    }, price(lvl) {
+        return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 110};
+    }, effect: [
+        {name: '腐败的灵魂增益', type: '*', value: lvl => lvl * 0.25 + 1},
+        {name: '腐败的灵魂容量', type: '*', value: lvl => lvl * 0.25 + 1}
     ]},
-    更多精通: {类型: '高级', requirement() {
-        return store.state.stat.horde_maxZone.总计 > 75;
-    }, 消耗(lvl) {
-        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 125};
-    }, 效果: [
-        {name: '精通点数增益', 类型: '*', value: lvl => getSequence(2, lvl) * 0.25 + 1}
+    更多精通: {type: '优质肥料', requirement() {
+        return store.state.stat.探险家.total > 75;
+    }, price(lvl) {
+        return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 125};
+    }, effect: [
+        {name: '精通点数增益', type: '*', value: lvl => getSequence(2, lvl) * 0.25 + 1}
     ]},
-    古老的力量: {类型: '高级', 上限: 1, requirement() {
-        return store.state.部落.传家宝.力量.amount > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 300};
-    }, 效果: [
-        {name: '力量效果', 类型: '*', value: lvl => getSequence(1, lvl + 1)}
+    古老的力量: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumAncient', requirement() {
+        return store.state.horde.heirloom.最高力量.amount > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 300};
+    }, effect: [
+        {name: '力量效果', type: '*', value: lvl => Math.pow(2, lvl)}
     ]},
-    古老的坚韧: {类型: '高级', 上限: 1, requirement() {
-        return store.state.部落.传家宝.fortitude.amount > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 300};
-    }, 效果: [
-        {name: '韧效果', 类型: '*', value: lvl => getSequence(1, lvl + 1)}
+    古老的坚韧: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumAncient', requirement() {
+        return store.state.horde.heirloom.fortitude.amount > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 300};
+    }, effect: [
+        {name: '韧效果', type: '*', value: lvl => Math.pow(2, lvl)}
     ]},
-    古老的财富: {类型: '高级', 上限: 1, requirement() {
-        return store.state.部落.传家宝.wealth.amount > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 300};
-    }, 效果: [
-        {name: '财富效果', 类型: '*', value: lvl => getSequence(1, lvl + 1)}
+    古老的财富: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumAncient', requirement() {
+        return store.state.horde.heirloom.wealth.amount > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 300};
+    }, effect: [
+        {name: '财富效果', type: '*', value: lvl => Math.pow(2, lvl)}
     ]},
-    古老的精神: {类型: '高级', 上限: 1, requirement() {
-        return store.state.部落.传家宝.spirit.amount > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 450};
-    }, 效果: [
-        {name: '精神效果', 类型: '*', value: lvl => getSequence(1, lvl + 1)}
+    古老的精神: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumAncient', requirement() {
+        return store.state.horde.heirloom.spirit.amount > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 450};
+    }, effect: [
+        {name: '精神效果', type: '*', value: lvl => Math.pow(2, lvl)}
     ]},
-    古老的锐视: {类型: '高级', 上限: 1, requirement() {
-        return store.state.部落.传家宝.sharpsight.amount > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 600};
-    }, 效果: [
-        {name: '锐视效果', 类型: '*', value: lvl => getSequence(1, lvl + 1)}
+    古老的锐视: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumAncient', requirement() {
+        return store.state.horde.heirloom.sharpsight.amount > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 600};
+    }, effect: [
+        {name: '锐视效果', type: '*', value: lvl => Math.pow(2, lvl)}
     ]},
-    古老的收割: {类型: '高级', 上限: 1, requirement() {
-        return store.state.部落.传家宝.reaping.amount > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 750};
-    }, 效果: [
-        {name: '收割效果', 类型: '*', value: lvl => getSequence(1, lvl + 1)}
+    古老的收割: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumAncient', requirement() {
+        return store.state.horde.heirloom.reaping.amount > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 750};
+    }, effect: [
+        {name: '收割效果', type: '*', value: lvl => Math.pow(2, lvl)}
     ]},
-    古老的回忆: {类型: '高级', 上限: 1, requirement() {
-        return store.state.部落.传家宝.remembrance.amount > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 750};
-    }, 效果: [
-        {name: '纪念效果', 类型: '*', value: lvl => getSequence(1, lvl + 1)}
+    古老的回忆: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumAncient', requirement() {
+        return store.state.horde.heirloom.remembrance.amount > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 750};
+    }, effect: [
+        {name: '纪念效果', type: '*', value: lvl => Math.pow(2, lvl)}
     ]},
-    古老的保持: {类型: '高级', 上限: 1, requirement() {
-        return store.state.部落.传家宝.holding.amount > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 975};
-    }, 效果: [
-        {name: '保持效果', 类型: '*', value: lvl => getSequence(1, lvl + 1)}
+    古老的保持: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumAncient', requirement() {
+        return store.state.horde.heirloom.holding.amount > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 975};
+    }, effect: [
+        {name: '保持效果', type: '*', value: lvl => Math.pow(2, lvl)}
     ]},
-    古老的经验: {类型: '高级', 上限: 1, requirement() {
-        return store.state.部落.传家宝.expertise.amount > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 1300};
-    }, 效果: [
-        {name: '专长效果', 类型: '*', value: lvl => getSequence(1, lvl + 1)}
+    古老的经验: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumAncient', requirement() {
+        return store.state.horde.heirloom.expertise.amount > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 1300};
+    }, effect: [
+        {name: '专长效果', type: '*', value: lvl => Math.pow(2, lvl)}
     ]},
-    古老的精通: {类型: '高级', 上限: 1, requirement() {
-        return store.state.部落.传家宝.神秘.amount > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 1800};
-    }, 效果: [
-        {name: '神秘效果', 类型: '*', value: lvl => getSequence(1, lvl + 1)}
-    ]}
+    古老的精通: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumAncient', requirement() {
+        return store.state.horde.heirloom.mystery.amount > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 1800};
+    }, effect: [
+        {name: '神秘效果', type: '*', value: lvl => Math.pow(2, lvl)}
+    ]},
+    远古冰冻: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumAncient', requirement() {
+        return store.state.horde.heirloom.freezing.amount > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 2500};
+    }, effect: [
+        {name: '冷冻效果', type: '*', value: lvl => Math.pow(2, lvl)}
+    ]},
+    更多血液: {type: '优质肥料', requirement() {
+        return store.state.解锁.hordeClassesSubfeature.see;
+    }, price(lvl) {
+        return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 900};
+    }, effect: [
+        {name: '血液增益', type: '*', value: lvl => getSequence(1, lvl) + 1},
+        {name: '血液容量', type: '*', value: lvl => getSequence(1, lvl) + 1},
+    ]},
+    更多勇气: {type: '优质肥料', requirement() {
+        return store.state.解锁.hordeClassesSubfeature.see;
+    }, price(lvl) {
+        return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 1200};
+    }, effect: [
+        {name: '勇敢增益', type: '*', value: lvl => lvl * 0.25 + 1},
+    ]},
+    更多的怪物牙齿: {type: '优质肥料', cap: 5, requirement() {
+        return store.state.解锁.怪物牙齿 (战区).see;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(2, lvl) * 2000};
+    }, effect: [
+        {name: '怪物牙齿增益', type: '+', value: lvl => lvl * 0.01},
+        {name: '怪物牙齿增益', type: '*', value: lvl => lvl * 0.1 + 1},
+    ]},
 }

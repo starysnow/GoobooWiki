@@ -1,47 +1,36 @@
 {
-    波浪: {
-        类型: 'theme',
-        item: '波浪',
+    theme_waves: {
+        type: 'theme',
+        item: 'waves',
         pool: {
-            summerFestival: {消耗: {夏季节日代币: 240}}
+            summerFestival: {price: {夏季节日代币: 240}}
         }
     },
     热带帐篷: {
-        类型: '圣遗物',
+        type: 'relic',
         item: '热带帐篷',
         requirement() {
             return store.state.解锁.villageFeature.see;
         },
         pool: {
-            summerFestival: {消耗: {夏季节日代币: 150}}
+            summerFestival: {price: {夏季节日代币: 150}}
         }
     },
     水果篮: {
-        类型: '圣遗物',
+        type: 'relic',
         item: '水果篮',
         requirement() {
             return store.state.解锁.farmFeature.see;
         },
         pool: {
-            summerFestival: {消耗: {夏季节日代币: 170}}
+            summerFestival: {price: {夏季节日代币: 170}}
         }
     },
     cardPack_charmingShip: {
-        类型: '卡包',
+        type: '卡包',
         item: '迷人的船',
         pool: {
-            summerFestival: {消耗: {夏季节日代币: 30}}
-        }
-    },
-    热带水: {
-        类型: 'consumable',
-        item: '热带水',
-        amount: 20,
-        requirement() {
-            return store.state.解锁.肥料.see;
-        },
-        pool: {
-            summerFestival: {消耗: {夏季节日代币: 1}}
+            summerFestival: {price: {夏季节日代币: 30}}
         }
     }
 }

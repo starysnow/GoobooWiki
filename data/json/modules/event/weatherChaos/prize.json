@@ -1,32 +1,26 @@
 [
   {
-    "名称": "雨色",
-    "item": "雨色",
-    "pool": "{\"weatherChaos\":{\"消耗\":{\"天气混乱代币\":260}}}",
-    "amount": ""
+    "名称": "雨",
+    "type": "theme",
+    "item": "雨",
+    "pool": "{\"weatherChaos\":{\"price\":{\"天气混乱代币\":260}}}"
   },
   {
-    "名称": "垃圾箱",
-    "item": "垃圾箱",
-    "pool": "{\"weatherChaos\":{\"消耗\":{\"天气混乱代币\":130}}}",
-    "amount": ""
+    "名称": "垃圾桶",
+    "type": "relic",
+    "item": "垃圾桶",
+    "pool": "{\"weatherChaos\":{\"price\":{\"天气混乱代币\":130}}}"
   },
   {
     "名称": "手提箱",
+    "type": "relic",
     "item": "手提箱",
-    "pool": "{\"weatherChaos\":{\"消耗\":{\"天气混乱代币\":155}}}",
-    "amount": ""
+    "pool": "{\"weatherChaos\":{\"price\":{\"天气混乱代币\":155}}}"
   },
   {
     "名称": "cardPack_fishingForFun",
+    "type": "卡包",
     "item": "钓鱼为乐",
-    "pool": "{\"weatherChaos\":{\"消耗\":{\"天气混乱代币\":30}}}",
-    "amount": ""
-  },
-  {
-    "名称": "臭泥",
-    "item": "臭泥",
-    "pool": "{\"weatherChaos\":{\"消耗\":{\"天气混乱代币\":1}}}",
-    "amount": "20"
+    "pool": "{\"weatherChaos\":{\"price\":{\"天气混乱代币\":30}}}"
   }
 ]

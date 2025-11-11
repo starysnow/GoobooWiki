@@ -1,32 +1,26 @@
 [
   {
-    "名称": "烛光",
-    "item": "烛光",
-    "pool": "{\"cinders\":{\"消耗\":{\"煤渣代币\":170}}}",
-    "amount": ""
+    "名称": "theme_candlelight",
+    "type": "theme",
+    "item": "candlelight",
+    "pool": "{\"cinders\":{\"price\":{\"煤渣代币\":170}}}"
   },
   {
     "名称": "晶洞",
+    "type": "relic",
     "item": "晶洞",
-    "pool": "{\"cinders\":{\"消耗\":{\"煤渣代币\":140}}}",
-    "amount": ""
+    "pool": "{\"cinders\":{\"price\":{\"煤渣代币\":140}}}"
   },
   {
     "名称": "生日蛋糕",
+    "type": "relic",
     "item": "生日蛋糕",
-    "pool": "{\"cinders\":{\"消耗\":{\"煤渣代币\":180}}}",
-    "amount": ""
+    "pool": "{\"cinders\":{\"price\":{\"煤渣代币\":180}}}"
   },
   {
     "名称": "cardPack_sparksOfJoy",
+    "type": "卡包",
     "item": "欢乐的火花",
-    "pool": "{\"cinders\":{\"消耗\":{\"煤渣代币\":30}}}",
-    "amount": ""
-  },
-  {
-    "名称": "Sunshine",
-    "item": "Sunshine",
-    "pool": "{\"cinders\":{\"消耗\":{\"煤渣代币\":1}}}",
-    "amount": "20"
+    "pool": "{\"cinders\":{\"price\":{\"煤渣代币\":30}}}"
   }
 ]

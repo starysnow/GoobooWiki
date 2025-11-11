@@ -2,8 +2,8 @@
   {
     "名称": "feature",
     "prefix": "GE",
-    "reward": "currencyGemTopazCap+｛$lvl  \\cdot  20$｝",
-    "shinyReward": "currencyGemTopazCap+｛$lvl  \\cdot  20$｝",
+    "reward": "currencyGemTopazCap+｛$lvl  \\cdot  50$｝",
+    "shinyReward": "currencyGemTopazCap+｛$lvl  \\cdot  50$｝",
     "解锁": "gemFeature",
     "贵重珠宝": ""
   },
@@ -13,7 +13,7 @@
     "reward": "",
     "shinyReward": "",
     "解锁": "",
-    "贵重珠宝": "{\"reward\":[{\"name\":\"currencyGemTopazCap\",\"类型\":\"+\",\"value\":160}]}"
+    "贵重珠宝": "{\"reward\":[{\"name\":\"currencyGemTopazCap\",\"type\":\"+\",\"value\":500}]}"
   },
   {
     "名称": "pack",

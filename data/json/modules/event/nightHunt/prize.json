@@ -1,32 +1,26 @@
 [
   {
-    "名称": "秋天的森林",
-    "item": "秋天的森林",
-    "pool": "{\"nightHunt\":{\"消耗\":{\"夜间狩猎代币\":200}}}",
-    "amount": ""
+    "名称": "theme_autumnForest",
+    "type": "theme",
+    "item": "autumnForest",
+    "pool": "{\"nightHunt\":{\"price\":{\"夜间狩猎代币\":200}}}"
   },
   {
-    "名称": "块状颗粒",
-    "item": "块状颗粒",
-    "pool": "{\"nightHunt\":{\"消耗\":{\"夜间狩猎代币\":170}}}",
-    "amount": ""
+    "名称": "大量谷物",
+    "type": "relic",
+    "item": "大量谷物",
+    "pool": "{\"nightHunt\":{\"price\":{\"夜间狩猎代币\":170}}}"
   },
   {
-    "名称": "魔法瓶",
-    "item": "魔法瓶",
-    "pool": "{\"nightHunt\":{\"消耗\":{\"夜间狩猎代币\":175}}}",
-    "amount": ""
+    "名称": "附魔瓶",
+    "type": "relic",
+    "item": "附魔瓶",
+    "pool": "{\"nightHunt\":{\"price\":{\"夜间狩猎代币\":175}}}"
   },
   {
     "名称": "cardPack_midnightAnomaly",
+    "type": "卡包",
     "item": "午夜异常",
-    "pool": "{\"nightHunt\":{\"消耗\":{\"夜间狩猎代币\":30}}}",
-    "amount": ""
-  },
-  {
-    "名称": "田野祝福",
-    "item": "田野祝福",
-    "pool": "{\"nightHunt\":{\"消耗\":{\"夜间狩猎代币\":1}}}",
-    "amount": "20"
+    "pool": "{\"nightHunt\":{\"price\":{\"夜间狩猎代币\":30}}}"
   }
 ]

@@ -1,377 +1,594 @@
 [
-    {id: 1, collection: '黑暗中的危险', 力量: 3, color: '绿色', icons: [
-        {"x": -0.1, "y": 0.1, "rotate": -20, "size": 2.5, "图标": "mdi-chart-bubble"},
-        {"x": 0.85, "y": 0.1, "rotate": 0, "size": 1.5, "图标": "mdi-snake"},
-        {"x": -0.85, "y": 0.05, "rotate": 0, "size": 2, "图标": "mdi-human-handsdown"}
+    {id: 1, collection: '黑暗中的危险', 最高力量: 3, color: '绿色油漆', icons: [
+        {"x": -0.1, "y": 0.1, "rotate": -20, "size": 2.5, "icon": "mdi-chart-bubble"},
+        {"x": 0.85, "y": 0.1, "rotate": 0, "size": 1.5, "icon": "mdi-snake"},
+        {"x": -0.85, "y": 0.05, "rotate": 0, "size": 2, "icon": "mdi-human-handsdown"}
     ]},
-    {id: 2, collection: '黑暗中的危险', 力量: 2, reward: [
-        {name: '击败 (0) (+(1))要求', 类型: '+', value: -5}
-    ], color: 'darker-灰色', icons: [
-        {"x": 0, "y": 0.1, "rotate": 0, "size": 3, "图标": "mdi-ellipse-outline"},
-        {"x": -0.85, "y": 0.9, "rotate": 0, "size": 1.4, "图标": "mdi-grass"},
-        {"x": 0.85, "y": 0.75, "rotate": 0, "size": 1.2, "图标": "mdi-grass"},
-        {"x": 0.85, "y": -0.8, "rotate": 0, "size": 1, "图标": "mdi-grass"},
-        {"x": 0, "y": -1, "rotate": 0, "size": 0.9, "图标": "mdi-grass"}
+    {id: 2, collection: '黑暗中的危险', 最高力量: 2, reward: [
+        {name: 'Boss要求', type: '+', value: -5},
+    ], color: 'darker-grey', icons: [
+        {"x": 0, "y": 0.1, "rotate": 0, "size": 3, "icon": "mdi-ellipse-outline"},
+        {"x": -0.85, "y": 0.9, "rotate": 0, "size": 1.4, "icon": "mdi-grass"},
+        {"x": 0.85, "y": 0.75, "rotate": 0, "size": 1.2, "icon": "mdi-grass"},
+        {"x": 0.85, "y": -0.8, "rotate": 0, "size": 1, "icon": "mdi-grass"},
+        {"x": 0, "y": -1, "rotate": 0, "size": 0.9, "icon": "mdi-grass"}
     ]},
-    {id: 3, collection: '黑暗中的危险', 力量: 1, reward: [
-        {name: '骨头增益', 类型: '*', value: 1.2},
-        {name: '骨头容量', 类型: '*', value: 1.35}
-    ], color: '橙色-红色', icons: [
-        {"x": 0, "y": 0.8, "rotate": 0, "size": 3, "图标": "mdi-image-filter-hdr"},
-        {"x": 0.15, "y": 0.55, "rotate": 0, "size": 1, "图标": "mdi-fountain"},
-        {"x": 0.55, "y": -0.2, "rotate": -60, "size": 0.7, "图标": "mdi-motion"},
-        {"x": -0.6, "y": -0.15, "rotate": -140, "size": 0.95, "图标": "mdi-motion"},
-        {"x": -0.1, "y": -0.75, "rotate": -100, "size": 1.15, "图标": "mdi-motion"}
+    {id: 3, collection: '黑暗中的危险', 最高力量: 1, reward: [
+        {name: '骨头增益', type: '*', value: 1.2},
+        {name: '骨头容量', type: '*', value: 1.35},
+    ], color: '橙色油漆-红色油漆', icons: [
+        {"x": 0, "y": 0.8, "rotate": 0, "size": 3, "icon": "mdi-image-filter-hdr"},
+        {"x": 0.15, "y": 0.55, "rotate": 0, "size": 1, "icon": "mdi-fountain"},
+        {"x": 0.55, "y": -0.2, "rotate": -60, "size": 0.7, "icon": "mdi-motion"},
+        {"x": -0.6, "y": -0.15, "rotate": -140, "size": 0.95, "icon": "mdi-motion"},
+        {"x": -0.1, "y": -0.75, "rotate": -100, "size": 1.15, "icon": "mdi-motion"}
     ]},
-    {id: 4, collection: '黑暗中的危险', 力量: 2, reward: [
-        {name: '怪物零件容量', 类型: '+', value: 50}
-    ], color: 'deep-紫色', icons: [
-        {"x": 0, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-human-handsdown"},
-        {"x": -0.3, "y": -0.7, "rotate": -30, "size": 0.75, "图标": "mdi-help"},
-        {"x": 0.55, "y": -0.3, "rotate": 0, "size": 1, "图标": "mdi-map-legend"},
-        {"x": -0.7, "y": 0.85, "rotate": 75, "size": 1.75, "图标": "mdi-chart-bubble"}
+    {id: 4, collection: '黑暗中的危险', 最高力量: 2, reward: [
+        {name: '怪物零件容量', type: '+', value: 50},
+    ], color: 'deep-紫色油漆', icons: [
+        {"x": 0, "y": 0, "rotate": 0, "size": 2, "icon": "mdi-human-handsdown"},
+        {"x": -0.3, "y": -0.7, "rotate": -30, "size": 0.75, "icon": "mdi-help"},
+        {"x": 0.55, "y": -0.3, "rotate": 0, "size": 1, "icon": "mdi-map-legend"},
+        {"x": -0.7, "y": 0.85, "rotate": 75, "size": 1.75, "icon": "mdi-chart-bubble"}
     ]},
-    {id: 5, collection: '黑暗中的危险', 力量: 2, reward: [
-        {name: '骨头增益', 类型: '*', value: 1.25}
-    ], color: '青色', icons: [
-        {"x": 0.6, "y": 0.2, "rotate": 0, "size": 2.5, "图标": "mdi-mirror-rectangle"},
-        {"x": 0.65, "y": 0.5, "rotate": 0, "size": 1, "图标": "mdi-human-greeting"},
-        {"x": 0.65, "y": 0.25, "rotate": 0, "size": 0.5, "图标": "mdi-skull"},
-        {"x": -0.4, "y": 0.65, "rotate": 0, "size": 1.1, "图标": "mdi-human-handsdown"},
-        {"x": -0.3, "y": 0.05, "rotate": 15, "size": 0.75, "图标": "mdi-exclamation-thick"}
+    {id: 5, collection: '黑暗中的危险', 最高力量: 2, reward: [
+        {name: '骨头增益', type: '*', value: 1.25},
+    ], color: 'cyan', icons: [
+        {"x": 0.6, "y": 0.2, "rotate": 0, "size": 2.5, "icon": "mdi-mirror-rectangle"},
+        {"x": 0.65, "y": 0.5, "rotate": 0, "size": 1, "icon": "mdi-human-greeting"},
+        {"x": 0.65, "y": 0.25, "rotate": 0, "size": 0.5, "icon": "mdi-skull"},
+        {"x": -0.4, "y": 0.65, "rotate": 0, "size": 1.1, "icon": "mdi-human-handsdown"},
+        {"x": -0.3, "y": 0.05, "rotate": 15, "size": 0.75, "icon": "mdi-exclamation-thick"}
     ]},
-    {id: 6, collection: '黑暗中的危险', 力量: 2, reward: [
-        {name: '分裂盾', 类型: '+', value: 4}
-    ], color: '红色', icons: [
-        {"x": -0.95, "y": 0.8, "rotate": 0, "size": 1.5, "图标": "mdi-waves"},
-        {"x": -0.3, "y": 0.8, "rotate": 0, "size": 1.5, "图标": "mdi-waves"},
-        {"x": 0.3, "y": 0.8, "rotate": 0, "size": 1.5, "图标": "mdi-waves"},
-        {"x": 0.95, "y": 0.8, "rotate": 0, "size": 1.5, "图标": "mdi-waves"},
-        {"x": 0, "y": 0.46, "rotate": 0, "size": 1, "图标": "mdi-swim"},
-        {"x": -0.7, "y": -0.15, "rotate": 0, "size": 1.8, "图标": "mdi-scent"},
-        {"x": 0.7, "y": -0.55, "rotate": 0, "size": 1.9, "图标": "mdi-scent"},
-        {"x": -0.05, "y": 0.1, "rotate": -20, "size": 0.8, "图标": "mdi-fire"}
+    {id: 6, collection: '黑暗中的危险', 最高力量: 2, reward: [
+        {name: '分裂盾', type: '+', value: 4},
+    ], color: '红色油漆', icons: [
+        {"x": -0.95, "y": 0.8, "rotate": 0, "size": 1.5, "icon": "mdi-waves"},
+        {"x": -0.3, "y": 0.8, "rotate": 0, "size": 1.5, "icon": "mdi-waves"},
+        {"x": 0.3, "y": 0.8, "rotate": 0, "size": 1.5, "icon": "mdi-waves"},
+        {"x": 0.95, "y": 0.8, "rotate": 0, "size": 1.5, "icon": "mdi-waves"},
+        {"x": 0, "y": 0.46, "rotate": 0, "size": 1, "icon": "mdi-swim"},
+        {"x": -0.7, "y": -0.15, "rotate": 0, "size": 1.8, "icon": "mdi-scent"},
+        {"x": 0.7, "y": -0.55, "rotate": 0, "size": 1.9, "icon": "mdi-scent"},
+        {"x": -0.05, "y": 0.1, "rotate": -20, "size": 0.8, "icon": "mdi-fire"}
     ]},
-    {id: 7, collection: '维护安全', 力量: 2, reward: [
-        {name: '装备几率', 类型: '*', value: 1.6}
-    ], color: 'pale-黄色', icons: [
-        {"x": 0, "y": 1, "rotate": 90, "size": 2, "图标": "mdi-rectangle"},
-        {"x": 0, "y": 0.35, "rotate": 0, "size": 1, "图标": "mdi-bag-personal"},
-        {"x": 0.55, "y": 0.75, "rotate": 0, "size": 1.6, "图标": "mdi-human-greeting"},
-        {"x": -0.9, "y": 0.75, "rotate": 0, "size": 1.55, "图标": "mdi-human-handsdown"}
+    {id: 7, collection: '维护安全', 最高力量: 2, reward: [
+        {name: '装备几率', type: '*', value: 1.6},
+    ], color: 'pale-黄色油漆', icons: [
+        {"x": 0, "y": 1, "rotate": 90, "size": 2, "icon": "mdi-rectangle"},
+        {"x": 0, "y": 0.35, "rotate": 0, "size": 1, "icon": "mdi-bag-personal"},
+        {"x": 0.55, "y": 0.75, "rotate": 0, "size": 1.6, "icon": "mdi-human-greeting"},
+        {"x": -0.9, "y": 0.75, "rotate": 0, "size": 1.55, "icon": "mdi-human-handsdown"}
     ]},
-    {id: 8, collection: '维护安全', 力量: 2, reward: [
-        {name: '骨头容量', 类型: '*', value: 1.2},
-        {name: '怪物零件容量', 类型: '+', value: 30}
-    ], color: '樱桃色', icons: [
-        {"x": -0.1, "y": 0.55, "rotate": 0, "size": 1.25, "图标": "mdi-wall"},
-        {"x": 0.45, "y": 0.55, "rotate": 0, "size": 1.25, "图标": "mdi-wall"},
-        {"x": 1, "y": 0.55, "rotate": 0, "size": 1.25, "图标": "mdi-wall"},
-        {"x": -0.5, "y": 0.2, "rotate": -15, "size": 0.8, "图标": "mdi-hammer"},
-        {"x": -0.85, "y": 0.45, "rotate": 0, "size": 1.6, "图标": "mdi-walk"}
+    {id: 8, collection: '维护安全', 最高力量: 2, reward: [
+        {name: '骨头容量', type: '*', value: 1.2},
+        {name: '怪物零件容量', type: '+', value: 30},
+    ], color: 'cherry', icons: [
+        {"x": -0.1, "y": 0.55, "rotate": 0, "size": 1.25, "icon": "mdi-wall"},
+        {"x": 0.45, "y": 0.55, "rotate": 0, "size": 1.25, "icon": "mdi-wall"},
+        {"x": 1, "y": 0.55, "rotate": 0, "size": 1.25, "icon": "mdi-wall"},
+        {"x": -0.5, "y": 0.2, "rotate": -15, "size": 0.8, "icon": "mdi-hammer"},
+        {"x": -0.85, "y": 0.45, "rotate": 0, "size": 1.6, "icon": "mdi-walk"}
     ]},
-    {id: 9, collection: '维护安全', 力量: 2, reward: [
-        {name: '生命值', 类型: '*', value: 1.3}
+    {id: 9, collection: '维护安全', 最高力量: 2, reward: [
+        {name: '生命值', type: '*', value: 1.3},
     ], color: 'indigo', icons: [
-        {"x": -0.7, "y": 0, "rotate": 0, "size": 2.5, "图标": "mdi-home"},
-        {"x": 0.7, "y": 0, "rotate": 0, "size": 2.5, "图标": "mdi-home"},
-        {"x": 0.3, "y": -0.5, "rotate": 0, "size": 1, "图标": "mdi-cctv"}
+        {"x": -0.7, "y": 0, "rotate": 0, "size": 2.5, "icon": "mdi-home"},
+        {"x": 0.7, "y": 0, "rotate": 0, "size": 2.5, "icon": "mdi-home"},
+        {"x": 0.3, "y": -0.5, "rotate": 0, "size": 1, "icon": "mdi-cctv"}
     ]},
-    {id: 10, collection: '维护安全', 力量: 2, reward: [
-        {name: '复活', 类型: '+', value: 1}
-    ], color: '绿色', icons: [
-        {"x": -0.75, "y": 0, "rotate": 20, "size": 0.75, "图标": "mdi-leaf"},
-        {"x": 0.85, "y": 0.5, "rotate": -45, "size": 0.8, "图标": "mdi-leaf"},
-        {"x": -0.4, "y": -0.05, "rotate": -105, "size": 0.85, "图标": "mdi-leaf"},
-        {"x": 0.3, "y": -0.6, "rotate": 0, "size": 1.25, "图标": "mdi-mushroom"},
-        {"x": -0.3, "y": 0.7, "rotate": 0, "size": 2, "图标": "mdi-book-open-page-variant-outline"},
-        {"x": -0.55, "y": 0.7, "rotate": 0, "size": 0.6, "图标": "mdi-mushroom-off"}
+    {id: 10, collection: '维护安全', 最高力量: 0, reward: [
+        {name: '复活', type: '+', value: 1},
+    ], color: '绿色油漆', icons: [
+        {"x": -0.75, "y": 0, "rotate": 20, "size": 0.75, "icon": "mdi-leaf"},
+        {"x": 0.85, "y": 0.5, "rotate": -45, "size": 0.8, "icon": "mdi-leaf"},
+        {"x": -0.4, "y": -0.05, "rotate": -105, "size": 0.85, "icon": "mdi-leaf"},
+        {"x": 0.3, "y": -0.6, "rotate": 0, "size": 1.25, "icon": "mdi-mushroom"},
+        {"x": -0.3, "y": 0.7, "rotate": 0, "size": 2, "icon": "mdi-book-open-page-variant-outline"},
+        {"x": -0.55, "y": 0.7, "rotate": 0, "size": 0.6, "icon": "mdi-mushroom-off"}
     ]},
-    {id: 11, collection: '维护安全', 力量: 2, reward: [
-        {name: '重生时间', 类型: '+', value: -60}
-    ], color: '黄色', icons: [
-        {"x": 0, "y": 0.24, "rotate": 0, "size": 1.55, "图标": "mdi-fence-electric"},
-        {"x": -0.75, "y": 0.24, "rotate": 0, "size": 1.5, "图标": "mdi-fence"},
-        {"x": 0.75, "y": 0.24, "rotate": 0, "size": 1.5, "图标": "mdi-fence"},
-        {"x": 0.7, "y": -0.35, "rotate": 0, "size": 1.25, "图标": "mdi-horse"},
-        {"x": -0.55, "y": -0.45, "rotate": 0, "size": 1.25, "图标": "mdi-donkey"},
-        {"x": 0.3, "y": -1, "rotate": 0, "size": 0.9, "图标": "mdi-dog-side"}
+    {id: 11, collection: '维护安全', 最高力量: 2, reward: [
+        {name: '重生时间', type: '+', value: -60},
+    ], color: '黄色油漆', icons: [
+        {"x": 0, "y": 0.24, "rotate": 0, "size": 1.55, "icon": "mdi-fence-electric"},
+        {"x": -0.75, "y": 0.24, "rotate": 0, "size": 1.5, "icon": "mdi-fence"},
+        {"x": 0.75, "y": 0.24, "rotate": 0, "size": 1.5, "icon": "mdi-fence"},
+        {"x": 0.7, "y": -0.35, "rotate": 0, "size": 1.25, "icon": "mdi-horse"},
+        {"x": -0.55, "y": -0.45, "rotate": 0, "size": 1.25, "icon": "mdi-donkey"},
+        {"x": 0.3, "y": -1, "rotate": 0, "size": 0.9, "icon": "mdi-dog-side"}
     ]},
-    {id: 12, collection: '危险武器', 力量: 2, reward: [
-        {name: '暴击率', 类型: '+', value: 0.05},
-        {name: '暴击伤害', 类型: '+', value: 0.1}
-    ], color: 'deep-橙色', icons: [
-        {"x": 0, "y": 0, "rotate": 0, "size": 3, "图标": "mdi-bomb"},
-        {"x": -0.55, "y": -0.4, "rotate": -25, "size": 1.25, "图标": "mdi-bomb"},
-        {"x": -0.8, "y": 0.2, "rotate": -140, "size": 1.25, "图标": "mdi-bomb"},
-        {"x": -0.65, "y": 0.65, "rotate": -125, "size": 1.25, "图标": "mdi-bomb"},
-        {"x": -0.1, "y": 0.95, "rotate": 135, "size": 1.25, "图标": "mdi-bomb"},
-        {"x": 0.45, "y": 0.85, "rotate": 95, "size": 1.25, "图标": "mdi-bomb"},
-        {"x": 0.75, "y": 0.3, "rotate": 20, "size": 1.25, "图标": "mdi-bomb"}
+    {id: 12, collection: '危险武器', 最高力量: 2, reward: [
+        {name: '暴击率', type: '+', value: 0.05},
+        {name: '暴击伤害', type: '+', value: 0.1},
+    ], color: '橙红色油漆', icons: [
+        {"x": 0, "y": 0, "rotate": 0, "size": 3, "icon": "mdi-bomb"},
+        {"x": -0.55, "y": -0.4, "rotate": -25, "size": 1.25, "icon": "mdi-bomb"},
+        {"x": -0.8, "y": 0.2, "rotate": -140, "size": 1.25, "icon": "mdi-bomb"},
+        {"x": -0.65, "y": 0.65, "rotate": -125, "size": 1.25, "icon": "mdi-bomb"},
+        {"x": -0.1, "y": 0.95, "rotate": 135, "size": 1.25, "icon": "mdi-bomb"},
+        {"x": 0.45, "y": 0.85, "rotate": 95, "size": 1.25, "icon": "mdi-bomb"},
+        {"x": 0.75, "y": 0.3, "rotate": 20, "size": 1.25, "icon": "mdi-bomb"}
     ]},
-    {id: 13, collection: '危险武器', 力量: 1, reward: [
-        {name: '攻击', 类型: '*', value: 1.15},
-        {name: '暴击伤害', 类型: '+', value: 0.35}
-    ], color: '紫色', icons: [
-        {"x": -0.5, "y": 0.6, "rotate": 0, "size": 1.65, "图标": "mdi-triangle"},
-        {"x": 0, "y": 0.25, "rotate": 15, "size": 2.1, "图标": "mdi-firework"},
-        {"x": 0.1, "y": 0.7, "rotate": 0, "size": 1, "图标": "mdi-human-handsup"}
+    {id: 13, collection: '危险武器', 最高力量: 1, reward: [
+        {name: '攻击', type: '*', value: 1.15},
+        {name: '暴击伤害', type: '+', value: 0.35},
+    ], color: '紫色油漆', icons: [
+        {"x": -0.5, "y": 0.6, "rotate": 0, "size": 1.65, "icon": "mdi-triangle"},
+        {"x": 0, "y": 0.25, "rotate": 15, "size": 2.1, "icon": "mdi-firework"},
+        {"x": 0.1, "y": 0.7, "rotate": 0, "size": 1, "icon": "mdi-human-handsup"}
     ]},
-    {id: 14, collection: '危险武器', 力量: 2, reward: [
-        {name: '攻击', 类型: '*', value: 1.05},
-        {name: '击败 (0) (+(1))要求', 类型: '+', value: -3}
-    ], color: '光-blue', icons: [
-        {"x": 0, "y": 0, "rotate": 15, "size": 2.75, "图标": "mdi-sword"},
-        {"x": -0.45, "y": -0.2, "rotate": -70, "size": 1, "图标": "mdi-rectangle"},
-        {"x": -0.55, "y": 0.15, "rotate": -70, "size": 1, "图标": "mdi-rectangle"},
-        {"x": -0.68, "y": 0.48, "rotate": -160, "size": 0.6, "图标": "mdi-triangle"}
+    {id: 14, collection: '危险武器', 最高力量: 2, reward: [
+        {name: '攻击', type: '*', value: 1.05},
+        {name: 'Boss要求', type: '+', value: -3},
+    ], color: '浅蓝色油漆', icons: [
+        {"x": 0, "y": 0, "rotate": 15, "size": 2.75, "icon": "mdi-sword"},
+        {"x": -0.45, "y": -0.2, "rotate": -70, "size": 1, "icon": "mdi-rectangle"},
+        {"x": -0.55, "y": 0.15, "rotate": -70, "size": 1, "icon": "mdi-rectangle"},
+        {"x": -0.68, "y": 0.48, "rotate": -160, "size": 0.6, "icon": "mdi-triangle"}
     ]},
-    {id: 15, collection: '危险武器', 力量: 3, reward: [
-        {name: '中毒', 类型: '+', value: 0.01}
-    ], color: '绿色', icons: [
-        {"x": -0.85, "y": 0.45, "rotate": 0, "size": 1.25, "图标": "mdi-bottle-tonic-skull"},
-        {"x": 0.3, "y": 0, "rotate": 0, "size": 2.1, "图标": "mdi-bow-arrow"},
-        {"x": 0.8, "y": -0.1, "rotate": 0, "size": 0.65, "图标": "mdi-water"}
+    {id: 15, collection: '危险武器', 最高力量: 3, reward: [
+        {name: '中毒', type: '+', value: 0.01},
+    ], color: '绿色油漆', icons: [
+        {"x": -0.85, "y": 0.45, "rotate": 0, "size": 1.25, "icon": "mdi-bottle-tonic-skull"},
+        {"x": 0.3, "y": 0, "rotate": 0, "size": 2.1, "icon": "mdi-bow-arrow"},
+        {"x": 0.8, "y": -0.1, "rotate": 0, "size": 0.65, "icon": "mdi-water"}
     ]},
-    {id: 16, collection: '危险武器', 力量: 3, reward: [
-        {name: '先发制人', 类型: '+', value: 0.8},
-    ], color: '粉色', icons: [
-        {"x": 0, "y": 0, "rotate": 0, "size": 1.75, "图标": "mdi-rocket-launch"},
-        {"x": -0.5, "y": -0.5, "rotate": 0, "size": 1, "图标": "mdi-rocket-launch"},
-        {"x": 0.5, "y": 0.5, "rotate": 0, "size": 1, "图标": "mdi-rocket-launch"},
-        {"x": -0.2, "y": -0.4, "rotate": 45, "size": 1.25, "图标": "mdi-minus-thick"},
-        {"x": 0.4, "y": 0.2, "rotate": 45, "size": 1, "图标": "mdi-minus-thick"}
+    {id: 16, collection: '危险武器', 最高力量: 3, reward: [
+        {name: '先发制人', type: '+', value: 0.8},
+    ], color: '粉红色油漆', icons: [
+        {"x": 0, "y": 0, "rotate": 0, "size": 1.75, "icon": "mdi-rocket-launch"},
+        {"x": -0.5, "y": -0.5, "rotate": 0, "size": 1, "icon": "mdi-rocket-launch"},
+        {"x": 0.5, "y": 0.5, "rotate": 0, "size": 1, "icon": "mdi-rocket-launch"},
+        {"x": -0.2, "y": -0.4, "rotate": 45, "size": 1.25, "icon": "mdi-minus-thick"},
+        {"x": 0.4, "y": 0.2, "rotate": 45, "size": 1, "icon": "mdi-minus-thick"}
     ]},
-    {id: 17, collection: '危险武器', 力量: 2, reward: [
-        {name: '攻击', 类型: '*', value: 1.35}
-    ], color: '红色', icons: [
-        {"x": 0, "y": 0.55, "rotate": 0, "size": 2.75, "图标": "mdi-human-handsup"},
-        {"x": -0.35, "y": -0.3, "rotate": 0, "size": 1.25, "图标": "mdi-axe-battle"},
-        {"x": -0.6, "y": 0, "rotate": 180, "size": 1.25, "图标": "mdi-axe-battle"},
-        {"x": 0.35, "y": -0.3, "rotate": 270, "size": 1.25, "图标": "mdi-axe-battle"},
-        {"x": 0.65, "y": 0, "rotate": 90, "size": 1.25, "图标": "mdi-axe-battle"}
+    {id: 17, collection: '危险武器', 最高力量: 2, reward: [
+        {name: '攻击', type: '*', value: 1.35},
+    ], color: '红色油漆', icons: [
+        {"x": 0, "y": 0.55, "rotate": 0, "size": 2.75, "icon": "mdi-human-handsup"},
+        {"x": -0.35, "y": -0.3, "rotate": 0, "size": 1.25, "icon": "mdi-axe-battle"},
+        {"x": -0.6, "y": 0, "rotate": 180, "size": 1.25, "icon": "mdi-axe-battle"},
+        {"x": 0.35, "y": -0.3, "rotate": 270, "size": 1.25, "icon": "mdi-axe-battle"},
+        {"x": 0.65, "y": 0, "rotate": 90, "size": 1.25, "icon": "mdi-axe-battle"}
     ]},
-    {id: 18, collection: '危险武器', 力量: 3, reward: [
-        {name: '暴击率', 类型: '+', value: 0.1},
-        {name: '装备几率', 类型: '*', value: 1.25}
-    ], color: 'pale-黄色', icons: [
-        {"x": 0, "y": 0.65, "rotate": 0, "size": 2, "图标": "mdi-book-open-variant"},
-        {"x": -0.2, "y": -0.3, "rotate": 20, "size": 1.65, "图标": "mdi-hand-front-left"},
-        {"x": 0.4, "y": -0.4, "rotate": -60, "size": 2, "图标": "mdi-pen"}
+    {id: 18, collection: '危险武器', 最高力量: 3, reward: [
+        {name: '暴击率', type: '+', value: 0.1},
+        {name: '装备几率', type: '*', value: 1.25},
+    ], color: 'pale-黄色油漆', icons: [
+        {"x": 0, "y": 0.65, "rotate": 0, "size": 2, "icon": "mdi-book-open-variant"},
+        {"x": -0.2, "y": -0.3, "rotate": 20, "size": 1.65, "icon": "mdi-hand-front-left"},
+        {"x": 0.4, "y": -0.4, "rotate": -60, "size": 2, "icon": "mdi-pen"}
     ]},
-    {id: 19, collection: '危险武器', 力量: 3, reward: [
-        {name: '击败 (0) (+(1))要求', 类型: '+', value: -2},
-        {name: '腐败的灵魂增益', 类型: '*', value: 1.12}
-    ], color: '棕色', icons: [
-        {"x": -0.7, "y": 0, "rotate": 0, "size": 1, "图标": "mdi-bowl"},
-        {"x": -0.2, "y": 0.15, "rotate": 0, "size": 2, "图标": "mdi-minus"},
-        {"x": 0.45, "y": 0.15, "rotate": 0, "size": 2, "图标": "mdi-minus"},
-        {"x": 0.2, "y": -0.4, "rotate": 90, "size": 1, "图标": "mdi-rectangle"},
-        {"x": 0.2, "y": -0.05, "rotate": 90, "size": 1, "图标": "mdi-rectangle"},
-        {"x": 0.2, "y": 0.1, "rotate": 90, "size": 1, "图标": "mdi-rectangle"},
-        {"x": -0.1, "y": 0.3, "rotate": 0, "size": 0.5, "图标": "mdi-circle"},
-        {"x": 0.45, "y": 0.3, "rotate": 0, "size": 0.5, "图标": "mdi-circle"},
-        {"x": -0.7, "y": -0.2, "rotate": 0, "size": 1, "图标": "mdi-circle"}
+    {id: 19, collection: '危险武器', 最高力量: 3, reward: [
+        {name: 'Boss要求', type: '+', value: -2},
+        {name: '腐败的灵魂增益', type: '*', value: 1.12},
+    ], color: 'brown', icons: [
+        {"x": -0.7, "y": 0, "rotate": 0, "size": 1, "icon": "mdi-bowl"},
+        {"x": -0.2, "y": 0.15, "rotate": 0, "size": 2, "icon": "mdi-minus"},
+        {"x": 0.45, "y": 0.15, "rotate": 0, "size": 2, "icon": "mdi-minus"},
+        {"x": 0.2, "y": -0.4, "rotate": 90, "size": 1, "icon": "mdi-rectangle"},
+        {"x": 0.2, "y": -0.05, "rotate": 90, "size": 1, "icon": "mdi-rectangle"},
+        {"x": 0.2, "y": 0.1, "rotate": 90, "size": 1, "icon": "mdi-rectangle"},
+        {"x": -0.1, "y": 0.3, "rotate": 0, "size": 0.5, "icon": "mdi-circle"},
+        {"x": 0.45, "y": 0.3, "rotate": 0, "size": 0.5, "icon": "mdi-circle"},
+        {"x": -0.7, "y": -0.2, "rotate": 0, "size": 1, "icon": "mdi-circle"}
     ]},
-    {id: 20, collection: '危险武器', 力量: 3, reward: [
-        {name: '装备几率', 类型: '*', value: 1.25},
-        {name: '腐败的灵魂容量', 类型: '*', value: 1.15}
-    ], color: 'pale-粉色', icons: [
-        {"x": -0.15, "y": 0.2, "rotate": 0, "size": 2, "图标": "mdi-human"},
-        {"x": 0.4, "y": 0, "rotate": 0, "size": 1, "图标": "mdi-pistol"},
-        {"x": 0.42, "y": -0.2, "rotate": 45, "size": 1, "图标": "mdi-knife-military"}
+    {id: 20, collection: '危险武器', 最高力量: 3, reward: [
+        {name: '装备几率', type: '*', value: 1.25},
+        {name: '腐败的灵魂容量', type: '*', value: 1.15},
+    ], color: 'pale-粉红色油漆', icons: [
+        {"x": -0.15, "y": 0.2, "rotate": 0, "size": 2, "icon": "mdi-human"},
+        {"x": 0.4, "y": 0, "rotate": 0, "size": 1, "icon": "mdi-pistol"},
+        {"x": 0.42, "y": -0.2, "rotate": 45, "size": 1, "icon": "mdi-knife-military"}
     ]},
-    {id: 21, collection: '危险武器', 力量: 2, reward: [
-        {name: '怪物零件增益', 类型: '*', value: 1.3},
-        {name: '腐败的灵魂增益', 类型: '*', value: 1.2}
-    ], color: '金色', icons: [
-        {"x": 0.3, "y": -0.85, "rotate": 0, "size": 1.45, "图标": "mdi-white-balance-sunny"},
-        {"x": -0.3, "y": -0.25, "rotate": -45, "size": 2, "图标": "mdi-minus"},
-        {"x": -0.75, "y": 0.1, "rotate": 0, "size": 1, "图标": "mdi-mirror"},
-        {"x": -0.3, "y": 0.45, "rotate": 45, "size": 2, "图标": "mdi-minus"},
-        {"x": 0.2, "y": 0.55, "rotate": 10, "size": 1, "图标": "mdi-fire"}
+    {id: 21, collection: '危险武器', 最高力量: 2, reward: [
+        {name: '怪物零件增益', type: '*', value: 1.3},
+        {name: '腐败的灵魂增益', type: '*', value: 1.2},
+    ], color: '金色油漆', icons: [
+        {"x": 0.3, "y": -0.85, "rotate": 0, "size": 1.45, "icon": "mdi-white-balance-sunny"},
+        {"x": -0.3, "y": -0.25, "rotate": -45, "size": 2, "icon": "mdi-minus"},
+        {"x": -0.75, "y": 0.1, "rotate": 0, "size": 1, "icon": "mdi-mirror"},
+        {"x": -0.3, "y": 0.45, "rotate": 45, "size": 2, "icon": "mdi-minus"},
+        {"x": 0.2, "y": 0.55, "rotate": 10, "size": 1, "icon": "mdi-fire"}
     ]},
-    {id: 22, collection: '危险武器', 力量: 2, reward: [
-        {name: '腐败的灵魂增益', 类型: '*', value: 1.22},
-        {name: '腐败的灵魂容量', 类型: '*', value: 1.22}
-    ], color: '樱桃色', icons: [
-        {"x": -0.85, "y": 0, "rotate": 0, "size": 1.5, "图标": "mdi-logout"},
-        {"x": 0, "y": 0, "rotate": 0, "size": 1.25, "图标": "mdi-saw-blade"},
-        {"x": 0.9, "y": 0, "rotate": 25, "size": 1.25, "图标": "mdi-saw-blade"}
+    {id: 22, collection: '危险武器', 最高力量: 2, reward: [
+        {name: '腐败的灵魂增益', type: '*', value: 1.22},
+        {name: '腐败的灵魂容量', type: '*', value: 1.22},
+    ], color: 'cherry', icons: [
+        {"x": -0.85, "y": 0, "rotate": 0, "size": 1.5, "icon": "mdi-logout"},
+        {"x": 0, "y": 0, "rotate": 0, "size": 1.25, "icon": "mdi-saw-blade"},
+        {"x": 0.9, "y": 0, "rotate": 25, "size": 1.25, "icon": "mdi-saw-blade"}
     ]},
-    {id: 23, collection: '危险武器', 力量: 0, reward: [
-        {name: '中毒', 类型: '+', value: 0.025}
+    {id: 23, collection: '危险武器', 最高力量: 0, reward: [
+        {name: '中毒', type: '+', value: 0.025},
     ], color: 'lime', icons: [
-        {"x": 0, "y": -0.2, "rotate": 0, "size": 2.5, "图标": "mdi-flask-empty"},
-        {"x": 0.05, "y": 0.45, "rotate": -90, "size": 1.25, "图标": "mdi-motion"},
-        {"x": -0.3, "y": 0.45, "rotate": -90, "size": 1, "图标": "mdi-motion"},
-        {"x": 0.35, "y": 0.45, "rotate": -90, "size": 0.75, "图标": "mdi-motion"}
+        {"x": 0, "y": -0.2, "rotate": 0, "size": 2.5, "icon": "mdi-flask-empty"},
+        {"x": 0.05, "y": 0.45, "rotate": -90, "size": 1.25, "icon": "mdi-motion"},
+        {"x": -0.3, "y": 0.45, "rotate": -90, "size": 1, "icon": "mdi-motion"},
+        {"x": 0.35, "y": 0.45, "rotate": -90, "size": 0.75, "icon": "mdi-motion"}
     ]},
-    {id: 24, collection: '供应与支持', 力量: 3, reward: [
-        {name: '受到的物理伤害', 类型: '*', value: 1 / 1.25}
+    {id: 24, collection: '供应与支持', 最高力量: 3, reward: [
+        {name: '受到的物理伤害', type: '*', value: 1 / 1.25},
     ], color: 'wooden', icons: [
-        {"x": 0, "y": -0.2, "rotate": 0, "size": 3, "图标": "mdi-tree"},
-        {"x": 0.03, "y": 0.5, "rotate": 90, "size": 3, "图标": "mdi-minus"},
-        {"x": -0.2, "y": 0.55, "rotate": 0, "size": 1.25, "图标": "mdi-hiking"},
-        {"x": -0.65, "y": 1.2, "rotate": -150, "size": 0.8, "图标": "mdi-arrow-projectile"}
+        {"x": 0, "y": -0.2, "rotate": 0, "size": 3, "icon": "mdi-tree"},
+        {"x": 0.03, "y": 0.5, "rotate": 90, "size": 3, "icon": "mdi-minus"},
+        {"x": -0.2, "y": 0.55, "rotate": 0, "size": 1.25, "icon": "mdi-hiking"},
+        {"x": -0.65, "y": 1.2, "rotate": -150, "size": 0.8, "icon": "mdi-arrow-projectile"}
     ]},
-    {id: 25, collection: '供应与支持', 力量: 5, reward: [
-        {name: '精通点数增益', 类型: '*', value: 1.2}
-    ], color: '绿色', icons: [
-        {"x": 0.1, "y": -0.15, "rotate": 0, "size": 1.25, "图标": "mdi-meditation"},
-        {"x": 0.85, "y": 0.15, "rotate": 0, "size": 1.95, "图标": "mdi-tree"},
-        {"x": -0.3, "y": -0.75, "rotate": 0, "size": 1.5, "图标": "mdi-tree"},
-        {"x": -0.7, "y": 0.05, "rotate": 0, "size": 1.8, "图标": "mdi-pine-tree"},
-        {"x": 0.5, "y": -0.75, "rotate": 0, "size": 0.6, "图标": "mdi-grass"},
-        {"x": -0.35, "y": 0.85, "rotate": 0, "size": 0.8, "图标": "mdi-grass"},
-        {"x": 0.4, "y": 0.75, "rotate": 0, "size": 0.75, "图标": "mdi-grass"}
+    {id: 25, collection: '供应与支持', 最高力量: 5, reward: [
+        {name: '精通点数增益', type: '*', value: 1.2},
+    ], color: '绿色油漆', icons: [
+        {"x": 0.1, "y": -0.15, "rotate": 0, "size": 1.25, "icon": "mdi-meditation"},
+        {"x": 0.85, "y": 0.15, "rotate": 0, "size": 1.95, "icon": "mdi-tree"},
+        {"x": -0.3, "y": -0.75, "rotate": 0, "size": 1.5, "icon": "mdi-tree"},
+        {"x": -0.7, "y": 0.05, "rotate": 0, "size": 1.8, "icon": "mdi-pine-tree"},
+        {"x": 0.5, "y": -0.75, "rotate": 0, "size": 0.6, "icon": "mdi-grass"},
+        {"x": -0.35, "y": 0.85, "rotate": 0, "size": 0.8, "icon": "mdi-grass"},
+        {"x": 0.4, "y": 0.75, "rotate": 0, "size": 0.75, "icon": "mdi-grass"}
     ]},
-    {id: 26, collection: '供应与支持', 力量: 3, reward: [
-        {name: '腐败的灵魂容量', 类型: '*', value: 1.1},
-        {name: '骨头容量', 类型: '*', value: 1.15}
-    ], color: '光-灰色', icons: [
-        {"x": 0, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-human-handsdown"},
-        {"x": 0.4, "y": 0.1, "rotate": 80, "size": 1.75, "图标": "mdi-minus"},
-        {"x": 0.5, "y": 0.45, "rotate": 0, "size": 1, "图标": "mdi-minus-thick"},
-        {"x": 0.6, "y": 0.3, "rotate": 0, "size": 0.4, "图标": "mdi-alarm-light"},
-        {"x": 0.6, "y": -0.05, "rotate": 0, "size": 0.75, "图标": "mdi-exclamation-thick"},
-        {"x": -0.45, "y": 0.95, "rotate": 0, "size": 0.75, "图标": "mdi-mine"}
+    {id: 26, collection: '供应与支持', 最高力量: 3, reward: [
+        {name: '腐败的灵魂容量', type: '*', value: 1.1},
+        {name: '骨头容量', type: '*', value: 1.15},
+    ], color: '光-grey', icons: [
+        {"x": 0, "y": 0, "rotate": 0, "size": 2, "icon": "mdi-human-handsdown"},
+        {"x": 0.4, "y": 0.1, "rotate": 80, "size": 1.75, "icon": "mdi-minus"},
+        {"x": 0.5, "y": 0.45, "rotate": 0, "size": 1, "icon": "mdi-minus-thick"},
+        {"x": 0.6, "y": 0.3, "rotate": 0, "size": 0.4, "icon": "mdi-alarm-light"},
+        {"x": 0.6, "y": -0.05, "rotate": 0, "size": 0.75, "icon": "mdi-exclamation-thick"},
+        {"x": -0.45, "y": 0.95, "rotate": 0, "size": 0.75, "icon": "mdi-mine"}
     ]},
-    {id: 27, collection: '供应与支持', 力量: 4, reward: [
-        {name: '怀旧之情', 类型: '+', value: 20}
-    ], color: 'dark-blue', icons: [
-        {"x": -0.65, "y": 0.25, "rotate": 0, "size": 1.55, "图标": "mdi-walk"},
-        {"x": -0.2, "y": 0.1, "rotate": -10, "size": 1, "图标": "mdi-shield"},
-        {"x": 0.6, "y": -0.15, "rotate": 160, "size": 1, "图标": "mdi-motion"}
+    {id: 27, collection: '供应与支持', 最高力量: 4, reward: [
+        {name: '怀旧之情', type: '+', value: 20},
+    ], color: 'dark-蓝色油漆', icons: [
+        {"x": -0.65, "y": 0.25, "rotate": 0, "size": 1.55, "icon": "mdi-walk"},
+        {"x": -0.2, "y": 0.1, "rotate": -10, "size": 1, "icon": "mdi-shield"},
+        {"x": 0.6, "y": -0.15, "rotate": 160, "size": 1, "icon": "mdi-motion"}
     ]},
-    {id: 28, collection: '供应与支持', 力量: 4, reward: [
-        {name: '传家宝几率', 类型: '+', value: 0.03}
-    ], color: '黄色', icons: [
-        {"x": 0, "y": 0.25, "rotate": 180, "size": 5, "图标": "mdi-dome-light"},
-        {"x": -0.2, "y": 0.15, "rotate": 0, "size": 1.25, "图标": "mdi-human-handsdown"},
-        {"x": 0.3, "y": 0.2, "rotate": 0, "size": 1.15, "图标": "mdi-human-greeting"}
+    {id: 28, collection: '供应与支持', 最高力量: 4, reward: [
+        {name: '传家宝几率', type: '+', value: 0.03},
+    ], color: '黄色油漆', icons: [
+        {"x": 0, "y": 0.25, "rotate": 180, "size": 5, "icon": "mdi-dome-light"},
+        {"x": -0.2, "y": 0.15, "rotate": 0, "size": 1.25, "icon": "mdi-human-handsdown"},
+        {"x": 0.3, "y": 0.2, "rotate": 0, "size": 1.15, "icon": "mdi-human-greeting"}
     ]},
-    {id: 29, collection: '供应与支持', 力量: 4, reward: [
-        {name: '暴击伤害', 类型: '+', value: 0.25},
-        {name: '精通点数增益', 类型: '*', value: 1.3}
-    ], color: '粉色-紫色', icons: [
-        {"x": 0, "y": 0.4, "rotate": 0, "size": 3, "图标": "mdi-desktop-classic"},
-        {"x": 0, "y": 0.12, "rotate": 20, "size": 1, "图标": "mdi-radar"},
-        {"x": 0.25, "y": -0.6, "rotate": 0, "size": 1.25, "图标": "mdi-antenna"}
+    {id: 29, collection: '供应与支持', 最高力量: 4, reward: [
+        {name: '暴击伤害', type: '+', value: 0.25},
+        {name: '精通点数增益', type: '*', value: 1.3},
+    ], color: '粉红色油漆-紫色油漆', icons: [
+        {"x": 0, "y": 0.4, "rotate": 0, "size": 3, "icon": "mdi-desktop-classic"},
+        {"x": 0, "y": 0.12, "rotate": 20, "size": 1, "icon": "mdi-radar"},
+        {"x": 0.25, "y": -0.6, "rotate": 0, "size": 1.25, "icon": "mdi-antenna"}
     ]},
-    {id: 30, collection: '供应与支持', 力量: 3, reward: [
-        {name: '腐败的灵魂增益', 类型: '*', value: 1.15},
-        {name: '传家宝几率', 类型: '+', value: 0.04}
-    ], color: 'dark-灰色', icons: [
-        {"x": -0.15, "y": 0.5, "rotate": 0, "size": 2.5, "图标": "mdi-human-handsdown"},
-        {"x": -0.15, "y": -0.2, "rotate": 0, "size": 1.75, "图标": "mdi-incognito"},
-        {"x": 0.5, "y": 0.55, "rotate": 15, "size": 1.2, "图标": "mdi-binoculars"}
+    {id: 30, collection: '供应与支持', 最高力量: 3, reward: [
+        {name: '腐败的灵魂增益', type: '*', value: 1.15},
+        {name: '传家宝几率', type: '+', value: 0.04},
+    ], color: 'dark-grey', icons: [
+        {"x": -0.15, "y": 0.5, "rotate": 0, "size": 2.5, "icon": "mdi-human-handsdown"},
+        {"x": -0.15, "y": -0.2, "rotate": 0, "size": 1.75, "icon": "mdi-incognito"},
+        {"x": 0.5, "y": 0.55, "rotate": 15, "size": 1.2, "icon": "mdi-binoculars"}
     ]},
-    {id: 31, collection: '反对腐败', 力量: 5, reward: [
-        {name: '腐败', 类型: '*', value: 1 / 1.1}
-    ], color: '红色', icons: [
-        {"x": 0, "y": 0.6, "rotate": 0, "size": 2.5, "图标": "mdi-sign-pole"},
-        {"x": 0, "y": -0.5, "rotate": -20, "size": 1.3, "图标": "mdi-liquid-spot"},
-        {"x": 0, "y": -0.5, "rotate": 0, "size": 2.5, "图标": "mdi-cancel"}
+    {id: 31, collection: '反对腐败', 最高力量: 5, reward: [
+        {name: '腐败', type: '+', value: -0.3}
+    ], color: '红色油漆', icons: [
+        {"x": 0, "y": 0.6, "rotate": 0, "size": 2.5, "icon": "mdi-sign-pole"},
+        {"x": 0, "y": -0.5, "rotate": -20, "size": 1.3, "icon": "mdi-liquid-spot"},
+        {"x": 0, "y": -0.5, "rotate": 0, "size": 2.5, "icon": "mdi-cancel"}
     ]},
-    {id: 32, collection: '反对腐败', 力量: 5, reward: [
-        {name: '腐败的灵魂增益', 类型: '*', value: 1.1},
-        {name: '腐败', 类型: '*', value: 1 / 1.05}
-    ], color: 'pale-绿色', icons: [
-        {"x": 0, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-filter"},
-        {"x": 0, "y": -0.55, "rotate": -85, "size": 1.25, "图标": "mdi-liquid-spot"},
-        {"x": 0, "y": 0.7, "rotate": 0, "size": 1, "图标": "mdi-dots-vertical"}
+    {id: 32, collection: '反对腐败', 最高力量: 5, reward: [
+        {name: '腐败的灵魂增益', type: '*', value: 1.1},
+        {name: '腐败', type: '+', value: -0.15},
+    ], color: 'pale-绿色油漆', icons: [
+        {"x": 0, "y": 0, "rotate": 0, "size": 2, "icon": "mdi-filter"},
+        {"x": 0, "y": -0.55, "rotate": -85, "size": 1.25, "icon": "mdi-liquid-spot"},
+        {"x": 0, "y": 0.7, "rotate": 0, "size": 1, "icon": "mdi-dots-vertical"}
     ]},
-    {id: 33, collection: '反对腐败', 力量: 5, reward: [
-        {name: '装备几率', 类型: '*', value: 2.5},
-        {name: '精通点数增益', 类型: '*', value: 1.75},
-        {name: '腐败', 类型: '*', value: 1.15}
+    {id: 33, collection: '反对腐败', 最高力量: 5, reward: [
+        {name: '装备几率', type: '*', value: 2.5},
+        {name: '精通点数增益', type: '*', value: 1.75},
+        {name: '腐败', type: '*', value: 1.1},
     ], color: 'skyblue', icons: [
-        {"x": -0.5, "y": 0.4, "rotate": 0, "size": 1.75, "图标": "mdi-washing-machine"},
-        {"x": 0.5, "y": 0.4, "rotate": 0, "size": 1.75, "图标": "mdi-tumble-dryer"},
-        {"x": -0.5, "y": -0.25, "rotate": 0, "size": 1, "图标": "mdi-basket"},
-        {"x": -0.5, "y": -0.4, "rotate": 20, "size": 1, "图标": "mdi-liquid-spot"},
-        {"x": 0.5, "y": -0.2, "rotate": 0, "size": 1, "图标": "mdi-tray-full"}
+        {"x": -0.5, "y": 0.4, "rotate": 0, "size": 1.75, "icon": "mdi-washing-machine"},
+        {"x": 0.5, "y": 0.4, "rotate": 0, "size": 1.75, "icon": "mdi-tumble-dryer"},
+        {"x": -0.5, "y": -0.25, "rotate": 0, "size": 1, "icon": "mdi-basket"},
+        {"x": -0.5, "y": -0.4, "rotate": 20, "size": 1, "icon": "mdi-liquid-spot"},
+        {"x": 0.5, "y": -0.2, "rotate": 0, "size": 1, "icon": "mdi-tray-full"}
     ]},
-    {id: 34, collection: '反对腐败', 力量: 5, reward: [
-        {name: '攻击', 类型: '*', value: 1.25},
-        {name: '暴击率', 类型: '+', value: 0.15},
-        {name: '暴击伤害', 类型: '+', value: 0.4},
-        {name: '腐败', 类型: '*', value: 1.15}
-    ], color: '橙色', icons: [
-        {"x": 0, "y": 0.5, "rotate": 30, "size": 1.5, "图标": "mdi-liquid-spot"},
-        {"x": 0.4, "y": 0.5, "rotate": -45, "size": 1.5, "图标": "mdi-liquid-spot"},
-        {"x": 0.2, "y": 0.05, "rotate": 0, "size": 1.75, "图标": "mdi-ghost"},
-        {"x": -0.25, "y": -0.5, "rotate": -20, "size": 1.2, "图标": "mdi-fire"},
-        {"x": -0.6, "y": 0.25, "rotate": 30, "size": 1.95, "图标": "mdi-torch"}
+    {id: 34, collection: '反对腐败', 最高力量: 5, reward: [
+        {name: '攻击', type: '*', value: 1.25},
+        {name: '暴击伤害', type: '+', value: 0.4},
+        {name: '腐败', type: '*', value: 1.1},
+    ], color: '橙色油漆', icons: [
+        {"x": 0, "y": 0.5, "rotate": 30, "size": 1.5, "icon": "mdi-liquid-spot"},
+        {"x": 0.4, "y": 0.5, "rotate": -45, "size": 1.5, "icon": "mdi-liquid-spot"},
+        {"x": 0.2, "y": 0.05, "rotate": 0, "size": 1.75, "icon": "mdi-ghost"},
+        {"x": -0.25, "y": -0.5, "rotate": -20, "size": 1.2, "icon": "mdi-fire"},
+        {"x": -0.6, "y": 0.25, "rotate": 30, "size": 1.95, "icon": "mdi-torch"}
     ]},
-    {id: 35, collection: '反对腐败', 力量: 5, reward: [
-        {name: '腐败的灵魂增益', 类型: '*', value: 1.4},
-        {name: '腐败的灵魂容量', 类型: '*', value: 1.4},
-        {name: '腐败', 类型: '*', value: 1.15}
-    ], color: '粉色', icons: [
-        {"x": -0.65, "y": 0.4, "rotate": 180, "size": 3, "图标": "mdi-alpha-t"},
-        {"x": -0.45, "y": 0, "rotate": 120, "size": 2, "图标": "mdi-flashlight"},
-        {"x": 0.35, "y": 0.4, "rotate": 30, "size": 2, "图标": "mdi-minus"},
-        {"x": 0.65, "y": 0.55, "rotate": 0, "size": 1, "图标": "mdi-liquid-spot"}
+    {id: 35, collection: '反对腐败', 最高力量: 5, reward: [
+        {name: '腐败的灵魂增益', type: '*', value: 1.3},
+        {name: '腐败的灵魂容量', type: '*', value: 1.3},
+        {name: '腐败', type: '*', value: 1.1},
+    ], color: '粉红色油漆', icons: [
+        {"x": -0.65, "y": 0.4, "rotate": 180, "size": 3, "icon": "mdi-alpha-t"},
+        {"x": -0.45, "y": 0, "rotate": 120, "size": 2, "icon": "mdi-flashlight"},
+        {"x": 0.35, "y": 0.4, "rotate": 30, "size": 2, "icon": "mdi-minus"},
+        {"x": 0.65, "y": 0.55, "rotate": 0, "size": 1, "icon": "mdi-liquid-spot"}
     ]},
-    {id: 36, collection: '反对腐败', 力量: 5, reward: [
-        {name: '生命值', 类型: '*', value: 2},
-        {name: '分裂盾', 类型: '+', value: 10},
-        {name: '复活', 类型: '+', value: 1},
-        {name: '腐败', 类型: '*', value: 1.15}
-    ], color: 'pale-紫色', icons: [
-        {"x": 0, "y": -0.9, "rotate": 0, "size": 1.5, "图标": "mdi-arrow-collapse-down"},
-        {"x": 0, "y": 0.15, "rotate": 15, "size": 1.25, "图标": "mdi-liquid-spot"},
-        {"x": -0.5, "y": 0.5, "rotate": 0, "size": 3, "图标": "mdi-minus"},
-        {"x": 0.5, "y": 0.5, "rotate": 0, "size": 3, "图标": "mdi-minus"}
+    {id: 36, collection: '反对腐败', 最高力量: 5, reward: [
+        {name: '生命值', type: '*', value: 1.25},
+        {name: '分裂盾', type: '+', value: 10},
+        {name: '腐败', type: '*', value: 1.1},
+    ], color: 'pale-紫色油漆', icons: [
+        {"x": 0, "y": -0.9, "rotate": 0, "size": 1.5, "icon": "mdi-arrow-collapse-down"},
+        {"x": 0, "y": 0.15, "rotate": 15, "size": 1.25, "icon": "mdi-liquid-spot"},
+        {"x": -0.5, "y": 0.5, "rotate": 0, "size": 3, "icon": "mdi-minus"},
+        {"x": 0.5, "y": 0.5, "rotate": 0, "size": 3, "icon": "mdi-minus"}
     ]},
-    {id: 37, collection: '反对腐败', 力量: 7, reward: [
-        {name: '腐败', 类型: '*', value: 1.15}
-    ], color: '棕色', icons: [
-        {"x": 0.25, "y": -0.6, "rotate": 0, "size": 1.75, "图标": "mdi-truck-cargo-container"},
-        {"x": -0.7, "y": 0.45, "rotate": 0, "size": 1.5, "图标": "mdi-trash-can"},
-        {"x": -0.15, "y": 0.45, "rotate": 0, "size": 1.5, "图标": "mdi-delete-empty"},
-        {"x": 0.45, "y": 0.6, "rotate": 0, "size": 0.8, "图标": "mdi-sack"},
-        {"x": 0.85, "y": 0.6, "rotate": 0, "size": 0.8, "图标": "mdi-sack"}
+    {id: 37, collection: '反对腐败', 最高力量: 7, reward: [
+        {name: '腐败', type: '*', value: 1.1},
+    ], color: 'brown', icons: [
+        {"x": 0.25, "y": -0.6, "rotate": 0, "size": 1.75, "icon": "mdi-truck-cargo-container"},
+        {"x": -0.7, "y": 0.45, "rotate": 0, "size": 1.5, "icon": "mdi-trash-can"},
+        {"x": -0.15, "y": 0.45, "rotate": 0, "size": 1.5, "icon": "mdi-delete-empty"},
+        {"x": 0.45, "y": 0.6, "rotate": 0, "size": 0.8, "icon": "mdi-sack"},
+        {"x": 0.85, "y": 0.6, "rotate": 0, "size": 0.8, "icon": "mdi-sack"}
     ]},
-    {id: 38, collection: '反对腐败', 力量: 0, reward: [
-        {name: '腐败', 类型: '*', value: 2}
-    ], color: '紫色', icons: [
-        {"x": -0.39, "y": 0, "rotate": 0, "size": 3, "图标": "mdi-pot-mix"},
-        {"x": -0.39, "y": 0.65, "rotate": 0, "size": 2.35, "图标": "mdi-square-rounded"},
-        {"x": -0.4, "y": -0.3, "rotate": -20, "size": 1, "图标": "mdi-mushroom"},
-        {"x": -0.75, "y": -0.1, "rotate": -45, "size": 1, "图标": "mdi-feather"},
-        {"x": 0.8, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-candle"}
+    {id: 38, collection: '反对腐败', 最高力量: 5, reward: [
+        {name: '复活', type: '+', value: 1},
+        {name: '腐败', type: '*', value: 1.1},
+    ], color: '黄色油漆', icons: [
+        {"x": 0, "y": 0, "rotate": 0, "size": 3, "icon": "mdi-television-ambient-light"},
+        {"x": 0, "y": 0.08, "rotate": 10, "size": 1, "icon": "mdi-liquid-spot"},
+        {"x": 0, "y": 0.8, "rotate": 90, "size": 1, "icon": "mdi-rectangle"},
+        {"x": 0, "y": 1.2, "rotate": 90, "size": 1, "icon": "mdi-rectangle"}
     ]},
-    {id: 39, collection: '反对腐败', 力量: 5, reward: [
-        {name: '先发制人', 类型: '+', value: 6.75},
-        {name: '击败 (0) (+(1))要求', 类型: '+', value: -25},
-        {name: '重生时间', 类型: '*', value: 0.2},
-        {name: '腐败', 类型: '*', value: 1.15}
-    ], color: '青色', icons: [
-        {"x": 0.3, "y": -0.1, "rotate": 0, "size": 2, "图标": "mdi-vacuum"},
-        {"x": -0.5, "y": -0.1, "rotate": 0, "size": 2, "图标": "mdi-walk"},
-        {"x": 0.85, "y": 0.55, "rotate": 25, "size": 1, "图标": "mdi-liquid-spot"},
-        {"x": 0.6, "y": 0.65, "rotate": 150, "size": 1, "图标": "mdi-liquid-spot"}
+    {id: 39, collection: '反对腐败', 最高力量: 5, reward: [
+        {name: 'Boss要求', type: '+', value: -25},
+        {name: '重生时间', type: '*', value: 0.2},
+        {name: '腐败', type: '*', value: 1.1},
+    ], color: 'cyan', icons: [
+        {"x": 0.3, "y": -0.1, "rotate": 0, "size": 2, "icon": "mdi-vacuum"},
+        {"x": -0.5, "y": -0.1, "rotate": 0, "size": 2, "icon": "mdi-walk"},
+        {"x": 0.85, "y": 0.55, "rotate": 25, "size": 1, "icon": "mdi-liquid-spot"},
+        {"x": 0.6, "y": 0.65, "rotate": 150, "size": 1, "icon": "mdi-liquid-spot"}
     ]},
-    {id: 40, collection: '反对腐败', 力量: 5, reward: [
-        {name: '传家宝几率', 类型: '+', value: 0.1},
-        {name: '怀旧之情', 类型: '*', value: 2},
-        {name: '腐败', 类型: '*', value: 1.15}
-    ], color: '光-绿色', icons: [
-        {"x": -0.2, "y": -0.6, "rotate": 125, "size": 2.5, "图标": "mdi-flask-round-bottom-empty"},
-        {"x": 0.25, "y": -0.05, "rotate": 0, "size": 0.8, "图标": "mdi-water"},
-        {"x": 0.25, "y": 0.4, "rotate": 0, "size": 0.6, "图标": "mdi-water"},
-        {"x": 0.45, "y": 0.9, "rotate": 50, "size": 1, "图标": "mdi-liquid-spot"},
-        {"x": 0.25, "y": 0.9, "rotate": -65, "size": 1, "图标": "mdi-liquid-spot"},
-        {"x": 0, "y": 0.9, "rotate": 20, "size": 1, "图标": "mdi-liquid-spot"}
+    {id: 40, collection: '反对腐败', 最高力量: 5, reward: [
+        {name: '传家宝几率', type: '+', value: 0.1},
+        {name: '怀旧之情', type: '*', value: 2},
+        {name: '腐败', type: '*', value: 1.1},
+    ], color: '浅绿色油漆', icons: [
+        {"x": -0.2, "y": -0.6, "rotate": 125, "size": 2.5, "icon": "mdi-flask-round-bottom-empty"},
+        {"x": 0.25, "y": -0.05, "rotate": 0, "size": 0.8, "icon": "mdi-water"},
+        {"x": 0.25, "y": 0.4, "rotate": 0, "size": 0.6, "icon": "mdi-water"},
+        {"x": 0.45, "y": 0.9, "rotate": 50, "size": 1, "icon": "mdi-liquid-spot"},
+        {"x": 0.25, "y": 0.9, "rotate": -65, "size": 1, "icon": "mdi-liquid-spot"},
+        {"x": 0, "y": 0.9, "rotate": 20, "size": 1, "icon": "mdi-liquid-spot"}
     ]},
-    {id: 41, collection: '反对腐败', 力量: 0, reward: [
-        {name: '腐败', 类型: '*', value: 5}
-    ], color: '橙色-红色', icons: [
-        {"x": 0, "y": 0.2, "rotate": 0, "size": 3, "图标": "mdi-microwave"},
-        {"x": -0.25, "y": 0.4, "rotate": -170, "size": 1, "图标": "mdi-liquid-spot"},
-        {"x": 0, "y": -0.5, "rotate": 0, "size": 1, "图标": "mdi-alert"}
+    {id: 41, collection: '反对腐败', 最高力量: 5, reward: [
+        {name: '先发制人', type: '+', value: 3},
+        {name: '法术之刃', type: '+', value: 1.25},
+        {name: '腐败', type: '*', value: 1.1},
+    ], color: '青色油漆', icons: [
+        {"x": -0.5, "y": 0.1, "rotate": 90, "size": 1.5, "icon": "mdi-sword"},
+        {"x": 0.5, "y": 0.1, "rotate": 0, "size": 1.5, "icon": "mdi-bow-arrow"},
+        {"x": -0.5, "y": 0.4, "rotate": 0, "size": 1, "icon": "mdi-liquid-spot"},
+        {"x": 0.25, "y": -0.05, "rotate": -65, "size": 1, "icon": "mdi-liquid-spot"}
+    ]},
+    {id: 42, collection: '特殊设备', 最高力量: 'adaptive', reward: [
+        {name: '腐败', type: '*', value: 2},
+    ], color: '紫色油漆', icons: [
+        {"x": -0.39, "y": 0, "rotate": 0, "size": 3, "icon": "mdi-pot-mix"},
+        {"x": -0.39, "y": 0.65, "rotate": 0, "size": 2.35, "icon": "mdi-square-rounded"},
+        {"x": -0.4, "y": -0.3, "rotate": -20, "size": 1, "icon": "mdi-mushroom"},
+        {"x": -0.75, "y": -0.1, "rotate": -45, "size": 1, "icon": "mdi-feather"},
+        {"x": 0.8, "y": 0, "rotate": 0, "size": 2, "icon": "mdi-candle"}
+    ]},
+    {id: 43, collection: '特殊设备', 最高力量: 'adaptive', reward: [
+        {name: '腐败', type: '*', value: 5},
+    ], color: '橙色油漆-红色油漆', icons: [
+        {"x": 0, "y": 0.2, "rotate": 0, "size": 3, "icon": "mdi-microwave"},
+        {"x": -0.25, "y": 0.4, "rotate": -170, "size": 1, "icon": "mdi-liquid-spot"},
+        {"x": 0, "y": -0.5, "rotate": 0, "size": 1, "icon": "mdi-alert"}
+    ]},
+    {id: 44, collection: '战争的艺术', 最高力量: 5, reward: [
+        {name: '装备几率', type: '*', value: 1.85},
+        {name: '腐败', type: '+', value: -0.2},
+    ], color: 'deep-紫色油漆', icons: [
+        {"x": -0.5, "y": 0.1, "rotate": 0, "size": 2.5, "icon": "mdi-run"},
+        {"x": -0.4, "y": -0.6, "rotate": 0, "size": 1.25, "icon": "mdi-ninja"},
+        {"x": 0.05, "y": 0.05, "rotate": 30, "size": 1, "icon": "mdi-shuriken"},
+        {"x": 0.95, "y": 0.05, "rotate": 60, "size": 1, "icon": "mdi-shuriken"}
+    ]},
+    {id: 45, collection: '战争的艺术', 最高力量: 6, reward: [
+        {name: '攻击', type: '*', value: 1.18},
+    ], color: '橙色油漆-红色油漆', icons: [
+        {"x": 0.1, "y": 0, "rotate": 0, "size": 1.5, "icon": "mdi-karate"},
+        {"x": 0.8, "y": -0.15, "rotate": 60, "size": 1.4, "icon": "mdi-human-handsup"},
+        {"x": -0.85, "y": 0.2, "rotate": -90, "size": 1.6, "icon": "mdi-walk"}
+    ]},
+    {id: 46, collection: '战争的艺术', 最高力量: 6, reward: [
+        {name: '生命值', type: '*', value: 1.18},
+    ], color: '浅绿色油漆', icons: [
+        {"x": 0, "y": -0.3, "rotate": 0, "size": 4, "icon": "mdi-temple-buddhist"},
+        {"x": -0.05, "y": 0.75, "rotate": 0, "size": 2, "icon": "mdi-meditation"},
+        {"x": 1, "y": 0.9, "rotate": 0, "size": 0.45, "icon": "mdi-grass"}
+    ]},
+    {id: 47, collection: '战争的艺术', 最高力量: 6, reward: [
+        {name: '精通点数增益', type: '*', value: 1.35},
+    ], color: 'beige', icons: [
+        {"x": 0, "y": -0.65, "rotate": 0, "size": 8, "icon": "mdi-chevron-up"},
+        {"x": 0.5, "y": 0.25, "rotate": 0, "size": 1.2, "icon": "mdi-bulletin-board"},
+        {"x": -0.25, "y": 0.05, "rotate": 0, "size": 1.4, "icon": "mdi-map-legend"},
+        {"x": 0, "y": 1, "rotate": 0, "size": 1.55, "icon": "mdi-human-greeting"},
+        {"x": -0.4, "y": 0.6, "rotate": 15, "size": 1, "icon": "mdi-minus"},
+        {"x": -0.75, "y": 0.55, "rotate": 15, "size": 1, "icon": "mdi-strategy"}
+    ]},
+    {id: 48, collection: '战争的艺术', 最高力量: 4, reward: [
+        {name: '防御', type: '+', value: 0.001},
+    ], color: 'indigo', icons: [
+        {"x": -0.8, "y": 0.8, "rotate": 0, "size": 2, "icon": "mdi-walk"},
+        {"x": -0.15, "y": 0.7, "rotate": -105, "size": 1.75, "icon": "mdi-car-windshield"},
+        {"x": -0.3, "y": 0.1, "rotate": 0, "size": 2, "icon": "mdi-walk"},
+        {"x": 0.35, "y": 0, "rotate": -105, "size": 1.75, "icon": "mdi-car-windshield"},
+        {"x": 0.2, "y": -0.6, "rotate": 0, "size": 2, "icon": "mdi-walk"},
+        {"x": 0.85, "y": -0.7, "rotate": -105, "size": 1.75, "icon": "mdi-car-windshield"}
+    ]},
+    {id: 49, collection: '战争的艺术', 最高力量: 6, reward: [
+        {name: '处决', type: '+', value: 0.09},
+    ], color: 'brown', icons: [
+        {"x": 0, "y": -0.6, "rotate": 180, "size": 0.9, "icon": "mdi-network-strength-4"},
+        {"x": 0, "y": -0.8, "rotate": 0, "size": 2, "icon": "mdi-minus"},
+        {"x": -0.3, "y": -0.45, "rotate": 90, "size": 2, "icon": "mdi-minus"},
+        {"x": 0.3, "y": -0.45, "rotate": 90, "size": 2, "icon": "mdi-minus"},
+        {"x": -0.3, "y": 0.2, "rotate": 90, "size": 2, "icon": "mdi-minus"},
+        {"x": 0.3, "y": 0.2, "rotate": 90, "size": 2, "icon": "mdi-minus"},
+        {"x": -0.3, "y": 0.85, "rotate": 90, "size": 2, "icon": "mdi-minus"},
+        {"x": 0.3, "y": 0.85, "rotate": 90, "size": 2, "icon": "mdi-minus"},
+        {"x": 0, "y": 0.45, "rotate": 0, "size": 1, "icon": "mdi-tray"},
+        {"x": 0, "y": 0.6, "rotate": 0, "size": 1.3, "icon": "mdi-minus-thick"},
+        {"x": 0, "y": 1, "rotate": 0, "size": 0.8, "icon": "mdi-bowl"}
+    ]},
+    {id: 50, collection: '战争的艺术', 最高力量: 7, reward: [
+        {name: '血液增益', type: '*', value: 1.3},
+    ], color: '红色油漆', icons: [
+        {"x": 0, "y": 0, "rotate": 0, "size": 3, "icon": "mdi-knife"},
+        {"x": 0.52, "y": -0.3, "rotate": -35, "size": 1.3, "icon": "mdi-stairs"},
+        {"x": 0.3, "y": 0.2, "rotate": -15, "size": 1.3, "icon": "mdi-stairs"}
+    ]},
+    {id: 51, collection: '战争的艺术', 最高力量: 7, reward: [
+        {name: '血液容量', type: '*', value: 1.25},
+    ], color: 'cherry', icons: [
+        {"x": 0, "y": 0.3, "rotate": 0, "size": 2, "icon": "mdi-car-coolant-level"},
+        {"x": 0.37, "y": -0.48, "rotate": 0, "size": 1.3, "icon": "mdi-water-pump"},
+        {"x": -0.35, "y": 0.85, "rotate": 0, "size": 0.3, "icon": "mdi-circle"},
+        {"x": 0.35, "y": 0.85, "rotate": 0, "size": 0.3, "icon": "mdi-circle"}
+    ]},
+    {id: 52, collection: '多功能', 最高力量: 7, reward: [
+        {name: '力量', type: '+', value: 3},
+        {name: '智力', type: '+', value: 3},
+    ], color: 'pale-绿色油漆', icons: [
+        {"x": 0, "y": 0.25, "rotate": 0, "size": 3, "icon": "mdi-human-greeting"},
+        {"x": -0.5, "y": -0.5, "rotate": -50, "size": 1.15, "icon": "mdi-dumbbell"},
+        {"x": 0.6, "y": 0.1, "rotate": 0, "size": 1.25, "icon": "mdi-book-open-variant"}
+    ]},
+    {id: 53, collection: '多功能', 最高力量: 7, reward: [
+        {name: '能量', type: '+', value: 80},
+        {name: '法力', type: '+', value: 40},
+    ], color: '紫色油漆', icons: [
+        {"x": -0.6, "y": 0.2, "rotate": 0, "size": 3, "icon": "mdi-cupboard"},
+        {"x": 0.6, "y": 0.2, "rotate": 0, "size": 3, "icon": "mdi-cupboard"},
+        {"x": 0.5, "y": 0.1, "rotate": 0, "size": 0.5, "icon": "mdi-test-tube"},
+        {"x": -0.45, "y": -0.25, "rotate": 0, "size": 0.5, "icon": "mdi-beaker-outline"},
+        {"x": -0.55, "y": -0.75, "rotate": 0, "size": 1, "icon": "mdi-flask-outline"},
+        {"x": 0.8, "y": 0.1, "rotate": 0, "size": 0.5, "icon": "mdi-flask-round-bottom"},
+        {"x": -0.7, "y": 0.1, "rotate": 0, "size": 0.5, "icon": "mdi-bottle-tonic"},
+        {"x": 0.65, "y": -0.25, "rotate": 0, "size": 0.5, "icon": "mdi-flask-outline"},
+        {"x": 0.8, "y": -0.7, "rotate": 0, "size": 0.75, "icon": "mdi-flask-round-bottom"}
+    ]},
+    {id: 54, collection: '多功能', 最高力量: 6, reward: [
+        {name: '级技能点数', type: '+', value: 1},
+        {name: '等级时间', type: '*', value: 1 / 1.05},
+    ], color: 'pale-黄色油漆', icons: [
+        {"x": -0.35, "y": 0.35, "rotate": 0, "size": 2.5, "icon": "mdi-table-furniture"},
+        {"x": 0.25, "y": 0.02, "rotate": 0, "size": 3, "icon": "mdi-human-greeting"},
+        {"x": -0.75, "y": -0.2, "rotate": 0, "size": 1, "icon": "mdi-lamp"},
+        {"x": -0.35, "y": -0.1, "rotate": 0, "size": 0.65, "icon": "mdi-book"},
+        {"x": 0.8, "y": 0.55, "rotate": 0, "size": 1, "icon": "mdi-watering-can"}
+    ]},
+    {id: 55, collection: '多功能', 最高力量: 7, reward: [
+        {name: '急速', type: '+', value: 10},
+        {name: '自动释放槽位', type: '+', value: 1},
+    ], color: '蓝色油漆-grey', icons: [
+        {"x": -0.5, "y": 0.15, "rotate": 0, "size": 3, "icon": "mdi-human-handsdown"},
+        {"x": 0.5, "y": 0.15, "rotate": 0, "size": 3, "icon": "mdi-human-male"},
+        {"x": 0.5, "y": -0.7, "rotate": 0, "size": 1.75, "icon": "mdi-robot"}
+    ]},
+    {id: 56, collection: '技巧性战斗', 最高力量: 7, reward: [
+        {name: '力量', type: '+', value: 5},
+    ], color: '红色油漆', icons: [
+        {"x": -0.65, "y": 0.15, "rotate": 0, "size": 2, "icon": "mdi-weight-lifter"},
+        {"x": 0.7, "y": 0.25, "rotate": 0, "size": 1.75, "icon": "mdi-human-greeting"},
+        {"x": 0.4, "y": -0.2, "rotate": -50, "size": 1, "icon": "mdi-dumbbell"},
+        {"x": 1.1, "y": 0.3, "rotate": -80, "size": 1, "icon": "mdi-dumbbell"}
+    ]},
+    {id: 57, collection: '技巧性战斗', 最高力量: 7, reward: [
+        {name: '智力', type: '+', value: 5},
+    ], color: '紫色油漆', icons: [
+        {"x": -0.85, "y": 0.6, "rotate": 0, "size": 1.75, "icon": "mdi-human-handsdown"},
+        {"x": -0.4, "y": 0.7, "rotate": 0, "size": 0.75, "icon": "mdi-script-text"},
+        {"x": 0.4, "y": 0.9, "rotate": 0, "size": 0.55, "icon": "mdi-skull"},
+        {"x": 0.7, "y": 0.95, "rotate": 70, "size": 0.55, "icon": "mdi-skull"},
+        {"x": 0.75, "y": -0.4, "rotate": 0, "size": 4.25, "icon": "mdi-flash"}
+    ]},
+    {id: 58, collection: '技巧性战斗', 最高力量: 5, reward: [
+        {name: '级技能点数', type: '+', value: 2},
+    ], color: '橙色油漆', icons: [
+        {"x": -0.8, "y": 0, "rotate": 0, "size": 1.5, "icon": "mdi-bullseye-arrow"},
+        {"x": -0.8, "y": 0.7, "rotate": 90, "size": 1.75, "icon": "mdi-minus"},
+        {"x": 0.9, "y": 0.55, "rotate": 0, "size": 2, "icon": "mdi-human-greeting"},
+        {"x": 0.5, "y": 0.2, "rotate": -70, "size": 1, "icon": "mdi-bow-arrow"}
+    ]},
+    {id: 59, collection: '技巧性战斗', 最高力量: 7, reward: [
+        {name: '急速', type: '+', value: 15},
+    ], color: '绿色油漆', icons: [
+        {"x": 0.35, "y": 0.25, "rotate": 0, "size": 2, "icon": "mdi-horse-human"},
+        {"x": -0.55, "y": 0.15, "rotate": 0, "size": 2, "icon": "mdi-horse-human"},
+        {"x": -0.45, "y": 1, "rotate": 0, "size": 0.6, "icon": "mdi-grass"},
+        {"x": 0.5, "y": -0.6, "rotate": 0, "size": 2, "icon": "mdi-tree"}
+    ]},
+    {id: 60, collection: '技巧性战斗', 最高力量: 7, reward: [
+        {name: '能量', type: '+', value: 120},
+    ], color: '浅蓝色油漆', icons: [
+        {"x": -0.4, "y": -0.35, "rotate": 0, "size": 2.3, "icon": "mdi-tree"},
+        {"x": 0.3, "y": 0.9, "rotate": 70, "size": 2, "icon": "mdi-minus"},
+        {"x": 0.3, "y": 0.25, "rotate": 0, "size": 1, "icon": "mdi-flag-checkered"},
+        {"x": -0.6, "y": 0.85, "rotate": 0, "size": 1.4, "icon": "mdi-run-fast"}
+    ]},
+    {id: 61, collection: '技巧性战斗', 最高力量: 7, reward: [
+        {name: '法力', type: '+', value: 60},
+    ], color: 'pale-紫色油漆', icons: [
+        {"x": 0, "y": 0.4, "rotate": 0, "size": 2.5, "icon": "mdi-human-handsup"},
+        {"x": 0, "y": -0.45, "rotate": 0, "size": 0.8, "icon": "mdi-wizard-hat"},
+        {"x": -0.8, "y": -0.4, "rotate": 0, "size": 0.8, "icon": "mdi-fire-circle"},
+        {"x": 0.3, "y": -0.9, "rotate": 0, "size": 0.8, "icon": "mdi-lightning-bolt-circle"},
+        {"x": 0.7, "y": -0.2, "rotate": 0, "size": 0.8, "icon": "mdi-water-circle"}
+    ]},
+    {id: 62, collection: '技巧性战斗', 最高力量: 7, reward: [
+        {name: '等级时间', type: '*', value: 1 / 1.1},
+    ], color: '浅绿色油漆', icons: [
+        {"x": -0.85, "y": 0, "rotate": 0, "size": 2, "icon": "mdi-tree"},
+        {"x": 0.15, "y": 0.05, "rotate": 0, "size": 1.75, "icon": "mdi-tree"},
+        {"x": 0.65, "y": 0, "rotate": 0, "size": 2, "icon": "mdi-tree"},
+        {"x": -0.5, "y": -0.65, "rotate": 0, "size": 1, "icon": "mdi-home"},
+        {"x": -0.7, "y": 0.8, "rotate": 0, "size": 1.25, "icon": "mdi-horse-human"},
+        {"x": 0.35, "y": 0.25, "rotate": 0, "size": 1, "icon": "mdi-grass"},
+        {"x": 0.85, "y": 0.32, "rotate": 0, "size": 0.5, "icon": "mdi-grass"},
+        {"x": -1.2, "y": 0.32, "rotate": 0, "size": 0.5, "icon": "mdi-grass"},
+        {"x": -1.05, "y": 0.32, "rotate": 0, "size": 0.5, "icon": "mdi-grass"},
+        {"x": -0.7, "y": 0.32, "rotate": 0, "size": 0.5, "icon": "mdi-grass"}
+    ]},
+    {id: 63, collection: '技巧性战斗', 最高力量: 8, reward: [
+        {name: '自动释放槽位', type: '+', value: 2},
+    ], color: '蓝色油漆-grey', icons: [
+        {"x": 0, "y": 0.1, "rotate": 0, "size": 3, "icon": "mdi-human"},
+        {"x": -0.7, "y": -0.18, "rotate": -45, "size": 0.75, "icon": "mdi-wrench"},
+        {"x": 0.7, "y": -0.18, "rotate": 135, "size": 0.75, "icon": "mdi-wrench"}
+    ]},
+    {id: 64, collection: '技巧性战斗', 最高力量: 9, reward: [], color: '金色油漆', icons: [
+        {"x": -0.55, "y": 0.8, "rotate": 0, "size": 1, "icon": "mdi-square"},
+        {"x": 0, "y": 0.8, "rotate": 0, "size": 1, "icon": "mdi-square"},
+        {"x": 0, "y": 0.4, "rotate": 0, "size": 1, "icon": "mdi-square"},
+        {"x": 0.55, "y": 0.8, "rotate": 0, "size": 1, "icon": "mdi-square"},
+        {"x": 0.55, "y": 0.6, "rotate": 0, "size": 1, "icon": "mdi-square"},
+        {"x": 0, "y": -0.25, "rotate": 0, "size": 1.75, "icon": "mdi-human-handsup"},
+        {"x": 0.5, "y": -0.65, "rotate": -15, "size": 1, "icon": "mdi-trophy"}
+    ]},
+    {id: 65, collection: '技巧性战斗', 最高力量: 6, reward: [
+        {name: '饰品最大增益', type: '*', value: 1.11},
+    ], color: 'babypink', icons: [
+        {"x": -0.7, "y": 0.15, "rotate": 0, "size": 2.5, "icon": "mdi-human-handsdown"},
+        {"x": -0.05, "y": 0.25, "rotate": 110, "size": 1, "icon": "mdi-magnet"},
+        {"x": 0.7, "y": 0.6, "rotate": 80, "size": 0.75, "icon": "mdi-medal"},
+        {"x": 1.1, "y": 0.6, "rotate": 0, "size": 0.75, "icon": "mdi-trophy"}
     ]},
 ];

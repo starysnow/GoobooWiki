@@ -1,230 +1,268 @@
 [
   {
-    "名称": "森林",
-    "图标": "<i class=\"mdi mdi-forest\"></i>",
-    "效果": "树苗增益+｛${(2)}^{lvl}  \\cdot  {(lvl + 1)}^{2}  \\cdot  0.01$｝",
+    "名称": "forest",
+    "type": "producer",
+    "icon": "<i class=\"mdi mdi-forest\"></i>",
+    "effect": "树苗增益+｛${(2)}^{lvl}  \\cdot  {(lvl + 1)}^{2}  \\cdot  0.01$｝",
     "max": ""
   },
   {
-    "名称": "牧羊人",
-    "图标": "<i class=\"mdi mdi-sheep\"></i>",
-    "效果": "纱增益+｛${(2)}^{lvl}  \\cdot  {(lvl + 1)}^{2}  \\cdot  0.01$｝",
+    "名称": "shepherd",
+    "type": "producer",
+    "icon": "<i class=\"mdi mdi-sheep\"></i>",
+    "effect": "纱增益+｛${(2)}^{lvl}  \\cdot  {(lvl + 1)}^{2}  \\cdot  0.01$｝",
     "max": ""
   },
   {
-    "名称": "擀面杖",
-    "图标": "<i class=\"mdi mdi-arrow-top-right-bottom-left-bold\"></i>",
-    "效果": "面团增益+｛${(2)}^{lvl}  \\cdot  {(lvl + 1)}^{2}  \\cdot  0.01$｝",
+    "名称": "rollingPin",
+    "type": "producer",
+    "icon": "<i class=\"mdi mdi-arrow-top-right-bottom-left-bold\"></i>",
+    "effect": "面团增益+｛${(2)}^{lvl}  \\cdot  {(lvl + 1)}^{2}  \\cdot  0.01$｝",
     "max": ""
   },
   {
-    "名称": "雪炮",
-    "图标": "<i class=\"mdi mdi-snowflake-alert\"></i>",
-    "效果": "雪增益+｛${(2)}^{lvl}  \\cdot  {(lvl + 1)}^{2}  \\cdot  0.01$｝",
+    "名称": "snowCannon",
+    "type": "producer",
+    "icon": "<i class=\"mdi mdi-snowflake-alert\"></i>",
+    "effect": "雪增益+｛${(2)}^{lvl}  \\cdot  {(lvl + 1)}^{2}  \\cdot  0.01$｝",
     "max": ""
   },
   {
-    "名称": "雪鸮",
-    "图标": "<i class=\"mdi mdi-owl\"></i>",
-    "效果": "",
+    "名称": "snowOwl",
+    "type": "pet",
+    "icon": "<i class=\"mdi mdi-owl\"></i>",
+    "effect": "",
     "max": "1"
   },
   {
-    "名称": "狗",
-    "图标": "<i class=\"mdi mdi-dog\"></i>",
-    "效果": "",
+    "名称": "dog",
+    "type": "pet",
+    "icon": "<i class=\"mdi mdi-dog\"></i>",
+    "effect": "",
     "max": "1"
   },
   {
-    "名称": "猫",
-    "图标": "<i class=\"mdi mdi-cat\"></i>",
-    "效果": "",
+    "名称": "cat",
+    "type": "pet",
+    "icon": "<i class=\"mdi mdi-cat\"></i>",
+    "effect": "",
     "max": "1"
   },
   {
-    "名称": "企鹅",
-    "图标": "<i class=\"mdi mdi-penguin\"></i>",
-    "效果": "",
+    "名称": "penguin",
+    "type": "pet",
+    "icon": "<i class=\"mdi mdi-penguin\"></i>",
+    "effect": "",
     "max": "1"
   },
   {
-    "名称": "兔子",
-    "图标": "<i class=\"mdi mdi-rabbit\"></i>",
-    "效果": "",
+    "名称": "rabbit",
+    "type": "pet",
+    "icon": "<i class=\"mdi mdi-rabbit\"></i>",
+    "effect": "",
     "max": "1"
   },
   {
-    "名称": "乌龟",
-    "图标": "<i class=\"mdi mdi-tortoise\"></i>",
-    "效果": "",
+    "名称": "turtle",
+    "type": "pet",
+    "icon": "<i class=\"mdi mdi-tortoise\"></i>",
+    "effect": "",
     "max": "1"
   },
   {
-    "名称": "动物牙齿",
-    "图标": "<i class=\"mdi mdi-tooth\"></i>",
-    "效果": "宠物攻击+｛$lvl  \\cdot  0.5$｝; 宠物攻击*｛$lvl  \\cdot  0.1 + 1$｝",
+    "名称": "animalTooth",
+    "type": "petBoost",
+    "icon": "<i class=\"mdi mdi-tooth\"></i>",
+    "effect": "宠物攻击+｛$lvl  \\cdot  0.5$｝; 宠物攻击*｛$lvl  \\cdot  0.1 + 1$｝",
     "max": ""
   },
   {
-    "名称": "项圈",
-    "图标": "<i class=\"mdi mdi-dog-service\"></i>",
-    "效果": "宠物生命值+｛$lvl  \\cdot  5$｝; 宠物生命值*｛$lvl  \\cdot  0.1 + 1$｝",
+    "名称": "collar",
+    "type": "petBoost",
+    "icon": "<i class=\"mdi mdi-dog-service\"></i>",
+    "effect": "宠物生命值+｛$lvl  \\cdot  5$｝; 宠物生命值*｛$lvl  \\cdot  0.1 + 1$｝",
     "max": ""
   },
   {
-    "名称": "辣椒",
-    "图标": "<i class=\"mdi mdi-chili-mild\"></i>",
-    "效果": "暴击率+｛$lvl  \\cdot  8$｝; 宠物暴击率+｛$lvl  \\cdot  10$｝",
+    "名称": "chili",
+    "type": "petBoost",
+    "icon": "<i class=\"mdi mdi-chili-mild\"></i>",
+    "effect": "暴击率+｛$lvl  \\cdot  8$｝; 宠物暴击率+｛$lvl  \\cdot  10$｝",
     "max": ""
   },
   {
-    "名称": "鼓槌",
-    "图标": "<i class=\"mdi mdi-food-drumstick\"></i>",
-    "效果": "宠物攻击*｛$lvl  \\cdot  0.1 + 1$｝; 宠物生命值*｛$lvl  \\cdot  0.1 + 1$｝; 宠物格挡率+｛$lvl  \\cdot  5$｝",
+    "名称": "drumstick",
+    "type": "petBoost",
+    "icon": "<i class=\"mdi mdi-food-drumstick\"></i>",
+    "effect": "宠物攻击*｛$lvl  \\cdot  0.1 + 1$｝; 宠物生命值*｛$lvl  \\cdot  0.1 + 1$｝; 宠物格挡率+｛$lvl  \\cdot  5$｝",
     "max": ""
   },
   {
-    "名称": "老鼠",
-    "图标": "<i class=\"mdi mdi-rodent\"></i>",
-    "效果": "",
+    "名称": "mouse",
+    "type": "petBoost",
+    "icon": "<i class=\"mdi mdi-rodent\"></i>",
+    "effect": "",
     "max": "5"
   },
   {
     "名称": "骨头",
-    "图标": "<i class=\"mdi mdi-bone\"></i>",
-    "效果": "",
+    "type": "petBoost",
+    "icon": "<i class=\"mdi mdi-bone\"></i>",
+    "effect": "",
     "max": "5"
   },
   {
-    "名称": "墓碑",
-    "图标": "<i class=\"mdi mdi-grave-stone\"></i>",
-    "效果": "",
+    "名称": "gravestone",
+    "type": "petBoost",
+    "icon": "<i class=\"mdi mdi-grave-stone\"></i>",
+    "effect": "",
     "max": "3"
   },
   {
-    "名称": "尖刺项圈",
-    "图标": "<i class=\"mdi mdi-decagram-outline\"></i>",
-    "效果": "",
+    "名称": "spikedCollar",
+    "type": "petBoost",
+    "icon": "<i class=\"mdi mdi-decagram-outline\"></i>",
+    "effect": "",
     "max": "1"
   },
   {
-    "名称": "心形项圈",
-    "图标": "<i class=\"mdi mdi-heart-outline\"></i>",
-    "效果": "",
+    "名称": "heartCollar",
+    "type": "petBoost",
+    "icon": "<i class=\"mdi mdi-heart-outline\"></i>",
+    "effect": "",
     "max": "3"
   },
   {
-    "名称": "治疗袋",
-    "图标": "<i class=\"mdi mdi-sack\"></i>",
-    "效果": "",
+    "名称": "treatBag",
+    "type": "petBoost",
+    "icon": "<i class=\"mdi mdi-sack\"></i>",
+    "effect": "",
     "max": ""
   },
   {
-    "名称": "网球",
-    "图标": "<i class=\"mdi mdi-tennis-ball\"></i>",
-    "效果": "",
+    "名称": "tennisBall",
+    "type": "petBoost",
+    "icon": "<i class=\"mdi mdi-tennis-ball\"></i>",
+    "effect": "",
     "max": "1"
   },
   {
-    "名称": "苹果汁",
-    "图标": "<i class=\"mdi mdi-cup\"></i>",
-    "效果": "",
+    "名称": "appleJuice",
+    "type": "tank",
+    "icon": "<i class=\"mdi mdi-cup\"></i>",
+    "effect": "",
     "max": ""
   },
   {
-    "名称": "热水",
-    "图标": "<i class=\"mdi mdi-needle\"></i>",
-    "效果": "",
+    "名称": "hotWater",
+    "type": "tank",
+    "icon": "<i class=\"mdi mdi-needle\"></i>",
+    "effect": "",
     "max": "1"
   },
   {
-    "名称": "哑铃",
-    "图标": "<i class=\"mdi mdi-dumbbell\"></i>",
-    "效果": "",
+    "名称": "dumbbell",
+    "type": "tank",
+    "icon": "<i class=\"mdi mdi-dumbbell\"></i>",
+    "effect": "",
     "max": "5"
   },
   {
-    "名称": "目标",
-    "图标": "<i class=\"mdi mdi-bullseye\"></i>",
-    "效果": "",
+    "名称": "target",
+    "type": "tank",
+    "icon": "<i class=\"mdi mdi-bullseye\"></i>",
+    "effect": "",
     "max": "5"
   },
   {
-    "名称": "手套",
-    "图标": "<i class=\"mdi mdi-hand-back-left\"></i>",
-    "效果": "",
+    "名称": "gloves",
+    "type": "tank",
+    "icon": "<i class=\"mdi mdi-hand-back-left\"></i>",
+    "effect": "",
     "max": "5"
   },
   {
-    "名称": "滑雪板",
-    "图标": "<i class=\"mdi mdi-snowboard\"></i>",
-    "效果": "",
+    "名称": "snowboard",
+    "type": "crit",
+    "icon": "<i class=\"mdi mdi-snowboard\"></i>",
+    "effect": "",
     "max": "1"
   },
   {
-    "名称": "茶",
-    "图标": "<i class=\"mdi mdi-tea\"></i>",
-    "效果": "",
+    "名称": "tea",
+    "type": "crit",
+    "icon": "<i class=\"mdi mdi-tea\"></i>",
+    "effect": "",
     "max": "3"
   },
   {
-    "名称": "星盾",
-    "图标": "<i class=\"mdi mdi-shield-star\"></i>",
-    "效果": "",
+    "名称": "starShield",
+    "type": "crit",
+    "icon": "<i class=\"mdi mdi-shield-star\"></i>",
+    "effect": "",
     "max": "1"
   },
   {
-    "名称": "咖啡",
-    "图标": "<i class=\"mdi mdi-coffee\"></i>",
-    "效果": "",
+    "名称": "coffee",
+    "type": "crit",
+    "icon": "<i class=\"mdi mdi-coffee\"></i>",
+    "effect": "",
     "max": "3"
   },
   {
-    "名称": "鹅卵石",
-    "图标": "<i class=\"mdi mdi-chart-bubble\"></i>",
-    "效果": "",
+    "名称": "pebbles",
+    "type": "crit",
+    "icon": "<i class=\"mdi mdi-chart-bubble\"></i>",
+    "effect": "",
     "max": "1"
   },
   {
-    "名称": "日盾",
-    "图标": "<i class=\"mdi mdi-shield-sun\"></i>",
-    "效果": "防御+｛$lvl  \\cdot  2$｝",
+    "名称": "sunShield",
+    "type": "",
+    "icon": "<i class=\"mdi mdi-shield-sun\"></i>",
+    "effect": "防御+｛$lvl  \\cdot  2$｝",
     "max": ""
   },
   {
-    "名称": "月盾",
-    "图标": "<i class=\"mdi mdi-shield-moon\"></i>",
-    "效果": "防御+｛$lvl$｝; 格挡率+｛$lvl  \\cdot  5$｝",
+    "名称": "moonShield",
+    "type": "",
+    "icon": "<i class=\"mdi mdi-shield-moon\"></i>",
+    "effect": "防御+｛$lvl$｝; 格挡率+｛$lvl  \\cdot  5$｝",
     "max": ""
   },
   {
-    "名称": "壁炉",
-    "图标": "<i class=\"mdi mdi-fireplace\"></i>",
-    "效果": "生命值+｛$lvl  \\cdot  10$｝; 生命值*｛$lvl  \\cdot  0.1 + 1$｝",
+    "名称": "fireplace",
+    "type": "",
+    "icon": "<i class=\"mdi mdi-fireplace\"></i>",
+    "effect": "生命值+｛$lvl  \\cdot  10$｝; 生命值*｛$lvl  \\cdot  0.1 + 1$｝",
     "max": ""
   },
   {
-    "名称": "特殊雪花",
-    "图标": "<i class=\"mdi mdi-snowflake-variant\"></i>",
-    "效果": "攻击*｛$lvl  \\cdot  0.1 + 1$｝; 暴击率+｛$lvl  \\cdot  5$｝",
+    "名称": "sharpSnowflake",
+    "type": "",
+    "icon": "<i class=\"mdi mdi-snowflake-variant\"></i>",
+    "effect": "攻击*｛$lvl  \\cdot  0.1 + 1$｝; 暴击率+｛$lvl  \\cdot  5$｝",
     "max": ""
   },
   {
-    "名称": "糖果手杖",
-    "图标": "<i class=\"mdi mdi-candycane\"></i>",
-    "效果": "生命值+｛$lvl  \\cdot  15$｝; 格挡率+｛$lvl  \\cdot  5$｝",
+    "名称": "candyCane",
+    "type": "",
+    "icon": "<i class=\"mdi mdi-candycane\"></i>",
+    "effect": "生命值+｛$lvl  \\cdot  15$｝; 格挡率+｛$lvl  \\cdot  5$｝",
     "max": ""
   },
   {
     "名称": "铲子",
-    "图标": "<i class=\"mdi mdi-shovel\"></i>",
-    "效果": "攻击+｛$lvl$｝; 攻击*｛$lvl  \\cdot  0.1 + 1$｝",
+    "type": "",
+    "icon": "<i class=\"mdi mdi-shovel\"></i>",
+    "effect": "攻击+｛$lvl$｝; 攻击*｛$lvl  \\cdot  0.1 + 1$｝",
     "max": ""
   },
   {
-    "名称": "火鸡",
-    "图标": "<i class=\"mdi mdi-food-turkey\"></i>",
-    "效果": "攻击+｛$lvl$｝; 生命值*｛$lvl  \\cdot  0.1 + 1$｝",
+    "名称": "turkey",
+    "type": "",
+    "icon": "<i class=\"mdi mdi-food-turkey\"></i>",
+    "effect": "攻击+｛$lvl$｝; 生命值*｛$lvl  \\cdot  0.1 + 1$｝",
     "max": ""
   }
 ]

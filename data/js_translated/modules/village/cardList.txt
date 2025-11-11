@@ -1,382 +1,628 @@
 [
-    {id: 1, collection: '洞穴位置', 力量: 2, reward: [
-        {name: '石头增益', 类型: '*', value: 1.2},
-        {name: '石头容量', 类型: '*', value: 1.1}
-    ], color: 'teal', icons: [
-        {"x": 0.9, "y": 0.7, "rotate": 0, "size": 0.5, "图标": "mdi-human-handsdown"},
-        {"x": -1, "y": 0, "rotate": 10, "size": 1.8, "图标": "mdi-chart-bubble"},
-        {"x": -0.6, "y": 0.5, "rotate": -15, "size": 2, "图标": "mdi-chart-bubble"},
-        {"x": -0.1, "y": -0.15, "rotate": -115, "size": 2.2, "图标": "mdi-chart-bubble"},
-        {"x": 0, "y": 0.5, "rotate": 75, "size": 2.3, "图标": "mdi-chart-bubble"},
-        {"x": -1.2, "y": 0.6, "rotate": 0, "size": 0.8, "图标": "mdi-circle"}
+    {id: 1, collection: '洞穴位置', 最高力量: 2, reward: [
+        {name: '石头增益', type: '*', value: 1.2},
+        {name: '石头容量', type: '*', value: 1.1}
+    ], color: '青色油漆', icons: [
+        {"x": 0.9, "y": 0.7, "rotate": 0, "size": 0.5, "icon": "mdi-human-handsdown"},
+        {"x": -1, "y": 0, "rotate": 10, "size": 1.8, "icon": "mdi-chart-bubble"},
+        {"x": -0.6, "y": 0.5, "rotate": -15, "size": 2, "icon": "mdi-chart-bubble"},
+        {"x": -0.1, "y": -0.15, "rotate": -115, "size": 2.2, "icon": "mdi-chart-bubble"},
+        {"x": 0, "y": 0.5, "rotate": 75, "size": 2.3, "icon": "mdi-chart-bubble"},
+        {"x": -1.2, "y": 0.6, "rotate": 0, "size": 0.8, "icon": "mdi-circle"}
     ]},
-    {id: 2, collection: '洞穴位置', 力量: 3, reward: [
-        {name: '宝石增益', 类型: '*', value: 1.2},
-        {name: '宝石容量', 类型: '*', value: 1.1}
-    ], color: '粉色-紫色', icons: [
-        {"x": -0.9, "y": 0.65, "rotate": -20, "size": 1.8, "图标": "mdi-chart-bubble"},
-        {"x": -0.4, "y": -0.2, "rotate": -30, "size": 2, "图标": "mdi-chart-bubble"},
-        {"x": -0.05, "y": 0.75, "rotate": -135, "size": 2.1, "图标": "mdi-chart-bubble"},
-        {"x": -0.3, "y": 0.3, "rotate": 65, "size": 0.75, "图标": "mdi-diamond-stone"},
-        {"x": 0.85, "y": 0.55, "rotate": 0, "size": 1.75, "图标": "mdi-human-handsdown"}
+    {id: 2, collection: '洞穴位置', 最高力量: 3, reward: [
+        {name: '宝石增益', type: '*', value: 1.2},
+        {name: '宝石容量', type: '*', value: 1.1}
+    ], color: '粉红色油漆-紫色油漆', icons: [
+        {"x": -0.9, "y": 0.65, "rotate": -20, "size": 1.8, "icon": "mdi-chart-bubble"},
+        {"x": -0.4, "y": -0.2, "rotate": -30, "size": 2, "icon": "mdi-chart-bubble"},
+        {"x": -0.05, "y": 0.75, "rotate": -135, "size": 2.1, "icon": "mdi-chart-bubble"},
+        {"x": -0.3, "y": 0.3, "rotate": 65, "size": 0.75, "icon": "mdi-diamond-stone"},
+        {"x": 0.85, "y": 0.55, "rotate": 0, "size": 1.75, "icon": "mdi-human-handsdown"}
     ]},
-    {id: 3, collection: '洞穴位置', 力量: 2, reward: [
-        {name: '水增益', 类型: '*', value: 1.2},
-        {name: '水容量', 类型: '*', value: 1.1}
-    ], color: 'blue-灰色', icons: [
-        {"x": -0.4, "y": -0.95, "rotate": 0, "size": 2, "图标": "mdi-nail"},
-        {"x": 0.65, "y": -1.05, "rotate": 0, "size": 1.6, "图标": "mdi-nail"},
-        {"x": 0, "y": 1.2, "rotate": 0, "size": 1, "图标": "mdi-triangle"},
-        {"x": 0.65, "y": 0, "rotate": 0, "size": 0.8, "图标": "mdi-water"}
+    {id: 3, collection: '洞穴位置', 最高力量: 2, reward: [
+        {name: '水增益', type: '*', value: 1.2},
+        {name: '水容量', type: '*', value: 1.1}
+    ], color: '蓝色油漆-grey', icons: [
+        {"x": -0.4, "y": -0.95, "rotate": 0, "size": 2, "icon": "mdi-nail"},
+        {"x": 0.65, "y": -1.05, "rotate": 0, "size": 1.6, "icon": "mdi-nail"},
+        {"x": 0, "y": 1.2, "rotate": 0, "size": 1, "icon": "mdi-triangle"},
+        {"x": 0.65, "y": 0, "rotate": 0, "size": 0.8, "icon": "mdi-water"}
     ]},
-    {id: 4, collection: '洞穴位置', 力量: 2, reward: [
-        {name: '金属增益', 类型: '*', value: 1.2},
-        {name: '金属容量', 类型: '*', value: 1.1}
-    ], color: '樱桃色', icons: [
-        {"x": -0.8, "y": 0.8, "rotate": 75, "size": 2.75, "图标": "mdi-chart-bubble"},
-        {"x": 0.75, "y": 0.85, "rotate": 40, "size": 2.2, "图标": "mdi-chart-bubble"},
-        {"x": -0.1, "y": -0.35, "rotate": -25, "size": 1.55, "图标": "mdi-chart-bubble"},
-        {"x": -0.55, "y": -0.85, "rotate": 20, "size": 2.15, "图标": "mdi-chart-bubble"},
-        {"x": 0.5, "y": -0.8, "rotate": -95, "size": 2.75, "图标": "mdi-chart-bubble"}
+    {id: 4, collection: '洞穴位置', 最高力量: 2, reward: [
+        {name: '金属增益', type: '*', value: 1.2},
+        {name: '金属容量', type: '*', value: 1.1}
+    ], color: 'cherry', icons: [
+        {"x": -0.8, "y": 0.8, "rotate": 75, "size": 2.75, "icon": "mdi-chart-bubble"},
+        {"x": 0.75, "y": 0.85, "rotate": 40, "size": 2.2, "icon": "mdi-chart-bubble"},
+        {"x": -0.1, "y": -0.35, "rotate": -25, "size": 1.55, "icon": "mdi-chart-bubble"},
+        {"x": -0.55, "y": -0.85, "rotate": 20, "size": 2.15, "icon": "mdi-chart-bubble"},
+        {"x": 0.5, "y": -0.8, "rotate": -95, "size": 2.75, "icon": "mdi-chart-bubble"}
     ]},
-    {id: 5, collection: '洞穴位置', 力量: 2, reward: [
-        {name: '植物纤维增益', 类型: '*', value: 1.2},
-        {name: '植物纤维容量', 类型: '*', value: 1.1}
-    ], color: '绿色', icons: [
-        {"x": 0.4, "y": 0.7, "rotate": -25, "size": 2.15, "图标": "mdi-chart-bubble"},
-        {"x": -0.45, "y": 0.5, "rotate": 40, "size": 2.55, "图标": "mdi-chart-bubble"},
-        {"x": -0.05, "y": -0.15, "rotate": 230, "size": 2.15, "图标": "mdi-chart-bubble"},
-        {"x": -0.2, "y": -0.65, "rotate": -15, "size": 0.75, "图标": "mdi-flower"},
-        {"x": 0.4, "y": -0.4, "rotate": 45, "size": 0.65, "图标": "mdi-flower"}
+    {id: 5, collection: '洞穴位置', 最高力量: 2, reward: [
+        {name: '植物纤维增益', type: '*', value: 1.2},
+        {name: '植物纤维容量', type: '*', value: 1.1}
+    ], color: '绿色油漆', icons: [
+        {"x": 0.4, "y": 0.7, "rotate": -25, "size": 2.15, "icon": "mdi-chart-bubble"},
+        {"x": -0.45, "y": 0.5, "rotate": 40, "size": 2.55, "icon": "mdi-chart-bubble"},
+        {"x": -0.05, "y": -0.15, "rotate": 230, "size": 2.15, "icon": "mdi-chart-bubble"},
+        {"x": -0.2, "y": -0.65, "rotate": -15, "size": 0.75, "icon": "mdi-flower"},
+        {"x": 0.4, "y": -0.4, "rotate": 45, "size": 0.65, "icon": "mdi-flower"}
     ]},
-    {id: 6, collection: '邻里', 力量: 2, reward: [
-        {name: '工人', 类型: '+', value: 8}
-    ], color: '绿色', icons: [
-        {"x": 0, "y": -0.2, "rotate": 0, "size": 2.5, "图标": "mdi-tent"},
-        {"x": 0.8, "y": -0.3, "rotate": 0, "size": 1, "图标": "mdi-grass"},
-        {"x": -0.75, "y": 0.7, "rotate": 0, "size": 1.2, "图标": "mdi-grass"},
-        {"x": 0.2, "y": 0.8, "rotate": 0, "size": 1.3, "图标": "mdi-grass"}
+    {id: 6, collection: '邻里', 最高力量: 2, reward: [
+        {name: '工人', type: '+', value: 8}
+    ], color: '绿色油漆', icons: [
+        {"x": 0, "y": -0.2, "rotate": 0, "size": 2.5, "icon": "mdi-tent"},
+        {"x": 0.8, "y": -0.3, "rotate": 0, "size": 1, "icon": "mdi-grass"},
+        {"x": -0.75, "y": 0.7, "rotate": 0, "size": 1.2, "icon": "mdi-grass"},
+        {"x": 0.2, "y": 0.8, "rotate": 0, "size": 1.3, "icon": "mdi-grass"}
     ]},
-    {id: 7, collection: '邻里', 力量: 2, reward: [
-        {name: '税率', 类型: '*', value: 1.25}
-    ], color: 'pale-黄色', icons: [
-        {"x": -0.75, "y": -0.2, "rotate": 0, "size": 1.75, "图标": "mdi-slide"},
-        {"x": 0.75, "y": 0, "rotate": 0, "size": 1.75, "图标": "mdi-seesaw"},
-        {"x": -0.25, "y": 0.85, "rotate": 0, "size": 1.5, "图标": "mdi-layers-outline"},
-        {"x": 0.25, "y": 0.95, "rotate": 0, "size": 1, "图标": "mdi-human-child"},
-        {"x": -0.65, "y": -0.25, "rotate": -30, "size": 1, "图标": "mdi-human-child"}
+    {id: 7, collection: '邻里', 最高力量: 2, reward: [
+        {name: '税率', type: '*', value: 1.25}
+    ], color: 'pale-黄色油漆', icons: [
+        {"x": -0.75, "y": -0.2, "rotate": 0, "size": 1.75, "icon": "mdi-slide"},
+        {"x": 0.75, "y": 0, "rotate": 0, "size": 1.75, "icon": "mdi-seesaw"},
+        {"x": -0.25, "y": 0.85, "rotate": 0, "size": 1.5, "icon": "mdi-layers-outline"},
+        {"x": 0.25, "y": 0.95, "rotate": 0, "size": 1, "icon": "mdi-human-child"},
+        {"x": -0.65, "y": -0.25, "rotate": -30, "size": 1, "icon": "mdi-human-child"}
     ]},
-    {id: 8, collection: '邻里', 力量: 2, reward: [
-        {name: '木头增益', 类型: '*', value: 1.2},
-        {name: '石头增益', 类型: '*', value: 1.2},
-        {name: '植物纤维增益', 类型: '*', value: 1.2}
+    {id: 8, collection: '邻里', 最高力量: 2, reward: [
+        {name: '基础材料增益', type: '*', value: 1.2}
     ], color: 'skyblue', icons: [
-        {"x": -0.8, "y": -0.3, "rotate": 0, "size": 1.75, "图标": "mdi-home"},
-        {"x": 0.8, "y": -0.3, "rotate": 0, "size": 1.75, "图标": "mdi-home"},
-        {"x": -0.05, "y": -0.3, "rotate": 0, "size": 1.5, "图标": "mdi-tree"},
-        {"x": -0.7, "y": 0.6, "rotate": 90, "size": 1.5, "图标": "mdi-road"},
-        {"x": 0, "y": 0.6, "rotate": 90, "size": 1.5, "图标": "mdi-road"},
-        {"x": 0.7, "y": 0.6, "rotate": 90, "size": 1.5, "图标": "mdi-road"}
+        {"x": -0.8, "y": -0.3, "rotate": 0, "size": 1.75, "icon": "mdi-home"},
+        {"x": 0.8, "y": -0.3, "rotate": 0, "size": 1.75, "icon": "mdi-home"},
+        {"x": -0.05, "y": -0.3, "rotate": 0, "size": 1.5, "icon": "mdi-tree"},
+        {"x": -0.7, "y": 0.6, "rotate": 90, "size": 1.5, "icon": "mdi-road"},
+        {"x": 0, "y": 0.6, "rotate": 90, "size": 1.5, "icon": "mdi-road"},
+        {"x": 0.7, "y": 0.6, "rotate": 90, "size": 1.5, "icon": "mdi-road"}
     ]},
-    {id: 9, collection: '邻里', 力量: 3, reward: [
-        {name: '精神资源增益', 类型: '*', value: 1.1}
-    ], color: '红色', icons: [
-        {"x": -0.85, "y": 0, "rotate": 0, "size": 1.7, "图标": "mdi-fence"},
-        {"x": 0, "y": 0, "rotate": 0, "size": 1.7, "图标": "mdi-fence"},
-        {"x": 0.85, "y": 0, "rotate": 0, "size": 1.7, "图标": "mdi-fence"},
-        {"x": -0.35, "y": 0.15, "rotate": 0, "size": 2, "图标": "mdi-human-greeting"},
-        {"x": 0.65, "y": -0.2, "rotate": 0, "size": 1.8, "图标": "mdi-human-handsdown"},
-        {"x": -0.6, "y": -0.6, "rotate": -20, "size": 1, "图标": "mdi-exclamation-thick"},
-        {"x": -0.35, "y": -0.65, "rotate": 0, "size": 1, "图标": "mdi-exclamation-thick"},
-        {"x": -0.1, "y": -0.6, "rotate": 20, "size": 1, "图标": "mdi-exclamation-thick"},
-        {"x": 0.65, "y": -1, "rotate": 0, "size": 1, "图标": "mdi-help"},
-        {"x": 0.35, "y": 0.85, "rotate": 0, "size": 1, "图标": "mdi-football"}
+    {id: 9, collection: '邻里', 最高力量: 3, reward: [
+        {name: '精神资源增益', type: '*', value: 1.1}
+    ], color: '红色油漆', icons: [
+        {"x": -0.85, "y": 0, "rotate": 0, "size": 1.7, "icon": "mdi-fence"},
+        {"x": 0, "y": 0, "rotate": 0, "size": 1.7, "icon": "mdi-fence"},
+        {"x": 0.85, "y": 0, "rotate": 0, "size": 1.7, "icon": "mdi-fence"},
+        {"x": -0.35, "y": 0.15, "rotate": 0, "size": 2, "icon": "mdi-human-greeting"},
+        {"x": 0.65, "y": -0.2, "rotate": 0, "size": 1.8, "icon": "mdi-human-handsdown"},
+        {"x": -0.6, "y": -0.6, "rotate": -20, "size": 1, "icon": "mdi-exclamation-thick"},
+        {"x": -0.35, "y": -0.65, "rotate": 0, "size": 1, "icon": "mdi-exclamation-thick"},
+        {"x": -0.1, "y": -0.6, "rotate": 20, "size": 1, "icon": "mdi-exclamation-thick"},
+        {"x": 0.65, "y": -1, "rotate": 0, "size": 1, "icon": "mdi-help"},
+        {"x": 0.35, "y": 0.85, "rotate": 0, "size": 1, "icon": "mdi-football"}
     ]},
-    {id: 10, collection: '邻里', 力量: 2, reward: [
-        {name: '木头容量', 类型: '*', value: 1.1},
-        {name: '石头容量', 类型: '*', value: 1.1},
-        {name: '植物纤维容量', 类型: '*', value: 1.1}
+    {id: 10, collection: '邻里', 最高力量: 2, reward: [
+        {name: '基础材料容量', type: '*', value: 1.1}
     ], color: 'lime', icons: [
-        {"x": -0.7, "y": -0.1, "rotate": 0, "size": 2.5, "图标": "mdi-home"},
-        {"x": 0, "y": 0.2, "rotate": 0, "size": 1, "图标": "mdi-fence"},
-        {"x": 0.5, "y": 0.2, "rotate": 0, "size": 1, "图标": "mdi-gate"},
-        {"x": 1, "y": 0.2, "rotate": 0, "size": 1, "图标": "mdi-fence"},
-        {"x": 0.75, "y": 0.75, "rotate": 0, "size": 1, "图标": "mdi-flower"},
-        {"x": -0.8, "y": 0.9, "rotate": 0, "size": 2, "图标": "mdi-tree"}
+        {"x": -0.7, "y": -0.1, "rotate": 0, "size": 2.5, "icon": "mdi-home"},
+        {"x": 0, "y": 0.2, "rotate": 0, "size": 1, "icon": "mdi-fence"},
+        {"x": 0.5, "y": 0.2, "rotate": 0, "size": 1, "icon": "mdi-gate"},
+        {"x": 1, "y": 0.2, "rotate": 0, "size": 1, "icon": "mdi-fence"},
+        {"x": 0.75, "y": 0.75, "rotate": 0, "size": 1, "icon": "mdi-flower"},
+        {"x": -0.8, "y": 0.9, "rotate": 0, "size": 2, "icon": "mdi-tree"}
     ]},
-    {id: 11, collection: '邻里', 力量: 2, reward: [
-        {name: '建造速度', 类型: '*', value: 1.2}
-    ], color: '樱桃色', icons: [
-        {"x": 0, "y": -0.65, "rotate": 0, "size": 4, "图标": "mdi-home-roof"},
-        {"x": -0.75, "y": 0.25, "rotate": 90, "size": 3, "图标": "mdi-minus"},
-        {"x": 0.75, "y": 0.25, "rotate": 90, "size": 3, "图标": "mdi-minus"},
-        {"x": -0.35, "y": -0.2, "rotate": 0, "size": 1, "图标": "mdi-track-light"},
-        {"x": 0.3, "y": 0.9, "rotate": 0, "size": 2, "图标": "mdi-tow-truck"},
-        {"x": -0.6, "y": 1, "rotate": 0, "size": 1, "图标": "mdi-wall"}
+    {id: 11, collection: '邻里', 最高力量: 2, reward: [
+        {name: '建造速度', type: '*', value: 1.2}
+    ], color: 'cherry', icons: [
+        {"x": 0, "y": -0.65, "rotate": 0, "size": 4, "icon": "mdi-home-roof"},
+        {"x": -0.75, "y": 0.25, "rotate": 90, "size": 3, "icon": "mdi-minus"},
+        {"x": 0.75, "y": 0.25, "rotate": 90, "size": 3, "icon": "mdi-minus"},
+        {"x": -0.35, "y": -0.2, "rotate": 0, "size": 1, "icon": "mdi-track-light"},
+        {"x": 0.3, "y": 0.9, "rotate": 0, "size": 2, "icon": "mdi-tow-truck"},
+        {"x": -0.6, "y": 1, "rotate": 0, "size": 1, "icon": "mdi-wall"}
     ]},
-    {id: 12, collection: '邻里', 力量: 3, color: 'pale-绿色', icons: [
-        {"x": -0.5, "y": 0, "rotate": 0, "size": 1.75, "图标": "mdi-rv-truck"},
-        {"x": 0.15, "y": 0.6, "rotate": 0, "size": 1.25, "图标": "mdi-campfire"},
-        {"x": -0.8, "y": 0.9, "rotate": 0, "size": 1.4, "图标": "mdi-tree"},
-        {"x": -0.3, "y": -0.7, "rotate": 0, "size": 1.25, "图标": "mdi-tree"},
-        {"x": 0.85, "y": 0.5, "rotate": 0, "size": 1.6, "图标": "mdi-tree"},
-        {"x": 0.4, "y": -0.25, "rotate": 0, "size": 1.1, "图标": "mdi-pine-tree"},
-        {"x": 0.9, "y": -0.6, "rotate": 0, "size": 1.5, "图标": "mdi-pine-tree"}
+    {id: 12, collection: '邻里', 最高力量: 3, color: 'pale-绿色油漆', icons: [
+        {"x": -0.5, "y": 0, "rotate": 0, "size": 1.75, "icon": "mdi-rv-truck"},
+        {"x": 0.15, "y": 0.6, "rotate": 0, "size": 1.25, "icon": "mdi-campfire"},
+        {"x": -0.8, "y": 0.9, "rotate": 0, "size": 1.4, "icon": "mdi-tree"},
+        {"x": -0.3, "y": -0.7, "rotate": 0, "size": 1.25, "icon": "mdi-tree"},
+        {"x": 0.85, "y": 0.5, "rotate": 0, "size": 1.6, "icon": "mdi-tree"},
+        {"x": 0.4, "y": -0.25, "rotate": 0, "size": 1.1, "icon": "mdi-pine-tree"},
+        {"x": 0.9, "y": -0.6, "rotate": 0, "size": 1.5, "icon": "mdi-pine-tree"}
     ]},
-    {id: 13, collection: '邻里', 力量: 4, reward: [
-        {name: '工人', 类型: '+', value: 6},
-        {name: '幸福', 类型: '+', value: 0.01}
-    ], color: 'deep-紫色', icons: [
-        {"x": -0.3, "y": -0.85, "rotate": 0, "size": 1.25, "图标": "mdi-window-open"},
-        {"x": 0.1, "y": 0, "rotate": 0, "size": 1.5, "图标": "mdi-sofa"},
-        {"x": 0.9, "y": -0.4, "rotate": 0, "size": 1, "图标": "mdi-television-classic"},
-        {"x": -0.85, "y": -0.1, "rotate": 0, "size": 1.75, "图标": "mdi-lamps"},
-        {"x": 0, "y": 0.8, "rotate": 0, "size": 2, "图标": "mdi-rug"},
-        {"x": 0.9, "y": 0.1, "rotate": 0, "size": 1, "图标": "mdi-dresser"}
+    {id: 13, collection: '邻里', 最高力量: 4, reward: [
+        {name: '工人', type: '+', value: 6},
+        {name: '幸福', type: '+', value: 0.01}
+    ], color: 'deep-紫色油漆', icons: [
+        {"x": -0.3, "y": -0.85, "rotate": 0, "size": 1.25, "icon": "mdi-window-open"},
+        {"x": 0.1, "y": 0, "rotate": 0, "size": 1.5, "icon": "mdi-sofa"},
+        {"x": 0.9, "y": -0.4, "rotate": 0, "size": 1, "icon": "mdi-television-classic"},
+        {"x": -0.85, "y": -0.1, "rotate": 0, "size": 1.75, "icon": "mdi-lamps"},
+        {"x": 0, "y": 0.8, "rotate": 0, "size": 2, "icon": "mdi-rug"},
+        {"x": 0.9, "y": 0.1, "rotate": 0, "size": 1, "icon": "mdi-dresser"}
     ]},
-    {id: 14, collection: '邻里', 力量: 2, reward: [
-        {name: '食物增益', 类型: '*', value: 1.2}
-    ], color: '光-绿色', icons: [
-        {"x": -0.55, "y": 0, "rotate": 0, "size": 2.5, "图标": "mdi-home"},
-        {"x": -0.05, "y": 0.8, "rotate": 0, "size": 1.4, "图标": "mdi-dog-side"},
-        {"x": 0.8, "y": 0.4, "rotate": 0, "size": 0.75, "图标": "mdi-soccer"},
-        {"x": 0.4, "y": 0.2, "rotate": 0, "size": 0.5, "图标": "mdi-tennis-ball"}
+    {id: 14, collection: '邻里', 最高力量: 2, reward: [
+        {name: '食物增益', type: '*', value: 1.2}
+    ], color: '浅绿色油漆', icons: [
+        {"x": -0.55, "y": 0, "rotate": 0, "size": 2.5, "icon": "mdi-home"},
+        {"x": -0.05, "y": 0.8, "rotate": 0, "size": 1.4, "icon": "mdi-dog-side"},
+        {"x": 0.8, "y": 0.4, "rotate": 0, "size": 0.75, "icon": "mdi-soccer"},
+        {"x": 0.4, "y": 0.2, "rotate": 0, "size": 0.5, "icon": "mdi-tennis-ball"}
     ]},
-    {id: 15, collection: '城市里的植物', 力量: 2, reward: [
-        {name: '仅粮食增益', 类型: '*', value: 1.6}
-    ], color: '光-blue', icons: [
-        {"x": 0, "y": 0.4, "rotate": 0, "size": 3, "图标": "mdi-home-city"},
-        {"x": 0, "y": -0.55, "rotate": 0, "size": 1, "图标": "mdi-flower"},
-        {"x": 0.7, "y": -0.55, "rotate": 0, "size": 1, "图标": "mdi-flower-tulip"},
-        {"x": 0.35, "y": -1, "rotate": 0, "size": 1.3, "图标": "mdi-tree"},
-        {"x": 0.38, "y": -0.5, "rotate": 90, "size": 1.3, "图标": "mdi-minus"}
+    {id: 15, collection: '城市里的植物', 最高力量: 2, reward: [
+        {name: '粮食增益', type: '*', value: 1.6}
+    ], color: '浅蓝色油漆', icons: [
+        {"x": 0, "y": 0.4, "rotate": 0, "size": 3, "icon": "mdi-home-city"},
+        {"x": 0, "y": -0.55, "rotate": 0, "size": 1, "icon": "mdi-flower"},
+        {"x": 0.7, "y": -0.55, "rotate": 0, "size": 1, "icon": "mdi-flower-tulip"},
+        {"x": 0.35, "y": -1, "rotate": 0, "size": 1.3, "icon": "mdi-tree"},
+        {"x": 0.38, "y": -0.5, "rotate": 90, "size": 1.3, "icon": "mdi-minus"}
     ]},
-    {id: 16, collection: '城市里的植物', 力量: 2, reward: [
-        {name: '木头增益', 类型: '*', value: 1.2},
-        {name: '木头容量', 类型: '*', value: 1.1}
+    {id: 16, collection: '城市里的植物', 最高力量: 2, reward: [
+        {name: '木头增益', type: '*', value: 1.2},
+        {name: '木头容量', type: '*', value: 1.1}
     ], color: 'beige', icons: [
-        {"x": 0, "y": -0.1, "rotate": 0, "size": 4, "图标": "mdi-tree"},
-        {"x": 0, "y": 0.8, "rotate": 0, "size": 1, "图标": "mdi-triangle"},
-        {"x": 0.45, "y": 0.85, "rotate": 0, "size": 0.5, "图标": "mdi-sign-text"},
-        {"x": -0.8, "y": 0.8, "rotate": 0, "size": 0.75, "图标": "mdi-human-male-female-child"}
+        {"x": 0, "y": -0.1, "rotate": 0, "size": 4, "icon": "mdi-tree"},
+        {"x": 0, "y": 0.8, "rotate": 0, "size": 1, "icon": "mdi-triangle"},
+        {"x": 0.45, "y": 0.85, "rotate": 0, "size": 0.5, "icon": "mdi-sign-text"},
+        {"x": -0.8, "y": 0.8, "rotate": 0, "size": 0.75, "icon": "mdi-human-male-female-child"}
     ]},
-    {id: 17, collection: '城市里的植物', 力量: 2, reward: [
-        {name: '所有资源增益', 类型: '*', value: 1.1}
-    ], color: '樱桃色', icons: [
-        {"x": 0.45, "y": 0.15, "rotate": 0, "size": 3, "图标": "mdi-truck-flatbed"},
-        {"x": 0.1, "y": -0.1, "rotate": -50, "size": 2, "图标": "mdi-tree"},
-        {"x": -0.85, "y": 0.45, "rotate": 0, "size": 1.25, "图标": "mdi-human-handsup"},
-        {"x": -0.6, "y": 0.05, "rotate": -55, "size": 1, "图标": "mdi-axe"}
+    {id: 17, collection: '城市里的植物', 最高力量: 2, reward: [
+        {name: '所有资源增益', type: '*', value: 1.1}
+    ], color: 'cherry', icons: [
+        {"x": 0.45, "y": 0.15, "rotate": 0, "size": 3, "icon": "mdi-truck-flatbed"},
+        {"x": 0.1, "y": -0.1, "rotate": -50, "size": 2, "icon": "mdi-tree"},
+        {"x": -0.85, "y": 0.45, "rotate": 0, "size": 1.25, "icon": "mdi-human-handsup"},
+        {"x": -0.6, "y": 0.05, "rotate": -55, "size": 1, "icon": "mdi-axe"}
     ]},
-    {id: 18, collection: '城市里的植物', 力量: 2, reward: [
-        {name: '水果增益', 类型: '*', value: 1.6}
-    ], color: '绿色', icons: [
-        {"x": -0.65, "y": 0.65, "rotate": 0, "size": 2, "图标": "mdi-layers-outline"},
-        {"x": -0.65, "y": 0.25, "rotate": 0, "size": 1.25, "图标": "mdi-flower"},
-        {"x": 0.65, "y": 0.65, "rotate": 0, "size": 2, "图标": "mdi-layers-outline"},
-        {"x": 0.65, "y": 0.1, "rotate": 0, "size": 2, "图标": "mdi-tree"},
-        {"x": 0, "y": -0.4, "rotate": 0, "size": 2, "图标": "mdi-layers-outline"},
-        {"x": 0, "y": -0.8, "rotate": 0, "size": 1.25, "图标": "mdi-flower-tulip"}
+    {id: 18, collection: '城市里的植物', 最高力量: 2, reward: [
+        {name: '水果增益', type: '*', value: 1.6}
+    ], color: '绿色油漆', icons: [
+        {"x": -0.65, "y": 0.65, "rotate": 0, "size": 2, "icon": "mdi-layers-outline"},
+        {"x": -0.65, "y": 0.25, "rotate": 0, "size": 1.25, "icon": "mdi-flower"},
+        {"x": 0.65, "y": 0.65, "rotate": 0, "size": 2, "icon": "mdi-layers-outline"},
+        {"x": 0.65, "y": 0.1, "rotate": 0, "size": 2, "icon": "mdi-tree"},
+        {"x": 0, "y": -0.4, "rotate": 0, "size": 2, "icon": "mdi-layers-outline"},
+        {"x": 0, "y": -0.8, "rotate": 0, "size": 1.25, "icon": "mdi-flower-tulip"}
     ]},
-    {id: 19, collection: '城市里的植物', 力量: 1, reward: [
-        {name: '植物纤维增益', 类型: '*', value: 1.75}
-    ], color: '光-绿色', icons: [
-        {"x": -0.7, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-human-handsdown"},
-        {"x": -0.3, "y": 0.15, "rotate": -60, "size": 1.2, "图标": "mdi-shovel"},
-        {"x": 0.3, "y": 0.3, "rotate": 0, "size": 0.8, "图标": "mdi-sprout"},
-        {"x": 0.9, "y": 0.3, "rotate": 0, "size": 0.8, "图标": "mdi-sprout"}
+    {id: 19, collection: '城市里的植物', 最高力量: 1, reward: [
+        {name: '植物纤维增益', type: '*', value: 1.75}
+    ], color: '浅绿色油漆', icons: [
+        {"x": -0.7, "y": 0, "rotate": 0, "size": 2, "icon": "mdi-human-handsdown"},
+        {"x": -0.3, "y": 0.15, "rotate": -60, "size": 1.2, "icon": "mdi-shovel"},
+        {"x": 0.3, "y": 0.3, "rotate": 0, "size": 0.8, "icon": "mdi-sprout"},
+        {"x": 0.9, "y": 0.3, "rotate": 0, "size": 0.8, "icon": "mdi-sprout"}
     ]},
-    {id: 20, collection: '工业革命', 力量: 3, reward: [
-        {name: '硬木增益', 类型: '*', value: 1.2},
-        {name: '硬木容量', 类型: '*', value: 1.1}
-    ], color: '樱桃色', icons: [
-        {"x": 0.6, "y": 0.4, "rotate": 55, "size": 3, "图标": "mdi-tree"},
-        {"x": -0.3, "y": 0.8, "rotate": 90, "size": 0.5, "图标": "mdi-rectangle"},
-        {"x": -0.95, "y": 0.5, "rotate": 0, "size": 1.5, "图标": "mdi-human-handsdown"},
-        {"x": -0.55, "y": 0.5, "rotate": 0, "size": 0.9, "图标": "mdi-axe"}
+    {id: 20, collection: '工业革命', 最高力量: 3, reward: [
+        {name: '硬木增益', type: '*', value: 1.2},
+        {name: '硬木容量', type: '*', value: 1.1}
+    ], color: 'cherry', icons: [
+        {"x": 0.6, "y": 0.4, "rotate": 55, "size": 3, "icon": "mdi-tree"},
+        {"x": -0.3, "y": 0.8, "rotate": 90, "size": 0.5, "icon": "mdi-rectangle"},
+        {"x": -0.95, "y": 0.5, "rotate": 0, "size": 1.5, "icon": "mdi-human-handsdown"},
+        {"x": -0.55, "y": 0.5, "rotate": 0, "size": 0.9, "icon": "mdi-axe"}
     ]},
-    {id: 21, collection: '工业革命', 力量: 3, reward: [
-        {name: '木头容量', 类型: '*', value: 1.15},
-        {name: '硬木容量', 类型: '*', value: 1.15}
-    ], color: '棕色', icons: [
-        {"x": 0, "y": 0, "rotate": 0, "size": 4, "图标": "mdi-truck-flatbed"},
-        {"x": -0.85, "y": -0.1, "rotate": 0, "size": 1, "图标": "mdi-rectangle"},
-        {"x": -0.5, "y": -0.1, "rotate": 0, "size": 1, "图标": "mdi-rectangle"},
-        {"x": -0.15, "y": -0.1, "rotate": 0, "size": 1, "图标": "mdi-rectangle"},
-        {"x": -0.85, "y": -0.5, "rotate": 0, "size": 1, "图标": "mdi-rectangle"},
-        {"x": -0.5, "y": -0.5, "rotate": 0, "size": 1, "图标": "mdi-rectangle"},
-        {"x": -0.15, "y": -0.5, "rotate": 0, "size": 1, "图标": "mdi-rectangle"},
-        {"x": -0.85, "y": -0.9, "rotate": 0, "size": 1, "图标": "mdi-rectangle"},
-        {"x": -0.5, "y": -0.9, "rotate": 0, "size": 1, "图标": "mdi-rectangle"},
-        {"x": -0.15, "y": -0.9, "rotate": 0, "size": 1, "图标": "mdi-rectangle"}
+    {id: 21, collection: '工业革命', 最高力量: 3, reward: [
+        {name: '木头容量', type: '*', value: 1.15},
+        {name: '硬木容量', type: '*', value: 1.15}
+    ], color: 'brown', icons: [
+        {"x": 0, "y": 0, "rotate": 0, "size": 4, "icon": "mdi-truck-flatbed"},
+        {"x": -0.85, "y": -0.1, "rotate": 0, "size": 1, "icon": "mdi-rectangle"},
+        {"x": -0.5, "y": -0.1, "rotate": 0, "size": 1, "icon": "mdi-rectangle"},
+        {"x": -0.15, "y": -0.1, "rotate": 0, "size": 1, "icon": "mdi-rectangle"},
+        {"x": -0.85, "y": -0.5, "rotate": 0, "size": 1, "icon": "mdi-rectangle"},
+        {"x": -0.5, "y": -0.5, "rotate": 0, "size": 1, "icon": "mdi-rectangle"},
+        {"x": -0.15, "y": -0.5, "rotate": 0, "size": 1, "icon": "mdi-rectangle"},
+        {"x": -0.85, "y": -0.9, "rotate": 0, "size": 1, "icon": "mdi-rectangle"},
+        {"x": -0.5, "y": -0.9, "rotate": 0, "size": 1, "icon": "mdi-rectangle"},
+        {"x": -0.15, "y": -0.9, "rotate": 0, "size": 1, "icon": "mdi-rectangle"}
     ]},
-    {id: 22, collection: '工业革命', 力量: 3, reward: [
-        {name: '知识容量', 类型: '*', value: 1.1}
-    ], color: 'pale-紫色', icons: [
-        {"x": -0.5, "y": -0.3, "rotate": 0, "size": 3, "图标": "mdi-minus"},
-        {"x": 0.5, "y": -0.3, "rotate": 0, "size": 3, "图标": "mdi-minus"},
-        {"x": -0.5, "y": 0.6, "rotate": 0, "size": 3, "图标": "mdi-minus"},
-        {"x": 0.5, "y": 0.6, "rotate": 0, "size": 3, "图标": "mdi-minus"},
-        {"x": 0.3, "y": 0.35, "rotate": 0, "size": 1, "图标": "mdi-beaker"},
-        {"x": -0.45, "y": -0.6, "rotate": 0, "size": 1, "图标": "mdi-flask"},
-        {"x": 0.2, "y": -0.6, "rotate": 0, "size": 1, "图标": "mdi-bottle-tonic"},
-        {"x": 0.55, "y": -0.6, "rotate": 0, "size": 1, "图标": "mdi-bottle-tonic"},
-        {"x": -0.2, "y": 0.5, "rotate": 45, "size": 0.5, "图标": "mdi-pencil"}
+    {id: 22, collection: '工业革命', 最高力量: 3, reward: [
+        {name: '知识容量', type: '*', value: 1.1}
+    ], color: 'pale-紫色油漆', icons: [
+        {"x": -0.5, "y": -0.3, "rotate": 0, "size": 3, "icon": "mdi-minus"},
+        {"x": 0.5, "y": -0.3, "rotate": 0, "size": 3, "icon": "mdi-minus"},
+        {"x": -0.5, "y": 0.6, "rotate": 0, "size": 3, "icon": "mdi-minus"},
+        {"x": 0.5, "y": 0.6, "rotate": 0, "size": 3, "icon": "mdi-minus"},
+        {"x": 0.3, "y": 0.35, "rotate": 0, "size": 1, "icon": "mdi-beaker"},
+        {"x": -0.45, "y": -0.6, "rotate": 0, "size": 1, "icon": "mdi-flask"},
+        {"x": 0.2, "y": -0.6, "rotate": 0, "size": 1, "icon": "mdi-bottle-tonic"},
+        {"x": 0.55, "y": -0.6, "rotate": 0, "size": 1, "icon": "mdi-bottle-tonic"},
+        {"x": -0.2, "y": 0.5, "rotate": 45, "size": 0.5, "icon": "mdi-pencil"}
     ]},
-    {id: 23, collection: '工业革命', 力量: 4, reward: [
-        {name: '科学增益', 类型: '*', value: 1.3}
-    ], color: '青色', icons: [
-        {"x": -0.3, "y": 0.3, "rotate": 0, "size": 1, "图标": "mdi-test-tube"},
-        {"x": 0, "y": 0.3, "rotate": 0, "size": 1, "图标": "mdi-test-tube-empty"},
-        {"x": 0.3, "y": 0.3, "rotate": 0, "size": 1, "图标": "mdi-test-tube-empty"},
-        {"x": -0.1, "y": -0.3, "rotate": 0, "size": 1, "图标": "mdi-eyedropper"}
+    {id: 23, collection: '工业革命', 最高力量: 4, reward: [
+        {name: '科学增益', type: '*', value: 1.3}
+    ], color: 'cyan', icons: [
+        {"x": -0.3, "y": 0.3, "rotate": 0, "size": 1, "icon": "mdi-test-tube"},
+        {"x": 0, "y": 0.3, "rotate": 0, "size": 1, "icon": "mdi-test-tube-empty"},
+        {"x": 0.3, "y": 0.3, "rotate": 0, "size": 1, "icon": "mdi-test-tube-empty"},
+        {"x": -0.1, "y": -0.3, "rotate": 0, "size": 1, "icon": "mdi-eyedropper"}
     ]},
-    {id: 24, collection: '工业革命', 力量: 2, reward: [
-        {name: '玻璃增益', 类型: '*', value: 1.2},
-        {name: '玻璃容量', 类型: '*', value: 1.1}
+    {id: 24, collection: '工业革命', 最高力量: 2, reward: [
+        {name: '玻璃增益', type: '*', value: 1.2},
+        {name: '玻璃容量', type: '*', value: 1.1}
     ], color: 'lime', icons: [
-        {"x": 0, "y": 0, "rotate": 0, "size": 4, "图标": "mdi-microscope"},
-        {"x": 0.4, "y": 0, "rotate": -90, "size": 0.7, "图标": "mdi-bacteria"},
-        {"x": 0.75, "y": 0, "rotate": 0, "size": 0.7, "图标": "mdi-virus"}
+        {"x": 0, "y": 0, "rotate": 0, "size": 4, "icon": "mdi-microscope"},
+        {"x": 0.4, "y": 0, "rotate": -90, "size": 0.7, "icon": "mdi-bacteria"},
+        {"x": 0.75, "y": 0, "rotate": 0, "size": 0.7, "icon": "mdi-virus"}
     ]},
-    {id: 25, collection: '工业革命', 力量: 2, reward: [
-        {name: '金币容量', 类型: '*', value: 1.18}
-    ], color: '金色', icons: [
-        {"x": -0.4, "y": -0.05, "rotate": 70, "size": 2, "图标": "mdi-bowl-mix"},
-        {"x": 0.5, "y": 0.5, "rotate": 0, "size": 2, "图标": "mdi-gold"}
+    {id: 25, collection: '工业革命', 最高力量: 2, reward: [
+        {name: '金币容量', type: '*', value: 1.18}
+    ], color: '金色油漆', icons: [
+        {"x": -0.4, "y": -0.05, "rotate": 70, "size": 2, "icon": "mdi-bowl-mix"},
+        {"x": 0.5, "y": 0.5, "rotate": 0, "size": 2, "icon": "mdi-gold"}
     ]},
-    {id: 26, collection: '工业革命', 力量: 3, reward: [
-        {name: '信仰增益', 类型: '*', value: 1.2}
-    ], color: '光-灰色', icons: [
-        {"x": -0.5, "y": 0.35, "rotate": 0, "size": 3, "图标": "mdi-minus"},
-        {"x": 0.5, "y": 0.35, "rotate": 0, "size": 3, "图标": "mdi-minus"},
-        {"x": 0, "y": -0.1, "rotate": 0, "size": 1, "图标": "mdi-arrow-collapse-down"},
-        {"x": 0, "y": -1, "rotate": 90, "size": 1, "图标": "mdi-minus"},
-        {"x": 0, "y": -0.7, "rotate": 90, "size": 1, "图标": "mdi-minus"},
-        {"x": 0, "y": -0.4, "rotate": 90, "size": 1, "图标": "mdi-minus"},
-        {"x": -0.65, "y": 0.05, "rotate": 0, "size": 1, "图标": "mdi-gold"},
-        {"x": 0.15, "y": 0.2, "rotate": 80, "size": 1, "图标": "mdi-nail"},
-        {"x": 0.8, "y": 0.05, "rotate": 180, "size": 1, "图标": "mdi-nail"}
+    {id: 26, collection: '工业革命', 最高力量: 3, reward: [
+        {name: '信仰增益', type: '*', value: 1.2}
+    ], color: '光-grey', icons: [
+        {"x": -0.5, "y": 0.35, "rotate": 0, "size": 3, "icon": "mdi-minus"},
+        {"x": 0.5, "y": 0.35, "rotate": 0, "size": 3, "icon": "mdi-minus"},
+        {"x": 0, "y": -0.1, "rotate": 0, "size": 1, "icon": "mdi-arrow-collapse-down"},
+        {"x": 0, "y": -1, "rotate": 90, "size": 1, "icon": "mdi-minus"},
+        {"x": 0, "y": -0.7, "rotate": 90, "size": 1, "icon": "mdi-minus"},
+        {"x": 0, "y": -0.4, "rotate": 90, "size": 1, "icon": "mdi-minus"},
+        {"x": -0.65, "y": 0.05, "rotate": 0, "size": 1, "icon": "mdi-gold"},
+        {"x": 0.15, "y": 0.2, "rotate": 80, "size": 1, "icon": "mdi-nail"},
+        {"x": 0.8, "y": 0.05, "rotate": 180, "size": 1, "icon": "mdi-nail"}
     ]},
-    {id: 27, collection: '工业革命', 力量: 2, reward: [
-        {name: '知识增益', 类型: '*', value: 1.3}
-    ], color: 'pale-橙色', icons: [
-        {"x": -0.55, "y": 0, "rotate": 0, "size": 1.5, "图标": "mdi-bookshelf"},
-        {"x": -0.05, "y": 0, "rotate": 0, "size": 1.5, "图标": "mdi-bookshelf"},
-        {"x": 0.55, "y": 0, "rotate": 0, "size": 1.5, "图标": "mdi-bookshelf"},
-        {"x": -0.55, "y": 0.75, "rotate": 0, "size": 1.5, "图标": "mdi-bookshelf"},
-        {"x": 0.05, "y": 0.75, "rotate": 0, "size": 1.5, "图标": "mdi-bookshelf"},
-        {"x": 0.55, "y": 0.75, "rotate": 0, "size": 1.5, "图标": "mdi-bookshelf"},
-        {"x": 0.5, "y": -0.85, "rotate": 0, "size": 1.25, "图标": "mdi-book"},
-        {"x": -0.2, "y": -0.8, "rotate": 0, "size": 1, "图标": "mdi-candle"}
+    {id: 27, collection: '工业革命', 最高力量: 2, reward: [
+        {name: '知识增益', type: '*', value: 1.3}
+    ], color: 'pale-橙色油漆', icons: [
+        {"x": -0.55, "y": 0, "rotate": 0, "size": 1.5, "icon": "mdi-bookshelf"},
+        {"x": -0.05, "y": 0, "rotate": 0, "size": 1.5, "icon": "mdi-bookshelf"},
+        {"x": 0.55, "y": 0, "rotate": 0, "size": 1.5, "icon": "mdi-bookshelf"},
+        {"x": -0.55, "y": 0.75, "rotate": 0, "size": 1.5, "icon": "mdi-bookshelf"},
+        {"x": 0.05, "y": 0.75, "rotate": 0, "size": 1.5, "icon": "mdi-bookshelf"},
+        {"x": 0.55, "y": 0.75, "rotate": 0, "size": 1.5, "icon": "mdi-bookshelf"},
+        {"x": 0.5, "y": -0.85, "rotate": 0, "size": 1.25, "icon": "mdi-book"},
+        {"x": -0.2, "y": -0.8, "rotate": 0, "size": 1, "icon": "mdi-candle"}
     ]},
-    {id: 28, collection: '工业革命', 力量: 3, reward: [
-        {name: '信仰容量', 类型: '*', value: 1.25}
-    ], color: 'blue-灰色', icons: [
-        {"x": 0, "y": 0, "rotate": 0, "size": 1.75, "图标": "mdi-cog"},
-        {"x": -0.7, "y": -0.25, "rotate": 10, "size": 1.5, "图标": "mdi-cog"},
-        {"x": -1, "y": 0.35, "rotate": 0, "size": 1.25, "图标": "mdi-cog"},
-        {"x": 0.8, "y": 0, "rotate": 30, "size": 1.6, "图标": "mdi-cog"}
+    {id: 28, collection: '工业革命', 最高力量: 3, reward: [
+        {name: '信仰容量', type: '*', value: 1.25}
+    ], color: '蓝色油漆-grey', icons: [
+        {"x": 0, "y": 0, "rotate": 0, "size": 1.75, "icon": "mdi-cog"},
+        {"x": -0.7, "y": -0.25, "rotate": 10, "size": 1.5, "icon": "mdi-cog"},
+        {"x": -1, "y": 0.35, "rotate": 0, "size": 1.25, "icon": "mdi-cog"},
+        {"x": 0.8, "y": 0, "rotate": 30, "size": 1.6, "icon": "mdi-cog"}
     ]},
-    {id: 29, collection: '工业革命', 力量: 3, reward: [
-        {name: '鱼增益', 类型: '*', value: 1.6}
-    ], color: 'pale-blue', icons: [
-        {"x": 0.6, "y": 0.6, "rotate": 0, "size": 2, "图标": "mdi-stove"},
-        {"x": 0.4, "y": -0.1, "rotate": 0, "size": 1, "图标": "mdi-pot-mix"},
-        {"x": -0.4, "y": -0.25, "rotate": 0, "size": 2, "图标": "mdi-robot-industrial"},
-        {"x": -0.35, "y": 0.3, "rotate": 0, "size": 3, "图标": "mdi-minus"},
-        {"x": 0.15, "y": -0.55, "rotate": 40, "size": 0.75, "图标": "mdi-food-apple"}
+    {id: 29, collection: '工业革命', 最高力量: 3, reward: [
+        {name: '鱼增益', type: '*', value: 1.6}
+    ], color: 'pale-蓝色油漆', icons: [
+        {"x": 0.6, "y": 0.6, "rotate": 0, "size": 2, "icon": "mdi-stove"},
+        {"x": 0.4, "y": -0.1, "rotate": 0, "size": 1, "icon": "mdi-pot-mix"},
+        {"x": -0.4, "y": -0.25, "rotate": 0, "size": 2, "icon": "mdi-robot-industrial"},
+        {"x": -0.35, "y": 0.3, "rotate": 0, "size": 3, "icon": "mdi-minus"},
+        {"x": 0.15, "y": -0.55, "rotate": 40, "size": 0.75, "icon": "mdi-food-apple"}
     ]},
-    {id: 30, collection: '工业革命', 力量: 2, reward: [
-        {name: '信仰增益', 类型: '*', value: 1.25},
-        {name: '信仰容量', 类型: '*', value: 1.3}
-    ], color: '灰色', icons: [
-        {"x": 0, "y": -0.6, "rotate": 0, "size": 3, "图标": "mdi-garage-open"},
-        {"x": -0.15, "y": 0.65, "rotate": 0, "size": 2, "图标": "mdi-human-handsdown"},
-        {"x": 0.3, "y": 0.6, "rotate": 15, "size": 0.75, "图标": "mdi-remote"},
-        {"x": 0, "y": -0.25, "rotate": 0, "size": 1, "图标": "mdi-car"}
+    {id: 30, collection: '工业革命', 最高力量: 2, reward: [
+        {name: '信仰增益', type: '*', value: 1.25},
+        {name: '信仰容量', type: '*', value: 1.3}
+    ], color: 'grey', icons: [
+        {"x": 0, "y": -0.6, "rotate": 0, "size": 3, "icon": "mdi-garage-open"},
+        {"x": -0.15, "y": 0.65, "rotate": 0, "size": 2, "icon": "mdi-human-handsdown"},
+        {"x": 0.3, "y": 0.6, "rotate": 15, "size": 0.75, "icon": "mdi-remote"},
+        {"x": 0, "y": -0.25, "rotate": 0, "size": 1, "icon": "mdi-car"}
     ]},
-    {id: 31, collection: '工业革命', 力量: 3, reward: [
-        {name: '信仰增益', 类型: '*', value: 1.12},
-        {name: '所有资源增益', 类型: '*', value: 1.05}
-    ], color: 'pale-红色', icons: [
-        {"x": 0, "y": 0.5, "rotate": 0, "size": 3.5, "图标": "mdi-square-outline"},
-        {"x": 0, "y": 0.85, "rotate": 0, "size": 1, "图标": "mdi-power-socket"},
-        {"x": 0, "y": 0.05, "rotate": 0, "size": 2.25, "图标": "mdi-engine"},
-        {"x": 0.45, "y": -0.9, "rotate": -65, "size": 1.5, "图标": "mdi-fuel"},
-        {"x": -0.05, "y": -0.55, "rotate": 0, "size": 0.4, "图标": "mdi-water"}
+    {id: 31, collection: '工业革命', 最高力量: 3, reward: [
+        {name: '信仰增益', type: '*', value: 1.12},
+        {name: '所有资源增益', type: '*', value: 1.05}
+    ], color: 'pale-红色油漆', icons: [
+        {"x": 0, "y": 0.5, "rotate": 0, "size": 3.5, "icon": "mdi-square-outline"},
+        {"x": 0, "y": 0.85, "rotate": 0, "size": 1, "icon": "mdi-power-socket"},
+        {"x": 0, "y": 0.05, "rotate": 0, "size": 2.25, "icon": "mdi-engine"},
+        {"x": 0.45, "y": -0.9, "rotate": -65, "size": 1.5, "icon": "mdi-fuel"},
+        {"x": -0.05, "y": -0.55, "rotate": 0, "size": 0.4, "icon": "mdi-water"}
     ]},
-    {id: 32, collection: '工业革命', 力量: 4, reward: [
-        {name: '仅蔬菜增益', 类型: '*', value: 1.6}
-    ], color: '黄色', icons: [
-        {"x": 0, "y": 0.25, "rotate": 0, "size": 3, "图标": "mdi-home"},
-        {"x": 0.3, "y": -0.5, "rotate": 45, "size": 1, "图标": "mdi-solar-panel"},
-        {"x": 0.7, "y": -0.1, "rotate": 45, "size": 1, "图标": "mdi-solar-panel"},
-        {"x": -0.85, "y": 1, "rotate": 0, "size": 2, "图标": "mdi-chart-line-variant"}
+    {id: 32, collection: '工业革命', 最高力量: 4, reward: [
+        {name: '蔬菜增益', type: '*', value: 1.6}
+    ], color: '黄色油漆', icons: [
+        {"x": 0, "y": 0.25, "rotate": 0, "size": 3, "icon": "mdi-home"},
+        {"x": 0.3, "y": -0.5, "rotate": 45, "size": 1, "icon": "mdi-solar-panel"},
+        {"x": 0.7, "y": -0.1, "rotate": 45, "size": 1, "icon": "mdi-solar-panel"},
+        {"x": -0.85, "y": 1, "rotate": 0, "size": 2, "icon": "mdi-chart-line-variant"}
     ]},
-    {id: 33, collection: '工业革命', 力量: 4, reward: [
-        {name: '快乐增益', 类型: '*', value: 1.3}
+    {id: 33, collection: '工业革命', 最高力量: 4, reward: [
+        {name: '快乐增益', type: '*', value: 1.3}
     ], color: 'indigo', icons: [
-        {"x": 0, "y": 0.2, "rotate": 0, "size": 4, "图标": "mdi-car-side"},
-        {"x": 0.2, "y": -0.1, "rotate": 0, "size": 0.5, "图标": "mdi-robot"},
-        {"x": 0, "y": -0.6, "rotate": 0, "size": 1, "图标": "mdi-antenna"}
+        {"x": 0, "y": 0.2, "rotate": 0, "size": 4, "icon": "mdi-car-side"},
+        {"x": 0.2, "y": -0.1, "rotate": 0, "size": 0.5, "icon": "mdi-robot"},
+        {"x": 0, "y": -0.6, "rotate": 0, "size": 1, "icon": "mdi-antenna"}
     ]},
-    {id: 34, collection: '维护安全', 力量: 2, reward: [
-        {name: '工人', 类型: '*', value: 1.1}
-    ], color: '橙色', icons: [
-        {"x": 0.6, "y": 0.2, "rotate": 0, "size": 2.5, "图标": "mdi-home"},
-        {"x": 0.85, "y": -0.4, "rotate": 20, "size": 1, "图标": "mdi-fire"},
-        {"x": 1.15, "y": -0.15, "rotate": 20, "size": 1, "图标": "mdi-fire"},
-        {"x": 0.15, "y": -0.4, "rotate": 0, "size": 1.4, "图标": "mdi-smoke"},
-        {"x": -0.65, "y": 0.6, "rotate": 0, "size": 2, "图标": "mdi-fire-truck"}
+    {id: 34, collection: '维护安全', 最高力量: 2, reward: [
+        {name: '工人', type: '*', value: 1.05}
+    ], color: '橙色油漆', icons: [
+        {"x": 0.6, "y": 0.2, "rotate": 0, "size": 2.5, "icon": "mdi-home"},
+        {"x": 0.85, "y": -0.4, "rotate": 20, "size": 1, "icon": "mdi-fire"},
+        {"x": 1.15, "y": -0.15, "rotate": 20, "size": 1, "icon": "mdi-fire"},
+        {"x": 0.15, "y": -0.4, "rotate": 0, "size": 1.4, "icon": "mdi-smoke"},
+        {"x": -0.65, "y": 0.6, "rotate": 0, "size": 2, "icon": "mdi-fire-truck"}
     ]},
-    {id: 35, collection: '维护安全', 力量: 4, reward: [
-        {name: '硬木容量', 类型: '*', value: 1.15},
-        {name: '宝石容量', 类型: '*', value: 1.15}
-    ], color: 'dark-blue', icons: [
-        {"x": 0.5, "y": -0.4, "rotate": 0, "size": 2, "图标": "mdi-police-station"},
-        {"x": -0.6, "y": -0.05, "rotate": 0, "size": 1.25, "图标": "mdi-car-emergency"},
-        {"x": 0.05, "y": 0.65, "rotate": 0, "size": 1.25, "图标": "mdi-horse-human"}
+    {id: 35, collection: '维护安全', 最高力量: 4, reward: [
+        {name: '硬木容量', type: '*', value: 1.15},
+        {name: '宝石容量', type: '*', value: 1.15}
+    ], color: 'dark-蓝色油漆', icons: [
+        {"x": 0.5, "y": -0.4, "rotate": 0, "size": 2, "icon": "mdi-police-station"},
+        {"x": -0.6, "y": -0.05, "rotate": 0, "size": 1.25, "icon": "mdi-car-emergency"},
+        {"x": 0.05, "y": 0.65, "rotate": 0, "size": 1.25, "icon": "mdi-horse-human"}
     ]},
-    {id: 36, collection: '维护安全', 力量: 4, reward: [
-        {name: '水容量', 类型: '*', value: 1.2}
-    ], color: '青色', icons: [
-        {"x": 0.75, "y": 0.8, "rotate": 35, "size": 2.3, "图标": "mdi-chart-bubble"},
-        {"x": 0.75, "y": 0, "rotate": 45, "size": 2.5, "图标": "mdi-chart-bubble"},
-        {"x": 0, "y": 0.5, "rotate": 10, "size": 1.9, "图标": "mdi-chart-bubble"},
-        {"x": -0.15, "y": 1, "rotate": -65, "size": 1.4, "图标": "mdi-chart-bubble"},
-        {"x": 0.65, "y": -0.65, "rotate": 0, "size": 2, "图标": "mdi-lighthouse-on"},
-        {"x": -0.85, "y": 1, "rotate": 0, "size": 1.75, "图标": "mdi-waves"},
-        {"x": -0.85, "y": 0.1, "rotate": 0, "size": 1.75, "图标": "mdi-ferry"}
+    {id: 36, collection: '维护安全', 最高力量: 4, reward: [
+        {name: '水容量', type: '*', value: 1.2}
+    ], color: 'cyan', icons: [
+        {"x": 0.75, "y": 0.8, "rotate": 35, "size": 2.3, "icon": "mdi-chart-bubble"},
+        {"x": 0.75, "y": 0, "rotate": 45, "size": 2.5, "icon": "mdi-chart-bubble"},
+        {"x": 0, "y": 0.5, "rotate": 10, "size": 1.9, "icon": "mdi-chart-bubble"},
+        {"x": -0.15, "y": 1, "rotate": -65, "size": 1.4, "icon": "mdi-chart-bubble"},
+        {"x": 0.65, "y": -0.65, "rotate": 0, "size": 2, "icon": "mdi-lighthouse-on"},
+        {"x": -0.85, "y": 1, "rotate": 0, "size": 1.75, "icon": "mdi-waves"},
+        {"x": -0.85, "y": 0.1, "rotate": 0, "size": 1.75, "icon": "mdi-ferry"}
     ]},
-    {id: 37, collection: '维护安全', 力量: 4, reward: [
-        {name: '石头容量', 类型: '*', value: 1.18},
-        {name: '金属容量', 类型: '*', value: 1.12}
+    {id: 37, collection: '维护安全', 最高力量: 4, reward: [
+        {name: '石头容量', type: '*', value: 1.18},
+        {name: '金属容量', type: '*', value: 1.12}
     ], color: 'wooden', icons: [
-        {"x": 0, "y": -0.4, "rotate": 0, "size": 3, "图标": "mdi-tree"},
-        {"x": 0.025, "y": 0.75, "rotate": 90, "size": 3, "图标": "mdi-minus"},
-        {"x": -0.15, "y": 0.5, "rotate": 20, "size": 1.3, "图标": "mdi-minus"},
-        {"x": 0.45, "y": 0.4, "rotate": -5, "size": 2.45, "图标": "mdi-minus"},
-        {"x": 0.6, "y": 0.15, "rotate": -5, "size": 0.75, "图标": "mdi-dog-side"},
-        {"x": -0.8, "y": 0.85, "rotate": 0, "size": 1.3, "图标": "mdi-fire-truck"},
-        {"x": 0.55, "y": 1, "rotate": 0, "size": 0.9, "图标": "mdi-human-handsup"}
+        {"x": 0, "y": -0.4, "rotate": 0, "size": 3, "icon": "mdi-tree"},
+        {"x": 0.025, "y": 0.75, "rotate": 90, "size": 3, "icon": "mdi-minus"},
+        {"x": -0.15, "y": 0.5, "rotate": 20, "size": 1.3, "icon": "mdi-minus"},
+        {"x": 0.45, "y": 0.4, "rotate": -5, "size": 2.45, "icon": "mdi-minus"},
+        {"x": 0.6, "y": 0.15, "rotate": -5, "size": 0.75, "icon": "mdi-dog-side"},
+        {"x": -0.8, "y": 0.85, "rotate": 0, "size": 1.3, "icon": "mdi-fire-truck"},
+        {"x": 0.55, "y": 1, "rotate": 0, "size": 0.9, "icon": "mdi-human-handsup"}
     ]},
-    {id: 38, collection: '维护安全', 力量: 4, reward: [
-        {name: '税率', 类型: '*', value: 1.15},
-        {name: '金币容量', 类型: '*', value: 1.1}
-    ], color: '红色', icons: [
-        {"x": 0.5, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-ambulance"},
-        {"x": -0.1, "y": -0.05, "rotate": 0, "size": 1.35, "图标": "mdi-human-baby-changing-table"},
-        {"x": -0.7, "y": 0.75, "rotate": 0, "size": 1.35, "图标": "mdi-human-male-female-child"}
+    {id: 38, collection: '维护安全', 最高力量: 4, reward: [
+        {name: '税率', type: '*', value: 1.15},
+        {name: '金币容量', type: '*', value: 1.1}
+    ], color: '红色油漆', icons: [
+        {"x": 0.5, "y": 0, "rotate": 0, "size": 2, "icon": "mdi-ambulance"},
+        {"x": -0.1, "y": -0.05, "rotate": 0, "size": 1.35, "icon": "mdi-human-baby-changing-table"},
+        {"x": -0.7, "y": 0.75, "rotate": 0, "size": 1.35, "icon": "mdi-human-male-female-child"}
     ]},
-    {id: 39, collection: '维护安全', 力量: 3, reward: [
-        {name: '金属容量', 类型: '*', value: 1.15},
-        {name: '玻璃容量', 类型: '*', value: 1.25}
+    {id: 39, collection: '维护安全', 最高力量: 3, reward: [
+        {name: '金属容量', type: '*', value: 1.15},
+        {name: '玻璃容量', type: '*', value: 1.25}
     ], color: 'beige', icons: [
-        {"x": -0.7, "y": 0.2, "rotate": 0, "size": 2, "图标": "mdi-tower-beach"},
-        {"x": -0.8, "y": 0.95, "rotate": 0, "size": 1.9, "图标": "mdi-ellipse"},
-        {"x": -0.15, "y": 1, "rotate": 0, "size": 1.8, "图标": "mdi-ellipse"},
-        {"x": 0.6, "y": 0.9, "rotate": 0, "size": 1, "图标": "mdi-waves"},
-        {"x": 1, "y": 0.9, "rotate": 0, "size": 1, "图标": "mdi-waves"}
+        {"x": -0.7, "y": 0.2, "rotate": 0, "size": 2, "icon": "mdi-tower-beach"},
+        {"x": -0.8, "y": 0.95, "rotate": 0, "size": 1.9, "icon": "mdi-ellipse"},
+        {"x": -0.15, "y": 1, "rotate": 0, "size": 1.8, "icon": "mdi-ellipse"},
+        {"x": 0.6, "y": 0.9, "rotate": 0, "size": 1, "icon": "mdi-waves"},
+        {"x": 1, "y": 0.9, "rotate": 0, "size": 1, "icon": "mdi-waves"}
+    ]},
+    {id: 40, collection: '本地企业', 最高力量: 5, reward: [
+        {name: '工人', type: '+', value: 20}
+    ], color: 'pale-红色油漆', icons: [
+        {"x": -0.45, "y": 0.4, "rotate": 0, "size": 3, "icon": "mdi-store"},
+        {"x": -0.45, "y": -0.35, "rotate": 0, "size": 1, "icon": "mdi-sale"},
+        {"x": 0.4, "y": 0.8, "rotate": 0, "size": 0.75, "icon": "mdi-cart"},
+        {"x": 0.7, "y": 0.8, "rotate": 0, "size": 0.75, "icon": "mdi-cart"},
+        {"x": 1, "y": 0.8, "rotate": 0, "size": 0.75, "icon": "mdi-cart"}
+    ]},
+    {id: 41, collection: '本地企业', 最高力量: 5, reward: [
+        {name: '工业材料容量', type: '*', value: 1.1}
+    ], color: 'pale-黄色油漆', icons: [
+        {"x": -0.45, "y": 0, "rotate": 0, "size": 3, "icon": "mdi-factory"},
+        {"x": 0.8, "y": 0.35, "rotate": 0, "size": 2, "icon": "mdi-tree"},
+        {"x": 0.5, "y": 0.65, "rotate": 0, "size": 0.6, "icon": "mdi-grass"},
+        {"x": -0.9, "y": 1, "rotate": 0, "size": 0.75, "icon": "mdi-grass"},
+        {"x": -0.4, "y": 0.95, "rotate": 0, "size": 0.75, "icon": "mdi-grass"},
+        {"x": -0.1, "y": 1.1, "rotate": 0, "size": 0.75, "icon": "mdi-grass"},
+        {"x": 0.5, "y": 1, "rotate": 0, "size": 0.75, "icon": "mdi-grass"},
+        {"x": 0.65, "y": -0.7, "rotate": 0, "size": 1.3, "icon": "mdi-home-variant"},
+        {"x": 0.7, "y": -0.35, "rotate": 0, "size": 0.45, "icon": "mdi-grass"}
+    ]},
+    {id: 42, collection: '本地企业', 最高力量: 6, reward: [], color: 'skyblue', icons: [
+        {"x": 0, "y": 0.65, "rotate": 0, "size": 1, "icon": "mdi-office-building"},
+        {"x": 0, "y": 0.25, "rotate": 0, "size": 1, "icon": "mdi-office-building"},
+        {"x": 0, "y": -0.15, "rotate": 0, "size": 1, "icon": "mdi-office-building"},
+        {"x": 0, "y": -0.55, "rotate": 0, "size": 1, "icon": "mdi-office-building"},
+        {"x": 0.7, "y": 0.73, "rotate": 0, "size": 0.65, "icon": "mdi-tree"},
+        {"x": -0.95, "y": 0.8, "rotate": 0, "size": 0.25, "icon": "mdi-car-side"},
+        {"x": -0.7, "y": 0.8, "rotate": 0, "size": 0.25, "icon": "mdi-car-side"},
+        {"x": -0.8, "y": -0.65, "rotate": 0, "size": 1, "icon": "mdi-cloud"},
+        {"x": 0.75, "y": -0.75, "rotate": 0, "size": 0.7, "icon": "mdi-cloud"}
+    ]},
+    {id: 43, collection: '本地企业', 最高力量: 5, reward: [
+        {name: '奢侈材料容量', type: '*', value: 1.1}
+    ], color: 'babypink', icons: [
+        {"x": -0.8, "y": -0.1, "rotate": 0, "size": 1.5, "icon": "mdi-bed-king"},
+        {"x": 0, "y": -0.05, "rotate": 0, "size": 1, "icon": "mdi-dresser"},
+        {"x": 0, "y": -0.45, "rotate": 0, "size": 0.7, "icon": "mdi-lamp"},
+        {"x": 0.8, "y": -0.25, "rotate": 0, "size": 1.75, "icon": "mdi-wardrobe"},
+        {"x": -0.45, "y": 0, "rotate": 0, "size": 1.75, "icon": "mdi-human-handsdown"},
+        {"x": -0.6, "y": 0.85, "rotate": 0, "size": 2, "icon": "mdi-sofa"},
+        {"x": 0.55, "y": 0.8, "rotate": 0, "size": 2, "icon": "mdi-table-chair"}
+    ]},
+    {id: 44, collection: '本地企业', 最高力量: 5, reward: [
+        {name: '工业材料增益', type: '*', value: 1.1},
+        {name: '奢侈材料增益', type: '*', value: 1.1}
+    ], color: 'brown', icons: [
+        {"x": 0.8, "y": 0.7, "rotate": 0, "size": 1.25, "icon": "mdi-anvil"},
+        {"x": 0.88, "y": 0.4, "rotate": 0, "size": 1.6, "icon": "mdi-human-handsdown"},
+        {"x": 0.55, "y": 0.25, "rotate": -55, "size": 0.7, "icon": "mdi-hammer"},
+        {"x": -0.55, "y": 0.65, "rotate": 135, "size": 1, "icon": "mdi-pickaxe"},
+        {"x": -0.85, "y": 0.65, "rotate": -15, "size": 1, "icon": "mdi-shovel"},
+        {"x": -0.25, "y": 0.7, "rotate": 85, "size": 1, "icon": "mdi-axe"}
+    ]},
+    {id: 45, collection: '本地企业', 最高力量: 4, reward: [
+        {name: '力量', type: '+', value: 2}
+    ], color: '紫色油漆', icons: [
+        {"x": -0.35, "y": 0, "rotate": 0, "size": 3, "icon": "mdi-human-handsdown"},
+        {"x": -0.9, "y": 0.3, "rotate": 0, "size": 1, "icon": "mdi-generator-portable"},
+        {"x": 0.85, "y": 0.42, "rotate": 0, "size": 1.5, "icon": "mdi-mower"}
+    ]},
+    {id: 46, collection: '本地企业', 最高力量: 5, reward: [
+        {name: '污染耐受性', type: '+', value: 3}
+    ], color: '橙色油漆', icons: [
+        {"x": 0, "y": 0.2, "rotate": 0, "size": 4, "icon": "mdi-home-sound-in-outline"},
+        {"x": -0.3, "y": 0.25, "rotate": 0, "size": 1, "icon": "mdi-air-filter"},
+        {"x": 0.25, "y": 0.55, "rotate": 0, "size": 1, "icon": "mdi-human-handsup"}
+    ]},
+    {id: 47, collection: '本地企业', 最高力量: 5, reward: [
+        {name: '油增益', type: '*', value: 1.2},
+        {name: '油容量', type: '*', value: 1.1}
+    ], color: 'pale-绿色油漆', icons: [
+        {"x": 0, "y": 0.2, "rotate": 0, "size": 3.5, "icon": "mdi-ferry"},
+        {"x": -0.35, "y": -0.1, "rotate": 0, "size": 0.65, "icon": "mdi-barrel"},
+        {"x": 0, "y": -0.1, "rotate": 0, "size": 0.65, "icon": "mdi-barrel"},
+        {"x": 0.35, "y": -0.1, "rotate": 0, "size": 0.65, "icon": "mdi-barrel"}
+    ]},
+    {id: 48, collection: '本地企业', 最高力量: 4, reward: [
+        {name: '税率', type: '*', value: 1.5}
+    ], color: '红色油漆-粉红色油漆', icons: [
+        {"x": 0.6, "y": 0.45, "rotate": 0, "size": 2.25, "icon": "mdi-desk"},
+        {"x": 0.4, "y": 0.58, "rotate": 0, "size": 1, "icon": "mdi-desktop-tower"},
+        {"x": 0.45, "y": -0.1, "rotate": 0, "size": 1, "icon": "mdi-monitor"},
+        {"x": 0.95, "y": 0, "rotate": 0, "size": 0.5, "icon": "mdi-note-text"},
+        {"x": -0.75, "y": 0.2, "rotate": 0, "size": 2.5, "icon": "mdi-human-handsdown"},
+        {"x": -0.2, "y": 0, "rotate": 70, "size": 1, "icon": "mdi-magnify"}
+    ]},
+    {id: 49, collection: '本地企业', 最高力量: 5, reward: [
+        {name: '大理石增益', type: '*', value: 1.2},
+        {name: '大理石容量', type: '*', value: 1.1}
+    ], color: 'pale-蓝色油漆', icons: [
+        {"x": -0.1, "y": 0, "rotate": 0, "size": 2, "icon": "mdi-home"},
+        {"x": -0.85, "y": 0.05, "rotate": 0, "size": 1, "icon": "mdi-human-female-dance"},
+        {"x": -0.85, "y": 0.35, "rotate": 0, "size": 1, "icon": "mdi-minus-thick"},
+        {"x": 1, "y": 0.15, "rotate": 0, "size": 1, "icon": "mdi-fountain"},
+        {"x": -0.65, "y": 0.8, "rotate": 0, "size": 0.4, "icon": "mdi-grass"},
+        {"x": 0.2, "y": 1, "rotate": 0, "size": 0.4, "icon": "mdi-grass"},
+        {"x": 0.5, "y": 0.7, "rotate": 0, "size": 0.4, "icon": "mdi-grass"}
+    ]},
+    {id: 50, collection: '本地企业', 最高力量: 5, reward: [
+        {name: '肉增益', type: '*', value: 1.75}
+    ], color: '浅绿色油漆', icons: [
+        {"x": -1.1, "y": 0.55, "rotate": 0, "size": 1.1, "icon": "mdi-fence"},
+        {"x": -0.55, "y": 0.55, "rotate": 0, "size": 1.1, "icon": "mdi-fence"},
+        {"x": 0, "y": 0.55, "rotate": 0, "size": 1.1, "icon": "mdi-fence"},
+        {"x": 0.55, "y": 0.55, "rotate": 0, "size": 1.1, "icon": "mdi-fence"},
+        {"x": 1.1, "y": 0.55, "rotate": 0, "size": 1.1, "icon": "mdi-fence"},
+        {"x": 0.5, "y": 0.1, "rotate": 0, "size": 0.5, "icon": "mdi-grass"},
+        {"x": -0.95, "y": 0, "rotate": 0, "size": 0.45, "icon": "mdi-grass"},
+        {"x": -0.25, "y": -0.55, "rotate": 0, "size": 0.35, "icon": "mdi-grass"},
+        {"x": -0.3, "y": -0.1, "rotate": 0, "size": 0.6, "icon": "mdi-pig-variant"},
+        {"x": 0.7, "y": -0.3, "rotate": 0, "size": 0.55, "icon": "mdi-pig-variant"}
+    ]},
+    {id: 51, collection: '本地企业', 最高力量: 4, reward: [
+        {name: '信仰增益', type: '*', value: 1.35}
+    ], color: '金色油漆', icons: [
+        {"x": 0, "y": -0.85, "rotate": 180, "size": 2, "icon": "mdi-weather-hazy"},
+        {"x": -0.5, "y": 0.65, "rotate": 0, "size": 1.5, "icon": "mdi-human-handsup"},
+        {"x": 0.5, "y": 0.65, "rotate": 0, "size": 1.6, "icon": "mdi-human-handsup"},
+        {"x": -0.8, "y": 0.3, "rotate": 0, "size": 0.7, "icon": "mdi-baguette"},
+        {"x": 0.8, "y": 0.15, "rotate": -20, "size": 0.55, "icon": "mdi-food-apple"},
+        {"x": -0.25, "y": 0.15, "rotate": -65, "size": 0.45, "icon": "mdi-food-drumstick"},
+        {"x": 0.1, "y": 0.3, "rotate": -20, "size": 0.7, "icon": "mdi-sausage"}
+    ]},
+    {id: 52, collection: '本地企业', 最高力量: 6, reward: [
+        {name: '力量', type: '+', value: 1},
+        {name: '污染耐受性', type: '+', value: 2}
+    ], color: 'indigo', icons: [
+        {"x": 0.6, "y": 0, "rotate": 0, "size": 1, "icon": "mdi-solar-panel-large"},
+        {"x": 0.6, "y": 0.65, "rotate": 0, "size": 2, "icon": "mdi-store"},
+        {"x": -1, "y": 1, "rotate": 0, "size": 1.5, "icon": "mdi-hydro-power"},
+        {"x": -0.25, "y": -0.65, "rotate": 0, "size": 1.35, "icon": "mdi-wind-turbine"},
+        {"x": -0.9, "y": -0.4, "rotate": 0, "size": 1.45, "icon": "mdi-wind-turbine"}
+    ]},
+    {id: 53, collection: '多功能', 最高力量: 5, reward: [
+        {name: '金币增益', type: '*', value: 1.5},
+        {name: '铜币增益', type: '*', value: 1.25}
+    ], color: '金色油漆', icons: [
+        {"x": 0.75, "y": 0.4, "rotate": 0, "size": 2.5, "icon": "mdi-human-handsdown"},
+        {"x": 0.05, "y": 0.2, "rotate": -20, "size": 1.3, "icon": "mdi-magnify"},
+        {"x": -0.05, "y": 0.77, "rotate": 0, "size": 1.25, "icon": "mdi-table-furniture"},
+        {"x": -0.05, "y": 0.58, "rotate": 0, "size": 0.3, "icon": "mdi-circle"},
+        {"x": -0.8, "y": 0, "rotate": 0, "size": 1.5, "icon": "mdi-book-open-blank-variant"},
+        {"x": -0.72, "y": -0.05, "rotate": 0, "size": 0.3, "icon": "mdi-circle"},
+        {"x": -0.55, "y": -0.05, "rotate": 0, "size": 0.3, "icon": "mdi-circle"},
+        {"x": -0.72, "y": 0.1, "rotate": 0, "size": 0.3, "icon": "mdi-circle"}
+    ]},
+    {id: 54, collection: '多功能', 最高力量: 7, reward: [
+        {name: '建造速度', type: '*', value: 1.15},
+    ], color: 'dark-蓝色油漆', icons: [
+        {"x": -0.7, "y": 0.5, "rotate": 0, "size": 2, "icon": "mdi-human-handsdown"},
+        {"x": -0.7, "y": -0.1, "rotate": 0, "size": 0.6, "icon": "mdi-hard-hat"},
+        {"x": 0.7, "y": 0.5, "rotate": 0, "size": 2, "icon": "mdi-human-handsdown"},
+        {"x": 0.7, "y": -0.1, "rotate": 0, "size": 0.6, "icon": "mdi-hard-hat"},
+        {"x": 0.2, "y": 0.85, "rotate": 35, "size": 1, "icon": "mdi-hammer"},
+        {"x": -0.2, "y": 0.82, "rotate": 15, "size": 1, "icon": "mdi-screwdriver"}
+    ]},
+    {id: 55, collection: '多功能', 最高力量: 6, reward: [
+        {name: '工人', type: '+', value: 28},
+        {name: '工匠', type: '+', value: 1}
+    ], color: 'pale-浅绿色油漆', icons: [
+        {"x": -0.5, "y": 0.15, "rotate": 0, "size": 4, "icon": "mdi-office-building"},
+        {"x": -0.1, "y": 0.75, "rotate": 0, "size": 0.5, "icon": "mdi-account-tie"},
+        {"x": 0.45, "y": 0.87, "rotate": 0, "size": 0.7, "icon": "mdi-human-handsdown"},
+        {"x": 0.75, "y": 0.87, "rotate": 0, "size": 0.7, "icon": "mdi-human-handsdown"},
+        {"x": 1.1, "y": 0.87, "rotate": 0, "size": 0.7, "icon": "mdi-human-handsdown"}
+    ]},
+    {id: 56, collection: '多功能', 最高力量: 7, reward: [
+        {name: '精神资源增益', type: '*', value: 1.1},
+        {name: '柜台', type: '+', value: 2}
+    ], color: 'brown', icons: [
+        {"x": -0.1, "y": 0.3, "rotate": 0, "size": 2.25, "icon": "mdi-human-greeting"},
+        {"x": -0.7, "y": -0.15, "rotate": 15, "size": 1, "icon": "mdi-book-alphabet"},
+        {"x": 0.85, "y": 0.57, "rotate": 0, "size": 1.35, "icon": "mdi-package"},
+        {"x": 0.85, "y": 0.3, "rotate": 0, "size": 0.8, "icon": "mdi-book"}
+    ]},
+    {id: 57, collection: '手工制作', 最高力量: 7, reward: [
+        {name: '铜币增益', type: '*', value: 1.1}
+    ], color: '橙色油漆-红色油漆', icons: [
+        {"x": 0.35, "y": -0.05, "rotate": 0, "size": 1.5, "icon": "mdi-cash-register"},
+        {"x": 0, "y": 0.55, "rotate": 0, "size": 3, "icon": "mdi-table-furniture"},
+        {"x": -0.4, "y": -0.2, "rotate": 0, "size": 1.75, "icon": "mdi-cup-outline"},
+        {"x": -0.45, "y": 0.05, "rotate": 0, "size": 0.5, "icon": "mdi-circle-multiple"},
+        {"x": -0.25, "y": -0.1, "rotate": 60, "size": 0.5, "icon": "mdi-circle-multiple"},
+        {"x": -0.5, "y": -0.15, "rotate": 85, "size": 0.5, "icon": "mdi-cash"},
+        {"x": -0.4, "y": -0.4, "rotate": 15, "size": 0.5, "icon": "mdi-circle-multiple"}
+    ]},
+    {id: 58, collection: '手工制作', 最高力量: 8, reward: [
+        {name: '工匠', type: '+', value: 1}
+    ], color: 'pale-紫色油漆', icons: [
+        {"x": 0.5, "y": -0.35, "rotate": -125, "size": 1, "icon": "mdi-lasso"},
+        {"x": 0.9, "y": -0.5, "rotate": 195, "size": 1, "icon": "mdi-arrow-projectile"},
+        {"x": 0.95, "y": -0.35, "rotate": 215, "size": 1, "icon": "mdi-arrow-projectile"},
+        {"x": 0, "y": 0.35, "rotate": 0, "size": 3.5, "icon": "mdi-rug"}
+    ]},
+    {id: 59, collection: '手工制作', 最高力量: 7, reward: [
+        {name: '柜台', type: '+', value: 3}
+    ], color: '金色油漆', icons: [
+        {"x": -0.8, "y": 1, "rotate": 0, "size": 1.2, "icon": "mdi-sack"},
+        {"x": -0.25, "y": 0.93, "rotate": 0, "size": 1.5, "icon": "mdi-sack"},
+        {"x": 0.55, "y": 1, "rotate": 0, "size": 1.2, "icon": "mdi-sack"},
+        {"x": 0.2, "y": 0, "rotate": 0, "size": 2.25, "icon": "mdi-human-handsup"},
+        {"x": -0.55, "y": -0.8, "rotate": 35, "size": 1, "icon": "mdi-cash"},
+        {"x": 1, "y": -0.6, "rotate": -20, "size": 1, "icon": "mdi-cash"}
+    ]},
+    {id: 60, collection: '手工制作', 最高力量: 7, reward: [
+        {name: '幸福', type: '+', value: 0.05}
+    ], color: 'pale-绿色油漆', icons: [
+        {"x": -0.8, "y": -0.85, "rotate": 0, "size": 2.3, "icon": "mdi-tree"},
+        {"x": -0.95, "y": 0.9, "rotate": 0, "size": 0.75, "icon": "mdi-flower"},
+        {"x": -0.55, "y": 0.9, "rotate": 0, "size": 0.75, "icon": "mdi-flower-tulip"},
+        {"x": -0.2, "y": 0.9, "rotate": 0, "size": 0.75, "icon": "mdi-flower"},
+        {"x": 1, "y": 0.9, "rotate": 0, "size": 0.75, "icon": "mdi-flower"},
+        {"x": 0.55, "y": -0.4, "rotate": 0, "size": 1, "icon": "mdi-slide"}
+    ]},
+    {id: 61, collection: '手工制作', 最高力量: 9, reward: [], color: '粉红色油漆', icons: [
+        {"x": -0.7, "y": -0.05, "rotate": 0, "size": 0.75, "icon": "mdi-ring"},
+        {"x": -0.5, "y": -0.1, "rotate": 0, "size": 0.75, "icon": "mdi-ring"},
+        {"x": -0.6, "y": -0.45, "rotate": 0, "size": 2.5, "icon": "mdi-mirror-rectangle"},
+        {"x": -0.6, "y": 0.55, "rotate": 0, "size": 2.75, "icon": "mdi-rectangle"},
+        {"x": 0.65, "y": 0.35, "rotate": 0, "size": 2.75, "icon": "mdi-human-male-female"}
+    ]},
+    {id: 62, collection: '手工制作', 最高力量: 8, reward: [
+    ], color: 'indigo', icons: [
+        {"x": 0, "y": 0.7, "rotate": 180, "size": 3, "icon": "mdi-window-open-variant"},
+        {"x": -0.1, "y": 0.3, "rotate": -45, "size": 0.8, "icon": "mdi-screwdriver"},
+        {"x": 0.1, "y": 0.3, "rotate": 125, "size": 0.8, "icon": "mdi-hand-saw"},
+        {"x": 0, "y": 1.05, "rotate": 135, "size": 1, "icon": "mdi-hammer"}
+    ]},
+    {id: 63, collection: '特殊设备', 最高力量: 'adaptive', reward: [
+        {name: '幸福', type: '+', value: -0.4}
+    ], color: '粉红色油漆', icons: [
+        {"x": 0, "y": 0.4, "rotate": 0, "size": 2, "icon": "mdi-human-handsup"},
+        {"x": -0.3, "y": -0.35, "rotate": 0, "size": 1, "icon": "mdi-sign-text"},
+        {"x": 0.45, "y": -0.25, "rotate": -15, "size": 1, "icon": "mdi-bullhorn"},
+        {"x": -0.7, "y": 0.4, "rotate": 0, "size": 2, "icon": "mdi-human"},
+        {"x": 0.7, "y": 0.4, "rotate": 0, "size": 2, "icon": "mdi-human"}
+    ]},
+    {id: 64, collection: '特殊设备', 最高力量: 'adaptive', reward: [
+        {name: '幸福', type: '+', value: -1.5}
+    ], color: 'beige', icons: [
+        {"x": -0.7, "y": 0, "rotate": 0, "size": 2, "icon": "mdi-crop-landscape"},
+        {"x": -0.85, "y": -0.5, "rotate": 0, "size": 0.7, "icon": "mdi-wall"},
+        {"x": -0.55, "y": 0.1, "rotate": -80, "size": 0.5, "icon": "mdi-seat"},
+        {"x": 0.7, "y": 0.55, "rotate": 165, "size": 1, "icon": "mdi-car-side"},
+        {"x": 0.6, "y": 0.35, "rotate": 0, "size": 0.5, "icon": "mdi-fire"},
+        {"x": 0.45, "y": -0.7, "rotate": 0, "size": 1, "icon": "mdi-weather-tornado"},
+        {"x": -0.4, "y": 0.85, "rotate": 0, "size": 0.65, "icon": "mdi-human-male-female-child"}
     ]},
 ];

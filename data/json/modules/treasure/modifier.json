@@ -1,0 +1,26 @@
+[
+  {
+    "名称": "上箭头",
+    "icon": "<i class=\"mdi mdi-arrow-up-bold\"></i>",
+    "price": "{\"gem_emerald\":100}",
+    "unique": ""
+  },
+  {
+    "名称": "扩展器",
+    "icon": "<i class=\"mdi mdi-magnify-expand\"></i>",
+    "price": "{\"gem_emerald\":300}",
+    "unique": "true"
+  },
+  {
+    "名称": "通配符",
+    "icon": "<i class=\"mdi mdi-card-bulleted\"></i>",
+    "price": "{\"gem_sapphire\":300}",
+    "unique": ""
+  },
+  {
+    "名称": "活动星级",
+    "icon": "<i class=\"mdi mdi-star\"></i>",
+    "price": "",
+    "unique": ""
+  }
+]

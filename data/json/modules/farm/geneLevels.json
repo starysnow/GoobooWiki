@@ -1,0 +1,44 @@
+[
+  {
+    "0": "yield",
+    "1": "黄金",
+    "2": "exp",
+    "3": "rareDrop",
+    "名称": "1"
+  },
+  {
+    "0": "grow",
+    "1": "overgrow",
+    "2": "mutate",
+    "3": "草",
+    "名称": "5"
+  },
+  {
+    "0": "dna",
+    "1": "gnome",
+    "2": "lonely",
+    "3": "fertile",
+    "名称": "10"
+  },
+  {
+    "0": "mystery",
+    "1": "conversion",
+    "2": "prestige",
+    "3": "rareDropChance",
+    "名称": "15"
+  },
+  {
+    "0": "lucky",
+    "1": "finalize",
+    "2": "selfless",
+    "3": "unyielding",
+    "名称": "20"
+  },
+  {
+    "0": "teamwork",
+    "1": "hunter",
+    "2": "patient",
+    "3": "",
+    "名称": "25"
+  }
+]

@@ -1,45 +1,45 @@
 {
-    池塘: {
-        已拥有: true,
+    pond: {
+        拥有最多: true,
         next: {minPower: 40, name: '湖泊'},
     },
     湖泊: {
-        next: {minPower: 100, name: '河流'},
-        效果: [
-            {name: '平均鱼尺寸', 类型: '*', value: 1.2},
-            {name: '海藻比重', 类型: '*', value: 3},
-            {name: '海藻增益', 类型: '*', value: 2},
+        next: {minPower: 100, name: 'river'},
+        effect: [
+            {name: '平均鱼尺寸', type: '*', value: 1.2},
+            {name: '海藻比重', type: '*', value: 3},
+            {name: '海藻增益', type: '*', value: 2},
         ],
     },
-    河流: {
-        next: {minPower: 250, name: '海洋'},
-        效果: [
-            {name: '平均鱼尺寸', 类型: '*', value: 1.4},
-            {name: '浮木比重', 类型: '*', value: 3},
-            {name: '浮木增益', 类型: '*', value: 2},
+    river: {
+        next: {minPower: 250, name: 'ocean'},
+        effect: [
+            {name: '平均鱼尺寸', type: '*', value: 1.4},
+            {name: '浮木比重', type: '*', value: 3},
+            {name: '浮木增益', type: '*', value: 2},
         ],
     },
-    海洋: {
-        next: {minPower: 500, name: '高山'},
-        效果: [
-            {name: '平均鱼尺寸', 类型: '*', value: 1.6},
-            {name: '塑料比重', 类型: '*', value: 3},
-            {name: '塑料增益', 类型: '*', value: 2},
+    ocean: {
+        next: {minPower: 500, name: 'mountain'},
+        effect: [
+            {name: '平均鱼尺寸', type: '*', value: 1.6},
+            {name: '塑料比重', type: '*', value: 3},
+            {name: '塑料增益', type: '*', value: 2},
         ],
     },
-    高山: {
-        next: {minPower: 1000, name: '洞穴'},
-        效果: [
-            {name: '平均鱼尺寸', 类型: '*', value: 1.8},
-            {name: '海藻增益', 类型: '*', value: 1.5},
-            {name: '浮木增益', 类型: '*', value: 1.5},
-            {name: '塑料增益', 类型: '*', value: 1.5},
+    mountain: {
+        next: {minPower: 1000, name: 'cave'},
+        effect: [
+            {name: '平均鱼尺寸', type: '*', value: 1.8},
+            {name: '海藻增益', type: '*', value: 1.5},
+            {name: '浮木增益', type: '*', value: 1.5},
+            {name: '塑料增益', type: '*', value: 1.5},
         ],
     },
-    洞穴: {
-        效果: [
-            {name: '平均鱼尺寸', 类型: '*', value: 2},
-            {name: '宝藏几率', 类型: '*', value: 1.5},
+    cave: {
+        effect: [
+            {name: '平均鱼尺寸', type: '*', value: 2},
+            {name: '宝藏几率', type: '*', value: 1.5},
         ],
     }
 }

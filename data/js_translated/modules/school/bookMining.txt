@@ -1,51 +1,62 @@
 {
-    书籍铝淬火: {类型: '书籍', raiseOtherCap: '铝淬火', requirement() {
-        return store.state.升级成本.item.铝淬火.highestLevel >= 6;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 7)};
-    }, 效果: [
-        {name: 'upgradeMiningAluminiumHardeningCap', 类型: '+', value: lvl => lvl}
+    damage: {subfeature: 0, scalesWithGL: true, minGL: 25, effect: [
+        {name: '伤害', type: '*', value: lvl => Math.pow(1.01, lvl)}
     ]},
-    书籍铝罐: {类型: '书籍', raiseOtherCap: '铝罐', requirement() {
-        return store.state.升级成本.item.铝罐.highestLevel >= 8;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 5)};
-    }, 效果: [
-        {name: 'upgradeMiningAluminiumTanksCap', 类型: '+', value: lvl => lvl}
+    oreAluminiumCap: {subfeature: 0, scalesWithGL: true, minGL: 40, maxGL: 139, effect: [
+        {name: '铝矿石容量', type: '+', value: lvl => lvl * 8}
     ]},
-    书籍炼油厂: {类型: '书籍', raiseOtherCap: '精炼厂', requirement() {
-        return store.state.升级成本.item.精炼厂.highestLevel >= 5;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 40)};
-    }, 效果: [
-        {name: 'upgradeMiningRefineryCap', 类型: '+', value: lvl => lvl}
+    oreGain: {subfeature: 0, scalesWithGL: true, minGL: 50, maxGL: 249, effect: [
+        {name: '矿石增益', type: '*', value: lvl => lvl * 0.01 + 1}
     ]},
-    书籍熔炉: {类型: '书籍', raiseOtherCap: '熔炉', requirement() {
-        return store.state.升级成本.item.熔炉.highestLevel >= 25;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 60)};
-    }, 效果: [
-        {name: 'upgradeMiningFurnaceCap', 类型: '+', value: lvl => lvl}
+    oreCopperCap: {subfeature: 0, scalesWithGL: true, minGL: 55, maxGL: 154, effect: [
+        {name: '铜矿石容量', type: '+', value: lvl => lvl * 4}
     ]},
-    书籍铁扩张: {类型: '书籍', raiseOtherCap: '铁扩张', requirement() {
-        return store.state.升级成本.item.铁扩张.highestLevel >= 3;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 120)};
-    }, 效果: [
-        {name: 'upgradeMiningIronExpansionCap', 类型: '+', value: lvl => lvl}
+    scrapGain: {subfeature: 0, scalesWithGL: true, minGL: 75, effect: [
+        {name: '废料增益', type: '*', value: lvl => Math.pow(1.01, lvl)}
     ]},
-    书籍磁铁: {类型: '书籍', raiseOtherCap: '磁铁', requirement() {
-        return store.state.升级成本.item.磁铁.highestLevel >= 10;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 160)};
-    }, 效果: [
-        {name: 'upgradeMiningMagnetCap', 类型: '+', value: lvl => lvl}
+    oreTinCap: {subfeature: 0, scalesWithGL: true, minGL: 75, maxGL: 174, effect: [
+        {name: '锡矿石容量', type: '+', value: lvl => lvl * 3}
     ]},
-    书籍金属探测器: {类型: '书籍', raiseOtherCap: '金属探测器', requirement() {
-        return store.state.升级成本.item.金属探测器.highestLevel >= 12;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 250)};
-    }, 效果: [
-        {name: 'upgradeMiningMetalDetectorCap', 类型: '+', value: lvl => lvl}
+    scrapCap: {subfeature: 0, scalesWithGL: true, minGL: 100, effect: [
+        {name: '废料容量', type: '*', value: lvl => Math.pow(1.01, lvl)}
+    ]},
+    oreIronCap: {subfeature: 0, scalesWithGL: true, minGL: 105, maxGL: 204, effect: [
+        {name: '铁矿石容量', type: '+', value: lvl => lvl * 2}
+    ]},
+    oreTitaniumCap: {subfeature: 0, scalesWithGL: true, minGL: 145, maxGL: 244, effect: [
+        {name: '钛矿石容量', type: '+', value: lvl => lvl}
+    ]},
+    emberCap: {subfeature: 0, alwaysActive: true, scalesWithGL: true, minGL: 160, effect: [
+        {name: '余烬容量', type: '+', value: lvl => lvl * 2}
+    ]},
+    corrosiveFumesUncap: {subfeature: 0, minGL: 175, raiseOtherCap: '腐蚀性烟雾', effect: [
+        {name: '腐蚀性烟雾', type: '无最大等级', value: lvl => lvl >= 1}
+    ]},
+    orePlatinumCap: {subfeature: 0, scalesWithGL: true, minGL: 200, maxGL: 299, effect: [
+        {name: '铂矿石容量', type: '+', value: lvl => lvl}
+    ]},
+    oreIridiumCap: {subfeature: 0, scalesWithGL: true, minGL: 285, maxGL: 384, effect: [
+        {name: '铱矿石容量', type: '+', value: lvl => lvl}
+    ]},
+    oreOsmiumCap: {subfeature: 0, scalesWithGL: true, minGL: 375, maxGL: 474, effect: [
+        {name: '锇矿石容量', type: '+', value: lvl => lvl}
+    ]},
+    oreLeadCap: {subfeature: 0, scalesWithGL: true, minGL: 475, maxGL: 574, effect: [
+        {name: '铅矿石容量', type: '+', value: lvl => lvl}
+    ]},
+    damage2: {subfeature: 1, scalesWithGL: true, minGL: 25, effect: [
+        {name: '伤害', type: '*', value: lvl => Math.pow(1.01, lvl)}
+    ]},
+    scrapCap2: {subfeature: 1, scalesWithGL: true, minGL: 50, effect: [
+        {name: '废料容量', type: '*', value: lvl => Math.pow(1.01, lvl)}
+    ]},
+    smokeCap: {subfeature: 1, scalesWithGL: true, minGL: 75, maxGL: 174, effect: [
+        {name: '烟雾容量', type: '*', value: lvl => lvl * 0.01 + 1}
+    ]},
+    scrapGain2: {subfeature: 1, scalesWithGL: true, minGL: 100, effect: [
+        {name: '废料增益', type: '*', value: lvl => Math.pow(1.01, lvl)}
+    ]},
+    smokeGain: {subfeature: 1, scalesWithGL: true, minGL: 125, maxGL: 224, effect: [
+        {name: '烟雾增益', type: '*', value: lvl => lvl * 0.01 + 1}
     ]},
 }

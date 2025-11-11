@@ -1,34 +1,58 @@
 {
-    被遗忘的盾牌: {图标: 'mdi-shield-sun', color: 'pale-光-blue', 效果: [
-        {name: '弹力', 类型: '保留', value: true},
-        {name: '休息', 类型: '保留', value: true}
-    ]},
-    燃烧的头骨: {图标: 'mdi-skull', color: '橙色-红色', 效果: [
-        {name: '骨袋', 类型: '保留', value: true},
-        {name: '愤怒', 类型: '保留', value: true}
-    ]},
-    能量饮料: {图标: 'mdi-bottle-soda', color: '黄色', 效果: [
-        {name: '怪物零件增益', 类型: '+', value: 0.5},
-        {name: '怪物汤', 类型: '保留', value: true}
-    ]},
-    幸运骰子: {图标: 'mdi-dice-6', color: '光-绿色', 效果: [
-        {name: '幸运一击', 类型: '保留', value: true}
-    ]},
-    哑铃: {图标: 'mdi-dumbbell', color: 'indigo', 效果: [
-        {name: '训练', 类型: '保留', value: true}
-    ]},
-    绷带: {图标: 'mdi-bandage', color: 'pale-粉色', 效果: [
-        {name: '厚脸皮', 类型: '保留', value: true}
-    ]},
-    新背包: {图标: 'mdi-bag-personal', color: 'pale-橙色', 效果: [
-        {name: '囤积', 类型: '保留', value: true},
-        {name: '掠夺秘密', 类型: '保留', value: true}
-    ]},
-    终极指南: {图标: 'mdi-book-multiple', color: '棕色', 效果: [
-        {name: '刺击指南', 类型: '保留', value: true},
-        {name: '闪避指南', 类型: '保留', value: true}
-    ]},
-    破裂的保险箱: {图标: 'mdi-safe-square', color: 'darker-灰色', 效果: [
-        {name: '掠夺', 类型: '保留', value: true}
-    ]},
+    能量饮料: {icon: 'mdi-bottle-soda', color: '黄色油漆', effect() {return [
+        {name: '怪物零件增益', type: '+', value: 0.5},
+        {name: '怪物汤', type: '保留', value: true}
+    ];}, glyph() {return {梦: 3, 三叶草: 1};}, 激活的卡片: {
+        cost: {最高力量: 3},
+        params() {
+            let actives = 0;
+            for (const [, elem] of Object.entries(store.state.horde.items)) {
+                if (elem.activeType === 'combat' && elem.cooldownLeft > 0) {
+                    actives++;
+                }
+            }
+            for (const [key, elem] of Object.entries(store.state.horde.skillActive)) {
+                const split = key.split('_');
+                let type = null;
+                if (split[0] === 'skill') {
+                    type = store.state.horde.fighterClass[store.state.horde.selectedClass].skills[split[1]].activeType;
+                } else if (split[0] === '做好一切准备') {
+                    type = store.state.horde.做好一切准备[split[1]].activeType;
+                }
+                if (type === 'combat' && elem > 0) {
+                    actives++;
+                }
+            }
+            return [actives];
+        },
+        description() {
+            return [];
+        },
+        formula(params) {
+            return [formatInt(params[0])];
+        },
+        disabled(params) {
+            return store.state.cryolab.horde.激活的卡片 || params[0] <= 0;
+        },
+        trigger() {
+            for (const [key, elem] of Object.entries(store.state.horde.items)) {
+                if (elem.activeType === 'combat' && elem.cooldownLeft > 0) {
+                    store.commit('horde/updateItemKey', {name: key, key: 'cooldownLeft', value: 0});
+                }
+            }
+            for (const [key, elem] of Object.entries(store.state.horde.skillActive)) {
+                const split = key.split('_');
+                let type = null;
+                if (split[0] === 'skill') {
+                    type = store.state.horde.fighterClass[store.state.horde.selectedClass].skills[split[1]].activeType;
+                } else if (split[0] === '做好一切准备') {
+                    type = store.state.horde.做好一切准备[split[1]].activeType;
+                }
+                if (type === 'combat' && elem > 0) {
+                    store.commit('horde/updateSubkey', {name: 'skillActive', key, value: 0});
+                }
+            }
+            store.dispatch('horde/resetStats');
+        }
+    }},
 }

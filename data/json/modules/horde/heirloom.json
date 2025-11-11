@@ -1,92 +1,104 @@
 [
   {
-    "名称": "力量",
-    "图标": "<i class=\"mdi mdi-sword\"></i>",
-    "效果": "攻击*｛$lvl  \\cdot  0.2 + 1$｝",
+    "名称": "最高力量",
+    "icon": "<i class=\"mdi mdi-sword\"></i>",
+    "effect": "攻击*｛$lvl  \\cdot  0.1 + 1$｝",
     "minZone": ""
   },
   {
     "名称": "fortitude",
-    "图标": "<i class=\"mdi mdi-heart\"></i>",
-    "效果": "生命值*｛$lvl  \\cdot  0.2 + 1$｝",
-    "minZone": ""
-  },
-  {
-    "名称": "wealth",
-    "图标": "<i class=\"mdi mdi-circle-multiple\"></i>",
-    "效果": "骨头增益*｛$lvl  \\cdot  0.15 + 1$｝; 怪物零件增益*｛$lvl  \\cdot  0.05 + 1$｝",
-    "minZone": ""
-  },
-  {
-    "名称": "spirit",
-    "图标": "<i class=\"mdi mdi-ghost\"></i>",
-    "效果": "腐败的灵魂增益*｛$lvl  \\cdot  0.06 + 1$｝",
+    "icon": "<i class=\"mdi mdi-heart\"></i>",
+    "effect": "生命值*｛$lvl  \\cdot  0.1 + 1$｝",
     "minZone": "40"
   },
   {
-    "名称": "sharpsight",
-    "图标": "<i class=\"mdi mdi-magnify\"></i>",
-    "效果": "装备几率*｛$lvl  \\cdot  0.05 + 1$｝",
+    "名称": "wealth",
+    "icon": "<i class=\"mdi mdi-circle-multiple\"></i>",
+    "effect": "骨头增益*｛$lvl  \\cdot  0.1 + 1$｝",
     "minZone": "50"
   },
   {
-    "名称": "reaping",
-    "图标": "<i class=\"mdi mdi-skull\"></i>",
-    "效果": "腐烂的肉体增益+｛$lvl  \\cdot  0.03$｝",
+    "名称": "spirit",
+    "icon": "<i class=\"mdi mdi-ghost\"></i>",
+    "effect": "腐败的灵魂增益*｛$lvl  \\cdot  0.03 + 1$｝",
     "minZone": "60"
   },
   {
-    "名称": "remembrance",
-    "图标": "<i class=\"mdi mdi-grave-stone\"></i>",
-    "效果": "腐败的灵魂容量*｛$lvl  \\cdot  0.05 + 1$｝",
+    "名称": "sharpsight",
+    "icon": "<i class=\"mdi mdi-magnify\"></i>",
+    "effect": "装备几率*｛$lvl  \\cdot  0.05 + 1$｝",
     "minZone": "70"
   },
   {
-    "名称": "holding",
-    "图标": "<i class=\"mdi mdi-dresser\"></i>",
-    "效果": "骨头容量*｛$lvl  \\cdot  0.1 + 1$｝; 怪物零件容量*｛$lvl  \\cdot  0.02 + 1$｝",
+    "名称": "reaping",
+    "icon": "<i class=\"mdi mdi-skull\"></i>",
+    "effect": "腐烂的肉体增益*｛$lvl  \\cdot  0.01 + 1$｝",
     "minZone": "80"
   },
   {
+    "名称": "remembrance",
+    "icon": "<i class=\"mdi mdi-grave-stone\"></i>",
+    "effect": "腐败的灵魂容量*｛$lvl  \\cdot  0.03 + 1$｝",
+    "minZone": "90"
+  },
+  {
     "名称": "expertise",
-    "图标": "<i class=\"mdi mdi-book-open-variant\"></i>",
-    "效果": "精通点数增益*｛$lvl  \\cdot  0.01 + 1$｝",
+    "icon": "<i class=\"mdi mdi-book-open-variant\"></i>",
+    "effect": "精通点数增益*｛$lvl  \\cdot  0.01 + 1$｝",
     "minZone": "100"
   },
   {
-    "名称": "神秘",
-    "图标": "<i class=\"mdi mdi-help-box\"></i>",
-    "效果": "神秘碎片几率*｛$lvl  \\cdot  0.001 + 1$｝",
+    "名称": "holding",
+    "icon": "<i class=\"mdi mdi-dresser\"></i>",
+    "effect": "骨头容量*｛$lvl  \\cdot  0.02 + 1$｝",
+    "minZone": "110"
+  },
+  {
+    "名称": "mystery",
+    "icon": "<i class=\"mdi mdi-help-box\"></i>",
+    "effect": "神秘碎片几率*｛$lvl  \\cdot  0.001 + 1$｝",
     "minZone": "120"
   },
   {
-    "名称": "砖块",
-    "图标": "<i class=\"mdi mdi-wall\"></i>",
-    "效果": "骨头增益*｛$lvl  \\cdot  0.05 + 1$｝; 暴击伤害+｛$({(lvl / 10 + 1)}^{0.4} - 1)  \\cdot  0.01$｝",
+    "名称": "freezing",
+    "icon": "<i class=\"mdi mdi-fridge\"></i>",
+    "effect": "怪物零件容量*｛$lvl  \\cdot  0.001 + 1$｝",
+    "minZone": "130"
+  },
+  {
+    "名称": "brick",
+    "icon": "<i class=\"mdi mdi-wall\"></i>",
+    "effect": "骨头增益*｛$lvl  \\cdot  0.01 + 1$｝",
     "minZone": "Infinity"
   },
   {
-    "名称": "heat",
-    "图标": "<i class=\"mdi mdi-fire\"></i>",
-    "效果": "攻击*｛$lvl  \\cdot  0.05 + 1$｝; 暴击率+｛$Math.log(lvl / 10 + 1)  \\cdot  0.008$｝",
+    "名称": "热量",
+    "icon": "<i class=\"mdi mdi-fire\"></i>",
+    "effect": "攻击*｛$lvl  \\cdot  0.01 + 1$｝",
     "minZone": "Infinity"
   },
   {
     "名称": "ice",
-    "图标": "<i class=\"mdi mdi-snowflake-variant\"></i>",
-    "效果": "生命值*｛$lvl  \\cdot  0.05 + 1$｝; 恢复+｛$Math.log(lvl / 10 + 1)  \\cdot  0.003$｝",
+    "icon": "<i class=\"mdi mdi-snowflake-variant\"></i>",
+    "effect": "生命值*｛$lvl  \\cdot  0.01 + 1$｝",
     "minZone": "Infinity"
   },
   {
     "名称": "crystal",
-    "图标": "<i class=\"mdi mdi-billiards-rack\"></i>",
-    "效果": "神秘碎片几率*｛$lvl  \\cdot  0.001 + 1$｝; 神秘碎片容量+｛$\\text{向下取整}(Math.log(lvl + 2))$｝",
+    "icon": "<i class=\"mdi mdi-billiards-rack\"></i>",
+    "effect": "神秘碎片几率*｛$lvl  \\cdot  0.001 + 1$｝",
     "minZone": "Infinity"
   },
   {
-    "名称": "活力",
-    "图标": "<i class=\"mdi mdi-heart-multiple\"></i>",
-    "效果": "骨头容量*｛$lvl  \\cdot  0.001 + 1$｝; 治疗*｛$Math.log(lvl + 1)  \\cdot  0.1 + 1$｝",
+    "名称": "vitality",
+    "icon": "<i class=\"mdi mdi-heart-multiple\"></i>",
+    "effect": "骨头容量*｛$lvl  \\cdot  0.001 + 1$｝",
+    "minZone": "Infinity"
+  },
+  {
+    "名称": "nature",
+    "icon": "<i class=\"mdi mdi-leaf\"></i>",
+    "effect": "精通点数增益*｛$lvl  \\cdot  0.001 + 1$｝",
     "minZone": "Infinity"
   }
 ]

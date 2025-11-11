@@ -1,0 +1,8 @@
+| 名称  |  0  |  1  |  2  |  3  |
+| --- | --- | --- | --- | --- |
+| 1 | yield | 黄金 | exp | rareDrop |
+| 5 | grow | overgrow | mutate | 草 |
+| 10 | dna | gnome | lonely | fertile |
+| 15 | mystery | conversion | prestige | rareDropChance |
+| 20 | lucky | finalize | selfless | unyielding |
+| 25 | teamwork | hunter | patient |  |

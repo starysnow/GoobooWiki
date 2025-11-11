@@ -1,40 +1,59 @@
 {
-    泥砖: {图标: 'mdi-wall', color: '棕色', 效果: [
-        {name: '棚子', 类型: '保留', value: true},
-        {name: '水增益', 类型: '*', value: 1.5}
-    ]},
-    树苗: {图标: 'mdi-sprout', color: '光-绿色', 效果: [
-        {name: '棚子', 类型: '保留', value: true},
-        {name: '植物纤维增益', 类型: '*', value: 1.5},
-    ]},
-    钥匙链: {图标: 'mdi-key-chain', color: '光-灰色', 效果: [
-        {name: '小房子', 类型: '保留', value: true},
-        {name: '木头增益', 类型: '*', value: 1.5}
-    ]},
-    宝箱: {图标: 'mdi-treasure-chest', color: '金色', 效果: [
-        {name: '财政部', 类型: '保留', value: true},
-        {name: '钱包', 类型: '保留', value: true},
-        {name: '资源包', 类型: '保留', value: true},
-        {name: '金属包', 类型: '保留', value: true}
-    ]},
-    螺丝刀: {图标: 'mdi-screwdriver', color: 'indigo', 效果: [
-        {name: '起重机', 类型: '保留', value: true},
-        {name: '石头增益', 类型: '*', value: 1.5}
-    ]},
-    玫瑰: {图标: 'mdi-flower', color: '红色', 效果: [
-        {name: '花园', 类型: '保留', value: true},
-        {name: '水井', 类型: '保留', value: true}
-    ]},
-    金钥匙: {图标: 'mdi-key-chain', color: '金色', 效果: [
-        {name: '房子', 类型: '保留', value: true},
-        {name: '微型铁匠', 类型: '保留', value: true}
-    ]},
-    导师: {图标: 'mdi-account-tie', color: 'indigo', 效果: [
-        {name: '锯木厂', 类型: '保留', value: true},
-        {name: '隧道', 类型: '保留', value: true}
-    ]},
-    地球仪: {图标: 'mdi-globe-model', color: '绿色', 效果: [
-        {name: '图书馆', 类型: '保留', value: true},
-        {name: '玻璃吹制厂', 类型: '保留', value: true}
-    ]},
+    泥砖: {icon: 'mdi-wall', color: 'brown', effect() {return [
+        {name: '棚子', type: '保留', value: true},
+        {name: '水增益', type: '*', value: 1.5}
+    ];}, glyph() {return {木头: 4};}},
+    树苗: {icon: 'mdi-sprout', color: '浅绿色油漆', effect() {return [
+        {name: '棚子', type: '保留', value: true},
+        {name: '植物纤维增益', type: '*', value: 1.5},
+    ];}, glyph() {return {流动: 3, 石头: 1};}},
+    钥匙链: {icon: 'mdi-key-chain', color: '光-grey', effect() {return [
+        {name: '小房子', type: '保留', value: true},
+        {name: '木头增益', type: '*', value: 1.5}
+    ];}, glyph() {return {木头: 2, 石头: 3};}, 激活的卡片: {
+        cost: {最高力量: 6},
+        params() {
+            const maxPart = Math.pow(store.state.stat.village_coinMax.total, 0.5);
+            const happinessMult = store.getters['*/get']('幸福', 0.03 * store.state.village.job.entertainer.max, 1, 0, ['villageJob', 'villagePolicy']) / store.getters['*/get']('幸福');
+            const taxPart = store.getters['*/get']('工人', 0, 1, 0, ['villagePolicy']) * store.getters['*/get']('税率', 0, 1, 0, ['villagePolicy']);
+            let foodPart = 0;
+            store.getters['currency/list']('village', 'regular', 'food').forEach(foodName => {
+                const food = foodName.split('_')[1];
+                let foodBase = 0;
+                switch (food) {
+                    case '粮食':
+                        foodBase = 0.5 * store.state.village.job.farmer.max;
+                        break;
+                    case '水果':
+                        foodBase = 0.5 * store.state.village.job.收割机.max;
+                        break;
+                    case '鱼':
+                        foodBase = 30 * store.state.village.job.fisherman.max;
+                        break;
+                    case '蔬菜':
+                        foodBase = 40 * store.state.village.job.gardener.max;
+                        break;
+                }
+                foodPart += Math.min(taxPart, store.getters['*/get'](store.getters['currency/gainMultName']('village', food), foodBase, 1, 0, ['villageJob', 'villagePolicy']));
+            });
+            const timePart = foodPart * happinessMult * VILLAGE_COINS_PER_FOOD * 600;
+            return [maxPart, timePart, maxPart + timePart];
+        },
+        description(params) {
+            return [formatNum(params[2])];
+        },
+        formula(params) {
+            return [formatNum(params[0]), formatNum(params[1])];
+        },
+        disabled() {
+            return store.state.system.features.village.currentSubfeature !== 0 || store.state.cryolab.village.激活的卡片;
+        },
+        trigger(params) {
+            store.dispatch('currency/gain', {feature: 'village', name: '金币', amount: params[2]});
+        }
+    }},
+    螺丝刀: {icon: 'mdi-screwdriver', color: 'indigo', effect() {return [
+        {name: '起重机', type: '保留', value: true},
+        {name: '石头增益', type: '*', value: 1.5}
+    ];}, glyph() {return {木头: 1, 流动: 1, 石头: 3};}},
 }

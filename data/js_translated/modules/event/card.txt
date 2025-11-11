@@ -1,20 +1,21 @@
 {
     feature: {
         prefix: 'EV',
-        reward: [{name: 'currencyGemTopazCap', 类型: '+', value: lvl => lvl * 5}],
-        shinyReward: [{name: 'currencyGemTopazCap', 类型: '+', value: lvl => lvl * 5}],
+        reward: [{name: 'currencyGemTopazCap', type: '+', value: lvl => lvl * 10}],
+        shinyReward: [{name: 'currencyGemTopazCap', type: '+', value: lvl => lvl * 10}],
         解锁: 'eventFeature'
     },
     collection: {
         周末旅行: {reward: [
-            {name: 'currencyGemTopazCap', 类型: '+', value: 50}
+            {name: 'currencyGemTopazCap', type: '+', value: 150}
         ]},
         热带天堂: {reward: [
-            {name: 'currencyGemTopazCap', 类型: '+', value: 50}
+            {name: 'currencyGemTopazCap', type: '+', value: 150}
         ]},
         寒冷时期: {reward: [
-            {name: 'currencyGemTopazCap', 类型: '+', value: 50}
+            {name: 'currencyGemTopazCap', type: '+', value: 150}
         ]},
+        特殊设备: {},
     },
     pack: {
         好交易: {解锁: 'merchantEvent', amount: 1, content: {
@@ -68,5 +69,5 @@
             '城堡灯': 3, '灯泡店': 3,
         }},
     },
-    卡片: cardList
+    卡牌: cardList
 }

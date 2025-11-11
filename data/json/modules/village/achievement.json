@@ -1,93 +1,119 @@
 [
   {
-    "名称": "maxBuilding",
-    "value": "$store.state.stat.village_maxBuilding.总计$",
-    "milestones": "$\\text{四舍五入}(lvl  \\cdot  25  \\cdot  {(1.2)}^{lvl} + 35)$",
-    "圣遗物": "{\"3\":\"泥砖\",\"4\":\"钥匙链\",\"5\":\"金钥匙\"}",
-    "上限": ""
+    "名称": "摩天大楼",
+    "value": "$store.state.stat.摩天大楼.total$",
+    "milestones": "$\\text{四舍五入}(lvl  \\cdot  25  \\cdot  {(1.15)}^{lvl} + 35)$",
+    "relic": "{\"3\":\"泥砖\",\"4\":\"钥匙链\"}",
+    "reward": "{\"5\":[{\"name\":\"房子\",\"type\":\"保留\",\"value\":true},{\"name\":\"微型铁匠\",\"type\":\"保留\",\"value\":true}]}",
+    "secret": "",
+    "cap": ""
   },
   {
-    "名称": "basicResources",
-    "value": "$Math.max(store.state.stat.village_woodMax.总计, store.state.stat.village_plantFiberMax.总计, store.state.stat.village_stoneMax.总计)$",
+    "名称": "敲木头",
+    "value": "$Math.max(store.state.stat.village_woodMax.total, store.state.stat.village_plantFiberMax.total, store.state.stat.village_stoneMax.total)$",
     "milestones": "${(10)}^{lvl}  \\cdot  10K$",
-    "圣遗物": "{\"3\":\"树苗\"}",
-    "上限": ""
+    "relic": "{\"3\":\"树苗\"}",
+    "reward": "{\"4\":[{\"name\":\"镰刀\",\"type\":\"保留\",\"value\":true}],\"5\":[{\"name\":\"柴刀\",\"type\":\"保留\",\"value\":true}],\"6\":[{\"name\":\"镐子\",\"type\":\"保留\",\"value\":true}],\"7\":[{\"name\":\"浇水壶\",\"type\":\"保留\",\"value\":true}],\"11\":[{\"name\":\"投资\",\"type\":\"保留\",\"value\":true}]}",
+    "secret": "",
+    "cap": ""
   },
   {
     "名称": "金属",
-    "value": "$store.state.stat.village_metalMax.总计$",
+    "value": "$store.state.stat.village_metalMax.total$",
     "milestones": "${(10)}^{lvl}  \\cdot  5000$",
-    "圣遗物": "{\"3\":\"螺丝刀\"}",
-    "上限": ""
+    "relic": "{\"3\":\"螺丝刀\"}",
+    "reward": "",
+    "secret": "",
+    "cap": ""
   },
   {
     "名称": "金币",
-    "value": "$store.state.stat.金币.总计$",
+    "value": "$store.state.stat.金币.total$",
     "milestones": "${(16)}^{lvl}  \\cdot  2000$",
-    "圣遗物": "{\"4\":\"宝箱\"}",
-    "上限": ""
+    "relic": "",
+    "reward": "{\"4\":[{\"name\":\"财政部\",\"type\":\"保留\",\"value\":true},{\"name\":\"钱包\",\"type\":\"保留\",\"value\":true},{\"name\":\"资源包\",\"type\":\"保留\",\"value\":true},{\"name\":\"金属包\",\"type\":\"保留\",\"value\":true}]}",
+    "secret": "",
+    "cap": ""
   },
   {
     "名称": "水",
-    "value": "$store.state.stat.village_waterMax.总计$",
+    "value": "$store.state.stat.village_waterMax.total$",
     "milestones": "${(20)}^{lvl}  \\cdot  5000$",
-    "圣遗物": "{\"3\":\"玫瑰\"}",
-    "上限": ""
+    "relic": "",
+    "reward": "{\"3\":[{\"name\":\"花园\",\"type\":\"保留\",\"value\":true},{\"name\":\"水井\",\"type\":\"保留\",\"value\":true}]}",
+    "secret": "",
+    "cap": ""
   },
   {
     "名称": "知识",
-    "value": "$store.state.stat.village_knowledgeMax.总计$",
+    "value": "$store.state.stat.village_knowledgeMax.total$",
     "milestones": "$\\text{四舍五入}(getSequence(2, lvl + 1)  \\cdot  {(1.2)}^{Math.max(lvl - 10, 0})  \\cdot  250)$",
-    "圣遗物": "{\"2\":\"地球仪\"}",
-    "上限": ""
+    "relic": "",
+    "reward": "{\"2\":[{\"name\":\"图书馆\",\"type\":\"保留\",\"value\":true},{\"name\":\"玻璃制造厂\",\"type\":\"保留\",\"value\":true}],\"3\":[{\"name\":\"学校\",\"type\":\"保留\",\"value\":true}],\"4\":[{\"name\":\"基本\",\"type\":\"保留\",\"value\":true}],\"5\":[{\"name\":\"加工\",\"type\":\"保留\",\"value\":true}],\"6\":[{\"name\":\"水泵\",\"type\":\"保留\",\"value\":true}],\"7\":[{\"name\":\"沙子\",\"type\":\"保留\",\"value\":true}],\"8\":[{\"name\":\"书籍\",\"type\":\"保留\",\"value\":true}]}",
+    "secret": "",
+    "cap": ""
   },
   {
-    "名称": "advancedResources",
-    "value": "$Math.max(store.state.stat.village_hardwoodMax.总计, store.state.stat.village_gemMax.总计)$",
+    "名称": "闪亮",
+    "value": "$Math.max(store.state.stat.village_hardwoodMax.total, store.state.stat.village_gemMax.total)$",
     "milestones": "${(6)}^{lvl}  \\cdot  10K$",
-    "圣遗物": "{\"3\":\"导师\"}",
-    "上限": ""
+    "relic": "",
+    "reward": "{\"3\":[{\"name\":\"锯木厂\",\"type\":\"保留\",\"value\":true},{\"name\":\"隧道\",\"type\":\"保留\",\"value\":true}]}",
+    "secret": "",
+    "cap": ""
   },
   {
     "名称": "祝福",
-    "value": "$store.state.stat.祝福.总计$",
+    "value": "$store.state.stat.祝福.total$",
     "milestones": "${(9)}^{lvl}  \\cdot  1000$",
-    "圣遗物": "",
-    "上限": ""
+    "relic": "",
+    "reward": "",
+    "secret": "",
+    "cap": ""
   },
   {
     "名称": "供品",
-    "value": "$store.state.stat.供品.总计$",
+    "value": "$store.state.stat.供品.total$",
     "milestones": "$\\text{四舍五入}({(2.5)}^{lvl}  \\cdot  500)$",
-    "圣遗物": "",
-    "上限": ""
+    "relic": "",
+    "reward": "",
+    "secret": "",
+    "cap": ""
   },
   {
-    "名称": "牺牲",
-    "value": "$store.getters['村庄/offeringCount']$",
+    "名称": "黑洞",
+    "value": "$store.getters['village/offeringCount']$",
     "milestones": "$getSequence(6, lvl + 1)  \\cdot  5$",
-    "圣遗物": "",
-    "上限": ""
+    "relic": "",
+    "reward": "",
+    "secret": "",
+    "cap": ""
   },
   {
     "名称": "油",
-    "value": "$store.state.stat.village_oilMax.总计$",
+    "value": "$store.state.stat.village_oilMax.total$",
     "milestones": "${(10)}^{lvl}  \\cdot  100K$",
-    "圣遗物": "",
-    "上限": ""
+    "relic": "",
+    "reward": "",
+    "secret": "",
+    "cap": ""
   },
   {
-    "名称": "highestPower",
-    "value": "$store.state.stat.village_highestPower.总计$",
+    "名称": "开灯",
+    "value": "$store.state.stat.开灯.total$",
     "milestones": "$getSequence(2, lvl + 1)  \\cdot  10$",
-    "圣遗物": "",
-    "上限": ""
+    "relic": "",
+    "reward": "",
+    "secret": "",
+    "cap": ""
   },
   {
-    "名称": "minHappiness",
-    "value": "$store.state.stat.village_minHappiness.总计$",
+    "名称": "生活在地狱里",
+    "value": "$store.state.stat.生活在地狱里.total$",
     "milestones": "$1$",
-    "圣遗物": "",
-    "上限": "1"
+    "relic": "",
+    "reward": "",
+    "secret": "true",
+    "cap": "1"
   }
 ]

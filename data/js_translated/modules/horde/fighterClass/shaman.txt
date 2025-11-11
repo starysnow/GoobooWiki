@@ -1,23 +1,24 @@
 {
     解锁: '萨满职业',
-    图标: 'mdi-tree',
+    icon: 'mdi-tree',
     baseStats: {
         攻击plus: 4.4,
-        生命值: 575,
-        mana: 150
+        生命值plus: 575,
+        mana: 150,
+        manaRegen: 0.01
     },
-    经验值: {
+    exp: {
         +: 4200,
         increment: 1.425
     },
     skills: {},
     skillTree: [
-        {isInnate: true, 达到等级: 0, items: []},
+        {isInnate: true, level: 0, items: []},
     ],
     quests: {
         stat: [],
-        区域: [],
-        达到等级: [],
-        击败 (0) (+(1)): []
+        zone: [],
+        level: [],
+        boss: []
     }
 }

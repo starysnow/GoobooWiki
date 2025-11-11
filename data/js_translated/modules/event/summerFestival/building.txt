@@ -1,236 +1,236 @@
 {
-    收集者: {
-        图标: 'mdi-warehouse',
-        消耗(lvl) {
-            return {event_log: Math.pow(6, lvl) * 750};
+    收集器: {
+        icon: 'mdi-warehouse',
+        price(lvl) {
+            return {木头: Math.pow(6, lvl) * 750};
         },
-        制作时间: lvl => Math.round(Math.pow(1.35, lvl) * 180),
-        效果: [
-            {name: '自动收集数量', 类型: 'summerFestivalBuildingMult', value: lvl => getSequence(0, lvl + 2) * 0.3 + 1}
+        timeNeeded: lvl => Math.round(Math.pow(1.35, lvl) * 180),
+        effect: [
+            {name: 'autocollectMult', type: 'summerFestivalBuildingMult', value: lvl => getSequence(0, lvl + 2) * 0.3 + 1}
         ]
     },
-    主舞台: {
-        图标: 'mdi-boombox',
-        shape: {0: '陆地', 1: '陆地', 2: '陆地', 3: '陆地', 4: '陆地'},
+    mainStage: {
+        icon: 'mdi-boombox',
+        shape: {0: 'land', 1: 'land', 2: 'land', 3: 'land', 4: 'land'},
         maxAmount: 1,
-        消耗(lvl) {
+        price(lvl) {
             return fallbackArray([
-                {event_log: 4500, 椰子: 3000},
-                {event_log: buildNum(500, 'K'), 贝壳: buildNum(200, 'K'), 实心板: 750},
-                {event_log: buildNum(200, 'M'), 实心板: buildNum(10, 'K'), 砂岩: buildNum(30, 'K')},
-                {event_log: buildNum(80, 'B'), 实心板: buildNum(150, 'K'), 硬钢: 500},
-            ], {event_log: Math.pow(600, lvl) * buildNum(50, 'T'), 复合板: Math.pow(12, lvl) * 100}, lvl);
+                {木头: 4500, 椰子: 3000},
+                {木头: buildNum(500, 'K'), 贝壳: buildNum(200, 'K'), 实心板: 750},
+                {木头: buildNum(200, 'M'), 实心板: buildNum(10, 'K'), 砂岩: buildNum(30, 'K')},
+                {木头: buildNum(80, 'B'), 实心板: buildNum(150, 'K'), 硬钢: 500},
+            ], {木头: Math.pow(600, lvl) * buildNum(50, 'T'), 复合板: Math.pow(12, lvl) * 100}, lvl);
         },
-        制作时间: lvl => Math.pow(3, lvl) * 900,
-        效果: [
-            {name: '音乐增益', 类型: '+', value: lvl => Math.pow(2, lvl)},
+        timeNeeded: lvl => Math.pow(3, lvl) * 900,
+        effect: [
+            {name: '音乐增益', type: '+', value: lvl => Math.pow(2, lvl)},
         ]
     },
-    扬声器: {
-        图标: 'mdi-speaker',
+    speaker: {
+        icon: 'mdi-speaker',
         stageLevel: 1,
-        消耗(lvl) {
-            return {event_log: Math.pow(25, lvl) * buildNum(10, 'K'), 椰子: Math.pow(25, lvl) * 3000};
+        price(lvl) {
+            return {木头: Math.pow(25, lvl) * buildNum(10, 'K'), 椰子: Math.pow(25, lvl) * 3000};
         },
-        制作时间: lvl => Math.pow(2, lvl) * 600,
-        效果: [
-            {name: '音乐增益', 类型: '+', value: lvl => Math.pow(2, lvl) * 0.5},
+        timeNeeded: lvl => Math.pow(2, lvl) * 600,
+        effect: [
+            {name: '音乐增益', type: '+', value: lvl => Math.pow(2, lvl) * 0.5},
         ]
     },
-    菜地: {
-        图标: 'mdi-sprout',
+    vegetablePatch: {
+        icon: 'mdi-sprout',
         stageLevel: 1,
-        shape: {0: '陆地', 1: '陆地', 4: '陆地'},
-        消耗(lvl) {
-            return {event_log: Math.pow(12, lvl) * buildNum(37.5, 'K')};
+        shape: {0: 'land', 1: 'land', 4: 'land'},
+        price(lvl) {
+            return {木头: Math.pow(12, lvl) * buildNum(37.5, 'K')};
         },
-        制作时间: lvl => Math.round(Math.pow(1.5, lvl) * 1500),
-        效果: [
-            {name: '仅蔬菜增益', 类型: '+', value: lvl => Math.pow(1.75, lvl) * 0.05},
+        timeNeeded: lvl => Math.round(Math.pow(1.5, lvl) * 1500),
+        effect: [
+            {name: '蔬菜增益', type: '+', value: lvl => Math.pow(1.75, lvl) * 0.05},
         ]
     },
     锯木厂: {
-        图标: 'mdi-saw-blade',
+        icon: 'mdi-saw-blade',
         stageLevel: 1,
-        shape: {0: '陆地', 1: '陆地'},
-        消耗(lvl) {
+        shape: {0: 'land', 1: 'land'},
+        price(lvl) {
             return {石块: Math.pow(16, lvl) * buildNum(440, 'K')};
         },
-        制作时间: lvl => Math.round(Math.pow(1.5, lvl) * 1800),
+        timeNeeded: lvl => Math.round(Math.pow(1.5, lvl) * 1800),
         action: {
-            cutPlates: {图标: 'mdi-layers', input: {event_log: 1000, 石块: 800}, output: {实心板: 1}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.005},
-            cutSandstone: {图标: 'mdi-wall', input: {沙子: 400, 石块: 600}, output: {砂岩: 1}, minLevel: 3, speed: lvl => Math.pow(2, lvl) * 0.01},
-            smeltSteel: {图标: 'mdi-gold', input: {金属零件: 20, 淡水: 500}, output: {硬钢: 1}, minLevel: 5, speed: lvl => Math.pow(2, lvl) * 0.008},
-            combineMaterial: {图标: 'mdi-pillar', input: {实心板: 10, 砂岩: 10, 硬钢: 10}, output: {复合板: 1}, minLevel: 7, speed: lvl => Math.pow(2, lvl) * 0.001},
+            cutPlates: {icon: 'mdi-layers', input: {木头: 1000, 石块: 800}, output: {实心板: 1}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.005},
+            cutSandstone: {icon: 'mdi-wall', input: {沙子: 400, 石块: 600}, output: {砂岩: 1}, minLevel: 3, speed: lvl => Math.pow(2, lvl) * 0.01},
+            smeltSteel: {icon: 'mdi-gold', input: {金属零件: 20, 淡水: 500}, output: {硬钢: 1}, minLevel: 5, speed: lvl => Math.pow(2, lvl) * 0.008},
+            combineMaterial: {icon: 'mdi-pillar', input: {实心板: 10, 砂岩: 10, 硬钢: 10}, output: {复合板: 1}, minLevel: 7, speed: lvl => Math.pow(2, lvl) * 0.001},
         }
     },
-    厨房: {
-        图标: 'mdi-countertop',
+    kitchen: {
+        icon: 'mdi-countertop',
         stageLevel: 1,
-        shape: {0: '陆地', 1: '陆地', 3: '陆地', 5: '陆地'},
-        消耗(lvl) {
+        shape: {0: 'land', 1: 'land', 3: 'land', 5: 'land'},
+        price(lvl) {
             return {实心板: Math.pow(10, lvl) * 80, 椰子: Math.pow(30, lvl) * buildNum(1.2, 'M')};
         },
-        制作时间: lvl => Math.round(Math.pow(1.5, lvl) * 2700),
+        timeNeeded: lvl => Math.round(Math.pow(1.5, lvl) * 2700),
         action: {
-            椰子沙拉: {图标: 'mdi-bowl-mix', input: {椰子: 4000, 仅蔬菜: 50}, output: {椰子沙拉: 1}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.002},
-            咸贝壳: {图标: 'mdi-set-all', input: {贝壳: buildNum(60, 'K'), 盐: 75}, output: {咸贝壳: 1}, minLevel: 3, speed: lvl => Math.pow(2, lvl) * 0.0015},
-            柠檬糖: {图标: 'mdi-candy', input: {柑橘类水果: 30, 蜂蜜: 20}, output: {柠檬糖: 1}, minLevel: 5, speed: lvl => Math.pow(2, lvl) * 0.008},
-            牛扒: {图标: 'mdi-food-steak', input: {熟肉: 10, 盐: 250, 胡椒: 250}, output: {牛扒: 1}, minLevel: 7, speed: lvl => Math.pow(2, lvl) * 0.001},
-            鱼条: {图标: 'mdi-tally-mark-4', input: {熟鱼: 5, 柑橘类水果: 250, 仅蔬菜: 300}, output: {鱼条: 1}, minLevel: 9, speed: lvl => Math.pow(2, lvl) * 0.003},
+            椰子沙拉: {icon: 'mdi-bowl-mix', input: {椰子: 4000, 蔬菜: 50}, output: {椰子沙拉: 1}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.002},
+            咸贝壳: {icon: 'mdi-set-all', input: {贝壳: buildNum(60, 'K'), 盐: 75}, output: {咸贝壳: 1}, minLevel: 3, speed: lvl => Math.pow(2, lvl) * 0.0015},
+            柠檬糖: {icon: 'mdi-candy', input: {柑橘类水果: 30, 蜂蜜: 20}, output: {柠檬糖: 1}, minLevel: 5, speed: lvl => Math.pow(2, lvl) * 0.008},
+            牛扒: {icon: 'mdi-food-steak', input: {熟肉: 10, 盐: 250, 胡椒: 250}, output: {牛扒: 1}, minLevel: 7, speed: lvl => Math.pow(2, lvl) * 0.001},
+            鱼条: {icon: 'mdi-tally-mark-4', input: {熟鱼: 5, 柑橘类水果: 250, 蔬菜: 300}, output: {鱼条: 1}, minLevel: 9, speed: lvl => Math.pow(2, lvl) * 0.003},
         }
     },
-    狩猎区: {
-        图标: 'mdi-bow-arrow',
+    huntingArea: {
+        icon: 'mdi-bow-arrow',
         stageLevel: 2,
-        shape: {0: '森林', 1: '陆地', 2: '陆地', 3: '陆地'},
-        消耗(lvl) {
-            return {event_log: Math.pow(25, lvl) * buildNum(6.6, 'M'), 贝壳: Math.pow(25, lvl) * buildNum(2.4, 'M')};
+        shape: {0: 'forest', 1: 'land', 2: 'land', 3: 'land'},
+        price(lvl) {
+            return {木头: Math.pow(25, lvl) * buildNum(6.6, 'M'), 贝壳: Math.pow(25, lvl) * buildNum(2.4, 'M')};
         },
-        制作时间: lvl => Math.round(Math.pow(1.5, lvl) * 5400),
-        效果: [
-            {name: '生肉增益', 类型: '+', value: lvl => Math.pow(1.75, lvl) * 0.004},
+        timeNeeded: lvl => Math.round(Math.pow(1.5, lvl) * 5400),
+        effect: [
+            {name: '生肉增益', type: '+', value: lvl => Math.pow(1.75, lvl) * 0.004},
         ]
     },
-    巨大的铲子: {
-        图标: 'mdi-spade',
+    hugeSpade: {
+        icon: 'mdi-spade',
         stageLevel: 2,
-        shape: {0: '海滩'},
-        消耗(lvl) {
+        shape: {0: 'beach'},
+        price(lvl) {
             return {实心板: Math.pow(6, lvl) * buildNum(12, 'K')};
         },
-        制作时间: lvl => Math.round(Math.pow(1.5, lvl) * 9600),
-        效果: [
-            {name: '沙子增益', 类型: '+', value: lvl => Math.pow(1.75, lvl) * 2},
+        timeNeeded: lvl => Math.round(Math.pow(1.5, lvl) * 9600),
+        effect: [
+            {name: '沙子增益', type: '+', value: lvl => Math.pow(1.75, lvl) * 2},
         ]
     },
-    矿山: {
-        图标: 'mdi-tunnel',
+    矿井: {
+        icon: 'mdi-tunnel',
         stageLevel: 2,
-        shape: {0: '高山'},
-        消耗(lvl) {
-            return {event_log: Math.pow(25, lvl) * buildNum(30, 'M'), 实心板: Math.pow(8, lvl) * buildNum(37.5, 'K'), 砂岩: Math.pow(8, lvl) * 3300};
+        shape: {0: 'mountain'},
+        price(lvl) {
+            return {木头: Math.pow(25, lvl) * buildNum(30, 'M'), 实心板: Math.pow(8, lvl) * buildNum(37.5, 'K'), 砂岩: Math.pow(8, lvl) * 3300};
         },
-        制作时间: lvl => Math.round(Math.pow(1.5, lvl) * 10800),
-        效果: [
-            {name: '盐增益', 类型: '+', value: lvl => Math.pow(1.75, lvl) * 0.06},
-            {name: '煤增益', 类型: '+', value: lvl => Math.pow(1.75, lvl) * 0.005},
+        timeNeeded: lvl => Math.round(Math.pow(1.5, lvl) * 10800),
+        effect: [
+            {name: '盐增益', type: '+', value: lvl => Math.pow(1.75, lvl) * 0.06},
+            {name: '煤增益', type: '+', value: lvl => Math.pow(1.75, lvl) * 0.005},
         ]
     },
-    烤架: {
-        图标: 'mdi-grill',
+    grill: {
+        icon: 'mdi-grill',
         stageLevel: 2,
-        消耗(lvl) {
+        price(lvl) {
             return {椰子: Math.pow(25, lvl) * buildNum(100, 'M'), 石块: Math.pow(25, lvl) * buildNum(60, 'M')};
         },
-        制作时间: lvl => Math.round(Math.pow(1.5, lvl) * 7200),
+        timeNeeded: lvl => Math.round(Math.pow(1.5, lvl) * 7200),
         action: {
-            cookMeat: {图标: 'mdi-food-steak', input: {生肉: 1, 煤: 1}, output: {熟肉: 1}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.01},
-            cookFish: {图标: 'mdi-fish', input: {生鱼: 1, 煤: 1}, output: {熟鱼: 1}, minLevel: 2, speed: lvl => Math.pow(2, lvl) * 0.01},
+            cookMeat: {icon: 'mdi-food-steak', input: {生肉: 1, 煤: 1}, output: {熟肉: 1}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.01},
+            cookFish: {icon: 'mdi-fish', input: {生鱼: 1, 煤: 1}, output: {熟鱼: 1}, minLevel: 2, speed: lvl => Math.pow(2, lvl) * 0.01},
         }
     },
     挖掘机: {
-        图标: 'mdi-excavator',
+        icon: 'mdi-excavator',
         stageLevel: 2,
-        (0) 最高等级: 1,
+        {0} 最高等级: 1,
         maxAmount: 1,
-        消耗() {
+        price() {
             return {实心板: buildNum(120, 'K'), 砂岩: buildNum(10, 'K'), 混合物: 25};
         },
-        制作时间: () => 3600,
-        效果: [
-            {name: '地形改造', 类型: '解锁', value: () => true},
+        timeNeeded: () => 3600,
+        effect: [
+            {name: '地形改造', type: '解锁', value: () => true},
         ]
     },
-    开壳器: {
-        图标: 'mdi-filter',
+    shellOpener: {
+        icon: 'mdi-filter',
         stageLevel: 3,
-        shape: {0: '陆地', 1: '陆地', 3: '陆地'},
-        消耗(lvl) {
+        shape: {0: 'land', 1: 'land', 3: 'land'},
+        price(lvl) {
             return {椰子: Math.pow(40, lvl) * buildNum(8.5, 'B'), 砂岩: Math.pow(12, lvl) * buildNum(50, 'K')};
         },
-        制作时间: lvl => Math.round(Math.pow(1.5, lvl) * 14400),
+        timeNeeded: lvl => Math.round(Math.pow(1.5, lvl) * 14400),
         action: {
-            openShell: {图标: 'mdi-filter', input: {贝壳: buildNum(20, 'K')}, output: {金属零件: 3}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.01},
+            openShell: {icon: 'mdi-filter', input: {贝壳: buildNum(20, 'K')}, output: {金属零件: 3}, minLevel: 1, speed: lvl => Math.pow(2, lvl) * 0.01},
         },
-        效果: [
-            {name: '珍珠几率', 类型: 'summerFestivalBuildingBase', value: lvl => 0.0002 * lvl + 0.001}
+        effect: [
+            {name: 'pearlChance', type: 'summerFestivalBuildingBase', value: lvl => 0.0002 * lvl + 0.001}
         ]
     },
-    净水器: {
-        图标: 'mdi-air-filter',
+    waterPurifier: {
+        icon: 'mdi-air-filter',
         stageLevel: 3,
-        shape: {0: '陆地', 1: '水'},
-        消耗(lvl) {
+        shape: {0: 'land', 1: '水'},
+        price(lvl) {
             return {石块: Math.pow(25, lvl) * buildNum(60, 'B')};
         },
-        制作时间: lvl => Math.round(Math.pow(1.5, lvl) * 21600),
-        效果: [
-            {name: '淡水增益', 类型: '+', value: lvl => Math.pow(1.75, lvl) * 0.08},
-            {name: '盐增益', 类型: '+', value: lvl => Math.pow(1.75, lvl) * 0.01},
+        timeNeeded: lvl => Math.round(Math.pow(1.5, lvl) * 21600),
+        effect: [
+            {name: '淡水增益', type: '+', value: lvl => Math.pow(1.75, lvl) * 0.08},
+            {name: '盐增益', type: '+', value: lvl => Math.pow(1.75, lvl) * 0.01},
         ]
     },
-    捕鱼网: {
-        图标: 'mdi-spider-web',
+    fishingNet: {
+        icon: 'mdi-spider-web',
         stageLevel: 3,
         shape: {0: '水', 1: '水'},
-        消耗(lvl) {
+        price(lvl) {
             return {实心板: Math.pow(9, lvl) * buildNum(350, 'K'), 砂岩: Math.pow(7, lvl) * buildNum(405, 'K')};
         },
-        制作时间: lvl => Math.round(Math.pow(1.5, lvl) * 28800),
-        效果: [
-            {name: '生鱼增益', 类型: '+', value: lvl => Math.pow(1.75, lvl) * 0.03},
+        timeNeeded: lvl => Math.round(Math.pow(1.5, lvl) * 28800),
+        effect: [
+            {name: '生鱼增益', type: '+', value: lvl => Math.pow(1.75, lvl) * 0.03},
         ]
     },
     灯塔: {
-        图标: 'mdi-lighthouse',
+        icon: 'mdi-lighthouse',
         stageLevel: 3,
-        (0) 最高等级: 1,
-        shape: {0: '高山'},
-        消耗() {
+        {0} 最高等级: 1,
+        shape: {0: 'mountain'},
+        price() {
             return {珍珠: 1};
         },
-        制作时间: () => 43200,
-        效果: [
-            {name: '建造队列速度', 类型: '*', value: () => 2},
-            {name: '材料增益', 类型: '*', value: () => 1.5},
-            {name: '材料堆叠容量', 类型: '*', value: () => 5}
+        timeNeeded: () => 43200,
+        effect: [
+            {name: '建造队列速度', type: '*', value: () => 2},
+            {name: '材料增益', type: '*', value: () => 1.5},
+            {name: '材料堆叠容量', type: '*', value: () => 5}
         ]
     },
-    胡椒田: {
-        图标: 'mdi-flower-outline',
+    pepperField: {
+        icon: 'mdi-flower-outline',
         stageLevel: 4,
-        shape: {0: '棕榈树', 1: '陆地'},
-        消耗(lvl) {
+        shape: {0: 'palm', 1: 'land'},
+        price(lvl) {
             return {椰子: Math.pow(25, lvl) * buildNum(975, 'B'), 砂岩: Math.pow(8, lvl) * buildNum(2.75, 'M')};
         },
-        制作时间: lvl => Math.round(Math.pow(1.5, lvl) * 57600),
-        效果: [
-            {name: '胡椒增益', 类型: '+', value: lvl => Math.pow(1.75, lvl) * 0.6},
+        timeNeeded: lvl => Math.round(Math.pow(1.5, lvl) * 57600),
+        effect: [
+            {name: '胡椒增益', type: '+', value: lvl => Math.pow(1.75, lvl) * 0.6},
         ]
     },
-    蜂窝: {
-        图标: 'mdi-beehive-outline',
+    蜂巢: {
+        icon: 'mdi-beehive-outline',
         stageLevel: 4,
-        shape: {0: '森林'},
-        消耗(lvl) {
-            return {event_log: Math.pow(25, lvl) * buildNum(7.1, 'T'), 硬钢: Math.pow(6, lvl) * 75};
+        shape: {0: 'forest'},
+        price(lvl) {
+            return {木头: Math.pow(25, lvl) * buildNum(7.1, 'T'), 硬钢: Math.pow(6, lvl) * 75};
         },
-        制作时间: lvl => Math.round(Math.pow(1.5, lvl) * 72000),
-        效果: [
-            {name: '蜂蜜增益', 类型: '+', value: lvl => Math.pow(1.75, lvl) * 0.04},
+        timeNeeded: lvl => Math.round(Math.pow(1.5, lvl) * 72000),
+        effect: [
+            {name: '蜂蜜增益', type: '+', value: lvl => Math.pow(1.75, lvl) * 0.04},
         ]
     },
-    柑橘种植园: {
-        图标: 'mdi-tree',
+    citrusPlantation: {
+        icon: 'mdi-tree',
         stageLevel: 4,
-        shape: {0: '棕榈树', 1: '陆地', 2: '陆地'},
-        消耗(lvl) {
+        shape: {0: 'palm', 1: 'land', 2: 'land'},
+        price(lvl) {
             return {石块: Math.pow(25, lvl) * buildNum(63, 'T'), 实心板: Math.pow(8, lvl) * buildNum(5, 'M')};
         },
-        制作时间: lvl => Math.round(Math.pow(1.5, lvl) * 86400),
-        效果: [
-            {name: '柑橘类水果增益', 类型: '+', value: lvl => Math.pow(1.75, lvl) * 0.12},
+        timeNeeded: lvl => Math.round(Math.pow(1.5, lvl) * 86400),
+        effect: [
+            {name: '柑橘类水果增益', type: '+', value: lvl => Math.pow(1.75, lvl) * 0.12},
         ]
     }
 }

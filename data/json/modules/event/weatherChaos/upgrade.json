@@ -1,32 +1,37 @@
 [
   {
     "名称": "多汁的诱饵",
-    "消耗": "${ 海藻: {(1.35 + 0.08  \\cdot  lvl)}^{lvl}  \\cdot  500 }$",
-    "效果": "最大鱼尺寸+｛$lvl  \\cdot  0.1$｝; 最大鱼尺寸*｛$lvl  \\cdot  0.1 + 1$｝",
-    "上限": ""
+    "type": "weatherChaos",
+    "price": "${ 海藻: {(1.35 + 0.08  \\cdot  lvl)}^{lvl}  \\cdot  500 }$",
+    "effect": "最大鱼尺寸+｛$lvl  \\cdot  0.1$｝; 最大鱼尺寸*｛$lvl  \\cdot  0.1 + 1$｝",
+    "cap": ""
   },
   {
     "名称": "培养箱",
-    "消耗": "${ 浮木: {(1.25 + 0.065  \\cdot  lvl)}^{lvl}  \\cdot  250 }$",
-    "效果": "平均鱼尺寸+｛$lvl  \\cdot  0.2$｝; 平均鱼尺寸*｛$lvl  \\cdot  0.05 + 1$｝",
-    "上限": ""
+    "type": "weatherChaos",
+    "price": "${ 浮木: {(1.25 + 0.065  \\cdot  lvl)}^{lvl}  \\cdot  250 }$",
+    "effect": "平均鱼尺寸+｛$lvl  \\cdot  0.2$｝; 平均鱼尺寸*｛$lvl  \\cdot  0.05 + 1$｝",
+    "cap": ""
   },
   {
     "名称": "鱼哨",
-    "消耗": "${ 塑料: {(1.15 + 0.015  \\cdot  lvl)}^{lvl}  \\cdot  100 }$",
-    "效果": "钓鱼力量+｛$getSequence(1, lvl)  \\cdot  0.1 + lvl$｝",
-    "上限": ""
+    "type": "weatherChaos",
+    "price": "${ 塑料: {(1.15 + 0.015  \\cdot  lvl)}^{lvl}  \\cdot  100 }$",
+    "effect": "钓鱼力量+｛$getSequence(1, lvl)  \\cdot  0.1 + lvl$｝",
+    "cap": ""
   },
   {
     "名称": "污染",
-    "消耗": "${ 粘液: {(1.35)}^{lvl}  \\cdot  100 }$",
-    "效果": "垃圾增益*｛$lvl  \\cdot  0.1 + 1$｝",
-    "上限": ""
+    "type": "weatherChaos",
+    "price": "${ 粘液: {(1.35)}^{lvl}  \\cdot  100 }$",
+    "effect": "垃圾增益*｛$lvl  \\cdot  0.1 + 1$｝",
+    "cap": ""
   },
   {
     "名称": "金钩",
-    "消耗": "${ gem_topaz: lvl  \\cdot  250 + 500 }$",
-    "效果": "钓鱼时间*｛$1 / (lvl  \\cdot  0.25 + 1)$｝",
-    "上限": "4"
+    "type": "weatherChaos",
+    "price": "${ gem_topaz: lvl  \\cdot  250 + 500 }$",
+    "effect": "钓鱼时间*｛$1 / (lvl  \\cdot  0.25 + 1)$｝",
+    "cap": "4"
   }
 ]

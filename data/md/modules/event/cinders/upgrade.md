@@ -1,33 +1,33 @@
-| 名称  | 消耗  | 效果  | 上限  |
-| --- | --- | --- | --- |
-| 月光 | ${ 光: store.getters[' \cdot /新的更新!']('升级光成本', {(1000)}^{lvl}  \cdot  1M) }$ | 光增益*｛${(3)}^{lvl}$｝ |  |
-| 燃烧的苍蝇 | ${ 光: store.getters[' \cdot /新的更新!']('升级光成本', {(1.15)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  5000) }$ | 光增益 (萤火虫)+｛$lvl < 2 ?  : 4$｝; 光增益 (萤火虫)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
-| 更多孢子 | ${ 光: store.getters[' \cdot /新的更新!']('升级光成本', {(1.16)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  250M) }$ | 光增益 (发光蘑菇)+｛$lvl < 2 ?  : 225$｝; 光增益 (发光蘑菇)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
-| 翅片 | ${ 光: store.getters[' \cdot /新的更新!']('升级光成本', {(1.17)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  15T) }$ | 光增益 (发光鱼)+｛$lvl < 2 ?  : 14K$｝; 光增益 (发光鱼)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
-| 灯柱 | ${ 光: store.getters[' \cdot /新的更新!']('升级光成本', {(1.18)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  1.2Qi) }$ | 光增益 (灯)+｛$lvl < 2 ? [0, 150K][lvl] : 600K$｝; 光增益 (灯)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
-| 篝火故事 | ${ 光: store.getters[' \cdot /新的更新!']('升级光成本', {(1.19)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  120Sx) }$ | 光增益 (营火)+｛$lvl < 2 ? [0, 10M][lvl] : 40M$｝; 光增益 (营火)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
-| 海绵 | ${ 光: store.getters[' \cdot /新的更新!']('升级光成本', {(1.2)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  18O) }$ | 光增益 (珊瑚)+｛$lvl < 2 ? [0, 700M][lvl] : 2.2B$｝; 光增益 (珊瑚)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
-| 更长的触手 | ${ 光: store.getters[' \cdot /新的更新!']('升级光成本', {(1.25)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  3.6D) }$ | 光增益 (海蜇)+｛$lvl < 2 ? [0, 30B][lvl] : 120B$｝; 光增益 (海蜇)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
-| 夜间 | ${ 光: store.getters[' \cdot /新的更新!']('升级光成本', {(1.3)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  900UD) }$ | 光增益 (夜花)+｛$lvl < 2 ? [0, 1.1T][lvl] : 4.5T$｝; 光增益 (夜花)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
-| 城市 | ${ 光: store.getters[' \cdot /新的更新!']('升级光成本', {(1.35)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  270TD) }$ | 光增益 (霓虹灯)+｛$lvl < 2 ? [0, 30T][lvl] : 110T$｝; 光增益 (霓虹灯)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
-| 更多氦 | ${ 光: store.getters[' \cdot /新的更新!']('升级光成本', {(1.5)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  135QiD) }$ | 光增益 (太阳)+｛$lvl < 2 ? [0, 1Qa][lvl] : 4Qa$｝; 光增益 (太阳)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
-| 狂暴的苍蝇 | ${ 煤烟: lvl  \cdot  4 + 20 }$ | 光增益 (萤火虫)+｛$lvl  \cdot  2$｝ | 6 |
-| 菌丝 | ${ 煤烟: lvl  \cdot  5 + 25 }$ | 光增益 (发光蘑菇)+｛$lvl  \cdot  60$｝ | 6 |
-| 鳃 | ${ 煤烟: lvl  \cdot  6 + 30 }$ | 光增益 (发光鱼)+｛$lvl  \cdot  4300$｝ | 6 |
-| 调光器 | ${ 煤烟: lvl  \cdot  7 + 35 }$ | 光增益 (灯)+｛$lvl  \cdot  160K$｝ | 6 |
-| 棉花糖 | ${ 煤烟: lvl  \cdot  8 + 40 }$ | 光增益 (营火)+｛$lvl  \cdot  10.4M$｝ | 6 |
-| 海葵 | ${ 煤烟: lvl  \cdot  9 + 45 }$ | 光增益 (珊瑚)+｛$lvl  \cdot  600M$｝ | 6 |
-| 毒素 | ${ 煤烟: lvl  \cdot  10 + 50 }$ | 光增益 (海蜇)+｛$lvl  \cdot  31B$｝ | 6 |
-| 满月 | ${ 煤烟: lvl  \cdot  11 + 55 }$ | 光增益 (夜花)+｛$lvl  \cdot  1.2T$｝ | 6 |
-| 广告 | ${ 煤烟: lvl  \cdot  12 + 60 }$ | 光增益 (霓虹灯)+｛$lvl  \cdot  30T$｝ | 6 |
-| 距离更短 | ${ 煤烟: lvl  \cdot  13 + 65 }$ | 光增益 (太阳)+｛$lvl  \cdot  1Qa$｝ | 6 |
-| 明亮的萤火虫 | ${ gem_topaz: 400 }$ | 光增益 (萤火虫)*｛$lvl >= 1 ? 10 : null$｝ | 1 |
-| 明亮的发光蘑菇 | ${ gem_topaz: 500 }$ | 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
-| 明亮的发光鱼 | ${ gem_topaz: 600 }$ | 第一生产者成本*｛$lvl >= 1 ? 0.25 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
-| 明亮的灯 | ${ gem_topaz: 700 }$ | 煤烟增益*｛$lvl >= 1 ? 2 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
-| 明亮的营火 | ${ gem_topaz: 800 }$ | 煤渣代币增益*｛$lvl >= 1 ? 1.05 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
-| 明亮的珊瑚 | ${ gem_topaz: 900 }$ | 升级生产者要求+｛$lvl >= 1 ? -10 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
-| 明亮的海蜇 | ${ gem_topaz: 1000 }$ | 蜡烛力量*｛$lvl >= 1 ? 2 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
-| 明亮的夜花 | ${ gem_topaz: 1100 }$ | 非第一生产者成本*｛$lvl >= 1 ? 0.5 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
-| 明亮的霓虹灯 | ${ gem_topaz: 1200 }$ | 升级光成本*｛$lvl >= 1 ? 0.5 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
-| 明亮的阳光 | ${ gem_topaz: 1300 }$ | 光增益 (萤火虫)*｛$lvl >= 1 ? 2 : null$｝; 光增益 (发光蘑菇)*｛$lvl >= 1 ? 1.9 : null$｝; 光增益 (发光鱼)*｛$lvl >= 1 ? 1.8 : null$｝; 光增益 (灯)*｛$lvl >= 1 ? 1.7 : null$｝; 光增益 (营火)*｛$lvl >= 1 ? 1.6 : null$｝; 光增益 (珊瑚)*｛$lvl >= 1 ? 1.5 : null$｝; 光增益 (海蜇)*｛$lvl >= 1 ? 1.4 : null$｝; 光增益 (夜花)*｛$lvl >= 1 ? 1.3 : null$｝; 光增益 (霓虹灯)*｛$lvl >= 1 ? 1.2 : null$｝; 光增益 (太阳)*｛$lvl >= 1 ? 1.1 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
+| 名称  | type | price | effect | cap |
+| --- | ---- | ----- | ------ | --- |
+| 月光 | cinders | ${ 光: store.getters[' \cdot /get']('升级光成本', {(1000)}^{lvl}  \cdot  1M) }$ | 光增益*｛${(3)}^{lvl}$｝ |  |
+| 燃烧的苍蝇 | cinders | ${ 光: store.getters[' \cdot /get']('升级光成本', {(1.15)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  5000) }$ | 光增益 (萤火虫)+｛$lvl < 2 ?  : 4$｝; 光增益 (萤火虫)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
+| 更多孢子 | cinders | ${ 光: store.getters[' \cdot /get']('升级光成本', {(1.16)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  250M) }$ | 光增益 (发光蘑菇)+｛$lvl < 2 ?  : 225$｝; 光增益 (发光蘑菇)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
+| 翅片 | cinders | ${ 光: store.getters[' \cdot /get']('升级光成本', {(1.17)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  15T) }$ | 光增益 (发光鱼)+｛$lvl < 2 ?  : 14K$｝; 光增益 (发光鱼)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
+| 灯柱 | cinders | ${ 光: store.getters[' \cdot /get']('升级光成本', {(1.18)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  1.2Qi) }$ | 光增益 (灯)+｛$lvl < 2 ? [0, 150K][lvl] : 600K$｝; 光增益 (灯)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
+| 篝火故事 | cinders | ${ 光: store.getters[' \cdot /get']('升级光成本', {(1.19)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  120Sx) }$ | 光增益 (营火)+｛$lvl < 2 ? [0, 10M][lvl] : 40M$｝; 光增益 (营火)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
+| 海绵 | cinders | ${ 光: store.getters[' \cdot /get']('升级光成本', {(1.2)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  18O) }$ | 光增益 (珊瑚)+｛$lvl < 2 ? [0, 700M][lvl] : 2.2B$｝; 光增益 (珊瑚)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
+| 更长的触手 | cinders | ${ 光: store.getters[' \cdot /get']('升级光成本', {(1.25)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  3.6D) }$ | 光增益 (海蜇)+｛$lvl < 2 ? [0, 30B][lvl] : 120B$｝; 光增益 (海蜇)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
+| 夜间 | cinders | ${ 光: store.getters[' \cdot /get']('升级光成本', {(1.3)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  900UD) }$ | 光增益 (夜花)+｛$lvl < 2 ? [0, 1.1T][lvl] : 4.5T$｝; 光增益 (夜花)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
+| 城市 | cinders | ${ 光: store.getters[' \cdot /get']('升级光成本', {(1.35)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  270TD) }$ | 光增益 (霓虹灯)+｛$lvl < 2 ? [0, 30T][lvl] : 110T$｝; 光增益 (霓虹灯)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
+| 更多氦 | cinders | ${ 光: store.getters[' \cdot /get']('升级光成本', {(1.5)}^{lvl >= 1 ? lvl  \cdot  50 : 25}  \cdot  135QiD) }$ | 光增益 (太阳)+｛$lvl < 2 ? [0, 1Qa][lvl] : 4Qa$｝; 光增益 (太阳)*｛$lvl > 2 ? {(5)}^{lvl - 2} : null$｝ |  |
+| 狂暴的苍蝇 | cinders | ${ 煤烟: lvl  \cdot  4 + 20 }$ | 光增益 (萤火虫)+｛$lvl  \cdot  2$｝ | 6 |
+| 菌丝 | cinders | ${ 煤烟: lvl  \cdot  5 + 25 }$ | 光增益 (发光蘑菇)+｛$lvl  \cdot  60$｝ | 6 |
+| 鳃 | cinders | ${ 煤烟: lvl  \cdot  6 + 30 }$ | 光增益 (发光鱼)+｛$lvl  \cdot  4300$｝ | 6 |
+| 调光器 | cinders | ${ 煤烟: lvl  \cdot  7 + 35 }$ | 光增益 (灯)+｛$lvl  \cdot  160K$｝ | 6 |
+| 棉花糖 | cinders | ${ 煤烟: lvl  \cdot  8 + 40 }$ | 光增益 (营火)+｛$lvl  \cdot  10.4M$｝ | 6 |
+| 海葵 | cinders | ${ 煤烟: lvl  \cdot  9 + 45 }$ | 光增益 (珊瑚)+｛$lvl  \cdot  600M$｝ | 6 |
+| 毒素 | cinders | ${ 煤烟: lvl  \cdot  10 + 50 }$ | 光增益 (海蜇)+｛$lvl  \cdot  31B$｝ | 6 |
+| 满月 | cinders | ${ 煤烟: lvl  \cdot  11 + 55 }$ | 光增益 (夜花)+｛$lvl  \cdot  1.2T$｝ | 6 |
+| 广告 | cinders | ${ 煤烟: lvl  \cdot  12 + 60 }$ | 光增益 (霓虹灯)+｛$lvl  \cdot  30T$｝ | 6 |
+| 距离更短 | cinders | ${ 煤烟: lvl  \cdot  13 + 65 }$ | 光增益 (太阳)+｛$lvl  \cdot  1Qa$｝ | 6 |
+| 明亮的萤火虫 | cinders | ${ gem_topaz: 400 }$ | 光增益 (萤火虫)*｛$lvl >= 1 ? 10 : null$｝ | 1 |
+| 明亮的发光蘑菇 | cinders | ${ gem_topaz: 500 }$ | 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
+| 明亮的发光鱼 | cinders | ${ gem_topaz: 600 }$ | 第一生产者成本*｛$lvl >= 1 ? 0.25 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
+| 明亮的灯 | cinders | ${ gem_topaz: 700 }$ | 煤烟增益*｛$lvl >= 1 ? 2 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
+| 明亮的营火 | cinders | ${ gem_topaz: 800 }$ | 煤渣代币增益*｛$lvl >= 1 ? 1.05 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
+| 明亮的珊瑚 | cinders | ${ gem_topaz: 900 }$ | 升级生产者要求+｛$lvl >= 1 ? -10 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
+| 明亮的海蜇 | cinders | ${ gem_topaz: 1000 }$ | 蜡烛力量*｛$lvl >= 1 ? 2 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
+| 明亮的夜花 | cinders | ${ gem_topaz: 1100 }$ | 非第一生产者成本*｛$lvl >= 1 ? 0.5 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
+| 明亮的霓虹灯 | cinders | ${ gem_topaz: 1200 }$ | 升级光成本*｛$lvl >= 1 ? 0.5 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |
+| 明亮的阳光 | cinders | ${ gem_topaz: 1300 }$ | 光增益 (萤火虫)*｛$lvl >= 1 ? 2 : null$｝; 光增益 (发光蘑菇)*｛$lvl >= 1 ? 1.9 : null$｝; 光增益 (发光鱼)*｛$lvl >= 1 ? 1.8 : null$｝; 光增益 (灯)*｛$lvl >= 1 ? 1.7 : null$｝; 光增益 (营火)*｛$lvl >= 1 ? 1.6 : null$｝; 光增益 (珊瑚)*｛$lvl >= 1 ? 1.5 : null$｝; 光增益 (海蜇)*｛$lvl >= 1 ? 1.4 : null$｝; 光增益 (夜花)*｛$lvl >= 1 ? 1.3 : null$｝; 光增益 (霓虹灯)*｛$lvl >= 1 ? 1.2 : null$｝; 光增益 (太阳)*｛$lvl >= 1 ? 1.1 : null$｝; 光增益*｛$lvl >= 1 ? 1.5 : null$｝ | 1 |

@@ -1,5 +1,5 @@
-| 名称  | 上限  | 消耗  | 效果  |
-| --- | --- | --- | --- |
-| 额外的建筑槽位 | 3 | ${ gem_topaz: {(2)}^{lvl}  \cdot  250 }$ | 建造队列插槽+｛$lvl  \cdot  2$｝ |
-| 双倍时间 | 5 | ${ gem_topaz: lvl  \cdot  100 + 200 }$ | 建造队列速度*｛$lvl + 1$｝ |
-| 热带祝福 | 8 | ${ gem_topaz: lvl  \cdot  50 + 100 }$ | 材料增益*｛$lvl  \cdot  0.25 + 1$｝; 材料堆叠容量+｛$lvl  \cdot  5$｝ |
+| 名称  | type | cap | price | effect |
+| --- | ---- | --- | ----- | ------ |
+| 额外的建筑槽位 | summerFestival | 3 | ${ gem_topaz: {(2)}^{lvl}  \cdot  250 }$ | 建造队列插槽+｛$lvl  \cdot  2$｝ |
+| 双倍时间 | summerFestival | 5 | ${ gem_topaz: lvl  \cdot  100 + 200 }$ | 建造队列速度*｛$lvl + 1$｝ |
+| 热带祝福 | summerFestival | 8 | ${ gem_topaz: lvl  \cdot  50 + 100 }$ | 材料增益*｛$lvl  \cdot  0.25 + 1$｝; 材料堆叠容量+｛$lvl  \cdot  5$｝ |

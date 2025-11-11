@@ -1,0 +1,5 @@
+名称,mult,icon,effect
+taxes,税收政策,"<i class=""mdi mdi-cash-register""></i>",税率mult｛$lvl  \cdot  0.25 + 1$｝; 幸福base｛$lvl  \cdot  (lvl > 0 ? -0.05 : -0.03)$｝
+immigration,移民政策,"<i class=""mdi mdi-account-group""></i>",工人mult｛$lvl  \cdot  0.15 + 1$｝; 幸福base｛$lvl  \cdot  (lvl > 0 ? -0.05 : -0.1)$｝
+religion,宗教政策,"<i class=""mdi mdi-hands-pray""></i>",所有资源增益mult｛$lvl  \cdot  (lvl > 0 ? -0.25 : -0.1) + 1$｝; 信仰增益mult｛$lvl  \cdot  0.25 + 1$｝
+扫描,扫描政策,"<i class=""mdi mdi-magnify-scan""></i>","战利品增益mult｛$1 - lvl  \cdot  (lvl > 0 ? 0.1 : 0.05)$｝; 战利品品质base｛$Math.max(lvl, 0)$｝; 战利品品质mult｛$Math.min(1 + lvl  \cdot  0.1, 1)$｝"

@@ -1,7 +1,14 @@
 [
   {
     "0": "relicFeature",
-    "1": "relicMuseum",
-    "名称": "解锁"
+    "1": "博物馆",
+    "名称": "解锁",
+    "最高力量": ""
+  },
+  {
+    "0": "",
+    "1": "",
+    "名称": "currency",
+    "最高力量": "{\"color\":\"金色油漆\",\"icon\":\"mdi-battery-high\",\"overcapMult\":0.9,\"overcapScaling\":0.9,\"gainMult\":{\"baseValue\":2,\"display\":\"perHour\"},\"showGainMult\":true,\"showGainTimer\":true,\"capMult\":{\"baseValue\":50}}"
   }
 ]

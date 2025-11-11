@@ -1,69 +1,83 @@
 {
     aluminium: {
-        消耗: {
-            铝矿石: {+: 1000, increment: 50},
-            花岗岩: {+: 800, increment: 800}
+        price(lvl) {
+            return {
+                铝矿石: Math.pow(MINING_SMELTERY_ORE_INCREMENT, lvl) * 1000,
+                花岗岩: Math.pow(1.1, lvl) * 7500,
+            };
         },
         output: '铝锭',
-        制作时间: 300,
+        timeNeeded: 300,
         minTemperature: 100
     },
     bronze: {
-        消耗: {
-            铜矿石: {+: 900, increment: 45},
-            锡矿石: {+: 100, increment: 5},
-            盐: {+: 150, increment: 50}
+        price(lvl) {
+            return {
+                铜矿石: Math.pow(MINING_SMELTERY_ORE_INCREMENT, lvl) * 900,
+                锡矿石: Math.pow(MINING_SMELTERY_ORE_INCREMENT, lvl) * 100,
+                盐: Math.pow(1.06, lvl) * 800,
+            };
         },
         output: '青铜锭',
-        制作时间: SECONDS_PER_HOUR,
+        timeNeeded: SECONDS_PER_HOUR,
         minTemperature: 275
     },
     steel: {
-        消耗: {
-            铁矿石: {+: 1000, increment: 50},
-            煤: {+: 2, increment: 0}
+        price(lvl) {
+            return {
+                铁矿石: Math.pow(MINING_SMELTERY_ORE_INCREMENT, lvl) * 1000,
+                煤: 5,
+            };
         },
         output: '钢锭',
-        制作时间: 8 * SECONDS_PER_HOUR,
+        timeNeeded: 8 * SECONDS_PER_HOUR,
         minTemperature: 500
     },
     titanium: {
-        消耗: {
-            钛矿石: {+: 1000, increment: 50},
-            硫: {+: 200, increment: 10},
-            硝: {+: 50, increment: 0}
+        price(lvl) {
+            return {
+                钛矿石: Math.pow(MINING_SMELTERY_ORE_INCREMENT, lvl) * 1000,
+                硫: Math.pow(1.06, lvl) * 200,
+                硝: 100,
+            };
         },
         output: '钛锭',
-        制作时间: 3 * SECONDS_PER_DAY,
+        timeNeeded: 3 * SECONDS_PER_DAY,
         minTemperature: 800
     },
     闪亮肥料: {
-        消耗: {
-            铂矿石: {+: 1000, increment: 50},
-            黑曜石: {+: buildNum(2, 'M'), increment: buildNum(100, 'K')}
+        price(lvl) {
+            return {
+                铂矿石: Math.pow(MINING_SMELTERY_ORE_INCREMENT, lvl) * 1000,
+                黑曜石: Math.pow(1.1, lvl) * 2e6,
+            };
         },
         output: '闪亮的金属锭',
-        制作时间: 30 * SECONDS_PER_DAY,
-        minTemperature: 1200
+        timeNeeded: 30 * SECONDS_PER_DAY,
+        minTemperature: 1250
     },
     iridium: {
-        消耗: {
-            铱矿石: {+: 1000, increment: 50},
-            氦: {+: buildNum(10, 'K'), increment: 2500}
+        price(lvl) {
+            return {
+                铱矿石: Math.pow(MINING_SMELTERY_ORE_INCREMENT, lvl) * 1000,
+                氦: Math.pow(1.1, lvl) * 1e4,
+            };
         },
         output: '铱锭',
-        制作时间: 365 * SECONDS_PER_DAY,
-        minTemperature: 1750
+        timeNeeded: SECONDS_PER_YEAR,
+        minTemperature: 2000
     },
     darkIron: {
-        消耗: {
-            铁矿石: {+: buildNum(10, 'M'), increment: buildNum(500, 'K')},
-            锇矿石: {+: 1000, increment: 50},
-            深岩: {+: buildNum(100, 'M'), increment: buildNum(25, 'M')},
-            氖: {+: buildNum(10, 'K'), increment: 2500}
+        price(lvl) {
+            return {
+                铁矿石: Math.pow(MINING_SMELTERY_ORE_INCREMENT, lvl) * 1e7,
+                锇矿石: Math.pow(MINING_SMELTERY_ORE_INCREMENT, lvl) * 1000,
+                深岩: Math.pow(1.1, lvl) * 1e8,
+                氖: Math.pow(1.1, lvl) * 1e4,
+            };
         },
         output: '黑铁锭',
-        制作时间: 5000 * SECONDS_PER_DAY,
-        minTemperature: 2500
+        timeNeeded: 15 * SECONDS_PER_YEAR,
+        minTemperature: 3000
     },
 }

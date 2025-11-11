@@ -1,84 +1,84 @@
-function bossTimeMult(bossFight = 0) {
-    return bossFight === 2 ? 5 : (bossFight === 1 ? 2 : 1);
+function bossTimeMult(bossFight = false) {
+    return bossFight ? 5 : 1;
 }
 export default {
-    力量: {
-        图标: 'mdi-dumbbell',
-        color: 'deep-橙色',
+    最高力量: {
+        icon: 'mdi-dumbbell',
+        color: '橙红色油漆',
         stats: lvl => {
             return {
-                攻击plus: {类型: '*', amount: Math.pow(1.4, lvl)},
+                攻击plus: {type: '*', amount: Math.pow(1.4, lvl)},
             };
         }
     },
-    生命值: {
-        图标: 'mdi-heart',
-        color: '红色',
+    生命值plus: {
+        icon: 'mdi-heart',
+        color: '红色油漆',
         stats: lvl => {
             return {
-                生命值: {类型: '*', amount: Math.pow(1.5, lvl)},
+                生命值plus: {type: '*', amount: Math.pow(1.5, lvl)},
             };
         }
     },
-    猛击: {
+    bashing: {
         minZone: 22,
-        图标: 'mdi-hammer',
-        color: 'pale-红色',
+        icon: 'mdi-hammer',
+        color: 'pale-红色油漆',
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'stun', value: lvl + 3}
+                    {type: 'stun', value: lvl + 3}
                 ];
             },
             cooldown: () => 5,
             startCooldown: () => 0,
-            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
+            uses: (lvl, boss) => lvl * bossTimeMult(boss)
         }
     },
-    恢复: {
+    recovery: {
         minZone: 24,
-        图标: 'mdi-medical-bag',
-        color: '绿色',
+        icon: 'mdi-medical-bag',
+        color: '绿色油漆',
         stats: lvl => {
             return {
-                生命值: {类型: '*', amount: Math.pow(1.12, lvl)},
+                生命值plus: {type: '*', amount: Math.pow(1.12, lvl)},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl, boss) {
                 return [
-                    {类型: 'heal', value: lvl * 0.05 + 0.3}
+                    {type: 'heal', value: (lvl * 0.05 + 0.3) / bossTimeMult(boss)}
                 ];
             },
             cooldown: () => 20,
             startCooldown: () => 10,
-            uses: lvl => lvl
+            uses: (lvl, boss) => lvl * bossTimeMult(boss)
         }
     },
-    韧性: {
+    toughness: {
         minZone: 26,
-        图标: 'mdi-shield-sword',
-        color: '樱桃色',
+        icon: 'mdi-shield-sword',
+        color: 'cherry',
         stats: lvl => {
             return {
-                physicTaken: {类型: '*', amount: Math.pow(0.4, lvl)},
+                physicTaken: {type: '*', amount: Math.pow(0.4, lvl)},
             };
         },
-        exclude: ['智慧']
+        exclude: ['wisdom']
     },
-    力量: {
+    strength: {
         minZone: 28,
-        图标: 'mdi-arm-flex',
-        color: '红色',
+        icon: 'mdi-arm-flex',
+        color: '红色油漆',
         stats: lvl => {
             return {
-                physicAttack: {类型: '*', amount: Math.pow(1.2, lvl)},
+                physicAttack: {type: '*', amount: Math.pow(1.2, lvl)},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damagePhysic', value: lvl * 1.5 + 1.25}
+                    {type: 'damagePhysic', value: lvl * 1.5 + 1.25}
                 ];
             },
             cooldown: () => 8,
@@ -88,242 +88,242 @@ export default {
     },
     魔法: {
         minZone: 30,
-        图标: 'mdi-magic-staff',
-        color: 'deep-紫色',
-        stats: (lvl, 击败 (0) (+(1))) => {
+        icon: 'mdi-magic-staff',
+        color: 'deep-紫色油漆',
+        stats: (lvl, boss) => {
             return {
-                firstStrike: {类型: '+', amount: 2.25 * lvl * bossTimeMult(击败 (0) (+(1)))},
-                magicConversion: {类型: '+', amount: 1.5 * lvl},
+                firstStrike: {type: '+', amount: 2.25 * lvl * bossTimeMult(boss)},
+                magicConversion: {type: '+', amount: 1.5 * lvl},
             };
         }
     },
-    魔法箭: {
+    magicBolt: {
         minZone: 32,
-        图标: 'mdi-motion',
+        icon: 'mdi-motion',
         color: 'indigo',
         stats: lvl => {
             return {
-                magicAttack: {类型: '*', amount: Math.pow(1.2, lvl)},
-                magicConversion: {类型: '+', amount: 0.4 * lvl},
+                magicAttack: {type: '*', amount: Math.pow(1.2, lvl)},
+                magicConversion: {type: '+', amount: 0.4 * lvl},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damageMagic', value: lvl * 1.5 + 4}
+                    {type: 'damageMagic', value: lvl * 1.5 + 4}
                 ];
             },
             cooldown: () => 13,
             startCooldown: () => 3,
-            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
+            uses: (lvl, boss) => lvl * bossTimeMult(boss)
         }
     },
-    火球: {
+    fireball: {
         minZone: 34,
-        图标: 'mdi-fire-circle',
-        color: '橙色',
+        icon: 'mdi-fire-circle',
+        color: '橙色油漆',
         stats: lvl => {
             return {
-                magicAttack: {类型: '*', amount: Math.pow(1.2, lvl)},
-                magicConversion: {类型: '+', amount: 0.4 * lvl},
+                magicAttack: {type: '*', amount: Math.pow(1.2, lvl)},
+                magicConversion: {type: '+', amount: 0.4 * lvl},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damageMagic', value: lvl * 1.75 + 3.5},
-                    {类型: 'stun', value: 2}
+                    {type: 'damageMagic', value: lvl * 1.75 + 3.5},
+                    {type: 'stun', value: 2}
                 ];
             },
             cooldown: () => 16,
             startCooldown: () => 5,
-            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
+            uses: (lvl, boss) => lvl * bossTimeMult(boss)
         }
     },
-    无形: {
+    incorporeal: {
         minZone: 36,
-        图标: 'mdi-ghost',
-        color: '粉色',
+        icon: 'mdi-ghost',
+        color: '粉红色油漆',
         stats: lvl => {
             return {
-                掠夺: {类型: '*', amount: Math.pow(0.25, lvl)},
+                loot: {type: '*', amount: Math.pow(0.25, lvl)},
             };
         }
     },
-    聚焦: {
+    focus: {
         minZone: 38,
-        图标: 'mdi-image-filter-center-focus',
-        color: '红色-粉色',
+        icon: 'mdi-image-filter-center-focus',
+        color: '红色油漆-粉红色油漆',
         stats: lvl => {
             return {
-                physicAttack: {类型: '*', amount: Math.pow(1.2, lvl)},
+                physicAttack: {type: '*', amount: Math.pow(1.2, lvl)},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damagePhysic', value: getSequence(3, lvl) * 10}
+                    {type: 'damagePhysic', value: getSequence(3, lvl) * 10}
                 ];
             },
-            cooldown: (lvl, 击败 (0) (+(1))) => 28 * bossTimeMult(击败 (0) (+(1))),
-            startCooldown: (lvl, 击败 (0) (+(1))) => 28 * bossTimeMult(击败 (0) (+(1))),
+            cooldown: (lvl, boss) => 28 * bossTimeMult(boss),
+            startCooldown: (lvl, boss) => 28 * bossTimeMult(boss),
             uses: () => 1
         }
     },
-    智慧: {
+    wisdom: {
         minZone: 40,
-        图标: 'mdi-shield-star',
-        color: 'dark-blue',
+        icon: 'mdi-shield-star',
+        color: 'dark-蓝色油漆',
         stats: lvl => {
             return {
-                magicTaken: {类型: '*', amount: Math.pow(0.4, lvl)},
+                magicTaken: {type: '*', amount: Math.pow(0.4, lvl)},
             };
         },
-        exclude: ['弹力']
+        exclude: ['恢复力']
     },
     火花: {
         minZone: 42,
-        图标: 'mdi-flash',
-        color: '黄色',
+        icon: 'mdi-flash',
+        color: '黄色油漆',
         stats: lvl => {
             return {
-                magicConversion: {类型: '+', amount: 0.3 * lvl},
+                magicConversion: {type: '+', amount: 0.3 * lvl},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damageMagic', value: lvl * 0.9 + 1.7}
+                    {type: 'damageMagic', value: lvl * 0.9 + 1.7}
                 ];
             },
             cooldown: () => 5,
             startCooldown: () => 2,
-            uses: (lvl, 击败 (0) (+(1))) => lvl * 3 * bossTimeMult(击败 (0) (+(1)))
+            uses: (lvl, boss) => lvl * 3 * bossTimeMult(boss)
         }
     },
-    保护: {
+    protection: {
         minZone: 44,
-        图标: 'mdi-shield',
-        color: 'blue',
-        stats: (lvl, 击败 (0) (+(1))) => {
+        icon: 'mdi-shield',
+        color: '蓝色油漆',
+        stats: (lvl, boss) => {
             return {
-                divisionShield: {类型: '+', amount: 5 * lvl * bossTimeMult(击败 (0) (+(1)))},
+                divisionShield: {type: '+', amount: 5 * lvl * bossTimeMult(boss)},
             };
         }
     },
-    屏蔽: {
+    shielding: {
         minZone: 46,
-        图标: 'mdi-circle-slice-8',
-        color: 'teal',
-        stats: (lvl, 击败 (0) (+(1))) => {
+        icon: 'mdi-circle-slice-8',
+        color: '青色油漆',
+        stats: (lvl, boss) => {
             return {
-                divisionShield: {类型: '+', amount: 3 * lvl * bossTimeMult(击败 (0) (+(1)))},
+                divisionShield: {type: '+', amount: 3 * lvl * bossTimeMult(boss)},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'divisionShield', value: lvl + 2}
+                    {type: 'divisionShield', value: lvl + 2}
                 ];
             },
             cooldown: () => 11,
             startCooldown: () => 9,
-            uses: (lvl, 击败 (0) (+(1))) => (lvl + 1) * bossTimeMult(击败 (0) (+(1)))
+            uses: (lvl, boss) => (lvl + 1) * bossTimeMult(boss)
         }
     },
-    抵抗: {
+    resistance: {
         minZone: 48,
-        图标: 'mdi-circle-half-full',
-        color: '棕色',
+        icon: 'mdi-circle-half-full',
+        color: 'brown',
         stats: lvl => {
             return {
-                从眩晕中恢复得更快: {类型: '+', amount: lvl},
+                statusResist: {type: '+', amount: lvl},
             };
         },
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: '移除眩晕', value: null}
+                    {type: 'removeStun', value: null}
                 ];
             },
             cooldown: () => 7,
             startCooldown: () => 2,
-            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
+            uses: (lvl, boss) => lvl * bossTimeMult(boss)
         }
     },
     精确: {
         minZone: 50,
-        图标: 'mdi-bullseye-arrow',
-        color: '橙色',
+        icon: 'mdi-bullseye-arrow',
+        color: '橙色油漆',
         stats: lvl => {
             return {
-                critChance: {类型: '+', amount: 0.4 * lvl},
-                critMult: {类型: '+', amount: 0.35 * lvl},
+                critChance: {type: '+', amount: 0.4 * lvl},
+                critMult: {type: '+', amount: 0.35 * lvl},
             };
         }
     },
-    尖叫: {
+    screaming: {
         minZone: 52,
-        图标: 'mdi-bullhorn',
-        color: '青色',
+        icon: 'mdi-bullhorn',
+        color: 'cyan',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: '沉默药水', value: 6}
+                    {type: 'silence', value: 6}
                 ];
             },
             cooldown: () => 10,
             startCooldown: () => 0,
-            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
+            uses: (lvl, boss) => lvl * bossTimeMult(boss)
         }
     },
-    治愈: {
+    cure: {
         minZone: 54,
-        图标: 'mdi-tea',
+        icon: 'mdi-tea',
         color: 'lime',
         stats: lvl => {
             return {
-                bioTaken: {类型: '*', amount: Math.pow(0.75, lvl)},
+                bioTaken: {type: '*', amount: Math.pow(0.75, lvl)},
             };
         },
         激活的卡片: {
-            效果(lvl, 击败 (0) (+(1))) {
+            effect(lvl, boss) {
                 return [
-                    {类型: 'heal', value: (lvl * 0.025 + 0.075) / bossTimeMult(击败 (0) (+(1)))},
-                    {类型: '解毒剂', value: 1}
+                    {type: 'heal', value: (lvl * 0.025 + 0.075) / bossTimeMult(boss)},
+                    {type: 'antidote', value: 1}
                 ];
             },
             cooldown: () => 16,
             startCooldown: () => 12,
-            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
+            uses: (lvl, boss) => lvl * bossTimeMult(boss)
         }
     },
-    尖锐: {
+    sharp: {
         minZone: 56,
-        图标: 'mdi-nail',
-        color: '紫色',
+        icon: 'mdi-nail',
+        color: '紫色油漆',
         stats: lvl => {
             return {
-                cutting: {类型: '+', amount: 0.002 * lvl},
-                bioConversion: {类型: '+', amount: 1.5 * lvl},
+                cutting: {type: '+', amount: 0.002 * lvl},
+                bioConversion: {type: '+', amount: 1.5 * lvl},
             };
         },
-        exclude: ['处决']
+        exclude: ['executing']
     },
-    喷吐: {
+    spitting: {
         minZone: 56,
-        图标: 'mdi-water-opacity',
-        color: '光-绿色',
+        icon: 'mdi-water-opacity',
+        color: '浅绿色油漆',
         stats: lvl => {
             return {
-                bioAttack: {类型: '*', amount: Math.pow(1.2, lvl)},
-                bioConversion: {类型: '+', amount: 0.4 * lvl},
+                bioAttack: {type: '*', amount: Math.pow(1.2, lvl)},
+                bioConversion: {type: '+', amount: 0.4 * lvl},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damageBio', value: lvl * 1.4 + 2}
+                    {type: 'damageBio', value: lvl * 1.4 + 2}
                 ];
             },
             cooldown: () => 15,
@@ -331,20 +331,20 @@ export default {
             uses: () => null
         }
     },
-    爆裂: {
+    burst: {
         minZone: 58,
-        图标: 'mdi-liquid-spot',
-        color: 'pale-绿色',
+        icon: 'mdi-liquid-spot',
+        color: 'pale-绿色油漆',
         stats: lvl => {
             return {
-                bioConversion: {类型: '+', amount: 0.3 * lvl},
+                bioConversion: {type: '+', amount: 0.3 * lvl},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damageBio', value: getSequence(2, lvl) * 1.5 + 4.5},
-                    {类型: '毒药药水', value: lvl * 0.15 + 0.25}
+                    {type: 'damageBio', value: getSequence(2, lvl) * 1.5 + 4.5},
+                    {type: 'poison', value: lvl * 0.15 + 0.25}
                 ];
             },
             cooldown: () => 26,
@@ -352,30 +352,30 @@ export default {
             uses: () => 2
         }
     },
-    弹力: {
+    恢复力: {
         minZone: 60,
-        图标: 'mdi-shield-bug',
-        color: '绿色',
+        icon: 'mdi-shield-bug',
+        color: '绿色油漆',
         stats: lvl => {
             return {
-                bioTaken: {类型: '*', amount: Math.pow(0.4, lvl)},
+                bioTaken: {type: '*', amount: Math.pow(0.4, lvl)},
             };
         },
-        exclude: ['韧性']
+        exclude: ['toughness']
     },
-    生长: {
+    growing: {
         minZone: 62,
-        图标: 'mdi-resize',
+        icon: 'mdi-resize',
         color: 'beige',
         stats: lvl => {
             return {
-                生命值: {类型: '*', amount: Math.pow(1.3, lvl)},
+                生命值plus: {type: '*', amount: Math.pow(1.3, lvl)},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'gainStat', stat: 'attack_mult', value: lvl * 0.05 + 1.2}
+                    {type: 'gainStat', stat: 'attack_mult', value: lvl * 0.05 + 1.2}
                 ];
             },
             cooldown: () => 15,
@@ -383,53 +383,54 @@ export default {
             uses: lvl => lvl + 2
         }
     },
-    寒冷: {
+    cold: {
         minZone: 64,
-        图标: 'mdi-snowflake',
-        color: 'dark-blue',
+        icon: 'mdi-snowflake',
+        color: 'dark-蓝色油漆',
         stats: lvl => {
             return {
-                生命值: {类型: '*', amount: Math.pow(1.2, lvl)},
-                magicConversion: {类型: '+', amount: 0.25 * lvl},
+                生命值plus: {type: '*', amount: Math.pow(1.2, lvl)},
+                magicConversion: {type: '+', amount: 0.25 * lvl},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damageMagic', value: lvl * 2.5 + 2.75},
-                    {类型: 'stun', value: lvl * 2 + 6}
+                    {type: 'damageMagic', value: lvl * 2.5 + 2.75},
+                    {type: 'stun', value: lvl * 2 + 6}
                 ];
             },
             cooldown: () => 22,
             startCooldown: () => 14,
-            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
+            uses: (lvl, boss) => lvl * bossTimeMult(boss)
         }
     },
-    天使: {
+    angelic: {
         minZone: 66,
-        图标: 'mdi-cross',
-        color: '黄色',
+        icon: 'mdi-cross',
+        color: '黄色油漆',
         stats: lvl => {
             return {
-                复活+(0): {类型: '+', amount: lvl},
-                生命值: {类型: '*', amount: 0.15 * lvl + 0.5},
+                physicTaken: {type: '*', amount: Math.pow(1 / 1.4, lvl)},
+                magicTaken: {type: '*', amount: Math.pow(1 / 1.4, lvl)},
+                bioTaken: {type: '*', amount: Math.pow(1 / 1.4, lvl)},
             };
         }
     },
-    暴怒: {
+    fury: {
         minZone: 68,
-        图标: 'mdi-emoticon-angry',
-        color: '金色',
+        icon: 'mdi-emoticon-angry',
+        color: '金色油漆',
         stats: lvl => {
             return {
-                critChance: {类型: '+', amount: 0.55 * lvl},
+                critChance: {type: '+', amount: 0.55 * lvl},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damagePhysic', value: lvl * 0.6 + 1.55},
-                    {类型: 'gainStat', stat: 'attack_mult', value: 1.03}
+                    {type: 'damagePhysic', value: lvl * 0.6 + 1.55},
+                    {type: 'gainStat', stat: 'attack_mult', value: 1.03}
                 ];
             },
             cooldown: () => 4,
@@ -437,31 +438,31 @@ export default {
             uses: lvl => lvl * 4 + 2
         }
     },
-    有毒: {
+    toxic: {
         minZone: 70,
-        图标: 'mdi-bottle-tonic-skull',
-        color: '光-绿色',
+        icon: 'mdi-bottle-tonic-skull',
+        color: '浅绿色油漆',
         stats: lvl => {
             return {
-                有毒: {类型: '+', amount: 0.01 * lvl},
-                bioConversion: {类型: '+', amount: 1.5 * lvl},
+                toxic: {type: '+', amount: 0.01 * lvl},
+                bioConversion: {type: '+', amount: 1.5 * lvl},
             };
         }
     },
-    口臭: {
+    foulBreath: {
         minZone: 80,
-        图标: 'mdi-cloud-alert',
-        color: '绿色',
+        icon: 'mdi-cloud-alert',
+        color: '绿色油漆',
         stats: lvl => {
             return {
-                bioAttack: {类型: '*', amount: Math.pow(1.2, lvl)},
-                bioConversion: {类型: '+', amount: 0.4 * lvl},
+                bioAttack: {type: '*', amount: Math.pow(1.2, lvl)},
+                bioConversion: {type: '+', amount: 0.4 * lvl},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: '毒药药水', value: lvl * 0.02 + 0.02}
+                    {type: 'poison', value: lvl * 0.02 + 0.02}
                 ];
             },
             cooldown: () => 11,
@@ -469,118 +470,152 @@ export default {
             uses: lvl => lvl + 1
         }
     },
-    核弹: {
+    nuke: {
         minZone: 90,
-        图标: 'mdi-nuke',
-        color: '橙色-红色',
-        上限: 5,
+        icon: 'mdi-nuke',
+        color: '橙色油漆-红色油漆',
+        cap: 5,
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damagePhysic', value: Math.pow(2, lvl) * 250},
-                    {类型: 'damageMagic', value: Math.pow(2, lvl) * 250},
-                    {类型: 'damageBio', value: Math.pow(2, lvl) * 250},
+                    {type: 'damagePhysic', value: Math.pow(2, lvl) * 250},
+                    {type: 'damageMagic', value: Math.pow(2, lvl) * 250},
+                    {type: 'damageBio', value: Math.pow(2, lvl) * 250},
                 ];
             },
-            cooldown: (lvl, 击败 (0) (+(1))) => (75 - lvl * 5) * bossTimeMult(击败 (0) (+(1))),
-            startCooldown: (lvl, 击败 (0) (+(1))) => (75 - lvl * 5) * bossTimeMult(击败 (0) (+(1))),
+            cooldown: (lvl, boss) => (75 - lvl * 5) * bossTimeMult(boss),
+            startCooldown: (lvl, boss) => (75 - lvl * 5) * bossTimeMult(boss),
             uses: () => 1
         }
     },
-    彩虹: {
+    rainbow: {
         minZone: 100,
-        图标: 'mdi-looks',
-        color: '粉色',
-        上限: 1,
+        icon: 'mdi-looks',
+        color: '粉红色油漆',
+        cap: 1,
         stats: lvl => {
             return {
-                magicConversion: {类型: '+', amount: lvl},
-                bioConversion: {类型: '+', amount: lvl},
+                magicConversion: {type: '+', amount: lvl},
+                bioConversion: {type: '+', amount: lvl},
             };
         }
     },
-    流失: {
+    drain: {
         minZone: 110,
-        图标: 'mdi-hvac',
+        icon: 'mdi-hvac',
         color: 'lime',
-        stats: (lvl, 击败 (0) (+(1))) => {
+        stats: (lvl, boss) => {
             return {
-                生命值: {类型: '*', amount: Math.pow(1.1, lvl)},
-                divisionShield: {类型: '+', amount: 2 * lvl * bossTimeMult(击败 (0) (+(1)))},
+                生命值plus: {type: '*', amount: Math.pow(1.1, lvl)},
+                divisionShield: {type: '+', amount: 2 * lvl * bossTimeMult(boss)},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl, boss) {
                 return [
-                    {类型: 'damageMagic', value: lvl * 0.2 + 0.85},
-                    {类型: 'damageBio', value: lvl * 0.2 + 0.85},
-                    {类型: 'heal', value: lvl * 0.01 + 0.05},
+                    {type: 'damageMagic', value: lvl * 0.2 + 0.85},
+                    {type: 'damageBio', value: lvl * 0.2 + 0.85},
+                    {type: 'heal', value: (lvl * 0.01 + 0.05) / bossTimeMult(boss)},
                 ];
             },
             cooldown: () => 14,
             startCooldown: () => 10,
-            uses: (lvl, 击败 (0) (+(1))) => (lvl + 2) * bossTimeMult(击败 (0) (+(1)))
+            uses: (lvl, boss) => (lvl + 2) * bossTimeMult(boss)
         }
     },
-    令人震惊: {
+    shocking: {
         minZone: 120,
-        图标: 'mdi-heart-flash',
-        color: '黄色',
+        icon: 'mdi-heart-flash',
+        color: '黄色油漆',
         stats: lvl => {
             return {
-                攻击plus: {类型: '*', amount: Math.pow(1.15, lvl)},
+                攻击plus: {type: '*', amount: Math.pow(1.15, lvl)},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damageMagic', value: lvl * 1.3 + 2},
-                    {类型: '沉默药水', value: lvl + 2}
+                    {type: 'damageMagic', value: lvl * 1.3 + 2},
+                    {type: 'silence', value: lvl + 2}
                 ];
             },
             cooldown: () => 15,
             startCooldown: () => 9,
-            uses: (lvl, 击败 (0) (+(1))) => lvl * bossTimeMult(击败 (0) (+(1)))
+            uses: (lvl, boss) => lvl * bossTimeMult(boss)
         }
     },
-    防御: {
+    defense: {
         minZone: 225,
-        图标: 'mdi-shield',
-        color: 'dark-blue',
-        stats: lvl => {
+        icon: 'mdi-shield',
+        color: 'dark-蓝色油漆',
+        stats: (lvl, boss) => {
             return {
-                生命值: {类型: '*', amount: Math.pow(1.15, lvl)},
-                防御: {类型: '+', amount: lvl * 0.001},
+                生命值plus: {type: '*', amount: Math.pow(1.15, lvl)},
+                defense: {type: '+', amount: lvl * (boss ? 0.1 : 1) * 0.001},
             };
         }
     },
-    处决: {
+    executing: {
         minZone: 275,
-        图标: 'mdi-skull',
-        color: 'pale-红色',
+        icon: 'mdi-skull',
+        color: 'pale-红色油漆',
         stats: lvl => {
             return {
-                攻击plus: {类型: '*', amount: Math.pow(1.15, lvl)},
-                处决+(0)%: {类型: '+', amount: lvl * 0.05},
+                攻击plus: {type: '*', amount: Math.pow(1.15, lvl)},
+                execute: {type: '+', amount: lvl * 0.05},
             };
         },
-        exclude: ['尖锐']
+        exclude: ['sharp']
     },
-    狂暴: {
+    raidRage: {
         minZone: Infinity,
-        图标: 'mdi-robot-angry',
-        color: 'deep-橙色',
+        icon: 'mdi-emoticon-angry',
+        color: '橙红色油漆',
         stats: lvl => {
             return {
-                攻击plus: {类型: '*', amount: Math.pow(2, lvl)},
-                生命值: {类型: '*', amount: Math.pow(0.75, lvl)},
+                cutting: {type: '+', amount: lvl * 0.001 + 0.009},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damagePhysic', value: lvl * 0.1 + 0.55},
-                    {类型: 'damageMagic', value: lvl * 0.3 + 1.15},
+                    {type: 'gainStat', stat: 'attack_mult', value: lvl * 0.01 + 1.29},
+                    {type: 'gainStat', stat: 'cutting_base', value: lvl * 0.001},
+                ];
+            },
+            cooldown: () => 30,
+            startCooldown: () => 30,
+            uses: () => null
+        }
+    },
+    monstrousToughness: {
+        minZone: Infinity,
+        icon: 'mdi-shield',
+        color: 'pale-蓝色油漆',
+        stats: lvl => {
+            return {
+                生命值plus: {type: '*', amount: Math.pow(1.03, lvl) * 50},
+                divisionShield: {type: '+', amount: lvl + 19},
+                bioTaken: {type: '*', amount: 0.02},
+                statusResist: {type: '+', amount: 4},
+            };
+        }
+    },
+    berserk: {
+        minZone: Infinity,
+        icon: 'mdi-robot-angry',
+        color: '橙红色油漆',
+        stats: lvl => {
+            return {
+                攻击plus: {type: '*', amount: Math.pow(2, lvl)},
+                生命值plus: {type: '*', amount: Math.pow(0.75, lvl)},
+            };
+        },
+        激活的卡片: {
+            effect(lvl) {
+                return [
+                    {type: 'damagePhysic', value: lvl * 0.1 + 0.55},
+                    {type: 'damageMagic', value: lvl * 0.3 + 1.15},
                 ];
             },
             cooldown: () => 7,
@@ -588,20 +623,20 @@ export default {
             uses: () => null
         }
     },
-    冰巨人: {
+    iceGiant: {
         minZone: Infinity,
-        图标: 'mdi-human',
+        icon: 'mdi-human',
         color: 'skyblue',
         stats: lvl => {
             return {
-                攻击plus: {类型: '*', amount: Math.pow(0.5, lvl)},
-                生命值: {类型: '*', amount: Math.pow(3.5, lvl)},
+                攻击plus: {type: '*', amount: Math.pow(0.5, lvl)},
+                生命值plus: {type: '*', amount: Math.pow(3.5, lvl)},
             };
         },
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'stun', value: lvl * 3 + 7}
+                    {type: 'stun', value: lvl * 3 + 7}
                 ];
             },
             cooldown: () => 25,
@@ -609,14 +644,14 @@ export default {
             uses: () => null
         }
     },
-    通用: {
+    generic: {
         minZone: Infinity,
-        图标: 'mdi-heart-flash',
-        color: '灰色',
+        icon: 'mdi-heart-flash',
+        color: 'grey',
         stats: lvl => {
             return {
-                攻击plus: {类型: '*', amount: Math.pow(1.2, lvl)},
-                生命值: {类型: '*', amount: Math.pow(1.2, lvl)},
+                攻击plus: {type: '*', amount: Math.pow(1.2, lvl)},
+                生命值plus: {type: '*', amount: Math.pow(1.2, lvl)},
             };
         }
     }

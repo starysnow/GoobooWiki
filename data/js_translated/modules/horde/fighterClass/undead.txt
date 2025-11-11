@@ -1,22 +1,22 @@
 {
     解锁: '不死职业',
-    图标: 'mdi-emoticon-dead',
+    icon: 'mdi-emoticon-dead',
     baseStats: {
         攻击plus: 1.8,
-        生命值: 60
+        生命值plus: 60
     },
-    经验值: {
+    exp: {
         +: 8400,
         increment: 1.7
     },
     skills: {},
     skillTree: [
-        {isInnate: true, 达到等级: 0, items: []},
+        {isInnate: true, level: 0, items: []},
     ],
     quests: {
         stat: [],
-        区域: [],
-        达到等级: [],
-        击败 (0) (+(1)): []
+        zone: [],
+        level: [],
+        boss: []
     }
 }

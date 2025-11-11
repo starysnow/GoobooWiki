@@ -1,30 +1,8 @@
-| 名称  | 图标  | 效果  |
-| --- | --- | --- |
-| 打印机 | <i class="mdi mdi-printer"></i> | 新风格保留｛true｝; 回收保留｛true｝; 垃圾分类galleryIdea｛true｝ |
-| 灯泡 | <i class="mdi mdi-lightbulb"></i> | 顿悟保留｛true｝; 灵感的开始+｛1｝ |
-| 旧电视 | <i class="mdi mdi-television-classic"></i> | 广告galleryIdea｛true｝ |
-| 令人担忧的邮件 | <i class="mdi mdi-email-alert"></i> | 缺乏耐心galleryIdea｛true｝ |
-| 红色气球 | <i class="mdi mdi-balloon"></i> | 红色力量保留｛true｝; 红色转换保留｛true｝ |
-| 一袋金子 | <i class="mdi mdi-sack"></i> | 观察彩虹galleryIdea｛true｝ |
-| 碎纸机 | <i class="mdi mdi-shredder"></i> | 过滤器保留｛true｝; 垃圾箱保留｛true｝; 建造堆肥机galleryIdea｛true｝ |
-| 红色印花 | <i class="mdi mdi-script-text"></i> | 红色愤怒保留｛true｝; 建造红色储备galleryIdea｛true｝ |
-| 橙色气球 | <i class="mdi mdi-balloon"></i> | 橙色力量保留｛true｝; 橙色转换保留｛true｝ |
-| 信用卡 | <i class="mdi mdi-credit-card"></i> | 订购大量保险箱galleryIdea｛true｝ |
-| 简单计算器 | <i class="mdi mdi-calculator"></i> | 计算胜算galleryIdea｛true｝ |
-| 橙色印花 | <i class="mdi mdi-script-text"></i> | 红色幸运保留｛true｝; 建造橙色储备galleryIdea｛true｝ |
-| 黄色气球 | <i class="mdi mdi-balloon"></i> | 黄色力量保留｛true｝; 黄色转换保留｛true｝ |
-| 鱼缸 | <i class="mdi mdi-fishbowl"></i> | 形状增益*｛1.5｝; 感到兴奋galleryIdea｛true｝ |
-| 铅笔 | <i class="mdi mdi-lead-pencil"></i> | 形状增益*｛1.5｝; Buy pengalleryIdea｛true｝ |
-| 小刷子 | <i class="mdi mdi-brush"></i> | 形状增益*｛1.5｝; 购买刷子galleryIdea｛true｝ |
-| 奇怪的药丸 | <i class="mdi mdi-pill-multiple"></i> | 形状增益*｛1.5｝; 高度关注galleryIdea｛true｝ |
-| 奇怪的卷轴 | <i class="mdi mdi-script-text"></i> | 保持神秘galleryIdea｛true｝ |
-| 印刷机 | <i class="mdi mdi-arrow-collapse-vertical"></i> | 现金增益*｛1.5｝; 印刷报纸galleryIdea｛true｝ |
-| 黄色印花 | <i class="mdi mdi-script-text"></i> | 橙色幸运保留｛true｝; 建造黄色储备galleryIdea｛true｝ |
-| 绿色气球 | <i class="mdi mdi-balloon"></i> | 绿色力量保留｛true｝; 绿色转换保留｛true｝ |
-| 木制衣架 | <i class="mdi mdi-hanger"></i> | 涂得更快galleryIdea｛true｝ |
-| 床单 | <i class="mdi mdi-bed-empty"></i> | 扩大画布galleryIdea｛true｝ |
-| 图片相册 | <i class="mdi mdi-image-album"></i> | 油漆桶储存保留｛true｝; 为了乐趣而作画galleryIdea｛true｝ |
-| 绿色印记 | <i class="mdi mdi-script-text"></i> | 黄色幸运保留｛true｝; 建造绿色储备galleryIdea｛true｝ |
-| 蓝色气球 | <i class="mdi mdi-balloon"></i> | 蓝色力量保留｛true｝; 蓝色转换保留｛true｝ |
-| 蓝色印记 | <i class="mdi mdi-script-text"></i> | 绿色幸运保留｛true｝; 建造蓝色储备galleryIdea｛true｝ |
-| 紫色气球 | <i class="mdi mdi-balloon"></i> | 紫色力量保留｛true｝; 紫色转换保留｛true｝ |
+| 名称  | icon | effect | glyph | 激活的卡片 |
+| --- | ---- | ------ | ----- | ----- |
+| 灯泡 | <i class="mdi mdi-lightbulb"></i> | $[{ name: '顿悟', type: '保留', value: true }, { name: '灵感的开始', type: '+', value: 1 }]$ | ${ 纸: 4 }$ |  |
+| 鱼缸 | <i class="mdi mdi-fishbowl"></i> | $[{ name: '形状增益', type: ' \cdot ', value: 1.5 }, { name: 'beExcited', type: 'galleryIdea', value: true }]$ | ${ 开花: 1, 叶子: 3 }$ |  |
+| 铅笔 | <i class="mdi mdi-lead-pencil"></i> | $[{ name: '形状增益', type: ' \cdot ', value: 1.5 }, { name: 'buyPen', type: 'galleryIdea', value: true }]$ | ${ 叶子: 1, 纸: 3 }$ |  |
+| 小刷子 | <i class="mdi mdi-brush"></i> | $[{ name: '形状增益', type: ' \cdot ', value: 1.5 }, { name: 'buyBrush', type: 'galleryIdea', value: true }]$ | ${ 叶子: 4 }$ | {"cost":{"最高力量":2},"params":"$[]$","description":"$[]$","disabled":"$store.state.cryolab.gallery.激活的卡片 \|| store.state.gallery.shapeGrid.reduce((a, b) => a + b.reduce((c, d) => c + (store.state.gallery.shape[d].isSpecial ? 1 : 0), 0), 0) > 0$","trigger":"${ let rngGen = store.getters['system/getRng']('gallery_randomShape'); store.commit('gallery/updateShapeCell', { x: randomInt(0, GALLERY_SHAPES_GRID_WIDTH - 1, rngGen()), y: randomInt(0, GALLERY_SHAPES_GRID_HEIGHT - 1, rngGen()), value: randomElem(store.getters['gallery/shapeSpecialWeights'], rngGen()) }); store.commit('system/nextRng', { name: 'gallery_randomShape', amount: 1 }, { root: true }); }$"} |
+| 奇怪的药丸 | <i class="mdi mdi-pill-multiple"></i> | $[{ name: '形状增益', type: ' \cdot ', value: 1.5 }, { name: 'hyperfocus', type: 'galleryIdea', value: true }]$ | ${ 开花: 3, 纸: 2 }$ |  |
+| 印刷机 | <i class="mdi mdi-arrow-collapse-vertical"></i> | $[{ name: '现金增益', type: ' \cdot ', value: 1.5 }, { name: 'printNewspaper', type: 'galleryIdea', value: true }]$ | ${ 开花: 5 }$ |  |

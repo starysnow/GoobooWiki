@@ -1,47 +1,36 @@
 {
-    彩色: {
-        类型: 'theme',
-        item: '彩色',
+    theme_colorful: {
+        type: 'theme',
+        item: 'colorful',
         pool: {
-            bloom: {消耗: {绽放代币: 180}}
+            bloom: {price: {绽放代币: 180}}
         }
     },
     七彩花: {
-        类型: '圣遗物',
+        type: 'relic',
         item: '七彩花',
         requirement() {
             return store.state.解锁.farmFeature.see;
         },
         pool: {
-            bloom: {消耗: {绽放代币: 170}}
+            bloom: {price: {绽放代币: 170}}
         }
     },
     加热灯泡: {
-        类型: '圣遗物',
+        type: 'relic',
         item: '加热灯泡',
         requirement() {
             return store.state.解锁.灵感.see;
         },
         pool: {
-            bloom: {消耗: {绽放代币: 200}}
+            bloom: {price: {绽放代币: 200}}
         }
     },
     cardPack_greenThumb: {
-        类型: '卡包',
+        type: '卡包',
         item: '园艺高手',
         pool: {
-            bloom: {消耗: {绽放代币: 30}}
-        }
-    },
-    超级鲜花: {
-        类型: 'consumable',
-        item: '超级鲜花',
-        amount: 20,
-        requirement() {
-            return store.state.解锁.肥料.see;
-        },
-        pool: {
-            bloom: {消耗: {绽放代币: 1}}
+            bloom: {price: {绽放代币: 30}}
         }
     }
 }

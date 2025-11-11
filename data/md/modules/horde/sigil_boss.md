@@ -1,0 +1,25 @@
+| 名称  | minZone | icon | 激活的卡片 |
+| --- | ------- | ---- | ----- |
+| pistol_gun | Infinity | <i class="mdi mdi-pistol"></i> | {"effect":"$[{ type: 'damagePhysic', value: 3.35 }]$","cooldown":"$4$","startCooldown":"$4$","uses":"$lvl  \\cdot  4$"} |
+| rifle_gun | Infinity | <i class="mdi mdi-pistol"></i> | {"effect":"$[{ type: 'damagePhysic', value: 2 }, { type: 'damageMagic', value: 0.75 }]$","cooldown":"$2$","startCooldown":"$2$","uses":"$lvl  \\cdot  6$"} |
+| shotgun_gun | Infinity | <i class="mdi mdi-pistol"></i> | {"effect":"$[{ type: 'damagePhysic', value: 2.6 }, { type: 'damageMagic', value: 2.6 }, { type: 'damageBio', value: 2.6 }]$","cooldown":"$13$","startCooldown":"$13$","uses":"$lvl  \\cdot  2$"} |
+| sniper_gun | Infinity | <i class="mdi mdi-target"></i> | {"effect":"$[{ type: 'damagePhysic', value: 11.5, canCrit: 8 }]$","cooldown":"$25$","startCooldown":"$25$","uses":"$lvl  \\cdot  1$"} |
+| war_grenade | Infinity | <i class="mdi mdi-bomb"></i> | {"effect":"$[{ type: 'damageMagic', value: 2.75 }, { type: 'stun', value: 2 }, { type: 'silence', value: 8 }]$","cooldown":"$12$","startCooldown":"$6$","uses":"$lvl$"} |
+| war_bandage | Infinity | <i class="mdi mdi-bandage"></i> | {"effect":"$[{ type: 'heal', value: 0.4 }]$","cooldown":"$8$","startCooldown":"$4$","uses":"$lvl$"} |
+| monkey_dart | Infinity | <i class="mdi mdi-arrow-projectile"></i> | {"effect":"$[{ type: 'damagePhysic', value: lvl  \\cdot  0.5 + 2.25 }]$","cooldown":"$5$","startCooldown":"$3$","uses":"$null$"} |
+| monkey_fire | Infinity | <i class="mdi mdi-fire"></i> | {"effect":"$[{ type: 'damageMagic', value: 4.5 }]$","cooldown":"$8$","startCooldown":"$4$","uses":"$lvl  \\cdot  4$"} |
+| monkey_ice | Infinity | <i class="mdi mdi-snowflake"></i> | {"effect":"$[{ type: 'damageMagic', value: 6.75 }, { type: 'stun', value: 3 }]$","cooldown":"$14$","startCooldown":"$7$","uses":"$lvl  \\cdot  2$"} |
+| monkey_lightning | Infinity | <i class="mdi mdi-flash"></i> | {"effect":"$[{ type: 'damageMagic', value: 5.1 }, { type: 'silence', value: 3 }]$","cooldown":"$10$","startCooldown":"$5$","uses":"$lvl  \\cdot  3$"} |
+| cute_ram | Infinity | <i class="mdi mdi-arrow-collapse-right"></i> | {"effect":"$[{ type: 'damageBio', value: lvl + 3.5 }, { type: 'stun', value: 3 }, { type: 'gainStat', stat: 'bioAttack_mult', value: 1.2 }]$","cooldown":"$12$","startCooldown":"$8$","uses":"$lvl  \\cdot  3$"} |
+| cute_eatCarrot | Infinity | <i class="mdi mdi-carrot"></i> | {"effect":"$[{ type: 'heal', value: lvl  \\cdot  0.05 + 0.4 }, { type: 'gainStat', stat: 'attack_mult', value: 1.1 }]$","cooldown":"$16$","startCooldown":"$12$","uses":"$lvl  \\cdot  2$"} |
+| cute_bark | Infinity | <i class="mdi mdi-volume-high"></i> | {"effect":"$[{ type: 'maxdamageBio', value: 0.06 }, { type: 'removeDivisionShield', value: 1 }]$","cooldown":"$11$","startCooldown":"$6$","uses":"$lvl$"} |
+| cute_bite | Infinity | <i class="mdi mdi-tooth"></i> | {"effect":"$[{ type: 'damageBio', value: lvl  \\cdot  1.5 + 5 }]$","cooldown":"$22$","startCooldown":"$8$","uses":"$null$"} |
+| cute_kick | Infinity | <i class="mdi mdi-seat-legroom-extra"></i> | {"effect":"$[{ type: 'damageBio', value: lvl  \\cdot  0.3 + 2.5 }, { type: 'silence', value: 2 }]$","cooldown":"$6$","startCooldown":"$0$","uses":"$lvl  \\cdot  8$"} |
+| cute_claws | Infinity | <i class="mdi mdi-nail"></i> | {"effect":"$[{ type: 'maxdamageBio', value: 0.1 }, { type: 'damageBio', value: lvl  \\cdot  1.3 + 4.5 }]$","cooldown":"$15$","startCooldown":"$10$","uses":"$lvl  \\cdot  3$"} |
+| ohilio_megagun | Infinity | <i class="mdi mdi-pistol"></i> | {"effect":"$[{ type: 'damagePhysic', value: 1M }, { type: 'damageMagic', value: 1M }, { type: 'damageBio', value: 1M }]$","cooldown":"$5$","startCooldown":"$5$","uses":"$null$"} |
+| chriz_magicMissile | Infinity | <i class="mdi mdi-motion"></i> | {"effect":"$[{ type: 'damageMagic', value: 3 }]$","cooldown":"$6$","startCooldown":"$0$","uses":"$25$"} |
+| chriz_fireball | Infinity | <i class="mdi mdi-fire"></i> | {"effect":"$[{ type: 'damageMagic', value: 11.5 }]$","cooldown":"$22$","startCooldown":"$4$","uses":"$null$"} |
+| chriz_iceBlast | Infinity | <i class="mdi mdi-snowflake"></i> | {"effect":"$[{ type: 'damageMagic', value: 6 }, { type: 'stun', value: 8 }]$","cooldown":"$30$","startCooldown":"$10$","uses":"$null$"} |
+| chriz_lightningStrike | Infinity | <i class="mdi mdi-flash"></i> | {"effect":"$[{ type: 'damageMagic', value: 7.25 }, { type: 'silence', value: 5 }]$","cooldown":"$15$","startCooldown":"$15$","uses":"$null$"} |
+| chriz_heal | Infinity | <i class="mdi mdi-medical-bag"></i> | {"effect":"$[{ type: 'heal', value: 0.4 }]$","cooldown":"$45$","startCooldown":"$45$","uses":"$3$"} |
+| mina_charm | Infinity | <i class="mdi mdi-heart"></i> | {"effect":"$[{ type: 'silence', value: 5 }, { type: 'gainStat', stat: 'bioAttack_mult', value: 1.6 }, { type: 'gainStat', stat: 'execute_base', value: 0.05 }]$","cooldown":"$30$","startCooldown":"$15$","uses":"$null$"} |

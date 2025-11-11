@@ -1,0 +1,11 @@
+| 名称  | relic | price | type | upgradeLevel | condition |
+| --- | ----- | ----- | ---- | ------------ | --------- |
+| 钻石镐 | 钻石镐 | 50 |  |  |  |
+| 钻石锤 | 钻石锤 | 50 |  |  |  |
+| 钻石剑 | 钻石剑 | 50 |  |  |  |
+| 钻石铲 | 钻石铲 | 50 |  |  |  |
+| 钻石刷子 | 钻石刷子 | 50 |  |  |  |
+| redCard_1 | 红牌 | 10 | upgrade | 1 |  |
+| briefcase_1 | 公文包 | 35 | upgrade | 1 |  |
+| diamondPillar_0 | 钻石柱子 | 40 |  |  |  |
+| diamondPillar_1 | 钻石柱子 | 100 | upgrade | 1 | $store.getters[' \cdot /get']('底座尺寸 (A)') >= 2$ |

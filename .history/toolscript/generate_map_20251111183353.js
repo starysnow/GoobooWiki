@@ -1,0 +1,152 @@
+// toolscript/generate_map.js (纯ESM版本)
+import fs from 'fs-extra';
+import path from 'path';
+import { globSync } from 'glob';
+import { fileURLToPath } from 'url';
+// import { register } from '@babel/register';
+
+// --- Babel 注册 ---
+// 使用 import 方式进行注册
+// register({
+//     presets: ['@babel/preset-env'],
+//     ignore: [/node_modules/],
+// });
+
+// --- 配置区 ---
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const SOURCE_LANG_DIR = path.resolve(__dirname, '../data/zh');
+const OUTPUT_MAP_FILE = path.resolve(__dirname, '../public/zh_map.json');
+
+// 1. 需要处理的前缀列表
+const PREFIX_LIST = [
+    'event', 'farm', 'gallery', 'general', 'horde', 'migration',
+    'mining', 'relic', 'school', 'treasure', 'village', 'theme', 'gem'
+];
+
+const IGNORE_FILES = ['patchnote.js', 'note.js']
+
+// 2. 需要完整保留其内部所有键值对的顶层键
+const RETAIN_KEYS_LIST = ['card'];
+
+
+
+async function generateFlatTranslationMap() {
+    console.log('🚀 [Map Generator] 开始生成扁平化翻译字典...');
+
+    if (!await fs.pathExists(SOURCE_LANG_DIR)) {
+        console.error(`❌ 错误：找不到源目录: ${SOURCE_LANG_DIR}`);
+        return;
+    }
+
+    // 在这里预先定义好必须存在的固定键值对
+    let allTranslations = {
+        "base": "+",
+        "mult": "*",
+        "keepUpgrade": "保留",
+        "uncapUpgrade": "无最大等级"
+    };
+
+    const sourceFiles = globSync(`${SOURCE_LANG_DIR}/**/*.js`);
+
+    console.log(`🔍 发现了 ${sourceFiles.length} 个JS语言文件，准备处理...`);
+
+    for (const filePath of sourceFiles) {
+        const relativePath = path.relative(process.cwd(), filePath);
+        const fileName = path.basename(filePath);
+        if (IGNORE_FILES.includes(fileName)) {
+            console.log(`  -> 忽略文件: ${path.relative(process.cwd(), filePath)}`);
+            continue;
+        }
+        console.log(`  -> 正在处理: ${relativePath}`);
+
+        try {
+            const module = await import(filePath);
+            const data = module.default;
+
+            if (typeof data !== 'object' || data === null) continue;
+
+            // --- 核心处理逻辑 ---
+            processObject(data, allTranslations);
+
+        } catch (error) {
+            console.error(`    [-] 处理失败: ${relativePath} - ${error.message}`);
+        }
+    }
+
+    // --- 写入最终的JSON文件 ---
+    try {
+        await fs.writeJson(OUTPUT_MAP_FILE, allTranslations, { spaces: 2 });
+        console.log(`\n✅ [Map Generator] 成功生成总翻译字典！`);
+        console.log(`   - 文件位置: ${OUTPUT_MAP_FILE}`);
+        console.log(`   - 总条目数: ${Object.keys(allTranslations).length}`);
+    } catch (error) {
+        console.error(`\n❌ [Map Generator] 写入最终文件时失败: ${error.message}`);
+    }
+}
+
+/**
+ * 核心递归处理函数
+ * @param {object} currentObject - 当前正在处理的对象
+ * @param {object} flatMap - 用于存储最终结果的扁平字典
+ */
+
+function processObject(currentObject, flatMap) {
+    for (const key in currentObject) {
+        if (Object.prototype.hasOwnProperty.call(currentObject, key)) {
+            const value = currentObject[key];
+
+            // --- 规则1: 智能前缀移除 ---
+            // 我们将去前缀操作提前，以便后续规则使用干净的键名
+            let finalKey = key;
+            const prefixRegex = new RegExp(`^(${PREFIX_LIST.join('|')})_`);
+            const match = key.match(prefixRegex);
+            if (match) {
+                finalKey = key.substring(match[1].length + 1);
+            }
+
+            // --- 规则2: 保留特定键下的所有内容 ---
+            if (RETAIN_KEYS_LIST.includes(key) && typeof value === 'object' && value !== null) {
+                // 将这个对象下的所有键值对，递归地添加到 flatMap 中
+                // 注意：这里我们对子对象也调用 processObject，以确保其内部也能应用所有规则
+                processObject(value, flatMap);
+                continue; // 处理完后跳过后续规则
+            }
+
+            // --- 规则3 (新): 简化包含 'description' 的双键对象 ---
+            if (
+                typeof value === 'object' && value !== null &&
+                Object.keys(value).length === 2 &&
+                'description' in value
+            ) {
+                // 找到那个不是 'description' 的键
+                const otherKey = Object.keys(value).find(k => k !== 'description');
+
+                // 使用另一个键的值作为这个词条的最终值
+                const simplifiedValue = value[otherKey];
+
+                // 检查冲突并添加到 flatMap
+                if (flatMap[finalKey] && flatMap[finalKey] !== simplifiedValue) {
+                    console.warn(`    [!] 键冲突警告 (简化规则): 键 '${finalKey}' 被新的值覆盖。`);
+                }
+                flatMap[finalKey] = simplifiedValue;
+                continue; // 处理完后跳过
+            }
+
+            // --- 默认规则：处理字符串或递归深入 ---
+            if (typeof value === 'string') {
+                if (flatMap[finalKey] && flatMap[finalKey] !== value) {
+                    console.warn(`    [!] 键冲突警告 (默认规则): 键 '${finalKey}' 被新的值覆盖。`);
+                }
+                flatMap[finalKey] = value;
+            }
+            else if (typeof value === 'object' && value !== null) {
+                // 对于其他不符合特殊规则的嵌套对象，继续递归
+                processObject(value, flatMap);
+            }
+        }
+    }
+}
+
+generateFlatTranslationMap();

@@ -1,229 +1,322 @@
 {
     解锁: '海盗职业',
-    图标: 'mdi-pirate',
+    icon: 'mdi-pirate',
     baseStats: {
         攻击plus: 3.3,
-        生命值: 285,
-        能量: 150,
+        生命值plus: 285,
+        energy: 150,
         energyRegen: 1,
         mana: 100,
         manaRegen: 0.01
     },
-    经验值: {
+    exp: {
         +: 1800,
         increment: 1.4
     },
-    courageMult: 35,
+    courageMult: 8.5,
     skills: {
         challenge: {
-            类型: '被动: (0)%',
-            color: '橙色-红色',
-            图标: 'mdi-ticket',
+            type: 'passive',
+            color: '橙色油漆-红色油漆',
+            icon: 'mdi-screwdriver',
             max: 1,
-            效果: [
-                {name: '撬锁器增益', 类型: '+', value: lvl => lvl / buildNum(100, 'K')}
+            effect: [
+                {name: '撬锁器增益', type: '+', value: lvl => lvl / buildNum(100, 'K')}
             ]
         },
         parrotAttack: {
-            类型: '激活的卡片',
-            color: '青色',
-            图标: 'mdi-bird',
+            type: '激活的卡片',
+            color: 'cyan',
+            icon: 'mdi-bird',
             max: 1,
             cooldown: () => 14,
-            activeCost: () => {return {能量: 50};},
+            activeCost: () => {return {energy: 50};},
             激活的卡片() {
                 return [
-                    {类型: 'maxdamageBio', value: 0.2, int: 0.001},
-                    {类型: 'damagePhysic', value: 2.6, str: 0.5}
+                    {type: 'maxdamageBio', value: 0.2, int: 0.001},
+                    {type: 'damagePhysic', value: 2.6, str: 0.5}
                 ];
             },
             activeType: 'combat'
         },
         plunder: {
-            类型: '激活的卡片',
-            color: '光-绿色',
-            图标: 'mdi-sack',
+            type: '激活的卡片',
+            color: '浅绿色油漆',
+            icon: 'mdi-sack',
             max: 1,
-            cooldown: () => 60,
-            activeCost: () => {return {mana: 20};},
+            cooldown: () => SECONDS_PER_HOUR,
+            activeCost: () => {return {};},
             激活的卡片() {
                 return [
-                    {类型: '血液', value: 10}
+                    {type: '血液', value: 80}
                 ];
             },
             activeType: 'utility'
         },
         bottleOBrew: {
-            类型: '激活的卡片',
-            color: '粉色',
-            图标: 'mdi-bottle-tonic',
+            type: '激活的卡片',
+            color: '粉红色油漆',
+            icon: 'mdi-bottle-tonic',
             max: 5,
             cost: 20,
-            cooldown: () => 180,
-            activeCost: () => {return {mana: 55};},
+            cooldown: () => 120,
+            activeCost: () => {return {mana: 7};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'buff', value: 30, 效果: [
-                        {类型: '*', name: '攻击', value: lvl * 0.25 + 1.75},
-                        {类型: '+', name: '暴击率', value: 0.4},
-                        {类型: '+', name: '暴击伤害', value: 1.5},
-                        {类型: '*', name: '受到的物理伤害', value: 1 / (lvl * 0.25 + 1.75)},
-                        {类型: '*', name: '受到的魔法伤害', value: 1 / (lvl * 0.25 + 1.75)},
-                        {类型: '*', name: '受到的生物伤害', value: 1 / (lvl * 0.25 + 1.75)},
-                        {类型: '+', name: '恢复', value: 0.25},
-                        {类型: '+', name: '防御', value: 0.02},
+                    {type: 'buff', value: 30, effect: [
+                        {type: '*', name: '攻击', value: lvl * 0.25 + 1.75},
+                        {type: '+', name: '暴击率', value: 0.4},
+                        {type: '+', name: '暴击伤害', value: 1.5},
+                        {type: '*', name: '受到的物理伤害', value: 1 / (lvl * 0.25 + 1.75)},
+                        {type: '*', name: '受到的魔法伤害', value: 1 / (lvl * 0.25 + 1.75)},
+                        {type: '*', name: '受到的生物伤害', value: 1 / (lvl * 0.25 + 1.75)},
+                        {type: '+', name: '恢复', value: 0.25},
+                        {type: '+', name: '防御', value: 0.02},
                     ]}
                 ];
             },
             activeType: 'combat'
         },
-        能量: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '能量', 类型: '+', value: lvl => lvl * 40}
+        energy: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '能量', type: '+', value: lvl => lvl * 40}
         ]},
-        mana: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '法力', 类型: '+', value: lvl => lvl * 25}
+        mana: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '法力', type: '+', value: lvl => lvl * 25}
         ]},
-        血液: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '血液增益', 类型: '*', value: lvl => getSequence(3, lvl) * 0.08 + 1}
+        血液: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '血液增益', type: '*', value: lvl => Math.pow(1.02, lvl)},
+            {name: '血液容量', type: '*', value: lvl => Math.pow(1.04, lvl)},
         ]},
-        勇敢: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '勇敢增益', 类型: '*', value: lvl => lvl * 0.08 + 1}
+        勇敢: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '勇气积分增益', type: '*', value: lvl => lvl * 0.05 + 1}
         ]},
         bombToss: {
-            类型: '激活的卡片',
-            color: '灰色',
-            图标: 'mdi-bomb',
+            type: '激活的卡片',
+            color: 'grey',
+            icon: 'mdi-bomb',
             max: 5,
             cost: 20,
             cooldown: () => 22,
-            activeCost: () => {return {能量: 70};},
+            activeCost: () => {return {energy: 70};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'damageMagic', value: lvl + 6.5, int: 0.8}
+                    {type: 'damageMagic', value: lvl + 6.5, int: 0.8}
                 ];
             },
             activeType: 'combat'
         },
-        生命值: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '生命值', 类型: '+', value: lvl => lvl * 40}
+        生命值plus: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '生命值', type: '+', value: lvl => lvl * 40}
         ]},
-        blood_2: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '血液增益', 类型: '*', value: lvl => getSequence(3, lvl) * 0.08 + 1}
+        energy_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '能量', type: '+', value: lvl => lvl * 40}
         ]},
-        blood_3: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '血液容量', 类型: '*', value: lvl => Math.pow(1.2, lvl) * (lvl * 0.1 + 1)}
+        haste: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '急速', type: '+', value: lvl => lvl * 3}
         ]},
-        撬锁器: {类型: 'stat', max: 4, cost: 15, 效果: [
-            {name: '撬锁器增益', 类型: '+', value: lvl => lvl / buildNum(2, 'M')}
+        blood_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '血液增益', type: '*', value: lvl => Math.pow(1.02, lvl)},
+            {name: '血液容量', type: '*', value: lvl => Math.pow(1.04, lvl)},
         ]},
-        blood_4: {类型: 'stat', max: 20, cost: 10, 效果: [
-            {name: '血液增益', 类型: '*', value: lvl => getSequence(3, lvl) * 0.05 + 1},
-            {name: '血液容量', 类型: '*', value: lvl => getSequence(3, lvl) * 0.05 + 1}
+        撬锁器: {type: 'stat', max: 4, cost: 15, effect: [
+            {name: '撬锁器增益', type: '+', value: lvl => lvl / buildNum(2, 'M')}
         ]},
-        courage_2: {类型: 'stat', max: 20, cost: 10, 效果: [
-            {name: '勇敢增益', 类型: '*', value: lvl => lvl * 0.1 + 1}
+        blood_3: {type: 'stat', max: 20, cost: 10, effect: [
+            {name: '血液增益', type: '*', value: lvl => Math.pow(1.025, lvl)},
+            {name: '血液容量', type: '*', value: lvl => Math.pow(1.05, lvl)},
         ]},
-        trinket: {类型: 'stat', max: 20, cost: 10, 效果: [
-            {name: '饰品最大增益', 类型: '*', value: lvl => lvl * 0.08 + 1}
+        courage_2: {type: 'stat', max: 20, cost: 10, effect: [
+            {name: '勇气积分增益', type: '*', value: lvl => lvl * 0.075 + 1}
         ]},
-        invigoratingBottle: {
-            类型: '激活的卡片',
-            color: '金色',
-            图标: 'mdi-bottle-tonic',
+        做好一切准备: {type: 'stat', max: 20, cost: 10, effect: [
+            {name: '饰品最大增益', type: '*', value: lvl => lvl * 0.08 + 1}
+        ]},
+        cannonball: {
+            type: '激活的卡片',
+            color: 'dark-grey',
+            icon: 'mdi-circle-slice-8',
             max: 5,
             cost: 20,
-            cooldown: (lvl) => 210 - 30 * lvl,
-            activeCost: (lvl) => {return {mana: 50 - 5 * lvl};},
+            cooldown: () => 35,
+            activeCost: () => {return {energy: 120};},
+            激活的卡片(lvl) {
+                return [
+                    {type: 'damagePhysic', value: lvl * 1.2 + 7.8, str: 0.9},
+                    {type: 'stun', value: lvl + 3}
+                ];
+            },
+            activeType: 'combat'
+        },
+        invigoratingBottle: {
+            type: '激活的卡片',
+            color: '金色油漆',
+            icon: 'mdi-bottle-tonic',
+            max: 5,
+            cost: 20,
+            cooldown: lvl => 210 - 30 * lvl,
+            activeCost: lvl => {return {mana: 7 - lvl};},
             激活的卡片() {
                 return [
-                    {类型: 'refillEnergy', value: 1}
+                    {type: 'refillEnergy', value: 1}
                 ];
             },
             activeType: 'combat'
         },
-        伤害: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '攻击', 类型: '+', value: lvl => lvl * 0.1}
+        damage: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '攻击', type: '+', value: lvl => lvl * 0.1}
         ]},
-        blood_5: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '血液容量', 类型: '*', value: lvl => Math.pow(1.2, lvl) * (lvl * 0.1 + 1)}
+        blood_4: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '血液增益', type: '*', value: lvl => Math.pow(1.02, lvl)},
+            {name: '血液容量', type: '*', value: lvl => Math.pow(1.04, lvl)},
         ]},
-        courage_3: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '勇敢增益', 类型: '*', value: lvl => lvl * 0.08 + 1}
+        courage_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '勇气积分增益', type: '*', value: lvl => lvl * 0.05 + 1}
         ]},
-        lockpick_2: {类型: 'stat', max: 4, cost: 15, 效果: [
-            {name: '撬锁器增益', 类型: '+', value: lvl => lvl / buildNum(2, 'M')}
+        lockpick_2: {type: 'stat', max: 4, cost: 15, effect: [
+            {name: '撬锁器增益', type: '+', value: lvl => lvl / buildNum(2, 'M')}
         ]},
-        宝箱: {
-            类型: '激活的卡片',
+        treasureChest: {
+            type: '激活的卡片',
             color: 'wooden',
-            图标: 'mdi-treasure-chest',
+            icon: 'mdi-treasure-chest',
             max: 5,
             cost: 20,
-            cooldown: () => 22 * SECONDS_PER_HOUR,
+            cooldown: () => HORDE_STACKING_COOLDOWN,
             activeCost: () => {return {};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'permanentStat', stat: '血液增益_mult', value: lvl * 0.07 + 0.07}
+                    {type: 'permanentStat', stat: '血液增益_mult', value: lvl * 0.07 + 0.07}
                 ];
             },
             activeType: 'utility'
         },
-        blood_6: {类型: 'stat', max: 15, cost: 10, 效果: [
-            {name: '血液容量', 类型: '*', value: lvl => Math.pow(1.15, lvl) * (getSequence(3, lvl) * 0.1 + 1)}
+        blood_5: {type: 'stat', max: 15, cost: 10, effect: [
+            {name: '血液容量', type: '*', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.025 + 1)}
         ]},
         bountyBoard: {
-            类型: '被动: (0)%',
-            color: '橙色-红色',
-            图标: 'mdi-screwdriver',
+            type: 'passive',
+            color: '橙色油漆-红色油漆',
+            icon: 'mdi-screwdriver',
             max: 1,
             cost: 100,
-            效果: [
-                {name: '撬锁器增益', 类型: '*', value: lvl => lvl * 0.25 + 1},
-                {name: '撬锁器容量', 类型: '+', value: lvl => lvl * 21},
+            effect: [
+                {name: '撬锁器增益', type: '*', value: lvl => lvl * 0.25 + 1},
+                {name: '撬锁器容量', type: '+', value: lvl => lvl * 21},
             ]
         },
-        lockpick_3: {类型: 'stat', max: 15, cost: 10, 效果: [
-            {name: '撬锁器增益', 类型: '+', value: lvl => lvl / buildNum(2.5, 'M')}
+        lockpick_3: {type: 'stat', max: 15, cost: 10, effect: [
+            {name: '撬锁器增益', type: '+', value: lvl => lvl / buildNum(2.5, 'M')}
         ]},
-        trinket_2: {类型: 'stat', max: 25, cost: 10, 效果: [
-            {name: '饰品最大增益', 类型: '*', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.08 + 1)},
-            {name: '饰品质量', 类型: '+', value: lvl => lvl * -1},
+        trinket_2: {type: 'stat', max: 25, cost: 10, effect: [
+            {name: '饰品最大增益', type: '*', value: lvl => Math.pow(1.05, lvl) * (lvl * 0.08 + 1)},
+            {name: '饰品质量', type: '+', value: lvl => lvl * -1},
         ]},
-        急速: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '急速', 类型: '+', value: lvl => lvl * 3}
+        pirateShip: {
+            type: '激活的卡片',
+            color: 'brown',
+            icon: 'mdi-ship-wheel',
+            max: 5,
+            cost: 20,
+            cooldown: lvl => 570 - 60 * lvl,
+            activeCost: () => {return {energy: 250, mana: 30};},
+            激活的卡片(lvl) {
+                return [
+                    {type: 'damagePhysic', value: lvl * 3 + 18, str: 1.8},
+                    {type: 'damageMagic', value: lvl * 2 + 14.5, int: 2.35},
+                    {type: 'buff', value: lvl * 5 + 25, effect: [
+                        {type: '*', name: '攻击', value: lvl * 0.35 + 2.25},
+                        {type: '+', name: '切割', value: 0.15},
+                        {type: '*', name: '重生时间', value: 0.01},
+                    ]}
+                ];
+            },
+            activeType: 'combat'
+        },
+        strength: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '力量', type: '+', value: lvl => lvl * 1.1}
         ]},
-        blood_7: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '血液增益', 类型: '*', value: lvl => getSequence(3, lvl) * 0.08 + 1}
+        intelligence: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '智力', type: '+', value: lvl => lvl * 1.3}
         ]},
-        blood_8: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '血液容量', 类型: '*', value: lvl => Math.pow(1.2, lvl) * (lvl * 0.1 + 1)}
+        mana_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '法力', type: '+', value: lvl => lvl * 25}
+        ]},
+        haste_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '急速', type: '+', value: lvl => lvl * 3}
+        ]},
+        blood_6: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '血液增益', type: '*', value: lvl => Math.pow(1.02, lvl)},
+            {name: '血液容量', type: '*', value: lvl => Math.pow(1.04, lvl)},
+        ]},
+        damage_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '攻击', type: '+', value: lvl => lvl * 0.1}
+        ]},
+        health_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '生命值', type: '+', value: lvl => lvl * 40}
+        ]},
+        blood_7: {type: 'stat', max: 20, cost: 10, effect: [
+            {name: '血液增益', type: '*', value: lvl => Math.pow(1.02, lvl)},
+            {name: '血液容量', type: '*', value: lvl => Math.pow(1.04, lvl)},
+        ]},
+        strength_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '力量', type: '+', value: lvl => lvl * 1.1}
+        ]},
+        energy_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '能量', type: '+', value: lvl => lvl * 40}
+        ]},
+        damage_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '攻击', type: '+', value: lvl => lvl * 0.1}
+        ]},
+        health_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '生命值', type: '+', value: lvl => lvl * 40}
+        ]},
+        blood_8: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '血液增益', type: '*', value: lvl => Math.pow(1.02, lvl)},
+            {name: '血液容量', type: '*', value: lvl => Math.pow(1.04, lvl)},
+        ]},
+        courage_4: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '勇气积分增益', type: '*', value: lvl => lvl * 0.05 + 1}
+        ]},
+        intelligence_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '智力', type: '+', value: lvl => lvl * 1.3}
+        ]},
+        mana_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '法力', type: '+', value: lvl => lvl * 25}
         ]},
     },
     skillTree: [
-        {isInnate: true, 达到等级: 0, items: ['challenge', 'parrotAttack', 'plunder']},
-        {达到等级: 1, items: ['bottleOBrew', '能量', 'mana', '血液', '勇敢']},
-        {达到等级: 10, items: ['bombToss', '生命值', 'blood_2', 'blood_3', '撬锁器']},
-        {isChoice: true, 达到等级: 20, items: [['blood_4'], ['courage_2'], ['trinket']]},
-        {达到等级: 30, items: ['invigoratingBottle', '伤害', 'blood_5', 'courage_3', 'lockpick_2']},
-        {isChoice: true, 达到等级: 40, items: [['宝箱', 'blood_6'], ['bountyBoard', 'lockpick_3'], ['trinket_2']]},
-        {达到等级: 50, items: ['急速', 'blood_7', 'blood_8']},
+        {isInnate: true, level: 0, items: ['challenge', 'parrotAttack', 'plunder']},
+        {level: 1, items: ['bottleOBrew', 'energy', 'mana', '血液', '勇敢']},
+        {level: 10, items: ['bombToss', '生命值plus', 'energy_2', 'haste', 'blood_2', '撬锁器']},
+        {isChoice: true, level: 20, items: [['blood_3'], ['courage_2'], ['做好一切准备']]},
+        {level: 30, items: ['cannonball', 'invigoratingBottle', 'damage', 'blood_4', 'courage_3', 'lockpick_2']},
+        {isChoice: true, level: 40, items: [['treasureChest', 'blood_5'], ['bountyBoard', 'lockpick_3'], ['trinket_2']]},
+        {level: 50, items: ['pirateShip', 'strength', 'intelligence', 'mana_2', 'haste_2', 'blood_6']},
+        {level: 75, items: ['damage_2', 'health_2', 'blood_7', 'strength_2', 'energy_3']},
+        {level: 100, items: ['damage_3', 'health_3', 'blood_8', 'courage_4', 'intelligence_2', 'mana_3']},
     ],
     quests: {
         stat: [
-            {stat: '生命值', 类型: '+', value: 1200},
+            {stat: '法力', type: 'total', value: 490},
+            {stat: '能量', type: 'total', value: 1200},
+            {stat: '急速', type: 'total', value: 70},
+            {stat: '攻击', type: '+', value: 4.25},
+            {stat: '生命值', type: '+', value: 925},
+            {stat: '智力', type: 'total', value: 35},
+            {stat: '力量', type: 'total', value: 44},
         ],
-        区域: [
-            {area: '猴子丛林', 区域: '2'},
-            {area: '猴子丛林', 区域: '8'},
-            {area: '猴子丛林', 区域: '18'},
-            {area: '爱岛', 区域: '4'},
-            {area: '爱岛', 区域: '10'},
+        zone: [
+            {area: 'monkeyJungle', zone: '2'},
+            {area: 'monkeyJungle', zone: '8'},
+            {area: 'monkeyJungle', zone: '18'},
+            {area: 'loveIsland', zone: '4'},
+            {area: 'loveIsland', zone: '10'},
         ],
-        达到等级: [25, 40, 55, 75, 95, 120, 150, 180],
-        击败 (0) (+(1)): [
-            {击败 (0) (+(1)): 'ohilio', 难度: 30},
-            {击败 (0) (+(1)): 'Chriz', 难度: 20},
-            {击败 (0) (+(1)): 'mina', 难度: 5},
+        level: [25, 40, 55, 75, 95, 120, 150, 180],
+        boss: [
+            {boss: 'ohilio', difficulty: 30},
+            {boss: 'chriz2', difficulty: 20},
+            {boss: 'mina', difficulty: 5},
         ]
     }
 }

@@ -1,8 +1,7 @@
-名称,图标,效果
-金胡萝卜,"<i class=""mdi mdi-carrot""></i>",仅蔬菜增益*｛1.4｝
-金苹果,"<i class=""mdi mdi-food-apple""></i>",仅浆果增益*｛1.4｝
-爆米花,"<i class=""mdi mdi-popcorn""></i>",仅粮食增益*｛1.4｝
-蔷薇石英,"<i class=""mdi mdi-crystal-ball""></i>",仅鲜花增益*｛1.4｝
-金种子,"<i class=""mdi mdi-seed""></i>",金玫瑰farmSeed｛true｝
-格子,"<i class=""mdi mdi-fence""></i>",过度生长+｛0.05｝
-砖墙,"<i class=""mdi mdi-wall""></i>",过度生长+｛0.05｝
+名称,icon,effect,glyph,激活的卡片
+避雷针,"<i class=""mdi mdi-home-lightning-bolt-outline""></i>","$[{ name: '雨水容量', type: '+', value: 30 }]$",${ 云: 3 }$,"{""cost"":{""最高力量"":5},""params"":""${ const rainwaterMult = 1.5; let careApplied = 0; store.state.农场.field.forEach(row => { row.forEach(cell => { if (cell !== null && cell.type === 'crop' && cell.cache.careWeight > 0) { const geneStats = store.getters['农场/cropGeneStats'](cell.crop, cell.fertilizer); store.state.农场.careCanMax.forEach(elem => { if (geneStats.珍贵植物[elem] && cell.珍贵植物[elem] < geneStats.珍贵植物[elem].max) { const crop = store.state.农场.crop[cell.crop]; const growDiv = Math.sqrt((cell.giant ? crop.giantGrow : crop.grow) / 10)  \\cdot  8; careApplied += \\text{向上取整}((geneStats.珍贵植物[elem].max - cell.珍贵植物[elem])  \\cdot  growDiv / geneStats.珍贵植物[elem].amount); } }); } }); }); return [\\text{向上取整}(careApplied  \\cdot  rainwaterMult), rainwaterMult, careApplied]; }$"",""description"":""$[]$"",""formula"":""$[formatInt(params[0]), formatNum(params[1]  \\cdot  100)]$"",""disabled"":""$store.state.cryolab.农场.激活的卡片 || params[2] <= 0 || store.state.currency.雨水.value < params[0]$"",""trigger"":""${ store.dispatch('currency/spend', { feature: '农场', name: '雨水', amount: params[0] }); store.state.农场.field.forEach((row, y) => { row.forEach((cell, x) => { if (cell !== null && cell.type === 'crop' && cell.cache.careWeight > 0) { const geneStats = store.getters['农场/cropGeneStats'](cell.crop, cell.fertilizer); store.state.农场.careCanMax.forEach(elem => { if (geneStats.珍贵植物[elem] && cell.珍贵植物[elem] < geneStats.珍贵植物[elem].max) { store.commit('农场/updateFieldCare', { x, y, key: elem, value: geneStats.珍贵植物[elem].max }); } }); } }); }); store.commit('stat/add', { feature: '农场', name: '珍贵植物', value: params[2] }); }$""}"
+金胡萝卜,"<i class=""mdi mdi-carrot""></i>","$[{ name: '蔬菜增益', type: ' \cdot ', value: 1.4 }]$",${ 雨: 4 }$,
+金苹果,"<i class=""mdi mdi-food-apple""></i>","$[{ name: '浆果增益', type: ' \cdot ', value: 1.4 }]$","${ 日: 3, 云: 1 }$",
+爆米花,"<i class=""mdi mdi-popcorn""></i>","$[{ name: '粮食增益', type: ' \cdot ', value: 1.4 }]$",${ 云: 4 }$,
+玫瑰石英,"<i class=""mdi mdi-crystal-ball""></i>","$[{ name: '花肥增益', type: ' \cdot ', value: 1.4 }]$","${ 雨: 2, 云: 3 }$",
+金种子,"<i class=""mdi mdi-seed""></i>","$[{ name: 'goldenRose', type: 'farmSeed', value: true }]$",${ 日: 6 }$,

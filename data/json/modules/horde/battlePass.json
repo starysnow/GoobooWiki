@@ -1,57 +1,97 @@
 [
   {
     "名称": "2",
-    "图标": "<i class=\"mdi mdi-bow-arrow\"></i>",
-    "效果": "射手职业解锁｛true｝"
+    "icon": "<i class=\"mdi mdi-bow-arrow\"></i>",
+    "effect": "射手职业解锁｛true｝"
   },
   {
     "名称": "5",
-    "图标": "<i class=\"mdi mdi-wizard-hat\"></i>",
-    "效果": "法师职业解锁｛true｝"
+    "icon": "<i class=\"mdi mdi-wizard-hat\"></i>",
+    "effect": "法师职业解锁｛true｝"
   },
   {
     "名称": "15",
-    "图标": "<i class=\"mdi mdi-shield\"></i>",
-    "效果": "骑士职业解锁｛true｝"
+    "icon": "<i class=\"mdi mdi-shield\"></i>",
+    "effect": "骑士职业解锁｛true｝"
   },
   {
     "名称": "25",
-    "图标": "<i class=\"mdi mdi-cached\"></i>",
-    "效果": "自动释放槽位+｛1｝"
+    "icon": "<i class=\"mdi mdi-cached\"></i>",
+    "effect": "自动释放槽位+｛1｝"
   },
   {
     "名称": "30",
-    "图标": "<i class=\"mdi mdi-necklace\"></i>",
-    "效果": "最大传家宝增益*｛2｝"
+    "icon": "<i class=\"mdi mdi-necklace\"></i>",
+    "effect": "最大传家宝增益*｛2｝"
   },
   {
     "名称": "35",
-    "图标": "<i class=\"mdi mdi-pirate\"></i>",
-    "效果": "海盗职业解锁｛true｝"
+    "icon": "<i class=\"mdi mdi-pirate\"></i>",
+    "effect": "海盗职业解锁｛true｝"
   },
   {
     "名称": "40",
-    "图标": "<i class=\"mdi mdi-star\"></i>",
-    "效果": "级技能点数+｛1｝"
+    "icon": "<i class=\"mdi mdi-star\"></i>",
+    "effect": "级技能点数+｛1｝"
   },
   {
     "名称": "50",
-    "图标": "<i class=\"mdi mdi-treasure-chest\"></i>",
-    "效果": "饰品容量+｛1｝"
+    "icon": "<i class=\"mdi mdi-treasure-chest\"></i>",
+    "effect": "饰品容量+｛1｝"
   },
   {
     "名称": "60",
-    "图标": "<i class=\"mdi mdi-billiards-rack\"></i>",
-    "效果": "神秘碎片几率*｛3｝"
+    "icon": "<i class=\"mdi mdi-billiards-rack\"></i>",
+    "effect": "神秘碎片几率*｛3｝"
+  },
+  {
+    "名称": "70",
+    "icon": "<i class=\"mdi mdi-robber\"></i>",
+    "effect": "刺客职业解锁｛true｝"
   },
   {
     "名称": "75",
-    "图标": "<i class=\"mdi mdi-treasure-chest\"></i>",
-    "效果": "装备容量+｛1｝"
+    "icon": "<i class=\"mdi mdi-treasure-chest\"></i>",
+    "effect": "装备容量+｛1｝"
   },
   {
     "名称": "80",
-    "图标": "<i class=\"mdi mdi-star\"></i>",
-    "效果": "级技能点数+｛1｝"
+    "icon": "<i class=\"mdi mdi-star\"></i>",
+    "effect": "级技能点数+｛1｝"
+  },
+  {
+    "名称": "95",
+    "icon": "<i class=\"mdi mdi-necklace\"></i>",
+    "effect": "传家宝效果*｛1.2｝"
+  },
+  {
+    "名称": "100",
+    "icon": "<i class=\"mdi mdi-tooth\"></i>",
+    "effect": "怪物牙齿 (战区)解锁｛true｝"
+  },
+  {
+    "名称": "110",
+    "icon": "<i class=\"mdi mdi-necklace\"></i>",
+    "effect": "饰品最大增益*｛1.5｝"
+  },
+  {
+    "名称": "120",
+    "icon": "<i class=\"mdi mdi-pentagram\"></i>",
+    "effect": "信徒职业解锁｛true｝"
+  },
+  {
+    "名称": "125",
+    "icon": "<i class=\"mdi mdi-tooth\"></i>",
+    "effect": "怪物牙齿 (猴子丛林)解锁｛true｝"
+  },
+  {
+    "名称": "160",
+    "icon": "<i class=\"mdi mdi-star\"></i>",
+    "effect": "级技能点数+｛1｝"
+  },
+  {
+    "名称": "175",
+    "icon": "<i class=\"mdi mdi-tooth\"></i>",
+    "effect": "怪物牙齿 (爱之岛)解锁｛true｝"
   }
 ]

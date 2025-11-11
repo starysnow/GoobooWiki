@@ -1,12 +1,12 @@
 {
     pistol_gun: {
         minZone: Infinity,
-        图标: 'mdi-pistol',
-        color: 'blue',
+        icon: 'mdi-pistol',
+        color: '蓝色油漆',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'damagePhysic', value: 3.35}
+                    {type: 'damagePhysic', value: 3.35}
                 ];
             },
             cooldown: () => 4,
@@ -16,13 +16,13 @@
     },
     rifle_gun: {
         minZone: Infinity,
-        图标: 'mdi-pistol',
-        color: '橙色',
+        icon: 'mdi-pistol',
+        color: '橙色油漆',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'damagePhysic', value: 2},
-                    {类型: 'damageMagic', value: 0.75}
+                    {type: 'damagePhysic', value: 2},
+                    {type: 'damageMagic', value: 0.75}
                 ];
             },
             cooldown: () => 2,
@@ -32,14 +32,14 @@
     },
     shotgun_gun: {
         minZone: Infinity,
-        图标: 'mdi-pistol',
-        color: '绿色',
+        icon: 'mdi-pistol',
+        color: '绿色油漆',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'damagePhysic', value: 2.6},
-                    {类型: 'damageMagic', value: 2.6},
-                    {类型: 'damageBio', value: 2.6}
+                    {type: 'damagePhysic', value: 2.6},
+                    {type: 'damageMagic', value: 2.6},
+                    {type: 'damageBio', value: 2.6}
                 ];
             },
             cooldown: () => 13,
@@ -49,12 +49,12 @@
     },
     sniper_gun: {
         minZone: Infinity,
-        图标: 'mdi-target',
-        color: '紫色',
+        icon: 'mdi-target',
+        color: '紫色油漆',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'damagePhysic', value: 11.5, 能以(0)%的效率暴击: 8}
+                    {type: 'damagePhysic', value: 11.5, canCrit: 8}
                 ];
             },
             cooldown: () => 25,
@@ -64,14 +64,14 @@
     },
     war_grenade: {
         minZone: Infinity,
-        图标: 'mdi-bomb',
-        color: 'pale-绿色',
+        icon: 'mdi-bomb',
+        color: 'pale-绿色油漆',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'damageMagic', value: 2.75},
-                    {类型: 'stun', value: 2},
-                    {类型: '沉默药水', value: 8}
+                    {type: 'damageMagic', value: 2.75},
+                    {type: 'stun', value: 2},
+                    {type: 'silence', value: 8}
                 ];
             },
             cooldown: () => 12,
@@ -81,12 +81,12 @@
     },
     war_bandage: {
         minZone: Infinity,
-        图标: 'mdi-bandage',
-        color: 'pale-橙色',
+        icon: 'mdi-bandage',
+        color: 'pale-橙色油漆',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'heal', value: 0.4}
+                    {type: 'heal', value: 0.4}
                 ];
             },
             cooldown: () => 8,
@@ -96,12 +96,12 @@
     },
     monkey_dart: {
         minZone: Infinity,
-        图标: 'mdi-arrow-projectile',
-        color: '橙色',
+        icon: 'mdi-arrow-projectile',
+        color: '橙色油漆',
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damagePhysic', value: lvl * 0.5 + 2.25},
+                    {type: 'damagePhysic', value: lvl * 0.5 + 2.25},
                 ];
             },
             cooldown: () => 5,
@@ -111,12 +111,12 @@
     },
     monkey_fire: {
         minZone: Infinity,
-        图标: 'mdi-fire',
-        color: '橙色',
+        icon: 'mdi-fire',
+        color: '橙色油漆',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'damageMagic', value: 4.5},
+                    {type: 'damageMagic', value: 4.5},
                 ];
             },
             cooldown: () => 8,
@@ -126,13 +126,13 @@
     },
     monkey_ice: {
         minZone: Infinity,
-        图标: 'mdi-snowflake',
-        color: '青色',
+        icon: 'mdi-snowflake',
+        color: 'cyan',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'damageMagic', value: 6.75},
-                    {类型: 'stun', value: 3},
+                    {type: 'damageMagic', value: 6.75},
+                    {type: 'stun', value: 3},
                 ];
             },
             cooldown: () => 14,
@@ -142,13 +142,13 @@
     },
     monkey_lightning: {
         minZone: Infinity,
-        图标: 'mdi-flash',
-        color: '黄色',
+        icon: 'mdi-flash',
+        color: '黄色油漆',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'damageMagic', value: 5.1},
-                    {类型: '沉默药水', value: 3},
+                    {type: 'damageMagic', value: 5.1},
+                    {type: 'silence', value: 3},
                 ];
             },
             cooldown: () => 10,
@@ -158,14 +158,14 @@
     },
     cute_ram: {
         minZone: Infinity,
-        图标: 'mdi-arrow-collapse-right',
-        color: '红色',
+        icon: 'mdi-arrow-collapse-right',
+        color: '红色油漆',
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damageBio', value: lvl + 3.5},
-                    {类型: 'stun', value: 3},
-                    {类型: 'gainStat', stat: 'bioAttack_mult', value: 1.2},
+                    {type: 'damageBio', value: lvl + 3.5},
+                    {type: 'stun', value: 3},
+                    {type: 'gainStat', stat: 'bioAttack_mult', value: 1.2},
                 ];
             },
             cooldown: () => 12,
@@ -175,13 +175,13 @@
     },
     cute_eatCarrot: {
         minZone: Infinity,
-        图标: 'mdi-carrot',
-        color: '橙色',
+        icon: 'mdi-carrot',
+        color: '橙色油漆',
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'heal', value: lvl * 0.05 + 0.4},
-                    {类型: 'gainStat', stat: 'attack_mult', value: 1.1},
+                    {type: 'heal', value: lvl * 0.05 + 0.4},
+                    {type: 'gainStat', stat: 'attack_mult', value: 1.1},
                 ];
             },
             cooldown: () => 16,
@@ -191,13 +191,13 @@
     },
     cute_bark: {
         minZone: Infinity,
-        图标: 'mdi-volume-high',
-        color: '青色',
+        icon: 'mdi-volume-high',
+        color: 'cyan',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'maxdamageBio', value: 0.06},
-                    {类型: 'removeDivisionShield', value: 1},
+                    {type: 'maxdamageBio', value: 0.06},
+                    {type: 'removeDivisionShield', value: 1},
                 ];
             },
             cooldown: () => 11,
@@ -207,12 +207,12 @@
     },
     cute_bite: {
         minZone: Infinity,
-        图标: 'mdi-tooth',
-        color: '棕色',
+        icon: 'mdi-tooth',
+        color: 'brown',
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damageBio', value: lvl * 1.5 + 5},
+                    {type: 'damageBio', value: lvl * 1.5 + 5},
                 ];
             },
             cooldown: () => 22,
@@ -222,13 +222,13 @@
     },
     cute_kick: {
         minZone: Infinity,
-        图标: 'mdi-seat-legroom-extra',
-        color: '金色',
+        icon: 'mdi-seat-legroom-extra',
+        color: '金色油漆',
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'damageBio', value: lvl * 0.3 + 2.5},
-                    {类型: '沉默药水', value: 2},
+                    {type: 'damageBio', value: lvl * 0.3 + 2.5},
+                    {type: 'silence', value: 2},
                 ];
             },
             cooldown: () => 6,
@@ -238,13 +238,13 @@
     },
     cute_claws: {
         minZone: Infinity,
-        图标: 'mdi-nail',
-        color: '光-绿色',
+        icon: 'mdi-nail',
+        color: '浅绿色油漆',
         激活的卡片: {
-            效果(lvl) {
+            effect(lvl) {
                 return [
-                    {类型: 'maxdamageBio', value: 0.1},
-                    {类型: 'damageBio', value: lvl * 1.3 + 4.5},
+                    {type: 'maxdamageBio', value: 0.1},
+                    {type: 'damageBio', value: lvl * 1.3 + 4.5},
                 ];
             },
             cooldown: () => 15,
@@ -254,14 +254,14 @@
     },
     ohilio_megagun: {
         minZone: Infinity,
-        图标: 'mdi-pistol',
-        color: '橙色-红色',
+        icon: 'mdi-pistol',
+        color: '橙色油漆-红色油漆',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'damagePhysic', value: buildNum(1, 'M')},
-                    {类型: 'damageMagic', value: buildNum(1, 'M')},
-                    {类型: 'damageBio', value: buildNum(1, 'M')}
+                    {type: 'damagePhysic', value: buildNum(1, 'M')},
+                    {type: 'damageMagic', value: buildNum(1, 'M')},
+                    {type: 'damageBio', value: buildNum(1, 'M')}
                 ];
             },
             cooldown: () => 5,
@@ -271,12 +271,12 @@
     },
     chriz_magicMissile: {
         minZone: Infinity,
-        图标: 'mdi-motion',
+        icon: 'mdi-motion',
         color: 'indigo',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'damageMagic', value: 3},
+                    {type: 'damageMagic', value: 3},
                 ];
             },
             cooldown: () => 6,
@@ -286,12 +286,12 @@
     },
     chriz_fireball: {
         minZone: Infinity,
-        图标: 'mdi-fire',
-        color: '橙色',
+        icon: 'mdi-fire',
+        color: '橙色油漆',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'damageMagic', value: 11.5},
+                    {type: 'damageMagic', value: 11.5},
                 ];
             },
             cooldown: () => 22,
@@ -301,13 +301,13 @@
     },
     chriz_iceBlast: {
         minZone: Infinity,
-        图标: 'mdi-snowflake',
-        color: '青色',
+        icon: 'mdi-snowflake',
+        color: 'cyan',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'damageMagic', value: 6},
-                    {类型: 'stun', value: 8},
+                    {type: 'damageMagic', value: 6},
+                    {type: 'stun', value: 8},
                 ];
             },
             cooldown: () => 30,
@@ -317,13 +317,13 @@
     },
     chriz_lightningStrike: {
         minZone: Infinity,
-        图标: 'mdi-flash',
-        color: '黄色',
+        icon: 'mdi-flash',
+        color: '黄色油漆',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'damageMagic', value: 7.25},
-                    {类型: '沉默药水', value: 5},
+                    {type: 'damageMagic', value: 7.25},
+                    {type: 'silence', value: 5},
                 ];
             },
             cooldown: () => 15,
@@ -333,12 +333,12 @@
     },
     chriz_heal: {
         minZone: Infinity,
-        图标: 'mdi-medical-bag',
-        color: '光-绿色',
+        icon: 'mdi-medical-bag',
+        color: '浅绿色油漆',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: 'heal', value: 0.4},
+                    {type: 'heal', value: 0.4},
                 ];
             },
             cooldown: () => 45,
@@ -348,14 +348,14 @@
     },
     mina_charm: {
         minZone: Infinity,
-        图标: 'mdi-heart',
-        color: '粉色',
+        icon: 'mdi-heart',
+        color: '粉红色油漆',
         激活的卡片: {
-            效果() {
+            effect() {
                 return [
-                    {类型: '沉默药水', value: 5},
-                    {类型: 'gainStat', stat: 'bioAttack_mult', value: 1.6},
-                    {类型: 'gainStat', stat: 'execute_base', value: 0.05},
+                    {type: 'silence', value: 5},
+                    {type: 'gainStat', stat: 'bioAttack_mult', value: 1.6},
+                    {type: 'gainStat', stat: 'execute_base', value: 0.05},
                 ];
             },
             cooldown: () => 30,

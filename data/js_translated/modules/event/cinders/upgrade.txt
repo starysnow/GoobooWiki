@@ -1,244 +1,244 @@
 {
-    月光: {类型: 'cinders', 消耗(lvl) {
-        return {光: store.getters['*/新的更新!']('升级光成本', Math.pow(1000, lvl) * buildNum(1, 'M'))};
-    }, 效果: [
-        {name: '光增益', 类型: '*', value: lvl => Math.pow(3, lvl)}
+    月光: {type: 'cinders', price(lvl) {
+        return {光: store.getters['*/get']('升级光成本', Math.pow(1000, lvl) * buildNum(1, 'M'))};
+    }, effect: [
+        {name: '光增益', type: '*', value: lvl => Math.pow(3, lvl)}
     ]},
-    燃烧的苍蝇: {类型: 'cinders', requirement(lvl) {
-        return store.state.升级成本.item.萤火虫.达到等级 >= store.getters['*/新的更新!']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
-    }, 消耗(lvl) {
-        return {光: store.getters['*/新的更新!']('升级光成本', Math.pow(1.15, lvl >= 1 ? (lvl * 50) : 25) * 5000)};
-    }, 效果: [
-        {name: '光增益 (萤火虫)', 类型: '+', value: lvl => lvl < 2 ? [0, 1][lvl] : 4},
-        {name: '光增益 (萤火虫)', 类型: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
+    燃烧的苍蝇: {type: 'cinders', requirement(lvl) {
+        return store.state.upgrade.item.萤火虫.level >= store.getters['*/get']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
+    }, price(lvl) {
+        return {光: store.getters['*/get']('升级光成本', Math.pow(1.15, lvl >= 1 ? (lvl * 50) : 25) * 5000)};
+    }, effect: [
+        {name: '光增益 (萤火虫)', type: '+', value: lvl => lvl < 2 ? [0, 1][lvl] : 4},
+        {name: '光增益 (萤火虫)', type: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
     ]},
-    更多孢子: {类型: 'cinders', requirement(lvl) {
-        return store.state.升级成本.item.发光蘑菇.达到等级 >= store.getters['*/新的更新!']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
-    }, 消耗(lvl) {
-        return {光: store.getters['*/新的更新!']('升级光成本', Math.pow(1.16, lvl >= 1 ? (lvl * 50) : 25) * buildNum(250, 'M'))};
-    }, 效果: [
-        {name: '光增益 (发光蘑菇)', 类型: '+', value: lvl => lvl < 2 ? [0, 60][lvl] : 225},
-        {name: '光增益 (发光蘑菇)', 类型: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
+    更多孢子: {type: 'cinders', requirement(lvl) {
+        return store.state.upgrade.item.发光蘑菇.level >= store.getters['*/get']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
+    }, price(lvl) {
+        return {光: store.getters['*/get']('升级光成本', Math.pow(1.16, lvl >= 1 ? (lvl * 50) : 25) * buildNum(250, 'M'))};
+    }, effect: [
+        {name: '光增益 (发光蘑菇)', type: '+', value: lvl => lvl < 2 ? [0, 60][lvl] : 225},
+        {name: '光增益 (发光蘑菇)', type: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
     ]},
-    翅片: {类型: 'cinders', requirement(lvl) {
-        return store.state.升级成本.item.发光鱼.达到等级 >= store.getters['*/新的更新!']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
-    }, 消耗(lvl) {
-        return {光: store.getters['*/新的更新!']('升级光成本', Math.pow(1.17, lvl >= 1 ? (lvl * 50) : 25) * buildNum(15, 'T'))};
-    }, 效果: [
-        {name: '光增益 (发光鱼)', 类型: '+', value: lvl => lvl < 2 ? [0, 3500][lvl] : buildNum(14, 'K')},
-        {name: '光增益 (发光鱼)', 类型: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
+    翅片: {type: 'cinders', requirement(lvl) {
+        return store.state.upgrade.item.发光鱼.level >= store.getters['*/get']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
+    }, price(lvl) {
+        return {光: store.getters['*/get']('升级光成本', Math.pow(1.17, lvl >= 1 ? (lvl * 50) : 25) * buildNum(15, 'T'))};
+    }, effect: [
+        {name: '光增益 (发光鱼)', type: '+', value: lvl => lvl < 2 ? [0, 3500][lvl] : buildNum(14, 'K')},
+        {name: '光增益 (发光鱼)', type: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
     ]},
-    灯柱: {类型: 'cinders', requirement(lvl) {
-        return store.state.升级成本.item.灯.达到等级 >= store.getters['*/新的更新!']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
-    }, 消耗(lvl) {
-        return {光: store.getters['*/新的更新!']('升级光成本', Math.pow(1.18, lvl >= 1 ? (lvl * 50) : 25) * buildNum(1.2, 'Qi'))};
-    }, 效果: [
-        {name: '光增益 (灯)', 类型: '+', value: lvl => lvl < 2 ? [0, buildNum(150, 'K')][lvl] : buildNum(600, 'K')},
-        {name: '光增益 (灯)', 类型: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
+    灯柱: {type: 'cinders', requirement(lvl) {
+        return store.state.upgrade.item.灯.level >= store.getters['*/get']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
+    }, price(lvl) {
+        return {光: store.getters['*/get']('升级光成本', Math.pow(1.18, lvl >= 1 ? (lvl * 50) : 25) * buildNum(1.2, 'Qi'))};
+    }, effect: [
+        {name: '光增益 (灯)', type: '+', value: lvl => lvl < 2 ? [0, buildNum(150, 'K')][lvl] : buildNum(600, 'K')},
+        {name: '光增益 (灯)', type: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
     ]},
-    篝火故事: {类型: 'cinders', requirement(lvl) {
-        return store.state.升级成本.item.营火.达到等级 >= store.getters['*/新的更新!']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
-    }, 消耗(lvl) {
-        return {光: store.getters['*/新的更新!']('升级光成本', Math.pow(1.19, lvl >= 1 ? (lvl * 50) : 25) * buildNum(120, 'Sx'))};
-    }, 效果: [
-        {name: '光增益 (营火)', 类型: '+', value: lvl => lvl < 2 ? [0, buildNum(10, 'M')][lvl] : buildNum(40, 'M')},
-        {name: '光增益 (营火)', 类型: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
+    篝火故事: {type: 'cinders', requirement(lvl) {
+        return store.state.upgrade.item.营火.level >= store.getters['*/get']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
+    }, price(lvl) {
+        return {光: store.getters['*/get']('升级光成本', Math.pow(1.19, lvl >= 1 ? (lvl * 50) : 25) * buildNum(120, 'Sx'))};
+    }, effect: [
+        {name: '光增益 (营火)', type: '+', value: lvl => lvl < 2 ? [0, buildNum(10, 'M')][lvl] : buildNum(40, 'M')},
+        {name: '光增益 (营火)', type: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
     ]},
-    海绵: {类型: 'cinders', requirement(lvl) {
-        return store.state.升级成本.item.珊瑚.达到等级 >= store.getters['*/新的更新!']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
-    }, 消耗(lvl) {
-        return {光: store.getters['*/新的更新!']('升级光成本', Math.pow(1.2, lvl >= 1 ? (lvl * 50) : 25) * buildNum(18, 'O'))};
-    }, 效果: [
-        {name: '光增益 (珊瑚)', 类型: '+', value: lvl => lvl < 2 ? [0, buildNum(700, 'M')][lvl] : buildNum(2.2, 'B')},
-        {name: '光增益 (珊瑚)', 类型: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
+    海绵: {type: 'cinders', requirement(lvl) {
+        return store.state.upgrade.item.珊瑚.level >= store.getters['*/get']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
+    }, price(lvl) {
+        return {光: store.getters['*/get']('升级光成本', Math.pow(1.2, lvl >= 1 ? (lvl * 50) : 25) * buildNum(18, 'O'))};
+    }, effect: [
+        {name: '光增益 (珊瑚)', type: '+', value: lvl => lvl < 2 ? [0, buildNum(700, 'M')][lvl] : buildNum(2.2, 'B')},
+        {name: '光增益 (珊瑚)', type: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
     ]},
-    更长的触手: {类型: 'cinders', requirement(lvl) {
-        return store.state.升级成本.item.海蜇.达到等级 >= store.getters['*/新的更新!']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
-    }, 消耗(lvl) {
-        return {光: store.getters['*/新的更新!']('升级光成本', Math.pow(1.25, lvl >= 1 ? (lvl * 50) : 25) * buildNum(3.6, 'D'))};
-    }, 效果: [
-        {name: '光增益 (海蜇)', 类型: '+', value: lvl => lvl < 2 ? [0, buildNum(30, 'B')][lvl] : buildNum(120, 'B')},
-        {name: '光增益 (海蜇)', 类型: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
+    更长的触手: {type: 'cinders', requirement(lvl) {
+        return store.state.upgrade.item.海蜇.level >= store.getters['*/get']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
+    }, price(lvl) {
+        return {光: store.getters['*/get']('升级光成本', Math.pow(1.25, lvl >= 1 ? (lvl * 50) : 25) * buildNum(3.6, 'D'))};
+    }, effect: [
+        {name: '光增益 (海蜇)', type: '+', value: lvl => lvl < 2 ? [0, buildNum(30, 'B')][lvl] : buildNum(120, 'B')},
+        {name: '光增益 (海蜇)', type: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
     ]},
-    夜间: {类型: 'cinders', requirement(lvl) {
-        return store.state.升级成本.item.夜花.达到等级 >= store.getters['*/新的更新!']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
-    }, 消耗(lvl) {
-        return {光: store.getters['*/新的更新!']('升级光成本', Math.pow(1.3, lvl >= 1 ? (lvl * 50) : 25) * buildNum(900, 'UD'))};
-    }, 效果: [
-        {name: '光增益 (夜花)', 类型: '+', value: lvl => lvl < 2 ? [0, buildNum(1.1, 'T')][lvl] : buildNum(4.5, 'T')},
-        {name: '光增益 (夜花)', 类型: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
+    夜间: {type: 'cinders', requirement(lvl) {
+        return store.state.upgrade.item.夜花.level >= store.getters['*/get']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
+    }, price(lvl) {
+        return {光: store.getters['*/get']('升级光成本', Math.pow(1.3, lvl >= 1 ? (lvl * 50) : 25) * buildNum(900, 'UD'))};
+    }, effect: [
+        {name: '光增益 (夜花)', type: '+', value: lvl => lvl < 2 ? [0, buildNum(1.1, 'T')][lvl] : buildNum(4.5, 'T')},
+        {name: '光增益 (夜花)', type: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
     ]},
-    城市: {类型: 'cinders', requirement(lvl) {
-        return store.state.升级成本.item.霓虹灯.达到等级 >= store.getters['*/新的更新!']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
-    }, 消耗(lvl) {
-        return {光: store.getters['*/新的更新!']('升级光成本', Math.pow(1.35, lvl >= 1 ? (lvl * 50) : 25) * buildNum(270, 'TD'))};
-    }, 效果: [
-        {name: '光增益 (霓虹灯)', 类型: '+', value: lvl => lvl < 2 ? [0, buildNum(30, 'T')][lvl] : buildNum(110, 'T')},
-        {name: '光增益 (霓虹灯)', 类型: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
+    城市: {type: 'cinders', requirement(lvl) {
+        return store.state.upgrade.item.霓虹灯.level >= store.getters['*/get']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
+    }, price(lvl) {
+        return {光: store.getters['*/get']('升级光成本', Math.pow(1.35, lvl >= 1 ? (lvl * 50) : 25) * buildNum(270, 'TD'))};
+    }, effect: [
+        {name: '光增益 (霓虹灯)', type: '+', value: lvl => lvl < 2 ? [0, buildNum(30, 'T')][lvl] : buildNum(110, 'T')},
+        {name: '光增益 (霓虹灯)', type: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
     ]},
-    更多氦: {类型: 'cinders', requirement(lvl) {
-        return store.state.升级成本.item.太阳药水.达到等级 >= store.getters['*/新的更新!']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
-    }, 消耗(lvl) {
-        return {光: store.getters['*/新的更新!']('升级光成本', Math.pow(1.5, lvl >= 1 ? (lvl * 50) : 25) * buildNum(135, 'QiD'))};
-    }, 效果: [
-        {name: '光增益 (太阳)', 类型: '+', value: lvl => lvl < 2 ? [0, buildNum(1, 'Qa')][lvl] : buildNum(4, 'Qa')},
-        {name: '光增益 (太阳)', 类型: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
+    更多氦: {type: 'cinders', requirement(lvl) {
+        return store.state.upgrade.item.日.level >= store.getters['*/get']('升级生产者要求', lvl >= 1 ? (lvl * 50) : 25);
+    }, price(lvl) {
+        return {光: store.getters['*/get']('升级光成本', Math.pow(1.5, lvl >= 1 ? (lvl * 50) : 25) * buildNum(135, 'QiD'))};
+    }, effect: [
+        {name: '光增益 (太阳)', type: '+', value: lvl => lvl < 2 ? [0, buildNum(1, 'Qa')][lvl] : buildNum(4, 'Qa')},
+        {name: '光增益 (太阳)', type: '*', value: lvl => lvl > 2 ? Math.pow(5, lvl - 2) : null}
     ]},
-    狂暴的苍蝇: {类型: 'cinders', 上限: 6, requirement() {
-        return store.state.升级成本.item.萤火虫.达到等级 > 0;
-    }, 消耗(lvl) {
+    狂暴的苍蝇: {type: 'cinders', cap: 6, requirement() {
+        return store.state.upgrade.item.萤火虫.level > 0;
+    }, price(lvl) {
         return {煤烟: lvl * 4 + 20};
-    }, 效果: [
-        {name: '光增益 (萤火虫)', 类型: '+', value: lvl => lvl * 2}
+    }, effect: [
+        {name: '光增益 (萤火虫)', type: '+', value: lvl => lvl * 2}
     ]},
-    菌丝: {类型: 'cinders', 上限: 6, requirement() {
-        return store.state.升级成本.item.发光蘑菇.达到等级 > 0;
-    }, 消耗(lvl) {
+    菌丝: {type: 'cinders', cap: 6, requirement() {
+        return store.state.upgrade.item.发光蘑菇.level > 0;
+    }, price(lvl) {
         return {煤烟: lvl * 5 + 25};
-    }, 效果: [
-        {name: '光增益 (发光蘑菇)', 类型: '+', value: lvl => lvl * 60}
+    }, effect: [
+        {name: '光增益 (发光蘑菇)', type: '+', value: lvl => lvl * 60}
     ]},
-    鳃: {类型: 'cinders', 上限: 6, requirement() {
-        return store.state.升级成本.item.发光鱼.达到等级 > 0;
-    }, 消耗(lvl) {
+    鳃: {type: 'cinders', cap: 6, requirement() {
+        return store.state.upgrade.item.发光鱼.level > 0;
+    }, price(lvl) {
         return {煤烟: lvl * 6 + 30};
-    }, 效果: [
-        {name: '光增益 (发光鱼)', 类型: '+', value: lvl => lvl * 4300}
+    }, effect: [
+        {name: '光增益 (发光鱼)', type: '+', value: lvl => lvl * 4300}
     ]},
-    调光器: {类型: 'cinders', 上限: 6, requirement() {
-        return store.state.升级成本.item.灯.达到等级 > 0;
-    }, 消耗(lvl) {
+    调光器: {type: 'cinders', cap: 6, requirement() {
+        return store.state.upgrade.item.灯.level > 0;
+    }, price(lvl) {
         return {煤烟: lvl * 7 + 35};
-    }, 效果: [
-        {name: '光增益 (灯)', 类型: '+', value: lvl => lvl * buildNum(160, 'K')}
+    }, effect: [
+        {name: '光增益 (灯)', type: '+', value: lvl => lvl * buildNum(160, 'K')}
     ]},
-    棉花糖: {类型: 'cinders', 上限: 6, requirement() {
-        return store.state.升级成本.item.营火.达到等级 > 0;
-    }, 消耗(lvl) {
+    棉花糖: {type: 'cinders', cap: 6, requirement() {
+        return store.state.upgrade.item.营火.level > 0;
+    }, price(lvl) {
         return {煤烟: lvl * 8 + 40};
-    }, 效果: [
-        {name: '光增益 (营火)', 类型: '+', value: lvl => lvl * buildNum(10.4, 'M')}
+    }, effect: [
+        {name: '光增益 (营火)', type: '+', value: lvl => lvl * buildNum(10.4, 'M')}
     ]},
-    海葵: {类型: 'cinders', 上限: 6, requirement() {
-        return store.state.升级成本.item.珊瑚.达到等级 > 0;
-    }, 消耗(lvl) {
+    海葵: {type: 'cinders', cap: 6, requirement() {
+        return store.state.upgrade.item.珊瑚.level > 0;
+    }, price(lvl) {
         return {煤烟: lvl * 9 + 45};
-    }, 效果: [
-        {name: '光增益 (珊瑚)', 类型: '+', value: lvl => lvl * buildNum(600, 'M')}
+    }, effect: [
+        {name: '光增益 (珊瑚)', type: '+', value: lvl => lvl * buildNum(600, 'M')}
     ]},
-    毒素: {类型: 'cinders', 上限: 6, requirement() {
-        return store.state.升级成本.item.海蜇.达到等级 > 0;
-    }, 消耗(lvl) {
+    毒素: {type: 'cinders', cap: 6, requirement() {
+        return store.state.upgrade.item.海蜇.level > 0;
+    }, price(lvl) {
         return {煤烟: lvl * 10 + 50};
-    }, 效果: [
-        {name: '光增益 (海蜇)', 类型: '+', value: lvl => lvl * buildNum(31, 'B')}
+    }, effect: [
+        {name: '光增益 (海蜇)', type: '+', value: lvl => lvl * buildNum(31, 'B')}
     ]},
-    满月: {类型: 'cinders', 上限: 6, requirement() {
-        return store.state.升级成本.item.夜花.达到等级 > 0;
-    }, 消耗(lvl) {
+    满月: {type: 'cinders', cap: 6, requirement() {
+        return store.state.upgrade.item.夜花.level > 0;
+    }, price(lvl) {
         return {煤烟: lvl * 11 + 55};
-    }, 效果: [
-        {name: '光增益 (夜花)', 类型: '+', value: lvl => lvl * buildNum(1.2, 'T')}
+    }, effect: [
+        {name: '光增益 (夜花)', type: '+', value: lvl => lvl * buildNum(1.2, 'T')}
     ]},
-    广告: {类型: 'cinders', 上限: 6, requirement() {
-        return store.state.升级成本.item.霓虹灯.达到等级 > 0;
-    }, 消耗(lvl) {
+    广告: {type: 'cinders', cap: 6, requirement() {
+        return store.state.upgrade.item.霓虹灯.level > 0;
+    }, price(lvl) {
         return {煤烟: lvl * 12 + 60};
-    }, 效果: [
-        {name: '光增益 (霓虹灯)', 类型: '+', value: lvl => lvl * buildNum(30, 'T')}
+    }, effect: [
+        {name: '光增益 (霓虹灯)', type: '+', value: lvl => lvl * buildNum(30, 'T')}
     ]},
-    距离更短: {类型: 'cinders', 上限: 6, requirement() {
-        return store.state.升级成本.item.太阳药水.达到等级 > 0;
-    }, 消耗(lvl) {
+    距离更短: {type: 'cinders', cap: 6, requirement() {
+        return store.state.upgrade.item.日.level > 0;
+    }, price(lvl) {
         return {煤烟: lvl * 13 + 65};
-    }, 效果: [
-        {name: '光增益 (太阳)', 类型: '+', value: lvl => lvl * buildNum(1, 'Qa')}
+    }, effect: [
+        {name: '光增益 (太阳)', type: '+', value: lvl => lvl * buildNum(1, 'Qa')}
     ]},
-    明亮的萤火虫: {类型: 'cinders', 上限: 1, requirement() {
-        return store.state.升级成本.item.萤火虫.达到等级 > 0;
-    }, 消耗() {
+    明亮的萤火虫: {type: 'cinders', cap: 1, requirement() {
+        return store.state.upgrade.item.萤火虫.level > 0;
+    }, price() {
         return {gem_topaz: 400};
-    }, 效果: [
-        {name: '光增益 (萤火虫)', 类型: '*', value: lvl => lvl >= 1 ? 10 : null}
+    }, effect: [
+        {name: '光增益 (萤火虫)', type: '*', value: lvl => lvl >= 1 ? 10 : null}
     ]},
-    明亮的发光蘑菇: {类型: 'cinders', 上限: 1, requirement() {
-        return store.state.升级成本.item.发光蘑菇.达到等级 > 0;
-    }, 消耗() {
+    明亮的发光蘑菇: {type: 'cinders', cap: 1, requirement() {
+        return store.state.upgrade.item.发光蘑菇.level > 0;
+    }, price() {
         return {gem_topaz: 500};
-    }, 效果: [
-        {name: '光增益', 类型: '*', value: lvl => lvl >= 1 ? 1.5 : null}
+    }, effect: [
+        {name: '光增益', type: '*', value: lvl => lvl >= 1 ? 1.5 : null}
     ]},
-    明亮的发光鱼: {类型: 'cinders', 上限: 1, requirement() {
-        return store.state.升级成本.item.发光鱼.达到等级 > 0;
-    }, 消耗() {
+    明亮的发光鱼: {type: 'cinders', cap: 1, requirement() {
+        return store.state.upgrade.item.发光鱼.level > 0;
+    }, price() {
         return {gem_topaz: 600};
-    }, 效果: [
-        {name: '第一生产者成本', 类型: '*', value: lvl => lvl >= 1 ? 0.25 : null},
-        {name: '光增益', 类型: '*', value: lvl => lvl >= 1 ? 1.5 : null}
+    }, effect: [
+        {name: '第一生产者成本', type: '*', value: lvl => lvl >= 1 ? 0.25 : null},
+        {name: '光增益', type: '*', value: lvl => lvl >= 1 ? 1.5 : null}
     ]},
-    明亮的灯: {类型: 'cinders', 上限: 1, requirement() {
-        return store.state.升级成本.item.灯.达到等级 > 0;
-    }, 消耗() {
+    明亮的灯: {type: 'cinders', cap: 1, requirement() {
+        return store.state.upgrade.item.灯.level > 0;
+    }, price() {
         return {gem_topaz: 700};
-    }, 效果: [
-        {name: '煤烟增益', 类型: '*', value: lvl => lvl >= 1 ? 2 : null},
-        {name: '光增益', 类型: '*', value: lvl => lvl >= 1 ? 1.5 : null}
+    }, effect: [
+        {name: '煤烟增益', type: '*', value: lvl => lvl >= 1 ? 2 : null},
+        {name: '光增益', type: '*', value: lvl => lvl >= 1 ? 1.5 : null}
     ]},
-    明亮的营火: {类型: 'cinders', 上限: 1, requirement() {
-        return store.state.升级成本.item.营火.达到等级 > 0;
-    }, 消耗() {
+    明亮的营火: {type: 'cinders', cap: 1, requirement() {
+        return store.state.upgrade.item.营火.level > 0;
+    }, price() {
         return {gem_topaz: 800};
-    }, 效果: [
-        {name: '煤渣代币增益', 类型: '*', value: lvl => lvl >= 1 ? 1.05 : null},
-        {name: '光增益', 类型: '*', value: lvl => lvl >= 1 ? 1.5 : null}
+    }, effect: [
+        {name: '煤渣代币增益', type: '*', value: lvl => lvl >= 1 ? 1.05 : null},
+        {name: '光增益', type: '*', value: lvl => lvl >= 1 ? 1.5 : null}
     ]},
-    明亮的珊瑚: {类型: 'cinders', 上限: 1, requirement() {
-        return store.state.升级成本.item.珊瑚.达到等级 > 0;
-    }, 消耗() {
+    明亮的珊瑚: {type: 'cinders', cap: 1, requirement() {
+        return store.state.upgrade.item.珊瑚.level > 0;
+    }, price() {
         return {gem_topaz: 900};
-    }, 效果: [
-        {name: '升级生产者要求', 类型: '+', value: lvl => lvl >= 1 ? -10 : null},
-        {name: '光增益', 类型: '*', value: lvl => lvl >= 1 ? 1.5 : null}
+    }, effect: [
+        {name: '升级生产者要求', type: '+', value: lvl => lvl >= 1 ? -10 : null},
+        {name: '光增益', type: '*', value: lvl => lvl >= 1 ? 1.5 : null}
     ]},
-    明亮的海蜇: {类型: 'cinders', 上限: 1, requirement() {
-        return store.state.升级成本.item.海蜇.达到等级 > 0;
-    }, 消耗() {
+    明亮的海蜇: {type: 'cinders', cap: 1, requirement() {
+        return store.state.upgrade.item.海蜇.level > 0;
+    }, price() {
         return {gem_topaz: 1000};
-    }, 效果: [
-        {name: '蜡烛力量', 类型: '*', value: lvl => lvl >= 1 ? 2 : null},
-        {name: '光增益', 类型: '*', value: lvl => lvl >= 1 ? 1.5 : null}
+    }, effect: [
+        {name: '蜡烛力量', type: '*', value: lvl => lvl >= 1 ? 2 : null},
+        {name: '光增益', type: '*', value: lvl => lvl >= 1 ? 1.5 : null}
     ]},
-    明亮的夜花: {类型: 'cinders', 上限: 1, requirement() {
-        return store.state.升级成本.item.夜花.达到等级 > 0;
-    }, 消耗() {
+    明亮的夜花: {type: 'cinders', cap: 1, requirement() {
+        return store.state.upgrade.item.夜花.level > 0;
+    }, price() {
         return {gem_topaz: 1100};
-    }, 效果: [
-        {name: '非第一生产者成本', 类型: '*', value: lvl => lvl >= 1 ? 0.5 : null},
-        {name: '光增益', 类型: '*', value: lvl => lvl >= 1 ? 1.5 : null}
+    }, effect: [
+        {name: '非第一生产者成本', type: '*', value: lvl => lvl >= 1 ? 0.5 : null},
+        {name: '光增益', type: '*', value: lvl => lvl >= 1 ? 1.5 : null}
     ]},
-    明亮的霓虹灯: {类型: 'cinders', 上限: 1, requirement() {
-        return store.state.升级成本.item.霓虹灯.达到等级 > 0;
-    }, 消耗() {
+    明亮的霓虹灯: {type: 'cinders', cap: 1, requirement() {
+        return store.state.upgrade.item.霓虹灯.level > 0;
+    }, price() {
         return {gem_topaz: 1200};
-    }, 效果: [
-        {name: '升级光成本', 类型: '*', value: lvl => lvl >= 1 ? 0.5 : null},
-        {name: '光增益', 类型: '*', value: lvl => lvl >= 1 ? 1.5 : null}
+    }, effect: [
+        {name: '升级光成本', type: '*', value: lvl => lvl >= 1 ? 0.5 : null},
+        {name: '光增益', type: '*', value: lvl => lvl >= 1 ? 1.5 : null}
     ]},
-    明亮的阳光: {类型: 'cinders', 上限: 1, requirement() {
-        return store.state.升级成本.item.太阳药水.达到等级 > 0;
-    }, 消耗() {
+    明亮的阳光: {type: 'cinders', cap: 1, requirement() {
+        return store.state.upgrade.item.日.level > 0;
+    }, price() {
         return {gem_topaz: 1300};
-    }, 效果: [
-        {name: '光增益 (萤火虫)', 类型: '*', value: lvl => lvl >= 1 ? 2 : null},
-        {name: '光增益 (发光蘑菇)', 类型: '*', value: lvl => lvl >= 1 ? 1.9 : null},
-        {name: '光增益 (发光鱼)', 类型: '*', value: lvl => lvl >= 1 ? 1.8 : null},
-        {name: '光增益 (灯)', 类型: '*', value: lvl => lvl >= 1 ? 1.7 : null},
-        {name: '光增益 (营火)', 类型: '*', value: lvl => lvl >= 1 ? 1.6 : null},
-        {name: '光增益 (珊瑚)', 类型: '*', value: lvl => lvl >= 1 ? 1.5 : null},
-        {name: '光增益 (海蜇)', 类型: '*', value: lvl => lvl >= 1 ? 1.4 : null},
-        {name: '光增益 (夜花)', 类型: '*', value: lvl => lvl >= 1 ? 1.3 : null},
-        {name: '光增益 (霓虹灯)', 类型: '*', value: lvl => lvl >= 1 ? 1.2 : null},
-        {name: '光增益 (太阳)', 类型: '*', value: lvl => lvl >= 1 ? 1.1 : null},
-        {name: '光增益', 类型: '*', value: lvl => lvl >= 1 ? 1.5 : null}
+    }, effect: [
+        {name: '光增益 (萤火虫)', type: '*', value: lvl => lvl >= 1 ? 2 : null},
+        {name: '光增益 (发光蘑菇)', type: '*', value: lvl => lvl >= 1 ? 1.9 : null},
+        {name: '光增益 (发光鱼)', type: '*', value: lvl => lvl >= 1 ? 1.8 : null},
+        {name: '光增益 (灯)', type: '*', value: lvl => lvl >= 1 ? 1.7 : null},
+        {name: '光增益 (营火)', type: '*', value: lvl => lvl >= 1 ? 1.6 : null},
+        {name: '光增益 (珊瑚)', type: '*', value: lvl => lvl >= 1 ? 1.5 : null},
+        {name: '光增益 (海蜇)', type: '*', value: lvl => lvl >= 1 ? 1.4 : null},
+        {name: '光增益 (夜花)', type: '*', value: lvl => lvl >= 1 ? 1.3 : null},
+        {name: '光增益 (霓虹灯)', type: '*', value: lvl => lvl >= 1 ? 1.2 : null},
+        {name: '光增益 (太阳)', type: '*', value: lvl => lvl >= 1 ? 1.1 : null},
+        {name: '光增益', type: '*', value: lvl => lvl >= 1 ? 1.5 : null}
     ]}
 }

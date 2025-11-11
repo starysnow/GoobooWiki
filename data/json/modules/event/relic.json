@@ -1,0 +1,158 @@
+[
+  {
+    "名称": "tinfoilHat",
+    "icon": "<i class=\"mdi mdi-hat-fedora\"></i>",
+    "effect": "$[{ name: '铝矿石增益', type: ' \\cdot ', value: 1.12 }]$",
+    "glyph": "${ 粘土: 2, 书籍: 2 }$"
+  },
+  {
+    "名称": "cupOfWater",
+    "icon": "<i class=\"mdi mdi-cup-water\"></i>",
+    "effect": "$[{ name: '水增益', type: ' \\cdot ', value: 1.12 }, { name: '玻璃增益', type: ' \\cdot ', value: 1.05 }]$",
+    "glyph": "${ 木头: 2, 流动: 2 }$"
+  },
+  {
+    "名称": "combatStrategy",
+    "icon": "<i class=\"mdi mdi-clipboard-list\"></i>",
+    "effect": "$[{ name: '精通点数增益', type: ' \\cdot ', value: 1.1 }]$",
+    "glyph": "${ 尖刺: 2, 三叶草: 2 }$"
+  },
+  {
+    "名称": "hundredDollarBill",
+    "icon": "<i class=\"mdi mdi-cash-100\"></i>",
+    "effect": "$[{ name: '金币增益', type: ' \\cdot ', value: 1.1 }]$",
+    "glyph": "${ 流动: 2, 金币: 2 }$"
+  },
+  {
+    "名称": "热气球",
+    "icon": "<i class=\"mdi mdi-airballoon\"></i>",
+    "effect": "$[{ name: '冶炼时间', type: ' \\cdot ', value: 1 / 1.1 }]$",
+    "glyph": "${ 热量: 3 }$"
+  },
+  {
+    "名称": "largeClover",
+    "icon": "<i class=\"mdi mdi-clover\"></i>",
+    "effect": "$[{ name: '装备几率', type: ' \\cdot ', value: 1.15 }]$",
+    "glyph": "${ 三叶草: 3 }$"
+  },
+  {
+    "名称": "eightBall",
+    "icon": "<i class=\"mdi mdi-billiards\"></i>",
+    "effect": "$[{ name: '伤害', type: ' \\cdot ', value: 1.08 }]$",
+    "glyph": "${ 灰尘: 2, 书籍: 2 }$"
+  },
+  {
+    "名称": "youngPig",
+    "icon": "<i class=\"mdi mdi-pig-variant\"></i>",
+    "effect": "$[{ name: '怀旧之情', type: '+', value: 5 }]$",
+    "glyph": "${ 梦: 3 }$"
+  },
+  {
+    "名称": "silverHorseshoe",
+    "icon": "<i class=\"mdi mdi-horseshoe\"></i>",
+    "effect": "$[{ name: '稀有掉率', type: ' \\cdot ', value: 1.05 }]$",
+    "glyph": "${ 雨: 2, 日: 2 }$"
+  },
+  {
+    "名称": "bronzeTools",
+    "icon": "<i class=\"mdi mdi-tools\"></i>",
+    "effect": "$[{ name: '铜矿石增益', type: ' \\cdot ', value: 1.12 }, { name: '锡矿石增益', type: ' \\cdot ', value: 1.12 }]$",
+    "glyph": "${ 粘土: 2, 热量: 2 }$"
+  },
+  {
+    "名称": "minersHat",
+    "icon": "<i class=\"mdi mdi-hard-hat\"></i>",
+    "effect": "$[{ name: '铁矿石增益', type: ' \\cdot ', value: 1.12 }, { name: '钛矿石增益', type: ' \\cdot ', value: 1.12 }]$",
+    "glyph": "${ 灰尘: 2, 粘土: 2 }$"
+  },
+  {
+    "名称": "dictionary",
+    "icon": "<i class=\"mdi mdi-book-alphabet\"></i>",
+    "effect": "$[{ name: '知识增益', type: ' \\cdot ', value: 1.1 }]$",
+    "glyph": "${ 书籍: 3 }$"
+  },
+  {
+    "名称": "expertTools",
+    "icon": "<i class=\"mdi mdi-toolbox\"></i>",
+    "effect": "$[{ name: '硬木增益', type: ' \\cdot ', value: 1.07 }, { name: '宝石增益', type: ' \\cdot ', value: 1.07 }]$",
+    "glyph": "${ 流动: 2, 石头: 2 }$"
+  },
+  {
+    "名称": "bloodBag",
+    "icon": "<i class=\"mdi mdi-blood-bag\"></i>",
+    "effect": "$[{ name: '红色油漆增益', type: ' \\cdot ', value: 1.15 }]$",
+    "glyph": "${ 开花: 3 }$"
+  },
+  {
+    "名称": "geode",
+    "icon": "<i class=\"mdi mdi-circle-double\"></i>",
+    "effect": "$[{ name: '矿石增益', type: ' \\cdot ', value: 1.06 }]$",
+    "glyph": "${ 灰尘: 3 }$"
+  },
+  {
+    "名称": "birthdayCake",
+    "icon": "<i class=\"mdi mdi-cake\"></i>",
+    "effect": "$[{ name: '宝藏插槽', type: '+', value: 2 }]$",
+    "glyph": "${ 金币: 3 }$"
+  },
+  {
+    "名称": "colorfulFlower",
+    "icon": "<i class=\"mdi mdi-flower\"></i>",
+    "effect": "$[{ name: '花肥增益', type: ' \\cdot ', value: 1.15 }]$",
+    "glyph": "${ 云: 2, 金币: 2 }$"
+  },
+  {
+    "名称": "heatingBulb",
+    "icon": "<i class=\"mdi mdi-lightbulb-on\"></i>",
+    "effect": "$[{ name: '灵感的开始', type: '+', value: 1 }]$",
+    "glyph": "${ 纸: 3 }$"
+  },
+  {
+    "名称": "垃圾箱",
+    "icon": "<i class=\"mdi mdi-trash-can\"></i>",
+    "effect": "$[{ name: '废料增益', type: ' \\cdot ', value: 1.1 }]$",
+    "glyph": "${ 灰尘: 2, 书籍: 2 }$"
+  },
+  {
+    "名称": "suitcase",
+    "icon": "<i class=\"mdi mdi-bag-carry-on\"></i>",
+    "effect": "$[{ name: '骨头容量', type: ' \\cdot ', value: 1.1 }]$",
+    "glyph": "${ 尖刺: 3 }$"
+  },
+  {
+    "名称": "tropicalTent",
+    "icon": "<i class=\"mdi mdi-tent\"></i>",
+    "effect": "$[{ name: '工人', type: '+', value: 3 }]$",
+    "glyph": "${ 木头: 3 }$"
+  },
+  {
+    "名称": "fruitBasket",
+    "icon": "<i class=\"mdi mdi-basket\"></i>",
+    "effect": "$[{ name: '浆果增益', type: ' \\cdot ', value: 1.15 }]$",
+    "glyph": "${ 日: 3 }$"
+  },
+  {
+    "名称": "massiveGrain",
+    "icon": "<i class=\"mdi mdi-barley\"></i>",
+    "effect": "$[{ name: '粮食增益', type: ' \\cdot ', value: 1.15 }]$",
+    "glyph": "${ 云: 2, 书籍: 2 }$"
+  },
+  {
+    "名称": "enchantedBottle",
+    "icon": "<i class=\"mdi mdi-flask-round-bottom\"></i>",
+    "effect": "$[{ name: '树脂容量', type: '+', value: 1 }]$",
+    "glyph": "${ 粘土: 3 }$"
+  },
+  {
+    "名称": "moneyGift",
+    "icon": "<i class=\"mdi mdi-gift\"></i>",
+    "effect": "$[{ name: '金币增益', type: ' \\cdot ', value: 1.1 }]$",
+    "glyph": "${ 流动: 3 }$"
+  },
+  {
+    "名称": "frozenCarrot",
+    "icon": "<i class=\"mdi mdi-carrot\"></i>",
+    "effect": "$[{ name: '蔬菜增益', type: ' \\cdot ', value: 1.15 }]$",
+    "glyph": "${ 雨: 3 }$"
+  }
+]

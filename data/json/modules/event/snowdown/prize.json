@@ -1,32 +1,26 @@
 [
   {
-    "名称": "冰冷",
-    "item": "冰冷",
-    "pool": "{\"snowdown\":{\"消耗\":{\"降雪代币\":225}}}",
-    "amount": ""
+    "名称": "theme_frozen",
+    "type": "theme",
+    "item": "frozen",
+    "pool": "{\"snowdown\":{\"price\":{\"降雪代币\":225}}}"
   },
   {
     "名称": "金钱礼物",
+    "type": "relic",
     "item": "金钱礼物",
-    "pool": "{\"snowdown\":{\"消耗\":{\"降雪代币\":155}}}",
-    "amount": ""
+    "pool": "{\"snowdown\":{\"price\":{\"降雪代币\":155}}}"
   },
   {
-    "名称": "冷冻胡萝卜",
-    "item": "冷冻胡萝卜",
-    "pool": "{\"snowdown\":{\"消耗\":{\"降雪代币\":170}}}",
-    "amount": ""
+    "名称": "冻胡萝卜",
+    "type": "relic",
+    "item": "冻胡萝卜",
+    "pool": "{\"snowdown\":{\"price\":{\"降雪代币\":170}}}"
   },
   {
     "名称": "cardPack_icyWonderland",
+    "type": "卡包",
     "item": "冰雪仙境",
-    "pool": "{\"snowdown\":{\"消耗\":{\"降雪代币\":30}}}",
-    "amount": ""
-  },
-  {
-    "名称": "肉桂袋",
-    "item": "肉桂袋",
-    "pool": "{\"snowdown\":{\"消耗\":{\"降雪代币\":1}}}",
-    "amount": "20"
+    "pool": "{\"snowdown\":{\"price\":{\"降雪代币\":30}}}"
   }
 ]

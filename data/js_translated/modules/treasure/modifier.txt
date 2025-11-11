@@ -1,0 +1,22 @@
+{
+    上箭头: {
+        color: '绿色油漆',
+        icon: 'mdi-arrow-up-bold',
+        price: {gem_emerald: 100}
+    },
+    扩展器: {
+        color: '红色油漆',
+        icon: 'mdi-magnify-expand',
+        unique: true,
+        price: {gem_emerald: 300}
+    },
+    通配符: {
+        color: '蓝色油漆',
+        icon: 'mdi-card-bulleted',
+        price: {gem_sapphire: 300}
+    },
+    活动星级: {
+        color: '金色油漆',
+        icon: 'mdi-star'
+    },
+}

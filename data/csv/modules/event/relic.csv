@@ -1,0 +1,27 @@
+名称,icon,effect,glyph
+tinfoilHat,"<i class=""mdi mdi-hat-fedora""></i>","$[{ name: '铝矿石增益', type: ' \cdot ', value: 1.12 }]$","${ 粘土: 2, 书籍: 2 }$"
+cupOfWater,"<i class=""mdi mdi-cup-water""></i>","$[{ name: '水增益', type: ' \cdot ', value: 1.12 }, { name: '玻璃增益', type: ' \cdot ', value: 1.05 }]$","${ 木头: 2, 流动: 2 }$"
+combatStrategy,"<i class=""mdi mdi-clipboard-list""></i>","$[{ name: '精通点数增益', type: ' \cdot ', value: 1.1 }]$","${ 尖刺: 2, 三叶草: 2 }$"
+hundredDollarBill,"<i class=""mdi mdi-cash-100""></i>","$[{ name: '金币增益', type: ' \cdot ', value: 1.1 }]$","${ 流动: 2, 金币: 2 }$"
+热气球,"<i class=""mdi mdi-airballoon""></i>","$[{ name: '冶炼时间', type: ' \cdot ', value: 1 / 1.1 }]$",${ 热量: 3 }$
+largeClover,"<i class=""mdi mdi-clover""></i>","$[{ name: '装备几率', type: ' \cdot ', value: 1.15 }]$",${ 三叶草: 3 }$
+eightBall,"<i class=""mdi mdi-billiards""></i>","$[{ name: '伤害', type: ' \cdot ', value: 1.08 }]$","${ 灰尘: 2, 书籍: 2 }$"
+youngPig,"<i class=""mdi mdi-pig-variant""></i>","$[{ name: '怀旧之情', type: '+', value: 5 }]$",${ 梦: 3 }$
+silverHorseshoe,"<i class=""mdi mdi-horseshoe""></i>","$[{ name: '稀有掉率', type: ' \cdot ', value: 1.05 }]$","${ 雨: 2, 日: 2 }$"
+bronzeTools,"<i class=""mdi mdi-tools""></i>","$[{ name: '铜矿石增益', type: ' \cdot ', value: 1.12 }, { name: '锡矿石增益', type: ' \cdot ', value: 1.12 }]$","${ 粘土: 2, 热量: 2 }$"
+minersHat,"<i class=""mdi mdi-hard-hat""></i>","$[{ name: '铁矿石增益', type: ' \cdot ', value: 1.12 }, { name: '钛矿石增益', type: ' \cdot ', value: 1.12 }]$","${ 灰尘: 2, 粘土: 2 }$"
+dictionary,"<i class=""mdi mdi-book-alphabet""></i>","$[{ name: '知识增益', type: ' \cdot ', value: 1.1 }]$",${ 书籍: 3 }$
+expertTools,"<i class=""mdi mdi-toolbox""></i>","$[{ name: '硬木增益', type: ' \cdot ', value: 1.07 }, { name: '宝石增益', type: ' \cdot ', value: 1.07 }]$","${ 流动: 2, 石头: 2 }$"
+bloodBag,"<i class=""mdi mdi-blood-bag""></i>","$[{ name: '红色油漆增益', type: ' \cdot ', value: 1.15 }]$",${ 开花: 3 }$
+geode,"<i class=""mdi mdi-circle-double""></i>","$[{ name: '矿石增益', type: ' \cdot ', value: 1.06 }]$",${ 灰尘: 3 }$
+birthdayCake,"<i class=""mdi mdi-cake""></i>","$[{ name: '宝藏插槽', type: '+', value: 2 }]$",${ 金币: 3 }$
+colorfulFlower,"<i class=""mdi mdi-flower""></i>","$[{ name: '花肥增益', type: ' \cdot ', value: 1.15 }]$","${ 云: 2, 金币: 2 }$"
+heatingBulb,"<i class=""mdi mdi-lightbulb-on""></i>","$[{ name: '灵感的开始', type: '+', value: 1 }]$",${ 纸: 3 }$
+垃圾箱,"<i class=""mdi mdi-trash-can""></i>","$[{ name: '废料增益', type: ' \cdot ', value: 1.1 }]$","${ 灰尘: 2, 书籍: 2 }$"
+suitcase,"<i class=""mdi mdi-bag-carry-on""></i>","$[{ name: '骨头容量', type: ' \cdot ', value: 1.1 }]$",${ 尖刺: 3 }$
+tropicalTent,"<i class=""mdi mdi-tent""></i>","$[{ name: '工人', type: '+', value: 3 }]$",${ 木头: 3 }$
+fruitBasket,"<i class=""mdi mdi-basket""></i>","$[{ name: '浆果增益', type: ' \cdot ', value: 1.15 }]$",${ 日: 3 }$
+massiveGrain,"<i class=""mdi mdi-barley""></i>","$[{ name: '粮食增益', type: ' \cdot ', value: 1.15 }]$","${ 云: 2, 书籍: 2 }$"
+enchantedBottle,"<i class=""mdi mdi-flask-round-bottom""></i>","$[{ name: '树脂容量', type: '+', value: 1 }]$",${ 粘土: 3 }$
+moneyGift,"<i class=""mdi mdi-gift""></i>","$[{ name: '金币增益', type: ' \cdot ', value: 1.1 }]$",${ 流动: 3 }$
+frozenCarrot,"<i class=""mdi mdi-carrot""></i>","$[{ name: '蔬菜增益', type: ' \cdot ', value: 1.15 }]$",${ 雨: 3 }$

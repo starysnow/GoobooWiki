@@ -1,7 +1,7 @@
 {
     铝矿石: {
-        力量: 15,
-        杂质: 1.5,
+        最高力量: 15,
+        impurity: 1.5,
         minDepth: 15,
         maxDepth: 45,
         modulo: 3,
@@ -9,8 +9,8 @@
         amountMult: 1.05
     },
     铜矿石: {
-        力量: 50,
-        杂质: 2,
+        最高力量: 50,
+        impurity: 2,
         minDepth: 30,
         maxDepth: 68,
         modulo: 4,
@@ -18,8 +18,8 @@
         amountMult: 1.05
     },
     锡矿石: {
-        力量: 240,
-        杂质: 2.5,
+        最高力量: 240,
+        impurity: 2.5,
         minDepth: 50,
         maxDepth: 100,
         modulo: 5,
@@ -27,8 +27,8 @@
         amountMult: 1.05
     },
     铁矿石: {
-        力量: 1300,
-        杂质: 3,
+        最高力量: 1300,
+        impurity: 3,
         minDepth: 80,
         maxDepth: 140,
         modulo: 7,
@@ -36,8 +36,8 @@
         amountMult: 1.05
     },
     钛矿石: {
-        力量: 7000,
-        杂质: 3.5,
+        最高力量: 7000,
+        impurity: 3.5,
         minDepth: 120,
         maxDepth: 200,
         modulo: 11,
@@ -45,8 +45,8 @@
         amountMult: 1.05
     },
     铂矿石: {
-        力量: buildNum(40, 'K'),
-        杂质: 4,
+        最高力量: buildNum(40, 'K'),
+        impurity: 4,
         minDepth: 175,
         maxDepth: 295,
         modulo: 13,
@@ -54,8 +54,8 @@
         amountMult: 1.05
     },
     铱矿石: {
-        力量: buildNum(250, 'K'),
-        杂质: 5,
+        最高力量: buildNum(250, 'K'),
+        impurity: 5,
         minDepth: 260,
         maxDepth: 420,
         modulo: 17,
@@ -63,8 +63,8 @@
         amountMult: 1.05
     },
     锇矿石: {
-        力量: buildNum(1.75, 'M'),
-        杂质: 6,
+        最高力量: buildNum(1.75, 'M'),
+        impurity: 6,
         minDepth: 350,
         maxDepth: 525,
         modulo: 23,
@@ -72,8 +72,8 @@
         amountMult: 1.05
     },
     铅矿石: {
-        力量: buildNum(12.5, 'M'),
-        杂质: 7.5,
+        最高力量: buildNum(12.5, 'M'),
+        impurity: 7.5,
         minDepth: 450,
         maxDepth: 650,
         modulo: 29,

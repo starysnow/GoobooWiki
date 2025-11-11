@@ -2,97 +2,97 @@
   {
     "名称": "圆形",
     "unlocked": "true",
-    "图标": "<i class=\"mdi mdi-circle\"></i>",
+    "icon": "<i class=\"mdi mdi-circle\"></i>",
     "isSpecial": ""
   },
   {
     "名称": "矩形",
     "unlocked": "",
-    "图标": "<i class=\"mdi mdi-rectangle\"></i>",
+    "icon": "<i class=\"mdi mdi-rectangle\"></i>",
     "isSpecial": ""
   },
   {
     "名称": "三角形",
     "unlocked": "",
-    "图标": "<i class=\"mdi mdi-triangle\"></i>",
+    "icon": "<i class=\"mdi mdi-triangle\"></i>",
     "isSpecial": ""
   },
   {
     "名称": "星形",
     "unlocked": "",
-    "图标": "<i class=\"mdi mdi-star\"></i>",
+    "icon": "<i class=\"mdi mdi-star\"></i>",
     "isSpecial": ""
   },
   {
     "名称": "椭圆形",
     "unlocked": "",
-    "图标": "<i class=\"mdi mdi-ellipse\"></i>",
+    "icon": "<i class=\"mdi mdi-ellipse\"></i>",
     "isSpecial": ""
   },
   {
     "名称": "心形",
     "unlocked": "",
-    "图标": "<i class=\"mdi mdi-heart\"></i>",
+    "icon": "<i class=\"mdi mdi-heart\"></i>",
     "isSpecial": ""
   },
   {
     "名称": "正方形",
     "unlocked": "",
-    "图标": "<i class=\"mdi mdi-square\"></i>",
+    "icon": "<i class=\"mdi mdi-square\"></i>",
     "isSpecial": ""
   },
   {
     "名称": "八边形",
     "unlocked": "",
-    "图标": "<i class=\"mdi mdi-octagon\"></i>",
+    "icon": "<i class=\"mdi mdi-octagon\"></i>",
     "isSpecial": ""
   },
   {
     "名称": "五边形",
     "unlocked": "",
-    "图标": "<i class=\"mdi mdi-pentagon\"></i>",
+    "icon": "<i class=\"mdi mdi-pentagon\"></i>",
     "isSpecial": ""
   },
   {
     "名称": "六边形",
     "unlocked": "",
-    "图标": "<i class=\"mdi mdi-hexagon\"></i>",
+    "icon": "<i class=\"mdi mdi-hexagon\"></i>",
     "isSpecial": ""
   },
   {
     "名称": "炸弹",
     "unlocked": "",
-    "图标": "<i class=\"mdi mdi-bomb\"></i>",
+    "icon": "<i class=\"mdi mdi-bomb\"></i>",
     "isSpecial": "true"
   },
   {
     "名称": "dice",
     "unlocked": "",
-    "图标": "<i class=\"mdi mdi-dice-multiple\"></i>",
+    "icon": "<i class=\"mdi mdi-dice-multiple\"></i>",
     "isSpecial": "true"
   },
   {
     "名称": "accelerator",
     "unlocked": "",
-    "图标": "<i class=\"mdi mdi-rotate-orbit\"></i>",
+    "icon": "<i class=\"mdi mdi-rotate-orbit\"></i>",
     "isSpecial": "true"
   },
   {
     "名称": "sparkles",
     "unlocked": "",
-    "图标": "<i class=\"mdi mdi-shimmer\"></i>",
+    "icon": "<i class=\"mdi mdi-shimmer\"></i>",
     "isSpecial": "true"
   },
   {
-    "名称": "沙漏",
+    "名称": "hourglass",
     "unlocked": "",
-    "图标": "<i class=\"mdi mdi-timer-sand\"></i>",
+    "icon": "<i class=\"mdi mdi-timer-sand\"></i>",
     "isSpecial": "true"
   },
   {
     "名称": "chest",
     "unlocked": "",
-    "图标": "<i class=\"mdi mdi-treasure-chest\"></i>",
+    "icon": "<i class=\"mdi mdi-treasure-chest\"></i>",
     "isSpecial": "true"
   }
 ]

@@ -1,0 +1,26 @@
+[
+  {
+    "名称": "taxes",
+    "mult": "税收政策",
+    "icon": "<i class=\"mdi mdi-cash-register\"></i>",
+    "effect": "税率mult｛$lvl  \\cdot  0.25 + 1$｝; 幸福base｛$lvl  \\cdot  (lvl > 0 ? -0.05 : -0.03)$｝"
+  },
+  {
+    "名称": "immigration",
+    "mult": "移民政策",
+    "icon": "<i class=\"mdi mdi-account-group\"></i>",
+    "effect": "工人mult｛$lvl  \\cdot  0.15 + 1$｝; 幸福base｛$lvl  \\cdot  (lvl > 0 ? -0.05 : -0.1)$｝"
+  },
+  {
+    "名称": "religion",
+    "mult": "宗教政策",
+    "icon": "<i class=\"mdi mdi-hands-pray\"></i>",
+    "effect": "所有资源增益mult｛$lvl  \\cdot  (lvl > 0 ? -0.25 : -0.1) + 1$｝; 信仰增益mult｛$lvl  \\cdot  0.25 + 1$｝"
+  },
+  {
+    "名称": "扫描",
+    "mult": "扫描政策",
+    "icon": "<i class=\"mdi mdi-magnify-scan\"></i>",
+    "effect": "战利品增益mult｛$1 - lvl  \\cdot  (lvl > 0 ? 0.1 : 0.05)$｝; 战利品品质base｛$Math.max(lvl, 0)$｝; 战利品品质mult｛$Math.min(1 + lvl  \\cdot  0.1, 1)$｝"
+  }
+]

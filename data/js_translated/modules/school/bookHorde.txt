@@ -1,44 +1,38 @@
 {
-    书籍: 训练: {类型: '书籍', raiseOtherCap: '训练', requirement() {
-        return store.state.升级成本.item.训练.highestLevel >= 100;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 28)};
-    }, 效果: [
-        {name: 'upgradeHordeTrainingCap', 类型: '+', value: lvl => lvl}
+    攻击plus: {subfeature: 0, scalesWithGL: true, minGL: 25, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.01, lvl)}
     ]},
-    书籍: 幸运一击: {类型: '书籍', raiseOtherCap: '幸运一击', requirement() {
-        return store.state.升级成本.item.幸运一击.highestLevel >= 15;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 85)};
-    }, 效果: [
-        {name: 'upgradeHordeLuckyStrikeCap', 类型: '+', value: lvl => lvl}
+    生命值plus: {subfeature: 0, scalesWithGL: true, minGL: 25, effect: [
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.01, lvl)}
     ]},
-    书籍: 掠夺: {类型: '书籍', raiseOtherCap: '掠夺', requirement() {
-        return store.state.升级成本.item.掠夺.highestLevel >= 25;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 140)};
-    }, 效果: [
-        {name: 'upgradeHordeLootingCap', 类型: '+', value: lvl => lvl}
+    boneGain: {subfeature: 0, scalesWithGL: true, minGL: 40, maxGL: 139, effect: [
+        {name: '骨头增益', type: '*', value: lvl => lvl * 0.01 + 1}
     ]},
-    书籍: 生存指南: {类型: '书籍', raiseOtherCap: '生存指南', requirement() {
-        return store.state.升级成本.item.生存指南.highestLevel >= 25;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 190)};
-    }, 效果: [
-        {name: 'upgradeHordeSurvivalGuideCap', 类型: '+', value: lvl => lvl}
+    boneCap: {subfeature: 0, scalesWithGL: true, minGL: 50, effect: [
+        {name: '骨头容量', type: '*', value: lvl => Math.pow(1.015, lvl)}
     ]},
-    书籍: 雕刻: {类型: '书籍', raiseOtherCap: '雕刻', requirement() {
-        return store.state.升级成本.item.雕刻.highestLevel >= 5;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 310)};
-    }, 效果: [
-        {name: 'upgradeHordeCarvingCap', 类型: '+', value: lvl => lvl}
+    itemChance: {subfeature: 0, scalesWithGL: true, minGL: 60, maxGL: 159, effect: [
+        {name: '装备几率', type: '*', value: lvl => lvl * 0.01 + 1}
     ]},
-    书籍: 白漆: {类型: '书籍', raiseOtherCap: '白漆', requirement() {
-        return store.state.升级成本.item.白漆.highestLevel >= 25;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.15, lvl) * (lvl + 5) * 475)};
-    }, 效果: [
-        {name: 'upgradeHordeWhitePaintCap', 类型: '+', value: lvl => lvl}
+    monsterPartCap: {subfeature: 0, scalesWithGL: true, minGL: 80, maxGL: 179, effect: [
+        {name: '怪物零件容量', type: '*', value: lvl => lvl * 0.01 + 1}
+    ]},
+    corruptedFleshGain: {subfeature: 0, scalesWithGL: true, minGL: 120, maxGL: 219, effect: [
+        {name: '腐烂的肉体增益', type: '*', value: lvl => lvl * 0.01 + 1}
+    ]},
+    shardChance: {subfeature: 0, scalesWithGL: true, minGL: 150, maxGL: 249, effect: [
+        {name: '神秘碎片几率', type: '*', value: lvl => lvl * 0.01 + 1}
+    ]},
+    attack2: {subfeature: 1, scalesWithGL: true, minGL: 10, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.01, lvl)}
+    ]},
+    health2: {subfeature: 1, scalesWithGL: true, minGL: 10, effect: [
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.01, lvl)}
+    ]},
+    bloodGain: {subfeature: 1, scalesWithGL: true, minGL: 20, maxGL: 119, effect: [
+        {name: '血液增益', type: '*', value: lvl => lvl * 0.02 + 1}
+    ]},
+    bloodCap: {subfeature: 1, scalesWithGL: true, minGL: 30, maxGL: 129, effect: [
+        {name: '血液容量', type: '*', value: lvl => lvl * 0.02 + 1}
     ]},
 }

@@ -1,0 +1,6 @@
+名称,攻击plus,生命值plus,base,increment,0,stat,zone,level,boss
+baseStats,2,250,,,,,,,
+exp,,,18000,2.1,,,,,
+skills,,,,,,,,,
+skillTree,,,,,"{""isInnate"":true,""level"":0,""items"":[]}",,,,
+quests,,,,,,,,,

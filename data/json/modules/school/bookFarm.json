@@ -1,0 +1,106 @@
+[
+  {
+    "名称": "vegetableGain",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "10",
+    "effect": "蔬菜增益*｛${(1.005)}^{lvl}$｝",
+    "maxGL": ""
+  },
+  {
+    "名称": "berryGain",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "10",
+    "effect": "浆果增益*｛${(1.005)}^{lvl}$｝",
+    "maxGL": ""
+  },
+  {
+    "名称": "grainGain",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "10",
+    "effect": "粮食增益*｛${(1.005)}^{lvl}$｝",
+    "maxGL": ""
+  },
+  {
+    "名称": "flowerGain",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "10",
+    "effect": "花肥增益*｛${(1.005)}^{lvl}$｝",
+    "maxGL": ""
+  },
+  {
+    "名称": "grassCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "30",
+    "effect": "草容量+｛$lvl  \\cdot  6$｝",
+    "maxGL": "129"
+  },
+  {
+    "名称": "seedHullCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "60",
+    "effect": "种子壳容量+｛$lvl  \\cdot  6$｝",
+    "maxGL": "159"
+  },
+  {
+    "名称": "bugCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "80",
+    "effect": "虫子容量+｛$lvl  \\cdot  3$｝",
+    "maxGL": "179"
+  },
+  {
+    "名称": "petalCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "100",
+    "effect": "花瓣容量+｛$lvl  \\cdot  2$｝",
+    "maxGL": "199"
+  },
+  {
+    "名称": "butterflyCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "140",
+    "effect": "蝴蝶容量+｛$\\text{向上取整}(lvl / 2)$｝",
+    "maxGL": "238"
+  },
+  {
+    "名称": "ladybugCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "180",
+    "effect": "瓢虫容量+｛$lvl  \\cdot  3$｝",
+    "maxGL": "279"
+  },
+  {
+    "名称": "spiderCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "220",
+    "effect": "蜘蛛容量+｛$\\text{向上取整}(lvl / 5)$｝",
+    "maxGL": "315"
+  },
+  {
+    "名称": "beeCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "260",
+    "effect": "蜜蜂容量+｛$lvl  \\cdot  10$｝",
+    "maxGL": "359"
+  },
+  {
+    "名称": "smallSeedCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "320",
+    "effect": "小种子容量+｛$lvl  \\cdot  8$｝",
+    "maxGL": "419"
+  }
+]

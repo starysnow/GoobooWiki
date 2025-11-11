@@ -1,191 +1,342 @@
 [
   {
     "名称": "伤害",
-    "图标": "<i class=\"mdi mdi-bomb\"></i>",
-    "value": "0.25",
+    "icon": "<i class=\"mdi mdi-bomb\"></i>",
+    "value": "0.5",
     "解锁": "",
-    "unique": ""
+    "minTier": "",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
     "名称": "废料增益",
-    "图标": "<i class=\"mdi mdi-dots-triangle\"></i>",
-    "value": "0.3",
+    "icon": "<i class=\"mdi mdi-dots-triangle\"></i>",
+    "value": "0.65",
     "解锁": "",
-    "unique": ""
+    "minTier": "",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
     "名称": "矿石增益",
-    "图标": "<i class=\"mdi mdi-chart-bubble\"></i>",
+    "icon": "<i class=\"mdi mdi-chart-bubble\"></i>",
     "value": "0.2",
     "解锁": "",
-    "unique": ""
+    "minTier": "",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
-    "名称": "冶炼速度",
-    "图标": "<i class=\"mdi mdi-fire\"></i>",
+    "名称": "稀土增益",
+    "icon": "<i class=\"mdi mdi-landslide\"></i>",
     "value": "0.2",
-    "解锁": "冶炼厂",
-    "unique": ""
+    "解锁": "",
+    "minTier": "",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
-    "名称": "烟雾增益",
-    "图标": "<i class=\"mdi mdi-smoke\"></i>",
-    "value": "0.04",
-    "解锁": "烟雾",
-    "unique": ""
+    "名称": "冶炼时间",
+    "icon": "<i class=\"mdi mdi-fire\"></i>",
+    "value": "0.35",
+    "解锁": "冶炼厂",
+    "minTier": "1",
+    "scaling": "divisive",
+    "type": "",
+    "max": ""
   },
   {
     "名称": "绿水晶增益",
-    "图标": "<i class=\"mdi mdi-star-three-points\"></i>",
+    "icon": "<i class=\"mdi mdi-star-three-points\"></i>",
     "value": "0.1",
     "解锁": "",
-    "unique": "true"
+    "minTier": "1",
+    "scaling": "",
+    "type": "prestige",
+    "max": "3"
   },
   {
     "名称": "黄水晶增益",
-    "图标": "<i class=\"mdi mdi-star-four-points\"></i>",
-    "value": "0.05",
+    "icon": "<i class=\"mdi mdi-star-four-points\"></i>",
+    "value": "0.1",
     "解锁": "miningGasSubfeature",
-    "unique": "true"
+    "minTier": "2",
+    "scaling": "",
+    "type": "prestige",
+    "max": "3"
   },
   {
     "名称": "建造速度",
-    "图标": "<i class=\"mdi mdi-hammer\"></i>",
-    "value": "0.3",
+    "icon": "<i class=\"mdi mdi-hammer\"></i>",
+    "value": "0.4",
     "解锁": "",
-    "unique": ""
-  },
-  {
-    "名称": "材料增益",
-    "图标": "<i class=\"mdi mdi-tree\"></i>",
-    "value": "0.1",
-    "解锁": "",
-    "unique": ""
+    "minTier": "",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
     "名称": "金币增益",
-    "图标": "<i class=\"mdi mdi-circle-multiple\"></i>",
-    "value": "0.25",
+    "icon": "<i class=\"mdi mdi-circle-multiple\"></i>",
+    "value": "0.5",
     "解锁": "",
-    "unique": ""
+    "minTier": "",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
-    "名称": "精神资源增益",
-    "图标": "<i class=\"mdi mdi-brain\"></i>",
-    "value": "0.1",
+    "名称": "基础材料增益",
+    "icon": "<i class=\"mdi mdi-tree\"></i>",
+    "value": "0.2",
     "解锁": "",
-    "unique": ""
+    "minTier": "",
+    "scaling": "",
+    "type": "",
+    "max": ""
+  },
+  {
+    "名称": "工业材料增益",
+    "icon": "<i class=\"mdi mdi-mirror\"></i>",
+    "value": "0.2",
+    "解锁": "层 2 建筑",
+    "minTier": "",
+    "scaling": "",
+    "type": "",
+    "max": ""
+  },
+  {
+    "名称": "奢侈材料增益",
+    "icon": "<i class=\"mdi mdi-diamond\"></i>",
+    "value": "0.2",
+    "解锁": "层 4 建筑",
+    "minTier": "1",
+    "scaling": "",
+    "type": "",
+    "max": ""
+  },
+  {
+    "名称": "现代材料增益",
+    "icon": "<i class=\"mdi mdi-oil\"></i>",
+    "value": "0.2",
+    "解锁": "层 7 建筑",
+    "minTier": "2",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
     "名称": "信仰增益",
-    "图标": "<i class=\"mdi mdi-hands-pray\"></i>",
+    "icon": "<i class=\"mdi mdi-hands-pray\"></i>",
     "value": "0.1",
     "解锁": "",
-    "unique": "true"
+    "minTier": "1",
+    "scaling": "",
+    "type": "prestige",
+    "max": "3"
   },
   {
     "名称": "股票增益",
-    "图标": "<i class=\"mdi mdi-certificate\"></i>",
-    "value": "0.05",
+    "icon": "<i class=\"mdi mdi-certificate\"></i>",
+    "value": "0.1",
     "解锁": "villageCraftingSubfeature",
-    "unique": "true"
+    "minTier": "2",
+    "scaling": "",
+    "type": "prestige",
+    "max": "3"
   },
   {
     "名称": "攻击",
-    "图标": "<i class=\"mdi mdi-sword\"></i>",
-    "value": "0.2",
+    "icon": "<i class=\"mdi mdi-sword\"></i>",
+    "value": "0.35",
     "解锁": "",
-    "unique": ""
+    "minTier": "",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
     "名称": "骨头增益",
-    "图标": "<i class=\"mdi mdi-bone\"></i>",
-    "value": "0.3",
+    "icon": "<i class=\"mdi mdi-bone\"></i>",
+    "value": "0.6",
     "解锁": "",
-    "unique": ""
+    "minTier": "",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
-    "名称": "怪物零件增益",
-    "图标": "<i class=\"mdi mdi-stomach\"></i>",
+    "名称": "腐烂的肉体增益",
+    "icon": "<i class=\"mdi mdi-food-steak\"></i>",
     "value": "0.15",
-    "解锁": "",
-    "unique": ""
+    "解锁": "掠夺腐化的肉体",
+    "minTier": "",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
     "名称": "精通点数增益",
-    "图标": "<i class=\"mdi mdi-seal\"></i>",
-    "value": "0.1",
-    "解锁": "hordeItemMastery",
-    "unique": ""
+    "icon": "<i class=\"mdi mdi-seal\"></i>",
+    "value": "0.2",
+    "解锁": "hordeEquipmentMastery",
+    "minTier": "1",
+    "scaling": "",
+    "type": "",
+    "max": ""
+  },
+  {
+    "名称": "神秘碎片几率",
+    "icon": "<i class=\"mdi mdi-billiards-rack\"></i>",
+    "value": "0.15",
+    "解锁": "hordeBrickTower",
+    "minTier": "2",
+    "scaling": "",
+    "type": "",
+    "max": ""
+  },
+  {
+    "名称": "血液增益",
+    "icon": "<i class=\"mdi mdi-iv-bag\"></i>",
+    "value": "0.6",
+    "解锁": "hordeClassesSubfeature",
+    "minTier": "3",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
     "名称": "腐败的灵魂增益",
-    "图标": "<i class=\"mdi mdi-ghost\"></i>",
+    "icon": "<i class=\"mdi mdi-ghost\"></i>",
     "value": "0.1",
     "解锁": "",
-    "unique": "true"
+    "minTier": "1",
+    "scaling": "",
+    "type": "prestige",
+    "max": "3"
   },
   {
-    "名称": "仅蔬菜增益",
-    "图标": "<i class=\"mdi mdi-carrot\"></i>",
-    "value": "0.35",
-    "解锁": "",
-    "unique": ""
+    "名称": "勇敢增益",
+    "icon": "<i class=\"mdi mdi-ghost\"></i>",
+    "value": "0.1",
+    "解锁": "hordeClassesSubfeature",
+    "minTier": "3",
+    "scaling": "",
+    "type": "prestige",
+    "max": "3"
   },
   {
-    "名称": "仅浆果增益",
-    "图标": "<i class=\"mdi mdi-fruit-grapes\"></i>",
-    "value": "0.35",
+    "名称": "蔬菜增益",
+    "icon": "<i class=\"mdi mdi-carrot\"></i>",
+    "value": "0.55",
     "解锁": "",
-    "unique": ""
+    "minTier": "",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
-    "名称": "仅粮食增益",
-    "图标": "<i class=\"mdi mdi-barley\"></i>",
-    "value": "0.35",
+    "名称": "浆果增益",
+    "icon": "<i class=\"mdi mdi-fruit-grapes\"></i>",
+    "value": "0.55",
     "解锁": "",
-    "unique": ""
+    "minTier": "",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
-    "名称": "仅鲜花增益",
-    "图标": "<i class=\"mdi mdi-flower\"></i>",
-    "value": "0.35",
+    "名称": "粮食增益",
+    "icon": "<i class=\"mdi mdi-barley\"></i>",
+    "value": "0.55",
     "解锁": "",
-    "unique": ""
+    "minTier": "",
+    "scaling": "",
+    "type": "",
+    "max": ""
+  },
+  {
+    "名称": "花肥增益",
+    "icon": "<i class=\"mdi mdi-flower\"></i>",
+    "value": "0.55",
+    "解锁": "",
+    "minTier": "",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
     "名称": "作物经验",
-    "图标": "<i class=\"mdi mdi-star\"></i>",
+    "icon": "<i class=\"mdi mdi-star\"></i>",
     "value": "0.1",
     "解锁": "作物经验",
-    "unique": "true"
+    "minTier": "1",
+    "scaling": "",
+    "type": "prestige",
+    "max": "3"
   },
   {
     "名称": "美丽增益",
-    "图标": "<i class=\"mdi mdi-image-filter-vintage\"></i>",
-    "value": "0.4",
+    "icon": "<i class=\"mdi mdi-image-filter-vintage\"></i>",
+    "value": "0.75",
     "解锁": "",
-    "unique": ""
+    "minTier": "1",
+    "scaling": "",
+    "type": "",
+    "max": ""
+  },
+  {
+    "名称": "所有颜色增益",
+    "icon": "<i class=\"mdi mdi-liquid-spot\"></i>",
+    "value": "0.1",
+    "解锁": "",
+    "minTier": "1",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
     "名称": "转换器增益",
-    "图标": "<i class=\"mdi mdi-recycle\"></i>",
-    "value": "0.15",
+    "icon": "<i class=\"mdi mdi-recycle\"></i>",
+    "value": "0.5",
     "解锁": "转换",
-    "unique": ""
+    "minTier": "1",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
-    "名称": "包裹增益",
-    "图标": "<i class=\"mdi mdi-package-variant\"></i>",
+    "名称": "形状增益",
+    "icon": "<i class=\"mdi mdi-shape\"></i>",
+    "value": "0.65",
+    "解锁": "形状",
+    "minTier": "1",
+    "scaling": "",
+    "type": "",
+    "max": ""
+  },
+  {
+    "名称": "画布速度",
+    "icon": "<i class=\"mdi mdi-package-variant\"></i>",
     "value": "0.15",
-    "解锁": "鼓",
-    "unique": ""
+    "解锁": "画布",
+    "minTier": "2",
+    "scaling": "",
+    "type": "",
+    "max": ""
   },
   {
     "名称": "现金增益",
-    "图标": "<i class=\"mdi mdi-cash\"></i>",
+    "icon": "<i class=\"mdi mdi-cash\"></i>",
     "value": "0.1",
     "解锁": "",
-    "unique": "true"
+    "minTier": "1",
+    "scaling": "",
+    "type": "prestige",
+    "max": "3"
   }
 ]

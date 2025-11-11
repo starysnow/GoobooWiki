@@ -1,5 +1,5 @@
-| 名称  | unlocked | 图标  | isSpecial |
-| --- | -------- | --- | --------- |
+| 名称  | unlocked | icon | isSpecial |
+| --- | -------- | ---- | --------- |
 | 圆形 | true | <i class="mdi mdi-circle"></i> |  |
 | 矩形 |  | <i class="mdi mdi-rectangle"></i> |  |
 | 三角形 |  | <i class="mdi mdi-triangle"></i> |  |
@@ -14,5 +14,5 @@
 | dice |  | <i class="mdi mdi-dice-multiple"></i> | true |
 | accelerator |  | <i class="mdi mdi-rotate-orbit"></i> | true |
 | sparkles |  | <i class="mdi mdi-shimmer"></i> | true |
-| 沙漏 |  | <i class="mdi mdi-timer-sand"></i> | true |
+| hourglass |  | <i class="mdi mdi-timer-sand"></i> | true |
 | chest |  | <i class="mdi mdi-treasure-chest"></i> | true |

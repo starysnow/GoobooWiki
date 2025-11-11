@@ -1,14 +1,14 @@
-名称,value,milestones,圣遗物,上限
-maxBuilding,$store.state.stat.village_maxBuilding.总计$,$\text{四舍五入}(lvl  \cdot  25  \cdot  {(1.2)}^{lvl} + 35)$,"{""3"":""泥砖"",""4"":""钥匙链"",""5"":""金钥匙""}",
-basicResources,"$Math.max(store.state.stat.village_woodMax.总计, store.state.stat.village_plantFiberMax.总计, store.state.stat.village_stoneMax.总计)$",${(10)}^{lvl}  \cdot  10K$,"{""3"":""树苗""}",
-金属,$store.state.stat.village_metalMax.总计$,${(10)}^{lvl}  \cdot  5000$,"{""3"":""螺丝刀""}",
-金币,$store.state.stat.金币.总计$,${(16)}^{lvl}  \cdot  2000$,"{""4"":""宝箱""}",
-水,$store.state.stat.village_waterMax.总计$,${(20)}^{lvl}  \cdot  5000$,"{""3"":""玫瑰""}",
-知识,$store.state.stat.village_knowledgeMax.总计$,"$\text{四舍五入}(getSequence(2, lvl + 1)  \cdot  {(1.2)}^{Math.max(lvl - 10, 0})  \cdot  250)$","{""2"":""地球仪""}",
-advancedResources,"$Math.max(store.state.stat.village_hardwoodMax.总计, store.state.stat.village_gemMax.总计)$",${(6)}^{lvl}  \cdot  10K$,"{""3"":""导师""}",
-祝福,$store.state.stat.祝福.总计$,${(9)}^{lvl}  \cdot  1000$,,
-供品,$store.state.stat.供品.总计$,$\text{四舍五入}({(2.5)}^{lvl}  \cdot  500)$,,
-牺牲,$store.getters['村庄/offeringCount']$,"$getSequence(6, lvl + 1)  \cdot  5$",,
-油,$store.state.stat.village_oilMax.总计$,${(10)}^{lvl}  \cdot  100K$,,
-highestPower,$store.state.stat.village_highestPower.总计$,"$getSequence(2, lvl + 1)  \cdot  10$",,
-minHappiness,$store.state.stat.village_minHappiness.总计$,$1$,,1
+名称,value,milestones,relic,reward,secret,cap
+摩天大楼,$store.state.stat.摩天大楼.total$,$\text{四舍五入}(lvl  \cdot  25  \cdot  {(1.15)}^{lvl} + 35)$,"{""3"":""泥砖"",""4"":""钥匙链""}","{""5"":[{""name"":""房子"",""type"":""保留"",""value"":true},{""name"":""微型铁匠"",""type"":""保留"",""value"":true}]}",,
+敲木头,"$Math.max(store.state.stat.village_woodMax.total, store.state.stat.village_plantFiberMax.total, store.state.stat.village_stoneMax.total)$",${(10)}^{lvl}  \cdot  10K$,"{""3"":""树苗""}","{""4"":[{""name"":""镰刀"",""type"":""保留"",""value"":true}],""5"":[{""name"":""柴刀"",""type"":""保留"",""value"":true}],""6"":[{""name"":""镐子"",""type"":""保留"",""value"":true}],""7"":[{""name"":""浇水壶"",""type"":""保留"",""value"":true}],""11"":[{""name"":""投资"",""type"":""保留"",""value"":true}]}",,
+金属,$store.state.stat.village_metalMax.total$,${(10)}^{lvl}  \cdot  5000$,"{""3"":""螺丝刀""}",,,
+金币,$store.state.stat.金币.total$,${(16)}^{lvl}  \cdot  2000$,,"{""4"":[{""name"":""财政部"",""type"":""保留"",""value"":true},{""name"":""钱包"",""type"":""保留"",""value"":true},{""name"":""资源包"",""type"":""保留"",""value"":true},{""name"":""金属包"",""type"":""保留"",""value"":true}]}",,
+水,$store.state.stat.village_waterMax.total$,${(20)}^{lvl}  \cdot  5000$,,"{""3"":[{""name"":""花园"",""type"":""保留"",""value"":true},{""name"":""水井"",""type"":""保留"",""value"":true}]}",,
+知识,$store.state.stat.village_knowledgeMax.total$,"$\text{四舍五入}(getSequence(2, lvl + 1)  \cdot  {(1.2)}^{Math.max(lvl - 10, 0})  \cdot  250)$",,"{""2"":[{""name"":""图书馆"",""type"":""保留"",""value"":true},{""name"":""玻璃制造厂"",""type"":""保留"",""value"":true}],""3"":[{""name"":""学校"",""type"":""保留"",""value"":true}],""4"":[{""name"":""基本"",""type"":""保留"",""value"":true}],""5"":[{""name"":""加工"",""type"":""保留"",""value"":true}],""6"":[{""name"":""水泵"",""type"":""保留"",""value"":true}],""7"":[{""name"":""沙子"",""type"":""保留"",""value"":true}],""8"":[{""name"":""书籍"",""type"":""保留"",""value"":true}]}",,
+闪亮,"$Math.max(store.state.stat.village_hardwoodMax.total, store.state.stat.village_gemMax.total)$",${(6)}^{lvl}  \cdot  10K$,,"{""3"":[{""name"":""锯木厂"",""type"":""保留"",""value"":true},{""name"":""隧道"",""type"":""保留"",""value"":true}]}",,
+祝福,$store.state.stat.祝福.total$,${(9)}^{lvl}  \cdot  1000$,,,,
+供品,$store.state.stat.供品.total$,$\text{四舍五入}({(2.5)}^{lvl}  \cdot  500)$,,,,
+黑洞,$store.getters['village/offeringCount']$,"$getSequence(6, lvl + 1)  \cdot  5$",,,,
+油,$store.state.stat.village_oilMax.total$,${(10)}^{lvl}  \cdot  100K$,,,,
+开灯,$store.state.stat.开灯.total$,"$getSequence(2, lvl + 1)  \cdot  10$",,,,
+生活在地狱里,$store.state.stat.生活在地狱里.total$,$1$,,,true,1

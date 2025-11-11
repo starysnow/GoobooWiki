@@ -1,7 +1,6 @@
-| 名称  | item | pool | amount |
-| --- | ---- | ---- | ------ |
-| 秋天的森林 | 秋天的森林 | {"nightHunt":{"消耗":{"夜间狩猎代币":200}}} |  |
-| 块状颗粒 | 块状颗粒 | {"nightHunt":{"消耗":{"夜间狩猎代币":170}}} |  |
-| 魔法瓶 | 魔法瓶 | {"nightHunt":{"消耗":{"夜间狩猎代币":175}}} |  |
-| cardPack_midnightAnomaly | 午夜异常 | {"nightHunt":{"消耗":{"夜间狩猎代币":30}}} |  |
-| 田野祝福 | 田野祝福 | {"nightHunt":{"消耗":{"夜间狩猎代币":1}}} | 20 |
+| 名称  | type | item | pool |
+| --- | ---- | ---- | ---- |
+| theme_autumnForest | theme | autumnForest | {"nightHunt":{"price":{"夜间狩猎代币":200}}} |
+| 大量谷物 | relic | 大量谷物 | {"nightHunt":{"price":{"夜间狩猎代币":170}}} |
+| 附魔瓶 | relic | 附魔瓶 | {"nightHunt":{"price":{"夜间狩猎代币":175}}} |
+| cardPack_midnightAnomaly | 卡包 | 午夜异常 | {"nightHunt":{"price":{"夜间狩猎代币":30}}} |

@@ -1,22 +1,22 @@
 {
     解锁: '学者职业',
-    图标: 'mdi-school',
+    icon: 'mdi-school',
     baseStats: {
         攻击plus: 2,
-        生命值: 250
+        生命值plus: 250
     },
-    经验值: {
+    exp: {
         +: 18000,
         increment: 2.1
     },
     skills: {},
     skillTree: [
-        {isInnate: true, 达到等级: 0, items: []},
+        {isInnate: true, level: 0, items: []},
     ],
     quests: {
         stat: [],
-        区域: [],
-        达到等级: [],
-        击败 (0) (+(1)): []
+        zone: [],
+        level: [],
+        boss: []
     }
 }

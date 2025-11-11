@@ -1,94 +1,94 @@
 {
-    收银机: {子功能: 1, 消耗(lvl) {
+    收银机: {subfeature: 1, price(lvl) {
         return {铜币: Math.pow(lvl * 0.25 + 2, lvl) * 2000};
-    }, 效果: [
-        {name: '柜台', 类型: '+', value: lvl => lvl},
-        {name: '铜币容量', 类型: '*', value: lvl => Math.pow(2, lvl)}
+    }, effect: [
+        {name: '柜台', type: '+', value: lvl => lvl},
+        {name: '铜币容量', type: '*', value: lvl => Math.pow(2, lvl)}
     ]},
-    装饰品: {子功能: 1, 消耗(lvl) {
+    装饰品: {subfeature: 1, price(lvl) {
         return {铜币: Math.pow(1.75, lvl) * 900};
-    }, 效果: [
-        {name: '铜币增益', 类型: '*', value: lvl => Math.pow(1.175, lvl)}
+    }, effect: [
+        {name: '铜币增益', type: '*', value: lvl => Math.pow(1.175, lvl)}
     ]},
-    植物纤维仓: {子功能: 1, 消耗(lvl) {
+    植物纤维仓: {subfeature: 1, price(lvl) {
         if (lvl === 0) {
             return {};
         }
         return {铜币: Math.pow(3, lvl) * 100};
-    }, 效果: [
-        {name: '植物纤维增益', 类型: '+', value: lvl => getSequence(1, lvl) * 0.1},
-        {name: '绳子', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    }, effect: [
+        {name: '植物纤维增益', type: '+', value: lvl => getSequence(1, lvl) * 0.1},
+        {name: 'rope', type: 'villageCraft', value: lvl => lvl >= 1}
     ]},
-    木仓: {子功能: 1, requirement() {
-        return store.state.升级成本.item.植物纤维仓.highestLevel >= 1;
-    }, 消耗(lvl) {
+    木仓: {subfeature: 1, requirement() {
+        return store.state.upgrade.item.植物纤维仓.highestLevel >= 1;
+    }, price(lvl) {
         return {铜币: Math.pow(3, lvl) * 200};
-    }, 效果: [
-        {name: '木头增益', 类型: '+', value: lvl => getSequence(1, lvl) * 0.1},
-        {name: '木板', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    }, effect: [
+        {name: '木头增益', type: '+', value: lvl => getSequence(1, lvl) * 0.1},
+        {name: 'woodenPlanks', type: 'villageCraft', value: lvl => lvl >= 1}
     ]},
-    石仓: {子功能: 1, requirement() {
-        return store.state.升级成本.item.木仓.highestLevel >= 1;
-    }, 消耗(lvl) {
+    石仓: {subfeature: 1, requirement() {
+        return store.state.upgrade.item.木仓.highestLevel >= 1;
+    }, price(lvl) {
         return {铜币: Math.pow(3, lvl) * 500};
-    }, 效果: [
-        {name: '石头增益', 类型: '+', value: lvl => getSequence(1, lvl) * 0.1},
-        {name: '砖块', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    }, effect: [
+        {name: '石头增益', type: '+', value: lvl => getSequence(1, lvl) * 0.1},
+        {name: 'brick', type: 'villageCraft', value: lvl => lvl >= 1}
     ]},
-    金属仓: {子功能: 1, requirement() {
-        return store.state.升级成本.item.石仓.highestLevel >= 1;
-    }, 消耗(lvl) {
+    金属仓: {subfeature: 1, requirement() {
+        return store.state.upgrade.item.石仓.highestLevel >= 1;
+    }, price(lvl) {
         return {铜币: Math.pow(3, lvl) * buildNum(50, 'K')};
-    }, 效果: [
-        {name: '金属增益', 类型: '+', value: lvl => getSequence(1, lvl) * 0.075},
-        {name: '螺丝', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    }, effect: [
+        {name: '金属增益', type: '+', value: lvl => getSequence(1, lvl) * 0.075},
+        {name: 'screws', type: 'villageCraft', value: lvl => lvl >= 1}
     ]},
-    水仓: {子功能: 1, requirement() {
-        return store.state.升级成本.item.金属仓.highestLevel >= 1;
-    }, 消耗(lvl) {
+    水仓: {subfeature: 1, requirement() {
+        return store.state.upgrade.item.金属仓.highestLevel >= 1;
+    }, price(lvl) {
         return {铜币: Math.pow(3, lvl) * buildNum(600, 'K')};
-    }, 效果: [
-        {name: '水增益', 类型: '+', value: lvl => getSequence(1, lvl) * 0.06},
-        {name: '水瓶', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    }, effect: [
+        {name: '水增益', type: '+', value: lvl => getSequence(1, lvl) * 0.06},
+        {name: 'waterBottle', type: 'villageCraft', value: lvl => lvl >= 1}
     ]},
-    玻璃仓: {子功能: 1, requirement() {
-        return store.state.升级成本.item.水仓.highestLevel >= 1;
-    }, 消耗(lvl) {
+    玻璃仓: {subfeature: 1, requirement() {
+        return store.state.upgrade.item.水仓.highestLevel >= 1;
+    }, price(lvl) {
         return {铜币: Math.pow(3, lvl) * buildNum(14.5, 'M')};
-    }, 效果: [
-        {name: '玻璃增益', 类型: '+', value: lvl => getSequence(1, lvl) * 0.05},
-        {name: '鸡尾酒杯', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    }, effect: [
+        {name: '玻璃增益', type: '+', value: lvl => getSequence(1, lvl) * 0.05},
+        {name: 'cocktailGlass', type: 'villageCraft', value: lvl => lvl >= 1}
     ]},
-    硬木仓: {子功能: 1, requirement() {
-        return store.state.升级成本.item.玻璃仓.highestLevel >= 1;
-    }, 消耗(lvl) {
+    硬木仓: {subfeature: 1, requirement() {
+        return store.state.upgrade.item.玻璃仓.highestLevel >= 1;
+    }, price(lvl) {
         return {铜币: Math.pow(3, lvl) * buildNum(900, 'M')};
-    }, 效果: [
-        {name: '硬木增益', 类型: '+', value: lvl => getSequence(1, lvl) * 0.025},
-        {name: '回旋镖', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    }, effect: [
+        {name: '硬木增益', type: '+', value: lvl => getSequence(1, lvl) * 0.025},
+        {name: 'boomerang', type: 'villageCraft', value: lvl => lvl >= 1}
     ]},
-    宝石仓: {子功能: 1, requirement() {
-        return store.state.升级成本.item.硬木仓.highestLevel >= 1;
-    }, 消耗(lvl) {
+    宝石仓: {subfeature: 1, requirement() {
+        return store.state.upgrade.item.硬木仓.highestLevel >= 1;
+    }, price(lvl) {
         return {铜币: Math.pow(3, lvl) * buildNum(85, 'B')};
-    }, 效果: [
-        {name: '宝石增益', 类型: '+', value: lvl => getSequence(1, lvl) * 0.025},
-        {name: '抛光宝石', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    }, effect: [
+        {name: '宝石增益', type: '+', value: lvl => getSequence(1, lvl) * 0.025},
+        {name: 'polishedGem', type: 'villageCraft', value: lvl => lvl >= 1}
     ]},
-    油仓: {子功能: 1, requirement() {
-        return store.state.升级成本.item.宝石仓.highestLevel >= 1;
-    }, 消耗(lvl) {
+    油仓: {subfeature: 1, requirement() {
+        return store.state.upgrade.item.宝石仓.highestLevel >= 1;
+    }, price(lvl) {
         return {铜币: Math.pow(3, lvl) * buildNum(9.6, 'T')};
-    }, 效果: [
-        {name: '油增益', 类型: '+', value: lvl => getSequence(1, lvl) * 0.015},
-        {name: '油灯', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    }, effect: [
+        {name: '油增益', type: '+', value: lvl => getSequence(1, lvl) * 0.015},
+        {name: 'oilLamp', type: 'villageCraft', value: lvl => lvl >= 1}
     ]},
-    大理石仓: {子功能: 1, requirement() {
-        return store.state.升级成本.item.油仓.highestLevel >= 1;
-    }, 消耗(lvl) {
+    大理石仓: {subfeature: 1, requirement() {
+        return store.state.upgrade.item.油仓.highestLevel >= 1;
+    }, price(lvl) {
         return {铜币: Math.pow(3, lvl) * buildNum(1.44, 'Qa')};
-    }, 效果: [
-        {name: '大理石增益', 类型: '+', value: lvl => getSequence(1, lvl) * 0.01},
-        {name: '淋浴', 类型: 'villageCraft', value: lvl => lvl >= 1}
+    }, effect: [
+        {name: '大理石增益', type: '+', value: lvl => getSequence(1, lvl) * 0.01},
+        {name: 'shower', type: 'villageCraft', value: lvl => lvl >= 1}
     ]},
 }

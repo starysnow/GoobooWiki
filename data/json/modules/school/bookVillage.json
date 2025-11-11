@@ -1,0 +1,154 @@
+[
+  {
+    "名称": "coinCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "25",
+    "maxGL": "124",
+    "effect": "金币容量+｛$lvl  \\cdot  50$｝"
+  },
+  {
+    "名称": "plantFiberCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "40",
+    "maxGL": "139",
+    "effect": "植物纤维容量*｛$lvl  \\cdot  0.02 + 1$｝"
+  },
+  {
+    "名称": "woodCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "40",
+    "maxGL": "139",
+    "effect": "木头容量*｛$lvl  \\cdot  0.02 + 1$｝"
+  },
+  {
+    "名称": "stoneCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "40",
+    "maxGL": "139",
+    "effect": "石头容量*｛$lvl  \\cdot  0.02 + 1$｝"
+  },
+  {
+    "名称": "metalCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "50",
+    "maxGL": "149",
+    "effect": "金属容量*｛$lvl  \\cdot  0.02 + 1$｝"
+  },
+  {
+    "名称": "taxRate",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "60",
+    "maxGL": "109",
+    "effect": "税率+｛$lvl  \\cdot  0.004$｝"
+  },
+  {
+    "名称": "waterCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "80",
+    "maxGL": "179",
+    "effect": "水容量*｛$lvl  \\cdot  0.04 + 1$｝"
+  },
+  {
+    "名称": "glassCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "90",
+    "maxGL": "189",
+    "effect": "玻璃容量*｛$lvl  \\cdot  0.01 + 1$｝"
+  },
+  {
+    "名称": "knowledgeCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "100",
+    "maxGL": "",
+    "effect": "知识容量+｛$lvl$｝"
+  },
+  {
+    "名称": "hardwoodCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "150",
+    "maxGL": "249",
+    "effect": "硬木容量*｛$lvl  \\cdot  0.01 + 1$｝"
+  },
+  {
+    "名称": "gemCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "150",
+    "maxGL": "249",
+    "effect": "宝石容量*｛$lvl  \\cdot  0.01 + 1$｝"
+  },
+  {
+    "名称": "plantFiberCap2",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "20",
+    "maxGL": "119",
+    "effect": "植物纤维容量+｛$lvl  \\cdot  30$｝"
+  },
+  {
+    "名称": "woodCap2",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "25",
+    "maxGL": "124",
+    "effect": "木头容量+｛$lvl  \\cdot  30$｝"
+  },
+  {
+    "名称": "stoneCap2",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "30",
+    "maxGL": "129",
+    "effect": "石头容量+｛$lvl  \\cdot  30$｝"
+  },
+  {
+    "名称": "metalCap2",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "40",
+    "maxGL": "139",
+    "effect": "金属容量+｛$lvl  \\cdot  15$｝"
+  },
+  {
+    "名称": "waterCap2",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "60",
+    "maxGL": "159",
+    "effect": "水容量+｛$lvl  \\cdot  15$｝"
+  },
+  {
+    "名称": "glassCap2",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "80",
+    "maxGL": "179",
+    "effect": "玻璃容量+｛$lvl  \\cdot  15$｝"
+  },
+  {
+    "名称": "hardwoodCap2",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "110",
+    "maxGL": "209",
+    "effect": "硬木容量+｛$lvl  \\cdot  15$｝"
+  },
+  {
+    "名称": "gemCap2",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "140",
+    "maxGL": "239",
+    "effect": "宝石容量+｛$lvl  \\cdot  15$｝"
+  }
+]

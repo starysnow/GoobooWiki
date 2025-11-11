@@ -1,267 +1,495 @@
 [
-    {id: 1, group: '仅浆果', collection: '城市里的植物', 力量: 3, color: '红色', icons: [
-        {"x": -0.4, "y": -0.15, "rotate": 0, "size": 3, "图标": "mdi-tree"},
-        {"x": -0.37, "y": 0.55, "rotate": 90, "size": 3, "图标": "mdi-minus"},
-        {"x": -0.65, "y": 0.35, "rotate": 0, "size": 0.6, "图标": "mdi-food-apple"},
-        {"x": -0.1, "y": 0.25, "rotate": 0, "size": 0.65, "图标": "mdi-food-apple"},
-        {"x": 0.4, "y": 0.2, "rotate": 25, "size": 0.6, "图标": "mdi-food-apple"},
-        {"x": 0.05, "y": 0.7, "rotate": 0, "size": 0.5, "图标": "mdi-food-apple"},
-        {"x": 0.3, "y": 0.75, "rotate": 0, "size": 0.45, "图标": "mdi-food-apple"},
-        {"x": 0.75, "y": 0.67, "rotate": 0, "size": 1.6, "图标": "mdi-human-greeting"},
-        {"x": 0.2, "y": 0.85, "rotate": 0, "size": 1, "图标": "mdi-basket"}
+    {id: 1, group: '浆果', collection: '城市里的植物', 最高力量: 3, color: '红色油漆', icons: [
+        {"x": -0.4, "y": -0.15, "rotate": 0, "size": 3, "icon": "mdi-tree"},
+        {"x": -0.37, "y": 0.55, "rotate": 90, "size": 3, "icon": "mdi-minus"},
+        {"x": -0.65, "y": 0.35, "rotate": 0, "size": 0.6, "icon": "mdi-food-apple"},
+        {"x": -0.1, "y": 0.25, "rotate": 0, "size": 0.65, "icon": "mdi-food-apple"},
+        {"x": 0.4, "y": 0.2, "rotate": 25, "size": 0.6, "icon": "mdi-food-apple"},
+        {"x": 0.05, "y": 0.7, "rotate": 0, "size": 0.5, "icon": "mdi-food-apple"},
+        {"x": 0.3, "y": 0.75, "rotate": 0, "size": 0.45, "icon": "mdi-food-apple"},
+        {"x": 0.75, "y": 0.67, "rotate": 0, "size": 1.6, "icon": "mdi-human-greeting"},
+        {"x": 0.2, "y": 0.85, "rotate": 0, "size": 1, "icon": "mdi-basket"}
     ]},
-    {id: 2, group: '仅蔬菜', collection: '城市里的植物', 力量: 3, color: '橙色', icons: [
-        {"x": -0.7, "y": 0.9, "rotate": 0, "size": 2, "图标": "mdi-train-car-flatbed"},
-        {"x": -0.7, "y": 0.7, "rotate": 0, "size": 1.65, "图标": "mdi-pumpkin"},
-        {"x": 0.5, "y": 1, "rotate": 0, "size": 1.1, "图标": "mdi-pumpkin"},
-        {"x": 0.05, "y": 1.08, "rotate": 0, "size": 0.7, "图标": "mdi-pumpkin"},
-        {"x": -0.2, "y": -0.3, "rotate": 0, "size": 1.4, "图标": "mdi-human-male-female-child"},
-        {"x": 0.8, "y": 0.1, "rotate": 0, "size": 1.3, "图标": "mdi-human-greeting"},
-        {"x": 0.4, "y": -0.15, "rotate": 20, "size": 0.6, "图标": "mdi-trophy"}
+    {id: 2, group: '蔬菜', collection: '城市里的植物', 最高力量: 3, color: '橙色油漆', icons: [
+        {"x": -0.7, "y": 0.9, "rotate": 0, "size": 2, "icon": "mdi-train-car-flatbed"},
+        {"x": -0.7, "y": 0.7, "rotate": 0, "size": 1.65, "icon": "mdi-pumpkin"},
+        {"x": 0.5, "y": 1, "rotate": 0, "size": 1.1, "icon": "mdi-pumpkin"},
+        {"x": 0.05, "y": 1.08, "rotate": 0, "size": 0.7, "icon": "mdi-pumpkin"},
+        {"x": -0.2, "y": -0.3, "rotate": 0, "size": 1.4, "icon": "mdi-human-male-female-child"},
+        {"x": 0.8, "y": 0.1, "rotate": 0, "size": 1.3, "icon": "mdi-human-greeting"},
+        {"x": 0.4, "y": -0.15, "rotate": 20, "size": 0.6, "icon": "mdi-trophy"}
     ]},
-    {id: 3, collection: '城市里的植物', 力量: 2, reward: [
-        {name: '黄金几率', 类型: '*', value: 1.15}
-    ], color: 'pale-紫色', icons: [
-        {"x": -0.75, "y": 0.65, "rotate": 0, "size": 1.5, "图标": "mdi-pot"},
-        {"x": 0, "y": 0.65, "rotate": 0, "size": 1.5, "图标": "mdi-pot"},
-        {"x": -0.75, "y": 0.35, "rotate": 0, "size": 1, "图标": "mdi-flower"},
-        {"x": 0, "y": 0.35, "rotate": 0, "size": 1, "图标": "mdi-flower-tulip"},
-        {"x": 0.8, "y": 0.68, "rotate": 0, "size": 1.35, "图标": "mdi-watering-can"},
-        {"x": 0.45, "y": -0.65, "rotate": 0, "size": 2, "图标": "mdi-cash-register"}
+    {id: 3, collection: '城市里的植物', 最高力量: 2, reward: [
+        {name: '黄金几率', type: '*', value: 1.1}
+    ], color: 'pale-紫色油漆', icons: [
+        {"x": -0.75, "y": 0.65, "rotate": 0, "size": 1.5, "icon": "mdi-pot"},
+        {"x": 0, "y": 0.65, "rotate": 0, "size": 1.5, "icon": "mdi-pot"},
+        {"x": -0.75, "y": 0.35, "rotate": 0, "size": 1, "icon": "mdi-flower"},
+        {"x": 0, "y": 0.35, "rotate": 0, "size": 1, "icon": "mdi-flower-tulip"},
+        {"x": 0.8, "y": 0.68, "rotate": 0, "size": 1.35, "icon": "mdi-watering-can"},
+        {"x": 0.45, "y": -0.65, "rotate": 0, "size": 2, "icon": "mdi-cash-register"}
     ]},
-    {id: 4, group: '仅鲜花', collection: '城市里的植物', 力量: 3, color: 'pale-blue', icons: [
-        {"x": 0, "y": 0.25, "rotate": 0, "size": 2, "图标": "mdi-desk"},
-        {"x": 0, "y": -0.3, "rotate": 0, "size": 1.5, "图标": "mdi-desktop-tower-monitor"},
-        {"x": -0.9, "y": 0.2, "rotate": 0, "size": 1.5, "图标": "mdi-chair-rolling"},
-        {"x": 0.95, "y": 0.45, "rotate": 0, "size": 1.25, "图标": "mdi-pot"},
-        {"x": 0.95, "y": 0.15, "rotate": 0, "size": 1, "图标": "mdi-flower"}
+    {id: 4, group: '花肥', collection: '城市里的植物', 最高力量: 3, color: 'pale-蓝色油漆', icons: [
+        {"x": 0, "y": 0.25, "rotate": 0, "size": 2, "icon": "mdi-desk"},
+        {"x": 0, "y": -0.3, "rotate": 0, "size": 1.5, "icon": "mdi-desktop-tower-monitor"},
+        {"x": -0.9, "y": 0.2, "rotate": 0, "size": 1.5, "icon": "mdi-chair-rolling"},
+        {"x": 0.95, "y": 0.45, "rotate": 0, "size": 1.25, "icon": "mdi-pot"},
+        {"x": 0.95, "y": 0.15, "rotate": 0, "size": 1, "icon": "mdi-flower"}
     ]},
-    {id: 5, group: '仅粮食', collection: '城市里的植物', 力量: 3, color: 'pale-黄色', icons: [
-        {"x": 0, "y": 0.3, "rotate": 0, "size": 1, "图标": "mdi-tshirt-crew"},
-        {"x": 0, "y": -0.15, "rotate": 0, "size": 1, "图标": "mdi-hat-fedora"},
-        {"x": 0, "y": 0.65, "rotate": 90, "size": 1, "图标": "mdi-minus-thick"},
-        {"x": 0.25, "y": 0.3, "rotate": 45, "size": 1, "图标": "mdi-minus"},
-        {"x": -0.25, "y": 0.3, "rotate": -45, "size": 1, "图标": "mdi-minus"},
-        {"x": -0.8, "y": 0.5, "rotate": 0, "size": 1.25, "图标": "mdi-barley"},
-        {"x": -0.8, "y": 0.02, "rotate": 0, "size": 1.25, "图标": "mdi-barley"},
-        {"x": 0.75, "y": 0.45, "rotate": 0, "size": 1.4, "图标": "mdi-barley"}
+    {id: 5, group: '粮食', collection: '城市里的植物', 最高力量: 3, color: 'pale-黄色油漆', icons: [
+        {"x": 0, "y": 0.3, "rotate": 0, "size": 1, "icon": "mdi-tshirt-crew"},
+        {"x": 0, "y": -0.15, "rotate": 0, "size": 1, "icon": "mdi-hat-fedora"},
+        {"x": 0, "y": 0.65, "rotate": 90, "size": 1, "icon": "mdi-minus-thick"},
+        {"x": 0.25, "y": 0.3, "rotate": 45, "size": 1, "icon": "mdi-minus"},
+        {"x": -0.25, "y": 0.3, "rotate": -45, "size": 1, "icon": "mdi-minus"},
+        {"x": -0.8, "y": 0.5, "rotate": 0, "size": 1.25, "icon": "mdi-barley"},
+        {"x": -0.8, "y": 0.02, "rotate": 0, "size": 1.25, "icon": "mdi-barley"},
+        {"x": 0.75, "y": 0.45, "rotate": 0, "size": 1.4, "icon": "mdi-barley"}
     ]},
-    {id: 6, group: '仅浆果', collection: '供应与支持', 力量: 1, reward: [
-        {name: '作物增益', 类型: '*', value: 1.35}
-    ], color: '光-blue', icons: [
-        {"x": 0.05, "y": -0.45, "rotate": 45, "size": 2, "图标": "mdi-airplane"},
-        {"x": -0.2, "y": 0, "rotate": 0, "size": 0.6, "图标": "mdi-water"},
-        {"x": 0.4, "y": 0.1, "rotate": 0, "size": 0.6, "图标": "mdi-water"},
-        {"x": 0.1, "y": 0.2, "rotate": 0, "size": 0.6, "图标": "mdi-water"},
-        {"x": -0.1, "y": 0.35, "rotate": 0, "size": 0.6, "图标": "mdi-water"},
-        {"x": 0.3, "y": 0.45, "rotate": 0, "size": 0.6, "图标": "mdi-water"},
-        {"x": -0.35, "y": 0.5, "rotate": 0, "size": 0.6, "图标": "mdi-water"},
-        {"x": 0, "y": 1, "rotate": 0, "size": 1.5, "图标": "mdi-grass"},
-        {"x": -0.65, "y": 1.1, "rotate": 0, "size": 1, "图标": "mdi-flower"}
+    {id: 6, group: '浆果', collection: '供应与支持', 最高力量: 1, reward: [
+        {name: '产出', type: '*', value: 1.2}
+    ], color: '浅蓝色油漆', icons: [
+        {"x": 0.05, "y": -0.45, "rotate": 45, "size": 2, "icon": "mdi-airplane"},
+        {"x": -0.2, "y": 0, "rotate": 0, "size": 0.6, "icon": "mdi-water"},
+        {"x": 0.4, "y": 0.1, "rotate": 0, "size": 0.6, "icon": "mdi-water"},
+        {"x": 0.1, "y": 0.2, "rotate": 0, "size": 0.6, "icon": "mdi-water"},
+        {"x": -0.1, "y": 0.35, "rotate": 0, "size": 0.6, "icon": "mdi-water"},
+        {"x": 0.3, "y": 0.45, "rotate": 0, "size": 0.6, "icon": "mdi-water"},
+        {"x": -0.35, "y": 0.5, "rotate": 0, "size": 0.6, "icon": "mdi-water"},
+        {"x": 0, "y": 1, "rotate": 0, "size": 1.5, "icon": "mdi-grass"},
+        {"x": -0.65, "y": 1.1, "rotate": 0, "size": 1, "icon": "mdi-flower"}
     ]},
-    {id: 7, group: '仅蔬菜', collection: '供应与支持', 力量: 1, reward: [
-        {name: '作物增益', 类型: '*', value: 1.35}
-    ], color: 'blue-灰色', icons: [
-        {"x": -1.05, "y": 0, "rotate": 0, "size": 1.25, "图标": "mdi-train-car-centerbeam-full"},
-        {"x": -0.35, "y": 0, "rotate": 0, "size": 1.25, "图标": "mdi-train-car-container"},
-        {"x": 0.35, "y": 0, "rotate": 0, "size": 1.25, "图标": "mdi-train-car-flatbed-tank"},
-        {"x": 1.05, "y": 0, "rotate": 0, "size": 1.25, "图标": "mdi-train-car-hopper-full"}
+    {id: 7, group: '蔬菜', collection: '供应与支持', 最高力量: 1, reward: [
+        {name: '产出', type: '*', value: 1.2}
+    ], color: '蓝色油漆-grey', icons: [
+        {"x": -1.05, "y": 0, "rotate": 0, "size": 1.25, "icon": "mdi-train-car-centerbeam-full"},
+        {"x": -0.35, "y": 0, "rotate": 0, "size": 1.25, "icon": "mdi-train-car-container"},
+        {"x": 0.35, "y": 0, "rotate": 0, "size": 1.25, "icon": "mdi-train-car-flatbed-tank"},
+        {"x": 1.05, "y": 0, "rotate": 0, "size": 1.25, "icon": "mdi-train-car-hopper-full"}
     ]},
-    {id: 8, group: '仅粮食', collection: '供应与支持', 力量: 1, reward: [
-        {name: '作物增益', 类型: '*', value: 1.35}
+    {id: 8, group: '粮食', collection: '供应与支持', 最高力量: 1, reward: [
+        {name: '产出', type: '*', value: 1.2}
     ], color: 'beige', icons: [
-        {"x": -0.6, "y": -0.3, "rotate": 0, "size": 1.5, "图标": "mdi-home-silo"},
-        {"x": 0.25, "y": -0.3, "rotate": 0, "size": 1.5, "图标": "mdi-silo"},
-        {"x": 0.15, "y": 0.7, "rotate": 0, "size": 2, "图标": "mdi-car-lifted-pickup"},
-        {"x": -0.15, "y": 0.5, "rotate": 0, "size": 0.75, "图标": "mdi-land-rows-horizontal"}
+        {"x": -0.6, "y": -0.3, "rotate": 0, "size": 1.5, "icon": "mdi-home-silo"},
+        {"x": 0.25, "y": -0.3, "rotate": 0, "size": 1.5, "icon": "mdi-silo"},
+        {"x": 0.15, "y": 0.7, "rotate": 0, "size": 2, "icon": "mdi-car-lifted-pickup"},
+        {"x": -0.15, "y": 0.5, "rotate": 0, "size": 0.75, "icon": "mdi-land-rows-horizontal"}
     ]},
-    {id: 9, group: '仅鲜花', collection: '供应与支持', 力量: 1, reward: [
-        {name: '作物增益', 类型: '*', value: 1.35}
-    ], color: 'deep-橙色', icons: [
-        {"x": 0, "y": 0, "rotate": 0, "size": 4.5, "图标": "mdi-hoop-house"},
-        {"x": 0, "y": 0.6, "rotate": 0, "size": 0.75, "图标": "mdi-radiator"},
-        {"x": 0, "y": -0.4, "rotate": 180, "size": 0.5, "图标": "mdi-lightbulb-on"},
-        {"x": -0.65, "y": 0.6, "rotate": 0, "size": 0.75, "图标": "mdi-flower"},
-        {"x": 0.65, "y": 0.6, "rotate": 0, "size": 0.75, "图标": "mdi-flower"}
+    {id: 9, group: '花肥', collection: '供应与支持', 最高力量: 1, reward: [
+        {name: '产出', type: '*', value: 1.2}
+    ], color: '橙红色油漆', icons: [
+        {"x": 0, "y": 0, "rotate": 0, "size": 4.5, "icon": "mdi-hoop-house"},
+        {"x": 0, "y": 0.6, "rotate": 0, "size": 0.75, "icon": "mdi-radiator"},
+        {"x": 0, "y": -0.4, "rotate": 180, "size": 0.5, "icon": "mdi-lightbulb-on"},
+        {"x": -0.65, "y": 0.6, "rotate": 0, "size": 0.75, "icon": "mdi-flower"},
+        {"x": 0.65, "y": 0.6, "rotate": 0, "size": 0.75, "icon": "mdi-flower"}
     ]},
-    {id: 10, collection: '喂养世界', 力量: 2, reward: [
-        {name: '作物增益', 类型: '*', value: 1.1}
+    {id: 10, collection: '喂养世界', 最高力量: 2, reward: [
+        {name: '产出', type: '*', value: 1.15}
     ], color: 'lime', icons: [
-        {"x": 0.2, "y": 0, "rotate": 0, "size": 2.25, "图标": "mdi-blender"},
-        {"x": 0.95, "y": 0.23, "rotate": 0, "size": 1.3, "图标": "mdi-beer"},
-        {"x": -0.85, "y": 0.32, "rotate": 0, "size": 1, "图标": "mdi-food-apple"},
-        {"x": -0.5, "y": 0.32, "rotate": 0, "size": 1, "图标": "mdi-fruit-pear"}
+        {"x": 0.2, "y": 0, "rotate": 0, "size": 2.25, "icon": "mdi-blender"},
+        {"x": 0.95, "y": 0.23, "rotate": 0, "size": 1.3, "icon": "mdi-beer"},
+        {"x": -0.85, "y": 0.32, "rotate": 0, "size": 1, "icon": "mdi-food-apple"},
+        {"x": -0.5, "y": 0.32, "rotate": 0, "size": 1, "icon": "mdi-fruit-pear"}
     ]},
-    {id: 11, collection: '喂养世界', 力量: 0, reward: [
-        {name: '黄金几率', 类型: '*', value: 1.25}
-    ], color: 'pale-粉色', icons: [
-        {"x": -0.5, "y": 0.6, "rotate": 0, "size": 3, "图标": "mdi-minus"},
-        {"x": 0.5, "y": 0.6, "rotate": 0, "size": 3, "图标": "mdi-minus"},
-        {"x": -0.5, "y": -0.2, "rotate": 0, "size": 3, "图标": "mdi-minus"},
-        {"x": 0.5, "y": -0.2, "rotate": 0, "size": 3, "图标": "mdi-minus"},
-        {"x": -0.65, "y": 0.3, "rotate": 0, "size": 1, "图标": "mdi-baguette"},
-        {"x": -0.3, "y": 0.3, "rotate": 0, "size": 1, "图标": "mdi-baguette"},
-        {"x": 0.05, "y": 0.3, "rotate": 0, "size": 1, "图标": "mdi-baguette"},
-        {"x": 0.6, "y": 0.35, "rotate": 0, "size": 1, "图标": "mdi-food-croissant"},
-        {"x": -0.15, "y": -0.5, "rotate": 0, "size": 1, "图标": "mdi-cupcake"},
-        {"x": 0.45, "y": -0.5, "rotate": 0, "size": 1, "图标": "mdi-muffin"}
+    {id: 11, collection: '喂养世界', 最高力量: 0, reward: [
+        {name: '黄金几率', type: '*', value: 1.15}
+    ], color: 'pale-粉红色油漆', icons: [
+        {"x": -0.5, "y": 0.6, "rotate": 0, "size": 3, "icon": "mdi-minus"},
+        {"x": 0.5, "y": 0.6, "rotate": 0, "size": 3, "icon": "mdi-minus"},
+        {"x": -0.5, "y": -0.2, "rotate": 0, "size": 3, "icon": "mdi-minus"},
+        {"x": 0.5, "y": -0.2, "rotate": 0, "size": 3, "icon": "mdi-minus"},
+        {"x": -0.65, "y": 0.3, "rotate": 0, "size": 1, "icon": "mdi-baguette"},
+        {"x": -0.3, "y": 0.3, "rotate": 0, "size": 1, "icon": "mdi-baguette"},
+        {"x": 0.05, "y": 0.3, "rotate": 0, "size": 1, "icon": "mdi-baguette"},
+        {"x": 0.6, "y": 0.35, "rotate": 0, "size": 1, "icon": "mdi-food-croissant"},
+        {"x": -0.15, "y": -0.5, "rotate": 0, "size": 1, "icon": "mdi-cupcake"},
+        {"x": 0.45, "y": -0.5, "rotate": 0, "size": 1, "icon": "mdi-muffin"}
     ]},
-    {id: 12, collection: '喂养世界', 力量: 3, reward: [
-        {name: '作物经验', 类型: '+', value: 0.2}
-    ], color: 'pale-blue', icons: [
-        {"x": 0, "y": 0.25, "rotate": 0, "size": 2, "图标": "mdi-truck"},
-        {"x": -0.12, "y": -0.4, "rotate": 0, "size": 1.25, "图标": "mdi-ice-cream"},
-        {"x": 0.85, "y": 0.7, "rotate": 0, "size": 1, "图标": "mdi-human-handsdown"},
-        {"x": -0.7, "y": 0.9, "rotate": 0, "size": 0.7, "图标": "mdi-human-child"}
+    {id: 12, collection: '喂养世界', 最高力量: 3, reward: [
+        {name: '作物经验', type: '+', value: 0.2}
+    ], color: 'pale-蓝色油漆', icons: [
+        {"x": 0, "y": 0.25, "rotate": 0, "size": 2, "icon": "mdi-truck"},
+        {"x": -0.12, "y": -0.4, "rotate": 0, "size": 1.25, "icon": "mdi-ice-cream"},
+        {"x": 0.85, "y": 0.7, "rotate": 0, "size": 1, "icon": "mdi-human-handsdown"},
+        {"x": -0.7, "y": 0.9, "rotate": 0, "size": 0.7, "icon": "mdi-human-child"}
     ]},
-    {id: 13, collection: '喂养世界', 力量: 3, reward: [
-        {name: '稀有掉率', 类型: '*', value: 1.1}
-    ], color: '橙色', icons: [
-        {"x": -0.3, "y": 0.2, "rotate": 0, "size": 2, "图标": "mdi-tray"},
-        {"x": 0.55, "y": 0.35, "rotate": 0, "size": 2, "图标": "mdi-human-handsdown"},
-        {"x": -0.45, "y": 0.2, "rotate": 0, "size": 0.75, "图标": "mdi-food"},
-        {"x": -0.1, "y": 0.25, "rotate": 0, "size": 0.7, "图标": "mdi-french-fries"}
+    {id: 13, collection: '喂养世界', 最高力量: 3, reward: [
+        {name: '稀有掉率', type: '*', value: 1.1}
+    ], color: '橙色油漆', icons: [
+        {"x": -0.3, "y": 0.2, "rotate": 0, "size": 2, "icon": "mdi-tray"},
+        {"x": 0.55, "y": 0.35, "rotate": 0, "size": 2, "icon": "mdi-human-handsdown"},
+        {"x": -0.45, "y": 0.2, "rotate": 0, "size": 0.75, "icon": "mdi-food"},
+        {"x": -0.1, "y": 0.25, "rotate": 0, "size": 0.7, "icon": "mdi-french-fries"}
     ]},
-    {id: 14, collection: '喂养世界', 力量: 3, reward: [
-        {name: '草', 类型: '增加稀有掉落 ((0))', value: 4, 几率: 0.2, *: 0.4}
-    ], color: '棕色', icons: [
-        {"x": 0, "y": 0.5, "rotate": 0, "size": 3, "图标": "mdi-table-furniture"},
-        {"x": 0, "y": -0.05, "rotate": 0, "size": 1, "图标": "mdi-food-turkey"},
-        {"x": -0.45, "y": 0, "rotate": 0, "size": 0.75, "图标": "mdi-food-variant"},
-        {"x": 0.5, "y": -0.05, "rotate": 0, "size": 0.85, "图标": "mdi-bowl"},
-        {"x": 0.4, "y": -0.05, "rotate": -10, "size": 0.65, "图标": "mdi-carrot"},
-        {"x": 0.55, "y": -0.1, "rotate": 15, "size": 0.65, "图标": "mdi-carrot"}
+    {id: 14, collection: '喂养世界', 最高力量: 3, reward: [
+        {name: '草', type: 'addRareDrop', value: 4, chance: 0.4, *: 0.4}
+    ], color: 'brown', icons: [
+        {"x": 0, "y": 0.5, "rotate": 0, "size": 3, "icon": "mdi-table-furniture"},
+        {"x": 0, "y": -0.05, "rotate": 0, "size": 1, "icon": "mdi-food-turkey"},
+        {"x": -0.45, "y": 0, "rotate": 0, "size": 0.75, "icon": "mdi-food-variant"},
+        {"x": 0.5, "y": -0.05, "rotate": 0, "size": 0.85, "icon": "mdi-bowl"},
+        {"x": 0.4, "y": -0.05, "rotate": -10, "size": 0.65, "icon": "mdi-carrot"},
+        {"x": 0.55, "y": -0.1, "rotate": 15, "size": 0.65, "icon": "mdi-carrot"}
     ]},
-    {id: 15, collection: '喂养世界', 力量: 3, reward: [
-        {name: '作物增益', 类型: '*', value: 1.1},
-        {name: '黄金几率', 类型: '*', value: 1.1}
-    ], color: '光-blue', icons: [
-        {"x": 0, "y": 0.4, "rotate": 0, "size": 1.7, "图标": "mdi-human-handsup"},
-        {"x": -0.3, "y": -0.05, "rotate": 0, "size": 0.85, "图标": "mdi-candy"},
-        {"x": -0.95, "y": 0.45, "rotate": 0, "size": 1.25, "图标": "mdi-candycane"},
-        {"x": 0.95, "y": 0.45, "rotate": 0, "size": 1.25, "图标": "mdi-candycane"},
-        {"x": 0.75, "y": -0.5, "rotate": 0, "size": 0.8, "图标": "mdi-cake-variant"},
-        {"x": -0.3, "y": -0.65, "rotate": 0, "size": 0.55, "图标": "mdi-cupcake"},
-        {"x": 0.25, "y": -0.2, "rotate": 0, "size": 0.7, "图标": "mdi-ice-pop"},
-        {"x": -0.85, "y": -0.2, "rotate": 0, "size": 0.8, "图标": "mdi-ice-cream"}
+    {id: 15, collection: '喂养世界', 最高力量: 3, reward: [
+        {name: '产出', type: '*', value: 1.1},
+        {name: '黄金几率', type: '*', value: 1.06}
+    ], color: '浅蓝色油漆', icons: [
+        {"x": 0, "y": 0.4, "rotate": 0, "size": 1.7, "icon": "mdi-human-handsup"},
+        {"x": -0.3, "y": -0.05, "rotate": 0, "size": 0.85, "icon": "mdi-candy"},
+        {"x": -0.95, "y": 0.45, "rotate": 0, "size": 1.25, "icon": "mdi-candycane"},
+        {"x": 0.95, "y": 0.45, "rotate": 0, "size": 1.25, "icon": "mdi-candycane"},
+        {"x": 0.75, "y": -0.5, "rotate": 0, "size": 0.8, "icon": "mdi-cake-variant"},
+        {"x": -0.3, "y": -0.65, "rotate": 0, "size": 0.55, "icon": "mdi-cupcake"},
+        {"x": 0.25, "y": -0.2, "rotate": 0, "size": 0.7, "icon": "mdi-ice-pop"},
+        {"x": -0.85, "y": -0.2, "rotate": 0, "size": 0.8, "icon": "mdi-ice-cream"}
     ]},
-    {id: 16, collection: '喂养世界', 力量: 3, reward: [
-        {name: '稀有掉率', 类型: '*', value: 1.05},
-        {name: '作物经验', 类型: '+', value: 0.1}
-    ], color: '光-绿色', icons: [
-        {"x": -0.9, "y": 0.3, "rotate": 0, "size": 1, "图标": "mdi-coffee"},
-        {"x": -0.4, "y": 0.3, "rotate": 0, "size": 1, "图标": "mdi-coffee"},
-        {"x": -0.65, "y": -0.15, "rotate": 0, "size": 1, "图标": "mdi-coffee"},
-        {"x": 0.3, "y": 0.22, "rotate": 0, "size": 1.2, "图标": "mdi-kettle-steam"},
-        {"x": 0.95, "y": 0.3, "rotate": 0, "size": 1, "图标": "mdi-tea"}
+    {id: 16, collection: '喂养世界', 最高力量: 3, reward: [
+        {name: '稀有掉率', type: '*', value: 1.05},
+        {name: '作物经验', type: '+', value: 0.1}
+    ], color: '浅绿色油漆', icons: [
+        {"x": -0.9, "y": 0.3, "rotate": 0, "size": 1, "icon": "mdi-coffee"},
+        {"x": -0.4, "y": 0.3, "rotate": 0, "size": 1, "icon": "mdi-coffee"},
+        {"x": -0.65, "y": -0.15, "rotate": 0, "size": 1, "icon": "mdi-coffee"},
+        {"x": 0.3, "y": 0.22, "rotate": 0, "size": 1.2, "icon": "mdi-kettle-steam"},
+        {"x": 0.95, "y": 0.3, "rotate": 0, "size": 1, "icon": "mdi-tea"}
     ]},
-    {id: 17, group: '仅鲜花', collection: '喂养世界', 力量: 4, reward: [
-        {name: '花瓣', 类型: '增加稀有掉落 ((0))', value: 2, 几率: 0.1, *: 0.1}
-    ], color: '樱桃色', icons: [
-        {"x": -0.6, "y": 0.15, "rotate": 0, "size": 2, "图标": "mdi-bowl"},
-        {"x": -0.4, "y": 0.05, "rotate": 60, "size": 1, "图标": "mdi-fruit-grapes"},
-        {"x": -0.75, "y": 0.1, "rotate": -15, "size": 1, "图标": "mdi-fruit-grapes"},
-        {"x": -0.1, "y": 0.2, "rotate": 0, "size": 1, "图标": "mdi-faucet"},
-        {"x": 0.25, "y": 0.3, "rotate": 0, "size": 1.25, "图标": "mdi-bottle-wine"},
-        {"x": 0.5, "y": 0.3, "rotate": 0, "size": 1.25, "图标": "mdi-bottle-wine"},
-        {"x": 0.75, "y": 0.3, "rotate": 0, "size": 1.25, "图标": "mdi-bottle-wine"},
-        {"x": 1.1, "y": 0.37, "rotate": 0, "size": 1, "图标": "mdi-glass-wine"}
+    {id: 17, group: '花肥', collection: '喂养世界', 最高力量: 4, reward: [
+        {name: '花瓣', type: 'addRareDrop', value: 2, chance: 0.1, *: 0.1}
+    ], color: 'cherry', icons: [
+        {"x": -0.6, "y": 0.15, "rotate": 0, "size": 2, "icon": "mdi-bowl"},
+        {"x": -0.4, "y": 0.05, "rotate": 60, "size": 1, "icon": "mdi-fruit-grapes"},
+        {"x": -0.75, "y": 0.1, "rotate": -15, "size": 1, "icon": "mdi-fruit-grapes"},
+        {"x": -0.1, "y": 0.2, "rotate": 0, "size": 1, "icon": "mdi-faucet"},
+        {"x": 0.25, "y": 0.3, "rotate": 0, "size": 1.25, "icon": "mdi-bottle-wine"},
+        {"x": 0.5, "y": 0.3, "rotate": 0, "size": 1.25, "icon": "mdi-bottle-wine"},
+        {"x": 0.75, "y": 0.3, "rotate": 0, "size": 1.25, "icon": "mdi-bottle-wine"},
+        {"x": 1.1, "y": 0.37, "rotate": 0, "size": 1, "icon": "mdi-glass-wine"}
     ]},
-    {id: 18, collection: '喂养世界', 力量: 0, reward: [
-        {name: '花瓣', 类型: '增加稀有掉落 ((0))', value: 2, 几率: -0.05, *: 0.02},
-        {name: '种子壳', 类型: '增加稀有掉落 ((0))', value: 3, 几率: -0.05, *: 0.02},
-        {name: '虫子', 类型: '增加稀有掉落 ((0))', value: 1, 几率: -0.05, *: 0.02}
+    {id: 18, collection: '喂养世界', 最高力量: 0, reward: [
+        {name: '花瓣', type: 'addRareDrop', value: 2, chance: -0.05, *: 0.02},
+        {name: '种子壳', type: 'addRareDrop', value: 3, chance: -0.05, *: 0.02},
+        {name: '虫子', type: 'addRareDrop', value: 1, chance: -0.05, *: 0.02}
     ], color: 'wooden', icons: [
-        {"x": -0.55, "y": 0, "rotate": 0, "size": 2, "图标": "mdi-coffee-maker"},
-        {"x": 0.6, "y": 0.2, "rotate": 0, "size": 1.25, "图标": "mdi-coffee"},
-        {"x": 0.65, "y": -0.2, "rotate": 65, "size": 1, "图标": "mdi-cookie"}
+        {"x": -0.55, "y": 0, "rotate": 0, "size": 2, "icon": "mdi-coffee-maker"},
+        {"x": 0.6, "y": 0.2, "rotate": 0, "size": 1.25, "icon": "mdi-coffee"},
+        {"x": 0.65, "y": -0.2, "rotate": 65, "size": 1, "icon": "mdi-cookie"}
     ]},
-    {id: 19, group: '仅粮食', collection: '有机染料', 力量: 3, reward: [
-        {name: '种子壳', 类型: '增加稀有掉落 ((0))', value: 6, 几率: 0.15, *: 0.1}
-    ], color: '金色', icons: [
-        {"x": -0.6, "y": 0.75, "rotate": 0, "size": 1, "图标": "mdi-carrot"},
-        {"x": -0.35, "y": 0.75, "rotate": 0, "size": 1, "图标": "mdi-carrot"},
-        {"x": -0.1, "y": 0.75, "rotate": 0, "size": 1, "图标": "mdi-carrot"},
-        {"x": 0.2, "y": -0.05, "rotate": 0, "size": 1.8, "图标": "mdi-pumpkin"},
-        {"x": -0.1, "y": -0.65, "rotate": 0, "size": 1.4, "图标": "mdi-circular-saw"}
+    {id: 19, group: '粮食', collection: '有机染料', 最高力量: 3, reward: [
+        {name: '种子壳', type: 'addRareDrop', value: 6, chance: 0.15, *: 0.1}
+    ], color: '金色油漆', icons: [
+        {"x": -0.6, "y": 0.75, "rotate": 0, "size": 1, "icon": "mdi-carrot"},
+        {"x": -0.35, "y": 0.75, "rotate": 0, "size": 1, "icon": "mdi-carrot"},
+        {"x": -0.1, "y": 0.75, "rotate": 0, "size": 1, "icon": "mdi-carrot"},
+        {"x": 0.2, "y": -0.05, "rotate": 0, "size": 1.8, "icon": "mdi-pumpkin"},
+        {"x": -0.1, "y": -0.65, "rotate": 0, "size": 1.4, "icon": "mdi-circular-saw"}
     ]},
-    {id: 20, group: '仅蔬菜', collection: '有机染料', 力量: 3, reward: [
-        {name: '虫子', 类型: '增加稀有掉落 ((0))', value: 2, 几率: 0.1, *: 0.1}
-    ], color: '橙色-红色', icons: [
-        {"x": 0, "y": 0, "rotate": 0, "size": 4, "图标": "mdi-tray"},
-        {"x": -0.45, "y": 0.25, "rotate": 0, "size": 1, "图标": "mdi-fruit-cherries"},
-        {"x": 0, "y": 0.25, "rotate": 0, "size": 1, "图标": "mdi-food-apple"},
-        {"x": 0.45, "y": 0.25, "rotate": 0, "size": 1, "图标": "mdi-fruit-watermelon"},
-        {"x": 0.3, "y": -0.1, "rotate": 35, "size": 1, "图标": "mdi-chili-hot"},
-        {"x": -0.25, "y": -0.15, "rotate": -70, "size": 1, "图标": "mdi-chili-medium"}
+    {id: 20, group: '蔬菜', collection: '有机染料', 最高力量: 3, reward: [
+        {name: '虫子', type: 'addRareDrop', value: 2, chance: 0.1, *: 0.1}
+    ], color: '橙色油漆-红色油漆', icons: [
+        {"x": 0, "y": 0, "rotate": 0, "size": 4, "icon": "mdi-tray"},
+        {"x": -0.45, "y": 0.25, "rotate": 0, "size": 1, "icon": "mdi-fruit-cherries"},
+        {"x": 0, "y": 0.25, "rotate": 0, "size": 1, "icon": "mdi-food-apple"},
+        {"x": 0.45, "y": 0.25, "rotate": 0, "size": 1, "icon": "mdi-fruit-watermelon"},
+        {"x": 0.3, "y": -0.1, "rotate": 35, "size": 1, "icon": "mdi-chili-hot"},
+        {"x": -0.25, "y": -0.15, "rotate": -70, "size": 1, "icon": "mdi-chili-medium"}
     ]},
-    {id: 21, group: '仅浆果', collection: '有机染料', 力量: 3, reward: [
-        {name: '蝴蝶', 类型: '增加稀有掉落 ((0))', value: 1, 几率: 0, *: 0.1}
-    ], color: 'pale-黄色', icons: [
-        {"x": -0.7, "y": 0, "rotate": 0, "size": 1.25, "图标": "mdi-flower"},
-        {"x": 0.7, "y": 0, "rotate": 0, "size": 1.25, "图标": "mdi-flower"},
-        {"x": 0, "y": -0.2, "rotate": 180, "size": 1.75, "图标": "mdi-flower-pollen"},
-        {"x": -0.2, "y": 0.5, "rotate": 0, "size": 1, "图标": "mdi-grain"},
-        {"x": 0.2, "y": 0.5, "rotate": 0, "size": 1, "图标": "mdi-grain"},
-        {"x": 0, "y": 0.45, "rotate": 0, "size": 2.25, "图标": "mdi-tray"}
+    {id: 21, group: '浆果', collection: '有机染料', 最高力量: 3, reward: [
+        {name: '蝴蝶', type: 'addRareDrop', value: 1, chance: 0, *: 0.1}
+    ], color: 'pale-黄色油漆', icons: [
+        {"x": -0.7, "y": 0, "rotate": 0, "size": 1.25, "icon": "mdi-flower"},
+        {"x": 0.7, "y": 0, "rotate": 0, "size": 1.25, "icon": "mdi-flower"},
+        {"x": 0, "y": -0.2, "rotate": 180, "size": 1.75, "icon": "mdi-flower-pollen"},
+        {"x": -0.2, "y": 0.5, "rotate": 0, "size": 1, "icon": "mdi-grain"},
+        {"x": 0.2, "y": 0.5, "rotate": 0, "size": 1, "icon": "mdi-grain"},
+        {"x": 0, "y": 0.45, "rotate": 0, "size": 2.25, "icon": "mdi-tray"}
     ]},
-    {id: 22, collection: '有机染料', 力量: 6, color: '光-绿色', icons: [
-        {"x": -0.9, "y": 0.4, "rotate": 0, "size": 1.25, "图标": "mdi-grass"},
-        {"x": -0.3, "y": 0.4, "rotate": 0, "size": 1.25, "图标": "mdi-grass"},
-        {"x": 0.3, "y": 0.4, "rotate": 0, "size": 1.25, "图标": "mdi-grass"},
-        {"x": 0.9, "y": 0.4, "rotate": 0, "size": 1.25, "图标": "mdi-grass"},
-        {"x": 0, "y": -0.1, "rotate": 0, "size": 1.1, "图标": "mdi-hops"},
-        {"x": -0.45, "y": 0.1, "rotate": 0, "size": 0.8, "图标": "mdi-leaf"},
-        {"x": -0.8, "y": 0.05, "rotate": -85, "size": 0.8, "图标": "mdi-leaf"},
-        {"x": -0.55, "y": -0.15, "rotate": -30, "size": 0.8, "图标": "mdi-leaf"},
-        {"x": 0.65, "y": 0.1, "rotate": 50, "size": 0.9, "图标": "mdi-leaf"}
+    {id: 22, collection: '有机染料', 最高力量: 6, color: '浅绿色油漆', icons: [
+        {"x": -0.9, "y": 0.4, "rotate": 0, "size": 1.25, "icon": "mdi-grass"},
+        {"x": -0.3, "y": 0.4, "rotate": 0, "size": 1.25, "icon": "mdi-grass"},
+        {"x": 0.3, "y": 0.4, "rotate": 0, "size": 1.25, "icon": "mdi-grass"},
+        {"x": 0.9, "y": 0.4, "rotate": 0, "size": 1.25, "icon": "mdi-grass"},
+        {"x": 0, "y": -0.1, "rotate": 0, "size": 1.1, "icon": "mdi-hops"},
+        {"x": -0.45, "y": 0.1, "rotate": 0, "size": 0.8, "icon": "mdi-leaf"},
+        {"x": -0.8, "y": 0.05, "rotate": -85, "size": 0.8, "icon": "mdi-leaf"},
+        {"x": -0.55, "y": -0.15, "rotate": -30, "size": 0.8, "icon": "mdi-leaf"},
+        {"x": 0.65, "y": 0.1, "rotate": 50, "size": 0.9, "icon": "mdi-leaf"}
     ]},
-    {id: 23, collection: '有机染料', 力量: 4, reward: [
-        {name: '过度生长', 类型: '+', value: 1.75}
-    ], color: 'dark-blue', icons: [
-        {"x": -0.4, "y": 0.2, "rotate": 0, "size": 2, "图标": "mdi-image-filter-drama"},
-        {"x": -0.05, "y": 0.05, "rotate": -75, "size": 1, "图标": "mdi-fruit-grapes"},
-        {"x": -0.7, "y": 0.15, "rotate": 155, "size": 1, "图标": "mdi-fruit-grapes"},
-        {"x": 0.75, "y": 0.15, "rotate": 0, "size": 1.75, "图标": "mdi-human-handsdown"},
-        {"x": 1.05, "y": 0.3, "rotate": 0, "size": 0.7, "图标": "mdi-fruit-grapes"},
-        {"x": 0.45, "y": 0.3, "rotate": 0, "size": 0.7, "图标": "mdi-basket"}
+    {id: 23, collection: '有机染料', 最高力量: 4, reward: [
+        {name: '过度生长', type: '+', value: 0.75}
+    ], color: 'dark-蓝色油漆', icons: [
+        {"x": -0.4, "y": 0.2, "rotate": 0, "size": 2, "icon": "mdi-image-filter-drama"},
+        {"x": -0.05, "y": 0.05, "rotate": -75, "size": 1, "icon": "mdi-fruit-grapes"},
+        {"x": -0.7, "y": 0.15, "rotate": 155, "size": 1, "icon": "mdi-fruit-grapes"},
+        {"x": 0.75, "y": 0.15, "rotate": 0, "size": 1.75, "icon": "mdi-human-handsdown"},
+        {"x": 1.05, "y": 0.3, "rotate": 0, "size": 0.7, "icon": "mdi-fruit-grapes"},
+        {"x": 0.45, "y": 0.3, "rotate": 0, "size": 0.7, "icon": "mdi-basket"}
     ]},
-    {id: 24, collection: '有机染料', 力量: 5, reward: [
-        {name: '过度生长', 类型: '+', value: 0.6}
-    ], color: '紫色', icons: [
-        {"x": -0.7, "y": 0, "rotate": 0, "size": 3, "图标": "mdi-tree"},
-        {"x": 0.6, "y": -0.4, "rotate": 0, "size": 2.5, "图标": "mdi-pine-tree"},
-        {"x": 0.2, "y": 0.8, "rotate": 0, "size": 1, "图标": "mdi-mushroom"},
-        {"x": -0.4, "y": 1, "rotate": 0, "size": 1.1, "图标": "mdi-mushroom"},
-        {"x": 1, "y": 0.65, "rotate": 0, "size": 0.9, "图标": "mdi-mushroom"},
-        {"x": 0.5, "y": 0.45, "rotate": 0, "size": 0.8, "图标": "mdi-mushroom"},
-        {"x": 0, "y": 0.25, "rotate": 0, "size": 0.7, "图标": "mdi-mushroom"}
+    {id: 24, collection: '有机染料', 最高力量: 5, reward: [
+        {name: '过度生长', type: '+', value: 0.6}
+    ], color: '紫色油漆', icons: [
+        {"x": -0.7, "y": 0, "rotate": 0, "size": 3, "icon": "mdi-tree"},
+        {"x": 0.6, "y": -0.4, "rotate": 0, "size": 2.5, "icon": "mdi-pine-tree"},
+        {"x": 0.2, "y": 0.8, "rotate": 0, "size": 1, "icon": "mdi-mushroom"},
+        {"x": -0.4, "y": 1, "rotate": 0, "size": 1.1, "icon": "mdi-mushroom"},
+        {"x": 1, "y": 0.65, "rotate": 0, "size": 0.9, "icon": "mdi-mushroom"},
+        {"x": 0.5, "y": 0.45, "rotate": 0, "size": 0.8, "icon": "mdi-mushroom"},
+        {"x": 0, "y": 0.25, "rotate": 0, "size": 0.7, "icon": "mdi-mushroom"}
     ]},
-    {id: 25, collection: '有机染料', 力量: 3, reward: [
-        {name: '瓢虫', 类型: '增加稀有掉落 ((0))', value: 4, 几率: -0.05, *: 0.1}
-    ], color: '棕色', icons: [
-        {"x": 0, "y": 0.1, "rotate": 0, "size": 2, "图标": "mdi-bowl-mix"},
-        {"x": -0.25, "y": 0, "rotate": -15, "size": 0.7, "图标": "mdi-bug"},
-        {"x": 0.3, "y": 0.1, "rotate": 70, "size": 0.7, "图标": "mdi-bug"},
-        {"x": 0.05, "y": 0.05, "rotate": 0, "size": 0.7, "图标": "mdi-ladybug"}
+    {id: 25, collection: '有机染料', 最高力量: 3, reward: [
+        {name: '瓢虫', type: 'addRareDrop', value: 4, chance: -0.05, *: 0.1}
+    ], color: 'brown', icons: [
+        {"x": 0, "y": 0.1, "rotate": 0, "size": 2, "icon": "mdi-bowl-mix"},
+        {"x": -0.25, "y": 0, "rotate": -15, "size": 0.7, "icon": "mdi-bug"},
+        {"x": 0.3, "y": 0.1, "rotate": 70, "size": 0.7, "icon": "mdi-bug"},
+        {"x": 0.05, "y": 0.05, "rotate": 0, "size": 0.7, "icon": "mdi-ladybug"}
     ]},
-    {id: 26, collection: '有机染料', 力量: 0, reward: [
-        {name: '蜘蛛', 类型: '增加稀有掉落 ((0))', value: 1, 几率: -0.15, *: 0.05}
+    {id: 26, collection: '有机染料', 最高力量: 0, reward: [
+        {name: '蜘蛛', type: 'addRareDrop', value: 1, chance: -0.15, *: 0.05}
     ], color: 'lime', icons: [
-        {"x": 0.4, "y": 0, "rotate": -5, "size": 1.5, "图标": "mdi-fruit-pineapple"},
-        {"x": 0.9, "y": 0, "rotate": 15, "size": 1.5, "图标": "mdi-fruit-pineapple"},
-        {"x": -0.95, "y": 0, "rotate": 0, "size": 1.2, "图标": "mdi-corn"},
-        {"x": -0.55, "y": 0.1, "rotate": 45, "size": 1.2, "图标": "mdi-corn"},
-        {"x": -0.2, "y": -0.35, "rotate": 0, "size": 1, "图标": "mdi-fruit-citrus"}
+        {"x": 0.4, "y": 0, "rotate": -5, "size": 1.5, "icon": "mdi-fruit-pineapple"},
+        {"x": 0.9, "y": 0, "rotate": 15, "size": 1.5, "icon": "mdi-fruit-pineapple"},
+        {"x": -0.95, "y": 0, "rotate": 0, "size": 1.2, "icon": "mdi-corn"},
+        {"x": -0.55, "y": 0.1, "rotate": 45, "size": 1.2, "icon": "mdi-corn"},
+        {"x": -0.2, "y": -0.35, "rotate": 0, "size": 1, "icon": "mdi-fruit-citrus"}
     ]},
-    {id: 27, collection: '有机染料', 力量: 5, reward: [
-        {name: '蜜蜂', 类型: '增加稀有掉落 ((0))', value: 10, 几率: -0.15, *: 0.1}
-    ], color: '粉色', icons: [
-        {"x": 0.55, "y": -0.55, "rotate": 0, "size": 1.5, "图标": "mdi-bee-flower"},
-        {"x": 0, "y": 1, "rotate": 0, "size": 1.4, "图标": "mdi-flower"},
-        {"x": -0.7, "y": 0.5, "rotate": -20, "size": 0.9, "图标": "mdi-butterfly"},
-        {"x": 0.7, "y": 0.3, "rotate": 70, "size": 0.85, "图标": "mdi-butterfly"},
-        {"x": 0.05, "y": -0.05, "rotate": 145, "size": 0.95, "图标": "mdi-butterfly"},
-        {"x": -0.65, "y": -0.5, "rotate": -100, "size": 0.7, "图标": "mdi-butterfly"}
+    {id: 27, collection: '有机染料', 最高力量: 5, reward: [
+        {name: '蜜蜂', type: 'addRareDrop', value: 10, chance: -0.15, *: 0.1}
+    ], color: '粉红色油漆', icons: [
+        {"x": 0.55, "y": -0.55, "rotate": 0, "size": 1.5, "icon": "mdi-bee-flower"},
+        {"x": 0, "y": 1, "rotate": 0, "size": 1.4, "icon": "mdi-flower"},
+        {"x": -0.7, "y": 0.5, "rotate": -20, "size": 0.9, "icon": "mdi-butterfly"},
+        {"x": 0.7, "y": 0.3, "rotate": 70, "size": 0.85, "icon": "mdi-butterfly"},
+        {"x": 0.05, "y": -0.05, "rotate": 145, "size": 0.95, "icon": "mdi-butterfly"},
+        {"x": -0.65, "y": -0.5, "rotate": -100, "size": 0.7, "icon": "mdi-butterfly"}
+    ]},
+    {id: 28, collection: '特殊设备', 最高力量: 'adaptive', reward: [
+        {name: '关怀重量', type: '*', value: 2}
+    ], color: '浅绿色油漆', icons: [
+        {"x": -0.35, "y": 0.45, "rotate": 0, "size": 1.5, "icon": "mdi-land-fields"},
+        {"x": 0.35, "y": 0.45, "rotate": 0, "size": 1.5, "icon": "mdi-land-fields"},
+        {"x": 0.15, "y": -0.12, "rotate": 0, "size": 1, "icon": "mdi-sprout"},
+        {"x": -0.4, "y": 0, "rotate": 0, "size": 0.6, "icon": "mdi-grass"}
+    ]},
+    {id: 29, collection: '特殊设备', 最高力量: 'adaptive', reward: [
+        {name: '关怀重量', type: '*', value: 3}
+    ], color: 'dark-蓝色油漆', icons: [
+        {"x": 0.25, "y": -0.55, "rotate": 0, "size": 1.75, "icon": "mdi-weather-lightning"},
+        {"x": -0.45, "y": -0.55, "rotate": 0, "size": 1.3, "icon": "mdi-weather-pouring"},
+        {"x": 0.85, "y": -0.7, "rotate": 0, "size": 1.15, "icon": "mdi-clouds"},
+        {"x": 0.65, "y": 0.8, "rotate": 0, "size": 1.2, "icon": "mdi-home"},
+        {"x": -0.65, "y": 0.8, "rotate": 0, "size": 1, "icon": "mdi-tree"},
+        {"x": -0.2, "y": 0.95, "rotate": 0, "size": 0.35, "icon": "mdi-grass"}
+    ]},
+    {id: 30, collection: '特殊设备', 最高力量: 'adaptive', reward: [
+        {name: '关怀重量', type: '*', value: 1 / 3}
+    ], color: 'brown', icons: [
+        {"x": -0.35, "y": 0.45, "rotate": 0, "size": 1.5, "icon": "mdi-land-fields"},
+        {"x": 0.35, "y": 0.45, "rotate": 0, "size": 1.5, "icon": "mdi-land-fields"},
+        {"x": 0.2, "y": -0.45, "rotate": 0, "size": 1.5, "icon": "mdi-shaker"}
+    ]},
+    {id: 31, collection: '特殊设备', 最高力量: 'adaptive', reward: [
+        {name: '关怀重量', type: '*', value: 0}
+    ], color: 'dark-grey', icons: [
+        {"x": -0.35, "y": 0.45, "rotate": 0, "size": 1.5, "icon": "mdi-land-fields"},
+        {"x": 0.35, "y": 0.45, "rotate": 0, "size": 1.5, "icon": "mdi-land-fields"},
+        {"x": -0.3, "y": -0.05, "rotate": 0, "size": 0.6, "icon": "mdi-fire"},
+        {"x": 0.1, "y": -0.35, "rotate": 0, "size": 1.65, "icon": "mdi-smoke"}
+    ]},
+    {id: 32, collection: '乡村生活', 最高力量: 5, reward: [
+        {name: '作物经验', type: '+', value: 0.3}
+    ], color: '红色油漆', icons: [
+        {"x": 0.1, "y": 0, "rotate": 0, "size": 2, "icon": "mdi-barn"},
+        {"x": -1.1, "y": 0.2, "rotate": 0, "size": 1, "icon": "mdi-fence"},
+        {"x": -0.6, "y": 0.2, "rotate": 0, "size": 1, "icon": "mdi-fence"},
+        {"x": 0.9, "y": 0.25, "rotate": 0, "size": 1.1, "icon": "mdi-car-lifted-pickup"},
+        {"x": 0.72, "y": 0.12, "rotate": 0, "size": 0.4, "icon": "mdi-sack"}
+    ]},
+    {id: 33, group: '蔬菜', collection: '乡村生活', 最高力量: 8, reward: [], color: '绿色油漆', icons: [
+        {"x": -0.3, "y": 0.4, "rotate": 0, "size": 3, "icon": "mdi-pot"},
+        {"x": 0.75, "y": 0.5, "rotate": 0, "size": 2.25, "icon": "mdi-human-greeting"},
+        {"x": 0.2, "y": 0.15, "rotate": 175, "size": 1, "icon": "mdi-silverware-spoon"},
+        {"x": -0.65, "y": 0.2, "rotate": -20, "size": 1, "icon": "mdi-carrot"},
+        {"x": -0.35, "y": -0.45, "rotate": 0, "size": 2, "icon": "mdi-smoke"},
+        {"x": -0.3, "y": 0.25, "rotate": 45, "size": 0.85, "icon": "mdi-corn"}
+    ]},
+    {id: 34, group: '浆果', collection: '乡村生活', 最高力量: 8, reward: [], color: '粉红色油漆', icons: [
+        {"x": -0.75, "y": 0.17, "rotate": 0, "size": 1, "icon": "mdi-cup"},
+        {"x": -0.15, "y": 0, "rotate": 0, "size": 1.75, "icon": "mdi-bottle-soda"},
+        {"x": 0.2, "y": 0, "rotate": 0, "size": 1.75, "icon": "mdi-bottle-soda"},
+        {"x": 0.55, "y": 0, "rotate": 0, "size": 1.75, "icon": "mdi-bottle-soda"},
+        {"x": 1, "y": 0.3, "rotate": -60, "size": 1, "icon": "mdi-fruit-grapes"}
+    ]},
+    {id: 35, group: '粮食', collection: '乡村生活', 最高力量: 8, reward: [], color: 'pale-黄色油漆', icons: [
+        {"x": 0.6, "y": 0.55, "rotate": 0, "size": 3, "icon": "mdi-road-variant"},
+        {"x": 0.6, "y": -0.35, "rotate": 0, "size": 2, "icon": "mdi-road-variant"},
+        {"x": 0.62, "y": -1, "rotate": 0, "size": 1.35, "icon": "mdi-road-variant"},
+        {"x": -1, "y": 0.7, "rotate": 0, "size": 1.2, "icon": "mdi-barley"},
+        {"x": -0.6, "y": 0.7, "rotate": 0, "size": 1.2, "icon": "mdi-barley"},
+        {"x": -0.2, "y": 0.7, "rotate": 0, "size": 1.2, "icon": "mdi-barley"},
+        {"x": -0.8, "y": 0.15, "rotate": 0, "size": 1.1, "icon": "mdi-barley"},
+        {"x": -0.45, "y": 0.15, "rotate": 0, "size": 1.1, "icon": "mdi-barley"},
+        {"x": -0.1, "y": 0.15, "rotate": 0, "size": 1.1, "icon": "mdi-barley"},
+        {"x": -0.6, "y": -0.35, "rotate": 0, "size": 1, "icon": "mdi-barley"},
+        {"x": -0.3, "y": -0.35, "rotate": 0, "size": 1, "icon": "mdi-barley"},
+        {"x": 0, "y": -0.35, "rotate": 0, "size": 1, "icon": "mdi-barley"},
+        {"x": -0.45, "y": -0.8, "rotate": 0, "size": 0.9, "icon": "mdi-barley"},
+        {"x": -0.15, "y": -0.8, "rotate": 0, "size": 0.9, "icon": "mdi-barley"},
+        {"x": 0.15, "y": -0.8, "rotate": 0, "size": 0.9, "icon": "mdi-barley"}
+    ]},
+    {id: 36, group: '花肥', collection: '乡村生活', 最高力量: 8, reward: [], color: 'wooden', icons: [
+        {"x": 0, "y": -0.6, "rotate": 30, "size": 1.75, "icon": "mdi-image-filter-vintage"},
+        {"x": 0, "y": -0.6, "rotate": 0, "size": 0.85, "icon": "mdi-dots-hexagon"},
+        {"x": 0, "y": -0.1, "rotate": 90, "size": 1.5, "icon": "mdi-minus"},
+        {"x": 0, "y": 0.35, "rotate": 90, "size": 1.5, "icon": "mdi-minus"},
+        {"x": 0, "y": 0.8, "rotate": 90, "size": 1.5, "icon": "mdi-minus"},
+        {"x": 0.15, "y": 0.1, "rotate": 10, "size": 0.4, "icon": "mdi-leaf"},
+        {"x": -0.15, "y": 0.4, "rotate": -85, "size": 0.4, "icon": "mdi-leaf"},
+        {"x": 0.6, "y": 0.8, "rotate": 0, "size": 1.2, "icon": "mdi-human-greeting"}
+    ]},
+    {id: 37, collection: '乡村生活', 最高力量: 6, reward: [
+        {name: '黄金几率', type: '*', value: 1.15}
+    ], color: 'deep-紫色油漆', icons: [
+        {"x": 0.2, "y": -0.3, "rotate": 0, "size": 1.5, "icon": "mdi-home-silo"},
+        {"x": -0.5, "y": -0.15, "rotate": 0, "size": 1, "icon": "mdi-fence"},
+        {"x": 0.45, "y": 0.35, "rotate": 0, "size": 0.95, "icon": "mdi-human-child"},
+        {"x": 0.85, "y": 0.45, "rotate": 0, "size": 0.75, "icon": "mdi-human-child"},
+        {"x": -0.95, "y": 0.5, "rotate": 0, "size": 0.65, "icon": "mdi-human-child"},
+        {"x": -0.45, "y": 0.55, "rotate": 0, "size": 0.9, "icon": "mdi-human-child"},
+        {"x": -0.7, "y": 0.9, "rotate": 0, "size": 0.75, "icon": "mdi-human-child"}
+    ]},
+    {id: 38, collection: '乡村生活', 最高力量: 6, reward: [
+        {name: '产出', type: '*', value: 1.1},
+        {name: '稀有掉率', type: '*', value: 1.1}
+    ], color: '金色油漆', icons: [
+        {"x": -0.35, "y": 0.4, "rotate": 0, "size": 2, "icon": "mdi-table-picnic"},
+        {"x": -0.6, "y": -0.15, "rotate": 0, "size": 1, "icon": "mdi-beehive-outline"},
+        {"x": -0.1, "y": -0.15, "rotate": 0, "size": 1, "icon": "mdi-beehive-outline"},
+        {"x": 0.75, "y": -0.25, "rotate": 0, "size": 1, "icon": "mdi-beekeeper"},
+        {"x": 0.75, "y": 0.2, "rotate": 0, "size": 2, "icon": "mdi-human-handsdown"},
+        {"x": 0.4, "y": -0.6, "rotate": 80, "size": 0.75, "icon": "mdi-bee"},
+        {"x": 0, "y": -0.9, "rotate": -5, "size": 0.75, "icon": "mdi-bee"},
+        {"x": -0.85, "y": -0.7, "rotate": -80, "size": 0.75, "icon": "mdi-bee"}
+    ]},
+    {id: 39, group: '粮食', collection: '乡村生活', 最高力量: 6, reward: [
+        {name: '小种子', type: 'addRareDrop', value: 2, chance: -0.2, *: 0.1}
+    ], color: 'dark-蓝色油漆', icons: [
+        {"x": 0.45, "y": 0, "rotate": 0, "size": 2, "icon": "mdi-silo"},
+        {"x": 1.1, "y": 0.25, "rotate": 0, "size": 1, "icon": "mdi-fence"},
+        {"x": -0.35, "y": 0.35, "rotate": 90, "size": 0.7, "icon": "mdi-barley"},
+        {"x": -0.65, "y": 0.3, "rotate": 50, "size": 0.7, "icon": "mdi-barley"},
+        {"x": -1.1, "y": 0.38, "rotate": -90, "size": 0.6, "icon": "mdi-barley"}
+    ]},
+    {id: 40, group: '花肥', collection: '乡村生活', 最高力量: 6, reward: [
+        {name: '花瓣', type: 'addRareDrop', value: 3, chance: 0.1, *: 0.1}
+    ], color: '浅绿色油漆', icons: [
+        {"x": 0.35, "y": 0.15, "rotate": 0, "size": 0.8, "icon": "mdi-flower"},
+        {"x": -0.75, "y": 0.6, "rotate": 0, "size": 0.9, "icon": "mdi-flower"},
+        {"x": 0.05, "y": -0.65, "rotate": 0, "size": 0.7, "icon": "mdi-flower"},
+        {"x": -0.55, "y": -0.35, "rotate": 0, "size": 0.75, "icon": "mdi-flower-tulip"},
+        {"x": 1, "y": 0.35, "rotate": 0, "size": 0.85, "icon": "mdi-flower-tulip"},
+        {"x": -0.2, "y": 0.2, "rotate": 0, "size": 0.5, "icon": "mdi-grass"},
+        {"x": 0.25, "y": 0.65, "rotate": 0, "size": 0.5, "icon": "mdi-grass"},
+        {"x": 0.75, "y": -0.35, "rotate": 0, "size": 0.5, "icon": "mdi-grass"}
+    ]},
+    {id: 41, collection: '乡村生活', 最高力量: 5, reward: [
+        {name: '产出', type: '*', value: 1.2}
+    ], color: '浅蓝色油漆', icons: [
+        {"x": 0, "y": -0.2, "rotate": 0, "size": 2, "icon": "mdi-human-handsdown"},
+        {"x": 0, "y": -0.6, "rotate": 0, "size": 1, "icon": "mdi-account-cowboy-hat"},
+        {"x": -0.35, "y": 0.03, "rotate": -45, "size": 1, "icon": "mdi-pitchfork"},
+        {"x": 0.45, "y": -0.05, "rotate": 0, "size": 1, "icon": "mdi-watering-can"},
+        {"x": -0.9, "y": 0.85, "rotate": 0, "size": 1, "icon": "mdi-sprout"},
+        {"x": -0.45, "y": 0.82, "rotate": 0, "size": 1.2, "icon": "mdi-sprout"},
+        {"x": 0, "y": 0.85, "rotate": 0, "size": 1, "icon": "mdi-sprout"},
+        {"x": 0.45, "y": 0.83, "rotate": 0, "size": 1.1, "icon": "mdi-sprout"},
+        {"x": 0.9, "y": 0.85, "rotate": 0, "size": 1, "icon": "mdi-sprout"}
+    ]},
+    {id: 42, group: '浆果', collection: '乡村生活', 最高力量: 6, reward: [
+        {name: '种子壳', type: 'addRareDrop', value: 8, chance: 0.1, *: 0.1}
+    ], color: 'beige', icons: [
+        {"x": -0.4, "y": 0.55, "rotate": 0, "size": 1.5, "icon": "mdi-barley"},
+        {"x": -0.4, "y": 0.1, "rotate": 0, "size": 1, "icon": "mdi-corn"},
+        {"x": 0.8, "y": 0.75, "rotate": 0, "size": 1, "icon": "mdi-basket"},
+        {"x": 0.95, "y": 0.65, "rotate": 0, "size": 0.4, "icon": "mdi-seed"},
+        {"x": 0.7, "y": 0.7, "rotate": 95, "size": 0.4, "icon": "mdi-seed"},
+        {"x": -0.15, "y": 0.45, "rotate": 30, "size": 0.4, "icon": "mdi-seed"},
+        {"x": -0.6, "y": 0.45, "rotate": -35, "size": 0.4, "icon": "mdi-seed"},
+        {"x": 0.2, "y": 0.7, "rotate": 0, "size": 1.15, "icon": "mdi-human-greeting"},
+        {"x": -1, "y": 0.9, "rotate": 30, "size": 0.4, "icon": "mdi-seed"}
+    ]},
+    {id: 43, group: '蔬菜', collection: '乡村生活', 最高力量: 6, reward: [
+        {name: '虫子', type: 'addRareDrop', value: 3, chance: 0.1, *: 0.1}
+    ], color: 'brown', icons: [
+        {"x": -0.2, "y": 0.6, "rotate": 0, "size": 2.5, "icon": "mdi-pot"},
+        {"x": -0.2, "y": -0.15, "rotate": 0, "size": 2.5, "icon": "mdi-flower"},
+        {"x": 0.6, "y": 0.2, "rotate": 15, "size": 2.5, "icon": "mdi-magnify"},
+        {"x": 0.45, "y": 0, "rotate": 15, "size": 0.5, "icon": "mdi-bug"}
+    ]},
+    {id: 44, collection: '被遗忘的植物', 最高力量: 9, reward: [], color: 'cyan', icons: [
+        {"x": 0, "y": 0.45, "rotate": 0, "size": 3, "icon": "mdi-ellipse-outline"},
+        {"x": 0.6, "y": -0.45, "rotate": 0, "size": 1.25, "icon": "mdi-eyedropper"},
+        {"x": 0, "y": 0.45, "rotate": 0, "size": 0.5, "icon": "mdi-seed"},
+        {"x": 0, "y": 0.45, "rotate": 0, "size": 1.25, "icon": "mdi-dots-circle"}
+    ]},
+    {id: 45, group: '蔬菜', collection: '被遗忘的植物', 最高力量: 7, reward: [
+        {name: '过度生长', type: '+', value: 1.1}
+    ], color: 'pale-紫色油漆', icons: [
+        {"x": -0.75, "y": 0.1, "rotate": -80, "size": 1.5, "icon": "mdi-carrot"},
+        {"x": -0.4, "y": 0.2, "rotate": 0, "size": 2, "icon": "mdi-truck-flatbed"},
+        {"x": 0.5, "y": 0.35, "rotate": 0, "size": 1, "icon": "mdi-human-greeting"},
+        {"x": 1, "y": 0.33, "rotate": 0, "size": 1.1, "icon": "mdi-human-male-female-child"}
+    ]},
+    {id: 46, group: '花肥', collection: '被遗忘的植物', 最高力量: 7, reward: [
+        {name: '产出', type: '*', value: 1.2}
+    ], color: 'darker-grey', icons: [
+        {"x": -0.9, "y": 0.45, "rotate": 0, "size": 1, "icon": "mdi-flower"},
+        {"x": -0.45, "y": 0.48, "rotate": 0, "size": 0.8, "icon": "mdi-flower"},
+        {"x": 0.05, "y": 0.46, "rotate": 0, "size": 0.9, "icon": "mdi-flower"},
+        {"x": 0.75, "y": 0.2, "rotate": 0, "size": 2, "icon": "mdi-human-handsdown"},
+        {"x": 0.5, "y": -0.45, "rotate": -15, "size": 0.5, "icon": "mdi-help"},
+        {"x": 1, "y": -0.55, "rotate": 20, "size": 0.7, "icon": "mdi-help"}
+    ]},
+    {id: 47, collection: '被遗忘的植物', 最高力量: 7, reward: [
+        {name: '草', type: 'addRareDrop', value: 5, chance: 0.4, *: 0.4}
+    ], color: '浅绿色油漆', icons: [
+        {"x": -0.15, "y": 0, "rotate": 0, "size": 1, "icon": "mdi-robot-mower"},
+        {"x": -1, "y": 0.45, "rotate": 0, "size": 1, "icon": "mdi-grass"},
+        {"x": -0.5, "y": 0.45, "rotate": 0, "size": 1, "icon": "mdi-grass"},
+        {"x": 0, "y": 0.45, "rotate": 0, "size": 1, "icon": "mdi-grass"},
+        {"x": 0.5, "y": 0.45, "rotate": 0, "size": 1, "icon": "mdi-grass"},
+        {"x": 1, "y": 0.45, "rotate": 0, "size": 1, "icon": "mdi-grass"},
+        {"x": -1, "y": 0.9, "rotate": 0, "size": 1, "icon": "mdi-grass"},
+        {"x": -0.5, "y": 0.9, "rotate": 0, "size": 1, "icon": "mdi-grass"},
+        {"x": 0, "y": 0.9, "rotate": 0, "size": 1, "icon": "mdi-grass"},
+        {"x": 0.5, "y": 0.9, "rotate": 0, "size": 1, "icon": "mdi-grass"},
+        {"x": 1, "y": 0.9, "rotate": 0, "size": 1, "icon": "mdi-grass"},
+        {"x": 0.5, "y": 0, "rotate": 0, "size": 1, "icon": "mdi-grass"},
+        {"x": 1, "y": 0, "rotate": 0, "size": 1, "icon": "mdi-grass"}
+    ]},
+    {id: 48, group: '粮食', collection: '被遗忘的植物', 最高力量: 7, reward: [
+        {name: '黄金几率', type: '*', value: 1.15}
+    ], color: '金色油漆', icons: [
+        {"x": -1, "y": 0.95, "rotate": 0, "size": 1.6, "icon": "mdi-barley"},
+        {"x": -0.5, "y": 0.95, "rotate": 0, "size": 1.6, "icon": "mdi-barley"},
+        {"x": 0, "y": 0.95, "rotate": 0, "size": 1.6, "icon": "mdi-barley"},
+        {"x": 0, "y": -0.25, "rotate": 15, "size": 1.2, "icon": "mdi-barley"},
+        {"x": 0.2, "y": -0.15, "rotate": 0, "size": 0.25, "icon": "mdi-seed"},
+        {"x": 0.35, "y": -0.4, "rotate": 0, "size": 0.65, "icon": "mdi-shimmer"}
+    ]},
+    {id: 49, group: '浆果', collection: '被遗忘的植物', 最高力量: 7, reward: [
+        {name: '作物经验', type: '+', value: 0.25}
+    ], color: '橙色油漆', icons: [
+        {"x": 0, "y": 0.85, "rotate": 0, "size": 2, "icon": "mdi-weight-lifter"},
+        {"x": -0.8, "y": 1.25, "rotate": -60, "size": 1, "icon": "mdi-fruit-grapes"},
+        {"x": 1.1, "y": 1, "rotate": 60, "size": 1, "icon": "mdi-fruit-grapes"},
+        {"x": 0, "y": -0.4, "rotate": 0, "size": 1.5, "icon": "mdi-fruit-grapes"},
+        {"x": -0.85, "y": -0.4, "rotate": 0, "size": 2, "icon": "mdi-minus"},
+        {"x": 0.85, "y": -0.4, "rotate": 0, "size": 2, "icon": "mdi-minus"},
+        {"x": -0.75, "y": -0.8, "rotate": 30, "size": 2, "icon": "mdi-minus"},
+        {"x": 0.75, "y": -0.8, "rotate": -30, "size": 2, "icon": "mdi-minus"},
+        {"x": -0.75, "y": 0, "rotate": -30, "size": 2, "icon": "mdi-minus"},
+        {"x": 0.75, "y": 0, "rotate": 30, "size": 2, "icon": "mdi-minus"}
     ]},
 ];

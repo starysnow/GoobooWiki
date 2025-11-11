@@ -2,35 +2,35 @@
     cinders: {
         start: '01-15',
         end: '02-03',
-        color: '金色',
+        color: '金色油漆',
         currency: '蜡',
         token: '煤渣代币'
     },
     bloom: {
         start: '03-09',
         end: '03-31',
-        color: '光-绿色',
+        color: '浅绿色油漆',
         currency: '腐殖质',
         token: '绽放代币'
     },
     weatherChaos: {
         start: '05-22',
         end: '06-08',
-        color: '灰色',
+        color: 'grey',
         currency: '云',
         token: '天气混乱代币'
     },
     summerFestival: {
         start: '07-26',
         end: '08-22',
-        color: '橙色-红色',
+        color: '橙色油漆-红色油漆',
         currency: '混合物',
         token: '夏季节日代币'
     },
     nightHunt: {
         start: '10-04',
         end: '10-19',
-        color: 'deep-紫色',
+        color: 'deep-紫色油漆',
         currency: '魔法',
         token: '夜间狩猎代币'
     },

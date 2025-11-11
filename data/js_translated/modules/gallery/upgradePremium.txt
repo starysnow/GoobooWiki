@@ -1,108 +1,144 @@
 {
-    漂亮的颜色: {类型: '高级', 消耗(lvl) {
-        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 100};
-    }, 效果: [
-        {name: '美丽增益', 类型: '*', value: lvl => Math.pow(2, lvl)}
+    漂亮的颜色: {type: '优质肥料', price(lvl) {
+        return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 100};
+    }, effect: [
+        {name: '美丽增益', type: '*', value: lvl => Math.pow(2, lvl)}
     ]},
-    漂亮的转换器: {类型: '高级', requirement() {
+    漂亮的转换器: {type: '优质肥料', requirement() {
         return store.state.解锁.转换.see;
-    }, 消耗(lvl) {
-        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 150};
-    }, 效果: [
-        {name: '转换器增益', 类型: '*', value: lvl => getSequence(2, lvl) * 0.25 + 1},
-        {name: '转换器容量', 类型: '*', value: lvl => getSequence(2, lvl) * 0.25 + 1}
+    }, price(lvl) {
+        return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 150};
+    }, effect: [
+        {name: '转换器增益', type: '*', value: lvl => getSequence(2, lvl) * 0.25 + 1},
+        {name: '转换器容量', type: '*', value: lvl => getSequence(2, lvl) * 0.25 + 1}
     ]},
-    漂亮的零钱: {类型: '高级', requirement() {
+    漂亮的零钱: {type: '优质肥料', requirement() {
         return store.state.解锁.拍卖.see;
-    }, 消耗(lvl) {
-        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 180};
-    }, 效果: [
-        {name: '现金增益', 类型: '*', value: lvl => lvl * 0.25 + 1}
+    }, price(lvl) {
+        return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 180};
+    }, effect: [
+        {name: '现金增益', type: '*', value: lvl => lvl * 0.25 + 1}
     ]},
-    漂亮的形状: {类型: '高级', requirement() {
+    漂亮的形状: {type: '优质肥料', requirement() {
         return store.state.解锁.形状.see;
-    }, 消耗(lvl) {
-        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 225};
-    }, 效果: [
-        {name: '形状增益', 类型: '*', value: lvl => getSequence(2, lvl) * 0.5 + 1}
+    }, price(lvl) {
+        return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 225};
+    }, effect: [
+        {name: '形状增益', type: '*', value: lvl => getSequence(2, lvl) * 0.5 + 1}
     ]},
-    漂亮的画布: {类型: '高级', requirement() {
+    漂亮的画布: {type: '优质肥料', requirement() {
         return store.state.解锁.画布.see;
-    }, 消耗(lvl) {
-        return {红宝石: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 320};
-    }, 效果: [
-        {name: '画布速度', 类型: '*', value: lvl => getSequence(2, lvl) * 0.1 + 1}
+    }, price(lvl) {
+        return {gem_ruby: [2, 3][lvl % 2] * Math.pow(2, Math.floor(lvl / 2)) * 320};
+    }, effect: [
+        {name: '画布速度', type: '*', value: lvl => getSequence(2, lvl) * 0.1 + 1}
     ]},
-    漂亮的红色: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.红色鼓.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 750};
-    }, 效果: [
-        {name: '红色增益', 类型: '*', value: lvl => Math.pow(4, lvl)},
-        {name: '红色鼓几率', 类型: '*', value: lvl => Math.pow(1.25, lvl)},
-        {name: '红色鼓容量', 类型: '*', value: lvl => Math.pow(2, lvl)},
+    漂亮的红色: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumColor', requirement() {
+        return store.state.stat.红色鼓.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 750};
+    }, effect: [
+        {name: '红色油漆增益', type: '*', value: lvl => Math.pow(4, lvl)},
+        {name: '红色鼓几率', type: '*', value: lvl => lvl >= 1 ? 1.25 : null},
+        {name: '红色鼓容量', type: '*', value: lvl => Math.pow(2, lvl)},
     ]},
-    漂亮的橙色: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.橙色鼓.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 1050};
-    }, 效果: [
-        {name: '橙色增益', 类型: '*', value: lvl => Math.pow(4, lvl)},
-        {name: '橙色鼓几率', 类型: '*', value: lvl => Math.pow(1.25, lvl)},
-        {name: '橙色鼓容量', 类型: '*', value: lvl => Math.pow(2, lvl)},
+    漂亮的橙色: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumColor', requirement() {
+        return store.state.stat.橙色鼓.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 1050};
+    }, effect: [
+        {name: '橙色油漆增益', type: '*', value: lvl => Math.pow(4, lvl)},
+        {name: '橙色鼓几率', type: '*', value: lvl => lvl >= 1 ? 1.25 : null},
+        {name: '橙色鼓容量', type: '*', value: lvl => Math.pow(2, lvl)},
     ]},
-    漂亮的黄色: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.黄色鼓.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 1400};
-    }, 效果: [
-        {name: '黄色增益', 类型: '*', value: lvl => Math.pow(4, lvl)},
-        {name: '黄色鼓几率', 类型: '*', value: lvl => Math.pow(1.25, lvl)},
-        {name: '黄色鼓容量', 类型: '*', value: lvl => Math.pow(2, lvl)},
+    漂亮的黄色: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumColor', requirement() {
+        return store.state.stat.黄色鼓.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 1400};
+    }, effect: [
+        {name: '黄色油漆增益', type: '*', value: lvl => Math.pow(4, lvl)},
+        {name: '黄色鼓几率', type: '*', value: lvl => lvl >= 1 ? 1.25 : null},
+        {name: '黄色鼓容量', type: '*', value: lvl => Math.pow(2, lvl)},
     ]},
-    漂亮的绿色: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.绿色鼓.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 2000};
-    }, 效果: [
-        {name: '绿色增益', 类型: '*', value: lvl => Math.pow(4, lvl)},
-        {name: '绿色鼓几率', 类型: '*', value: lvl => Math.pow(1.25, lvl)},
-        {name: '绿色鼓容量', 类型: '*', value: lvl => Math.pow(2, lvl)},
+    漂亮的绿色: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumColor', requirement() {
+        return store.state.stat.绿色鼓.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 1800};
+    }, effect: [
+        {name: '绿色油漆增益', type: '*', value: lvl => Math.pow(4, lvl)},
+        {name: '绿色鼓几率', type: '*', value: lvl => lvl >= 1 ? 1.25 : null},
+        {name: '绿色鼓容量', type: '*', value: lvl => Math.pow(2, lvl)},
     ]},
-    漂亮的蓝色: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.蓝色鼓.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 2875};
-    }, 效果: [
-        {name: 'currencyGalleryBlueGain', 类型: '*', value: lvl => Math.pow(4, lvl)},
-        {name: '蓝色鼓几率', 类型: '*', value: lvl => Math.pow(1.25, lvl)},
-        {name: '蓝色鼓容量', 类型: '*', value: lvl => Math.pow(2, lvl)},
+    漂亮的蓝色: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumColor', requirement() {
+        return store.state.stat.蓝色鼓.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 2200};
+    }, effect: [
+        {name: '蓝色油漆增益', type: '*', value: lvl => Math.pow(4, lvl)},
+        {name: '蓝色鼓几率', type: '*', value: lvl => lvl >= 1 ? 1.25 : null},
+        {name: '蓝色鼓容量', type: '*', value: lvl => Math.pow(2, lvl)},
     ]},
-    漂亮的紫色: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.紫色鼓.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 3900};
-    }, 效果: [
-        {name: '紫色增益', 类型: '*', value: lvl => Math.pow(4, lvl)},
-        {name: '紫色鼓几率', 类型: '*', value: lvl => Math.pow(1.25, lvl)},
-        {name: '紫色鼓容量', 类型: '*', value: lvl => Math.pow(2, lvl)},
+    漂亮的紫色: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumColor', requirement() {
+        return store.state.stat.紫色鼓.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 2600};
+    }, effect: [
+        {name: '紫色油漆增益', type: '*', value: lvl => Math.pow(4, lvl)},
+        {name: '紫色鼓几率', type: '*', value: lvl => lvl >= 1 ? 1.25 : null},
+        {name: '紫色鼓容量', type: '*', value: lvl => Math.pow(2, lvl)},
     ]},
-    '漂亮的红橙色': {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat['gallery_deep-橙色鼓'].总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 5200};
-    }, 效果: [
-        {name: 'currencyGalleryDeep-orangeGain', 类型: '*', value: lvl => Math.pow(4, lvl)},
-        {name: '橙红鼓几率', 类型: '*', value: lvl => Math.pow(1.25, lvl)},
-        {name: 'currencyGalleryDeep-orangeDrumCap', 类型: '*', value: lvl => Math.pow(2, lvl)},
+    '漂亮的红橙色': {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumColor', requirement() {
+        return store.state.stat['gallery_deep-橙色鼓'].total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 3000};
+    }, effect: [
+        {name: 'currencyGalleryDeep-orangeGain', type: '*', value: lvl => Math.pow(4, lvl)},
+        {name: '橙红鼓几率', type: '*', value: lvl => lvl >= 1 ? 1.25 : null},
+        {name: 'currencyGalleryDeep-orangeDrumCap', type: '*', value: lvl => Math.pow(2, lvl)},
     ]},
-    漂亮的金色: {类型: '高级', 上限: 1, requirement() {
-        return store.state.stat.金色鼓.总计 > 0;
-    }, 消耗(lvl) {
-        return {红宝石: Math.pow(2, lvl) * 6750};
-    }, 效果: [
-        {name: '金色增益', 类型: '*', value: lvl => Math.pow(4, lvl)},
-        {name: '金色鼓几率', 类型: '*', value: lvl => Math.pow(1.25, lvl)},
-        {name: '金色鼓容量', 类型: '*', value: lvl => Math.pow(2, lvl)},
+    漂亮的金色: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumColor', requirement() {
+        return store.state.stat.金色鼓.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 3500};
+    }, effect: [
+        {name: '金色油漆增益', type: '*', value: lvl => Math.pow(4, lvl)},
+        {name: '金色鼓几率', type: '*', value: lvl => lvl >= 1 ? 1.25 : null},
+        {name: '金色鼓容量', type: '*', value: lvl => Math.pow(2, lvl)},
+    ]},
+    '漂亮的浅绿色': {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumColor', requirement() {
+        return store.state.stat['光-绿色鼓'].total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 4000};
+    }, effect: [
+        {name: 'currencyGalleryLight-greenGain', type: '*', value: lvl => Math.pow(4, lvl)},
+        {name: '浅绿色鼓几率', type: '*', value: lvl => lvl >= 1 ? 1.25 : null},
+        {name: 'currencyGalleryLight-greenDrumCap', type: '*', value: lvl => Math.pow(2, lvl)},
+    ]},
+    漂亮的蓝绿色: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumColor', requirement() {
+        return store.state.stat.青色鼓.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 4500};
+    }, effect: [
+        {name: '青色油漆增益', type: '*', value: lvl => Math.pow(4, lvl)},
+        {name: '青色鼓几率', type: '*', value: lvl => lvl >= 1 ? 1.25 : null},
+        {name: '青色鼓容量', type: '*', value: lvl => Math.pow(2, lvl)},
+    ]},
+    '漂亮的浅蓝色': {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumColor', requirement() {
+        return store.state.stat['光-蓝色鼓'].total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 5000};
+    }, effect: [
+        {name: 'currencyGalleryLight-blueGain', type: '*', value: lvl => Math.pow(4, lvl)},
+        {name: '浅蓝色鼓几率', type: '*', value: lvl => lvl >= 1 ? 1.25 : null},
+        {name: 'currencyGalleryLight-blueDrumCap', type: '*', value: lvl => Math.pow(2, lvl)},
+    ]},
+    漂亮的粉色: {type: '优质肥料', cap: 1, capMult: true, subtype: 'premiumColor', requirement() {
+        return store.state.stat.粉红鼓.total > 0;
+    }, price(lvl) {
+        return {gem_ruby: Math.pow(10, lvl) * 5500};
+    }, effect: [
+        {name: '粉红色油漆增益', type: '*', value: lvl => Math.pow(4, lvl)},
+        {name: '粉红鼓几率', type: '*', value: lvl => lvl >= 1 ? 1.25 : null},
+        {name: '粉红鼓容量', type: '*', value: lvl => Math.pow(2, lvl)},
     ]},
 }

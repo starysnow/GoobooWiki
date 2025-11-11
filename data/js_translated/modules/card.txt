@@ -1,84 +1,95 @@
-{
-    name: '卡片',
+mining: miningCard,
+        village: villageCard,
+        horde: hordeCard,
+        农场: farmCard,
+        gallery: galleryCard,
+        宝石: gemCard,
+        event: eventCard,
+    };
+export default {
+    name: '卡牌',
     unlockNeeded: 'cardFeature',
-    解锁: ['cardFeature', 'cardShiny'],
+    解锁: ['cardFeature', '闪亮卡牌'],
     *: {
-        cardShinyChance: {display: 'percent', baseValue: 0.1},
+        闪亮卡牌几率: {display: 'percent', baseValue: 0.015},
     },
     currency: {
-        shinyDust: {color: 'pale-光-blue', 图标: 'mdi-shimmer'}
+        shinyDust: {color: 'pale-浅蓝色油漆', icon: 'mdi-creation', display: 'int'}
     },
-    笔记: buildArray(2).map(() => 'G'),
+    note: buildArray(2).map(() => 'g'),
     init() {
-        for (const [name, feature] of Object.entries({
-            采矿: miningCard,
-            村庄: villageCard,
-            部落: hordeCard,
-            农场: farmCard,
-            画廊: galleryCard,
-            宝石: gemCard,
-            事件: eventCard,
-        })) {
+        for (const [name, feature] of Object.entries(cardObj)) {
             if (feature.feature) {
-                store.dispatch('卡片/initFeature', {name, ...feature.feature});
+                store.dispatch('卡牌/initFeature', {name, ...feature.feature});
             }
-            for (const [加载的存档文件缺少所需数据, elem] of Object.entries(feature.collection)) {
-                store.commit('卡片/initCollection', {name: 加载的存档文件缺少所需数据, ...elem});
+            for (const [key, elem] of Object.entries(feature.collection)) {
+                store.commit('卡牌/initCollection', {name: key, ...elem});
             }
-            for (const [加载的存档文件缺少所需数据, elem] of Object.entries(feature.pack)) {
-                store.commit('卡片/initPack', {name: 加载的存档文件缺少所需数据, feature: name, ...elem});
+            for (const [key, elem] of Object.entries(feature.pack)) {
+                store.commit('卡牌/initPack', {name: key, feature: name, ...elem});
             }
-            if (feature.卡片) {
-                feature.卡片.forEach(elem => {
-                    store.commit('卡片/initCard', {feature: name, ...elem});
+        }
+        for (const [name, feature] of Object.entries(cardObj)) {
+            if (feature.卡牌) {
+                feature.卡牌.forEach(elem => {
+                    store.commit('卡牌/initCard', {feature: name, ...elem});
                 });
+            }
+        }
+    },
+    postInit() {
+        for (const [name, feature] of Object.entries(cardObj)) {
+            for (const [key, elem] of Object.entries(feature.pack)) {
+                if (elem.解锁) {
+                    store.commit('解锁/addTrigger', {解锁: elem.解锁, trigger: `card_${ name }_${ key }`});
+                }
             }
         }
     },
     saveGame() {
         let obj = {
-            卡片: {},
+            卡牌: {},
             feature: {}
         };
-        for (const [加载的存档文件缺少所需数据, elem] of Object.entries(store.state.卡片.卡片)) {
+        for (const [key, elem] of Object.entries(store.state.卡牌.卡牌)) {
             if (elem.amount > 0) {
-                obj.卡片[加载的存档文件缺少所需数据] = elem.amount;
+                obj.卡牌[key] = elem.amount;
             }
             if (elem.foundShiny) {
                 if (obj.闪亮肥料 === undefined) {
                     obj.闪亮肥料 = [];
                 }
-                obj.闪亮肥料.push(加载的存档文件缺少所需数据);
+                obj.闪亮肥料.push(key);
             }
         }
-        for (const [加载的存档文件缺少所需数据, elem] of Object.entries(store.state.卡片.feature)) {
+        for (const [key, elem] of Object.entries(store.state.卡牌.feature)) {
             if (elem.cardSelected.length > 0 || elem.cardEquipped.length > 0) {
-                obj.feature[加载的存档文件缺少所需数据] = {cardSelected: elem.cardSelected, cardEquipped: elem.cardEquipped};
+                obj.feature[key] = {cardSelected: elem.cardSelected, cardEquipped: elem.cardEquipped};
             }
         }
         return obj;
     },
     loadGame(data) {
-        if (data.卡片) {
-            for (const [加载的存档文件缺少所需数据, elem] of Object.entries(data.卡片)) {
-                if (store.state.卡片.卡片[加载的存档文件缺少所需数据]) {
-                    store.commit('卡片/updateKey', {类型: '卡片', name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: 'amount', value: elem});
+        if (data.卡牌) {
+            for (const [key, elem] of Object.entries(data.卡牌)) {
+                if (store.state.卡牌.卡牌[key]) {
+                    store.commit('卡牌/updateKey', {type: '卡牌', name: key, key: 'amount', value: elem});
                 }
             }
         }
         if (data.feature) {
-            for (const [加载的存档文件缺少所需数据, elem] of Object.entries(data.feature)) {
-                if (store.state.卡片.feature[加载的存档文件缺少所需数据]) {
-                    store.commit('卡片/updateKey', {类型: 'feature', name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: 'cardSelected', value: elem.cardSelected});
-                    store.commit('卡片/updateKey', {类型: 'feature', name: 加载的存档文件缺少所需数据, 加载的存档文件缺少所需数据: 'cardEquipped', value: elem.cardEquipped});
+            for (const [key, elem] of Object.entries(data.feature)) {
+                if (store.state.卡牌.feature[key]) {
+                    store.commit('卡牌/updateKey', {type: 'feature', name: key, key: 'cardSelected', value: elem.cardSelected});
+                    store.commit('卡牌/updateKey', {type: 'feature', name: key, key: 'cardEquipped', value: elem.cardEquipped});
                 }
             }
         }
         if (data.闪亮肥料) {
             data.闪亮肥料.forEach(elem => {
-                store.commit('卡片/updateKey', {类型: '卡片', name: elem, 加载的存档文件缺少所需数据: 'foundShiny', value: true});
+                store.commit('卡牌/updateKey', {type: '卡牌', name: elem, key: 'foundShiny', value: true});
             });
         }
-        store.dispatch('卡片/calculateCaches');
+        store.dispatch('卡牌/calculateCaches');
     }
 }

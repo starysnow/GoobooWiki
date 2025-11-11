@@ -1,90 +1,142 @@
 [
   {
-    "名称": "maxZone",
-    "value": "$store.state.stat.horde_maxZone.总计$",
+    "名称": "探险家",
+    "value": "$store.state.stat.探险家.total$",
     "default": "1",
-    "上限": "30",
-    "milestones": "$lvl  \\cdot  10 + 10$",
-    "圣遗物": "{\"7\":\"终极指南\",\"11\":\"破裂的保险箱\"}"
+    "cap": "30",
+    "milestones": "$splicedLinear(10, 20, 20, lvl + 1)$",
+    "reward": "{\"7\":[{\"name\":\"刺击指南\",\"type\":\"保留\",\"value\":true},{\"name\":\"闪避指南\",\"type\":\"保留\",\"value\":true}],\"11\":[{\"name\":\"掠夺\",\"type\":\"保留\",\"value\":true}]}",
+    "relic": "",
+    "secret": ""
   },
   {
-    "名称": "maxZoneSpeedrun",
-    "value": "$store.state.stat.horde_maxZoneSpeedrun.总计$",
+    "名称": "迅捷出击",
+    "value": "$store.state.stat.迅捷出击.total$",
     "default": "1",
-    "上限": "10",
+    "cap": "10",
     "milestones": "$lvl  \\cdot  5 + 10$",
-    "圣遗物": "{\"8\":\"哑铃\"}"
+    "reward": "{\"8\":[{\"name\":\"训练\",\"type\":\"保留\",\"value\":true}]}",
+    "relic": "",
+    "secret": ""
   },
   {
-    "名称": "totalDamage",
-    "value": "$store.state.stat.horde_totalDamage.总计$",
+    "名称": "威猛",
+    "value": "$store.state.stat.威猛.total$",
     "default": "",
-    "上限": "",
-    "milestones": "${(lvl  \\cdot  250 + 7500)}^{lvl}  \\cdot  10K$",
-    "圣遗物": "{\"6\":\"新背包\"}"
-  },
-  {
-    "名称": "maxDamage",
-    "value": "$store.state.stat.horde_maxDamage.总计$",
-    "default": "",
-    "上限": "",
+    "cap": "30",
     "milestones": "${(lvl  \\cdot  250 + 7500)}^{lvl}  \\cdot  10$",
-    "圣遗物": "{\"3\":\"燃烧的头骨\"}"
+    "reward": "{\"3\":[{\"name\":\"骨袋\",\"type\":\"保留\",\"value\":true},{\"name\":\"愤怒\",\"type\":\"保留\",\"value\":true}],\"6\":[{\"name\":\"囤积\",\"type\":\"保留\",\"value\":true},{\"name\":\"掠夺秘密\",\"type\":\"保留\",\"value\":true}]}",
+    "relic": "",
+    "secret": ""
   },
   {
     "名称": "骨头",
-    "value": "$store.state.stat.骨头.总计$",
+    "value": "$store.state.stat.骨头.total$",
     "default": "",
-    "上限": "",
+    "cap": "30",
     "milestones": "${(2)}^{getSequence(10, lvl} - 10)  \\cdot  1M$",
-    "圣遗物": "{\"2\":\"被遗忘的盾牌\"}"
+    "reward": "{\"2\":[{\"name\":\"恢复力\",\"type\":\"保留\",\"value\":true},{\"name\":\"休息\",\"type\":\"保留\",\"value\":true}]}",
+    "relic": "",
+    "secret": ""
   },
   {
     "名称": "怪物零件",
-    "value": "$store.state.stat.怪物零件.总计$",
+    "value": "$store.state.stat.怪物零件.total$",
     "default": "",
-    "上限": "",
+    "cap": "30",
     "milestones": "${(16)}^{lvl}  \\cdot  50$",
-    "圣遗物": "{\"3\":\"能量饮料\",\"5\":\"绷带\"}"
+    "reward": "{\"5\":[{\"name\":\"厚脸皮\",\"type\":\"保留\",\"value\":true}]}",
+    "relic": "{\"3\":\"能量饮料\"}",
+    "secret": ""
   },
   {
     "名称": "腐败的灵魂",
-    "value": "$store.state.stat.腐败的灵魂.总计$",
+    "value": "$store.state.stat.腐败的灵魂.total$",
     "default": "",
-    "上限": "",
+    "cap": "30",
     "milestones": "${(7 + lvl)}^{lvl}  \\cdot  1000$",
-    "圣遗物": "{\"4\":\"幸运骰子\"}"
+    "reward": "{\"4\":[{\"name\":\"幸运一击\",\"type\":\"保留\",\"value\":true}]}",
+    "relic": "",
+    "secret": ""
   },
   {
-    "名称": "maxCorruptionKill",
-    "value": "$store.state.stat.horde_maxCorruptionKill.总计$",
+    "名称": "挑战邪恶",
+    "value": "$store.state.stat.挑战邪恶.total$",
     "default": "",
-    "上限": "",
+    "cap": "",
     "milestones": "$lvl + 1$",
-    "圣遗物": ""
+    "reward": "",
+    "relic": "",
+    "secret": ""
   },
   {
-    "名称": "maxMastery",
-    "value": "$store.state.stat.horde_maxMastery.总计$",
+    "名称": "一招",
+    "value": "$store.state.stat.一招.total$",
     "default": "",
-    "上限": "",
+    "cap": "",
     "milestones": "$lvl + 1$",
-    "圣遗物": ""
+    "reward": "",
+    "relic": "",
+    "secret": ""
   },
   {
-    "名称": "totalMastery",
-    "value": "$store.state.stat.horde_totalMastery.总计$",
+    "名称": "多样性",
+    "value": "$store.state.stat.多样性.total$",
     "default": "",
-    "上限": "",
+    "cap": "",
     "milestones": "$\\text{四舍五入}((lvl + 1)  \\cdot  25  \\cdot  (lvl  \\cdot  0.2 + 1))$",
-    "圣遗物": ""
+    "reward": "",
+    "relic": "",
+    "secret": ""
   },
   {
-    "名称": "unlucky",
-    "value": "$store.state.stat.horde_unlucky.总计$",
+    "名称": "血液",
+    "value": "$store.state.stat.血液.total$",
     "default": "",
-    "上限": "1",
+    "cap": "",
+    "milestones": "${(2)}^{getSequence(10, lvl} - 10)  \\cdot  1B$",
+    "reward": "{\"3\":[{\"name\":\"输血\",\"type\":\"保留\",\"value\":true}],\"5\":[{\"name\":\"保护壳\",\"type\":\"保留\",\"value\":true}],\"8\":[{\"name\":\"血液存储\",\"type\":\"保留\",\"value\":true}]}",
+    "relic": "",
+    "secret": ""
+  },
+  {
+    "名称": "勇敢",
+    "value": "$store.state.stat.勇敢.total$",
+    "default": "",
+    "cap": "",
+    "milestones": "${(18 + lvl  \\cdot  6)}^{lvl}  \\cdot  1000$",
+    "reward": "{\"6\":[{\"name\":\"第二次机会\",\"type\":\"保留\",\"value\":true}]}",
+    "relic": "",
+    "secret": ""
+  },
+  {
+    "名称": "做好一切准备",
+    "value": "$store.getters['horde/trinketLevels']$",
+    "default": "",
+    "cap": "",
+    "milestones": "$\\text{四舍五入}((lvl + 1)  \\cdot  3  \\cdot  (lvl  \\cdot  0.2 + 1))$",
+    "reward": "",
+    "relic": "",
+    "secret": ""
+  },
+  {
+    "名称": "角斗士",
+    "value": "$store.state.stat.horde_warzoneInfiniteScore.total + store.state.stat.horde_monkeyJungleInfiniteScore.total + store.state.stat.horde_loveIslandInfiniteScore.total$",
+    "default": "",
+    "cap": "",
+    "milestones": "$\\text{四舍五入}((lvl + 1)  \\cdot  200  \\cdot  {(1.15)}^{lvl})$",
+    "reward": "",
+    "relic": "",
+    "secret": ""
+  },
+  {
+    "名称": "不幸",
+    "value": "$store.state.stat.不幸.total$",
+    "default": "",
+    "cap": "1",
     "milestones": "$1$",
-    "圣遗物": ""
+    "reward": "",
+    "relic": "",
+    "secret": "true"
   }
 ]

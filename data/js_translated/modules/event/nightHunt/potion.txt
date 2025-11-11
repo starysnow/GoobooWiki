@@ -1,183 +1,183 @@
 {
-    力量: {
-        color: '红色',
+    最高力量: {
+        color: '红色油漆',
         recipe: [{max: 3}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 2}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 2}
         ]
     },
-    洞察药水: {
-        color: '青色',
+    insight: {
+        color: 'cyan',
         recipe: [{min: 5, max: 6}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl},
-            {name: '仪式提示几率', 类型: '+', value: lvl => lvl * 0.01}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl},
+            {name: '仪式提示几率', type: '+', value: lvl => lvl * 0.01}
         ]
     },
-    愤怒药水: {
-        color: '橙色-红色',
+    rage: {
+        color: '橙色油漆-红色油漆',
         recipe: [{max: 3}, {max: 3}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 6}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 6}
         ]
     },
-    镇静药水: {
+    calming: {
         color: 'lime',
         recipe: [{max: 3}, {max: 3}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 3},
-            {name: '仪式稳定性', 类型: '+', value: lvl => lvl * 0.025}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 3},
+            {name: '仪式稳定性', type: '+', value: lvl => lvl * 0.025}
         ]
     },
-    悲伤药水: {
+    sorrow: {
         color: 'skyblue',
         recipe: [{max: 4}, {max: 4}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 3},
-            {name: '仪式成功几率', 类型: '+', value: lvl => lvl * 0.02}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 3},
+            {name: '仪式成功几率', type: '+', value: lvl => lvl * 0.02}
         ]
     },
-    能量: {
-        color: '金色',
+    energy: {
+        color: '金色油漆',
         recipe: [{max: 4}, {max: 4}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 3},
-            {name: '精华增益', 类型: '*', value: lvl => lvl * 0.05 + 1}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 3},
+            {name: '精华增益', type: '*', value: lvl => lvl * 0.05 + 1}
         ]
     },
-    自然药水: {
-        color: '光-绿色',
+    nature: {
+        color: '浅绿色油漆',
         recipe: [{min: 5, max: 6}, {max: 6}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 3},
-            {name: '仪式提示几率', 类型: '+', value: lvl => lvl * 0.02}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 3},
+            {name: '仪式提示几率', type: '+', value: lvl => lvl * 0.02}
         ]
     },
-    强化药水: {
-        color: '粉色',
+    intensity: {
+        color: '粉红色油漆',
         recipe: [{min: 7, max: 8}, {max: 8}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 3},
-            {name: '仪式熟悉度', 类型: '+', value: lvl => lvl * 0.01}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 3},
+            {name: '仪式熟悉度', type: '+', value: lvl => lvl * 0.01}
         ]
     },
-    癔症药水: {
-        color: '红色-粉色',
+    hysteria: {
+        color: '红色油漆-粉红色油漆',
         recipe: [{max: 5}, {max: 5}, {max: 5}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 8},
-            {name: '仪式稳定性', 类型: '+', value: lvl => lvl * 0.04}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 8},
+            {name: '仪式稳定性', type: '+', value: lvl => lvl * 0.04}
         ]
     },
-    疯狂药水: {
-        color: '橙色',
+    insanity: {
+        color: '橙色油漆',
         recipe: [{max: 5}, {max: 5}, {max: 5}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 8},
-            {name: '仪式成功几率', 类型: '+', value: lvl => lvl * 0.04}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 8},
+            {name: '仪式成功几率', type: '+', value: lvl => lvl * 0.04}
         ]
     },
-    耐心药水: {
-        color: 'teal',
+    patience: {
+        color: '青色油漆',
         recipe: [{max: 6}, {max: 6}, {max: 6}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 8},
-            {name: '仪式熟悉度', 类型: '+', value: lvl => lvl * 0.01}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 8},
+            {name: '仪式熟悉度', type: '+', value: lvl => lvl * 0.01}
         ]
     },
-    变身药水: {
-        color: 'deep-紫色',
+    transformation: {
+        color: 'deep-紫色油漆',
         recipe: [{max: 7}, {max: 7}, {max: 7}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 8},
-            {name: '精华增益', 类型: '*', value: lvl => lvl * 0.075 + 1}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 8},
+            {name: '精华增益', type: '*', value: lvl => lvl * 0.075 + 1}
         ]
     },
-    沉默药水: {
-        color: 'blue',
+    silence: {
+        color: '蓝色油漆',
         recipe: [{min: 7, max: 8}, {max: 8}, {max: 8}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 8},
-            {name: '仪式提示几率', 类型: '+', value: lvl => lvl * 0.02}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 8},
+            {name: '仪式提示几率', type: '+', value: lvl => lvl * 0.02}
         ]
     },
-    光合药水: {
-        color: '绿色',
+    photosynthesis: {
+        color: '绿色油漆',
         recipe: [{min: 8, max: 9}, {max: 9}, {max: 9}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 20}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 20}
         ]
     },
-    太阳药水: {
-        color: '黄色',
+    日: {
+        color: '黄色油漆',
         recipe: [{min: 9, max: 10}, {max: 10}, {max: 10}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 8},
-            {name: '仪式稳定性', 类型: '+', value: lvl => lvl * 0.02},
-            {name: '仪式成功几率', 类型: '+', value: lvl => lvl * 0.02}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 8},
+            {name: '仪式稳定性', type: '+', value: lvl => lvl * 0.02},
+            {name: '仪式成功几率', type: '+', value: lvl => lvl * 0.02}
         ]
     },
-    生长药水: {
+    growth: {
         color: 'lime',
         recipe: [{max: 7}, {max: 7}, {max: 7}, {max: 7}],
-        效果: [
-            {name: '精华增益', 类型: '*', value: lvl => lvl * 0.12 + 1}
+        effect: [
+            {name: '精华增益', type: '*', value: lvl => lvl * 0.12 + 1}
         ]
     },
-    凝固药水: {
-        color: '灰色',
+    solidification: {
+        color: 'grey',
         recipe: [{max: 7}, {max: 7}, {max: 7}, {max: 7}],
-        效果: [
-            {name: '精华增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
-            {name: '仪式成功几率', 类型: '+', value: lvl => lvl * 0.05}
+        effect: [
+            {name: '精华增益', type: '*', value: lvl => lvl * 0.05 + 1},
+            {name: '仪式成功几率', type: '+', value: lvl => lvl * 0.05}
         ]
     },
-    液化药水: {
-        color: 'dark-blue',
+    liquification: {
+        color: 'dark-蓝色油漆',
         recipe: [{max: 8}, {max: 8}, {max: 8}, {max: 8}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 22},
-            {name: '精华增益', 类型: '*', value: lvl => lvl * 0.05 + 1}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 22},
+            {name: '精华增益', type: '*', value: lvl => lvl * 0.05 + 1}
         ]
     },
-    发光药水: {
-        color: '黄色',
+    glowing: {
+        color: '黄色油漆',
         recipe: [{max: 8}, {max: 8}, {max: 8}, {max: 8}],
-        效果: [
-            {name: '精华增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
-            {name: '仪式稳定性', 类型: '*', value: lvl => lvl * 0.01 + 1}
+        effect: [
+            {name: '精华增益', type: '*', value: lvl => lvl * 0.05 + 1},
+            {name: '仪式稳定性', type: '*', value: lvl => lvl * 0.01 + 1}
         ]
     },
-    瘀滞药水: {
-        color: '光-blue',
+    stasis: {
+        color: '浅蓝色油漆',
         recipe: [{min: 7, max: 8}, {max: 8}, {max: 8}, {max: 8}],
-        效果: [
-            {name: '精华增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
-            {name: '仪式成功几率', 类型: '*', value: lvl => lvl * 0.01 + 1}
+        effect: [
+            {name: '精华增益', type: '*', value: lvl => lvl * 0.05 + 1},
+            {name: '仪式成功几率', type: '*', value: lvl => lvl * 0.01 + 1}
         ]
     },
-    创意药水: {
-        color: '粉色',
+    创意: {
+        color: '粉红色油漆',
         recipe: [{min: 8, max: 9}, {max: 9}, {max: 9}, {max: 9}],
-        效果: [
-            {name: '精华增益', 类型: '+', value: lvl => lvl * 22},
-            {name: '仪式提示几率', 类型: '+', value: lvl => lvl * 0.02}
+        effect: [
+            {name: '精华增益', type: '+', value: lvl => lvl * 22},
+            {name: '仪式提示几率', type: '+', value: lvl => lvl * 0.02}
         ]
     },
-    毒药药水: {
-        color: '绿色',
+    poison: {
+        color: '绿色油漆',
         recipe: [{min: 9, max: 10}, {max: 10}, {max: 10}, {max: 10}],
-        效果: [
-            {name: '精华增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
-            {name: '仪式稳定性', 类型: '+', value: lvl => lvl * 0.05}
+        effect: [
+            {name: '精华增益', type: '*', value: lvl => lvl * 0.05 + 1},
+            {name: '仪式稳定性', type: '+', value: lvl => lvl * 0.05}
         ]
     },
-    温暖药水: {
-        color: '橙色',
+    warmth: {
+        color: '橙色油漆',
         recipe: [{min: 10, max: 11}, {max: 11}, {max: 11}, {max: 11}],
-        效果: [
-            {name: '精华增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
-            {name: '仪式熟悉度', 类型: '+', value: lvl => lvl * 0.01}
+        effect: [
+            {name: '精华增益', type: '*', value: lvl => lvl * 0.05 + 1},
+            {name: '仪式熟悉度', type: '+', value: lvl => lvl * 0.01}
         ]
     },
 }

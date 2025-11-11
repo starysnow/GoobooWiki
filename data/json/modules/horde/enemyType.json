@@ -1,0 +1,177 @@
+[
+  {
+    "名称": "soldier_1",
+    "攻击plus": "1.75",
+    "生命值plus": "50",
+    "sigil": "{\"rifle_gun\":1}",
+    "stats": ""
+  },
+  {
+    "名称": "soldier_2",
+    "攻击plus": "1.75",
+    "生命值plus": "45",
+    "sigil": "{\"rifle_gun\":1,\"war_grenade\":1}",
+    "stats": ""
+  },
+  {
+    "名称": "soldier_3",
+    "攻击plus": "1.6",
+    "生命值plus": "50",
+    "sigil": "{\"rifle_gun\":1,\"war_bandage\":1}",
+    "stats": ""
+  },
+  {
+    "名称": "officer_1",
+    "攻击plus": "1",
+    "生命值plus": "80",
+    "sigil": "{\"pistol_gun\":1}",
+    "stats": ""
+  },
+  {
+    "名称": "officer_2",
+    "攻击plus": "1",
+    "生命值plus": "72.5",
+    "sigil": "{\"pistol_gun\":1,\"war_grenade\":1}",
+    "stats": ""
+  },
+  {
+    "名称": "officer_3",
+    "攻击plus": "0.9",
+    "生命值plus": "80",
+    "sigil": "{\"pistol_gun\":1,\"war_bandage\":1}",
+    "stats": ""
+  },
+  {
+    "名称": "hunter",
+    "攻击plus": "1.2",
+    "生命值plus": "55",
+    "sigil": "{\"shotgun_gun\":1,\"war_grenade\":2,\"war_bandage\":2}",
+    "stats": ""
+  },
+  {
+    "名称": "sniper",
+    "攻击plus": "1.5",
+    "生命值plus": "40",
+    "sigil": "{\"sniper_gun\":1}",
+    "stats": "{\"critChance_base\":0.25,\"critMult_base\":0.5}"
+  },
+  {
+    "名称": "armed_skeleton",
+    "攻击plus": "2",
+    "生命值plus": "50",
+    "sigil": "{\"rifle_gun\":1,\"war_grenade\":5,\"war_bandage\":5}",
+    "stats": ""
+  },
+  {
+    "名称": "strongMonkey",
+    "攻击plus": "2.5",
+    "生命值plus": "40",
+    "sigil": "{}",
+    "stats": "{\"physicTaken_mult\":1.25,\"magicTaken_mult\":0.75}"
+  },
+  {
+    "名称": "angryMonkey",
+    "攻击plus": "1.7",
+    "生命值plus": "35",
+    "sigil": "{}",
+    "stats": "{\"physicTaken_mult\":1.25,\"magicTaken_mult\":0.75,\"critChance_base\":0.4,\"critMult_base\":1.25}"
+  },
+  {
+    "名称": "dartMonkey",
+    "攻击plus": "1.8",
+    "生命值plus": "45",
+    "sigil": "{\"monkey_dart\":1}",
+    "stats": "{\"physicTaken_mult\":1.25,\"magicTaken_mult\":0.75}"
+  },
+  {
+    "名称": "monkeyWizard_1",
+    "攻击plus": "1.75",
+    "生命值plus": "50",
+    "sigil": "{\"monkey_fire\":1}",
+    "stats": "{\"physicTaken_mult\":0.75,\"magicTaken_mult\":1.25}"
+  },
+  {
+    "名称": "monkeyWizard_2",
+    "攻击plus": "1.75",
+    "生命值plus": "50",
+    "sigil": "{\"monkey_ice\":1}",
+    "stats": "{\"physicTaken_mult\":0.75,\"magicTaken_mult\":1.25}"
+  },
+  {
+    "名称": "monkeyWizard_3",
+    "攻击plus": "1.75",
+    "生命值plus": "50",
+    "sigil": "{\"monkey_lightning\":1}",
+    "stats": "{\"physicTaken_mult\":0.75,\"magicTaken_mult\":1.25}"
+  },
+  {
+    "名称": "monkeyDefender",
+    "攻击plus": "2",
+    "生命值plus": "50",
+    "sigil": "{}",
+    "stats": "{\"physicTaken_mult\":0.1,\"magicTaken_mult\":1.5}"
+  },
+  {
+    "名称": "monkeyMonk",
+    "攻击plus": "2",
+    "生命值plus": "50",
+    "sigil": "{}",
+    "stats": "{\"physicTaken_mult\":1.5,\"magicTaken_mult\":0.1}"
+  },
+  {
+    "名称": "puppy",
+    "攻击plus": "1.4",
+    "生命值plus": "60",
+    "sigil": "{\"cute_bark\":1,\"cute_bite\":1}",
+    "stats": ""
+  },
+  {
+    "名称": "kitten",
+    "攻击plus": "2.8",
+    "生命值plus": "30",
+    "sigil": "{\"cute_claws\":1}",
+    "stats": ""
+  },
+  {
+    "名称": "seal",
+    "攻击plus": "1.6",
+    "生命值plus": "60",
+    "sigil": "{\"cute_ram\":1}",
+    "stats": ""
+  },
+  {
+    "名称": "piglet",
+    "攻击plus": "0.8",
+    "生命值plus": "90",
+    "sigil": "{\"cute_ram\":1,\"cute_eatCarrot\":1}",
+    "stats": ""
+  },
+  {
+    "名称": "panda",
+    "攻击plus": "2.5",
+    "生命值plus": "35",
+    "sigil": "{\"cute_ram\":2}",
+    "stats": ""
+  },
+  {
+    "名称": "koala",
+    "攻击plus": "2.2",
+    "生命值plus": "40",
+    "sigil": "{\"cute_kick\":1,\"cute_bite\":1}",
+    "stats": ""
+  },
+  {
+    "名称": "rabbit",
+    "攻击plus": "1.1",
+    "生命值plus": "70",
+    "sigil": "{\"cute_kick\":1,\"cute_eatCarrot\":1}",
+    "stats": ""
+  },
+  {
+    "名称": "guineaPig",
+    "攻击plus": "1.6",
+    "生命值plus": "70",
+    "sigil": "{}",
+    "stats": ""
+  }
+]

@@ -1,84 +1,84 @@
 {
-    锡纸帽: {图标: 'mdi-hat-fedora', feature: ['事件', '采矿'], color: 'blue-灰色', 效果: [
-        {name: '铝矿石增益', 类型: '*', value: 1.12}
-    ]},
-    一杯水: {图标: 'mdi-cup-water', feature: ['事件', '村庄'], color: 'blue', 效果: [
-        {name: '水增益', 类型: '*', value: 1.12},
-        {name: '玻璃增益', 类型: '*', value: 1.05}
-    ]},
-    作战策略: {图标: 'mdi-clipboard-list', feature: ['事件', '部落'], color: 'pale-绿色', 效果: [
-        {name: '精通点数增益', 类型: '*', value: 1.18}
-    ]},
-    100 美元钞票: {图标: 'mdi-cash-100', feature: ['事件', '村庄'], color: '绿色', 效果: [
-        {name: '金币增益', 类型: '*', value: 1.1}
-    ]},
-    热气球: {图标: 'mdi-airballoon', feature: ['事件', '采矿'], color: '橙色-红色', 效果: [
-        {name: '冶炼速度', 类型: '*', value: 1.1}
-    ]},
-    大三叶草: {图标: 'mdi-clover', feature: ['事件', '部落'], color: '光-绿色', 效果: [
-        {name: '装备几率', 类型: '*', value: 1.15}
-    ]},
-    8球: {图标: 'mdi-billiards', feature: ['事件', '采矿'], color: 'darker-灰色', 效果: [
-        {name: '伤害', 类型: '*', value: 1.08}
-    ]},
-    年轻的猪: {图标: 'mdi-pig-variant', feature: ['事件', '部落'], color: 'pale-粉色', 效果: [
-        {name: '怀旧之情', 类型: '+', value: 5}
-    ]},
-    银色马蹄铁: {图标: 'mdi-horseshoe', feature: ['事件', '农场'], color: 'lighter-灰色', 效果: [
-        {name: '稀有掉率', 类型: '*', value: 1.05}
-    ]},
-    青铜工具: {图标: 'mdi-tools', feature: ['事件', '采矿'], color: '金色', 效果: [
-        {name: '铜矿石增益', 类型: '*', value: 1.12},
-        {name: '锡矿石增益', 类型: '*', value: 1.12}
-    ]},
-    矿工帽: {图标: 'mdi-hard-hat', feature: ['事件', '采矿'], color: '黄色', 效果: [
-        {name: '铁矿石增益', 类型: '*', value: 1.12},
-        {name: '钛矿石增益', 类型: '*', value: 1.12}
-    ]},
-    字典: {图标: 'mdi-book-alphabet', feature: ['事件', '村庄'], color: '棕色', 效果: [
-        {name: '知识增益', 类型: '*', value: 1.1}
-    ]},
-    专业工具: {图标: 'mdi-toolbox', feature: ['事件', '村庄'], color: '樱桃色', 效果: [
-        {name: '硬木增益', 类型: '*', value: 1.07},
-        {name: '宝石增益', 类型: '*', value: 1.07}
-    ]},
-    血袋: {图标: 'mdi-blood-bag', feature: ['事件', '画廊'], color: '红色', 效果: [
-        {name: '红色增益', 类型: '*', value: 1.15}
-    ]},
-    晶洞: {图标: 'mdi-circle-double', feature: ['事件', '采矿'], color: 'indigo', 效果: [
-        {name: '矿石增益', 类型: '*', value: 1.06}
-    ]},
-    生日蛋糕: {图标: 'mdi-cake', feature: ['事件', '宝藏'], color: '红色', 效果: [
-        {name: '宝藏插槽', 类型: '+', value: 2}
-    ]},
-    七彩花: {图标: 'mdi-flower', feature: ['事件', '农场'], color: '红色-粉色', 效果: [
-        {name: '仅鲜花增益', 类型: '*', value: 1.15}
-    ]},
-    加热灯泡: {图标: 'mdi-lightbulb-on', feature: ['事件', '画廊'], color: '橙色', 效果: [
-        {name: '灵感的开始', 类型: '+', value: 1}
-    ]},
-    垃圾箱: {图标: 'mdi-trash-can', feature: ['事件', '采矿'], color: 'dark-灰色', 效果: [
-        {name: '废料增益', 类型: '*', value: 1.1}
-    ]},
-    手提箱: {图标: 'mdi-bag-carry-on', feature: ['事件', '部落'], color: 'dark-blue', 效果: [
-        {name: '骨头容量', 类型: '*', value: 1.1}
-    ]},
-    热带帐篷: {图标: 'mdi-tent', feature: ['事件', '村庄'], color: '绿色', 效果: [
-        {name: '工人', 类型: '+', value: 3}
-    ]},
-    水果篮: {图标: 'mdi-basket', feature: ['事件', '农场'], color: '红色', 效果: [
-        {name: '仅浆果增益', 类型: '*', value: 1.15}
-    ]},
-    块状颗粒: {图标: 'mdi-barley', feature: ['事件', '农场'], color: 'pale-黄色', 效果: [
-        {name: '仅粮食增益', 类型: '*', value: 1.15}
-    ]},
-    魔法瓶: {图标: 'mdi-flask-round-bottom', feature: ['事件', '采矿'], color: '紫色', 效果: [
-        {name: '树脂容量', 类型: '+', value: 1}
-    ]},
-    金钱礼物: {图标: 'mdi-gift', feature: ['事件', '村庄'], color: '绿色', 效果: [
-        {name: '金币增益', 类型: '*', value: 1.1}
-    ]},
-    冷冻胡萝卜: {图标: 'mdi-carrot', feature: ['事件', '农场'], color: '光-blue', 效果: [
-        {name: '仅蔬菜增益', 类型: '*', value: 1.15}
-    ]},
+    锡箔帽子: {icon: 'mdi-hat-fedora', feature: ['event', 'mining'], color: '蓝色油漆-grey', effect() {return [
+        {name: '铝矿石增益', type: '*', value: 1.12}
+    ];}, glyph() {return {粘土: 2, 书籍: 2};}},
+    一杯水: {icon: 'mdi-cup-water', feature: ['event', 'village'], color: '蓝色油漆', effect() {return [
+        {name: '水增益', type: '*', value: 1.12},
+        {name: '玻璃增益', type: '*', value: 1.05}
+    ];}, glyph() {return {木头: 2, 流动: 2};}},
+    战斗策略: {icon: 'mdi-clipboard-list', feature: ['event', 'horde'], color: 'pale-绿色油漆', effect() {return [
+        {name: '精通点数增益', type: '*', value: 1.1}
+    ];}, glyph() {return {尖刺: 2, 三叶草: 2};}},
+    100美元钞票: {icon: 'mdi-cash-100', feature: ['event', 'village'], color: '绿色油漆', effect() {return [
+        {name: '金币增益', type: '*', value: 1.1}
+    ];}, glyph() {return {流动: 2, 金币: 2};}},
+    热气球: {icon: 'mdi-airballoon', feature: ['event', 'mining'], color: '橙色油漆-红色油漆', effect() {return [
+        {name: '冶炼时间', type: '*', value: 1 / 1.1}
+    ];}, glyph() {return {热量: 3};}},
+    大三叶草: {icon: 'mdi-clover', feature: ['event', 'horde'], color: '浅绿色油漆', effect() {return [
+        {name: '装备几率', type: '*', value: 1.15}
+    ];}, glyph() {return {三叶草: 3};}},
+    8号球: {icon: 'mdi-billiards', feature: ['event', 'mining'], color: 'darker-grey', effect() {return [
+        {name: '伤害', type: '*', value: 1.08}
+    ];}, glyph() {return {灰尘: 2, 书籍: 2};}},
+    幼猪: {icon: 'mdi-pig-variant', feature: ['event', 'horde'], color: 'pale-粉红色油漆', effect() {return [
+        {name: '怀旧之情', type: '+', value: 5}
+    ];}, glyph() {return {梦: 3};}},
+    银马蹄铁: {icon: 'mdi-horseshoe', feature: ['event', '农场'], color: 'lighter-grey', effect() {return [
+        {name: '稀有掉率', type: '*', value: 1.05}
+    ];}, glyph() {return {雨: 2, 日: 2};}},
+    青铜工具: {icon: 'mdi-tools', feature: ['event', 'mining'], color: '金色油漆', effect() {return [
+        {name: '铜矿石增益', type: '*', value: 1.12},
+        {name: '锡矿石增益', type: '*', value: 1.12}
+    ];}, glyph() {return {粘土: 2, 热量: 2};}},
+    矿工帽: {icon: 'mdi-hard-hat', feature: ['event', 'mining'], color: '黄色油漆', effect() {return [
+        {name: '铁矿石增益', type: '*', value: 1.12},
+        {name: '钛矿石增益', type: '*', value: 1.12}
+    ];}, glyph() {return {灰尘: 2, 粘土: 2};}},
+    字典: {icon: 'mdi-book-alphabet', feature: ['event', 'village'], color: 'brown', effect() {return [
+        {name: '知识增益', type: '*', value: 1.1}
+    ];}, glyph() {return {书籍: 3};}},
+    专家工具: {icon: 'mdi-toolbox', feature: ['event', 'village'], color: 'cherry', effect() {return [
+        {name: '硬木增益', type: '*', value: 1.07},
+        {name: '宝石增益', type: '*', value: 1.07}
+    ];}, glyph() {return {流动: 2, 石头: 2};}},
+    血袋: {icon: 'mdi-blood-bag', feature: ['event', 'gallery'], color: '红色油漆', effect() {return [
+        {name: '红色油漆增益', type: '*', value: 1.15}
+    ];}, glyph() {return {开花: 3};}},
+    晶洞: {icon: 'mdi-circle-double', feature: ['event', 'mining'], color: 'indigo', effect() {return [
+        {name: '矿石增益', type: '*', value: 1.06}
+    ];}, glyph() {return {灰尘: 3};}},
+    生日蛋糕: {icon: 'mdi-cake', feature: ['event', 'treasure'], color: '红色油漆', effect() {return [
+        {name: '宝藏插槽', type: '+', value: 2}
+    ];}, glyph() {return {金币: 3};}},
+    七彩花: {icon: 'mdi-flower', feature: ['event', '农场'], color: '红色油漆-粉红色油漆', effect() {return [
+        {name: '花肥增益', type: '*', value: 1.15}
+    ];}, glyph() {return {云: 2, 金币: 2};}},
+    加热灯泡: {icon: 'mdi-lightbulb-on', feature: ['event', 'gallery'], color: '橙色油漆', effect() {return [
+        {name: '灵感的开始', type: '+', value: 1}
+    ];}, glyph() {return {纸: 3};}},
+    垃圾桶: {icon: 'mdi-trash-can', feature: ['event', 'mining'], color: 'dark-grey', effect() {return [
+        {name: '废料增益', type: '*', value: 1.1}
+    ];}, glyph() {return {灰尘: 2, 书籍: 2};}},
+    手提箱: {icon: 'mdi-bag-carry-on', feature: ['event', 'horde'], color: 'dark-蓝色油漆', effect() {return [
+        {name: '骨头容量', type: '*', value: 1.1}
+    ];}, glyph() {return {尖刺: 3};}},
+    热带帐篷: {icon: 'mdi-tent', feature: ['event', 'village'], color: '绿色油漆', effect() {return [
+        {name: '工人', type: '+', value: 3}
+    ];}, glyph() {return {木头: 3};}},
+    水果篮: {icon: 'mdi-basket', feature: ['event', '农场'], color: '红色油漆', effect() {return [
+        {name: '浆果增益', type: '*', value: 1.15}
+    ];}, glyph() {return {日: 3};}},
+    大量谷物: {icon: 'mdi-barley', feature: ['event', '农场'], color: 'pale-黄色油漆', effect() {return [
+        {name: '粮食增益', type: '*', value: 1.15}
+    ];}, glyph() {return {云: 2, 书籍: 2};}},
+    附魔瓶: {icon: 'mdi-flask-round-bottom', feature: ['event', 'mining'], color: '紫色油漆', effect() {return [
+        {name: '树脂容量', type: '+', value: 1}
+    ];}, glyph() {return {粘土: 3};}},
+    金钱礼物: {icon: 'mdi-gift', feature: ['event', 'village'], color: '绿色油漆', effect() {return [
+        {name: '金币增益', type: '*', value: 1.1}
+    ];}, glyph() {return {流动: 3};}},
+    冻胡萝卜: {icon: 'mdi-carrot', feature: ['event', '农场'], color: '浅蓝色油漆', effect() {return [
+        {name: '蔬菜增益', type: '*', value: 1.15}
+    ];}, glyph() {return {雨: 3};}},
 }

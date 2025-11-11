@@ -1,20 +1,23 @@
 [
   {
     "名称": "额外的建筑槽位",
-    "上限": "3",
-    "消耗": "${ gem_topaz: {(2)}^{lvl}  \\cdot  250 }$",
-    "效果": "建造队列插槽+｛$lvl  \\cdot  2$｝"
+    "type": "summerFestival",
+    "cap": "3",
+    "price": "${ gem_topaz: {(2)}^{lvl}  \\cdot  250 }$",
+    "effect": "建造队列插槽+｛$lvl  \\cdot  2$｝"
   },
   {
     "名称": "双倍时间",
-    "上限": "5",
-    "消耗": "${ gem_topaz: lvl  \\cdot  100 + 200 }$",
-    "效果": "建造队列速度*｛$lvl + 1$｝"
+    "type": "summerFestival",
+    "cap": "5",
+    "price": "${ gem_topaz: lvl  \\cdot  100 + 200 }$",
+    "effect": "建造队列速度*｛$lvl + 1$｝"
   },
   {
     "名称": "热带祝福",
-    "上限": "8",
-    "消耗": "${ gem_topaz: lvl  \\cdot  50 + 100 }$",
-    "效果": "材料增益*｛$lvl  \\cdot  0.25 + 1$｝; 材料堆叠容量+｛$lvl  \\cdot  5$｝"
+    "type": "summerFestival",
+    "cap": "8",
+    "price": "${ gem_topaz: lvl  \\cdot  50 + 100 }$",
+    "effect": "材料增益*｛$lvl  \\cdot  0.25 + 1$｝; 材料堆叠容量+｛$lvl  \\cdot  5$｝"
   }
 ]

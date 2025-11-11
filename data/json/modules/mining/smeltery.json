@@ -1,0 +1,51 @@
+[
+  {
+    "名称": "aluminium",
+    "price": "${ 铝矿石: {(MINING_SMELTERY_ORE_INCREMENT)}^{lvl}  \\cdot  1000, 花岗岩: {(1.1)}^{lvl}  \\cdot  7500 }$",
+    "output": "铝锭",
+    "timeNeeded": "300",
+    "minTemperature": "100"
+  },
+  {
+    "名称": "bronze",
+    "price": "${ 铜矿石: {(MINING_SMELTERY_ORE_INCREMENT)}^{lvl}  \\cdot  900, 锡矿石: {(MINING_SMELTERY_ORE_INCREMENT)}^{lvl}  \\cdot  100, 盐: {(1.06)}^{lvl}  \\cdot  800 }$",
+    "output": "青铜锭",
+    "timeNeeded": "SECONDS_PER_HOUR",
+    "minTemperature": "275"
+  },
+  {
+    "名称": "steel",
+    "price": "${ 铁矿石: {(MINING_SMELTERY_ORE_INCREMENT)}^{lvl}  \\cdot  1000, 煤: 5 }$",
+    "output": "钢锭",
+    "timeNeeded": "[Unsupported Node: BinaryExpression]",
+    "minTemperature": "500"
+  },
+  {
+    "名称": "titanium",
+    "price": "${ 钛矿石: {(MINING_SMELTERY_ORE_INCREMENT)}^{lvl}  \\cdot  1000, 硫: {(1.06)}^{lvl}  \\cdot  200, 硝: 100 }$",
+    "output": "钛锭",
+    "timeNeeded": "[Unsupported Node: BinaryExpression]",
+    "minTemperature": "800"
+  },
+  {
+    "名称": "闪亮肥料",
+    "price": "${ 铂矿石: {(MINING_SMELTERY_ORE_INCREMENT)}^{lvl}  \\cdot  1000, 黑曜石: {(1.1)}^{lvl}  \\cdot  2e6 }$",
+    "output": "闪亮的金属锭",
+    "timeNeeded": "[Unsupported Node: BinaryExpression]",
+    "minTemperature": "1250"
+  },
+  {
+    "名称": "iridium",
+    "price": "${ 铱矿石: {(MINING_SMELTERY_ORE_INCREMENT)}^{lvl}  \\cdot  1000, 氦: {(1.1)}^{lvl}  \\cdot  1e4 }$",
+    "output": "铱锭",
+    "timeNeeded": "SECONDS_PER_YEAR",
+    "minTemperature": "2000"
+  },
+  {
+    "名称": "darkIron",
+    "price": "${ 铁矿石: {(MINING_SMELTERY_ORE_INCREMENT)}^{lvl}  \\cdot  1e7, 锇矿石: {(MINING_SMELTERY_ORE_INCREMENT)}^{lvl}  \\cdot  1000, 深岩: {(1.1)}^{lvl}  \\cdot  1e8, 氖: {(1.1)}^{lvl}  \\cdot  1e4 }$",
+    "output": "黑铁锭",
+    "timeNeeded": "[Unsupported Node: BinaryExpression]",
+    "minTemperature": "3000"
+  }
+]

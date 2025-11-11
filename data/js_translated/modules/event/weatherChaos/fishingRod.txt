@@ -1,89 +1,89 @@
 {
-    基础: {
-        已拥有: true,
+    基础肥料: {
+        拥有最多: true,
     },
-    快速: {
-        图标: 'mdi-run-fast',
-        效果: [
-            {name: '钓鱼时间', 类型: '*', value: 1 / 1.4},
-            {name: '平均鱼尺寸', 类型: '*', value: 1 / 1.6},
-            {name: '垃圾增益', 类型: '*', value: 1 / 1.5},
+    fast: {
+        icon: 'mdi-run-fast',
+        effect: [
+            {name: '钓鱼时间', type: '*', value: 1 / 1.4},
+            {name: '平均鱼尺寸', type: '*', value: 1 / 1.6},
+            {name: '垃圾增益', type: '*', value: 1 / 1.5},
         ],
     },
-    绿叶: {
-        图标: 'mdi-leaf',
-        效果: [
-            {name: '中鱼几率', 类型: '+', value: -0.1},
-            {name: '海藻增益', 类型: '*', value: 1.75},
+    leafy: {
+        icon: 'mdi-leaf',
+        effect: [
+            {name: '中鱼几率', type: '+', value: -0.1},
+            {name: '海藻增益', type: '*', value: 1.75},
         ],
     },
-    重: {
-        图标: 'mdi-weight',
-        效果: [
-            {name: '钓鱼时间', 类型: '*', value: 1.1},
-            {name: '最大鱼尺寸', 类型: '+', value: 1},
-            {name: '平均鱼尺寸', 类型: '*', value: 1 / 1.1},
+    heavy: {
+        icon: 'mdi-weight',
+        effect: [
+            {name: '钓鱼时间', type: '*', value: 1.1},
+            {name: '最大鱼尺寸', type: '+', value: 1},
+            {name: '平均鱼尺寸', type: '*', value: 1 / 1.1},
         ],
     },
     硬木: {
-        图标: 'mdi-palm-tree',
-        效果: [
-            {name: '钓鱼力量', 类型: '*', value: 1 / 1.1},
-            {name: '浮木增益', 类型: '*', value: 1.75},
+        icon: 'mdi-palm-tree',
+        effect: [
+            {name: '钓鱼力量', type: '*', value: 1 / 1.1},
+            {name: '浮木增益', type: '*', value: 1.75},
         ],
     },
-    精通: {
-        图标: 'mdi-trophy-award',
-        效果: [
-            {name: '钓鱼力量', 类型: '+', value: 12},
-            {name: '钓鱼时间', 类型: '*', value: 1.15},
+    master: {
+        icon: 'mdi-trophy-award',
+        effect: [
+            {name: '钓鱼力量', type: '+', value: 12},
+            {name: '钓鱼时间', type: '*', value: 1.15},
         ],
     },
-    臭: {
-        图标: 'mdi-scent',
-        效果: [
-            {name: '粘液增益', 类型: '*', value: 2},
-            {name: '钓鱼时间', 类型: '*', value: 1.5},
+    smelly: {
+        icon: 'mdi-scent',
+        effect: [
+            {name: '粘液增益', type: '*', value: 2},
+            {name: '钓鱼时间', type: '*', value: 1.5},
         ],
     },
-    涡轮: {
-        图标: 'mdi-truck-fast',
-        效果: [
-            {name: '钓鱼时间', 类型: '*', value: 0.5},
-            {name: '中鱼几率', 类型: '+', value: -0.2},
-            {name: '宝藏几率', 类型: '+', value: -0.04},
-            {name: '垃圾增益', 类型: '*', value: 1 / 1.75},
+    turbo: {
+        icon: 'mdi-truck-fast',
+        effect: [
+            {name: '钓鱼时间', type: '*', value: 0.5},
+            {name: '中鱼几率', type: '+', value: -0.2},
+            {name: '宝藏几率', type: '+', value: -0.04},
+            {name: '垃圾增益', type: '*', value: 1 / 1.75},
         ],
     },
-    金色: {
-        图标: 'mdi-gold',
-        效果: [
-            {name: '中鱼几率', 类型: '+', value: 0.05},
-            {name: '宝藏几率', 类型: '+', value: 0.025},
-            {name: '垃圾增益', 类型: '*', value: 1 / 1.75},
+    golden: {
+        icon: 'mdi-gold',
+        effect: [
+            {name: '中鱼几率', type: '+', value: 0.05},
+            {name: '宝藏几率', type: '+', value: 0.025},
+            {name: '垃圾增益', type: '*', value: 1 / 1.75},
         ],
     },
-    迟钝: {
-        图标: 'mdi-square-opacity',
-        效果: [
-            {name: '宝藏几率', 类型: '+', value: -0.025},
-            {name: '塑料增益', 类型: '*', value: 1.75},
+    dull: {
+        icon: 'mdi-square-opacity',
+        effect: [
+            {name: '宝藏几率', type: '+', value: -0.025},
+            {name: '塑料增益', type: '*', value: 1.75},
         ],
     },
-    神秘: {
-        图标: 'mdi-auto-fix',
-        效果: [
-            {name: '忽略天气', 类型: '+', value: 0.1},
-            {name: '最大鱼尺寸', 类型: '*', value: 1 / 1.2},
-            {name: '平均鱼尺寸', 类型: '*', value: 1 / 1.4},
+    mystical: {
+        icon: 'mdi-auto-fix',
+        effect: [
+            {name: '忽略天气', type: '+', value: 0.1},
+            {name: '最大鱼尺寸', type: '*', value: 1 / 1.2},
+            {name: '平均鱼尺寸', type: '*', value: 1 / 1.4},
         ],
     },
-    双胞胎: {
-        图标: 'mdi-call-split',
-        效果: [
-            {name: '钓鱼时间', 类型: '*', value: 1.1},
-            {name: '双倍鱼几率', 类型: '+', value: 0.2},
-            {name: '垃圾增益', 类型: '*', value: 1 / 1.6},
+    twins: {
+        icon: 'mdi-call-split',
+        effect: [
+            {name: '钓鱼时间', type: '*', value: 1.1},
+            {name: '双倍鱼几率', type: '+', value: 0.2},
+            {name: '垃圾增益', type: '*', value: 1 / 1.6},
         ],
     },
 }

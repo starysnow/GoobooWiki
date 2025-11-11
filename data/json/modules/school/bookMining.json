@@ -1,37 +1,162 @@
 [
   {
-    "名称": "书籍铝淬火",
-    "消耗": "${ 书籍: \\text{四舍五入}({(1.15)}^{lvl}  \\cdot  (lvl + 5)  \\cdot  7) }$",
-    "效果": "upgradeMiningAluminiumHardeningCap+｛$lvl$｝"
+    "名称": "damage",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "25",
+    "effect": "伤害*｛${(1.01)}^{lvl}$｝",
+    "maxGL": ""
   },
   {
-    "名称": "书籍铝罐",
-    "消耗": "${ 书籍: \\text{四舍五入}({(1.15)}^{lvl}  \\cdot  (lvl + 5)  \\cdot  5) }$",
-    "效果": "upgradeMiningAluminiumTanksCap+｛$lvl$｝"
+    "名称": "oreAluminiumCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "40",
+    "effect": "铝矿石容量+｛$lvl  \\cdot  8$｝",
+    "maxGL": "139"
   },
   {
-    "名称": "书籍炼油厂",
-    "消耗": "${ 书籍: \\text{四舍五入}({(1.15)}^{lvl}  \\cdot  (lvl + 5)  \\cdot  40) }$",
-    "效果": "upgradeMiningRefineryCap+｛$lvl$｝"
+    "名称": "oreGain",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "50",
+    "effect": "矿石增益*｛$lvl  \\cdot  0.01 + 1$｝",
+    "maxGL": "249"
   },
   {
-    "名称": "书籍熔炉",
-    "消耗": "${ 书籍: \\text{四舍五入}({(1.15)}^{lvl}  \\cdot  (lvl + 5)  \\cdot  60) }$",
-    "效果": "upgradeMiningFurnaceCap+｛$lvl$｝"
+    "名称": "oreCopperCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "55",
+    "effect": "铜矿石容量+｛$lvl  \\cdot  4$｝",
+    "maxGL": "154"
   },
   {
-    "名称": "书籍铁扩张",
-    "消耗": "${ 书籍: \\text{四舍五入}({(1.15)}^{lvl}  \\cdot  (lvl + 5)  \\cdot  120) }$",
-    "效果": "upgradeMiningIronExpansionCap+｛$lvl$｝"
+    "名称": "scrapGain",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "75",
+    "effect": "废料增益*｛${(1.01)}^{lvl}$｝",
+    "maxGL": ""
   },
   {
-    "名称": "书籍磁铁",
-    "消耗": "${ 书籍: \\text{四舍五入}({(1.15)}^{lvl}  \\cdot  (lvl + 5)  \\cdot  160) }$",
-    "效果": "upgradeMiningMagnetCap+｛$lvl$｝"
+    "名称": "oreTinCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "75",
+    "effect": "锡矿石容量+｛$lvl  \\cdot  3$｝",
+    "maxGL": "174"
   },
   {
-    "名称": "书籍金属探测器",
-    "消耗": "${ 书籍: \\text{四舍五入}({(1.15)}^{lvl}  \\cdot  (lvl + 5)  \\cdot  250) }$",
-    "效果": "upgradeMiningMetalDetectorCap+｛$lvl$｝"
+    "名称": "scrapCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "100",
+    "effect": "废料容量*｛${(1.01)}^{lvl}$｝",
+    "maxGL": ""
+  },
+  {
+    "名称": "oreIronCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "105",
+    "effect": "铁矿石容量+｛$lvl  \\cdot  2$｝",
+    "maxGL": "204"
+  },
+  {
+    "名称": "oreTitaniumCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "145",
+    "effect": "钛矿石容量+｛$lvl$｝",
+    "maxGL": "244"
+  },
+  {
+    "名称": "emberCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "160",
+    "effect": "余烬容量+｛$lvl  \\cdot  2$｝",
+    "maxGL": ""
+  },
+  {
+    "名称": "corrosiveFumesUncap",
+    "subfeature": "0",
+    "scalesWithGL": "",
+    "minGL": "175",
+    "effect": "腐蚀性烟雾无最大等级｛$lvl >= 1$｝",
+    "maxGL": ""
+  },
+  {
+    "名称": "orePlatinumCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "200",
+    "effect": "铂矿石容量+｛$lvl$｝",
+    "maxGL": "299"
+  },
+  {
+    "名称": "oreIridiumCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "285",
+    "effect": "铱矿石容量+｛$lvl$｝",
+    "maxGL": "384"
+  },
+  {
+    "名称": "oreOsmiumCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "375",
+    "effect": "锇矿石容量+｛$lvl$｝",
+    "maxGL": "474"
+  },
+  {
+    "名称": "oreLeadCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "475",
+    "effect": "铅矿石容量+｛$lvl$｝",
+    "maxGL": "574"
+  },
+  {
+    "名称": "damage2",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "25",
+    "effect": "伤害*｛${(1.01)}^{lvl}$｝",
+    "maxGL": ""
+  },
+  {
+    "名称": "scrapCap2",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "50",
+    "effect": "废料容量*｛${(1.01)}^{lvl}$｝",
+    "maxGL": ""
+  },
+  {
+    "名称": "smokeCap",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "75",
+    "effect": "烟雾容量*｛$lvl  \\cdot  0.01 + 1$｝",
+    "maxGL": "174"
+  },
+  {
+    "名称": "scrapGain2",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "100",
+    "effect": "废料增益*｛${(1.01)}^{lvl}$｝",
+    "maxGL": ""
+  },
+  {
+    "名称": "smokeGain",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "125",
+    "effect": "烟雾增益*｛$lvl  \\cdot  0.01 + 1$｝",
+    "maxGL": "224"
   }
 ]

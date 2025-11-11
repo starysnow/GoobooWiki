@@ -1,0 +1,38 @@
+[
+  {
+    "名称": "钻石镐",
+    "icon": "<i class=\"mdi mdi-pickaxe\"></i>",
+    "effect": "$[{ name: '高级矿石最高等级', type: '+', value: 1 }, { name: '伤害', type: ' \\cdot ', value: 1.5 }]$",
+    "glyph": "${ 灰尘: 6 }$"
+  },
+  {
+    "名称": "钻石锤",
+    "icon": "<i class=\"mdi mdi-hammer\"></i>",
+    "effect": "$[{ name: '高级资源最大等级', type: '+', value: 1 }, { name: '建造速度', type: ' \\cdot ', value: 1.5 }]$",
+    "glyph": "${ 木头: 6 }$"
+  },
+  {
+    "名称": "钻石剑",
+    "icon": "<i class=\"mdi mdi-sword\"></i>",
+    "effect": "$[{ name: '上古传家宝最大等级', type: '+', value: 1 }, { name: '攻击', type: ' \\cdot ', value: 1.35 }, { name: '生命值', type: ' \\cdot ', value: 1.35 }]$",
+    "glyph": "${ 尖刺: 6 }$"
+  },
+  {
+    "名称": "钻石铲",
+    "icon": "<i class=\"mdi mdi-shovel\"></i>",
+    "effect": "$[{ name: '产出', type: ' \\cdot ', value: 1.5 }]$",
+    "glyph": "${ 云: 6 }$"
+  },
+  {
+    "名称": "钻石刷子",
+    "icon": "<i class=\"mdi mdi-brush\"></i>",
+    "effect": "$[{ name: '高级颜色最大等级', type: '+', value: 1 }, { name: '美丽增益', type: ' \\cdot ', value: 2.5 }]$",
+    "glyph": "${ 开花: 6 }$"
+  },
+  {
+    "名称": "钻石柱子",
+    "icon": "<i class=\"mdi mdi-pillar\"></i>",
+    "effect": "$[{ name: '底座尺寸 (B)', type: '+', value: lvl }]$",
+    "glyph": "${ 石头: 6 }$"
+  }
+]

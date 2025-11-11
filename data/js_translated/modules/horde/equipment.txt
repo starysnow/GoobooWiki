@@ -1,1865 +1,1880 @@
 {
-    匕首: {
+    dagger: {
         findZone: 0,
         found: true,
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * 10;
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * 15;
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 4 + 6}
+                {isPositive: true, type: '+', name: '攻击', value: lvl * 5 + 5}
             ];
         },
         激活的卡片(lvl) {
             return [
-                {类型: 'buff', value: 40, 效果: [
-                    {类型: '+', name: '攻击', value: lvl * 5 + 30}
+                {type: 'buff', value: 40, effect: [
+                    {type: '+', name: '攻击', value: lvl * 7 + 28}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: () => 300,
-        图标: 'mdi-knife-military',
+        icon: 'mdi-knife-military',
         activeIcon: 'mdi-knife-military',
-        activeColor: '红色'
+        activeColor: '红色油漆'
     },
-    衬衫: {
+    shirt: {
         findZone: 0,
         found: true,
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * 10;
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * 15;
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 800 + 1200}
+                {isPositive: true, type: '+', name: '生命值', value: lvl * 1000 + 1000}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'heal', value: 0.225, int: 0.01}
+                {type: 'heal', value: 0.225, int: 0.01}
             ];
         },
         activeType: 'combat',
         cooldown: () => 80,
-        图标: 'mdi-tshirt-v',
+        icon: 'mdi-tshirt-v',
         activeIcon: 'mdi-medical-bag',
-        activeColor: '绿色'
+        activeColor: '绿色油漆'
     },
-    守护天使: {
+    guardianAngel: {
         findZone: 5,
         findChance: 1 / buildNum(10, 'K'),
-        消耗(lvl) {
-            return Math.pow(10, lvl - 1) * 100;
+        price(lvl) {
+            return Math.pow(1000, lvl - 1) * 100;
         },
-        上限: 5,
+        cap: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '复活', value: 1}
+                {isPositive: true, type: '+', name: '复活', value: 1}
             ];
         },
         激活的卡片() {
             return [
-                {类型: '恢复所有生命值', value: null}
+                {type: 'reviveAll', value: null}
             ];
         },
         activeType: 'combat',
         cooldown: lvl => SECONDS_PER_HOUR * 8 - lvl * 1800,
-        图标: 'mdi-cross',
+        icon: 'mdi-cross',
         activeIcon: 'mdi-flare',
-        activeColor: '黄色'
+        activeColor: '黄色油漆'
     },
-    一杯牛奶: {
+    milkCup: {
         findZone: 6,
         findChance: 1 / 2000,
-        消耗(lvl) {
-            return Math.pow(4, lvl - 1) * 20;
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * 25;
         },
-        上限: 9,
+        cap: 9,
         stats() {
             return [
-                {isPositive: true, 类型: '*', name: '骨头增益', value: 1.2}
+                {isPositive: true, type: '*', name: '骨头增益', value: 1.2}
             ];
         },
         激活的卡片(lvl) {
             return [
-                {类型: '骨头', value: 2.3 + lvl * 0.15}
+                {type: '骨头', value: 17.9 + lvl * 1.1}
             ];
         },
         activeType: 'utility',
-        cooldown: () => 90,
-        图标: 'mdi-cup',
+        cooldown: () => 900,
+        icon: 'mdi-cup',
         activeIcon: 'mdi-bone',
-        activeColor: 'lighter-灰色'
+        activeColor: 'lighter-grey'
     },
-    星盾: {
+    starShield: {
         findZone: 8,
         findChance: 1 / 4000,
-        消耗(lvl) {
-            return Math.pow(16, getSequence(1, lvl - 1)) * 80;
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * 80;
         },
-        上限: 4,
+        cap: 11,
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '分裂盾', value: lvl + 2}
+                {isPositive: true, type: '+', name: '分裂盾', value: lvl + 9}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'stun', value: 8}
+                {type: 'stun', value: 8}
             ];
         },
         activeType: 'combat',
         cooldown: () => 25,
-        图标: 'mdi-shield-star',
+        icon: 'mdi-shield-star',
         activeIcon: 'mdi-octagram-outline',
-        activeColor: 'blue'
+        activeColor: '蓝色油漆'
     },
-    长剑: {
+    longsword: {
         findZone: 10,
         findChance: 1 / 8000,
-        消耗(lvl) {
-            return Math.pow(4, lvl - 1) * 40;
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * 40;
         },
-        上限: 5,
+        cap: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '暴击率', value: 0.3},
-                {isPositive: true, 类型: '+', name: '暴击伤害', value: 0.25}
+                {isPositive: true, type: '+', name: '暴击率', value: 0.2},
+                {isPositive: true, type: '+', name: '暴击伤害', value: 0.3}
             ];
         },
         激活的卡片(lvl) {
             return [
-                {类型: 'damagePhysic', value: 7.5, str: 0.1, 能以(0)%的效率暴击: 0.1 * lvl}
+                {type: 'damagePhysic', value: 7.5, str: 0.1, canCrit: 0.1 * lvl}
             ];
         },
         activeType: 'combat',
         cooldown: () => 35,
-        图标: 'mdi-sword',
+        icon: 'mdi-sword',
         activeIcon: 'mdi-sword',
-        activeColor: '橙色'
+        activeColor: '橙色油漆'
     },
-    靴子: {
+    boots: {
         findZone: 12,
         findChance: 1 / buildNum(14, 'K'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * 75;
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * 75;
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '先发制人', value: lvl * 0.1 + 2.4}
+                {isPositive: true, type: '+', name: '先发制人', value: lvl * 0.15 + 2.85}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'damageMagic', value: 4.5, int: 0.08},
-                {类型: 'heal', value: 0.03, int: 0.002}
+                {type: 'damageMagic', value: 4.5, int: 0.08},
+                {type: 'heal', value: 0.03, int: 0.002}
             ];
         },
         activeType: 'combat',
         cooldown: () => 16,
-        图标: 'mdi-shoe-cleat',
+        icon: 'mdi-shoe-cleat',
         activeIcon: 'mdi-shoe-cleat',
-        activeColor: '光-blue'
+        activeColor: '浅蓝色油漆'
     },
     三叶草: {
         findZone: 14,
         findChance: 1 / buildNum(20, 'K'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * 100;
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * 100;
         },
-        stats(lvl) {
+        stats(lvl, stacks) {
             return [
-                {isPositive: true, 类型: '*', name: '装备几率', value: lvl * 0.05 + 1.7}
+                {isPositive: true, type: '*', name: '装备几率', value: lvl * 0.05 + getDiminishing(stacks) * 0.05 + 1.05}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'permanentStat', stat: 'hordeItemChance_mult', value: 0.25}
+                {type: 'addStack', value: null}
             ];
         },
         activeType: 'utility',
-        cooldown: () => 7200,
-        图标: 'mdi-clover',
+        cooldown: () => HORDE_STACKING_COOLDOWN,
+        icon: 'mdi-clover',
         activeIcon: 'mdi-clover',
-        activeColor: '光-绿色'
+        activeColor: '浅绿色油漆'
     },
-    肝脏: {
+    liver: {
         findZone: 15,
         findChance: 1 / buildNum(100, 'K'),
-        消耗(lvl) {
-            return Math.pow(4, lvl - 1) * 120;
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * 120;
         },
-        上限: 11,
+        cap: 11,
         stats() {
             return [
-                {isPositive: true, 类型: '*', name: '怪物零件增益', value: 1.2}
+                {isPositive: true, type: '*', name: '怪物零件增益', value: 1.2}
             ];
         },
         激活的卡片(lvl) {
             return [
-                {类型: '怪物零件', value: 9.75 + lvl * 0.25}
+                {type: '怪物零件', value: 97.5 + lvl * 2.5}
             ];
         },
         activeType: 'utility',
-        cooldown: () => 45,
-        图标: 'mdi-stomach',
+        cooldown: () => 1350,
+        icon: 'mdi-stomach',
         activeIcon: 'mdi-stomach',
-        activeColor: '樱桃色'
+        activeColor: 'cherry'
     },
-    火球: {
+    fireOrb: {
         findZone: 16,
         findChance: 1 / buildNum(25, 'K'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * 150;
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * 150;
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 2 + 8},
-                {isPositive: true, 类型: '+', name: '暴击伤害', value: 0.4},
-                {isPositive: false, 类型: '+', name: '魔法伤害转换', value: 0.5}
+                {isPositive: true, type: '+', name: '攻击', value: lvl * 2 + 8},
+                {isPositive: true, type: '+', name: '暴击伤害', value: 0.45},
+                {isPositive: false, type: '+', name: '魔法伤害转换', value: 0.5}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'damageMagic', value: 13.5, int: 0.18},
-                {类型: 'buff', value: 20, 效果: [
-                    {类型: '+', name: '暴击率', value: 0.5}
+                {type: 'damageMagic', value: 13.5, int: 0.18},
+                {type: 'buff', value: 25, effect: [
+                    {type: '+', name: '暴击率', value: 0.3}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: () => 78,
-        图标: 'mdi-fire-circle',
+        icon: 'mdi-fire-circle',
         activeIcon: 'mdi-fire',
-        activeColor: 'deep-橙色'
+        activeColor: '橙红色油漆'
     },
     营火: {
         findZone: 18,
         findChance: 1 / buildNum(35, 'K'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * 200;
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * 200;
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 500 + 1000},
-                {isPositive: true, 类型: '+', name: '恢复', value: 0.04}
+                {isPositive: true, type: '+', name: '生命值', value: lvl * 600 + 900},
+                {isPositive: true, type: '+', name: '恢复', value: 0.04}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'heal', value: 0.65, int: 0.02},
-                {类型: 'buff', value: 210, 效果: [
-                    {类型: '+', name: '恢复', value: 0.15}
+                {type: 'heal', value: 0.65, int: 0.02},
+                {type: 'buff', value: 210, effect: [
+                    {type: '+', name: '恢复', value: 0.15}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: () => 1800,
-        图标: 'mdi-campfire',
+        icon: 'mdi-campfire',
         activeIcon: 'mdi-campfire',
-        activeColor: '橙色-红色'
+        activeColor: '橙色油漆-红色油漆'
     },
     雪花: {
         findZone: 20,
         findChance: 1 / buildNum(45, 'K'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * 300;
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * 300;
         },
         stats(lvl) {
             return [
-                {isPositive: false, 类型: '*', name: '攻击', value: 1 / 1.6},
-                {isPositive: true, 类型: '*', name: '生命值', value: 1.6},
-                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 800 + 6200}
+                {isPositive: false, type: '*', name: '攻击', value: 1 / 1.6},
+                {isPositive: true, type: '*', name: '生命值', value: 1.6},
+                {isPositive: true, type: '+', name: '生命值', value: lvl * 900 + 6100}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'removeAttack', value: 0.4}
+                {type: 'removeAttack', value: 0.4}
             ];
         },
         activeType: 'combat',
         cooldown: () => 1200,
-        图标: 'mdi-snowflake',
+        icon: 'mdi-snowflake',
         activeIcon: 'mdi-snowflake',
-        activeColor: '光-blue'
+        activeColor: '浅蓝色油漆'
     },
-    压迫者: {
+    oppressor: {
         findZone: 22,
         findChance: 1 / buildNum(55, 'K'),
-        消耗(lvl) {
-            return Math.pow(6, lvl - 1) * 360;
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * 360;
         },
-        上限: 5,
+        cap: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '敌人开始冷却时间', value: 0.5}
+                {isPositive: true, type: '+', name: '敌人开始冷却时间', value: 0.5}
             ];
         },
         激活的卡片() {
             return [
-                {类型: '沉默药水', value: 10}
+                {type: 'silence', value: 10}
             ];
         },
         activeType: 'combat',
         cooldown: lvl => 80 - lvl * 5,
-        图标: 'mdi-robot-angry',
+        icon: 'mdi-robot-angry',
         activeIcon: 'mdi-emoticon-devil',
-        activeColor: 'pale-紫色'
+        activeColor: 'pale-紫色油漆'
     },
-    肉盾: {
+    meatShield: {
         findZone: 23,
         findChance: 1 / buildNum(60, 'K'),
-        消耗(lvl) {
-            return Math.pow(3, lvl - 1) * 400;
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * 400;
         },
-        上限: 6,
+        cap: 6,
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '*', name: '受到的物理伤害', value: 1 / (lvl * 0.1 + 1.15)},
-                {isPositive: false, 类型: '+', name: '受到的魔法伤害', value: 0.3},
-                {isPositive: false, 类型: '+', name: '受到的生物伤害', value: 0.3}
+                {isPositive: true, type: '*', name: '受到的物理伤害', value: 1 / (lvl * 0.1 + 1.15)},
+                {isPositive: false, type: '+', name: '受到的魔法伤害', value: 0.3},
+                {isPositive: false, type: '+', name: '受到的生物伤害', value: 0.3}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'buff', value: 5, 效果: [
-                    {类型: '*', name: '受到的物理伤害', value: 0}
+                {type: 'buff', value: 5, effect: [
+                    {type: '*', name: '受到的物理伤害', value: 0}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: () => 54,
-        图标: 'mdi-food-steak',
+        icon: 'mdi-food-steak',
         activeIcon: 'mdi-octagram-outline',
-        activeColor: 'pale-红色'
+        activeColor: 'pale-红色油漆'
     },
-    腐败的眼睛: {
+    corruptEye: {
         findZone: 25,
         findChance: 1 / buildNum(300, 'K'),
-        消耗(lvl) {
-            return Math.pow(10, lvl - 1) * 5000;
+        price(lvl) {
+            return Math.pow(1000, lvl - 1) * 5000;
         },
-        上限: 5,
+        cap: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '小击败 (0) (+(1))时间', value: -20}
+                {isPositive: true, type: '+', name: '稀有战利品时间', value: -20}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: 'damageBio', value: 4.25 + lvl * 0.25, int: 0.1},
-                {类型: '毒药药水', value: 0.2, int: 0.01}
+                {type: 'damageBio', value: 4.25 + lvl * 0.25, int: 0.1},
+                {type: 'poison', value: 0.2, int: 0.01}
             ];
         },
         activeType: 'combat',
         cooldown: () => 30,
-        图标: 'mdi-eye',
+        icon: 'mdi-eye',
         activeIcon: 'mdi-laser-pointer',
-        activeColor: '紫色'
+        activeColor: '紫色油漆'
     },
     巫师帽: {
         findZone: 27,
         findChance: 1 / buildNum(80, 'K'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * 1500;
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * 1500;
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 3 + 29},
-                {isPositive: true, 类型: '+', name: '造成的魔法伤害', value: 0.15}
+                {isPositive: true, type: '+', name: '攻击', value: lvl * 4 + 28},
+                {isPositive: true, type: '+', name: '造成的魔法伤害', value: 0.15}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'damageMagic', value: 25, int: 0.4}
+                {type: 'damageMagic', value: 25, int: 0.4}
             ];
         },
         activeType: 'combat',
         cooldown: () => 125,
-        图标: 'mdi-wizard-hat',
+        icon: 'mdi-wizard-hat',
         activeIcon: 'mdi-shimmer',
-        activeColor: 'deep-紫色'
+        activeColor: 'deep-紫色油漆'
     },
-    红色杖: {
+    redStaff: {
         findZone: 30,
         findChance: 1 / buildNum(100, 'K'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * 2500;
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * 2500;
         },
-        stats(lvl) {
+        stats(lvl, stacks) {
             return [
-                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 3 + 27},
-                {isPositive: true, 类型: '+', name: '先发制人', value: lvl * 0.05 + 0.7}
+                {isPositive: true, type: '+', name: '攻击', value: lvl * 5 + getDiminishing(stacks) * 5 + 5}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'permanentStat', stat: 'hordeAttack_mult', value: 0.1}
+                {type: 'addStack', value: null}
             ];
         },
         activeType: 'utility',
-        cooldown: () => 2700,
-        图标: 'mdi-magic-staff',
+        cooldown: () => HORDE_STACKING_COOLDOWN,
+        icon: 'mdi-magic-staff',
         activeIcon: 'mdi-pentagram',
-        activeColor: '红色'
+        activeColor: '红色油漆'
     },
-    坏了的秒表: {
+    brokenStopwatch: {
         findZone: 31,
         findChance: 1 / buildNum(25, 'K'),
-        消耗(lvl) {
-            return Math.pow(6, lvl - 1) * 3000;
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * 3000;
         },
-        上限: 5,
+        cap: 5,
         stats() {
             return [
-                {isPositive: false, 类型: '*', name: '怀旧之情', value: 0}
+                {isPositive: false, type: '*', name: '怀旧之情', value: 0}
             ];
         },
         激活的卡片(lvl) {
             return [
-                {类型: 'stun', value: 7 + lvl}
+                {type: 'stun', value: 7 + lvl}
             ];
         },
         activeType: 'combat',
         cooldown: () => 60,
-        图标: 'mdi-timer',
+        icon: 'mdi-timer',
         activeIcon: 'mdi-timer',
         activeColor: 'skyblue'
     },
-    大理石柱: {
+    marblePillar: {
         findZone: 33,
         findChance: 1 / buildNum(125, 'K'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * 4000;
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * 4000;
         },
-        上限: 16,
+        cap: 16,
         stats(lvl) {
             return [
-                {isPositive: false, 类型: '*', name: '造成的魔法伤害', value: 0.25},
-                {isPositive: true, 类型: '*', name: '受到的魔法伤害', value: 1 / (lvl * 0.05 + 2.2)},
-                {isPositive: true, 类型: '+', name: '分裂盾', value: 2}
+                {isPositive: false, type: '*', name: '造成的魔法伤害', value: 0.25},
+                {isPositive: true, type: '*', name: '受到的魔法伤害', value: 1 / (lvl * 0.05 + 2.2)},
+                {isPositive: true, type: '+', name: '分裂盾', value: 8}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'maxdamagePhysic', value: 0.05, str: 0.0004},
-                {类型: 'divisionShield', value: 8},
-                {类型: 'stun', value: 3}
+                {type: 'maxdamagePhysic', value: 0.05, str: 0.0004},
+                {type: 'divisionShield', value: 8},
+                {type: 'stun', value: 3}
             ];
         },
         activeType: 'combat',
         cooldown: () => 44,
-        图标: 'mdi-pillar',
+        icon: 'mdi-pillar',
         activeIcon: 'mdi-pillar',
-        activeColor: 'pale-黄色'
+        activeColor: 'pale-黄色油漆'
     },
-    彩虹之杖: {
+    rainbowStaff: {
         findZone: 35,
         findChance: 1 / buildNum(450, 'K'),
-        消耗(lvl) {
-            return Math.pow(3, lvl - 1) * 6000;
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * 6000;
         },
-        上限: 11,
+        cap: 11,
         stats() {
             return [
-                {isPositive: false, 类型: '*', name: '攻击', value: 1 / 1.15},
-                {isPositive: false, 类型: '+', name: '魔法伤害转换', value: 1},
-                {isPositive: false, 类型: '+', name: '生物伤害转换', value: 1},
+                {isPositive: false, type: '*', name: '攻击', value: 1 / 1.15},
+                {isPositive: false, type: '+', name: '魔法伤害转换', value: 1},
+                {isPositive: false, type: '+', name: '生物伤害转换', value: 1},
             ];
         },
         激活的卡片(lvl) {
             return [
-                {类型: 'damagePhysic', value: lvl * 0.05 + 1.75},
-                {类型: 'damageMagic', value: lvl * 0.05 + 1.75},
-                {类型: 'damageBio', value: lvl * 0.05 + 1.75}
+                {type: 'damagePhysic', value: lvl * 0.05 + 1.75},
+                {type: 'damageMagic', value: lvl * 0.05 + 1.75},
+                {type: 'damageBio', value: lvl * 0.05 + 1.75}
             ];
         },
         activeType: 'combat',
         cooldown: () => 25,
-        图标: 'mdi-magic-staff',
+        icon: 'mdi-magic-staff',
         activeIcon: 'mdi-looks',
-        activeColor: '粉色'
+        activeColor: '粉红色油漆'
     },
     毒素: {
         findZone: 37,
         findChance: 1 / buildNum(160, 'K'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * 7000;
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * 7000;
         },
-        上限: 6,
+        cap: 6,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '中毒', value: 0.02},
-                {isPositive: false, 类型: '+', name: '生物伤害转换', value: 0.5}
+                {isPositive: true, type: '+', name: '中毒', value: 0.02},
+                {isPositive: false, type: '+', name: '生物伤害转换', value: 0.5}
             ];
         },
         激活的卡片(lvl) {
             return [
-                {类型: '毒药药水', value: lvl * 0.01 + 0.19, int: 0.01}
+                {type: 'poison', value: lvl * 0.01 + 0.19, int: 0.01}
             ];
         },
         activeType: 'combat',
         cooldown: () => 16,
-        图标: 'mdi-bottle-tonic-skull',
+        icon: 'mdi-bottle-tonic-skull',
         activeIcon: 'mdi-bottle-tonic-skull',
-        activeColor: '光-绿色'
+        activeColor: '浅绿色油漆'
     },
-    净化泉: {
+    cleansingSpring: {
         findZone: 40,
         findChance: 1 / buildNum(200, 'K'),
-        消耗(lvl) {
-            return Math.pow(5, lvl - 1) * buildNum(10, 'K');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(10, 'K');
         },
-        上限: 5,
+        cap: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '眩晕抵抗', value: 1}
+                {isPositive: true, type: '+', name: '状态抗性', value: 1}
             ];
         },
         激活的卡片() {
             return [
-                {类型: '移除眩晕', value: null}
+                {type: 'removeStun', value: null}
             ];
         },
         activeType: 'combat',
-        可以在眩晕时使用: true,
+        usableInStun: true,
         cooldown: lvl => 32 - lvl * 2,
-        图标: 'mdi-waterfall',
+        icon: 'mdi-waterfall',
         activeIcon: 'mdi-water-opacity',
-        activeColor: '青色'
+        activeColor: 'cyan'
     },
-    毒剑: {
+    toxicSword: {
         findZone: 43,
         findChance: 1 / buildNum(275, 'K'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(12, 'K');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(12, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 10 + 130},
-                {isPositive: false, 类型: '*', name: '暴击伤害', value: 0.8}
+                {isPositive: true, type: '+', name: '攻击', value: lvl * 8 + 76},
+                {isPositive: false, type: '*', name: '暴击伤害', value: 0.8}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'damageBio', value: 2.6, int: 0.05},
-                {类型: '毒药药水', value: 0.1, int: 0.005}
+                {type: 'damageBio', value: 2.6, int: 0.05},
+                {type: 'poison', value: 0.1, int: 0.005}
             ];
         },
         activeType: 'combat',
         cooldown: () => 10,
-        图标: 'mdi-sword',
+        icon: 'mdi-sword',
         activeIcon: 'mdi-bottle-tonic-skull',
-        activeColor: '绿色'
+        activeColor: '绿色油漆'
     },
     幸运符: {
         findZone: 45,
         findChance: 1 / buildNum(1.4, 'M'),
-        消耗(lvl) {
-            return Math.pow(10, lvl - 1) * buildNum(15, 'K');
+        price(lvl) {
+            return Math.pow(1000, lvl - 1) * buildNum(15, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: false, 类型: '*', name: '腐败的灵魂增益', value: 1 / 1.5},
-                {isPositive: true, 类型: '+', name: '传家宝几率', value: lvl * 0.001 + 0.004}
+                {isPositive: false, type: '*', name: '腐败的灵魂增益', value: 1 / 1.5},
+                {isPositive: true, type: '+', name: '传家宝几率', value: lvl * 0.001 + 0.004}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'heal', value: 1},
-                {类型: '解毒剂', value: 1},
-                {类型: '移除眩晕', value: null}
+                {type: 'heal', value: 1},
+                {type: 'antidote', value: 1},
+                {type: 'removeStun', value: null}
             ];
         },
         activeType: 'combat',
-        可以在眩晕时使用: true,
+        usableInStun: true,
         cooldown: () => 1200,
-        图标: 'mdi-necklace',
+        icon: 'mdi-necklace',
         activeIcon: 'mdi-flare',
         activeColor: 'lime'
     },
-    邮件破坏者: {
+    mailbreaker: {
         findZone: 46,
         findChance: 1 / buildNum(375, 'K'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(18, 'K');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(18, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 2 + 18},
-                {isPositive: true, 类型: '+', name: '破盾', value: 1}
+                {isPositive: true, type: '+', name: '攻击', value: lvl * 3 + 21},
+                {isPositive: true, type: '+', name: '破盾', value: 1}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'removeDivisionShield', value: 1},
-                {类型: 'stun', value: 15}
+                {type: 'removeDivisionShield', value: 1},
+                {type: 'stun', value: 15}
             ];
         },
         activeType: 'combat',
         cooldown: () => 750,
-        图标: 'mdi-sword',
+        icon: 'mdi-sword',
         activeIcon: 'mdi-circle-off-outline',
-        activeColor: 'pale-blue'
+        activeColor: 'pale-蓝色油漆'
     },
-    击棍: {
+    club: {
         findZone: 47,
         findChance: 1 / buildNum(400, 'K'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(20, 'K');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(20, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 10 + 110},
-                {isPositive: true, 类型: '*', name: '攻击', value: lvl * 0.01 + 1.19},
-                {isPositive: false, 类型: '*', name: '暴击率', value: 0}
+                {isPositive: true, type: '+', name: '攻击', value: lvl * 10 + 110},
+                {isPositive: true, type: '*', name: '攻击', value: 1.2},
+                {isPositive: false, type: '*', name: '暴击率', value: 0},
+                {isPositive: false, type: '*', name: '暴击伤害', value: 0}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'damagePhysic', value: 7.35, str: 0.12}
+                {type: 'damagePhysic', value: 7.35, str: 0.12}
             ];
         },
         activeType: 'combat',
         cooldown: () => 26,
-        图标: 'mdi-mace',
+        icon: 'mdi-mace',
         activeIcon: 'mdi-mace',
-        activeColor: '樱桃色'
+        activeColor: 'cherry'
     },
-    金色杖: {
+    goldenStaff: {
         findZone: 49,
         findChance: 1 / buildNum(500, 'K'),
-        消耗(lvl) {
-            return Math.pow(4, lvl - 1) * buildNum(24, 'K');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(24, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '法术之刃', value: lvl * 0.05 + 0.55},
-                {isPositive: false, 类型: '+', name: '魔法伤害转换', value: 0.5}
+                {isPositive: true, type: '+', name: '法术之刃', value: lvl * 0.05 + 0.55},
+                {isPositive: false, type: '+', name: '魔法伤害转换', value: 0.5}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'damagePhysic', value: 0.8, str: 0.04},
-                {类型: 'damageMagic', value: 3.4, int: 0.08},
+                {type: 'damagePhysic', value: 0.8, str: 0.04},
+                {type: 'damageMagic', value: 3.4, int: 0.08},
             ];
         },
         activeType: 'combat',
         cooldown: () => 10,
-        图标: 'mdi-magic-staff',
+        icon: 'mdi-magic-staff',
         activeIcon: 'mdi-sword',
-        activeColor: '金色'
+        activeColor: '金色油漆'
     },
-    狼牙棒: {
+    mace: {
         findZone: 51,
         findChance: 1 / buildNum(650, 'K'),
-        消耗(lvl) {
-            return Math.pow(4, lvl - 1) * buildNum(28, 'K');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(28, 'K');
         },
-        上限: 5,
+        cap: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '暴击率', value: 0.2},
-                {isPositive: false, 类型: '+', name: '物理伤害转换', value: 2.5},
-                {isPositive: true, 类型: '+', name: '造成的物理伤害', value: 0.15}
+                {isPositive: true, type: '+', name: '暴击率', value: 0.2},
+                {isPositive: false, type: '+', name: '物理伤害转换', value: 2.5},
+                {isPositive: true, type: '+', name: '造成的物理伤害', value: 0.15}
             ];
         },
         激活的卡片(lvl) {
             return [
-                {类型: 'damagePhysic', value: lvl * 0.25 + 4.5, str: 0.1},
-                {类型: 'stun', value: 3}
+                {type: 'damagePhysic', value: lvl * 0.25 + 4.5, str: 0.1},
+                {type: 'stun', value: 3}
             ];
         },
         activeType: 'combat',
         cooldown: () => 18,
-        图标: 'mdi-mace',
+        icon: 'mdi-mace',
         activeIcon: 'mdi-mace',
-        activeColor: '红色'
+        activeColor: '红色油漆'
     },
-    剪刀: {
+    scissors: {
         findZone: 53,
         findChance: 1 / buildNum(850, 'K'),
-        消耗(lvl) {
-            return Math.pow(4, lvl - 1) * buildNum(35, 'K');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(35, 'K');
         },
-        上限: 5,
+        cap: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '切割', value: 0.02},
-                {isPositive: false, 类型: '+', name: '生物伤害转换', value: 0.5}
+                {isPositive: true, type: '+', name: '切割', value: 0.02},
+                {isPositive: false, type: '+', name: '生物伤害转换', value: 0.5}
             ];
         },
         激活的卡片(lvl) {
             return [
-                {类型: 'damagePhysic', value: lvl * 0.2 + 2.3, str: 0.04},
-                {类型: 'maxdamageBio', value: 0.05, int: 0.0004}
+                {type: 'damagePhysic', value: lvl * 0.2 + 2.3, str: 0.04},
+                {type: 'maxdamageBio', value: 0.05, int: 0.0004}
             ];
         },
         activeType: 'combat',
         cooldown: () => 15,
-        图标: 'mdi-content-cut',
+        icon: 'mdi-content-cut',
         activeIcon: 'mdi-content-cut',
-        activeColor: 'blue-灰色'
+        activeColor: '蓝色油漆-grey'
     },
-    猫: {
+    cat: {
         findZone: 55,
         findChance: 1 / buildNum(4.25, 'M'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(45, 'K');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(45, 'K');
         },
         stats() {
             return [
-                {isPositive: false, 类型: '*', name: '生命值', value: 1 / 3},
-                {isPositive: true, 类型: '+', name: '复活', value: 8},
-                {isPositive: true, 类型: '*', name: '恢复', value: 4}
+                {isPositive: false, type: '*', name: '生命值', value: 1 / 3},
+                {isPositive: true, type: '+', name: '复活', value: 8},
+                {isPositive: true, type: '*', name: '恢复', value: 4}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: '骨头', value: 51 + lvl * 3}
+                {type: '骨头', value: 51 + lvl * 3}
             ];
         },
         activeType: 'utility',
         cooldown: () => 6 * SECONDS_PER_HOUR,
-        图标: 'mdi-cat',
+        icon: 'mdi-cat',
         activeIcon: 'mdi-cat',
-        activeColor: 'lighter-灰色'
+        activeColor: 'lighter-grey'
     },
-    健康水果: {
+    healthyFruit: {
         findZone: 57,
         findChance: 1 / buildNum(1.1, 'M'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(55, 'K');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(55, 'K');
         },
         stats() {
             return [
-                {isPositive: false, 类型: '*', name: '暴击率', value: 0.5},
-                {isPositive: true, 类型: '*', name: '受到的生物伤害', value: 1 / 2.5},
-                {isPositive: true, 类型: '+', name: '恢复', value: 0.03}
+                {isPositive: false, type: '*', name: '暴击率', value: 0.5},
+                {isPositive: true, type: '*', name: '受到的生物伤害', value: 1 / 2.5},
+                {isPositive: true, type: '+', name: '恢复', value: 0.03}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: 'heal', value: 0.01 * lvl + 0.44, int: 0.02},
-                {类型: '移除眩晕', value: null},
-                {类型: 'stun', value: 20}
+                {type: 'heal', value: 0.01 * lvl + 0.44, int: 0.02},
+                {type: 'removeStun', value: null},
+                {type: 'stun', value: 20}
             ];
         },
         activeType: 'combat',
-        可以在眩晕时使用: true,
+        usableInStun: true,
         cooldown: () => 220,
-        图标: 'mdi-fruit-cherries',
+        icon: 'mdi-fruit-cherries',
         activeIcon: 'mdi-fruit-cherries',
-        activeColor: '樱桃色'
+        activeColor: 'cherry'
     },
-    死鸟: {
+    deadBird: {
         findZone: 60,
         findChance: 1 / buildNum(1.3, 'M'),
-        消耗(lvl) {
-            return Math.pow(4, lvl - 1) * buildNum(85, 'K');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(85, 'K');
         },
-        上限: 8,
+        cap: 8,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '中毒', value: 0.125},
-                {isPositive: false, 类型: '*', name: '攻击', value: 0.25},
-                {isPositive: true, 类型: '+', name: '造成的生物伤害', value: 0.15}
+                {isPositive: true, type: '+', name: '中毒', value: 0.125},
+                {isPositive: false, type: '*', name: '攻击', value: 0.25},
+                {isPositive: true, type: '+', name: '造成的生物伤害', value: 0.15}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: 'heal', value: 0.14 + lvl * 0.0075, int: 0.008},
-                {类型: 'buff', value: 12, 效果: [
-                    {类型: '*', name: '中毒', value: 2}
+                {type: 'heal', value: 0.14 + lvl * 0.0075, int: 0.008},
+                {type: 'buff', value: 12, effect: [
+                    {type: '*', name: '中毒', value: 2}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: () => 130,
-        图标: 'mdi-bird',
+        icon: 'mdi-bird',
         activeIcon: 'mdi-feather',
         activeColor: 'skyblue'
     },
-    护盾溶解器: {
+    shieldDissolver: {
         findZone: 61,
         findChance: 1 / buildNum(1.4, 'M'),
-        消耗(lvl) {
-            return Math.pow(7, lvl - 1) * buildNum(90, 'K');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(90, 'K');
         },
-        上限: 6,
+        cap: 6,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '破盾', value: 3},
-                {isPositive: false, 类型: '*', name: '生命值', value: 1 / 1.1},
-                {isPositive: false, 类型: '*', name: '分裂盾', value: 0}
+                {isPositive: true, type: '+', name: '破盾', value: 3},
+                {isPositive: false, type: '*', name: '生命值', value: 1 / 1.1},
+                {isPositive: false, type: '*', name: '分裂盾', value: 0}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'removeDivisionShield', value: 0.3}
+                {type: 'removeDivisionShield', value: 0.3}
             ];
         },
         activeType: 'combat',
         cooldown: lvl => 17 - lvl,
-        图标: 'mdi-shield-off',
+        icon: 'mdi-shield-off',
         activeIcon: 'mdi-shield-remove',
-        activeColor: 'deep-橙色'
+        activeColor: '橙红色油漆'
     },
-    安神丸: {
+    calmingPill: {
         findZone: 63,
         findChance: 1 / buildNum(1.5, 'M'),
-        消耗(lvl) {
-            return Math.pow(4, lvl - 1) * buildNum(100, 'K');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(100, 'K');
         },
-        上限: 11,
+        cap: 11,
         stats(lvl) {
             return [
-                {isPositive: true, 类型: 'bonus', name: '腐败', value: -0.09 - lvl * 0.01},
-                {isPositive: true, 类型: '+', name: '怀旧之情', value: 10}
+                {isPositive: true, type: 'bonus', name: '腐败', value: -0.09 - lvl * 0.01},
+                {isPositive: true, type: '+', name: '怀旧之情', value: 10}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'removeAttack', value: 0.25},
-                {类型: 'stun', value: 50}
+                {type: 'removeAttack', value: 0.25},
+                {type: 'stun', value: 50}
             ];
         },
         activeType: 'combat',
         cooldown: () => 3 * SECONDS_PER_HOUR,
-        图标: 'mdi-pill',
+        icon: 'mdi-pill',
         activeIcon: 'mdi-pill',
-        activeColor: 'pale-红色'
+        activeColor: 'pale-红色油漆'
     },
-    洁面液: {
+    cleansingFluid: {
         findZone: 65,
         findChance: 1 / buildNum(7.5, 'M'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(120, 'K');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(120, 'K');
         },
-        上限: 16,
+        cap: 16,
         stats(lvl) {
             return [
-                {isPositive: true, 类型: 'bonus', name: '腐败', value: -0.23 - lvl * 0.02}
+                {isPositive: true, type: 'bonus', name: '腐败', value: -0.23 - lvl * 0.02}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'removeAttack', value: 0.1},
-                {类型: 'heal', value: 0.15, int: 0.007}
+                {type: 'removeAttack', value: 0.1},
+                {type: 'heal', value: 0.15, int: 0.007}
             ];
         },
         activeType: 'combat',
         cooldown: () => 65,
-        图标: 'mdi-bottle-tonic',
+        icon: 'mdi-bottle-tonic',
         activeIcon: 'mdi-bottle-tonic',
-        activeColor: '青色'
+        activeColor: 'cyan'
     },
-    禁忌之剑: {
+    forbiddenSword: {
         findZone: 67,
         findChance: 1 / buildNum(1.8, 'M'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(200, 'K');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(200, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 15 + 210},
-                {isPositive: true, 类型: '*', name: '攻击', value: 1.35},
-                {isPositive: true, 类型: '+', name: '暴击率', value: 0.25},
-                {isPositive: true, 类型: '+', name: '暴击伤害', value: 0.4},
-                {isPositive: false, 类型: '*', name: '腐败', value: 1.15}
+                {isPositive: true, type: '+', name: '攻击', value: lvl * 15 + 210},
+                {isPositive: true, type: '+', name: '暴击率', value: 0.1},
+                {isPositive: true, type: '+', name: '暴击伤害', value: 0.1},
+                {isPositive: false, type: '*', name: '腐败', value: 1.15}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'damagePhysic', value: 6.66, str: 0.0666, int: 0.0666}
+                {type: 'damagePhysic', value: 6.66, str: 0.0666, int: 0.0666}
             ];
         },
         activeType: 'combat',
         cooldown: () => 15,
-        图标: 'mdi-sword',
+        icon: 'mdi-sword',
         activeIcon: 'mdi-sword',
-        activeColor: 'deep-紫色'
+        activeColor: 'deep-紫色油漆'
     },
-    解毒剂: {
+    antidote: {
         findZone: 70,
         findChance: 1 / buildNum(2, 'M'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(250, 'K');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(250, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 600 + 8400},
-                {isPositive: true, 类型: '*', name: '受到的生物伤害', value: 1 / 1.25}
+                {isPositive: true, type: '+', name: '生命值', value: lvl * 750 + 8250},
+                {isPositive: true, type: '*', name: '受到的生物伤害', value: 1 / 1.25}
             ];
         },
         激活的卡片() {
             return [
-                {类型: '解毒剂', value: 1}
+                {type: 'antidote', value: 1}
             ];
         },
         activeType: 'combat',
         cooldown: () => 25,
-        图标: 'mdi-bottle-tonic-plus',
+        icon: 'mdi-bottle-tonic-plus',
         activeIcon: 'mdi-bottle-tonic-plus',
-        activeColor: '光-blue'
+        activeColor: '浅蓝色油漆'
     },
-    腐烂的骨头: {
+    corruptedBone: {
         findZone: 73,
         findChance: 1 / buildNum(2.2, 'M'),
-        消耗(lvl) {
-            return Math.pow(4, lvl - 1) * buildNum(300, 'K');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(300, 'K');
         },
-        上限: 7,
+        cap: 7,
         stats() {
             return [
-                {isPositive: true, 类型: '*', name: '骨头增益', value: 2.25},
-                {isPositive: true, 类型: '*', name: '怪物零件增益', value: 1.2},
-                {isPositive: false, 类型: '*', name: '腐败', value: 1.15}
+                {isPositive: true, type: '*', name: '骨头增益', value: 2.25},
+                {isPositive: true, type: '*', name: '怪物零件增益', value: 1.2},
+                {isPositive: false, type: '*', name: '腐败', value: 1.15}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: '骨头', value: 11.5 + lvl * 0.5}
+                {type: '骨头', value: 11.5 + lvl * 0.5}
             ];
         },
         activeType: 'utility',
         cooldown: () => 270,
-        图标: 'mdi-bone',
+        icon: 'mdi-bone',
         activeIcon: 'mdi-bone',
-        activeColor: '粉色-紫色'
+        activeColor: '粉红色油漆-紫色油漆'
     },
-    瘟疫使者: {
+    plaguebringer: {
         findZone: 75,
         findChance: 1 / buildNum(11, 'M'),
-        消耗(lvl) {
-            return Math.pow(4, lvl - 1) * buildNum(400, 'K');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(400, 'K');
         },
-        上限: 5,
+        cap: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '*', name: '腐败', value: 2}
+                {isPositive: true, type: '*', name: '腐败', value: 2}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'removeAttack', value: 0.8},
-                {类型: '沉默药水', value: 90},
-                {类型: 'buff', value: 300, 效果: [
-                    {类型: '+', name: '暴击率', value: 0.75},
-                    {类型: '+', name: '暴击伤害', value: 3},
-                    {类型: '+', name: '法术之刃', value: 6.5},
-                    {类型: '+', name: '切割', value: 0.2},
-                    {类型: '+', name: '破盾', value: 15},
-                    {类型: '+', name: '眩晕抵抗', value: 15},
-                    {类型: '+', name: '恢复', value: 0.25}
+                {type: 'removeAttack', value: 0.8},
+                {type: 'silence', value: 90},
+                {type: 'buff', value: 300, effect: [
+                    {type: '+', name: '暴击率', value: 0.75},
+                    {type: '+', name: '暴击伤害', value: 3},
+                    {type: '+', name: '法术之刃', value: 6.5},
+                    {type: '+', name: '切割', value: 0.2},
+                    {type: '+', name: '破盾', value: 15},
+                    {type: '+', name: '状态抗性', value: 15},
+                    {type: '+', name: '恢复', value: 0.25}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: lvl => SECONDS_PER_DAY - (lvl - 1) * SECONDS_PER_HOUR,
-        图标: 'mdi-magic-staff',
+        icon: 'mdi-magic-staff',
         activeIcon: 'mdi-flare',
         activeColor: 'black'
     },
-    禁忌之盾: {
+    forbiddenShield: {
         findZone: 77,
         findChance: 1 / buildNum(2.7, 'M'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(500, 'K');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(500, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 750 + 6750},
-                {isPositive: true, 类型: '*', name: '生命值', value: 1.35},
-                {isPositive: true, 类型: '+', name: '复活', value: 1},
-                {isPositive: false, 类型: '*', name: '腐败', value: 1.15}
+                {isPositive: true, type: '+', name: '生命值', value: lvl * 750 + 6750},
+                {isPositive: true, type: '+', name: '复活', value: 1},
+                {isPositive: false, type: '*', name: '腐败', value: 1.15}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'heal', value: 0.75, int: 0.03},
-                {类型: '复活+(0)', value: 1}
+                {type: 'heal', value: 0.75, int: 0.03},
+                {type: 'revive', value: 1}
             ];
         },
         activeType: 'combat',
         cooldown: () => 320,
-        图标: 'mdi-shield',
+        icon: 'mdi-shield',
         activeIcon: 'mdi-shield',
-        activeColor: 'deep-紫色'
+        activeColor: 'deep-紫色油漆'
     },
-    危险之盾: {
+    dangerShield: {
         findZone: 80,
         findChance: 1 / buildNum(3.1, 'M'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(550, 'K');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(550, 'K');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 400 + 4600},
-                {isPositive: true, 类型: '*', name: '受到的物理伤害', value: 1 / 1.2},
-                {isPositive: true, 类型: '+', name: '分裂盾', value: 1}
+                {isPositive: true, type: '+', name: '生命值', value: lvl * 450 + 4550},
+                {isPositive: true, type: '*', name: '受到的物理伤害', value: 1 / 1.2},
+                {isPositive: true, type: '+', name: '分裂盾', value: 1}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'heal', value: 0.04, int: 0.002},
-                {类型: 'removeAttack', value: 0.02},
-                {类型: 'stun', value: 2}
+                {type: 'heal', value: 0.04, int: 0.002},
+                {type: 'removeAttack', value: 0.02},
+                {type: 'stun', value: 2}
             ];
         },
         activeType: 'combat',
         cooldown: () => 22,
-        图标: 'mdi-shield-alert',
+        icon: 'mdi-shield-alert',
         activeIcon: 'mdi-alert-octagram',
         activeColor: 'wooden'
     },
-    禁忌毒素: {
+    forbiddenToxin: {
         findZone: 83,
         findChance: 1 / buildNum(3.5, 'M'),
-        消耗(lvl) {
-            return Math.pow(4, lvl - 1) * buildNum(600, 'K');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(600, 'K');
         },
-        上限: 6,
+        cap: 6,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '中毒', value: 0.05},
-                {isPositive: false, 类型: '*', name: '腐败', value: 1.15}
+                {isPositive: true, type: '+', name: '中毒', value: 0.05},
+                {isPositive: false, type: '*', name: '腐败', value: 1.15}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: '毒药药水', value: lvl * 0.04 + 0.16, int: 0.01}
+                {type: 'poison', value: lvl * 0.04 + 0.16, int: 0.01}
             ];
         },
         activeType: 'combat',
         cooldown: () => 20,
-        图标: 'mdi-bottle-tonic-skull',
+        icon: 'mdi-bottle-tonic-skull',
         activeIcon: 'mdi-bottle-tonic-skull',
-        activeColor: 'deep-紫色'
+        activeColor: 'deep-紫色油漆'
     },
-    发光的眼睛: {
+    glowingEye: {
         findZone: 85,
         findChance: 1 / buildNum(17.5, 'M'),
-        消耗(lvl) {
-            return Math.pow(4, lvl - 1) * buildNum(750, 'K');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(750, 'K');
         },
-        上限: 10,
+        cap: 10,
         stats() {
             return [
-                {isPositive: true, 类型: '*', name: '腐败的灵魂增益', value: 1.05},
-                {isPositive: true, 类型: '*', name: '传家宝几率', value: 1.05},
-                {isPositive: false, 类型: '*', name: '腐败', value: 1.15}
+                {isPositive: true, type: '*', name: '腐败的灵魂增益', value: 1.05},
+                {isPositive: true, type: '*', name: '传家宝几率', value: 1.05},
+                {isPositive: false, type: '*', name: '腐败', value: 1.15}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: 'maxdamageBio', value: 0.12, int: 0.001},
-                {类型: 'damageBio', value: 5 + lvl * 0.3}
+                {type: 'maxdamageBio', value: 0.12, int: 0.001},
+                {type: 'damageBio', value: 5 + lvl * 0.3}
             ];
         },
         activeType: 'combat',
         cooldown: () => 70,
-        图标: 'mdi-eye',
+        icon: 'mdi-eye',
         activeIcon: 'mdi-laser-pointer',
-        activeColor: '粉色'
+        activeColor: '粉红色油漆'
     },
-    实验疫苗: {
+    experimentalVaccine: {
         findZone: 87,
         findChance: 1 / buildNum(7, 'M'),
-        消耗(lvl) {
-            return Math.pow(20, lvl - 1) * buildNum(1, 'M');
+        price(lvl) {
+            return Math.pow(buildNum(1, 'M'), lvl - 1) * buildNum(1, 'M');
         },
-        上限: 3,
+        cap: 3,
         stats() {
             return [
-                {isPositive: false, 类型: '*', name: '攻击', value: 1 / 1.5},
-                {isPositive: false, 类型: '*', name: '生命值', value: 1 / 1.5},
-                {isPositive: true, 类型: '*', name: '腐败', value: 1 / 1.2}
+                {isPositive: false, type: '*', name: '攻击', value: 1 / 1.5},
+                {isPositive: false, type: '*', name: '生命值', value: 1 / 1.5},
+                {isPositive: true, type: '*', name: '腐败', value: 1 / 1.2}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: 'buff', value: lvl * 2 + 14, 效果: [
-                    {类型: '*', name: '攻击', value: 1.5},
-                    {类型: '*', name: '生命值', value: 1.5}
+                {type: 'buff', value: lvl * 2 + 14, effect: [
+                    {type: '*', name: '攻击', value: 1.5},
+                    {type: '*', name: '受到的物理伤害', value: 1 / 1.5},
+                    {type: '*', name: '受到的魔法伤害', value: 1 / 1.5},
+                    {type: '*', name: '受到的生物伤害', value: 1 / 1.5}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: () => 110,
-        图标: 'mdi-needle',
+        icon: 'mdi-needle',
         activeIcon: 'mdi-needle',
-        activeColor: '青色'
+        activeColor: 'cyan'
     },
-    杯子: {
+    glasses: {
         findZone: 90,
         findChance: 1 / buildNum(9, 'M'),
-        消耗(lvl) {
-            return Math.pow(5, lvl - 1) * buildNum(1.25, 'M');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(1.25, 'M');
         },
-        上限: 6,
+        cap: 6,
         stats() {
             return [
-                {isPositive: true, 类型: '*', name: '受到的魔法伤害', value: 1 / 1.75},
-                {isPositive: false, 类型: '+', name: '受到的物理伤害', value: 0.3},
-                {isPositive: false, 类型: '+', name: '受到的生物伤害', value: 0.3}
+                {isPositive: true, type: '*', name: '受到的魔法伤害', value: 1 / 1.75},
+                {isPositive: false, type: '+', name: '受到的物理伤害', value: 0.3},
+                {isPositive: false, type: '+', name: '受到的生物伤害', value: 0.3}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'buff', value: 5, 效果: [
-                    {类型: '*', name: '受到的魔法伤害', value: 0}
+                {type: 'buff', value: 5, effect: [
+                    {type: '*', name: '受到的魔法伤害', value: 0}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: lvl => 90 - lvl * 6,
-        图标: 'mdi-glasses',
+        icon: 'mdi-glasses',
         activeIcon: 'mdi-magnify',
-        activeColor: 'pale-blue'
+        activeColor: 'pale-蓝色油漆'
     },
-    显微镜: {
+    microscope: {
         findZone: 93,
         findChance: 1 / buildNum(12, 'M'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(1.5, 'M');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(1.5, 'M');
         },
-        上限: 6,
+        cap: 6,
         stats() {
             return [
-                {isPositive: true, 类型: '*', name: '受到的生物伤害', value: 1 / 1.75},
-                {isPositive: false, 类型: '+', name: '受到的物理伤害', value: 0.3},
-                {isPositive: false, 类型: '+', name: '受到的魔法伤害', value: 0.3}
+                {isPositive: true, type: '*', name: '受到的生物伤害', value: 1 / 1.75},
+                {isPositive: false, type: '+', name: '受到的物理伤害', value: 0.3},
+                {isPositive: false, type: '+', name: '受到的魔法伤害', value: 0.3}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'buff', value: 5, 效果: [
-                    {类型: '*', name: '受到的生物伤害', value: 0}
+                {type: 'buff', value: 5, effect: [
+                    {type: '*', name: '受到的生物伤害', value: 0}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: lvl => 90 - lvl * 6,
-        图标: 'mdi-microscope',
+        icon: 'mdi-microscope',
         activeIcon: 'mdi-microscope',
-        activeColor: 'teal'
+        activeColor: '青色油漆'
     },
-    熔火之盾: {
+    moltenShield: {
         findZone: 95,
         findChance: 1 / buildNum(60, 'M'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(1.8, 'M');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(1.8, 'M');
         },
-        stats(lvl) {
+        stats(lvl, stacks) {
             return [
-                {isPositive: false, 类型: '*', name: '生命值', value: 1 / 1.3},
-                {isPositive: true, 类型: '+', name: '分裂盾', value: lvl + 14}
+                {isPositive: true, type: '+', name: '生命值', value: lvl * 1000 + getDiminishing(stacks) * 1000 + 1000}
             ];
         },
-        masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'permanentStat', stat: 'hordeHealth_mult', value: 0.15}
+                {type: 'addStack', value: null}
             ];
         },
         activeType: 'utility',
-        cooldown: () => 3300,
-        图标: 'mdi-shield-half-full',
+        cooldown: () => HORDE_STACKING_COOLDOWN,
+        icon: 'mdi-shield-half-full',
         activeIcon: 'mdi-sun-wireless',
-        activeColor: '橙色-红色'
+        activeColor: '橙色油漆-红色油漆'
     },
-    美工刀: {
+    cutter: {
         findZone: 97,
         findChance: 1 / buildNum(16, 'M'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(2.2, 'M');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(2.2, 'M');
         },
         stats() {
             return [
-                {isPositive: false, 类型: '*', name: '攻击', value: 1 / 2.5},
-                {isPositive: true, 类型: '+', name: '切割', value: 0.05},
-                {isPositive: false, 类型: '*', name: '恢复', value: 0.5}
+                {isPositive: false, type: '*', name: '攻击', value: 1 / 2.5},
+                {isPositive: true, type: '+', name: '切割', value: 0.05},
+                {isPositive: false, type: '*', name: '恢复', value: 0.5}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: 'maxdamageBio', value: 0.08, str: 0.0007},
-                {类型: 'damageBio', value: 1.68 + lvl * 0.02, int: 0.03}
+                {type: 'maxdamageBio', value: 0.08, str: 0.0007},
+                {type: 'damageBio', value: 1.68 + lvl * 0.02, int: 0.03}
             ];
         },
         activeType: 'combat',
         cooldown: () => 30,
-        图标: 'mdi-box-cutter',
+        icon: 'mdi-box-cutter',
         activeIcon: 'mdi-box-cutter',
         activeColor: 'wooden'
     },
     书籍: {
         findZone: 100,
         findChance: 1 / buildNum(20, 'M'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(2.75, 'M');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(2.75, 'M');
         },
-        stats() {
+        stats(lvl, stacks) {
             return [
-                {isPositive: false, 类型: '*', name: '攻击', value: 0.5},
-                {isPositive: true, 类型: '*', name: '精通点数增益', value: 1.4}
+                {isPositive: true, type: '*', name: '精通点数增益', value: lvl * 0.03 + getDiminishing(stacks) * 0.03 + 1.03}
             ];
         },
-        masteryBoost: 0.25,
-        激活的卡片(lvl) {
-            return [
-                {类型: 'damageMagic', value: 3.18 + lvl * 0.02},
-                {类型: 'stun', value: 1}
-            ];
-        },
-        activeType: 'combat',
-        cooldown: () => 10,
-        图标: 'mdi-book',
-        activeIcon: 'mdi-book-alert',
-        activeColor: 'indigo'
-    },
-    巧克力牛奶: {
-        findZone: 107,
-        findChance: 1 / buildNum(40, 'M'),
-        消耗(lvl) {
-            return Math.pow(5, lvl - 1) * buildNum(4, 'M');
-        },
-        上限: 11,
-        stats(lvl) {
-            return [
-                {isPositive: true, 类型: '*', name: '骨头增益', value: lvl * 0.01 + 1.29},
-                {isPositive: false, 类型: '*', name: '怪物零件增益', value: 1 / 1.5}
-            ];
-        },
-        masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'permanentStat', stat: '骨头增益_mult', value: 0.18}
+                {type: 'addStack', value: null}
             ];
         },
         activeType: 'utility',
-        cooldown: () => 4200,
-        图标: 'mdi-beer',
-        activeIcon: 'mdi-beer',
-        activeColor: '棕色'
+        cooldown: () => HORDE_STACKING_COOLDOWN,
+        icon: 'mdi-book',
+        activeIcon: 'mdi-book-alert',
+        activeColor: 'indigo'
     },
-    大锤: {
+    chocolateMilk: {
+        findZone: 107,
+        findChance: 1 / buildNum(40, 'M'),
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(4, 'M');
+        },
+        cap: 11,
+        stats(lvl, stacks) {
+            return [
+                {isPositive: true, type: '*', name: '骨头增益', value: lvl * 0.01 + getApproaching(0.01, 0.3, stacks) + 1.09}
+            ];
+        },
+        激活的卡片() {
+            return [
+                {type: 'addStack', value: null}
+            ];
+        },
+        activeType: 'utility',
+        cooldown: () => HORDE_STACKING_COOLDOWN,
+        icon: 'mdi-beer',
+        activeIcon: 'mdi-beer',
+        activeColor: 'brown'
+    },
+    bigHammer: {
         findZone: 114,
         findChance: 1 / buildNum(80, 'M'),
-        消耗(lvl) {
-            return Math.pow(7, lvl - 1) * buildNum(7, 'M');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(7, 'M');
         },
         stats(lvl) {
             return [
-                {isPositive: false, 类型: '*', name: '攻击', value: 1 / 1.25},
-                {isPositive: true, 类型: '+', name: '暴击率', value: 0.15},
-                {isPositive: true, 类型: '+', name: '暴击伤害', value: lvl * 0.02 + 1.08}
+                {isPositive: false, type: '*', name: '攻击', value: 1 / 1.2},
+                {isPositive: true, type: '+', name: '暴击率', value: 0.15},
+                {isPositive: true, type: '+', name: '暴击伤害', value: lvl * 0.02 + 0.68}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'damagePhysic', value: 18.5},
-                {类型: 'stun', value: 8},
-                {类型: '沉默药水', value: 25}
+                {type: 'damagePhysic', value: 18.5},
+                {type: 'stun', value: 8},
+                {type: 'silence', value: 25}
             ];
         },
         activeType: 'combat',
         cooldown: () => 260,
-        图标: 'mdi-hammer',
+        icon: 'mdi-hammer',
         activeIcon: 'mdi-hammer',
-        activeColor: 'pale-blue'
+        activeColor: 'pale-蓝色油漆'
     },
-    古怪的南瓜: {
+    spookyPumpkin: {
         findZone: 121,
         findChance: 1 / buildNum(160, 'M'),
-        消耗(lvl) {
-            return Math.pow(9, lvl - 1) * buildNum(12, 'M');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(12, 'M');
         },
-        上限: 6,
+        cap: 6,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '眩晕抵抗', value: 4},
-                {isPositive: false, 类型: '*', name: '生命值', value: 1 / 1.25},
-                {isPositive: false, 类型: '+', name: '受到的魔法伤害', value: 0.75}
+                {isPositive: true, type: '+', name: '状态抗性', value: 4},
+                {isPositive: false, type: '*', name: '生命值', value: 1 / 1.25},
+                {isPositive: false, type: '+', name: '受到的魔法伤害', value: 0.75}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'heal', value: 0.1, int: 0.005},
-                {类型: '解毒剂', value: 1},
-                {类型: '移除眩晕', value: null}
+                {type: 'heal', value: 0.1, int: 0.005},
+                {type: 'antidote', value: 1},
+                {type: 'removeStun', value: null}
             ];
         },
         activeType: 'combat',
-        可以在眩晕时使用: true,
+        usableInStun: true,
         cooldown: lvl => 53 - 3 * lvl,
-        图标: 'mdi-halloween',
+        icon: 'mdi-halloween',
         activeIcon: 'mdi-pumpkin',
-        activeColor: '橙色'
+        activeColor: '橙色油漆'
     },
-    奇怪的化学物质: {
+    strangeChemical: {
         findZone: 128,
         findChance: 1 / buildNum(320, 'M'),
-        消耗(lvl) {
-            return Math.pow(5, lvl - 1) * buildNum(20, 'M');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(20, 'M');
         },
-        上限: 11,
-        stats(lvl) {
+        cap: 11,
+        stats(lvl, stacks) {
             return [
-                {isPositive: true, 类型: '*', name: '怪物零件增益', value: lvl * 0.01 + 1.29},
-                {isPositive: false, 类型: '*', name: '骨头增益', value: 1 / 4},
+                {isPositive: true, type: '*', name: '怪物零件增益', value: lvl * 0.01 + getApproaching(0.01, 0.3, stacks) + 1.09}
             ];
         },
-        masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'permanentStat', stat: '怪物零件增益_mult', value: 0.225}
+                {type: 'addStack', value: null}
             ];
         },
         activeType: 'utility',
-        cooldown: () => 18 * SECONDS_PER_HOUR,
-        图标: 'mdi-test-tube',
+        cooldown: () => HORDE_STACKING_COOLDOWN,
+        icon: 'mdi-test-tube',
         activeIcon: 'mdi-test-tube',
-        activeColor: '粉色-紫色'
+        activeColor: '粉红色油漆-紫色油漆'
     },
-    禁心之盾: {
+    forbiddenHeartShield: {
         findZone: 135,
         findChance: 1 / buildNum(640, 'M'),
-        消耗(lvl) {
-            return Math.pow(4, lvl - 1) * buildNum(35, 'M');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(35, 'M');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '分裂盾', value: lvl * 2 + 34},
-                {isPositive: true, 类型: '+', name: '眩晕抵抗', value: 12},
-                {isPositive: false, 类型: '*', name: '腐败', value: 1.15}
+                {isPositive: true, type: '+', name: '分裂盾', value: lvl * 2 + 28},
+                {isPositive: true, type: '+', name: '状态抗性', value: 6},
+                {isPositive: false, type: '*', name: '腐败', value: 1.15}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: 'heal', value: 0.12, int: 0.006},
-                {类型: 'divisionShield', value: lvl + 11}
+                {type: 'heal', value: 0.12, int: 0.006},
+                {type: 'divisionShield', value: lvl + 14}
             ];
         },
         activeType: 'combat',
         cooldown: () => 140,
-        图标: 'mdi-heart-half-full',
+        icon: 'mdi-heart-half-full',
         activeIcon: 'mdi-heart-pulse',
-        activeColor: 'deep-紫色'
+        activeColor: 'deep-紫色油漆'
     },
-    云杖: {
+    cloudStaff: {
         findZone: 142,
         findChance: 1 / buildNum(1.2, 'B'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(60, 'M');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(60, 'M');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '先发制人', value: lvl * 0.04 + 1.76},
-                {isPositive: true, 类型: '+', name: '法术之刃', value: lvl * 0.01 + 0.49},
-                {isPositive: true, 类型: '+', name: '分裂盾', value: 2}
+                {isPositive: true, type: '+', name: '先发制人', value: lvl * 0.04 + 1.76},
+                {isPositive: true, type: '+', name: '法术之刃', value: lvl * 0.01 + 0.49},
+                {isPositive: true, type: '+', name: '分裂盾', value: 5}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'damageMagic', value: 3.65, int: 0.11},
-                {类型: 'divisionShield', value: 2}
+                {type: 'damageMagic', value: 3.65, int: 0.11},
+                {type: 'divisionShield', value: 2}
             ];
         },
         activeType: 'combat',
         cooldown: () => 12,
-        图标: 'mdi-magic-staff',
+        icon: 'mdi-magic-staff',
         activeIcon: 'mdi-cloud',
         activeColor: 'skyblue'
     },
-    秘密武器: {
+    secretWeapon: {
         findZone: 149,
         findChance: 1 / buildNum(2.4, 'B'),
-        消耗(lvl) {
-            return Math.pow(8, lvl - 1) * buildNum(110, 'M');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(110, 'M');
         },
-        上限: 21,
+        cap: 21,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '中毒', value: 0.1},
-                {isPositive: true, 类型: '+', name: '切割', value: 0.06},
-                {isPositive: false, 类型: '*', name: '恢复', value: 0},
-                {isPositive: false, 类型: '*', name: '分裂盾', value: 0},
-                {isPositive: false, 类型: '*', name: '复活', value: 0}
+                {isPositive: true, type: '+', name: '中毒', value: 0.1},
+                {isPositive: true, type: '+', name: '切割', value: 0.06},
+                {isPositive: false, type: '*', name: '恢复', value: 0},
+                {isPositive: false, type: '*', name: '分裂盾', value: 0},
+                {isPositive: false, type: '*', name: '复活', value: 0}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: '毒药药水', value: 24, str: 0.25, int: 0.25},
-                {类型: '沉默药水', value: lvl + 29},
-                {类型: 'buff', value: 35, 效果: [
-                    {类型: '+', name: '切割', value: 0.1}
+                {type: 'poison', value: 24, str: 0.25, int: 0.25},
+                {type: 'silence', value: lvl + 29},
+                {type: 'buff', value: 35, effect: [
+                    {type: '+', name: '切割', value: 0.1}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: () => 720,
-        图标: 'mdi-eyedropper',
+        icon: 'mdi-eyedropper',
         activeIcon: 'mdi-virus',
         activeColor: 'lime'
     },
     炸弹: {
         findZone: 156,
         findChance: 1 / buildNum(4.8, 'B'),
-        消耗(lvl) {
-            return Math.pow(5, lvl - 1) * buildNum(175, 'M');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(175, 'M');
         },
-        上限: 11,
+        cap: 11,
         stats() {
             return [
-                {isPositive: true, 类型: '*', name: '攻击', value: 1.5},
-                {isPositive: true, 类型: '*', name: '生命值', value: 1.35},
-                {isPositive: false, 类型: '*', name: '骨头增益', value: 0},
-                {isPositive: false, 类型: '*', name: '怪物零件增益', value: 0}
+                {isPositive: true, type: '*', name: '攻击', value: 1.5},
+                {isPositive: true, type: '*', name: '生命值', value: 1.35},
+                {isPositive: false, type: '*', name: '骨头增益', value: 0},
+                {isPositive: false, type: '*', name: '怪物零件增益', value: 0}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'damageMagic', value: 38, int: 0.75}
+                {type: 'damageMagic', value: 38, int: 0.75}
             ];
         },
         activeType: 'combat',
         cooldown: lvl => 3090 - 90 * lvl,
-        图标: 'mdi-bomb',
+        icon: 'mdi-bomb',
         activeIcon: 'mdi-bomb',
-        activeColor: '红色'
+        activeColor: '红色油漆'
     },
-    吸血杖: {
+    leechingStaff: {
         findZone: 163,
         findChance: 1 / buildNum(10, 'B'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(320, 'M');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(320, 'M');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 3 + 112},
-                {isPositive: true, 类型: '+', name: '恢复', value: 0.03}
+                {isPositive: true, type: '+', name: '攻击', value: lvl * 4 + 116},
+                {isPositive: true, type: '+', name: '恢复', value: 0.03}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'maxdamageBio', value: 0.125},
-                {类型: 'heal', value: 0.125}
+                {type: 'maxdamageBio', value: 0.125},
+                {type: 'heal', value: 0.125}
             ];
         },
         activeType: 'combat',
         cooldown: () => 52,
-        图标: 'mdi-magic-staff',
+        icon: 'mdi-magic-staff',
         activeIcon: 'mdi-swap-horizontal',
-        activeColor: '光-绿色'
+        activeColor: '浅绿色油漆'
     },
-    破碎的宝石: {
+    shatteredGem: {
         findZone: 170,
         findChance: 1 / buildNum(20, 'B'),
-        消耗(lvl) {
-            return Math.pow(10, lvl - 1) * buildNum(550, 'M');
+        price(lvl) {
+            return Math.pow(1000, lvl - 1) * buildNum(550, 'M');
         },
-        stats(lvl) {
+        stats(lvl, stacks) {
             return [
-                {isPositive: false, 类型: '*', name: '生命值', value: 0.5},
-                {isPositive: true, 类型: '+', name: '传家宝几率', value: lvl * 0.001 + 0.009}
+                {isPositive: true, type: '+', name: '传家宝几率', value: lvl * 0.001 + getApproaching(0.001, 0.05, stacks) + 0.004}
             ];
         },
-        masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'permanentStat', stat: '腐败的灵魂增益_mult', value: 0.03}
+                {type: 'addStack', value: null}
             ];
         },
         activeType: 'utility',
-        cooldown: () => 36 * SECONDS_PER_HOUR,
-        图标: 'mdi-rhombus-split',
+        cooldown: () => HORDE_STACKING_COOLDOWN,
+        icon: 'mdi-rhombus-split',
         activeIcon: 'mdi-rhombus',
-        activeColor: '光-blue'
+        activeColor: '浅蓝色油漆'
     },
-    沙漏: {
+    hourglass: {
         findZone: 177,
         findChance: 1 / buildNum(40, 'B'),
-        消耗(lvl) {
-            return Math.pow(4, lvl - 1) * buildNum(975, 'M');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(975, 'M');
         },
-        上限: 11,
+        cap: 11,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '急速', value: 15}
+                {isPositive: true, type: '+', name: '急速', value: 30}
             ];
         },
         激活的卡片(lvl) {
             return [
-                {类型: 'buff', value: 45, 效果: [
-                    {类型: '+', name: '急速', value: 50},
-                    {类型: '+', name: '法术之刃', value: lvl * 0.05 + 1.45}
+                {type: 'buff', value: 45, effect: [
+                    {type: '+', name: '急速', value: 50},
+                    {type: '+', name: '法术之刃', value: lvl * 0.05 + 1.45}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: () => 20 * SECONDS_PER_MINUTE,
-        图标: 'mdi-timer-sand',
+        icon: 'mdi-timer-sand',
         activeIcon: 'mdi-timer-sand-complete',
-        activeColor: 'pale-黄色'
+        activeColor: 'pale-黄色油漆'
     },
-    胶水: {
+    glue: {
         findZone: 184,
         findChance: 1 / buildNum(80, 'B'),
-        消耗(lvl) {
-            return Math.pow(8, lvl - 1) * buildNum(1.75, 'B');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(1.75, 'B');
         },
-        上限: 6,
+        cap: 6,
         stats() {
             return [
-                {isPositive: true, 类型: '*', name: '攻击', value: 1.35},
-                {isPositive: false, 类型: '+', name: '急速', value: -30}
+                {isPositive: true, type: '*', name: '攻击', value: 1.35},
+                {isPositive: false, type: '+', name: '急速', value: -30}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: 'maxdamageBio', value: 0.3, int: 0.0025},
-                {类型: 'damageMagic', value: lvl * 0.5 + 7, int: 0.1}
+                {type: 'maxdamageBio', value: 0.3, int: 0.0025},
+                {type: 'damageMagic', value: lvl * 0.5 + 7, int: 0.1}
             ];
         },
         activeType: 'combat',
         cooldown: () => 40,
-        图标: 'mdi-bottle-tonic',
+        icon: 'mdi-bottle-tonic',
         activeIcon: 'mdi-liquid-spot',
-        activeColor: 'pale-绿色'
+        activeColor: 'pale-绿色油漆'
     },
-    烟花: {
+    firework: {
         findZone: 191,
         findChance: 1 / buildNum(160, 'B'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(3, 'B');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(3, 'B');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 2 + 68},
-                {isPositive: true, 类型: '+', name: '暴击率', value: 0.2},
-                {isPositive: true, 类型: '+', name: '中毒', value: 0.01}
+                {isPositive: true, type: '+', name: '攻击', value: lvl * 2 + 68},
+                {isPositive: true, type: '+', name: '暴击率', value: 0.15},
+                {isPositive: true, type: '+', name: '中毒', value: 0.01}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'damageBio', value: 18, int: 0.35},
-                {类型: '毒药药水', value: 2.75, int: 0.13},
-                {类型: 'buff', value: 15, 效果: [
-                    {类型: '+', name: '暴击伤害', value: 5.75}
+                {type: 'damageBio', value: 18, int: 0.35},
+                {type: 'poison', value: 2.75, int: 0.13},
+                {type: 'buff', value: 60, effect: [
+                    {type: '+', name: '暴击伤害', value: 2.75}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: () => 290,
-        图标: 'mdi-firework',
+        icon: 'mdi-firework',
         activeIcon: 'mdi-firework',
-        activeColor: '粉色-紫色'
+        activeColor: '粉红色油漆-紫色油漆'
     },
-    蝴蝶结: {
+    bowTie: {
         findZone: 198,
         findChance: 1 / buildNum(320, 'B'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(5, 'B');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(5, 'B');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 400 + 8600},
-                {isPositive: true, 类型: '+', name: '分裂盾', value: lvl + 10},
-                {isPositive: false, 类型: '*', name: '恢复', value: 0}
+                {isPositive: true, type: '+', name: '生命值', value: lvl * 550 + 9050},
+                {isPositive: true, type: '+', name: '分裂盾', value: lvl + 29},
+                {isPositive: false, type: '*', name: '恢复', value: 0}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片() {
             return [
-                {类型: 'heal', value: 0.07, int: 0.003},
-                {类型: 'divisionShield', value: 10}
+                {type: 'heal', value: 0.09, int: 0.0035},
+                {type: 'divisionShield', value: 4}
             ];
         },
         activeType: 'combat',
         cooldown: () => 28,
-        图标: 'mdi-bow-tie',
+        icon: 'mdi-bow-tie',
         activeIcon: 'mdi-bow-tie',
         activeColor: 'beige'
     },
-    禁用秒表: {
+    forbiddenStopwatch: {
         findZone: 205,
         findChance: 1 / buildNum(640, 'B'),
-        消耗(lvl) {
-            return Math.pow(6, lvl - 1) * buildNum(8, 'B');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(8, 'B');
         },
-        上限: 6,
+        cap: 6,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '急速', value: 70},
-                {isPositive: false, 类型: '*', name: '腐败', value: 1.15}
+                {isPositive: true, type: '+', name: '急速', value: 70},
+                {isPositive: false, type: '*', name: '腐败', value: 1.15}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: 'stun', value: lvl + 34}
+                {type: 'stun', value: lvl + 34}
             ];
         },
         activeType: 'combat',
         cooldown: () => 360,
-        图标: 'mdi-timer',
+        icon: 'mdi-timer',
         activeIcon: 'mdi-timer',
-        activeColor: '紫色'
+        activeColor: '紫色油漆'
     },
-    神秘加速器: {
+    mysticalAccelerator: {
         findZone: 212,
         findChance: 1 / buildNum(1.25, 'T'),
-        消耗(lvl) {
-            return Math.pow(14, lvl - 1) * buildNum(12.5, 'B');
+        price(lvl) {
+            return Math.pow(1000, lvl - 1) * buildNum(12.5, 'B');
         },
-        上限: 5,
-        stats() {
+        cap: 5,
+        stats(lvl, stacks) {
             return [
-                {isPositive: true, 类型: '*', name: '神秘碎片几率', value: 1.5}
+                {isPositive: true, type: '*', name: '神秘碎片几率', value: lvl * 0.05 + getDiminishing(stacks) * 0.05 + 1.05}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'permanentStat', stat: 'hordeShardChance_mult', value: 0.35}
+                {type: 'addStack', value: null}
             ];
         },
         activeType: 'utility',
-        cooldown: lvl => (19 - lvl) * SECONDS_PER_HOUR,
-        图标: 'mdi-rotate-orbit',
+        cooldown: () => HORDE_STACKING_COOLDOWN,
+        icon: 'mdi-rotate-orbit',
         activeIcon: 'mdi-rotate-orbit',
-        activeColor: 'teal'
+        activeColor: '青色油漆'
     },
-    炽热之杖: {
+    blazingStaff: {
         findZone: 219,
         findChance: 1 / buildNum(2.5, 'T'),
-        消耗(lvl) {
-            return Math.pow(25, lvl - 1) * buildNum(18, 'B');
+        price(lvl) {
+            return Math.pow(1000, lvl - 1) * buildNum(18, 'B');
         },
-        上限: 4,
+        cap: 4,
         stats() {
             return [
-                {isPositive: true, 类型: '*', name: '攻击', value: 2.5},
-                {isPositive: false, 类型: '*', name: '生命值', value: 0.5}
+                {isPositive: true, type: '*', name: '攻击', value: 2.5},
+                {isPositive: false, type: '*', name: '生命值', value: 0.5}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: 'damageMagic', value: lvl * 3 + 25, str: 0.6},
-                {类型: 'buff', value: 12, 效果: [
-                    {类型: '*', name: '攻击', value: 1.4}
+                {type: 'damageMagic', value: lvl * 3 + 25, str: 0.6},
+                {type: 'buff', value: 12, effect: [
+                    {type: '*', name: '攻击', value: 1.4}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: lvl => 85 - lvl * 5,
-        图标: 'mdi-magic-staff',
+        icon: 'mdi-magic-staff',
         activeIcon: 'mdi-fire-alert',
-        activeColor: '橙色'
+        activeColor: '橙色油漆'
     },
-    护盾: {
+    stoneplate: {
+        findZone: 222,
+        findChance: 1 / buildNum(3.5, 'T'),
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(20, 'B');
+        },
+        stats(lvl) {
+            return [
+                {isPositive: true, type: '+', name: '生命值', value: lvl * 1200 + 2.28e4},
+                {isPositive: true, type: '*', name: '生命值', value: 2},
+                {isPositive: false, type: '*', name: '治疗', value: 0.25}
+            ];
+        },
+        masteryBoost: 0.25,
+        激活的卡片() {
+            return [
+                {type: 'divisionShield', value: 20},
+                {type: 'stun', value: 20}
+            ];
+        },
+        activeType: 'combat',
+        cooldown: () => 175,
+        icon: 'mdi-rhombus-split',
+        activeIcon: 'mdi-rhombus-split',
+        activeColor: 'grey'
+    },
+    shield: {
         findZone: 226,
         findChance: 1 / buildNum(5, 'T'),
-        消耗(lvl) {
-            return Math.pow(25, lvl - 1) * buildNum(25, 'B');
+        price(lvl) {
+            return Math.pow(1000, lvl - 1) * buildNum(25, 'B');
         },
-        上限: 4,
+        cap: 4,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '防御', value: 0.004}
+                {isPositive: true, type: '+', name: '防御', value: 0.004}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'buff', value: 8, 效果: [
-                    {类型: '*', name: '受到的物理伤害', value: 0.25},
-                    {类型: '*', name: '受到的魔法伤害', value: 0.25},
-                    {类型: '*', name: '受到的生物伤害', value: 0.25}
+                {type: 'buff', value: 8, effect: [
+                    {type: '*', name: '受到的物理伤害', value: 0.25},
+                    {type: '*', name: '受到的魔法伤害', value: 0.25},
+                    {type: '*', name: '受到的生物伤害', value: 0.25}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: (lvl) => 90 - lvl * 5,
-        图标: 'mdi-shield',
+        icon: 'mdi-shield',
         activeIcon: 'mdi-shield-plus',
-        activeColor: 'pale-blue'
+        activeColor: 'pale-蓝色油漆'
     },
-    护甲: {
+    armor: {
         findZone: 233,
         findChance: 1 / buildNum(10, 'T'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(35, 'B');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(35, 'B');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 400 + buildNum(10.8, 'K')},
-                {isPositive: true, 类型: '+', name: '防御', value: 0.0025}
+                {isPositive: true, type: '+', name: '生命值', value: lvl * 500 + buildNum(12, 'K')},
+                {isPositive: true, type: '+', name: '防御', value: 0.0025}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'divisionShield', value: 20}
+                {type: 'divisionShield', value: 12}
             ];
         },
         activeType: 'combat',
         cooldown: () => 55,
-        图标: 'mdi-tshirt-crew',
+        icon: 'mdi-tshirt-crew',
         activeIcon: 'mdi-shield-half-full',
         activeColor: 'indigo'
     },
-    自然之石: {
+    natureStone: {
         findZone: 240,
         findChance: 1 / buildNum(20, 'T'),
-        消耗(lvl) {
-            return Math.pow(20, lvl - 1) * buildNum(50, 'B');
+        price(lvl) {
+            return Math.pow(1000, lvl - 1) * buildNum(50, 'B');
         },
-        上限: 5,
+        cap: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '恢复', value: 0.01},
-                {isPositive: true, 类型: '+', name: '治疗', value: 0.3}
+                {isPositive: true, type: '+', name: '恢复', value: 0.01},
+                {isPositive: true, type: '+', name: '治疗', value: 0.3}
             ];
         },
         激活的卡片(lvl) {
             return [
-                {类型: 'maxdamageBio', value: 0.15, int: 0.0012},
-                {类型: 'heal', value: lvl * 0.04 + 0.3, int: 0.025}
+                {type: 'maxdamageBio', value: 0.15, int: 0.0012},
+                {type: 'heal', value: lvl * 0.04 + 0.3, int: 0.025}
             ];
         },
         activeType: 'combat',
         cooldown: () => 130,
-        图标: 'mdi-alpha-x-circle',
+        icon: 'mdi-alpha-x-circle',
         activeIcon: 'mdi-heart-circle',
-        activeColor: '光-绿色'
+        activeColor: '浅绿色油漆'
     },
-    常生藤: {
+    evergrowingVine: {
         findZone: 247,
         findChance: 1 / buildNum(40, 'T'),
-        消耗(lvl) {
-            return Math.pow(100, lvl - 1) * buildNum(75, 'B');
+        price(lvl) {
+            return Math.pow(buildNum(1, 'M'), lvl - 1) * buildNum(75, 'B');
         },
-        上限: 3,
+        cap: 3,
         stats() {
             return [
-                {isPositive: true, 类型: '*', name: '生命值', value: 1.5},
-                {isPositive: true, 类型: '+', name: '恢复', value: 0.2},
-                {isPositive: false, 类型: '*', name: '防御', value: 0},
-                {isPositive: false, 类型: '*', name: '分裂盾', value: 0},
-                {isPositive: true, 类型: 'tag', name: '每秒应用 (0) 恢复', value: [0.1]}
+                {isPositive: true, type: '*', name: '生命值', value: 1.5},
+                {isPositive: true, type: '+', name: '恢复', value: 0.2},
+                {isPositive: false, type: '*', name: '防御', value: 0},
+                {isPositive: false, type: '*', name: '分裂盾', value: 0},
+                {isPositive: true, type: 'tag', name: '每秒应用 {0} 恢复', value: [0.1]}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: 'buff', value: lvl * 3 + 21, 效果: [
-                    {类型: '+', name: '治疗', value: 0.25}
+                {type: 'buff', value: lvl * 3 + 21, effect: [
+                    {type: '+', name: '治疗', value: 0.25}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: () => 150,
-        图标: 'mdi-lasso',
+        icon: 'mdi-lasso',
         activeIcon: 'mdi-heart-multiple',
-        activeColor: '绿色'
+        activeColor: '绿色油漆'
     },
     能量饮料: {
         findZone: 254,
         findChance: 1 / buildNum(80, 'T'),
-        消耗(lvl) {
-            return Math.pow(100, lvl - 1) * buildNum(140, 'B');
+        price(lvl) {
+            return Math.pow(buildNum(1, 'M'), lvl - 1) * buildNum(140, 'B');
         },
-        上限: 3,
+        cap: 3,
         stats() {
             return [
-                {isPositive: true, 类型: '*', name: '急速', value: 1.5},
-                {isPositive: false, 类型: '*', name: '暴击伤害', value: 0.5}
+                {isPositive: true, type: '+', name: '急速', value: 60},
+                {isPositive: false, type: '*', name: '暴击伤害', value: 0.5}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: 'buff', value: lvl + 7, 效果: [
-                    {类型: '+', name: '暴击率', value: 0.35},
-                    {类型: '+', name: '暴击伤害', value: 0.8}
+                {type: 'buff', value: lvl + 7, effect: [
+                    {type: '+', name: '暴击率', value: 0.35},
+                    {type: '+', name: '暴击伤害', value: 0.8}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: () => 48,
-        图标: 'mdi-beer',
+        icon: 'mdi-beer',
         activeIcon: 'mdi-lightning-bolt',
-        activeColor: '金色'
+        activeColor: '金色油漆'
     },
-    龙心: {
+    dragonheart: {
         findZone: 261,
         findChance: 1 / buildNum(160, 'T'),
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(225, 'B');
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(225, 'B');
         },
-        上限: 21,
+        cap: 21,
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '恢复', value: lvl * 0.001 + 0.039},
-                {isPositive: true, 类型: '+', name: '防御', value: 0.002}
+                {isPositive: true, type: '+', name: '恢复', value: lvl * 0.001 + 0.039},
+                {isPositive: true, type: '+', name: '防御', value: 0.002}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'buff', value: 14, 效果: [
-                    {类型: '+', name: '防御', value: 0.05}
+                {type: 'buff', value: 14, effect: [
+                    {type: '+', name: '防御', value: 0.05}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: () => 160,
-        图标: 'mdi-heart',
+        icon: 'mdi-heart',
         activeIcon: 'mdi-heart',
-        activeColor: '粉色-紫色'
+        activeColor: '粉红色油漆-紫色油漆'
     },
-    棱镜: {
+    prism: {
         findZone: 268,
         findChance: 1 / buildNum(320, 'T'),
-        消耗(lvl) {
-            return Math.pow(12, lvl - 1) * buildNum(400, 'B');
+        price(lvl) {
+            return Math.pow(1000, lvl - 1) * buildNum(400, 'B');
         },
-        上限: 8,
+        cap: 8,
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '神秘碎片容量', value: lvl}
+                {isPositive: true, type: '+', name: '神秘碎片容量', value: lvl * 2 + 24}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'maxdamageBio', value: 0.3, str: 0.002},
-                {类型: 'damagePhysic', value: 15, str: 0.32},
-                {类型: '毒药药水', value: 1.25, int: 0.06}
+                {type: 'maxdamageBio', value: 0.3, str: 0.002},
+                {type: 'damagePhysic', value: 15, str: 0.32},
+                {type: 'poison', value: 1.25, int: 0.06}
             ];
         },
         activeCost: () => {
@@ -1867,272 +1882,668 @@
         },
         activeType: 'combat',
         cooldown: () => 330,
-        图标: 'mdi-mirror-variant',
+        icon: 'mdi-mirror-variant',
         activeIcon: 'mdi-mirror-variant',
-        activeColor: 'teal'
+        activeColor: '青色油漆'
     },
-    死亡之剑: {
+    deathsword: {
         findZone: 275,
         findChance: 1 / buildNum(640, 'T'),
-        消耗(lvl) {
-            return Math.pow(25, lvl - 1) * buildNum(700, 'B');
+        price(lvl) {
+            return Math.pow(1000, lvl - 1) * buildNum(700, 'B');
         },
-        上限: 5,
+        cap: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '处决', value: 0.06}
+                {isPositive: true, type: '+', name: '处决', value: 0.06}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'buff', value: 5, 效果: [
-                    {类型: '+', name: '切割', value: 0.15}
+                {type: 'buff', value: 5, effect: [
+                    {type: '+', name: '切割', value: 0.15}
                 ]}
             ];
         },
         activeType: 'combat',
         cooldown: (lvl) => 170 - 10 * lvl,
-        图标: 'mdi-sword',
+        icon: 'mdi-sword',
         activeIcon: 'mdi-skull',
-        activeColor: 'darker-灰色'
+        activeColor: 'darker-grey'
     },
-    针: {
+    needle: {
         findZone: 282,
         findChance: 1 / buildNum(1.25, 'Qa'),
-        消耗(lvl) {
-            return Math.pow(25, lvl - 1) * buildNum(1.2, 'T');
+        price(lvl) {
+            return Math.pow(1000, lvl - 1) * buildNum(1.2, 'T');
         },
-        上限: 5,
+        cap: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '处决', value: 0.04},
-                {isPositive: true, 类型: '+', name: '切割', value: 0.01}
+                {isPositive: true, type: '+', name: '处决', value: 0.04},
+                {isPositive: true, type: '+', name: '切割', value: 0.01}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'maxdamageBio', value: 0.45, str: 0.003}
+                {type: 'maxdamageBio', value: 0.45, str: 0.003}
             ];
         },
         activeType: 'combat',
         activeCost: () => {
-            return {生命值: 0.1};
+            return {生命值plus: 0.1};
         },
         cooldown: (lvl) => 275 - 15 * lvl,
-        图标: 'mdi-nail',
+        icon: 'mdi-nail',
         activeIcon: 'mdi-nail',
-        activeColor: 'pale-紫色'
+        activeColor: 'pale-紫色油漆'
     },
-    矿山: {
+    矿井: {
         findZone: 289,
         findChance: 1 / buildNum(2.5, 'Qa'),
-        消耗(lvl) {
-            return Math.pow(8, lvl - 1) * buildNum(2, 'T');
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(2, 'T');
         },
-        上限: 9,
+        cap: 9,
         stats() {
             return [
-                {isPositive: false, 类型: '*', name: '攻击', value: 1 / 1.25},
-                {isPositive: true, 类型: '+', name: '暴击率', value: 0.5},
-                {isPositive: true, 类型: '+', name: '急速', value: 20},
-                {isPositive: true, 类型: 'tag', name: '伤害性活动可以在 (0) 效率下暴击', value: [0.3]}
+                {isPositive: false, type: '*', name: '攻击', value: 1 / 1.25},
+                {isPositive: true, type: '+', name: '暴击率', value: 0.2},
+                {isPositive: true, type: '+', name: '急速', value: 20},
+                {isPositive: true, type: 'tag', name: '伤害性活动可以在 {0} 效率下暴击', value: [0.4]}
             ];
         },
         masteryBoost: 0.25,
         激活的卡片(lvl) {
             return [
-                {类型: 'damagePhysic', value: lvl * 0.25 + 4.25, str: 0.13, 能以(0)%的效率暴击: 1}
+                {type: 'damagePhysic', value: lvl * 0.25 + 4.25, str: 0.13, canCrit: 1}
             ];
         },
         activeType: 'combat',
         cooldown: () => 42,
-        图标: 'mdi-mine',
+        icon: 'mdi-mine',
         activeIcon: 'mdi-mine',
-        activeColor: 'deep-橙色'
+        activeColor: '橙红色油漆'
     },
-    欢乐面具: {
+    maskOfJoy: {
         findZone: 296,
         findChance: 1 / buildNum(5, 'Qa'),
-        消耗(lvl) {
-            return Math.pow(25, lvl - 1) * buildNum(3.3, 'T');
+        price(lvl) {
+            return Math.pow(1000, lvl - 1) * buildNum(3.3, 'T');
         },
-        上限: 5,
+        cap: 5,
         stats() {
             return [
-                {isPositive: true, 类型: '+', name: '暴击率', value: 0.15},
-                {isPositive: true, 类型: '+', name: '治疗', value: 0.1},
-                {isPositive: true, 类型: 'tag', name: '治疗活动可以以 (0) 的效率暴击', value: [0.1]}
+                {isPositive: true, type: '+', name: '暴击率', value: 0.3},
+                {isPositive: true, type: '+', name: '治疗', value: 0.1},
+                {isPositive: true, type: 'tag', name: '治疗活动可以以 {0} 的效率暴击', value: [0.25]}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'heal', value: 0.1, int: 0.005, 能以(0)%的效率暴击: 0.4}
+                {type: 'heal', value: 0.1, int: 0.005, canCrit: 0.6}
             ];
         },
         activeType: 'combat',
         cooldown: (lvl) => 275 - 15 * lvl,
-        图标: 'mdi-drama-masks',
+        icon: 'mdi-drama-masks',
         activeIcon: 'mdi-drama-masks',
-        activeColor: 'pale-绿色'
+        activeColor: 'pale-绿色油漆'
     },
-    士兵: {
-        findZone: 50,
-        findChance: 1 / buildNum(10, 'M'),
-        解锁: '棋具',
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(1, 'M');
+    doubleEdgedSword: {
+        findZone: 307,
+        findChance: 1 / buildNum(12, 'Qa'),
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(10, 'T');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 10 + 90},
-                {isPositive: true, 类型: '+', name: '先发制人', value: 1.25}
+                {isPositive: true, type: '+', name: '法术之刃', value: lvl * 0.05 + 0.7},
+                {isPositive: true, type: 'tag', name: '战斗活动触发法术之刃 {0} 次', value: [1]}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'damagePhysic', value: 2.7, str: 0.08}
+                {type: 'damageMagic', value: 4.4, int: 0.15}
             ];
         },
         activeType: 'combat',
-        cooldown: () => 5,
-        图标: 'mdi-chess-pawn',
-        activeIcon: 'mdi-chess-pawn',
-        activeColor: 'beige'
+        cooldown: () => 11,
+        icon: 'mdi-sword',
+        activeIcon: 'mdi-sword',
+        activeColor: 'babypink'
     },
-    骑士: {
-        findZone: 80,
-        findChance: 1 / buildNum(100, 'M'),
-        解锁: '棋具',
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(4, 'M');
+    critCore: {
+        findZone: 318,
+        findChance: 1 / buildNum(30, 'Qa'),
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(75, 'T');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '法术之刃', value: lvl * 0.1 + 0.4},
-                {isPositive: true, 类型: '+', name: '分裂盾', value: 7}
+                {isPositive: false, type: '*', name: '暴击率', value: 0.5},
+                {isPositive: true, type: '+', name: '暴击伤害', value: lvl * 0.05 + 0.45},
+                {isPositive: true, type: 'tag', name: '获得 +{0}* 暴击几率，当你的常规攻击不产生暴击时。这个效果可以叠加，但是当你暴击时重置', value: [0.2]}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'damageMagic', value: 4.15, int: 0.1},
-                {类型: 'stun', value: 2}
+                {type: 'buff', value: 8, effect: [
+                    {type: 'bonus', name: '暴击率', value: 1}
+                ]}
             ];
         },
         activeType: 'combat',
-        cooldown: () => 12,
-        图标: 'mdi-chess-knight',
-        activeIcon: 'mdi-chess-knight',
-        activeColor: '橙色'
+        cooldown: () => 156,
+        icon: 'mdi-atom-variant',
+        activeIcon: 'mdi-motion',
+        activeColor: '橙红色油漆'
     },
-    主教: {
-        findZone: 110,
-        findChance: 1 / buildNum(1, 'B'),
-        解锁: '棋具',
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(16, 'M');
+    heavyGauntlet: {
+        findZone: 329,
+        findChance: 1 / buildNum(75, 'Qa'),
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(500, 'T');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 500 + 7000},
-                {isPositive: true, 类型: '+', name: '中毒', value: 0.01},
-                {isPositive: true, 类型: '+', name: '切割', value: 0.01}
+                {isPositive: true, type: '+', name: '先发制人', value: lvl * 0.2 + 3.8},
+                {isPositive: true, type: 'tag', name: '第一击也会眩晕 {0}', value: [2]}
             ];
         },
         激活的卡片() {
             return [
-                {类型: 'maxdamageBio', value: 0.15, str: 0.0012},
-                {类型: '毒药药水', value: 0.2, int: 0.01}
+                {type: 'damageMagic', value: 17.5, int: 0.7},
+                {type: 'stun', value: 18}
             ];
         },
         activeType: 'combat',
-        cooldown: () => 39,
-        图标: 'mdi-chess-bishop',
-        activeIcon: 'mdi-chess-bishop',
-        activeColor: '绿色'
-    },
-    骗子: {
-        findZone: 140,
-        findChance: 1 / buildNum(10, 'B'),
-        解锁: '棋具',
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(64, 'M');
-        },
-        stats(lvl) {
-            return [
-                {isPositive: true, 类型: '+', name: '暴击率', value: 0.05},
-                {isPositive: true, 类型: '+', name: '暴击伤害', value: lvl * 0.02 + 0.58}
-            ];
-        },
-        激活的卡片() {
-            return [
-                {类型: 'removeAttack', value: 0.12},
-                {类型: 'stun', value: 10}
-            ];
-        },
-        activeType: 'combat',
-        cooldown: () => 64,
-        图标: 'mdi-chess-rook',
-        activeIcon: 'mdi-chess-rook',
-        activeColor: '棕色'
-    },
-    女王: {
-        findZone: 170,
-        findChance: 1 / buildNum(100, 'B'),
-        解锁: '棋具',
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(256, 'M');
-        },
-        stats(lvl) {
-            return [
-                {isPositive: true, 类型: '+', name: '攻击', value: lvl * 2 + 28},
-                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 200 + 2800},
-                {isPositive: true, 类型: '+', name: '先发制人', value: 0.6},
-                {isPositive: true, 类型: '+', name: '中毒', value: 0.005},
-                {isPositive: false, 类型: '+', name: '魔法伤害转换', value: 0.4},
-                {isPositive: false, 类型: '+', name: '生物伤害转换', value: 0.4}
-            ];
-        },
-        激活的卡片() {
-            return [
-                {类型: 'damagePhysic', value: 3.4},
-                {类型: 'damageMagic', value: 3.4},
-                {类型: 'damageBio', value: 3.4},
-                {类型: '毒药药水', value: 0.25},
-                {类型: 'heal', value: 0.1},
-                {类型: 'stun', value: 4}
-            ];
-        },
-        activeType: 'combat',
-        cooldown: () => 70,
-        图标: 'mdi-chess-queen',
-        activeIcon: 'mdi-chess-queen',
+        cooldown: () => 260,
+        icon: 'mdi-hand-back-left',
+        activeIcon: 'mdi-alert-octagram-outline',
         activeColor: 'indigo'
     },
-    国王: {
-        findZone: 200,
-        findChance: 1 / buildNum(1, 'T'),
-        解锁: '棋具',
-        消耗(lvl) {
-            return Math.pow(2, lvl - 1) * buildNum(1.024, 'B');
+    dumbbell: {
+        findZone: 340,
+        findChance: 1 / buildNum(180, 'Qa'),
+        price(lvl) {
+            return Math.pow(1000, lvl - 1) * buildNum(3.2, 'Qa');
+        },
+        cap: 5,
+        stats() {
+            return [
+                {isPositive: true, type: '+', name: '力量', value: 4}
+            ];
+        },
+        激活的卡片() {
+            return [
+                {type: 'buff', value: 60, effect: [
+                    {type: '+', name: '力量', value: 10}
+                ]}
+            ];
+        },
+        activeType: 'combat',
+        cooldown: lvl => 375 - lvl * 15,
+        icon: 'mdi-dumbbell',
+        activeIcon: 'mdi-dumbbell',
+        activeColor: '金色油漆'
+    },
+    essenceExtractor: {
+        findZone: 351,
+        findChance: 1 / buildNum(1, 'Qa'),
+        cap: 1,
+        stats() {
+            return [
+                {isPositive: true, type: 'text', name: 'hordeLootElementalEssence', value: true},
+                {isPositive: false, type: '*', name: '传家宝几率', value: 0},
+                {isPositive: false, type: '*', name: '腐败', value: 1.15}
+            ];
+        },
+        cooldown: () => 999999999,
+        icon: 'mdi-eyedropper',
+    },
+    spellbook: {
+        findZone: 362,
+        findChance: 1 / buildNum(1.2, 'Qi'),
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(160, 'Qa');
         },
         stats(lvl) {
             return [
-                {isPositive: true, 类型: '+', name: '生命值', value: lvl * 2000 + 4000},
-                {isPositive: true, 类型: '+', name: '复活', value: 1}
+                {isPositive: true, type: '+', name: '法术之刃', value: lvl * 0.05 + 0.45},
+                {isPositive: true, type: '+', name: '智力', value: 4}
             ];
         },
         激活的卡片(lvl) {
             return [
-                {类型: 'heal', value: 1},
-                {类型: '解毒剂', value: 1},
-                {类型: '复活+(0)', value: 1},
-                {类型: 'stun', value: lvl + 24}
+                {type: 'damageMagic', value: 3.5, int: 0.25},
+                {type: 'buff', value: 2, effect: [
+                    {type: '+', name: '法术之刃', value: lvl * 0.2 + 1.8}
+                ]}
+            ];
+        },
+        activeType: 'combat',
+        cooldown: () => 17,
+        icon: 'mdi-book-edit',
+        activeIcon: 'mdi-book-open-variant',
+        activeColor: 'dark-蓝色油漆'
+    },
+    forbiddenScissors: {
+        findZone: 373,
+        findChance: 1 / buildNum(3, 'Qi'),
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(1.1, 'Qi');
+        },
+        stats() {
+            return [
+                {isPositive: true, type: '*', name: '腐烂的肉体增益', value: 1.5},
+                {isPositive: false, type: '*', name: '腐败', value: 1.15}
+            ];
+        },
+        masteryBoost: 0.25,
+        激活的卡片(lvl) {
+            return [
+                {type: '怪物零件', value: 245 + lvl * 5}
+            ];
+        },
+        activeType: 'utility',
+        cooldown: () => SECONDS_PER_HOUR,
+        icon: 'mdi-content-cut',
+        activeIcon: 'mdi-scissors-cutting',
+        activeColor: 'deep-紫色油漆'
+    },
+    basicSpear: {
+        findZone: 384,
+        findChance: 1 / buildNum(7.5, 'Qi'),
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(7.75, 'Qi');
+        },
+        stats(lvl) {
+            return [
+                {isPositive: true, type: '+', name: '攻击', value: lvl * 3 + 97},
+                {isPositive: true, type: '+', name: '生命值', value: lvl * 600 + 1.94e4},
+            ];
+        },
+        激活的卡片() {
+            return [
+                {type: 'damagePhysic', value: 6.8, str: 0.55},
+                {type: 'damageMagic', value: 0.5, int: 0.65},
+                {type: 'heal', value: 0.08, int: 0.004},
+            ];
+        },
+        activeType: 'combat',
+        cooldown: () => 38,
+        icon: 'mdi-spear',
+        activeIcon: 'mdi-spear',
+        activeColor: '绿色油漆'
+    },
+    cursedEye: {
+        findZone: 395,
+        findChance: 1 / buildNum(18, 'Qi'),
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(55, 'Qi');
+        },
+        stats() {
+            return [
+                {isPositive: true, type: '+', name: '稀有战利品时间', value: -40},
+                {isPositive: false, type: '*', name: '腐败', value: 1.15}
+            ];
+        },
+        masteryBoost: 0.25,
+        激活的卡片(lvl) {
+            return [
+                {type: 'maxdamageBio', value: 0.1, int: 0.001},
+                {type: 'damageBio', value: 2 + lvl * 0.25}
+            ];
+        },
+        activeType: 'combat',
+        cooldown: () => 44,
+        icon: 'mdi-eye-settings',
+        activeIcon: 'mdi-laser-pointer',
+        activeColor: 'deep-紫色油漆'
+    },
+    blessedSword: {
+        findZone: 350,
+        findChance: 1 / buildNum(5, 'Qi'),
+        解锁: '祝福的剑装备',
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(25, 'Qa');
+        },
+        stats(lvl) {
+            return [
+                {isPositive: true, type: '+', name: '攻击', value: lvl * 5 + 95},
+                {isPositive: true, type: 'bonus', name: '腐败', value: -0.2}
+            ];
+        },
+        激活的卡片() {
+            return [
+                {type: 'damagePhysic', value: 20, str: 1.45},
+                {type: 'buff', value: 120, effect: [
+                    {type: '*', name: '攻击', value: 1.25}
+                ]}
+            ];
+        },
+        activeType: 'combat',
+        cooldown: () => 300,
+        icon: 'mdi-sword',
+        activeIcon: 'mdi-sword',
+        activeColor: 'pale-黄色油漆'
+    },
+    blessedArmor: {
+        findZone: 370,
+        findChance: 1 / buildNum(25, 'Qi'),
+        解锁: '祝福的护甲装备',
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(1, 'Qi');
+        },
+        stats(lvl) {
+            return [
+                {isPositive: true, type: '+', name: '生命值', value: lvl * 1000 + 1.9e4},
+                {isPositive: true, type: 'bonus', name: '腐败', value: -0.2}
+            ];
+        },
+        激活的卡片() {
+            return [
+                {type: 'heal', value: 0.15, int: 0.008},
+                {type: 'buff', value: 40, effect: [
+                    {type: '*', name: '受到的物理伤害', value: 0.8},
+                    {type: '*', name: '受到的魔法伤害', value: 0.8},
+                    {type: '*', name: '受到的生物伤害', value: 0.8}
+                ]}
+            ];
+        },
+        activeType: 'combat',
+        cooldown: () => 90,
+        icon: 'mdi-tshirt-v',
+        activeIcon: 'mdi-medical-bag',
+        activeColor: 'pale-黄色油漆'
+    },
+    blessedBow: {
+        findZone: 390,
+        findChance: 1 / buildNum(175, 'Qi'),
+        解锁: '祝福的弓装备',
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(20, 'Qi');
+        },
+        stats(lvl) {
+            return [
+                {isPositive: true, type: '+', name: '先发制人', value: lvl * 0.15 + 5.85},
+                {isPositive: true, type: 'bonus', name: '腐败', value: -0.2}
+            ];
+        },
+        激活的卡片() {
+            return [
+                {type: 'damageMagic', value: 5.25, int: 0.1},
+                {type: 'heal', value: 0.02, int: 0.001}
+            ];
+        },
+        activeType: 'combat',
+        cooldown: () => 12,
+        icon: 'mdi-bow-arrow',
+        activeIcon: 'mdi-bow-arrow',
+        activeColor: 'pale-黄色油漆'
+    },
+    blessedFlame: {
+        findZone: 410,
+        findChance: 1 / buildNum(1, 'Sx'),
+        解锁: '祝福的火装备',
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(400, 'Qi');
+        },
+        cap: 20,
+        stats() {
+            return [
+                {isPositive: true, type: '+', name: '恢复', value: 0.06},
+                {isPositive: true, type: 'bonus', name: '腐败', value: -0.2}
+            ];
+        },
+        激活的卡片(lvl) {
+            return [
+                {type: 'heal', value: lvl * 0.04, int: 0.01},
+                {type: 'buff', value: 200, effect: [
+                    {type: '+', name: '恢复', value: 0.25}
+                ]}
+            ];
+        },
+        activeType: 'combat',
+        cooldown: () => 480,
+        icon: 'mdi-campfire',
+        activeIcon: 'mdi-campfire',
+        activeColor: 'pale-黄色油漆'
+    },
+    blessedWater: {
+        findZone: 430,
+        findChance: 1 / buildNum(6, 'Sx'),
+        解锁: '祝福的水装备',
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(8, 'Sx');
+        },
+        cap: 21,
+        stats() {
+            return [
+                {isPositive: true, type: '+', name: '中毒', value: 0.025},
+                {isPositive: true, type: 'bonus', name: '腐败', value: -0.2}
+            ];
+        },
+        激活的卡片(lvl) {
+            return [
+                {type: 'poison', value: lvl * 0.025 + 0.475, int: 0.03}
+            ];
+        },
+        activeType: 'combat',
+        cooldown: () => 50,
+        icon: 'mdi-bottle-tonic',
+        activeIcon: 'mdi-bottle-tonic',
+        activeColor: 'pale-黄色油漆'
+    },
+    blessedShield: {
+        findZone: 450,
+        findChance: 1 / buildNum(35, 'Sx'),
+        解锁: '祝福的盾装备',
+        price(lvl) {
+            return Math.pow(100, lvl - 1) * buildNum(150, 'Sx');
+        },
+        cap: 11,
+        stats(lvl) {
+            return [
+                {isPositive: true, type: '+', name: '分裂盾', value: lvl + 9},
+                {isPositive: true, type: 'bonus', name: '腐败', value: -0.2}
+            ];
+        },
+        激活的卡片(lvl) {
+            return [
+                {type: 'divisionShield', value: lvl + 9},
+                {type: 'stun', value: 4}
+            ];
+        },
+        activeType: 'combat',
+        cooldown: () => 55,
+        icon: 'mdi-shield-star',
+        activeIcon: 'mdi-octagram-outline',
+        activeColor: 'pale-黄色油漆'
+    },
+    pawn: {
+        findZone: 100,
+        findChance: 1 / buildNum(10, 'M'),
+        解锁: '象棋装备',
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(1, 'M');
+        },
+        stats(lvl) {
+            return [
+                {isPositive: true, type: '+', name: '攻击', value: lvl * 6 + 34},
+                {isPositive: true, type: '+', name: '先发制人', value: 1.25}
+            ];
+        },
+        激活的卡片() {
+            return [
+                {type: 'damagePhysic', value: 2.7, str: 0.08}
+            ];
+        },
+        activeType: 'combat',
+        cooldown: () => 5,
+        icon: 'mdi-chess-pawn',
+        activeIcon: 'mdi-chess-pawn',
+        activeColor: 'beige'
+    },
+    knight: {
+        findZone: 150,
+        findChance: 1 / buildNum(100, 'M'),
+        解锁: '象棋装备',
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(4, 'M');
+        },
+        stats(lvl) {
+            return [
+                {isPositive: true, type: '+', name: '法术之刃', value: lvl * 0.1 + 0.4},
+                {isPositive: true, type: '+', name: '分裂盾', value: 15}
+            ];
+        },
+        激活的卡片() {
+            return [
+                {type: 'damageMagic', value: 4.15, int: 0.1},
+                {type: 'stun', value: 2}
+            ];
+        },
+        activeType: 'combat',
+        cooldown: () => 12,
+        icon: 'mdi-chess-knight',
+        activeIcon: 'mdi-chess-knight',
+        activeColor: '橙色油漆'
+    },
+    bishop: {
+        findZone: 200,
+        findChance: 1 / buildNum(1, 'B'),
+        解锁: '象棋装备',
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(16, 'M');
+        },
+        stats(lvl) {
+            return [
+                {isPositive: true, type: '+', name: '生命值', value: lvl * 700 + 7000},
+                {isPositive: true, type: '+', name: '中毒', value: 0.01},
+                {isPositive: true, type: '+', name: '切割', value: 0.01}
+            ];
+        },
+        激活的卡片() {
+            return [
+                {type: 'maxdamageBio', value: 0.15, str: 0.0012},
+                {type: 'poison', value: 0.2, int: 0.01}
+            ];
+        },
+        activeType: 'combat',
+        cooldown: () => 39,
+        icon: 'mdi-chess-bishop',
+        activeIcon: 'mdi-chess-bishop',
+        activeColor: '绿色油漆'
+    },
+    rook: {
+        findZone: 250,
+        findChance: 1 / buildNum(10, 'B'),
+        解锁: '象棋装备',
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(64, 'M');
+        },
+        stats(lvl) {
+            return [
+                {isPositive: true, type: '+', name: '暴击率', value: 0.05},
+                {isPositive: true, type: '+', name: '暴击伤害', value: lvl * 0.01 + 0.29},
+                {isPositive: true, type: 'tag', name: '暴击有5%的几率击晕 {0}', value: [2]},
+            ];
+        },
+        激活的卡片() {
+            return [
+                {type: 'stun', value: 10, canCrit: 0.2}
+            ];
+        },
+        activeType: 'combat',
+        cooldown: () => 84,
+        icon: 'mdi-chess-rook',
+        activeIcon: 'mdi-chess-rook',
+        activeColor: 'brown'
+    },
+    queen: {
+        findZone: 300,
+        findChance: 1 / buildNum(100, 'B'),
+        解锁: '象棋装备',
+        price(lvl) {
+            return Math.pow(10, lvl - 1) * buildNum(256, 'M');
+        },
+        stats(lvl, stacks) {
+            let stats = [
+                {isPositive: true, type: '+', name: '攻击', value: lvl * 2 + getDiminishing(Math.floor((stacks + 3) / 4)) * 2 + 2},
+                {isPositive: true, type: '+', name: '生命值', value: lvl * 200 + getDiminishing(Math.floor((stacks + 2) / 4)) * 200 + 200},
+            ];
+            if (stacks >= 3) {
+                stats.push({isPositive: true, type: '+', name: '恢复', value: getDiminishing(Math.floor((stacks + 9) / 12)) * 0.0017});
+            }
+            if (stacks >= 4) {
+                stats.push({isPositive: true, type: '+', name: '暴击率', value: getDiminishing(Math.floor((stacks + 8) / 12)) * 0.02});
+            }
+            if (stacks >= 7) {
+                stats.push({isPositive: true, type: '+', name: '先发制人', value: getDiminishing(Math.floor((stacks + 5) / 12)) * 0.23});
+            }
+            if (stacks >= 8) {
+                stats.push({isPositive: true, type: '+', name: '中毒', value: getDiminishing(Math.floor((stacks + 4) / 12)) * 0.00013});
+            }
+            if (stacks >= 11) {
+                stats.push({isPositive: true, type: '*', name: '骨头增益', value: getDiminishing(Math.floor((stacks + 1) / 12)) * 0.014 + 1});
+            }
+            if (stacks >= 12) {
+                stats.push({isPositive: true, type: '+', name: '防御', value: getApproaching(0.001, 0.005, Math.floor((stacks + 48) / 60))});
+            }
+            if (stacks >= 24) {
+                stats.push({isPositive: true, type: '+', name: '暴击伤害', value: getApproaching(0.18, 0.9, Math.floor((stacks + 36) / 60))});
+            }
+            if (stacks >= 36) {
+                stats.push({isPositive: true, type: '+', name: '法术之刃', value: getApproaching(0.22, 1.1, Math.floor((stacks + 24) / 60))});
+            }
+            if (stacks >= 48) {
+                stats.push({isPositive: true, type: '+', name: '切割', value: getApproaching(0.0025, 0.0125, Math.floor((stacks + 12) / 60))});
+            }
+            if (stacks >= 60) {
+                stats.push({isPositive: true, type: '*', name: '怪物零件增益', value: getApproaching(0.06, 0.3, Math.floor(stacks / 60)) + 1});
+            }
+            return stats;
+        },
+        激活的卡片() {
+            return [
+                {type: 'addStack', value: null}
+            ];
+        },
+        activeType: 'utility',
+        cooldown: () => HORDE_STACKING_COOLDOWN,
+        icon: 'mdi-chess-queen',
+        activeIcon: 'mdi-chess-queen',
+        activeColor: 'indigo'
+    },
+    king: {
+        findZone: 350,
+        findChance: 1 / buildNum(1, 'T'),
+        解锁: '象棋装备',
+        price(lvl) {
+            return Math.pow(1000, getSequence(1, lvl - 1)) * buildNum(1.024, 'B');
+        },
+        cap: 4,
+        stats(lvl) {
+            return [
+                {isPositive: true, type: '+', name: '分裂盾', value: lvl},
+                {isPositive: true, type: '+', name: '复活', value: 1},
+                {isPositive: true, type: 'tag', name: '恢复 {0} 你的分裂盾在复活的时候', value: [0.5]},
+            ];
+        },
+        激活的卡片(lvl) {
+            return [
+                {type: 'heal', value: 1},
+                {type: 'antidote', value: 1},
+                {type: 'revive', value: 1},
+                {type: 'stun', value: lvl + 24}
             ];
         },
         activeType: 'combat',
         cooldown: () => 540,
-        图标: 'mdi-chess-king',
+        icon: 'mdi-chess-king',
         activeIcon: 'mdi-chess-king',
-        activeColor: '红色'
+        activeColor: '红色油漆'
     },
 }

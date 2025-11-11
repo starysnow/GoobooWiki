@@ -1,7 +1,8 @@
 [
   {
     "名称": "学生",
-    "消耗": "${ 红宝石: fallbackArray([5, 20, 60, 125],   \\cdot  {(2)}^{\\text{向下取整}(lvl / 4})  \\cdot  25, lvl) }$",
-    "效果": "书籍增益+｛$5  \\cdot  lvl$｝"
+    "type": "优质肥料",
+    "price": "${ gem_ruby: fallbackArray([5, 20, 60, 125],   \\cdot  {(2)}^{\\text{向下取整}(lvl / 4})  \\cdot  25, lvl) }$",
+    "effect": "书+｛$lvl$｝"
   }
 ]

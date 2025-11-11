@@ -1,50 +1,65 @@
 [
   {
-    "名称": "harvests",
-    "value": "$store.state.stat.farm_harvests.总计$",
+    "名称": "割草机",
+    "value": "$store.state.stat.割草机.total$",
     "milestones": "$\\text{四舍五入}({(lvl + 1)}^{2}  \\cdot  {(1.5)}^{lvl}  \\cdot  10)$",
-    "圣遗物": ""
+    "relic": "",
+    "cap": ""
   },
   {
-    "名称": "maxOvergrow",
-    "value": "$store.state.stat.farm_maxOvergrow.总计$",
-    "milestones": "$getSequence(1, lvl + 1)$",
-    "圣遗物": "{\"2\":\"格子\",\"4\":\"砖墙\"}"
+    "名称": "园丁",
+    "value": "$store.state.stat.园丁.total$",
+    "milestones": "$getSequence(2, lvl + 1)  \\cdot  0.5 + 1$",
+    "relic": "{\"4\":\"避雷针\"}",
+    "cap": ""
   },
   {
-    "名称": "bestPrestige",
-    "value": "$store.state.stat.farm_bestPrestige.总计$",
-    "milestones": "$lvl  \\cdot  2 + 4$",
-    "圣遗物": ""
+    "名称": "享有盛誉",
+    "value": "$store.state.stat.享有盛誉.total$",
+    "milestones": "$lvl  \\cdot  2 + 6$",
+    "relic": "",
+    "cap": "18"
   },
   {
-    "名称": "仅蔬菜",
-    "value": "$store.state.stat.仅蔬菜.总计$",
+    "名称": "蔬菜",
+    "value": "$store.state.stat.蔬菜.total$",
     "milestones": "${(81)}^{lvl}  \\cdot  250$",
-    "圣遗物": "{\"2\":\"金胡萝卜\"}"
+    "relic": "{\"2\":\"金胡萝卜\"}",
+    "cap": ""
   },
   {
-    "名称": "仅浆果",
-    "value": "$store.state.stat.仅浆果.总计$",
+    "名称": "浆果",
+    "value": "$store.state.stat.浆果.total$",
     "milestones": "${(81)}^{lvl}  \\cdot  750$",
-    "圣遗物": "{\"3\":\"金苹果\"}"
+    "relic": "{\"3\":\"金苹果\"}",
+    "cap": ""
   },
   {
-    "名称": "仅粮食",
-    "value": "$store.state.stat.仅粮食.总计$",
+    "名称": "粮食",
+    "value": "$store.state.stat.粮食.total$",
     "milestones": "${(81)}^{lvl}  \\cdot  2250$",
-    "圣遗物": "{\"4\":\"爆米花\"}"
+    "relic": "{\"4\":\"爆米花\"}",
+    "cap": ""
   },
   {
-    "名称": "仅鲜花",
-    "value": "$store.state.stat.仅鲜花.总计$",
+    "名称": "花肥",
+    "value": "$store.state.stat.花肥.total$",
     "milestones": "${(81)}^{lvl}  \\cdot  6750$",
-    "圣遗物": "{\"5\":\"蔷薇石英\"}"
+    "relic": "{\"5\":\"玫瑰石英\"}",
+    "cap": ""
   },
   {
     "名称": "黄金",
-    "value": "$store.state.stat.黄金.总计$",
+    "value": "$store.state.stat.黄金.total$",
     "milestones": "$\\text{四舍五入}({(lvl + 2)}^{2}  \\cdot  {(2.25)}^{lvl}  \\cdot  2.5)$",
-    "圣遗物": "{\"6\":\"金种子\"}"
+    "relic": "{\"6\":\"金种子\"}",
+    "cap": ""
+  },
+  {
+    "名称": "珍贵植物",
+    "value": "$store.state.stat.珍贵植物.total$",
+    "milestones": "$\\text{四舍五入}({(lvl + 2)}^{2}  \\cdot  {(1.4)}^{lvl}  \\cdot  10)$",
+    "relic": "",
+    "cap": "10"
   }
 ]

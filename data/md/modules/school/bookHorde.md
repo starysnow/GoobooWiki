@@ -1,0 +1,14 @@
+| 名称  | subfeature | scalesWithGL | minGL | effect | maxGL |
+| --- | ---------- | ------------ | ----- | ------ | ----- |
+| 攻击plus | 0 | true | 25 | 攻击*｛${(1.01)}^{lvl}$｝ |  |
+| 生命值plus | 0 | true | 25 | 生命值*｛${(1.01)}^{lvl}$｝ |  |
+| boneGain | 0 | true | 40 | 骨头增益*｛$lvl  \cdot  0.01 + 1$｝ | 139 |
+| boneCap | 0 | true | 50 | 骨头容量*｛${(1.015)}^{lvl}$｝ |  |
+| itemChance | 0 | true | 60 | 装备几率*｛$lvl  \cdot  0.01 + 1$｝ | 159 |
+| monsterPartCap | 0 | true | 80 | 怪物零件容量*｛$lvl  \cdot  0.01 + 1$｝ | 179 |
+| corruptedFleshGain | 0 | true | 120 | 腐烂的肉体增益*｛$lvl  \cdot  0.01 + 1$｝ | 219 |
+| shardChance | 0 | true | 150 | 神秘碎片几率*｛$lvl  \cdot  0.01 + 1$｝ | 249 |
+| attack2 | 1 | true | 10 | 攻击*｛${(1.01)}^{lvl}$｝ |  |
+| health2 | 1 | true | 10 | 生命值*｛${(1.01)}^{lvl}$｝ |  |
+| bloodGain | 1 | true | 20 | 血液增益*｛$lvl  \cdot  0.02 + 1$｝ | 119 |
+| bloodCap | 1 | true | 30 | 血液容量*｛$lvl  \cdot  0.02 + 1$｝ | 129 |

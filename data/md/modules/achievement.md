@@ -1,4 +1,3 @@
-| 名称  |  0  | 挖掘机 | 红牌  | 公文包 | 奇怪的植物 | 有益的病毒 |
-| --- | --- | --- | --- | --- | ----- | ----- |
-| 解锁 | achievementFeature |  |  |  |  |  |
-| 圣遗物 |  | {"图标":"mdi-excavator","feature":["回来","采矿"],"color":"橙色","效果":[{"name":"废料增益","类型":"*","value":2},{"name":"废料容量","类型":"*","value":2}]} | {"图标":"mdi-cards","feature":["回来","部落"],"color":"红色","效果":[{"name":"怪物零件容量","类型":"bonus","value":"$10K$"},{"name":"部落卡片容量","类型":"+","value":1}]} | {"图标":"mdi-briefcase","feature":["回来","宝藏"],"color":"pale-blue","效果":[{"name":"宝藏插槽","类型":"+","value":8}]} | {"图标":"mdi-sprout","feature":["回来","村庄","农场"],"color":"pale-紫色","效果":[{"name":"材料增益","类型":"*","value":2},{"name":"作物增益","类型":"*","value":2}]} | {"图标":"mdi-virus","feature":["回来","采矿","部落"],"color":"pale-绿色","效果":[{"name":"韧性","类型":"*","value":0.5},{"name":"腐败","类型":"bonus","value":"[Unsupported Node: UnaryExpression]"}]} |
+| 名称  |  0  |
+| --- | --- |
+| 解锁 | achievementFeature |

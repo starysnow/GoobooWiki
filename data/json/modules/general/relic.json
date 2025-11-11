@@ -1,0 +1,107 @@
+[
+  {
+    "名称": "火炬",
+    "icon": "<i class=\"mdi mdi-torch\"></i>",
+    "effect": "$[{ name: '矿山卡片容量', type: '+', value: 1 }, { name: '村庄卡片容量', type: '+', value: 1 }]$",
+    "glyph": "${ 热量: 2, 木头: 2 }$",
+    "激活的卡片": "{\"cost\":{\"最高力量\":40},\"params\":\"$[]$\",\"description\":\"$[]$\",\"formula\":\"$[]$\",\"disabled\":\"$store.state.system.features.mining.currentSubfeature !== 0 || store.state.cryolab.mining.激活的卡片 || store.state.mining.torchDepths.includes(parseInt(option))$\",\"trigger\":\"${ store.commit('mining/addTorchDepth', parseInt(option)); }$\"}"
+  },
+  {
+    "名称": "紫心勋章",
+    "icon": "<i class=\"mdi mdi-heart\"></i>",
+    "effect": "$[{ name: '生命值', type: ' \\cdot ', value: 1.5 }, { name: '腐败的灵魂增益', type: ' \\cdot ', value: 1.2 }]$",
+    "glyph": "${ 尖刺: 1, 梦: 3 }$",
+    "激活的卡片": ""
+  },
+  {
+    "名称": "布满灰尘的书",
+    "icon": "<i class=\"mdi mdi-book\"></i>",
+    "effect": "$[{ name: '图书馆', type: '解锁', value: true }, { name: '多通道', type: '+', value: 2 }, { name: '金尘容量', type: '+', value: 1e4 }]$",
+    "glyph": "${ 灰尘: 2, 书籍: 3 }$",
+    "激活的卡片": ""
+  },
+  {
+    "名称": "腐烂的叶子",
+    "icon": "<i class=\"mdi mdi-leaf\"></i>",
+    "effect": "$[{ name: '产出', type: ' \\cdot ', value: 1.75 }, { name: '作物经验', type: ' \\cdot ', value: 1.2 }, { name: '过度生长', type: '+', value: 0.2 }]$",
+    "glyph": "${ 雨: 2, 日: 3, 云: 1 }$",
+    "激活的卡片": ""
+  },
+  {
+    "名称": "石头穿孔机",
+    "icon": "<i class=\"mdi mdi-screwdriver\"></i>",
+    "effect": "$[{ name: '伤害', type: ' \\cdot ', value: 2.25 }]$",
+    "glyph": "${ 灰尘: 4, 粘土: 1 }$",
+    "激活的卡片": "{\"cost\":{\"最高力量\":35},\"params\":\"${ let increases = 0; let 硝 = 0; store.state.mining.breaks.forEach((amount, index) => { const highest = Math.max(...store.state.mining.breaks.slice(index)); if (highest > amount) { increases++; if (store.state.system.features.mining.currentSubfeature === 0 && index + 1 >= MINING_NITER_DEPTH) { let breaksMult = 0; let currentBreaks = amount; while (currentBreaks < highest) { const breaksBase = currentBreaks > 0 ? \\\\text{向下取整}(Math.log10(currentBreaks)) : -1; const nextStep = {(10)}^{breaksBase + 1}; currentBreaks = Math.min(highest, nextStep); if (currentBreaks === nextStep) { breaksMult++; } } 硝 += store.getters['mining/rareDropFinal']('硝')  \\\\cdot  breaksMult; } } }); return [increases, 硝]; }$\",\"description\":\"$[]$\",\"formula\":\"$[formatNum(params[1])]$\",\"disabled\":\"$store.state.cryolab.mining.激活的卡片 || params[0] <= 0$\",\"trigger\":\"${ let highest = 0; store.commit('mining/updateKey', { key: 'breaks', value: [...store.state.mining.breaks].reverse().map(el => { if (el > highest) { highest = el; } return highest; }).reverse() }); store.dispatch('currency/gain', { feature: 'mining', name: '硝', amount: params[1] }); }$\"}"
+  },
+  {
+    "名称": "安慰奖",
+    "icon": "<i class=\"mdi mdi-seal-variant\"></i>",
+    "effect": "$[{ name: '所有资源增益', type: ' \\cdot ', value: 1.4 }, { name: '精通点数增益', type: ' \\cdot ', value: 1.4 }, { name: '作物经验', type: ' \\cdot ', value: 1.4 }]$",
+    "glyph": "${ 石头: 2, 三叶草: 2, 云: 2 }$",
+    "激活的卡片": ""
+  },
+  {
+    "名称": "漂亮的灯",
+    "icon": "<i class=\"mdi mdi-vanity-light\"></i>",
+    "effect": "$[{ name: '灵感的开始', type: '+', value: 3 }, { name: 'thinkHarder', type: 'galleryIdea', value: true }]$",
+    "glyph": "${ 开花: 2, 纸: 4 }$",
+    "激活的卡片": ""
+  },
+  {
+    "名称": "博物馆钥匙",
+    "icon": "<i class=\"mdi mdi-key\"></i>",
+    "effect": "$[{ name: '博物馆', type: '解锁', value: true }]$",
+    "glyph": "${ 云: 2, 纸: 2, 金币: 3 }$",
+    "激活的卡片": ""
+  },
+  {
+    "名称": "丝带",
+    "icon": "<i class=\"mdi mdi-ribbon\"></i>",
+    "effect": "$[{ name: '农场卡牌容量', type: '+', value: 1 }, { name: '画廊卡片容量', type: '+', value: 1 }]$",
+    "glyph": "${ 雨: 2, 日: 2, 开花: 4 }$",
+    "激活的卡片": ""
+  },
+  {
+    "名称": "复印机",
+    "icon": "<i class=\"mdi mdi-printer\"></i>",
+    "effect": "$[{ name: '双宝', type: '解锁', value: true }, { name: '宝藏插槽', type: '+', value: 2 }]$",
+    "glyph": "${ 金币: 3, 纸: 3 }$",
+    "激活的卡片": ""
+  },
+  {
+    "名称": "游戏牌",
+    "icon": "<i class=\"mdi mdi-cards-playing\"></i>",
+    "effect": "$[{ name: '闪亮卡牌', type: '解锁', value: true }]$",
+    "glyph": "${ 金币: 4, 卡牌: 3 }$",
+    "激活的卡片": ""
+  },
+  {
+    "名称": "棋盘",
+    "icon": "<i class=\"mdi mdi-checkerboard\"></i>",
+    "effect": "$[{ name: '象棋装备', type: '解锁', value: true }]$",
+    "glyph": "${ 三叶草: 5 }$",
+    "激活的卡片": ""
+  },
+  {
+    "名称": "彩虹花",
+    "icon": "<i class=\"mdi mdi-flower-pollen\"></i>",
+    "effect": "$[{ name: '最大冻结的功能', type: '+', value: 1 }, { name: '底座尺寸 (C)', type: '+', value: 1 }]$",
+    "glyph": "${ 书籍: 5, 开花: 2 }$",
+    "激活的卡片": ""
+  },
+  {
+    "名称": "科学书",
+    "icon": "<i class=\"mdi mdi-book-education\"></i>",
+    "effect": "$[{ name: '久负盛名的宝藏', type: '解锁', value: true }, { name: '多通道', type: '+', value: 4 }]$",
+    "glyph": "${ 书籍: 3, 金币: 5 }$",
+    "激活的卡片": ""
+  },
+  {
+    "名称": "巨大钻石",
+    "icon": "<i class=\"mdi mdi-diamond-outline\"></i>",
+    "effect": "$[{ name: '钻石发电机', type: '解锁', value: true }]$",
+    "glyph": "${ 灰尘: 5, 石头: 4 }$",
+    "激活的卡片": ""
+  }
+]

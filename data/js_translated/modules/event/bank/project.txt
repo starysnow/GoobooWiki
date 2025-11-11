@@ -1,33 +1,33 @@
 {
     expandVault: {
-        消耗: lvl => getSequence(2, lvl) * 500 + 2000,
-        效果: [
-            {name: 'currencyGemTopazCap', 类型: '+', value: lvl => lvl * 300}
+        price: lvl => getSequence(2, lvl) * 500 + 2000,
+        effect: [
+            {name: 'currencyGemTopazCap', type: '+', value: lvl => lvl * 200}
         ]
     },
     persuadeInvestors: {
-        消耗: lvl => getSequence(2, lvl) * 500 + 2000,
-        效果: [
-            {name: '金尘容量', 类型: '+', value: lvl => lvl * 4000}
+        price: lvl => getSequence(2, lvl) * 500 + 2000,
+        effect: [
+            {name: '金尘容量', type: '+', value: lvl => lvl * 4000}
         ]
     },
     improveCreditScore: {
-        消耗: lvl => getSequence(2, lvl) * 500 + 2000,
-        效果: [
-            {name: '投资规模', 类型: '+', value: lvl => lvl * 200},
-            {name: '贷款规模', 类型: '+', value: lvl => lvl * 200}
+        price: lvl => getSequence(2, lvl) * 500 + 2000,
+        effect: [
+            {name: '投资规模', type: '+', value: lvl => lvl * 200},
+            {name: '贷款规模', type: '+', value: lvl => lvl * 200}
         ]
     },
     businessMarketing: {
-        消耗: lvl => getSequence(2, lvl) * 500 + 2000,
-        效果: [
-            {name: '商户优惠', 类型: '+', value: lvl => lvl}
+        price: lvl => getSequence(2, lvl) * 500 + 2000,
+        effect: [
+            {name: '商户优惠', type: '+', value: lvl => lvl}
         ]
     },
     cardTournament: {
-        消耗: lvl => getSequence(2, lvl) * 500 + 2000,
-        效果: [
-            {name: '银行卡包机会', 类型: '+', value: lvl => 0.5 - Math.pow(0.8, lvl) * 0.5}
+        price: lvl => getSequence(2, lvl) * 500 + 2000,
+        effect: [
+            {name: '银行卡包机会', type: '+', value: lvl => 0.5 - Math.pow(0.8, lvl) * 0.5}
         ]
     }
 }

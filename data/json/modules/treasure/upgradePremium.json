@@ -1,12 +1,14 @@
 [
   {
     "名称": "更多插槽",
-    "消耗": "${ 红宝石: lvl  \\cdot  10 + 50 }$",
-    "效果": "宝藏插槽+｛$lvl$｝"
+    "type": "优质肥料",
+    "price": "${ gem_ruby: Math.max(lvl  \\cdot  10, \\text{四舍五入}({(1.1)}^{lvl}  \\cdot  6  \\cdot  lvl)) + 50 }$",
+    "effect": "宝藏插槽+｛$lvl$｝"
   },
   {
     "名称": "更多碎片",
-    "消耗": "${ 红宝石:   \\cdot  {(2)}^{\\text{向下取整}(lvl / 2})  \\cdot  150 }$",
-    "效果": "碎片增益*｛$lvl  \\cdot  0.2 + 1$｝"
+    "type": "优质肥料",
+    "price": "${ gem_ruby:   \\cdot  {(2)}^{\\text{向下取整}(lvl / 2})  \\cdot  150 }$",
+    "effect": "碎片增益*｛$lvl  \\cdot  0.2 + 1$｝"
   }
 ]

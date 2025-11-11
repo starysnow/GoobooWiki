@@ -1,41 +1,41 @@
 {
     铝锭: {
-        效果: [
-            {name: '制作纯度', 类型: '*', value: lvl => lvl * 0.5 + 1},
-            {name: '矿石品质', 类型: '*', value: lvl => Math.pow(2, lvl)}
+        effect: [
+            {name: '制作纯度', type: '*', value: lvl => lvl * 0.5 + 1},
+            {name: '矿石品质', type: '*', value: lvl => Math.pow(2, lvl)}
         ]
     },
     青铜锭: {
-        效果: [
-            {name: '矿石增益', 类型: '*', value: lvl => Math.pow(1.5, lvl)},
-            {name: '稀土增益', 类型: '*', value: lvl => Math.pow(1.25, lvl)}
+        effect: [
+            {name: '矿石增益', type: '*', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.1 + 1)},
+            {name: '稀土增益', type: '*', value: lvl => Math.pow(1.15, lvl) * (lvl * 0.15 + 1)}
         ]
     },
     钢锭: {
-        效果: [
-            {name: '伤害', 类型: '*', value: lvl => lvl * 0.35 + 1},
-            {name: '韧性', 类型: '*', value: lvl => Math.pow(1 / 1.5, lvl)}
+        effect: [
+            {name: '伤害', type: '*', value: lvl => lvl * 0.08 + 1},
+            {name: '韧性', type: '*', value: lvl => Math.pow(1 / 1.35, lvl)}
         ]
     },
     钛锭: {
-        效果: [
-            {name: '废料增益', 类型: '*', value: lvl => getSequence(2, lvl) + 1}
+        effect: [
+            {name: '废料增益', type: '*', value: lvl => getSequence(2, lvl) * 0.1 + 1}
         ]
     },
     闪亮的金属锭: {
-        效果: [
-            {name: '深度居民速度', 类型: '*', value: lvl => Math.pow(1.35, lvl)},
-            {name: '绿水晶增益', 类型: '*', value: lvl => lvl * 0.2 + 1}
+        effect: [
+            {name: '深度居民速度', type: '*', value: lvl => lvl * 0.1 + 1},
+            {name: '绿水晶增益', type: '*', value: lvl => lvl * 0.1 + 1}
         ]
     },
     铱锭: {
-        效果: [
-            {name: '余烬增益', 类型: '*', value: lvl => lvl + 1}
+        effect: [
+            {name: '余烬增益', type: '*', value: lvl => lvl * 0.3 + 1}
         ]
     },
     黑铁锭: {
-        效果: [
-            {name: '废料容量', 类型: '*', value: lvl => getSequence(2, lvl) * 0.5 + 1}
+        effect: [
+            {name: '废料容量', type: '*', value: lvl => getSequence(2, lvl) * 0.15 + 1}
         ]
     }
 }

@@ -1,62 +1,72 @@
 [
   {
     "名称": "精华冷凝器",
-    "消耗": "${ 精华: {(8 + 0.25  \\cdot  lvl)}^{lvl}  \\cdot  200 }$",
-    "效果": "精华增益*｛${(1.25)}^{lvl}$｝",
-    "上限": ""
+    "type": "nightHunt",
+    "price": "${ 精华: {(8 + 0.25  \\cdot  lvl)}^{lvl}  \\cdot  200 }$",
+    "effect": "精华增益*｛${(1.25)}^{lvl}$｝",
+    "cap": ""
   },
   {
     "名称": "幸运符",
-    "消耗": "${ 精华: {(1.5 + 0.02  \\cdot  lvl)}^{lvl}  \\cdot  1000 }$",
-    "效果": "仪式成功几率+｛$lvl  \\cdot  0.03$｝",
-    "上限": ""
+    "type": "nightHunt",
+    "price": "${ 精华: {(1.5 + 0.02  \\cdot  lvl)}^{lvl}  \\cdot  1000 }$",
+    "effect": "仪式成功几率+｛$lvl  \\cdot  0.03$｝",
+    "cap": ""
   },
   {
     "名称": "更大的锅",
-    "消耗": "${ 精华: {(100M)}^{getSequence(1, lvl})  \\cdot  10K }$",
-    "效果": "仪式成分+｛$lvl$｝",
-    "上限": "5"
+    "type": "nightHunt",
+    "price": "${ 精华: {(100M)}^{getSequence(1, lvl})  \\cdot  10K }$",
+    "effect": "仪式成分+｛$lvl$｝",
+    "cap": "5"
   },
   {
     "名称": "药水架子",
-    "消耗": "${ 精华: {(1000  \\cdot  Math.pow(10)}^{lvl}, lvl)  \\cdot  100K }$",
-    "效果": "可找到的成分+｛$lvl$｝; 最喜欢的成分大小+｛$lvl$｝",
-    "上限": "8"
+    "type": "nightHunt",
+    "price": "${ 精华: {(1000  \\cdot  Math.pow(10)}^{lvl}, lvl)  \\cdot  100K }$",
+    "effect": "可找到的成分+｛$lvl$｝; 最喜欢的成分大小+｛$lvl$｝",
+    "cap": "8"
   },
   {
     "名称": "仪式粉笔",
-    "消耗": "${ 精华: {(10M)}^{Math.pow(lvl, 2})  \\cdot  50M }$",
-    "效果": "奖励成分+｛$lvl$｝",
-    "上限": "3"
+    "type": "nightHunt",
+    "price": "${ 精华: {(10M)}^{Math.pow(lvl, 2})  \\cdot  50M }$",
+    "effect": "奖励成分+｛$lvl$｝",
+    "cap": "3"
   },
   {
     "名称": "稳定器",
-    "消耗": "${ 精华: {(1.75 + 0.03  \\cdot  lvl)}^{lvl}  \\cdot  300M }$",
-    "效果": "仪式稳定性+｛$lvl  \\cdot  0.02$｝",
-    "上限": ""
+    "type": "nightHunt",
+    "price": "${ 精华: {(1.75 + 0.03  \\cdot  lvl)}^{lvl}  \\cdot  300M }$",
+    "effect": "仪式稳定性+｛$lvl  \\cdot  0.02$｝",
+    "cap": ""
   },
   {
     "名称": "底座",
-    "消耗": "${ 精华: {(120)}^{lvl}  \\cdot  7.5B }$",
-    "效果": "奖励成分数量+｛$lvl$｝",
-    "上限": ""
+    "type": "nightHunt",
+    "price": "${ 精华: {(120)}^{lvl}  \\cdot  7.5B }$",
+    "effect": "奖励成分数量+｛$lvl$｝",
+    "cap": ""
   },
   {
     "名称": "神秘者",
-    "消耗": "${ gem_topaz: lvl  \\cdot  125 + 100 }$",
-    "效果": "精华增益*｛${(3)}^{lvl}$｝",
-    "上限": ""
+    "type": "nightHunt",
+    "price": "${ gem_topaz: lvl  \\cdot  125 + 100 }$",
+    "effect": "精华增益*｛${(3)}^{lvl}$｝",
+    "cap": ""
   },
   {
     "名称": "捆绑包",
-    "消耗": "${ gem_topaz: lvl  \\cdot  250 + 350 }$",
-    "效果": "成分尺寸+｛$lvl  \\cdot  3$｝; 最喜欢的成分大小+｛$lvl$｝",
-    "上限": ""
+    "type": "nightHunt",
+    "price": "${ gem_topaz: lvl  \\cdot  250 + 350 }$",
+    "effect": "成分尺寸+｛$lvl  \\cdot  3$｝; 最喜欢的成分大小+｛$lvl$｝",
+    "cap": ""
   },
   {
     "名称": "一袋糖果",
-    "消耗": "${ gem_topaz: lvl  \\cdot  200 + 200 }$",
-    "效果": "奖励成分数量+｛$lvl$｝",
-    "上限": ""
+    "type": "nightHunt",
+    "price": "${ gem_topaz: lvl  \\cdot  200 + 200 }$",
+    "effect": "奖励成分数量+｛$lvl$｝",
+    "cap": ""
   }
 ]

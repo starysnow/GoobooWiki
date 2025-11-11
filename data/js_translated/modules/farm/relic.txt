@@ -1,23 +1,66 @@
 {
-    金胡萝卜: {图标: 'mdi-carrot', color: '金色', 效果: [
-        {name: '仅蔬菜增益', 类型: '*', value: 1.4}
-    ]},
-    金苹果: {图标: 'mdi-food-apple', color: '金色', 效果: [
-        {name: '仅浆果增益', 类型: '*', value: 1.4}
-    ]},
-    爆米花: {图标: 'mdi-popcorn', color: 'pale-黄色', 效果: [
-        {name: '仅粮食增益', 类型: '*', value: 1.4}
-    ]},
-    蔷薇石英: {图标: 'mdi-crystal-ball', color: 'pale-粉色', 效果: [
-        {name: '仅鲜花增益', 类型: '*', value: 1.4}
-    ]},
-    金种子: {图标: 'mdi-seed', color: '金色', 效果: [
-        {name: '金玫瑰', 类型: 'farmSeed', value: true}
-    ]},
-    格子: {图标: 'mdi-fence', color: '棕色', 效果: [
-        {name: '过度生长', 类型: '+', value: 0.05}
-    ]},
-    砖墙: {图标: 'mdi-wall', color: '樱桃色', 效果: [
-        {name: '过度生长', 类型: '+', value: 0.05}
-    ]},
+    避雷针: {icon: 'mdi-home-lightning-bolt-outline', color: '橙红色油漆', effect() {return [
+        {name: '雨水容量', type: '+', value: 30}
+    ];}, glyph() {return {云: 3};}, 激活的卡片: {
+        cost: {最高力量: 5},
+        params() {
+            const rainwaterMult = 1.5;
+            let careApplied = 0;
+            store.state.农场.field.forEach(row => {
+                row.forEach(cell => {
+                    if (cell !== null && cell.type === 'crop' && cell.cache.careWeight > 0) {
+                        const geneStats = store.getters['农场/cropGeneStats'](cell.crop, cell.fertilizer);
+                        store.state.农场.careCanMax.forEach(elem => {
+                            if (geneStats.珍贵植物[elem] && cell.珍贵植物[elem] < geneStats.珍贵植物[elem].max) {
+                                const crop = store.state.农场.crop[cell.crop];
+                                const growDiv = Math.sqrt((cell.giant ? crop.giantGrow : crop.grow) / 10) * 8;
+                                careApplied += Math.ceil((geneStats.珍贵植物[elem].max - cell.珍贵植物[elem]) * growDiv / geneStats.珍贵植物[elem].amount);
+                            }
+                        });
+                    }
+                });
+            });
+            return [Math.ceil(careApplied * rainwaterMult), rainwaterMult, careApplied];
+        },
+        description() {
+            return [];
+        },
+        formula(params) {
+            return [formatInt(params[0]), formatNum(params[1] * 100)];
+        },
+        disabled(params) {
+            return store.state.cryolab.农场.激活的卡片 || params[2] <= 0 || store.state.currency.雨水.value < params[0];
+        },
+        trigger(params) {
+            store.dispatch('currency/spend', {feature: '农场', name: '雨水', amount: params[0]});
+            store.state.农场.field.forEach((row, y) => {
+                row.forEach((cell, x) => {
+                    if (cell !== null && cell.type === 'crop' && cell.cache.careWeight > 0) {
+                        const geneStats = store.getters['农场/cropGeneStats'](cell.crop, cell.fertilizer);
+                        store.state.农场.careCanMax.forEach(elem => {
+                            if (geneStats.珍贵植物[elem] && cell.珍贵植物[elem] < geneStats.珍贵植物[elem].max) {
+                                store.commit('农场/updateFieldCare', {x, y, key: elem, value: geneStats.珍贵植物[elem].max});
+                            }
+                        });
+                    }
+                });
+            });
+            store.commit('stat/add', {feature: '农场', name: '珍贵植物', value: params[2]});
+        }
+    }},
+    金胡萝卜: {icon: 'mdi-carrot', color: '金色油漆', effect() {return [
+        {name: '蔬菜增益', type: '*', value: 1.4}
+    ];}, glyph() {return {雨: 4};}},
+    金苹果: {icon: 'mdi-food-apple', color: '金色油漆', effect() {return [
+        {name: '浆果增益', type: '*', value: 1.4}
+    ];}, glyph() {return {日: 3, 云: 1};}},
+    爆米花: {icon: 'mdi-popcorn', color: 'pale-黄色油漆', effect() {return [
+        {name: '粮食增益', type: '*', value: 1.4}
+    ];}, glyph() {return {云: 4};}},
+    玫瑰石英: {icon: 'mdi-crystal-ball', color: 'pale-粉红色油漆', effect() {return [
+        {name: '花肥增益', type: '*', value: 1.4}
+    ];}, glyph() {return {雨: 2, 云: 3};}},
+    金种子: {icon: 'mdi-seed', color: '金色油漆', effect() {return [
+        {name: 'goldenRose', type: 'farmSeed', value: true}
+    ];}, glyph() {return {日: 6};}},
 }

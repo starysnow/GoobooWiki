@@ -1,0 +1,50 @@
+[
+  {
+    "名称": "ohilio_guard1",
+    "攻击plus": "0.15",
+    "生命值plus": "150",
+    "textShadow": "1px 1px 2px palevioletred, 0 0 25px lightpink, 0 0 5px 粉红色油漆",
+    "sigil": "{\"shotgun_gun\":3,\"war_bandage\":3}",
+    "stats": "{}"
+  },
+  {
+    "名称": "ohilio_guard2",
+    "攻击plus": "0.6125",
+    "生命值plus": "45",
+    "textShadow": "1px 1px 2px palevioletred, 0 0 25px lightpink, 0 0 5px 粉红色油漆",
+    "sigil": "{\"rifle_gun\":3,\"war_grenade\":2}",
+    "stats": "{}"
+  },
+  {
+    "名称": "ohilio",
+    "攻击plus": "0.01",
+    "生命值plus": "1e-8",
+    "textShadow": "1px 1px 2px palevioletred, 0 0 25px lightpink, 0 0 5px 粉红色油漆",
+    "sigil": "{\"ohilio_megagun\":1}",
+    "stats": "{}"
+  },
+  {
+    "名称": "mina",
+    "攻击plus": "0.5",
+    "生命值plus": "87.5",
+    "textShadow": "1px 1px 2px palevioletred, 0 0 25px lightpink, 0 0 5px 粉红色油漆",
+    "sigil": "{\"mina_charm\":1}",
+    "stats": "{\"toxic_base\":0.03,\"execute_base\":0.2}"
+  },
+  {
+    "名称": "chriz1",
+    "攻击plus": "0.375",
+    "生命值plus": "42.5",
+    "textShadow": "1px 1px 2px 蓝色油漆",
+    "sigil": "{\"chriz_magicMissile\":1,\"chriz_fireball\":1,\"chriz_iceBlast\":1,\"chriz_lightningStrike\":1,\"chriz_heal\":1}",
+    "stats": "{\"magicConversion_base\":4,\"physicTaken_mult\":0.01,\"magicTaken_mult\":1.75}"
+  },
+  {
+    "名称": "chriz2",
+    "攻击plus": "0.5",
+    "生命值plus": "50",
+    "textShadow": "1px 1px 2px 红色油漆",
+    "sigil": "{}",
+    "stats": "{\"critChance_base\":0.35,\"critMult_base\":3,\"physicTaken_mult\":1.75,\"magicTaken_mult\":0.01}"
+  }
+]

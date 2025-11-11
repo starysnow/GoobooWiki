@@ -1,44 +1,41 @@
 {
-    书籍: 小箱子: {类型: '书籍', raiseOtherCap: '小箱子', requirement() {
-        return store.state.升级成本.item.小箱子.highestLevel >= 7;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.25, lvl) * (lvl + 5) * 72)};
-    }, 效果: [
-        {name: 'upgradeFarmSmallCrateCap', 类型: '+', value: lvl => lvl}
+    vegetableGain: {subfeature: 0, scalesWithGL: true, minGL: 10, effect: [
+        {name: '蔬菜增益', type: '*', value: lvl => Math.pow(1.005, lvl)}
     ]},
-    书籍: 稻草人: {类型: '书籍', raiseOtherCap: '稻草人', requirement() {
-        return store.state.升级成本.item.稻草人.highestLevel >= 10;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.25, lvl) * (lvl + 5) * 96)};
-    }, 效果: [
-        {name: 'upgradeFarmScarecrowCap', 类型: '+', value: lvl => lvl}
+    berryGain: {subfeature: 0, scalesWithGL: true, minGL: 10, effect: [
+        {name: '浆果增益', type: '*', value: lvl => Math.pow(1.005, lvl)}
     ]},
-    书籍: 棚子: {类型: '书籍', raiseOtherCap: '棚子', requirement() {
-        return store.state.升级成本.item.棚子.highestLevel >= 10;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.25, lvl) * (lvl + 5) * 144)};
-    }, 效果: [
-        {name: 'upgradeFarmShedCap', 类型: '+', value: lvl => lvl}
+    grainGain: {subfeature: 0, scalesWithGL: true, minGL: 10, effect: [
+        {name: '粮食增益', type: '*', value: lvl => Math.pow(1.005, lvl)}
     ]},
-    书籍: 中箱子: {类型: '书籍', raiseOtherCap: '中箱子', requirement() {
-        return store.state.升级成本.item.中箱子.highestLevel >= 8;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.25, lvl) * (lvl + 5) * 185)};
-    }, 效果: [
-        {name: 'upgradeFarmMediumCrateCap', 类型: '+', value: lvl => lvl}
+    flowerGain: {subfeature: 0, scalesWithGL: true, minGL: 10, effect: [
+        {name: '花肥增益', type: '*', value: lvl => Math.pow(1.005, lvl)}
     ]},
-    书籍: 昆虫天堂: {类型: '书籍', raiseOtherCap: '昆虫天堂', requirement() {
-        return store.state.升级成本.item.昆虫天堂.highestLevel >= 6;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.25, lvl) * (lvl + 5) * 330)};
-    }, 效果: [
-        {name: 'upgradeFarmInsectParadiseCap', 类型: '+', value: lvl => lvl}
+    grassCap: {subfeature: 0, scalesWithGL: true, minGL: 30, maxGL: 129, effect: [
+        {name: '草容量', type: '+', value: lvl => lvl * 6}
     ]},
-    书籍: 大箱子: {类型: '书籍', raiseOtherCap: '大箱子', requirement() {
-        return store.state.升级成本.item.大箱子.highestLevel >= 10;
-    }, 消耗(lvl) {
-        return {书籍: Math.round(Math.pow(1.25, lvl) * (lvl + 5) * 525)};
-    }, 效果: [
-        {name: 'upgradeFarmBigCrateCap', 类型: '+', value: lvl => lvl}
+    seedHullCap: {subfeature: 0, scalesWithGL: true, minGL: 60, maxGL: 159, effect: [
+        {name: '种子壳容量', type: '+', value: lvl => lvl * 6}
+    ]},
+    bugCap: {subfeature: 0, scalesWithGL: true, minGL: 80, maxGL: 179, effect: [
+        {name: '虫子容量', type: '+', value: lvl => lvl * 3}
+    ]},
+    petalCap: {subfeature: 0, scalesWithGL: true, minGL: 100, maxGL: 199, effect: [
+        {name: '花瓣容量', type: '+', value: lvl => lvl * 2}
+    ]},
+    butterflyCap: {subfeature: 0, scalesWithGL: true, minGL: 140, maxGL: 238, effect: [
+        {name: '蝴蝶容量', type: '+', value: lvl => Math.ceil(lvl / 2)}
+    ]},
+    ladybugCap: {subfeature: 0, scalesWithGL: true, minGL: 180, maxGL: 279, effect: [
+        {name: '瓢虫容量', type: '+', value: lvl => lvl * 3}
+    ]},
+    spiderCap: {subfeature: 0, scalesWithGL: true, minGL: 220, maxGL: 315, effect: [
+        {name: '蜘蛛容量', type: '+', value: lvl => Math.ceil(lvl / 5)}
+    ]},
+    beeCap: {subfeature: 0, scalesWithGL: true, minGL: 260, maxGL: 359, effect: [
+        {name: '蜜蜂容量', type: '+', value: lvl => lvl * 10}
+    ]},
+    smallSeedCap: {subfeature: 0, scalesWithGL: true, minGL: 320, maxGL: 419, effect: [
+        {name: '小种子容量', type: '+', value: lvl => lvl * 8}
     ]},
 }

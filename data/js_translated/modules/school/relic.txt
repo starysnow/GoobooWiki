@@ -1,0 +1,30 @@
+{
+    笔记本: {icon: 'mdi-notebook', color: '绿色油漆', effect() {return [
+        {name: '金尘容量', type: '+', value: 2000}
+    ];}, glyph() {return {书籍: 3};}, 激活的卡片: {
+        cost: {最高力量: 3},
+        params() {
+            return [1000, 5000];
+        },
+        description(params, option) {
+            return [formatInt(params[option ? 1 : 0])];
+        },
+        formula(params) {
+            return [formatInt(params[0]), formatInt(params[1])];
+        },
+        disabled(params, option) {
+            return option && store.state.currency.考试通过.value < 1;
+        },
+        trigger(params, option) {
+            if (option) {
+                if (store.state.currency.考试通过.value >= 1) {
+                    store.dispatch('currency/spend', {feature: '学校', name: '考试通过', amount: 1}, {root: true});
+                    store.dispatch('currency/gain', {feature: '学校', name: '金尘', amount: Math.round(SCHOOL_EXAM_DUST_MIN * store.getters['学校/dustMult'])}, {root: true});
+                    store.commit('stat/add', {feature: '学校', name: 'totalPoints', value: params[1]}, {root: true});
+                }
+            } else {
+                store.commit('stat/add', {feature: '学校', name: 'totalPoints', value: params[0]}, {root: true});
+            }
+        }
+    }},
+}

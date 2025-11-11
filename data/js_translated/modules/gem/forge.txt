@@ -1,0 +1,11 @@
+{
+    钻石镐: {relic: '钻石镐', price: 50},
+    钻石锤: {relic: '钻石锤', price: 50},
+    钻石剑: {relic: '钻石剑', price: 50},
+    钻石铲: {relic: '钻石铲', price: 50},
+    钻石刷子: {relic: '钻石刷子', price: 50},
+    redCard_1: {relic: '红牌', type: 'upgrade', upgradeLevel: 1, price: 10},
+    briefcase_1: {relic: '公文包', type: 'upgrade', upgradeLevel: 1, price: 35},
+    diamondPillar_0: {relic: '钻石柱子', price: 40},
+    diamondPillar_1: {relic: '钻石柱子', condition: () => store.getters['*/get']('底座尺寸 (A)') >= 2, type: 'upgrade', upgradeLevel: 1, price: 100},
+}

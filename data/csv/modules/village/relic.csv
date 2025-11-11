@@ -1,10 +1,5 @@
-名称,图标,效果
-泥砖,"<i class=""mdi mdi-wall""></i>",棚子保留｛true｝; 水增益*｛1.5｝
-树苗,"<i class=""mdi mdi-sprout""></i>",棚子保留｛true｝; 植物纤维增益*｛1.5｝
-钥匙链,"<i class=""mdi mdi-key-chain""></i>",小房子保留｛true｝; 木头增益*｛1.5｝
-宝箱,"<i class=""mdi mdi-treasure-chest""></i>",财政部保留｛true｝; 钱包保留｛true｝; 资源包保留｛true｝; 金属包保留｛true｝
-螺丝刀,"<i class=""mdi mdi-screwdriver""></i>",起重机保留｛true｝; 石头增益*｛1.5｝
-玫瑰,"<i class=""mdi mdi-flower""></i>",花园保留｛true｝; 水井保留｛true｝
-金钥匙,"<i class=""mdi mdi-key-chain""></i>",房子保留｛true｝; 微型铁匠保留｛true｝
-导师,"<i class=""mdi mdi-account-tie""></i>",锯木厂保留｛true｝; 隧道保留｛true｝
-地球仪,"<i class=""mdi mdi-globe-model""></i>",图书馆保留｛true｝; 玻璃吹制厂保留｛true｝
+名称,icon,effect,glyph,激活的卡片
+泥砖,"<i class=""mdi mdi-wall""></i>","$[{ name: '棚子', type: '保留', value: true }, { name: '水增益', type: ' \cdot ', value: 1.5 }]$",${ 木头: 4 }$,
+树苗,"<i class=""mdi mdi-sprout""></i>","$[{ name: '棚子', type: '保留', value: true }, { name: '植物纤维增益', type: ' \cdot ', value: 1.5 }]$","${ 流动: 3, 石头: 1 }$",
+钥匙链,"<i class=""mdi mdi-key-chain""></i>","$[{ name: '小房子', type: '保留', value: true }, { name: '木头增益', type: ' \cdot ', value: 1.5 }]$","${ 木头: 2, 石头: 3 }$","{""cost"":{""最高力量"":6},""params"":""${ const maxPart = {(store.state.stat.village_coinMax.total)}^{0.5}; const happinessMult = store.getters[' \\cdot /get']('幸福', 0.03  \\cdot  store.state.village.job.entertainer.max, 1, 0, ['villageJob', 'villagePolicy']) / store.getters[' \\cdot /get']('幸福'); const taxPart = store.getters[' \\cdot /get']('工人', 0, 1, 0, ['villagePolicy'])  \\cdot  store.getters[' \\cdot /get']('税率', 0, 1, 0, ['villagePolicy']); let foodPart = 0; store.getters['currency/list']('village', 'regular', 'food').forEach(foodName => { const food = foodName.split('_')[1]; let foodBase = 0; switch (food) { case '粮食': foodBase = 0.5  \\cdot  store.state.village.job.farmer.max; break; case '水果': foodBase = 0.5  \\cdot  store.state.village.job.收割机.max; break; case '鱼': foodBase = 30  \\cdot  store.state.village.job.fisherman.max; break; case '蔬菜': foodBase = 40  \\cdot  store.state.village.job.gardener.max; break; } foodPart += Math.min(taxPart, store.getters[' \\cdot /get'](store.getters['currency/gainMultName']('village', food), foodBase, 1, 0, ['villageJob', 'villagePolicy'])); }); const timePart = foodPart  \\cdot  happinessMult  \\cdot  VILLAGE_COINS_PER_FOOD  \\cdot  600; return [maxPart, timePart, maxPart + timePart]; }$"",""description"":""$[formatNum(params[2])]$"",""formula"":""$[formatNum(params[0]), formatNum(params[1])]$"",""disabled"":""$store.state.system.features.village.currentSubfeature !== 0 || store.state.cryolab.village.激活的卡片$"",""trigger"":""${ store.dispatch('currency/gain', { feature: 'village', name: '金币', amount: params[2] }); }$""}"
+螺丝刀,"<i class=""mdi mdi-screwdriver""></i>","$[{ name: '起重机', type: '保留', value: true }, { name: '石头增益', type: ' \cdot ', value: 1.5 }]$","${ 木头: 1, 流动: 1, 石头: 3 }$",

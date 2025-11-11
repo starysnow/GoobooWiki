@@ -1,44 +1,33 @@
 {
-    雨色: {
-        类型: 'theme',
-        item: '雨色',
+    雨: {
+        type: 'theme',
+        item: '雨',
         pool: {
-            weatherChaos: {消耗: {天气混乱代币: 260}}
+            weatherChaos: {price: {天气混乱代币: 260}}
         }
     },
-    垃圾箱: {
-        类型: '圣遗物',
-        item: '垃圾箱',
+    垃圾桶: {
+        type: 'relic',
+        item: '垃圾桶',
         pool: {
-            weatherChaos: {消耗: {天气混乱代币: 130}}
+            weatherChaos: {price: {天气混乱代币: 130}}
         }
     },
     手提箱: {
-        类型: '圣遗物',
+        type: 'relic',
         item: '手提箱',
         requirement() {
             return store.state.解锁.hordeHeirlooms.see;
         },
         pool: {
-            weatherChaos: {消耗: {天气混乱代币: 155}}
+            weatherChaos: {price: {天气混乱代币: 155}}
         }
     },
     cardPack_fishingForFun: {
-        类型: '卡包',
+        type: '卡包',
         item: '钓鱼为乐',
         pool: {
-            weatherChaos: {消耗: {天气混乱代币: 30}}
-        }
-    },
-    臭泥: {
-        类型: 'consumable',
-        item: '臭泥',
-        amount: 20,
-        requirement() {
-            return store.state.解锁.肥料.see;
-        },
-        pool: {
-            weatherChaos: {消耗: {天气混乱代币: 1}}
+            weatherChaos: {price: {天气混乱代币: 30}}
         }
     }
 }

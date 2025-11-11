@@ -1,0 +1,98 @@
+[
+  {
+    "名称": "攻击plus",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "25",
+    "effect": "攻击*｛${(1.01)}^{lvl}$｝",
+    "maxGL": ""
+  },
+  {
+    "名称": "生命值plus",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "25",
+    "effect": "生命值*｛${(1.01)}^{lvl}$｝",
+    "maxGL": ""
+  },
+  {
+    "名称": "boneGain",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "40",
+    "effect": "骨头增益*｛$lvl  \\cdot  0.01 + 1$｝",
+    "maxGL": "139"
+  },
+  {
+    "名称": "boneCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "50",
+    "effect": "骨头容量*｛${(1.015)}^{lvl}$｝",
+    "maxGL": ""
+  },
+  {
+    "名称": "itemChance",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "60",
+    "effect": "装备几率*｛$lvl  \\cdot  0.01 + 1$｝",
+    "maxGL": "159"
+  },
+  {
+    "名称": "monsterPartCap",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "80",
+    "effect": "怪物零件容量*｛$lvl  \\cdot  0.01 + 1$｝",
+    "maxGL": "179"
+  },
+  {
+    "名称": "corruptedFleshGain",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "120",
+    "effect": "腐烂的肉体增益*｛$lvl  \\cdot  0.01 + 1$｝",
+    "maxGL": "219"
+  },
+  {
+    "名称": "shardChance",
+    "subfeature": "0",
+    "scalesWithGL": "true",
+    "minGL": "150",
+    "effect": "神秘碎片几率*｛$lvl  \\cdot  0.01 + 1$｝",
+    "maxGL": "249"
+  },
+  {
+    "名称": "attack2",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "10",
+    "effect": "攻击*｛${(1.01)}^{lvl}$｝",
+    "maxGL": ""
+  },
+  {
+    "名称": "health2",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "10",
+    "effect": "生命值*｛${(1.01)}^{lvl}$｝",
+    "maxGL": ""
+  },
+  {
+    "名称": "bloodGain",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "20",
+    "effect": "血液增益*｛$lvl  \\cdot  0.02 + 1$｝",
+    "maxGL": "119"
+  },
+  {
+    "名称": "bloodCap",
+    "subfeature": "1",
+    "scalesWithGL": "true",
+    "minGL": "30",
+    "effect": "血液容量*｛$lvl  \\cdot  0.02 + 1$｝",
+    "maxGL": "129"
+  }
+]

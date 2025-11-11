@@ -1,16 +1,132 @@
 {
     解锁: 'generalOrladeeSubfeature',
     quests: {
-        这世间的美丽: {
+        beautyOfThisWorld: {
             reward: '棋盘',
+            stageLength: 6,
             stages: [
-                {笔记: 'general_32', tasks: [
-                    {类型: 'stat', subtype: '您当前的声望等级为 (0)，将所有农作物收益乘以 x(1)。', name: 'farm_bugMax', operator: '>=', value: 250},
-                    {类型: 'stat', subtype: '您当前的声望等级为 (0)，将所有农作物收益乘以 x(1)。', name: 'farm_ladybugMax', operator: '>=', value: 250},
-                    {类型: 'stat', subtype: '您当前的声望等级为 (0)，将所有农作物收益乘以 x(1)。', name: 'farm_butterflyMax', operator: '>=', value: 50}
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: 'farm_bugMax', operator: '>=', value: 2500},
+                    {type: 'stat', subtype: 'total', name: 'farm_ladybugMax', operator: '>=', value: 4000},
+                    {type: 'stat', subtype: 'total', name: 'farm_butterflyMax', operator: '>=', value: 280}
                 ]},
-                {笔记: 'general_33', tasks: [
-                    {类型: 'stat', subtype: '您当前的声望等级为 (0)，将所有农作物收益乘以 x(1)。', name: 'gallery_redDrumMax', operator: '>=', value: 1200}
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '笨蛋笨蛋笨蛋', operator: '>=', value: 1e4}
+                ]},
+                {tasks: [
+                    {type: 'equipmentMastery', name: 'shatteredGem', operator: '>=', value: 8}
+                ]},
+                {tasks: [
+                    {type: 'upgrade', subtype: 'total', name: '大理石雕像', operator: '>=', value: 1}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: 'horde_mysticalShardMax', operator: '>=', value: 250}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '探险家', operator: '>=', value: 225}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: 'farm_bugMax', operator: '>=', value: 4000},
+                    {type: 'stat', subtype: 'total', name: 'farm_ladybugMax', operator: '>=', value: 6000},
+                    {type: 'stat', subtype: 'total', name: 'farm_butterflyMax', operator: '>=', value: 450}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: 'gallery_yellowDrumMax', operator: '>=', value: 1e4}
+                ]},
+                {tasks: [
+                    {type: 'equipmentMastery', name: 'prism', operator: '>=', value: 8}
+                ]},
+                {tasks: [
+                    {type: 'upgrade', subtype: 'total', name: '奖杯柜', operator: '>=', value: 5}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: 'horde_mysticalShardMax', operator: '>=', value: 500}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '探险家', operator: '>=', value: 330}
+                ]},
+            ]
+        },
+        颜色多样性: {
+            reward: '彩虹花',
+            stageLength: 5,
+            stages: [
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '大理石', operator: '>=', value: 1e7}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '花肥', operator: '>=', value: 1e21}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '骨头', operator: '>=', value: 1e110}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '宝石', operator: '>=', value: 1e12}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: 'farm_petalMax', operator: '>=', value: 2000}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '大理石', operator: '>=', value: 1e9}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '花肥', operator: '>=', value: 1e31}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '骨头', operator: '>=', value: 1e180}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '宝石', operator: '>=', value: 1e16}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: 'farm_petalMax', operator: '>=', value: 4000}
+                ]},
+            ]
+        },
+        fieldTesting: {
+            reward: '科学书',
+            解锁: 'hordeClassesSubfeature',
+            stageLength: 7,
+            stages: [
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '血液', operator: '>=', value: 3.5e9}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: 'mining_neonMax', operator: '>=', value: 1e4}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '远见卓识', operator: '>=', value: 100}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '圆形', operator: '>=', value: 8e15}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '黑曜石', operator: '>=', value: 4e11}
+                ]},
+                {tasks: [
+                    {type: '解锁', name: '猴子丛林', feature: 'horde'}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '铱锭', operator: '>=', value: 1}
+                ]},
+            ]
+        },
+        shiningBright: {
+            reward: '巨大钻石',
+            解锁: '怪物牙齿 (战区)',
+            stageLength: 4,
+            stages: [
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: 'horde_monsterToothWarzoneMax', operator: '>=', value: 25}
+                ]},
+                {tasks: [
+                    {type: 'upgrade', subtype: 'total', name: '宝石仓', operator: '>=', value: 1}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: 'mining_barShinyMax', operator: '>=', value: 150}
+                ]},
+                {tasks: [
+                    {type: 'stat', subtype: 'total', name: '光-蓝色油漆', operator: '>=', value: 1}
                 ]},
             ]
         }

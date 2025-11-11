@@ -1,22 +1,3 @@
-名称,图标,效果
-友好的蝙蝠,"<i class=""mdi mdi-bat""></i>",废料增益*｛1.25｝
-锤子,"<i class=""mdi mdi-hammer""></i>",制作站保留｛true｝
-铝砖,"<i class=""mdi mdi-wall""></i>",铝存储保留｛true｝; 铝淬火保留｛true｝
-铜砖,"<i class=""mdi mdi-wall""></i>",铜存储保留｛true｝
-铝堆,"<i class=""mdi mdi-dots-triangle""></i>",铝罐保留｛true｝; 铝砧保留｛true｝
-炸弹,"<i class=""mdi mdi-bomb""></i>",破壳者保留｛true｝
-铜堆,"<i class=""mdi mdi-dots-triangle""></i>",铜罐保留｛true｝
-雷达,"<i class=""mdi mdi-radar""></i>",深度居民保留｛true｝
-报刊,"<i class=""mdi mdi-download""></i>",压缩机保留｛true｝
-橱柜,"<i class=""mdi mdi-cupboard""></i>",矿石槽位保留｛true｝
-催化剂,"<i class=""mdi mdi-flask""></i>",精炼厂保留｛true｝
-跳绳,"<i class=""mdi mdi-jump-rope""></i>",铝扩张保留｛true｝; 铜扩张保留｛true｝
-青铜镐,"<i class=""mdi mdi-pickaxe""></i>",花岗岩硬化保留｛true｝
-矿石架,"<i class=""mdi mdi-window-closed""></i>",矿石架保留｛true｝; 锡存储保留｛true｝
-煤砖,"<i class=""mdi mdi-wall""></i>",熔炉保留｛true｝
-洗衣机,"<i class=""mdi mdi-washing-machine""></i>",矿石洗选保留｛true｝
-打开的礼物,"<i class=""mdi mdi-gift-open""></i>",青铜存储保留｛true｝; 铁存储保留｛true｝
-磁铁,"<i class=""mdi mdi-magnet""></i>",铁扩张保留｛true｝; 铁淬火保留｛true｝; 铁过滤器保留｛true｝
-铜镐,"<i class=""mdi mdi-pickaxe""></i>",磁铁保留｛true｝; 仓库保留｛true｝
-锡桶,"<i class=""mdi mdi-pail""></i>",钛扩张保留｛true｝; 钛存储保留｛true｝
-一罐蜂蜜,"<i class=""mdi mdi-pot""></i>",最大树脂+｛1｝
+名称,icon,effect,glyph,激活的卡片
+友好的蝙蝠,"<i class=""mdi mdi-bat""></i>","$[{ name: '废料增益', type: ' \cdot ', value: 1.25 }]$","${ 灰尘: 1, 粘土: 3 }$","{""cost"":{""最高力量"":8},""params"":""${ const maxPart = {(store.state.stat.mining_scrapMax.total)}^{0.5}; const timePart = store.getters['mining/depthScrap'](store.state.stat[`mining_maxDepth${store.state.system.features.mining.currentSubfeature}`].value)  \\cdot  1200; return [maxPart, timePart, maxPart + timePart]; }$"",""description"":""$[formatNum(params[2])]$"",""formula"":""$[formatNum(params[0]), formatNum(params[1])]$"",""disabled"":""$store.state.system.features.mining.currentSubfeature !== 0 || store.state.cryolab.mining.激活的卡片$"",""trigger"":""${ store.dispatch('currency/gain', { feature: 'mining', name: '废料', amount: params[2] }); }$""}"
+蜂蜜罐,"<i class=""mdi mdi-pot""></i>","$[{ name: '最大树脂', type: '+', value: 1 }]$","${ 粘土: 2, 热量: 4 }$","{""cost"":{""最高力量"":10},""params"":""$[store.state.currency.树脂.cap]$"",""description"":""$[]$"",""formula"":""$[formatNum(params[0])]$"",""disabled"":""$store.state.system.features.mining.currentSubfeature !== 0 || store.state.cryolab.mining.激活的卡片$"",""trigger"":""${ store.dispatch('currency/gain', { feature: 'mining', name: '树脂', amount: params[0] }); }$""}"

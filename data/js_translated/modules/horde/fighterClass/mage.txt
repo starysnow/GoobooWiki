@@ -1,335 +1,362 @@
 {
     解锁: '法师职业',
-    图标: 'mdi-wizard-hat',
+    icon: 'mdi-wizard-hat',
     baseStats: {
         攻击plus: 4,
-        生命值: 575,
+        生命值plus: 575,
         mana: 400,
         manaRegen: 0.1
     },
-    经验值: {
+    exp: {
         +: 840,
         increment: 1.24
     },
-    courageMult: 4,
+    courageMult: 2.25,
     skills: {
         manaRest: {
-            类型: '被动: (0)%',
-            color: 'blue',
-            图标: 'mdi-sleep',
+            type: 'passive',
+            color: '蓝色油漆',
+            icon: 'mdi-sleep',
             max: 1,
-            效果: [
-                {name: '在不使用 (0) 的激活后获得 (1) 的法力回复', 类型: 'tag', value: lvl => [15, lvl * 1.2]}
+            effect: [
+                {name: '在不使用 {0} 的激活后获得 {1} 的法力回复', type: 'tag', value: lvl => [15, lvl * 1.2]}
             ]
         },
-        autocast: {
-            类型: '被动: (0)%',
-            color: '粉色',
-            图标: 'mdi-cached',
-            max: 3,
-            cost: 75,
-            效果: [
-                {name: '自动释放槽位', 类型: '+', value: lvl => lvl}
-            ]
-        },
+        autocast: {type: 'statBig', max: 3, cost: 60, effect: [
+            {name: '自动释放槽位', type: '+', value: lvl => lvl}
+        ]},
         magicMissile: {
-            类型: '激活的卡片',
+            type: '激活的卡片',
             color: 'indigo',
-            图标: 'mdi-motion',
+            icon: 'mdi-motion',
             max: 1,
             cooldown: () => 6,
-            activeCost: () => {return {mana: 10};},
+            activeCost: () => {return {mana: 3};},
             激活的卡片() {
                 return [
-                    {类型: 'damageMagic', value: 2.2, int: 0.16}
+                    {type: 'damageMagic', value: 3.8, int: 0.24}
                 ];
             },
             activeType: 'combat'
         },
-        火球: {
-            类型: '激活的卡片',
-            color: '橙色',
-            图标: 'mdi-fire-circle',
+        fireball: {
+            type: '激活的卡片',
+            color: '橙色油漆',
+            icon: 'mdi-fire-circle',
             max: 5,
             cost: 14,
             cooldown: () => 13,
-            activeCost: () => {return {mana: 22};},
+            activeCost: () => {return {mana: 5};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'damageMagic', value: lvl * 0.1 + 3.3, int: 0.24, 能以(0)%的效率暴击: lvl * 0.1 + 0.5}
+                    {type: 'damageMagic', value: lvl * 0.2 + 5.4, int: 0.45, canCrit: lvl * 0.1 + 0.5}
                 ];
             },
             activeType: 'combat'
         },
         shockBlast: {
-            类型: '激活的卡片',
-            color: '黄色',
-            图标: 'mdi-flash',
+            type: '激活的卡片',
+            color: '黄色油漆',
+            icon: 'mdi-flash',
             max: 5,
             cost: 14,
             cooldown: () => 28,
-            activeCost: () => {return {mana: 30};},
+            activeCost: () => {return {mana: 6};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'damageMagic', value: lvl * 0.3 + 4.5, int: 0.3},
-                    {类型: '沉默药水', value: lvl * 2 + 4}
+                    {type: 'damageMagic', value: lvl * 0.35 + 9.4, int: 0.75},
+                    {type: 'silence', value: lvl * 2 + 4}
                 ];
             },
             activeType: 'combat'
         },
         heal: {
-            类型: '激活的卡片',
-            color: '绿色',
-            图标: 'mdi-medical-bag',
+            type: '激活的卡片',
+            color: '绿色油漆',
+            icon: 'mdi-medical-bag',
             max: 5,
             cost: 14,
-            cooldown: (lvl) => 55 - lvl * 5,
-            activeCost: () => {return {mana: 65};},
+            cooldown: (lvl) => 125 - lvl * 10,
+            activeCost: () => {return {mana: 21};},
             激活的卡片() {
                 return [
-                    {类型: 'heal', value: 0.6, int: 0.01}
+                    {type: 'heal', value: 0.6, int: 0.01}
                 ];
             },
             activeType: 'combat'
         },
-        mana: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '法力', 类型: '+', value: lvl => lvl * 50}
+        mana: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '法力', type: '+', value: lvl => lvl * 50}
         ]},
-        intelligence: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '智力', 类型: '+', value: lvl => lvl * 1.4}
+        intelligence: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '智力', type: '+', value: lvl => lvl * 1.4}
         ]},
         barrier: {
-            类型: '激活的卡片',
-            color: '光-灰色',
-            图标: 'mdi-circle-outline',
+            type: '激活的卡片',
+            color: '光-grey',
+            icon: 'mdi-circle-outline',
             max: 5,
             cost: 16,
             cooldown: () => 36,
-            activeCost: () => {return {mana: 40};},
+            activeCost: () => {return {mana: 7};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'divisionShield', value: lvl * 3 + 1}
+                    {type: 'divisionShield', value: lvl * 3 + 1}
                 ];
             },
             activeType: 'combat'
         },
         earthquake: {
-            类型: '激活的卡片',
-            color: '棕色',
-            图标: 'mdi-landslide',
+            type: '激活的卡片',
+            color: 'brown',
+            icon: 'mdi-landslide',
             max: 5,
             cost: 16,
             cooldown: () => 30,
-            activeCost: () => {return {mana: 48};},
+            activeCost: () => {return {mana: 9};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'damageMagic', value: 3.75, int: 0.22},
-                    {类型: 'stun', value: lvl + 3}
+                    {type: 'damageMagic', value: lvl * 0.75 + 9.4, int: 0.65},
+                    {type: 'stun', value: lvl + 3}
                 ];
             },
             activeType: 'combat'
         },
-        intelligence_2: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '智力', 类型: '+', value: lvl => lvl * 1.4}
+        intelligence_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '智力', type: '+', value: lvl => lvl * 1.4}
         ]},
-        急速: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '急速', 类型: '+', value: lvl => lvl * 3}
+        spellblade_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '法术之刃', type: '+', value: lvl => lvl * 0.15}
         ]},
-        生命值: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '生命值', 类型: '+', value: lvl => lvl * 70}
+        haste: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '急速', type: '+', value: lvl => lvl * 3}
+        ]},
+        生命值plus: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '生命值', type: '+', value: lvl => lvl * 70}
         ]},
         manasteal: {
-            类型: '被动: (0)%',
-            color: 'teal',
-            图标: 'mdi-water-plus',
+            type: 'passive',
+            color: '青色油漆',
+            icon: 'mdi-water-plus',
             max: 3,
             cost: 40,
-            效果: [
-                {name: '击杀时获得 (0) 法力', 类型: 'tag', value: lvl => [lvl * 5]}
+            effect: [
+                {name: '击杀时获得 {0} 法力', type: 'tag', value: lvl => [lvl * 5]}
             ]
         },
         waterBolt: {
-            类型: '激活的卡片',
-            color: '光-blue',
-            图标: 'mdi-waves',
+            type: '激活的卡片',
+            color: '浅蓝色油漆',
+            icon: 'mdi-waves',
             max: 5,
             cost: 18,
-            cooldown: () => 75,
-            activeCost: () => {return {mana: 130};},
+            cooldown: () => 40,
+            activeCost: () => {return {mana: 12};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'damageMagic', value: lvl * 0.6 + 8, int: 0.36},
-                    {类型: 'heal', value: lvl * 0.025 + 0.075, int: 0.006}
+                    {type: 'damageMagic', value: lvl * 0.7 + 12.5, int: 0.9},
+                    {type: 'heal', value: lvl * 0.025 + 0.075, int: 0.006}
                 ];
             },
             activeType: 'combat'
         },
         iceBlast: {
-            类型: '激活的卡片',
-            color: '青色',
-            图标: 'mdi-snowflake-alert',
+            type: '激活的卡片',
+            color: 'cyan',
+            icon: 'mdi-snowflake-alert',
             max: 5,
             cost: 18,
             cooldown: (lvl) => 38 - lvl * 4,
-            activeCost: () => {return {mana: 85};},
+            activeCost: () => {return {mana: 16};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'stun', value: lvl * 2 + 6},
-                    {类型: 'removeAttack', value: lvl * 0.02 + 0.1}
+                    {type: 'stun', value: lvl * 2 + 6},
+                    {type: 'removeAttack', value: lvl * 0.02 + 0.1}
                 ];
             },
             activeType: 'combat'
         },
-        mana_2: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '法力', 类型: '+', value: lvl => lvl * 50}
+        damage: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '攻击', type: '+', value: lvl => lvl * 0.12}
         ]},
-        haste_2: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '急速', 类型: '+', value: lvl => lvl * 3}
+        mana_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '法力', type: '+', value: lvl => lvl * 50}
         ]},
-        autocast_2: {
-            类型: '被动: (0)%',
-            color: '粉色',
-            图标: 'mdi-cached',
-            max: 1,
-            cost: 50,
-            效果: [
-                {name: '自动释放槽位', 类型: '+', value: lvl => lvl}
-            ]
-        },
-        mana_3: {类型: 'stat', max: 15, cost: 10, 效果: [
-            {name: '法力', 类型: '+', value: lvl => lvl * 40},
-            {name: '法力回复', 类型: '+', value: lvl => lvl * 0.08}
+        haste_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '急速', type: '+', value: lvl => lvl * 3}
         ]},
-        spellblade: {类型: 'stat', max: 15, cost: 10, 效果: [
-            {name: '法术之刃', 类型: '+', value: lvl => lvl * 0.2}
+        autocast_2: {type: 'statBig', max: 2, cost: 20, effect: [
+            {name: '自动释放槽位', type: '+', value: lvl => lvl}
         ]},
-        聚焦: {
-            类型: '激活的卡片',
-            color: '紫色',
-            图标: 'mdi-crystal-ball',
+        mana_3: {type: 'stat', max: 15, cost: 10, effect: [
+            {name: '法力', type: '+', value: lvl => lvl * 40},
+            {name: '法力回复', type: '+', value: lvl => lvl * 0.08}
+        ]},
+        spellblade: {type: 'stat', max: 15, cost: 10, effect: [
+            {name: '法术之刃', type: '+', value: lvl => lvl * 0.2}
+        ]},
+        focus: {
+            type: '激活的卡片',
+            color: '紫色油漆',
+            icon: 'mdi-crystal-ball',
             max: 5,
             cost: 20,
             cooldown: () => 180,
-            activeCost: () => {return {mana: 125};},
+            activeCost: () => {return {mana: 24};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'buff', value: 60, 效果: [
-                        {类型: '+', name: '智力', value: 8 * lvl}
+                    {type: 'buff', value: 60, effect: [
+                        {type: '+', name: '智力', value: 8 * lvl}
                     ]}
                 ];
             },
             activeType: 'combat'
         },
         smite: {
-            类型: '激活的卡片',
-            color: '红色',
-            图标: 'mdi-nuke',
+            type: '激活的卡片',
+            color: '红色油漆',
+            icon: 'mdi-nuke',
             max: 5,
             cost: 20,
             cooldown: (lvl) => 95 - lvl * 5,
-            activeCost: () => {return {mana: 250};},
+            activeCost: () => {return {mana: 40};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'damageMagic', value: lvl * 4 + 18, int: 0.8}
+                    {type: 'damageMagic', value: lvl * 4 + 28, int: 2.2}
                 ];
             },
             activeType: 'combat'
         },
-        intelligence_3: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '智力', 类型: '+', value: lvl => lvl * 1.4}
+        intelligence_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '智力', type: '+', value: lvl => lvl * 1.4}
         ]},
-        health_2: {类型: 'stat', max: 10, cost: 10, 效果: [
-            {name: '生命值', 类型: '+', value: lvl => lvl * 70}
+        spellblade_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '法术之刃', type: '+', value: lvl => lvl * 0.15}
         ]},
-        autocast_3: {
-            类型: '被动: (0)%',
-            color: '粉色',
-            图标: 'mdi-cached',
-            max: 1,
-            cost: 50,
-            效果: [
-                {name: '自动释放槽位', 类型: '+', value: lvl => lvl}
-            ]
-        },
+        haste_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '急速', type: '+', value: lvl => lvl * 3}
+        ]},
+        damage_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '攻击', type: '+', value: lvl => lvl * 0.12}
+        ]},
+        health_2: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '生命值', type: '+', value: lvl => lvl * 70}
+        ]},
+        autocast_3: {type: 'statBig', max: 2, cost: 20, effect: [
+            {name: '自动释放槽位', type: '+', value: lvl => lvl}
+        ]},
         conjure: {
-            类型: '激活的卡片',
-            color: '红色-粉色',
-            图标: 'mdi-sack',
+            type: '激活的卡片',
+            color: '红色油漆-粉红色油漆',
+            icon: 'mdi-sack',
             max: 5,
             cost: 20,
             cooldown: () => 900,
             activeCost: () => {return {};},
             激活的卡片(lvl) {
                 return [
-                    {类型: '血液', value: lvl * 5 + 25}
+                    {type: '血液', value: lvl * 5 + 10}
                 ];
             },
             activeType: 'utility'
         },
         ascend: {
-            类型: '激活的卡片',
-            color: '金色',
-            图标: 'mdi-star-face',
+            type: '激活的卡片',
+            color: '金色油漆',
+            icon: 'mdi-star-face',
             max: 5,
             cost: 20,
             cooldown: (lvl) => 8100 - lvl * 900,
             activeCost: () => {return {mana: 1000};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'buff', value: 150, 效果: [
-                        {类型: '*', name: '攻击', value: lvl * 0.15 + 1.25},
-                        {类型: '*', name: '生命值', value: lvl * 0.15 + 1.25},
-                        {类型: '+', name: '恢复', value: lvl * 0.03 + 0.05},
-                        {类型: '+', name: '法力回复', value: lvl * 2 + 10},
+                    {type: 'buff', value: 150, effect: [
+                        {type: '*', name: '攻击', value: lvl * 0.15 + 1.25},
+                        {type: '*', name: '生命值', value: lvl * 0.15 + 1.25},
+                        {type: '+', name: '恢复', value: lvl * 0.03 + 0.05},
+                        {type: '+', name: '法力回复', value: lvl * 2 + 10},
                     ]}
                 ];
             },
             activeType: 'combat'
         },
         deepFocus: {
-            类型: '激活的卡片',
-            color: 'blue',
-            图标: 'mdi-water',
+            type: '激活的卡片',
+            color: '蓝色油漆',
+            icon: 'mdi-water',
             max: 5,
             cost: 20,
-            cooldown: () => 22 * SECONDS_PER_HOUR,
+            cooldown: () => HORDE_STACKING_COOLDOWN,
             activeCost: () => {return {};},
             激活的卡片(lvl) {
                 return [
-                    {类型: 'permanentStat', stat: 'hordeMana_base', value: lvl * 10 + 10}
+                    {type: 'permanentStat', stat: 'hordeMana_base', value: lvl * 10 + 10}
                 ];
             },
             activeType: 'utility'
         },
+        damage_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '攻击', type: '+', value: lvl => lvl * 0.12}
+        ]},
+        health_3: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '生命值', type: '+', value: lvl => lvl * 70}
+        ]},
+        mana_4: {type: 'stat', max: 20, cost: 10, effect: [
+            {name: '法力', type: '+', value: lvl => lvl * 50}
+        ]},
+        intelligence_4: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '智力', type: '+', value: lvl => lvl * 1.4}
+        ]},
+        haste_4: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '急速', type: '+', value: lvl => lvl * 3}
+        ]},
+        damage_4: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '攻击', type: '+', value: lvl => lvl * 0.12}
+        ]},
+        health_4: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '生命值', type: '+', value: lvl => lvl * 70}
+        ]},
+        intelligence_5: {type: 'stat', max: 20, cost: 10, effect: [
+            {name: '智力', type: '+', value: lvl => lvl * 1.4}
+        ]},
+        spellblade_4: {type: 'stat', max: 10, cost: 10, effect: [
+            {name: '法术之刃', type: '+', value: lvl => lvl * 0.15}
+        ]},
     },
     skillTree: [
-        {isInnate: true, 达到等级: 0, items: ['manaRest', 'autocast', 'magicMissile']},
-        {达到等级: 1, items: ['火球', 'shockBlast', 'heal', 'mana', 'intelligence']},
-        {达到等级: 10, items: ['barrier', 'earthquake', 'intelligence_2', '急速', '生命值']},
-        {达到等级: 20, items: ['manasteal', 'waterBolt', 'iceBlast', 'mana_2', 'haste_2']},
-        {isChoice: true, 达到等级: 30, items: [['autocast_2'], ['mana_3'], ['spellblade']]},
-        {达到等级: 40, items: ['聚焦', 'smite', 'intelligence_3', 'health_2']},
-        {isChoice: true, 达到等级: 50, items: [['autocast_3'], ['conjure'], ['ascend'], ['deepFocus']]},
+        {isInnate: true, level: 0, items: ['manaRest', 'autocast', 'magicMissile']},
+        {level: 1, items: ['fireball', 'shockBlast', 'heal', 'mana', 'intelligence']},
+        {level: 10, items: ['barrier', 'earthquake', 'intelligence_2', 'spellblade_2', 'haste', '生命值plus']},
+        {level: 20, items: ['manasteal', 'waterBolt', 'iceBlast', 'damage', 'mana_2', 'haste_2']},
+        {isChoice: true, level: 30, items: [['autocast_2'], ['mana_3'], ['spellblade']]},
+        {level: 40, items: ['focus', 'smite', 'intelligence_3', 'spellblade_3', 'haste_3', 'damage_2', 'health_2']},
+        {isChoice: true, level: 50, items: [['autocast_3'], ['conjure'], ['ascend'], ['deepFocus']]},
+        {level: 75, items: ['damage_3', 'health_3', 'mana_4', 'intelligence_4', 'haste_4']},
+        {level: 100, items: ['damage_4', 'health_4', 'intelligence_5', 'spellblade_4']},
     ],
     quests: {
         stat: [
-            {stat: '法力', 类型: '总计', value: 1000},
-            {stat: '急速', 类型: '总计', value: 60},
-            {stat: '法力', 类型: '总计', value: 2500},
+            {stat: '法力', type: 'total', value: 900},
+            {stat: '智力', type: 'total', value: 22},
+            {stat: '急速', type: 'total', value: 60},
+            {stat: '法力', type: 'total', value: 2000},
+            {stat: '法术之刃', type: 'total', value: 7},
+            {stat: '自动释放槽位', type: 'total', value: 11},
+            {stat: '急速', type: 'total', value: 165},
         ],
-        区域: [
-            {area: '战场', 区域: '7'},
-            {area: '猴子丛林', 区域: '4'},
-            {area: '猴子丛林', 区域: '11'},
-            {area: '猴子丛林', 区域: '17'},
-            {area: '爱岛', 区域: '5'},
-            {area: '爱岛', 区域: '13'},
+        zone: [
+            {area: 'warzone', zone: '7'},
+            {area: 'monkeyJungle', zone: '4'},
+            {area: 'monkeyJungle', zone: '11'},
+            {area: 'monkeyJungle', zone: '17'},
+            {area: 'loveIsland', zone: '5'},
+            {area: 'loveIsland', zone: '13'},
         ],
-        达到等级: [15, 30, 45, 60, 85, 110, 135, 160, 185],
-        击败 (0) (+(1)): [
-            {击败 (0) (+(1)): 'ohilio', 难度: 12},
-            {击败 (0) (+(1)): 'Chriz', 难度: 3},
-            {击败 (0) (+(1)): 'mina', 难度: 25},
+        level: [15, 30, 45, 60, 85, 110, 135, 160, 185],
+        boss: [
+            {boss: 'ohilio', difficulty: 12},
+            {boss: 'chriz2', difficulty: 3},
+            {boss: 'mina', difficulty: 25},
         ]
     }
 }

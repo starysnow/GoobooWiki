@@ -1,232 +1,326 @@
 {
-    愤怒: {类型: '声望', 上限: 10, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(1.55, lvl) * 60};
-    }, 效果: [
-        {name: '攻击', 类型: '*', value: lvl => lvl * 0.25 + 1},
-        {name: '暴击率', 类型: '+', value: lvl => lvl * 0.01}
+    愤怒: {type: 'prestige', cap: 10, price(lvl) {
+        return {强大的灵魂: Math.pow(1.4, lvl) * 60};
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => lvl * 0.25 + 1},
+        {name: '暴击率', type: '+', value: lvl => lvl * 0.01}
     ]},
-    和平: {类型: '声望', 上限: 10, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(1.55, lvl) * 60};
-    }, 效果: [
-        {name: '生命值', 类型: '*', value: lvl => lvl * 0.25 + 1},
-        {name: '重生时间', 类型: '+', value: lvl => lvl * -5}
+    和平: {type: 'prestige', cap: 10, price(lvl) {
+        return {强大的灵魂: Math.pow(1.4, lvl) * 60};
+    }, effect: [
+        {name: '生命值', type: '*', value: lvl => lvl * 0.25 + 1},
+        {name: '重生时间', type: '+', value: lvl => lvl * -5}
     ]},
-    牛奶: {类型: '声望', 上限: 45, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(1.65, lvl) * 80};
-    }, 效果: [
-        {name: '骨头增益', 类型: '+', value: lvl => Math.pow(2, lvl) * 50},
-        {name: '骨头增益', 类型: '*', value: lvl => lvl * 0.2 + 1},
-        {name: '骨头容量', 类型: '*', value: lvl => Math.pow(1.75, lvl)}
+    牛奶: {type: 'prestige', cap: 45, price(lvl) {
+        return {强大的灵魂: Math.pow(1.45, lvl) * 80};
+    }, effect: [
+        {name: '骨头增益', type: '+', value: lvl => Math.pow(2, lvl) * 50},
+        {name: '骨头增益', type: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '骨头容量', type: '*', value: lvl => Math.pow(1.75, lvl)}
     ]},
-    屠夫: {类型: '声望', 上限: 10, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(1.75, lvl) * 100};
-    }, 效果: [
-        {name: '怪物零件增益', 类型: '+', value: lvl => lvl * 0.05},
-        {name: '怪物零件容量', 类型: '+', value: lvl => lvl * 30}
+    屠夫: {type: 'prestige', cap: 10, price(lvl) {
+        return {强大的灵魂: Math.pow(1.55, lvl) * 100};
+    }, effect: [
+        {name: '怪物零件增益', type: '+', value: lvl => lvl * 0.05},
+        {name: '怪物零件容量', type: '+', value: lvl => lvl * 30},
+        {name: 'Boss要求', type: '+', value: lvl => lvl * -1}
     ]},
-    新手运气: {类型: '声望', 上限: 120, requirementBase, requirementStat, 解锁要求: 26, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(1.9, lvl) * 375};
-    }, 效果: [
-        {name: '装备几率', 类型: '*', value: lvl => lvl * 0.2 + 1},
-        {name: '腐败的灵魂增益', 类型: '*', value: lvl => lvl * 0.08 + 1}
+    新手运气: {type: 'prestige', cap: 120, requirementBase, requirementStat, requirementValue: 26, price(lvl) {
+        return {强大的灵魂: Math.pow(1.65, lvl) * 375};
+    }, effect: [
+        {name: '装备几率', type: '*', value: lvl => lvl * 0.2 + 1},
+        {name: '腐败的灵魂增益', type: '*', value: lvl => lvl * 0.05 + 1}
     ]},
-    平衡: {类型: '声望', requirementBase, requirementStat, 解锁要求: 31, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(1.55, lvl) * 1100};
-    }, 效果: [
-        {name: '攻击', 类型: '*', value: lvl => Math.pow(1.12, lvl)},
-        {name: '生命值', 类型: '*', value: lvl => Math.pow(1.12, lvl)}
+    平衡: {type: 'prestige', requirementBase, requirementStat, requirementValue: 31, price(lvl) {
+        return {强大的灵魂: Math.pow(1.375, lvl) * 1100};
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.12, lvl)},
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.12, lvl)}
     ]},
-    进阶运气: {类型: '声望', requirementBase, requirementStat, 解锁要求: 36, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(1.9, lvl) * 4250};
-    }, 效果: [
-        {name: '传家宝几率', 类型: '+', value: lvl => Math.min(lvl * 0.0025, 0.1)},
-        {name: '怀旧之情', 类型: '+', value: lvl => lvl * 5}
+    进阶运气: {type: 'prestige', cap: 40, requirementBase, requirementStat, requirementValue: 36, price(lvl) {
+        return {强大的灵魂: Math.pow(1.65, lvl) * 3250};
+    }, effect: [
+        {name: '传家宝几率', type: '+', value: lvl => lvl * 0.0025},
+        {name: '怀旧之情', type: '+', value: lvl => lvl * 5}
     ]},
-    骨头商人: {类型: '声望', 上限: 150, requirementBase, requirementStat, 解锁要求: 41, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(1.65, lvl) * buildNum(18.5, 'K')};
-    }, 效果: [
-        {name: '骨头增益', 类型: '*', value: lvl => Math.pow(1.3, lvl)},
-        {name: '怪物零件容量', 类型: '*', value: lvl => Math.pow(1.1, lvl)}
+    骨头商人: {type: 'prestige', cap: 150, requirementBase, requirementStat, requirementValue: 41, price(lvl) {
+        return {强大的灵魂: Math.pow(1.45, lvl) * 1.15e4};
+    }, effect: [
+        {name: '骨头增益', type: '*', value: lvl => Math.pow(1.3, lvl)},
+        {name: '怪物零件容量', type: '*', value: lvl => Math.pow(1.1, lvl)}
     ]},
-    灵魂牢笼: {类型: '声望', 上限: 80, requirementBase, requirementStat, 解锁要求: 46, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(2.35, lvl) * buildNum(65, 'K')};
-    }, 效果: [
-        {name: '腐败的灵魂增益', 类型: '*', value: lvl => lvl * 0.05 + 1},
-        {name: '腐败的灵魂容量', 类型: '*', value: lvl => Math.pow(1.4, lvl)}
+    灵魂牢笼: {type: 'prestige', cap: 80, requirementBase, requirementStat, requirementValue: 46, price(lvl) {
+        return {强大的灵魂: Math.pow(1.95, lvl) * 4.5e4};
+    }, effect: [
+        {name: '腐败的灵魂增益', type: '*', value: lvl => lvl * 0.04 + 1},
+        {name: '腐败的灵魂容量', type: '*', value: lvl => Math.pow(1.3, lvl) * (lvl * 0.1 + 1)}
     ]},
-    进攻之书: {类型: '声望', 上限: 50, requirementBase, requirementStat, 解锁要求: 51, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(1.3, lvl) * buildNum(350, 'K')};
-    }, 效果: [
-        {name: '力量效果', 类型: '*', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.15 + 1)}
+    胜利庆典: {type: 'prestige', cap: 7, requirementBase, requirementStat, requirementValue: 48, price(lvl) {
+        return {强大的灵魂: Math.pow(1000, lvl) * 7.5e4};
+    }, effect: [
+        {name: '每次突袭生命值', type: '+', value: lvl => lvl >= 1 ? (Math.floor((lvl + 1) / 2) * 0.05) : null},
+        {name: '每次突袭攻击', type: '+', value: lvl => lvl >= 2 ? (Math.floor(lvl / 2) * 0.05) : null},
     ]},
-    防御之书: {类型: '声望', 上限: 50, requirementBase, requirementStat, 解锁要求: 56, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(1.3, lvl) * buildNum(1.25, 'M')};
-    }, 效果: [
-        {name: '韧效果', 类型: '*', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.15 + 1)}
+    进攻之书: {type: 'prestige', cap: 50, requirementBase, requirementStat, requirementValue: 51, price(lvl) {
+        return {强大的灵魂: Math.pow(1.225, lvl) * 2.25e5};
+    }, effect: [
+        {name: '力量效果', type: '*', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.15 + 1)}
     ]},
-    灰圈: {类型: '声望', requirementBase, requirementStat, 解锁要求: 61, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(lvl * 0.02 + 1.25, lvl) * buildNum(9, 'M')};
-    }, 效果: [
-        {name: '腐败', 类型: '+', value: lvl => lvl * -0.12}
+    防御之书: {type: 'prestige', cap: 50, requirementBase, requirementStat, requirementValue: 56, price(lvl) {
+        return {强大的灵魂: Math.pow(1.225, lvl) * 7.5e5};
+    }, effect: [
+        {name: '韧效果', type: '*', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.15 + 1)}
     ]},
-    遗愿: {类型: '声望', 上限: 15, requirementBase, requirementStat, 解锁要求: 66, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(lvl * 0.5 + 3, lvl) * buildNum(75, 'M')};
-    }, 效果: [
-        {name: '最大传家宝增益', 类型: '+', value: lvl => lvl}
+    灰圈: {type: 'prestige', requirementBase, requirementStat, requirementValue: 61, price(lvl) {
+        return {强大的灵魂: Math.pow(lvl * 0.015 + 1.2, lvl) * 4e6};
+    }, effect: [
+        {name: '腐败', type: '+', value: lvl => lvl * -0.12}
     ]},
-    蜡烛圈: {类型: '声望', requirementBase, requirementStat, 解锁要求: 71, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(lvl * 0.002 + 1.3, lvl) * buildNum(1.7, 'B')};
-    }, 效果: [
-        {name: '腐败的灵魂增益', 类型: '*', value: lvl => Math.pow(1.03, lvl)},
-        {name: '重生时间', 类型: '+', value: lvl => lvl * -5}
+    遗愿: {type: 'prestige', cap: 15, requirementBase, requirementStat, requirementValue: 66, price(lvl) {
+        return {强大的灵魂: Math.pow(lvl * 0.375 + 2.5, lvl) * 3e7};
+    }, effect: [
+        {name: '最大传家宝增益', type: '+', value: lvl => lvl}
     ]},
-    收容室: {类型: '声望', 上限: 100, requirementBase, requirementStat, 解锁要求: 81, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(1.3 + lvl * 0.01, lvl) * buildNum(100, 'B')};
-    }, 效果: [
-        {name: '骨头容量', 类型: '*', value: lvl => Math.pow(1.2, lvl)},
-        {name: '传家宝效果', 类型: '*', value: lvl => lvl * 0.03 + 1}
+    蜡烛圈: {type: 'prestige', requirementBase, requirementStat, requirementValue: 71, price(lvl) {
+        return {强大的灵魂: Math.pow(lvl * 0.0015 + 1.225, lvl) * 6e8};
+    }, effect: [
+        {name: '腐败的灵魂增益', type: '*', value: lvl => Math.pow(1.02, lvl)},
+        {name: '重生时间', type: '+', value: lvl => lvl * -5}
     ]},
-    陵墓: {类型: '声望', 上限: 80, requirementBase, requirementStat, 解锁要求: 91, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(lvl * 0.005 + 1.4, lvl) * buildNum(2.4, 'T')};
-    }, 效果: [
-        {name: '骨头增益', 类型: '*', value: lvl => Math.pow(1.3, lvl)},
-        {name: '怪物零件增益', 类型: '*', value: lvl => Math.pow(1.15, lvl)},
-        {name: '腐败的灵魂增益', 类型: '*', value: lvl => Math.pow(1.075, lvl)}
+    战利品: {type: 'prestige', cap: 5, requirementBase, requirementStat, requirementValue: 76, price(lvl) {
+        return {强大的灵魂: Math.pow(1e4, lvl) * 3e9};
+    }, effect: [
+        {name: '每次突袭装备几率', type: '+', value: lvl => getSequence(1, lvl) * 0.05}
     ]},
-    战斗研究: {类型: '声望', requirementBase, requirementStat, 解锁要求: 111, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(1.45 + lvl * 0.025, lvl) * buildNum(85, 'Qa')};
-    }, 效果: [
-        {name: '精通点数增益', 类型: '*', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.1 + 1)}
+    收容室: {type: 'prestige', cap: 100, requirementBase, requirementStat, requirementValue: 81, price(lvl) {
+        return {强大的灵魂: Math.pow(1.225 + lvl * 0.0075, lvl) * 2e10};
+    }, effect: [
+        {name: '骨头容量', type: '*', value: lvl => Math.pow(1.2, lvl)},
+        {name: '传家宝效果', type: '*', value: lvl => lvl * 0.03 + 1}
     ]},
-    骨室: {类型: '声望', requirementBase, requirementStat, 解锁要求: 131, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(2.7 + lvl * 0.05, lvl) * buildNum(275, 'Qi')};
-    }, 效果: [
-        {name: '骨头容量', 类型: '*', value: lvl => Math.pow(2, lvl)}
+    陵墓: {type: 'prestige', cap: 80, requirementBase, requirementStat, requirementValue: 91, price(lvl) {
+        return {强大的灵魂: Math.pow(lvl * 0.00375 + 1.3, lvl) * 2.4e11};
+    }, effect: [
+        {name: '骨头增益', type: '*', value: lvl => Math.pow(1.3, lvl)},
+        {name: '怪物零件增益', type: '*', value: lvl => Math.pow(1.15, lvl)},
+        {name: '腐败的灵魂增益', type: '*', value: lvl => Math.pow(1.05, lvl)}
     ]},
-    深仇大恨: {类型: '声望', 上限: 30, requirementBase, requirementStat, 解锁要求: 151, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(lvl * 0.02 + 1.6, lvl) * buildNum(2.25, 'Sx')};
-    }, 效果: [
-        {name: '攻击', 类型: '*', value: lvl => Math.pow(1.06, lvl) * (lvl * 0.1 + 1)},
-        {name: '生命值', 类型: '*', value: lvl => Math.pow(1.03, lvl) * (lvl * 0.05 + 1)}
+    战斗研究: {type: 'prestige', requirementBase, requirementStat, requirementValue: 111, price(lvl) {
+        return {强大的灵魂: Math.pow(1.35 + lvl * 0.02, lvl) * 3.5e15};
+    }, effect: [
+        {name: '精通点数增益', type: '*', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.1 + 1)}
     ]},
-    精神诱惑: {类型: '声望', 上限: 50, requirementBase, requirementStat, 解锁要求: 181, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(1.25, lvl) * buildNum(333, 'Sp')};
-    }, 效果: [
-        {name: '腐败的灵魂增益', 类型: '*', value: lvl => lvl * 0.08 + 1}
+    骨室: {type: 'prestige', requirementBase, requirementStat, requirementValue: 131, price(lvl) {
+        return {强大的灵魂: Math.pow(2.3 + lvl * 0.04, lvl) * 1.25e18};
+    }, effect: [
+        {name: '骨头容量', type: '*', value: lvl => Math.pow(2, lvl)}
     ]},
-    神秘的电容器: {类型: '声望', requirementBase, requirementStat, 解锁要求: 211, 消耗(lvl) {
-        return {强大的灵魂: Math.pow(lvl * 0.1 + 2, lvl) * buildNum(15, 'N')};
-    }, 效果: [
-        {name: '神秘碎片容量', 类型: '+', value: lvl => lvl}
+    深仇大恨: {type: 'prestige', cap: 30, requirementBase, requirementStat, requirementValue: 151, price(lvl) {
+        return {强大的灵魂: Math.pow(lvl * 0.015 + 1.45, lvl) * 9e19};
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.06, lvl) * (lvl * 0.1 + 1)},
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.03, lvl) * (lvl * 0.05 + 1)}
     ]},
-    皇家宝剑: {类型: '声望', requirementBase, requirementStat, 解锁要求: 140, 消耗(lvl) {
+    更多的假人: {type: 'prestige', cap: 20, raiseOtherCap: '目标假人', requirementBase, requirementStat, requirementValue: 171, price(lvl) {
+        return {强大的灵魂: Math.pow(lvl * 0.3 + 6, lvl) * 9e21};
+    }, effect: [
+        {name: 'upgradeHordeTargetDummyCap', type: '+', value: lvl => lvl * 5}
+    ]},
+    精神诱惑: {type: 'prestige', cap: 50, requirementBase, requirementStat, requirementValue: 191, price(lvl) {
+        return {强大的灵魂: Math.pow(1.18, lvl) * 3.33e24};
+    }, effect: [
+        {name: '腐败的灵魂增益', type: '*', value: lvl => lvl * 0.06 + 1}
+    ]},
+    神秘的电容器: {type: 'prestige', cap: 25, requirementBase, requirementStat, requirementValue: 211, price(lvl) {
+        return {强大的灵魂: Math.pow(lvl * 0.075 + 1.75, lvl) * 1.5e28};
+    }, effect: [
+        {name: '神秘碎片容量', type: '+', value: lvl => lvl * 2}
+    ]},
+    秘密训练: {type: 'prestige', cap: 20, requirementBase, requirementStat, requirementValue: 241, price(lvl) {
+        return {强大的灵魂: Math.pow(lvl * 0.0225 + 1.6, lvl) * 2.2e30};
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.2 + 1)},
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.1, lvl) * (lvl * 0.2 + 1)}
+    ]},
+    秘密存储: {type: 'prestige', cap: 30, requirementBase, requirementStat, requirementValue: 271, price(lvl) {
+        return {强大的灵魂: Math.pow(lvl * 0.015 + 1.5, lvl) * 6.3e32};
+    }, effect: [
+        {name: '骨头容量', type: '*', value: lvl => Math.pow(1.75, lvl)},
+        {name: '怪物零件容量', type: '*', value: lvl => Math.pow(1.15, lvl)},
+        {name: '神秘碎片容量', type: '+', value: lvl => lvl}
+    ]},
+    探路者: {type: 'prestige', cap: 50, requirementBase, requirementStat, requirementValue: 301, price(lvl) {
+        return {强大的灵魂: Math.pow(lvl * 0.0075 + 1.375, lvl) * 1.15e35};
+    }, effect: [
+        {name: '神秘碎片几率', type: '*', value: lvl => Math.pow(1.2, lvl)}
+    ]},
+    外骨骼: {type: 'prestige', cap: 25, requirementBase, requirementStat, requirementValue: 331, price(lvl) {
+        return {强大的灵魂: Math.pow(1.85 + lvl * 0.075, lvl) * 5.1e38};
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '骨头增益', type: '*', value: lvl => Math.pow(1.25, lvl)}
+    ]},
+    精华收集器: {type: 'prestige', cap: 50, requirementBase, requirementStat, requirementValue: 361, price(lvl) {
+        return {强大的灵魂: Math.pow(lvl * 0.12 + 1.4, lvl) * 1.85e41};
+    }, effect: [
+        {name: '精华增益', type: '*', value: lvl => Math.pow(1.2, lvl)}
+    ]},
+    皇家宝剑: {type: 'prestige', requirementBase, requirementStat, requirementValue: 140, price(lvl) {
         return {王冠: Math.round(Math.pow(1.08, lvl) * (lvl + 1) * 10)};
-    }, 效果: [
-        {name: '攻击', 类型: '*', value: lvl => Math.pow(1.05, lvl) * (0.1 * lvl + 1)}
+    }, effect: [
+        {name: '每次突袭攻击', type: '+', value: lvl => lvl * 0.01},
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.05, lvl) * (0.1 * lvl + 1)},
     ]},
-    皇家盔甲: {类型: '声望', requirement() {
+    皇家盔甲: {type: 'prestige', requirement() {
         return store.state.解锁.皇家盔甲升级.use;
-    }, 消耗(lvl) {
+    }, price(lvl) {
         return {王冠: Math.round(Math.pow(1.08, lvl) * (lvl + 1) * 14)};
-    }, 效果: [
-        {name: '生命值', 类型: '*', value: lvl => Math.pow(1.05, lvl) * (0.1 * lvl + 1)}
+    }, effect: [
+        {name: '每次突袭生命值', type: '+', value: lvl => lvl * 0.01},
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.05, lvl) * (0.1 * lvl + 1)},
     ]},
-    皇家存储: {类型: '声望', requirement() {
+    皇家存储: {type: 'prestige', requirement() {
         return store.state.解锁.皇家存储升级.use;
-    }, 消耗(lvl) {
+    }, price(lvl) {
         return {王冠: Math.round(Math.pow(1.08, lvl) * (lvl + 1) * 28)};
-    }, 效果: [
-        {name: '骨头增益', 类型: '*', value: lvl => Math.pow(1.05, lvl) * (0.1 * lvl + 1)},
-        {name: '骨头容量', 类型: '*', value: lvl => Math.pow(1.05, lvl) * (0.1 * lvl + 1)}
+    }, effect: [
+        {name: '每次突袭骨头增益', type: '+', value: lvl => lvl * 0.01},
+        {name: '骨头增益', type: '*', value: lvl => Math.pow(1.05, lvl) * (0.1 * lvl + 1)},
+        {name: '骨头容量', type: '*', value: lvl => Math.pow(1.05, lvl) * (0.1 * lvl + 1)},
     ]},
-    皇家屠夫: {类型: '声望', requirement() {
+    皇家屠夫: {type: 'prestige', requirement() {
         return store.state.解锁.皇家屠夫升级.use;
-    }, 消耗(lvl) {
+    }, price(lvl) {
         return {王冠: Math.round(Math.pow(1.08, lvl) * (lvl + 1) * 55)};
-    }, 效果: [
-        {name: '怪物零件增益', 类型: '*', value: lvl => Math.pow(1.05, lvl) * (0.05 * lvl + 1)}
+    }, effect: [
+        {name: '每次突袭怪物零件增益', type: '+', value: lvl => lvl * 0.005},
+        {name: '怪物零件增益', type: '*', value: lvl => Math.pow(1.05, lvl) * (0.05 * lvl + 1)},
     ]},
-    皇家墓穴: {类型: '声望', requirement() {
+    皇家墓穴: {type: 'prestige', requirement() {
         return store.state.解锁.皇家地窖升级.use;
-    }, 消耗(lvl) {
+    }, price(lvl) {
         return {王冠: Math.round(Math.pow(1.08, lvl) * (lvl + 1) * 111)};
-    }, 效果: [
-        {name: '腐败的灵魂增益', 类型: '*', value: lvl => getSequence(5, lvl) * 0.01 + 1},
-        {name: '腐败的灵魂容量', 类型: '*', value: lvl => getSequence(5, lvl) * 0.01 + 1}
+    }, effect: [
+        {name: '每次突袭腐化的灵魂增益', type: '+', value: lvl => getDiminishing(lvl) * 0.001},
+        {name: '腐败的灵魂增益', type: '*', value: lvl => getSequence(5, lvl) * 0.01 + 1},
+        {name: '腐败的灵魂容量', type: '*', value: lvl => getSequence(5, lvl) * 0.01 + 1},
     ]},
-    皇家秘密: {类型: '声望', requirement() {
+    皇家秘密: {type: 'prestige', requirement() {
         return store.state.解锁.皇家秘密升级.use;
-    }, 消耗(lvl) {
+    }, price(lvl) {
         return {王冠: Math.round(Math.pow(1.08, lvl) * (lvl + 1) * 222)};
-    }, 效果: [
-        {name: '神秘碎片容量', 类型: '+', value: lvl => lvl}
+    }, effect: [
+        {name: '神秘碎片几率', type: '*', value: lvl => Math.pow(1.05, lvl) * (0.1 * lvl + 1)},
+        {name: '神秘碎片容量', type: '+', value: lvl => lvl * 2}
     ]},
-    精确: {类型: '声望', requirement() {
+    皇家祝福: {type: 'prestige', cap: 6, requirement() {
+        return store.state.解锁.皇家祝福升级.use;
+    }, price(lvl) {
+        return {王冠: Math.round(Math.pow(2, lvl) * 1000)};
+    }, effect: [
+        {name: '祝福的剑装备', type: '解锁', value: lvl => lvl >= 1},
+        {name: '祝福的护甲装备', type: '解锁', value: lvl => lvl >= 2},
+        {name: '祝福的弓装备', type: '解锁', value: lvl => lvl >= 3},
+        {name: '祝福的火装备', type: '解锁', value: lvl => lvl >= 4},
+        {name: '祝福的水装备', type: '解锁', value: lvl => lvl >= 5},
+        {name: '祝福的盾装备', type: '解锁', value: lvl => lvl >= 6},
+    ]},
+    精确: {type: 'prestige', requirement() {
         return store.state.解锁.hordeClassesSubfeature.see;
-    }, 消耗(lvl) {
+    }, price(lvl) {
         return {勇敢: Math.pow(lvl * 0.01 + 1.55, lvl) * 1000};
-    }, 效果: [
-        {name: '攻击', 类型: '*', value: lvl => Math.pow(1.15, lvl)}
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.15, lvl)}
     ]},
-    解救: {类型: '声望', requirement() {
+    解救: {type: 'prestige', requirement() {
         return store.state.解锁.hordeClassesSubfeature.see;
-    }, 消耗(lvl) {
+    }, price(lvl) {
         return {勇敢: Math.pow(lvl * 0.01 + 1.55, lvl) * 1250};
-    }, 效果: [
-        {name: '生命值', 类型: '*', value: lvl => Math.pow(1.15, lvl)}
+    }, effect: [
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.15, lvl)}
     ]},
-    决心: {类型: '声望', requirementBase: requirementBase2, 解锁要求: 7, 消耗(lvl) {
+    决心: {type: 'prestige', requirementBase: requirementBase2, requirementStat: requirementStat2, requirementValue: 7, price(lvl) {
         return {勇敢: Math.pow(lvl * 0.02 + 2.35, lvl) * 6000};
-    }, 效果: [
-        {name: '腐败的灵魂增益', 类型: '*', value: lvl => Math.pow(1.08, lvl)},
-        {name: '勇敢增益', 类型: '*', value: lvl => Math.pow(1.08, lvl)}
+    }, effect: [
+        {name: '腐败的灵魂增益', type: '*', value: lvl => Math.pow(1.05, lvl)},
+        {name: '勇敢增益', type: '*', value: lvl => Math.pow(1.1, lvl)}
     ]},
-    教育: {类型: '声望', requirementBase: requirementBase2, 解锁要求: 10, 消耗(lvl) {
-        return {勇敢: Math.pow(lvl * 0.01 + 1.6, lvl) * buildNum(11, 'K')};
-    }, 效果: [
-        {name: '等级时间', 类型: '*', value: lvl => Math.pow(1 / 1.1, lvl)}
+    教育: {type: 'prestige', requirementBase: requirementBase2, requirementStat: requirementStat2, requirementValue: 10, price(lvl) {
+        return {勇敢: Math.pow(lvl * 0.01 + 1.6, lvl) * 1.1e4};
+    }, effect: [
+        {name: '等级时间', type: '*', value: lvl => Math.pow(1 / 1.1, lvl)}
     ]},
-    血室: {类型: '声望', requirementBase: requirementBase2, 解锁要求: 12, 消耗(lvl) {
-        return {勇敢: Math.pow(lvl * 0.05 + 2.5, lvl) * buildNum(16, 'K')};
-    }, 效果: [
-        {name: '骨头容量', 类型: '*', value: lvl => Math.pow(1.75, lvl)},
-        {name: '血液容量', 类型: '*', value: lvl => Math.pow(1.5, lvl)}
+    血室: {type: 'prestige', requirementBase: requirementBase2, requirementStat: requirementStat2, requirementValue: 12, price(lvl) {
+        return {勇敢: Math.pow(lvl * 0.05 + 2.5, lvl) * 1.6e4};
+    }, effect: [
+        {name: '骨头容量', type: '*', value: lvl => Math.pow(1.75, lvl)},
+        {name: '血液容量', type: '*', value: lvl => Math.pow(2.25, lvl)}
     ]},
-    石肤: {类型: '声望', requirementBase: requirementBase2, 解锁要求: 16, 消耗(lvl) {
-        return {勇敢: Math.pow(lvl + 5, lvl) * buildNum(70, 'K')};
-    }, 效果: [
-        {name: '生命值', 类型: '*', value: lvl => Math.pow(1.5, lvl)},
-        {name: '治疗', 类型: '*', value: lvl => Math.pow(1 / 1.2, lvl)}
+    石肤: {type: 'prestige', cap: 30, requirementBase: requirementBase2, requirementStat: requirementStat2, requirementValue: 16, price(lvl) {
+        return {勇敢: Math.pow(lvl * 0.5 + 5, lvl) * 7e4};
+    }, effect: [
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.2, lvl)},
+        {name: '血液容量', type: '*', value: lvl => Math.pow(1.5, lvl)}
     ]},
-    大学: {类型: '声望', requirementBase: requirementBase2, 解锁要求: 20, 消耗(lvl) {
-        return {勇敢: Math.pow(lvl * 0.01 + 1.85, lvl) * buildNum(250, 'K')};
-    }, 效果: [
-        {name: '等级增量', 类型: '*', value: lvl => Math.pow(1 / 1.1, lvl)}
+    大学: {type: 'prestige', requirementBase: requirementBase2, requirementStat: requirementStat2, requirementValue: 20, price(lvl) {
+        return {勇敢: Math.pow(lvl * 0.02 + 1.85, lvl) * 2.5e5};
+    }, effect: [
+        {name: '等级增量', type: '*', value: lvl => Math.pow(1 / 1.05, lvl) / (lvl * 0.05 + 1)}
     ]},
-    发现: {类型: '声望', requirementBase: requirementBase2, 解锁要求: 27, 消耗(lvl) {
-        return {勇敢: Math.pow(lvl * 0.25 + 4, lvl) * buildNum(5, 'M')};
-    }, 效果: [
-        {name: '最大传家宝增益', 类型: '+', value: lvl => lvl},
-        {name: '饰品最大增益', 类型: '*', value: lvl => lvl * 0.1 + 1}
+    发现: {type: 'prestige', cap: 40, requirementBase: requirementBase2, requirementStat: requirementStat2, requirementValue: 27, price(lvl) {
+        return {勇敢: Math.pow(lvl * 0.25 + 4, lvl) * 5e6};
+    }, effect: [
+        {name: '腐败的灵魂容量', type: '*', value: lvl => Math.pow(lvl * 0.01 + 1.4, lvl)},
+        {name: '最大传家宝增益', type: '+', value: lvl => lvl},
+        {name: '饰品最大增益', type: '*', value: lvl => lvl * 0.1 + 1}
     ]},
-    心灵专注: {类型: '声望', requirementBase: requirementBase2, 解锁要求: 33, 消耗(lvl) {
-        return {勇敢: Math.pow(lvl * 0.5 + 2, lvl) * buildNum(28, 'M')};
-    }, 效果: [
-        {name: '治疗', 类型: '*', value: lvl => Math.pow(1.1, lvl)}
+    心灵专注: {type: 'prestige', cap: 30, requirementBase: requirementBase2, requirementStat: requirementStat2, requirementValue: 33, price(lvl) {
+        return {勇敢: Math.pow(lvl * 0.5 + 2, lvl) * 2.8e7};
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.2, lvl)},
+        {name: '血液容量', type: '*', value: lvl => Math.pow(1.5, lvl)}
     ]},
-    清洗: {类型: '声望', requirementBase: requirementBase2, 解锁要求: 45, 消耗(lvl) {
-        return {勇敢: Math.pow(lvl * 0.015 + 1.25, lvl) * buildNum(150, 'B')};
-    }, 效果: [
-        {name: '腐败', 类型: '+', value: lvl => lvl * -0.09}
+    清洗: {type: 'prestige', requirementBase: requirementBase2, requirementStat: requirementStat2, requirementValue: 45, price(lvl) {
+        return {勇敢: Math.pow(lvl * 0.015 + 1.25, lvl) * 1.5e11};
+    }, effect: [
+        {name: '腐败', type: '+', value: lvl => lvl * -0.09}
     ]},
-    混沌箱: {类型: '声望', 上限: 10, requirementBase: requirementBase2, 解锁要求: 65, 消耗(lvl) {
-        return {勇敢: Math.pow(10, lvl) * buildNum(1, 'Qa')};
-    }, 效果: [
-        {name: '攻击', 类型: '*', value: lvl => Math.pow(1.35, lvl)},
-        {name: '装备几率', 类型: '*', value: lvl => lvl >= 1 ? (Math.floor((lvl + 4) / 5) * 0.5 + 1) : null},
-        {name: '最大传家宝增益', 类型: '+', value: lvl => lvl >= 2 ? (Math.floor((lvl + 3) / 5) * 5) : null},
-        {name: '精通点数增益', 类型: '*', value: lvl => lvl >= 3 ? (Math.floor((lvl + 2) / 5) * 0.5 + 1) : null},
-        {name: '神秘碎片容量', 类型: '+', value: lvl => lvl >= 4 ? (Math.floor((lvl + 1) / 5) * 10) : null},
-        {name: '级技能点数', 类型: '+', value: lvl => lvl >= 5 ? Math.floor(lvl / 5) : null},
+    防御姿态: {type: 'prestige', cap: 20, requirementBase: requirementBase2, requirementStat: requirementStat2, requirementValue: 53, price(lvl) {
+        return {勇敢: Math.pow(lvl * 0.1 + 2.25, lvl) * 6e12};
+    }, effect: [
+        {name: '生命值', type: '*', value: lvl => Math.pow(1.16, lvl)},
+        {name: '腐败的灵魂增益', type: '*', value: lvl => Math.pow(1.1, lvl)},
+        {name: '勇敢增益', type: '*', value: lvl => lvl * 0.1 + 1}
+    ]},
+    混沌箱: {type: 'prestige', cap: 10, requirementBase: requirementBase2, requirementStat: requirementStat2, requirementValue: 65, price(lvl) {
+        return {勇敢: Math.pow(10, lvl) * 1e14};
+    }, effect: [
+        {name: '攻击', type: '*', value: lvl => Math.pow(1.35, lvl)},
+        {name: '装备几率', type: '*', value: lvl => lvl >= 1 ? (Math.floor((lvl + 4) / 5) * 0.5 + 1) : null},
+        {name: '最大传家宝增益', type: '+', value: lvl => lvl >= 2 ? (Math.floor((lvl + 3) / 5) * 5) : null},
+        {name: '精通点数增益', type: '*', value: lvl => lvl >= 3 ? (Math.floor((lvl + 2) / 5) * 0.5 + 1) : null},
+        {name: '神秘碎片容量', type: '+', value: lvl => lvl >= 4 ? (Math.floor((lvl + 1) / 5) * 10) : null},
+        {name: '级技能点数', type: '+', value: lvl => lvl >= 5 ? Math.floor(lvl / 5) : null},
+    ]},
+    极限突破: {type: 'prestige', cap: 25, requirementBase: requirementBase2, requirementStat: requirementStat2, requirementValue: 85, price(lvl) {
+        return {勇敢: Math.pow(lvl * 0.1 + 1.65, lvl) * 7.75e15};
+    }, effect: [
+        {name: '腐败的灵魂增益', type: '*', value: lvl => Math.pow(1.05, lvl)},
+        {name: '勇敢增益', type: '*', value: lvl => Math.pow(1.05, lvl)},
+        {name: '骨头容量', type: '*', value: lvl => Math.pow(1.35, lvl)},
+        {name: '血液容量', type: '*', value: lvl => Math.pow(1.5, lvl)}
+    ]},
+    猎头者: {type: 'prestige', cap: 10, requirementBase: requirementBase2, requirementStat: requirementStat2, requirementValue: 113, price(lvl) {
+        return {勇敢: Math.pow(lvl * 0.85 + 2.75, lvl) * 2.25e17};
+    }, effect: [
+        {name: '锋利的怪物牙齿增益', type: '+', value: lvl => lvl * 0.015},
+        {name: '神秘碎片容量', type: '+', value: lvl => lvl * 5}
+    ]},
+    寺庙探索: {type: 'prestige', cap: 10, requirementBase: requirementBase2, requirementStat: requirementStat2, requirementValue: 130, price(lvl) {
+        return {勇敢: Math.pow(lvl * 0.85 + 2.75, lvl) * 1.6e19};
+    }, effect: [
+        {name: '苔藓怪物牙齿增益', type: '+', value: lvl => lvl * 0.015},
+        {name: '传家宝效果', type: '*', value: lvl => lvl * 0.02 + 1}
     ]},
 }

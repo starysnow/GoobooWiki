@@ -1,12 +1,15 @@
-名称,value,default,上限,milestones,圣遗物
-maxZone,$store.state.stat.horde_maxZone.总计$,1,30,$lvl  \cdot  10 + 10$,"{""7"":""终极指南"",""11"":""破裂的保险箱""}"
-maxZoneSpeedrun,$store.state.stat.horde_maxZoneSpeedrun.总计$,1,10,$lvl  \cdot  5 + 10$,"{""8"":""哑铃""}"
-totalDamage,$store.state.stat.horde_totalDamage.总计$,,,${(lvl  \cdot  250 + 7500)}^{lvl}  \cdot  10K$,"{""6"":""新背包""}"
-maxDamage,$store.state.stat.horde_maxDamage.总计$,,,${(lvl  \cdot  250 + 7500)}^{lvl}  \cdot  10$,"{""3"":""燃烧的头骨""}"
-骨头,$store.state.stat.骨头.总计$,,,"${(2)}^{getSequence(10, lvl} - 10)  \cdot  1M$","{""2"":""被遗忘的盾牌""}"
-怪物零件,$store.state.stat.怪物零件.总计$,,,${(16)}^{lvl}  \cdot  50$,"{""3"":""能量饮料"",""5"":""绷带""}"
-腐败的灵魂,$store.state.stat.腐败的灵魂.总计$,,,${(7 + lvl)}^{lvl}  \cdot  1000$,"{""4"":""幸运骰子""}"
-maxCorruptionKill,$store.state.stat.horde_maxCorruptionKill.总计$,,,$lvl + 1$,
-maxMastery,$store.state.stat.horde_maxMastery.总计$,,,$lvl + 1$,
-totalMastery,$store.state.stat.horde_totalMastery.总计$,,,$\text{四舍五入}((lvl + 1)  \cdot  25  \cdot  (lvl  \cdot  0.2 + 1))$,
-unlucky,$store.state.stat.horde_unlucky.总计$,,1,$1$,
+名称,value,default,cap,milestones,reward,relic,secret
+探险家,$store.state.stat.探险家.total$,1,30,"$splicedLinear(10, 20, 20, lvl + 1)$","{""7"":[{""name"":""刺击指南"",""type"":""保留"",""value"":true},{""name"":""闪避指南"",""type"":""保留"",""value"":true}],""11"":[{""name"":""掠夺"",""type"":""保留"",""value"":true}]}",,
+迅捷出击,$store.state.stat.迅捷出击.total$,1,10,$lvl  \cdot  5 + 10$,"{""8"":[{""name"":""训练"",""type"":""保留"",""value"":true}]}",,
+威猛,$store.state.stat.威猛.total$,,30,${(lvl  \cdot  250 + 7500)}^{lvl}  \cdot  10$,"{""3"":[{""name"":""骨袋"",""type"":""保留"",""value"":true},{""name"":""愤怒"",""type"":""保留"",""value"":true}],""6"":[{""name"":""囤积"",""type"":""保留"",""value"":true},{""name"":""掠夺秘密"",""type"":""保留"",""value"":true}]}",,
+骨头,$store.state.stat.骨头.total$,,30,"${(2)}^{getSequence(10, lvl} - 10)  \cdot  1M$","{""2"":[{""name"":""恢复力"",""type"":""保留"",""value"":true},{""name"":""休息"",""type"":""保留"",""value"":true}]}",,
+怪物零件,$store.state.stat.怪物零件.total$,,30,${(16)}^{lvl}  \cdot  50$,"{""5"":[{""name"":""厚脸皮"",""type"":""保留"",""value"":true}]}","{""3"":""能量饮料""}",
+腐败的灵魂,$store.state.stat.腐败的灵魂.total$,,30,${(7 + lvl)}^{lvl}  \cdot  1000$,"{""4"":[{""name"":""幸运一击"",""type"":""保留"",""value"":true}]}",,
+挑战邪恶,$store.state.stat.挑战邪恶.total$,,,$lvl + 1$,,,
+一招,$store.state.stat.一招.total$,,,$lvl + 1$,,,
+多样性,$store.state.stat.多样性.total$,,,$\text{四舍五入}((lvl + 1)  \cdot  25  \cdot  (lvl  \cdot  0.2 + 1))$,,,
+血液,$store.state.stat.血液.total$,,,"${(2)}^{getSequence(10, lvl} - 10)  \cdot  1B$","{""3"":[{""name"":""输血"",""type"":""保留"",""value"":true}],""5"":[{""name"":""保护壳"",""type"":""保留"",""value"":true}],""8"":[{""name"":""血液存储"",""type"":""保留"",""value"":true}]}",,
+勇敢,$store.state.stat.勇敢.total$,,,${(18 + lvl  \cdot  6)}^{lvl}  \cdot  1000$,"{""6"":[{""name"":""第二次机会"",""type"":""保留"",""value"":true}]}",,
+做好一切准备,$store.getters['horde/trinketLevels']$,,,$\text{四舍五入}((lvl + 1)  \cdot  3  \cdot  (lvl  \cdot  0.2 + 1))$,,,
+角斗士,$store.state.stat.horde_warzoneInfiniteScore.total + store.state.stat.horde_monkeyJungleInfiniteScore.total + store.state.stat.horde_loveIslandInfiniteScore.total$,,,$\text{四舍五入}((lvl + 1)  \cdot  200  \cdot  {(1.15)}^{lvl})$,,,
+不幸,$store.state.stat.不幸.total$,,1,$1$,,,true
